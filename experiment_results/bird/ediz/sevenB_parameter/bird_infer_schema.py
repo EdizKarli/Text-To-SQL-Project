@@ -8,13 +8,16 @@ def sanitize_sql(raw_text: str) -> str:
     cleaned = raw_text.replace("```sql", "").replace("```", "")
     cleaned = " ".join(cleaned.split())
     cleaned = re.sub(r"^(?i:sql\s*:\s*)", "", cleaned.strip())
-    cleaned = cleaned.strip("`'\"").strip()
+    # Only remove quotes/backticks if they surround the entire statement
+    if (cleaned.startswith("`") and cleaned.endswith("`")) or \
+       (cleaned.startswith('"') and cleaned.endswith('"')) or \
+       (cleaned.startswith("'") and cleaned.endswith("'")):
+        cleaned = cleaned[1:-1].strip()
     cleaned = re.sub(r";+$", "", cleaned).strip()
     return cleaned
 
 
 def build_schema_prompts(tables_path):
-    """Parses dev_tables.json into clean CREATE TABLE-like schema strings keyed by db_id."""
     with open(tables_path, "r", encoding="utf-8") as f:
         tables_data = json.load(f)
 
@@ -27,24 +30,19 @@ def build_schema_prompts(tables_path):
         primary_keys = db.get("primary_keys", [])
         foreign_keys = db.get("foreign_keys", [])
 
-        # Group columns by table index
         tables = {i: [] for i in range(len(table_names))}
         for col_idx, (tbl_idx, col_name) in enumerate(column_names):
-            if tbl_idx == -1:  # special '*' column
+            if tbl_idx == -1:
                 continue
             col_type = column_types[col_idx]
             is_pk = " PRIMARY KEY" if col_idx in primary_keys else ""
             tables[tbl_idx].append(f"  {col_name} {col_type}{is_pk}")
 
-        # Assemble schema strings
         schema_parts = []
         for tbl_idx, tbl_name in enumerate(table_names):
             cols_def = ",\n".join(tables[tbl_idx])
-            schema_parts.append(
-                f"CREATE TABLE {tbl_name} (\n{cols_def}\n);"
-            )
+            schema_parts.append(f"CREATE TABLE {tbl_name} (\n{cols_def}\n);")
 
-        # Append Foreign Key constraints if present
         fk_strings = []
         for col_src, col_tgt in foreign_keys:
             tbl_src_idx, col_src_name = column_names[col_src]
@@ -62,7 +60,6 @@ def build_schema_prompts(tables_path):
 
 
 def run_bird_inference_with_schema():
-    # 1. Path setup
     tables_file = os.path.join(
         "mini_dev_data", "dev_databases", "minidev", "MINIDEV", "dev_tables.json"
     )
@@ -72,7 +69,6 @@ def run_bird_inference_with_schema():
     print(f"Loading schema definitions from {tables_file}...")
     schemas = build_schema_prompts(tables_file)
 
-    # 2. Load questions
     with open("data/mini_dev_sqlite.json", "r", encoding="utf-8") as f:
         content = f.read().strip()
         data = (
@@ -124,12 +120,9 @@ def run_bird_inference_with_schema():
             raw_response = "SELECT 1;"
 
         clean_sql = sanitize_sql(raw_response)
-
-        # Store using the separator required by BIRD package_sqls
         predictions[qid] = f"{clean_sql}\t----- bird -----\t{db_id}"
         print(f"[{idx}/{total}] Processed QID: {qid} ({db_id})")
 
-    # 3. Save directly to predict_mini_dev_schema.json
     output_path = "predict_mini_dev_schema.json"
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(predictions, f, indent=2)
