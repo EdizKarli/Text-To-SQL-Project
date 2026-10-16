@@ -11,7 +11,10 @@ def sanitize_sql(raw_text: str) -> str:
     cleaned = raw_text.replace("```sql", "").replace("```", "")
     cleaned = " ".join(cleaned.split())
     cleaned = re.sub(r"^(?i:sql\s*:\s*)", "", cleaned.strip())
-    cleaned = cleaned.strip("`'\"").strip()
+    if (cleaned.startswith("`") and cleaned.endswith("`")) or \
+       (cleaned.startswith('"') and cleaned.endswith('"')) or \
+       (cleaned.startswith("'") and cleaned.endswith("'")):
+        cleaned = cleaned[1:-1].strip()
     cleaned = re.sub(r";+$", "", cleaned).strip()
     return cleaned
 
@@ -28,7 +31,6 @@ class SafeSchemaPruner:
             self.tables_data = {db["db_id"]: db for db in json.load(f)}
 
     def _find_bridge_tables(self, seed_tables: set, foreign_keys: list, column_names: list, num_tables: int) -> set:
-        """Finds intermediate bridge tables via BFS on the Foreign Key graph."""
         adj = defaultdict(set)
         for col_src, col_tgt in foreign_keys:
             t1 = column_names[col_src][0]
@@ -87,7 +89,6 @@ class SafeSchemaPruner:
         query_text = f"{question} {evidence}".strip()
         query_tokens = tokenize(query_text)
 
-        # 1. Table Selection: Keep all if <= 6 tables, otherwise score + FK-bridge
         if len(table_names) <= 6:
             selected_tables = set(range(len(table_names)))
         else:
@@ -105,7 +106,6 @@ class SafeSchemaPruner:
             seed_tables = {idx for idx, _ in scored_tables[:4]}
             selected_tables = self._find_bridge_tables(seed_tables, foreign_keys, column_names, len(table_names))
 
-        # 2. Column Selection per Table
         table_cols = {idx: [] for idx in selected_tables}
         for col_idx, (tbl_idx, col_name) in enumerate(column_names):
             if tbl_idx in selected_tables and tbl_idx != -1:
@@ -136,7 +136,6 @@ class SafeSchemaPruner:
 
                 final_table_cols[tbl_idx] = list(top_selection)
 
-        # 3. Assemble Schema DDL
         schema_parts = []
         for tbl_idx in selected_tables:
             col_lines = []
