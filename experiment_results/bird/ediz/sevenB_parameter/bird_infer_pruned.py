@@ -6,6 +6,15 @@ from rank_bm25 import BM25Okapi
 from rapidfuzz import fuzz
 
 
+def sanitize_sql(raw_text: str) -> str:
+    cleaned = raw_text.replace("```sql", "").replace("```", "")
+    cleaned = " ".join(cleaned.split())
+    cleaned = re.sub(r"^(?i:sql\s*:\s*)", "", cleaned.strip())
+    cleaned = cleaned.strip("`'\"").strip()
+    cleaned = re.sub(r";+$", "", cleaned).strip()
+    return cleaned
+
+
 def tokenize(text: str) -> list[str]:
     """Tokenize and split snake_case, CamelCase, and punctuation."""
     cleaned = re.sub(r"([a-z])([A-Z])", r"\1 \2", text)
@@ -45,9 +54,7 @@ class HybridSchemaPruner:
         query_text = f"{question} {evidence}".strip()
         query_tokens = tokenize(query_text)
 
-        # ------------------------------------------------------------------
         # 1. Rank & Filter Tables using BM25 + RapidFuzz
-        # ------------------------------------------------------------------
         if len(table_names) <= top_k_tables:
             selected_table_indices = set(range(len(table_names)))
         else:
@@ -64,10 +71,7 @@ class HybridSchemaPruner:
             scored_tables.sort(key=lambda x: x[1], reverse=True)
             selected_table_indices = {idx for idx, _ in scored_tables[:top_k_tables]}
 
-        # ------------------------------------------------------------------
         # 2. Rank & Filter Columns within Selected Tables
-        # ------------------------------------------------------------------
-        # Group columns by table
         table_to_cols = {idx: [] for idx in selected_table_indices}
         for col_idx, (tbl_idx, col_name) in enumerate(column_names):
             if tbl_idx in selected_table_indices and tbl_idx != -1:
@@ -99,9 +103,7 @@ class HybridSchemaPruner:
                 cols_def.append(f"  {col_name} {col_type}{is_pk}")
             final_table_cols[tbl_idx] = cols_def
 
-        # ------------------------------------------------------------------
         # 3. Assemble Pruned DDL & Foreign Keys
-        # ------------------------------------------------------------------
         schema_parts = []
         for tbl_idx in selected_table_indices:
             cols_str = ",\n".join(final_table_cols.get(tbl_idx, []))
@@ -123,7 +125,6 @@ class HybridSchemaPruner:
 
 
 def run_pruned_inference():
-    # Path resolution for tables
     tables_file = os.path.join(
         "mini_dev_data", "dev_databases", "minidev", "MINIDEV", "dev_tables.json"
     )
@@ -133,7 +134,6 @@ def run_pruned_inference():
     print(f"Initializing BM25 + Fuzzy pruner from: {tables_file}")
     pruner = HybridSchemaPruner(tables_file)
 
-    # Load questions
     with open("data/mini_dev_sqlite.json", "r", encoding="utf-8") as f:
         content = f.read().strip()
         data = (
@@ -191,13 +191,7 @@ def run_pruned_inference():
             print(f"[{idx}/{total}] QID {qid} error: {e}")
             raw_response = "SELECT 1;"
 
-        clean_sql = (
-            raw_response.replace("```sql", "")
-            .replace("```", "")
-            .replace("\r", " ")
-            .replace("\n", " ")
-            .strip()
-        )
+        clean_sql = sanitize_sql(raw_response)
 
         predictions[qid] = f"{clean_sql}\t----- bird -----\t{db_id}"
         print(f"[{idx}/{total}] Processed QID: {qid} ({db_id})")
