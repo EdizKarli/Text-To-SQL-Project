@@ -1,6 +1,16 @@
 import json
 import os
+import re
 import requests
+
+
+def sanitize_sql(raw_text: str) -> str:
+    cleaned = raw_text.replace("```sql", "").replace("```", "")
+    cleaned = " ".join(cleaned.split())
+    cleaned = re.sub(r"^(?i:sql\s*:\s*)", "", cleaned.strip())
+    cleaned = cleaned.strip("`'\"").strip()
+    cleaned = re.sub(r";+$", "", cleaned).strip()
+    return cleaned
 
 
 def build_schema_prompts(tables_path):
@@ -57,7 +67,6 @@ def run_bird_inference_with_schema():
         "mini_dev_data", "dev_databases", "minidev", "MINIDEV", "dev_tables.json"
     )
     if not os.path.exists(tables_file):
-        # Fallback to alternate path if dev_tables is directly in MINIDEV
         tables_file = os.path.join("mini_dev_data", "MINIDEV", "dev_tables.json")
 
     print(f"Loading schema definitions from {tables_file}...")
@@ -114,14 +123,7 @@ def run_bird_inference_with_schema():
             print(f"[{idx}/{total}] Request failed for QID {qid}: {e}")
             raw_response = "SELECT 1;"
 
-        # Clean markdown wrappers and newlines
-        clean_sql = (
-            raw_response.replace("```sql", "")
-            .replace("```", "")
-            .replace("\r", " ")
-            .replace("\n", " ")
-            .strip()
-        )
+        clean_sql = sanitize_sql(raw_response)
 
         # Store using the separator required by BIRD package_sqls
         predictions[qid] = f"{clean_sql}\t----- bird -----\t{db_id}"

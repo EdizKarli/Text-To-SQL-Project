@@ -7,6 +7,15 @@ from rank_bm25 import BM25Okapi
 from rapidfuzz import fuzz
 
 
+def sanitize_sql(raw_text: str) -> str:
+    cleaned = raw_text.replace("```sql", "").replace("```", "")
+    cleaned = " ".join(cleaned.split())
+    cleaned = re.sub(r"^(?i:sql\s*:\s*)", "", cleaned.strip())
+    cleaned = cleaned.strip("`'\"").strip()
+    cleaned = re.sub(r";+$", "", cleaned).strip()
+    return cleaned
+
+
 def tokenize(text: str) -> list[str]:
     cleaned = re.sub(r"([a-z])([A-Z])", r"\1 \2", text)
     cleaned = re.sub(r"[_\W]+", " ", cleaned).lower()
@@ -30,7 +39,6 @@ class SafeSchemaPruner:
 
         expanded = set(seed_tables)
         seeds = list(seed_tables)
-        # Find shortest paths between all pairs of seed tables
         for i in range(len(seeds)):
             for j in range(i + 1, len(seeds)):
                 src, dst = seeds[i], seeds[j]
@@ -48,7 +56,7 @@ class SafeSchemaPruner:
                             visited.add(neighbor)
                             queue.append((neighbor, path + [neighbor]))
 
-                if found_path and len(found_path) <= 4:  # At most 2 intermediate bridge hops
+                if found_path and len(found_path) <= 4:
                     expanded.update(found_path)
 
         return expanded
@@ -63,7 +71,6 @@ class SafeSchemaPruner:
         column_types = db["column_types"]
         foreign_keys = db.get("foreign_keys", [])
 
-        # Flatten composite primary keys safely
         raw_pks = db.get("primary_keys", [])
         primary_keys = set()
         for pk in raw_pks:
@@ -72,7 +79,6 @@ class SafeSchemaPruner:
             elif pk is not None:
                 primary_keys.add(pk)
 
-        # Build set of all foreign key column indices
         fk_columns = set()
         for col_src, col_tgt in foreign_keys:
             fk_columns.add(col_src)
@@ -97,7 +103,6 @@ class SafeSchemaPruner:
 
             scored_tables.sort(key=lambda x: x[1], reverse=True)
             seed_tables = {idx for idx, _ in scored_tables[:4]}
-            # Recover bridge tables via FK graph
             selected_tables = self._find_bridge_tables(seed_tables, foreign_keys, column_names, len(table_names))
 
         # 2. Column Selection per Table
@@ -108,7 +113,6 @@ class SafeSchemaPruner:
 
         final_table_cols = {}
         for tbl_idx, cols in table_cols.items():
-            # If table is small, keep all columns to avoid dropping filter targets
             if len(cols) <= 15:
                 final_table_cols[tbl_idx] = cols
             else:
@@ -120,12 +124,10 @@ class SafeSchemaPruner:
                 for i, (col_idx, col_name, col_type) in enumerate(cols):
                     b_score = c_scores[i]
                     f_score = fuzz.partial_ratio(col_name.lower(), query_text.lower()) / 100.0
-                    # Critical: Always prioritize PK and FK columns
                     is_key = col_idx in primary_keys or col_idx in fk_columns
                     key_boost = 5.0 if is_key else 0.0
                     scored_cols.append((b_score + (1.5 * f_score) + key_boost, (col_idx, col_name, col_type), is_key))
 
-                # Keep top 16 columns + any mandatory keys
                 scored_cols.sort(key=lambda x: x[0], reverse=True)
                 top_selection = {item[1] for item in scored_cols[:16]}
                 for _, meta, is_key in scored_cols:
@@ -201,7 +203,7 @@ def run_inference():
             print(f"[{idx}/{total}] Error on QID {qid}: {e}")
             raw = "SELECT 1;"
 
-        clean_sql = raw.replace("```sql", "").replace("```", "").replace("\r", " ").replace("\n", " ").strip()
+        clean_sql = sanitize_sql(raw)
         predictions[qid] = f"{clean_sql}\t----- bird -----\t{db_id}"
         print(f"[{idx}/{total}] Processed QID: {qid} ({db_id})")
 
