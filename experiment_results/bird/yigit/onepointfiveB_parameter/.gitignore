@@ -1,0 +1,5 @@
+mini_dev_data/
+minidev.zip
+.venv/
+__pycache__/
+predict_mini_dev.txt
