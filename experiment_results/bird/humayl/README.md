@@ -81,3 +81,17 @@ The self-repair loop provides deterministic execution feedback to queries that f
 3. **Nature of Resolved Errors:**
    - Dialect and syntax errors (`year()` vs. `STRFTIME`, unescaped string literal quotes, missing table aliases) were **100% resolved** in a single repair turn on 7B.
    - Multi-table join hallucinations (`unknown_column`) were reduced by **55.7%** with schema provenance hints.
+
+---
+
+## 6. Latency & Compute Efficiency
+
+| Model | Schema Setup | Baseline Mean Latency | Baseline Median Latency | Baseline Run Time (500 queries) | Errors Repaired | Repair Run Time | Repair Avg Latency / Query |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **7B Coder** | **Full Schema** | 5.81s | 5.60s | ~45 min | 70 | **~8.0 min** | 6.83s |
+| **7B Coder** | **Pruned v2** | 6.02s | 5.85s | ~45 min | 79 | **~9.1 min** | 6.93s |
+| **1.5B Coder** | **Full Schema** | 3.95s | 2.83s | ~30 min | 294 | **~14.4 min** | 2.95s |
+| **1.5B Coder** | **Pruned v2** | 4.00s | 2.89s | ~30 min | 275 | **~16.7 min** | 3.65s |
+
+- **Compute Savings:** Targeting only failed queries avoids re-running all 500 questions, cutting repair compute time by **~80%** (8–9 minutes on 7B vs. 45 minutes for a full re-run).
+- **Fast Single-Line Generation:** Enforcing single-line SQL outputs without conversational explanations keeps repair latency fast (**~3.0s on 1.5B, ~6.8s on 7B**).
