@@ -1,0 +1,66 @@
+== Layer 1: schema integrity ==
+integrity_check ........ ok
+foreign_key_check ...... 0 violations
+
+== Layer 2: row counts ==
+aircraft                22
+aircraft_types           5
+airlines                 5
+airports                18
+benchmark_meta           4
+customers               63
+flight_cargo          3818
+flights               2252
+incidents              160
+invoices              2909
+payments              2544
+shipments             3110
+
+== Layer 3: business-rule, coverage and distribution checks ==
+[PASS] flight_prefix_matches_airline                       0   Flight number prefix equals the operating airline's IATA code
+[PASS] flight_within_aircraft_range                        0   Flight distance does not exceed the aircraft type's range
+[PASS] flights_only_on_active_aircraft                     0   Maintenance/retired aircraft have no flights
+[PASS] aircraft_no_overlapping_flights                     0   One aircraft is never on two non-cancelled flights at once
+[PASS] aircraft_location_continuity                        0   Each flight departs from where the aircraft's previous non-cancelled flight landed
+[PASS] completed_flights_landed_before_as_of               0   Completed flights have landed before the as-of moment
+[PASS] scheduled_flights_depart_after_as_of                0   Scheduled flights depart after the as-of moment
+[WARNING] extreme_departure_delays                           52   Completed flights departing more than 6 hours late (valid but unusual)
+[PASS] no_cargo_on_cancelled_flights                       0   Cancelled flights carry no cargo
+[PASS] leg_status_matches_flight_status                    0   A leg is 'flown' exactly when its flight is completed
+[PASS] flight_payload_and_volume_not_exceeded              0   Loaded weight/volume never exceeds the aircraft type's limits
+[PASS] first_leg_starts_at_shipment_origin                 0   Leg 1 departs from the shipment's origin
+[PASS] last_leg_ends_at_shipment_destination               0   The final leg lands at the shipment's destination
+[PASS] leg_numbers_contiguous                              0   Leg numbers run 1..n without gaps
+[PASS] legs_connect_in_space_and_time                      0   Consecutive legs connect at one airport with >= 12h between scheduled arrival and next departure
+[PASS] first_departure_not_before_booking                  0   Leg 1 departs on or after the booking date
+[PASS] booking_not_after_as_of                             0   No booking is dated after the as-of day
+[PASS] shipment_status_matches_legs                        0   cancelled=no legs, delivered=all flown, in_transit=some flown, booked=none flown
+[WARNING] shipment_density_plausible                          0   Shipments outside 30-700 kg/m3 (valid but unusual)
+[PASS] invoice_exists_iff_shipment_departed                0   in_transit/delivered shipments have an invoice; booked/cancelled do not
+[PASS] invoice_issued_on_first_departure                   0   Invoice issue date equals the date leg 1 actually departed
+[PASS] invoice_due_date_matches_terms                      0   Due date = issue date + customer's payment terms
+[PASS] invoice_status_matches_payments                     0   paid / partially_paid / unpaid agrees with the payments received
+[PASS] no_overpayment                                      0   Payments for an invoice never exceed its amount
+[PASS] payment_customer_matches_shipment_customer          0   A payment's customer is the customer who owns the invoiced shipment
+[PASS] payment_dates_in_range                              0   Payment date is on/after invoice issue date and not after the as-of day
+[PASS] incident_only_on_flown_leg                          0   Incidents are attached to legs that were actually flown
+[PASS] temperature_incident_commodity                      0   Temperature excursions only for pharmaceuticals/perishables
+[PASS] claim_not_above_declared_value                      0   Claim amount never exceeds the shipment's declared value
+[PASS] incident_report_time_in_range                       0   Incident reported after the flight departed and not after the as-of moment
+[PASS] coverage_flight_statuses                            0   Every flight status appears at least once
+[PASS] coverage_shipment_statuses                          0   Every shipment status appears at least once
+[PASS] coverage_invoice_statuses                           0   Every invoice status appears at least once
+[PASS] coverage_incident_types                             0   Every incident type appears at least once
+[PASS] coverage_commodities                                0   Every commodity category appears at least once
+[PASS] multi_leg_shipments_present                         0   At least some shipments need a connection (2+ legs)
+[INFO] customers_without_shipments                         3   Customers who never booked (kept on purpose for LEFT JOIN / NOT EXISTS questions)
+[INFO] duplicate_customer_names                            1   Customer names that occur in more than one country (kept on purpose)
+[INFO] aircraft_never_flown                                2   Aircraft without any flight (maintenance/retired, kept on purpose)
+[INFO] flights_without_cargo                             412   Non-cancelled flights carrying no cargo (empty legs / repositioning)
+
+== Layer 4: reproducibility (clean rebuild) ==
+[PASS] generator output identical across runs
+[PASS] generator output matches committed data/seed.sql
+[PASS] two clean builds produce identical databases
+
+RESULT: ALL HARD CHECKS PASSED
