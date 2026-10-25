@@ -103,7 +103,7 @@ def run_bird_inference_with_schema():
             response = requests.post(
                 "http://localhost:11434/api/generate",
                 json={
-                    "model": "qwen2.5:7b",
+                    "model": "qwen2.5-coder:7b",
                     "prompt": prompt,
                     "stream": False,
                     "options": {
