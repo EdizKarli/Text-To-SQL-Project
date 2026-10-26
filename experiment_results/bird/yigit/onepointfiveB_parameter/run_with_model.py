@@ -54,6 +54,8 @@ def main():
     ap.add_argument("--variant", required=True, choices=SCRIPTS.keys())
     ap.add_argument("--scripts_dir", default=".", help="Ediz'in .py dosyalarının olduğu klasör")
     ap.add_argument("--out_dir", default="results_yigit")
+    ap.add_argument("--limit", type=int, default=0,
+                    help="Sadece hız ölçümü: ilk N sorudan sonra dur (tahmin dosyası yazılmaz)")
     args = ap.parse_args()
 
     script_name, default_output = SCRIPTS[args.variant]
@@ -73,6 +75,40 @@ def main():
 
     timings = []
     real_post = requests.post
+
+    if args.limit:
+        # Modeli önceden belleğe yükle, böylece yükleme süresi ölçüme girmez
+        real_post("http://localhost:11434/api/generate",
+                  json={"model": args.model, "prompt": "hi", "stream": False}, timeout=300)
+
+    def finish_latency_run():
+        tag_ = args.model.replace(":", "-").replace("/", "-")
+        lat_dir = os.path.join(args.out_dir, "latency")
+        os.makedirs(lat_dir, exist_ok=True)
+        keys = sorted({k for r in timings for k in r})
+        with open(os.path.join(lat_dir, f"timings_{args.variant}_{tag_}.csv"), "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=keys)
+            w.writeheader()
+            w.writerows(timings)
+        ok = sorted(r["wall_s"] for r in timings if not r.get("error")) or [0]
+        rates = [r["gen_tokens"] / r["gen_s"] for r in timings if r.get("gen_s")]
+        try:
+            ps = subprocess.check_output(["ollama", "ps"], text=True)
+        except Exception as e:
+            ps = f"(ollama ps çalışmadı: {e})"
+        s = {
+            "model": args.model, "variant": args.variant, "questions": len(timings),
+            "failed_requests": sum(1 for r in timings if r.get("error")),
+            "latency_mean_s": round(statistics.mean(ok), 2),
+            "latency_p50_s": round(ok[len(ok) // 2], 2),
+            "latency_p95_s": round(ok[int(len(ok) * 0.95) - 1], 2) if len(ok) > 1 else ok[0],
+            "gen_tokens_per_s_mean": round(statistics.mean(rates), 1) if rates else None,
+            "ollama_ps_at_end": ps,
+        }
+        with open(os.path.join(lat_dir, f"summary_{args.variant}_{tag_}.json"), "w", encoding="utf-8") as f:
+            json.dump(s, f, indent=2, ensure_ascii=False)
+        print(json.dumps(s, indent=2, ensure_ascii=False))
+        os._exit(0)
 
     def patched_post(url, *a, **kw):
         if "json" in kw and isinstance(kw["json"], dict) and "model" in kw["json"]:
@@ -106,6 +142,8 @@ def main():
         except Exception:
             pass
         timings.append(row)
+        if args.limit and len(timings) >= args.limit:
+            finish_latency_run()
         return resp
 
     requests.post = patched_post

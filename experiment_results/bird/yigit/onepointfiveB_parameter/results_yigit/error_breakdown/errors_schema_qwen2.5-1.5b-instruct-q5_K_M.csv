@@ -1,0 +1,501 @@
+index,db_id,difficulty,group,detail
+0,debit_card_specializing,simple,exec_error,no such column
+1,debit_card_specializing,moderate,wrong_result,
+2,debit_card_specializing,moderate,correct,
+3,debit_card_specializing,challenging,wrong_result,
+4,debit_card_specializing,moderate,exec_error,no such column
+5,debit_card_specializing,moderate,exec_error,no such function
+6,debit_card_specializing,challenging,no_answer,
+7,debit_card_specializing,challenging,wrong_result,
+8,debit_card_specializing,simple,wrong_result,
+9,debit_card_specializing,simple,exec_error,no such column
+10,debit_card_specializing,simple,wrong_result,
+11,debit_card_specializing,moderate,wrong_result,
+12,debit_card_specializing,simple,exec_error,no such column
+13,debit_card_specializing,simple,wrong_result,
+14,debit_card_specializing,simple,correct,
+15,debit_card_specializing,moderate,exec_error,no such column
+16,debit_card_specializing,simple,wrong_result,
+17,debit_card_specializing,moderate,correct,
+18,debit_card_specializing,simple,exec_error,no such column
+19,debit_card_specializing,moderate,correct,
+20,debit_card_specializing,simple,correct,
+21,debit_card_specializing,simple,correct,
+22,debit_card_specializing,moderate,exec_error,no such column
+23,debit_card_specializing,simple,exec_error,no such column
+24,debit_card_specializing,simple,exec_error,no such column
+25,debit_card_specializing,challenging,wrong_result,
+26,debit_card_specializing,simple,exec_error,no such column
+27,debit_card_specializing,moderate,exec_error,no such column
+28,debit_card_specializing,moderate,wrong_result,
+29,debit_card_specializing,moderate,correct,
+30,student_club,simple,exec_error,no such column
+31,student_club,moderate,exec_error,syntax error
+32,student_club,moderate,exec_error,misuse of aggregate
+33,student_club,moderate,exec_error,misuse of aggregate
+34,student_club,simple,wrong_result,
+35,student_club,simple,correct,
+36,student_club,moderate,exec_error,no such column
+37,student_club,challenging,exec_error,no such column
+38,student_club,moderate,exec_error,no such column
+39,student_club,simple,exec_error,no such column
+40,student_club,simple,correct,
+41,student_club,moderate,exec_error,no such column
+42,student_club,simple,exec_error,no such column
+43,student_club,moderate,exec_error,no such column
+44,student_club,simple,exec_error,no such column
+45,student_club,simple,correct,
+46,student_club,challenging,exec_error,no such column
+47,student_club,simple,correct,
+48,student_club,simple,wrong_result,
+49,student_club,simple,correct,
+50,student_club,simple,exec_error,syntax error
+51,student_club,moderate,exec_error,no such column
+52,student_club,moderate,exec_error,no such column
+53,student_club,simple,wrong_result,
+54,student_club,simple,correct,
+55,student_club,moderate,exec_error,misuse of aggregate
+56,student_club,moderate,exec_error,no such column
+57,student_club,simple,exec_error,no such column
+58,student_club,moderate,exec_error,no such column
+59,student_club,simple,exec_error,no such column
+60,student_club,simple,exec_error,no such column
+61,student_club,moderate,exec_error,no such column
+62,student_club,moderate,exec_error,syntax error
+63,student_club,moderate,exec_error,no such column
+64,student_club,moderate,correct,
+65,student_club,moderate,exec_error,no such column
+66,student_club,moderate,wrong_result,
+67,student_club,simple,correct,
+68,student_club,simple,correct,
+69,student_club,simple,correct,
+70,student_club,simple,exec_error,no such column
+71,student_club,moderate,correct,
+72,student_club,moderate,wrong_result,
+73,student_club,moderate,exec_error,no such column
+74,student_club,moderate,exec_error,no such column
+75,student_club,challenging,correct,
+76,student_club,challenging,exec_error,no such column
+77,student_club,challenging,wrong_result,
+78,thrombosis_prediction,moderate,wrong_result,
+79,thrombosis_prediction,moderate,exec_error,no such column
+80,thrombosis_prediction,moderate,exec_error,no such column
+81,thrombosis_prediction,simple,exec_error,no such column
+82,thrombosis_prediction,simple,correct,
+83,thrombosis_prediction,moderate,exec_error,no such function
+84,thrombosis_prediction,simple,correct,
+85,thrombosis_prediction,moderate,exec_error,no such column
+86,thrombosis_prediction,moderate,exec_error,no such column
+87,thrombosis_prediction,simple,wrong_result,
+88,thrombosis_prediction,challenging,exec_error,no such column
+89,thrombosis_prediction,challenging,exec_error,no such column
+90,thrombosis_prediction,challenging,exec_error,no such column
+91,thrombosis_prediction,moderate,exec_error,no such column
+92,thrombosis_prediction,moderate,exec_error,no such column
+93,thrombosis_prediction,challenging,exec_error,no such column
+94,thrombosis_prediction,moderate,no_answer,
+95,thrombosis_prediction,challenging,exec_error,syntax error
+96,thrombosis_prediction,challenging,exec_error,no such column
+97,thrombosis_prediction,moderate,wrong_result,
+98,thrombosis_prediction,simple,wrong_result,
+99,thrombosis_prediction,moderate,exec_error,no such function
+100,thrombosis_prediction,moderate,exec_error,no such column
+101,thrombosis_prediction,moderate,exec_error,no such column
+102,thrombosis_prediction,moderate,correct,
+103,thrombosis_prediction,simple,correct,
+104,thrombosis_prediction,moderate,exec_error,no such column
+105,thrombosis_prediction,moderate,exec_error,no such column
+106,thrombosis_prediction,moderate,exec_error,syntax error
+107,thrombosis_prediction,challenging,exec_error,no such column
+108,thrombosis_prediction,challenging,exec_error,no such function
+109,thrombosis_prediction,moderate,exec_error,no such function
+110,thrombosis_prediction,moderate,exec_error,no such column
+111,thrombosis_prediction,challenging,exec_error,no such column
+112,thrombosis_prediction,challenging,wrong_result,
+113,thrombosis_prediction,challenging,no_answer,
+114,thrombosis_prediction,challenging,exec_error,no such column
+115,thrombosis_prediction,challenging,exec_error,no such column
+116,thrombosis_prediction,simple,exec_error,syntax error
+117,thrombosis_prediction,moderate,exec_error,no such column
+118,thrombosis_prediction,moderate,exec_error,syntax error
+119,thrombosis_prediction,moderate,exec_error,syntax error
+120,thrombosis_prediction,moderate,exec_error,no such column
+121,thrombosis_prediction,challenging,exec_error,no such function
+122,thrombosis_prediction,moderate,exec_error,no such column
+123,thrombosis_prediction,moderate,wrong_result,
+124,thrombosis_prediction,challenging,exec_error,no such column
+125,thrombosis_prediction,moderate,exec_error,no such column
+126,thrombosis_prediction,moderate,wrong_result,
+127,thrombosis_prediction,challenging,exec_error,no such column
+128,european_football_2,moderate,correct,
+129,european_football_2,challenging,wrong_result,
+130,european_football_2,moderate,exec_error,no such column
+131,european_football_2,moderate,correct,
+132,european_football_2,challenging,exec_error,no such column
+133,european_football_2,moderate,exec_error,no such column
+134,european_football_2,simple,correct,
+135,european_football_2,challenging,exec_error,syntax error
+136,european_football_2,challenging,exec_error,no such column
+137,european_football_2,simple,exec_error,misuse of aggregate
+138,european_football_2,moderate,exec_error,no such column
+139,european_football_2,challenging,exec_error,no such column
+140,european_football_2,simple,wrong_result,
+141,european_football_2,simple,correct,
+142,european_football_2,moderate,wrong_result,
+143,european_football_2,challenging,exec_error,no such column
+144,european_football_2,moderate,exec_error,no such column
+145,european_football_2,challenging,exec_error,incomplete SQL
+146,european_football_2,simple,wrong_result,
+147,european_football_2,simple,exec_error,no such column
+148,european_football_2,moderate,correct,
+149,european_football_2,challenging,exec_error,no such column
+150,european_football_2,moderate,exec_error,no such column
+151,european_football_2,moderate,correct,
+152,european_football_2,simple,exec_error,no such column
+153,european_football_2,challenging,exec_error,no such column
+154,european_football_2,moderate,correct,
+155,european_football_2,moderate,exec_error,no such column
+156,european_football_2,moderate,wrong_result,
+157,european_football_2,moderate,correct,
+158,european_football_2,moderate,correct,
+159,european_football_2,moderate,wrong_result,
+160,european_football_2,moderate,exec_error,no such column
+161,european_football_2,moderate,exec_error,no such column
+162,european_football_2,challenging,exec_error,unrecognized token
+163,european_football_2,challenging,exec_error,syntax error
+164,european_football_2,simple,exec_error,no such column
+165,european_football_2,simple,correct,
+166,european_football_2,moderate,correct,
+167,european_football_2,moderate,exec_error,no such column
+168,european_football_2,simple,wrong_result,
+169,european_football_2,simple,correct,
+170,european_football_2,moderate,wrong_result,
+171,european_football_2,moderate,wrong_result,
+172,european_football_2,challenging,exec_error,no such column
+173,european_football_2,moderate,correct,
+174,european_football_2,simple,wrong_result,
+175,european_football_2,simple,correct,
+176,european_football_2,moderate,correct,
+177,european_football_2,simple,correct,
+178,european_football_2,moderate,exec_error,no such column
+179,formula_1,moderate,wrong_result,
+180,formula_1,simple,wrong_result,
+181,formula_1,simple,correct,
+182,formula_1,simple,correct,
+183,formula_1,simple,correct,
+184,formula_1,simple,wrong_result,
+185,formula_1,simple,wrong_result,
+186,formula_1,simple,wrong_result,
+187,formula_1,moderate,wrong_result,
+188,formula_1,moderate,exec_error,no such column
+189,formula_1,simple,wrong_result,
+190,formula_1,moderate,wrong_result,
+191,formula_1,simple,exec_error,no such column
+192,formula_1,simple,correct,
+193,formula_1,moderate,wrong_result,
+194,formula_1,moderate,exec_error,no such column
+195,formula_1,challenging,no_answer,
+196,formula_1,moderate,exec_error,no such column
+197,formula_1,moderate,exec_error,no such column
+198,formula_1,moderate,wrong_result,
+199,formula_1,moderate,wrong_result,
+200,formula_1,moderate,wrong_result,
+201,formula_1,challenging,exec_error,no such column
+202,formula_1,moderate,wrong_result,
+203,formula_1,simple,exec_error,no such column
+204,formula_1,simple,exec_error,no such function
+205,formula_1,simple,exec_error,no such column
+206,formula_1,moderate,wrong_result,
+207,formula_1,moderate,wrong_result,
+208,formula_1,moderate,exec_error,no such column
+209,formula_1,simple,exec_error,no such table
+210,formula_1,simple,correct,
+211,formula_1,simple,exec_error,no such column
+212,formula_1,moderate,exec_error,no such column
+213,formula_1,simple,wrong_result,
+214,formula_1,moderate,exec_error,no such column
+215,formula_1,moderate,exec_error,no such column
+216,formula_1,simple,exec_error,no such column
+217,formula_1,moderate,wrong_result,
+218,formula_1,challenging,exec_error,no such column
+219,formula_1,simple,exec_error,no such table
+220,formula_1,simple,exec_error,no such column
+221,formula_1,simple,wrong_result,
+222,formula_1,simple,exec_error,misuse of aggregate
+223,formula_1,challenging,exec_error,no such column
+224,formula_1,challenging,exec_error,no such column
+225,formula_1,simple,exec_error,no such column
+226,formula_1,moderate,correct,
+227,formula_1,challenging,exec_error,no such column
+228,formula_1,moderate,wrong_result,
+229,formula_1,simple,wrong_result,
+230,formula_1,simple,exec_error,no such column
+231,formula_1,simple,exec_error,no such column
+232,formula_1,moderate,exec_error,no such function
+233,formula_1,simple,wrong_result,
+234,formula_1,simple,exec_error,no such table
+235,formula_1,moderate,exec_error,no such column
+236,formula_1,challenging,exec_error,no such column
+237,formula_1,moderate,exec_error,no such column
+238,formula_1,challenging,exec_error,no such column
+239,superhero,simple,correct,
+240,formula_1,challenging,exec_error,no such column
+241,formula_1,challenging,wrong_result,
+242,formula_1,moderate,exec_error,no such column
+243,formula_1,moderate,wrong_result,
+244,formula_1,challenging,wrong_result,
+245,formula_1,challenging,wrong_result,
+246,superhero,moderate,correct,
+247,superhero,moderate,exec_error,no such column
+248,superhero,challenging,wrong_result,
+249,superhero,moderate,exec_error,no such column
+250,superhero,moderate,exec_error,no such column
+251,superhero,challenging,exec_error,no such column
+252,superhero,moderate,exec_error,no such column
+253,superhero,moderate,correct,
+254,superhero,moderate,wrong_result,
+255,superhero,simple,correct,
+256,superhero,simple,exec_error,no such column
+257,superhero,moderate,correct,
+258,superhero,moderate,exec_error,no such column
+259,superhero,challenging,exec_error,no such column
+260,superhero,challenging,wrong_result,
+261,superhero,simple,exec_error,no such column
+262,superhero,simple,correct,
+263,superhero,simple,correct,
+264,superhero,moderate,correct,
+265,superhero,moderate,exec_error,no such column
+266,superhero,moderate,exec_error,no such column
+267,superhero,challenging,correct,
+268,superhero,moderate,wrong_result,
+269,superhero,simple,correct,
+270,superhero,simple,correct,
+271,superhero,moderate,exec_error,no such column
+272,superhero,challenging,exec_error,no such column
+273,superhero,challenging,exec_error,no such column
+274,superhero,challenging,exec_error,no such column
+275,superhero,challenging,exec_error,no such column
+276,superhero,simple,correct,
+277,superhero,simple,correct,
+278,superhero,moderate,correct,
+279,superhero,simple,correct,
+280,superhero,moderate,exec_error,no such column
+281,superhero,challenging,exec_error,no such column
+282,superhero,moderate,wrong_result,
+283,superhero,simple,wrong_result,
+284,superhero,simple,exec_error,no such column
+285,superhero,moderate,exec_error,no such column
+286,superhero,moderate,exec_error,no such column
+287,superhero,moderate,correct,
+288,superhero,moderate,correct,
+289,superhero,moderate,exec_error,no such column
+290,superhero,moderate,correct,
+291,superhero,simple,exec_error,no such column
+292,superhero,challenging,wrong_result,
+293,superhero,moderate,exec_error,no such column
+294,superhero,moderate,correct,
+295,superhero,moderate,exec_error,no such column
+296,superhero,challenging,correct,
+297,codebase_community,simple,wrong_result,
+298,codebase_community,simple,correct,
+299,codebase_community,simple,wrong_result,
+300,codebase_community,simple,correct,
+301,codebase_community,simple,exec_error,no such column
+302,codebase_community,moderate,exec_error,no such column
+303,codebase_community,simple,correct,
+304,codebase_community,simple,correct,
+305,codebase_community,simple,exec_error,no such column
+306,codebase_community,moderate,correct,
+307,codebase_community,moderate,exec_error,no such column
+308,codebase_community,moderate,wrong_result,
+309,codebase_community,simple,correct,
+310,codebase_community,simple,correct,
+311,codebase_community,moderate,exec_error,misuse of aggregate
+312,codebase_community,moderate,wrong_result,
+313,codebase_community,simple,exec_error,no such column
+314,codebase_community,simple,correct,
+315,codebase_community,moderate,correct,
+316,codebase_community,moderate,wrong_result,
+317,codebase_community,moderate,wrong_result,
+318,codebase_community,challenging,exec_error,no such column
+319,codebase_community,moderate,exec_error,no such column
+320,codebase_community,simple,exec_error,misuse of aggregate
+321,codebase_community,moderate,wrong_result,
+322,codebase_community,challenging,exec_error,syntax error
+323,codebase_community,moderate,exec_error,no such column
+324,codebase_community,simple,exec_error,no such function
+325,codebase_community,moderate,wrong_result,
+326,codebase_community,challenging,wrong_result,
+327,codebase_community,moderate,wrong_result,
+328,codebase_community,challenging,wrong_result,
+329,codebase_community,moderate,exec_error,syntax error
+330,codebase_community,moderate,exec_error,no such column
+331,codebase_community,simple,correct,
+332,codebase_community,simple,exec_error,no such column
+333,codebase_community,moderate,wrong_result,
+334,codebase_community,simple,wrong_result,
+335,codebase_community,moderate,exec_error,no such column
+336,codebase_community,moderate,exec_error,no such column
+337,codebase_community,moderate,exec_error,no such column
+338,codebase_community,simple,correct,
+339,codebase_community,moderate,exec_error,no such column
+340,codebase_community,challenging,gold_problem,interrupted
+341,codebase_community,simple,wrong_result,
+342,codebase_community,simple,exec_error,no such column
+343,codebase_community,moderate,correct,
+344,codebase_community,simple,exec_error,no such column
+345,codebase_community,moderate,exec_error,no such column
+346,card_games,simple,exec_error,no such column
+347,card_games,simple,exec_error,no such column
+348,card_games,moderate,wrong_result,
+349,card_games,moderate,correct,
+350,card_games,moderate,wrong_result,
+351,card_games,moderate,exec_error,no such column
+352,card_games,moderate,exec_error,no such column
+353,card_games,moderate,exec_error,no such column
+354,card_games,simple,wrong_result,
+355,card_games,simple,wrong_result,
+356,card_games,simple,wrong_result,
+357,card_games,simple,correct,
+358,card_games,challenging,exec_error,no such column
+359,card_games,simple,exec_error,no such column
+360,card_games,simple,exec_error,no such column
+361,card_games,simple,correct,
+362,card_games,moderate,wrong_result,
+363,card_games,moderate,exec_error,no such column
+364,card_games,moderate,exec_error,no such column
+365,card_games,moderate,exec_error,no such column
+366,card_games,moderate,exec_error,no such column
+367,card_games,moderate,wrong_result,
+368,card_games,moderate,exec_error,no such column
+369,card_games,moderate,wrong_result,
+370,card_games,simple,correct,
+371,card_games,challenging,exec_error,ambiguous column
+372,card_games,challenging,wrong_result,
+373,card_games,simple,wrong_result,
+374,card_games,simple,correct,
+375,card_games,moderate,exec_error,no such column
+376,card_games,simple,wrong_result,
+377,card_games,moderate,exec_error,no such column
+378,card_games,moderate,wrong_result,
+379,card_games,moderate,exec_error,no such column
+380,card_games,moderate,wrong_result,
+381,card_games,moderate,correct,
+382,card_games,moderate,exec_error,no such table
+383,card_games,moderate,exec_error,no such column
+384,card_games,moderate,wrong_result,
+385,card_games,moderate,wrong_result,
+386,card_games,challenging,wrong_result,
+387,card_games,moderate,exec_error,no such column
+388,card_games,moderate,correct,
+389,card_games,moderate,exec_error,no such column
+390,card_games,moderate,wrong_result,
+391,card_games,moderate,correct,
+392,card_games,challenging,wrong_result,
+393,card_games,moderate,wrong_result,
+394,card_games,moderate,exec_error,no such column
+395,card_games,challenging,exec_error,no such column
+396,card_games,moderate,wrong_result,
+397,card_games,moderate,wrong_result,
+398,toxicology,simple,correct,
+399,toxicology,moderate,exec_error,misuse of aggregate
+400,toxicology,challenging,exec_error,no such column
+401,toxicology,simple,exec_error,no such column
+402,toxicology,moderate,exec_error,no such column
+403,toxicology,challenging,exec_error,no such column
+404,toxicology,challenging,exec_error,no such column
+405,toxicology,moderate,exec_error,no such column
+406,toxicology,challenging,correct,
+407,toxicology,moderate,exec_error,no such column
+408,toxicology,challenging,exec_error,ambiguous column
+409,toxicology,challenging,exec_error,ambiguous column
+410,toxicology,challenging,exec_error,no such column
+411,toxicology,challenging,wrong_result,
+412,toxicology,moderate,exec_error,no such column
+413,toxicology,simple,correct,
+414,toxicology,moderate,exec_error,ambiguous column
+415,toxicology,challenging,exec_error,no such column
+416,toxicology,challenging,exec_error,no such column
+417,toxicology,moderate,exec_error,no such column
+418,toxicology,moderate,wrong_result,
+419,toxicology,moderate,exec_error,no such column
+420,toxicology,simple,exec_error,no such column
+421,toxicology,challenging,correct,
+422,toxicology,moderate,exec_error,no such column
+423,toxicology,moderate,wrong_result,
+424,toxicology,moderate,wrong_result,
+425,toxicology,moderate,exec_error,no such column
+426,toxicology,challenging,wrong_result,
+427,toxicology,simple,exec_error,no such column
+428,toxicology,challenging,correct,
+429,toxicology,challenging,exec_error,no such column
+430,toxicology,moderate,exec_error,no such column
+431,toxicology,moderate,correct,
+432,toxicology,challenging,wrong_result,
+433,toxicology,challenging,correct,
+434,toxicology,moderate,correct,
+435,toxicology,challenging,wrong_result,
+436,toxicology,challenging,wrong_result,
+437,toxicology,moderate,wrong_result,
+438,california_schools,simple,correct,
+439,california_schools,simple,exec_error,syntax error
+440,california_schools,moderate,exec_error,syntax error
+441,california_schools,simple,wrong_result,
+442,california_schools,moderate,exec_error,syntax error
+443,california_schools,moderate,exec_error,syntax error
+444,california_schools,moderate,wrong_result,
+445,california_schools,moderate,exec_error,syntax error
+446,california_schools,moderate,wrong_result,
+447,california_schools,challenging,exec_error,syntax error
+448,california_schools,moderate,exec_error,no such column
+449,california_schools,moderate,exec_error,no such column
+450,california_schools,moderate,wrong_result,
+451,california_schools,challenging,exec_error,no such column
+452,california_schools,simple,wrong_result,
+453,california_schools,moderate,wrong_result,
+454,california_schools,simple,wrong_result,
+455,california_schools,moderate,wrong_result,
+456,california_schools,simple,exec_error,syntax error
+457,california_schools,moderate,exec_error,syntax error
+458,california_schools,moderate,exec_error,syntax error
+459,california_schools,simple,wrong_result,
+460,california_schools,challenging,exec_error,syntax error
+461,california_schools,moderate,exec_error,syntax error
+462,california_schools,moderate,exec_error,no such column
+463,california_schools,moderate,exec_error,no such column
+464,california_schools,simple,exec_error,no such column
+465,california_schools,challenging,exec_error,syntax error
+466,california_schools,moderate,exec_error,syntax error
+467,california_schools,challenging,wrong_result,
+468,financial,moderate,wrong_result,
+469,financial,simple,wrong_result,
+470,financial,moderate,wrong_result,
+471,financial,challenging,exec_error,syntax error
+472,financial,moderate,exec_error,no such column
+473,financial,moderate,exec_error,no such column
+474,financial,moderate,exec_error,no such column
+475,financial,moderate,correct,
+476,financial,simple,wrong_result,
+477,financial,challenging,wrong_result,
+478,financial,challenging,no_answer,
+479,financial,moderate,wrong_result,
+480,financial,moderate,wrong_result,
+481,financial,challenging,exec_error,no such column
+482,financial,moderate,exec_error,no such column
+483,financial,moderate,wrong_result,
+484,financial,moderate,exec_error,no such column
+485,financial,moderate,exec_error,no such column
+486,financial,moderate,wrong_result,
+487,financial,moderate,wrong_result,
+488,financial,challenging,exec_error,no such column
+489,financial,moderate,wrong_result,
+490,financial,simple,exec_error,no such column
+491,financial,moderate,exec_error,no such column
+492,financial,challenging,exec_error,no such column
+493,financial,challenging,exec_error,no such column
+494,financial,moderate,exec_error,no such column
+495,financial,moderate,exec_error,no such column
+496,financial,moderate,wrong_result,
+497,financial,moderate,exec_error,no such column
+498,financial,moderate,exec_error,no such column
+499,financial,moderate,wrong_result,

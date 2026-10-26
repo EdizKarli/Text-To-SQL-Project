@@ -1,0 +1,11 @@
+{
+  "model": "qwen2.5:1.5b-instruct-q5_K_M",
+  "variant": "schema",
+  "questions": 50,
+  "failed_requests": 1,
+  "latency_mean_s": 2.28,
+  "latency_p50_s": 2.13,
+  "latency_p95_s": 3.38,
+  "gen_tokens_per_s_mean": 35.5,
+  "ollama_ps_at_end": "NAME                            ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              \nqwen2.5:1.5b-instruct-q5_K_M    7a0e895425bc    1.5 GB    100% GPU     8192       llamacpp    4 minutes from now    \n"
+}
