@@ -1,0 +1,100 @@
+[
+  {
+    "run": "schema_qwen2.5-1.5b-instruct-fp16",
+    "total": 500,
+    "correct": 95,
+    "wrong_result": 141,
+    "exec_error": 260,
+    "timeout": 0,
+    "no_answer": 3,
+    "gold_problem": 1,
+    "correct_pct": 19.0,
+    "wrong_result_pct": 28.2,
+    "exec_error_pct": 52.0,
+    "timeout_pct": 0.0,
+    "no_answer_pct": 0.6,
+    "gold_problem_pct": 0.2,
+    "exec_error_types": {
+      "no such column": 207,
+      "syntax error": 23,
+      "no such function": 13,
+      "misuse of aggregate": 11,
+      "ambiguous column": 4,
+      "no such table": 2
+    }
+  },
+  {
+    "run": "schema_qwen2.5-1.5b-instruct-q4_K_M",
+    "total": 500,
+    "correct": 74,
+    "wrong_result": 112,
+    "exec_error": 303,
+    "timeout": 2,
+    "no_answer": 8,
+    "gold_problem": 1,
+    "correct_pct": 14.8,
+    "wrong_result_pct": 22.4,
+    "exec_error_pct": 60.6,
+    "timeout_pct": 0.4,
+    "no_answer_pct": 1.6,
+    "gold_problem_pct": 0.2,
+    "exec_error_types": {
+      "no such column": 231,
+      "no such function": 22,
+      "syntax error": 22,
+      "ambiguous column": 12,
+      "misuse of aggregate": 8,
+      "no such table": 8
+    }
+  },
+  {
+    "run": "schema_qwen2.5-1.5b-instruct-q5_K_M",
+    "total": 500,
+    "correct": 95,
+    "wrong_result": 132,
+    "exec_error": 267,
+    "timeout": 0,
+    "no_answer": 5,
+    "gold_problem": 1,
+    "correct_pct": 19.0,
+    "wrong_result_pct": 26.4,
+    "exec_error_pct": 53.4,
+    "timeout_pct": 0.0,
+    "no_answer_pct": 1.0,
+    "gold_problem_pct": 0.2,
+    "exec_error_types": {
+      "no such column": 214,
+      "syntax error": 26,
+      "no such function": 9,
+      "misuse of aggregate": 8,
+      "no such table": 4,
+      "ambiguous column": 4,
+      "incomplete SQL": 1,
+      "unrecognized token": 1
+    }
+  },
+  {
+    "run": "schema_qwen2.5-1.5b-instruct-q8_0",
+    "total": 500,
+    "correct": 93,
+    "wrong_result": 142,
+    "exec_error": 261,
+    "timeout": 0,
+    "no_answer": 3,
+    "gold_problem": 1,
+    "correct_pct": 18.6,
+    "wrong_result_pct": 28.4,
+    "exec_error_pct": 52.2,
+    "timeout_pct": 0.0,
+    "no_answer_pct": 0.6,
+    "gold_problem_pct": 0.2,
+    "exec_error_types": {
+      "no such column": 210,
+      "syntax error": 24,
+      "no such function": 13,
+      "misuse of aggregate": 10,
+      "ambiguous column": 3,
+      "no such table": 1
+    }
+  }
+]

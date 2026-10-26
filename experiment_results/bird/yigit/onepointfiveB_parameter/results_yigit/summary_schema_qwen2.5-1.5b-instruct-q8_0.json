@@ -1,0 +1,25 @@
+{
+  "model": "qwen2.5:1.5b-instruct-q8_0",
+  "variant": "schema",
+  "script": "bird_infer_schema.py",
+  "started": "2026-10-23 14:47:18",
+  "questions": 500,
+  "failed_requests": 3,
+  "failed_breakdown": {
+    "ReadTimeout": 3,
+    "HTTP500": 0
+  },
+  "total_minutes": 24.7,
+  "latency_mean_s": 1.89,
+  "latency_p50_s": 1.7,
+  "latency_p95_s": 3.42,
+  "gen_tokens_per_s_mean": 41.2,
+  "machine": {
+    "platform": "macOS-15.5-arm64-arm-64bit-Mach-O",
+    "python": "3.14.0",
+    "cpu": "Apple M2",
+    "ram_bytes": "17179869184"
+  },
+  "ollama_ps_at_end": "NAME                          ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              \nqwen2.5:1.5b-instruct-q8_0    b19683a34698    2.0 GB    100% GPU     8192       llamacpp    4 minutes from now    \n",
+  "predictions_file": "results_yigit/predict_schema_qwen2.5-1.5b-instruct-q8_0.json"
+}
