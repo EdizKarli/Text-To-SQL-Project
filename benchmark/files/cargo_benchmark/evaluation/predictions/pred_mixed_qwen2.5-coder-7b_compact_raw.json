@@ -1,0 +1,182 @@
+{
+  "Q01": {
+    "raw": "```sql\nSELECT COUNT(*) AS hub_count FROM flghf WHERE hub_kz = 1;\n```",
+    "seconds": 27.36
+  },
+  "Q02": {
+    "raw": "```sql\nSELECT l.kennz, l.baujahr FROM lfz l WHERE l.stat = 'active' AND l.baujahr >= 2015 ORDER BY l.baujahr DESC, l.kennz ASC;\n```",
+    "seconds": 3.51
+  },
+  "Q03": {
+    "raw": "SELECT COUNT(*) AS cancelled_flights FROM flug WHERE stat = 'cancelled';",
+    "seconds": 2.63
+  },
+  "Q04": {
+    "raw": "SELECT mdl, max_nutzl_kg FROM lfz_typ ORDER BY max_nutzl_kg DESC",
+    "seconds": 2.79
+  },
+  "Q05": {
+    "raw": "```sql\nSELECT SUM(dekl_wert_usd) AS total_declared_value_usd FROM sndg WHERE stat = 'delivered' AND waren_kat = 'pharmaceuticals';\n```",
+    "seconds": 3.16
+  },
+  "Q06": {
+    "raw": "SELECT name1, land FROM knd_stamm WHERE zahlbed_tg = 45 ORDER BY name1, land",
+    "seconds": 2.79
+  },
+  "Q07": {
+    "raw": "```sql\nSELECT stat AS status, COUNT(*) AS shipment_count FROM sndg GROUP BY stat ORDER BY status;\n```",
+    "seconds": 2.8
+  },
+  "Q08": {
+    "raw": "SELECT kennz FROM lfz WHERE lfz_nr NOT IN (SELECT lfz_nr FROM flug) ORDER BY kennz",
+    "seconds": 2.79
+  },
+  "Q09": {
+    "raw": "```sql\nSELECT COUNT(*) AS completed_fra_departures FROM flug WHERE abfl_ist IS NOT NULL AND abfl_pos = 'FRA' AND stat = 'completed';\n```",
+    "seconds": 3.16
+  },
+  "Q10": {
+    "raw": "```sql\nSELECT flgesbez, COUNT(flg.stat) AS completed_flights\nFROM flges\nLEFT JOIN flug flg ON flges.flges_nr = flg.flges_nr AND flg.stat = 'completed'\nLEFT JOIN flghf flgh ON flg.abfl_fh = flgh.fh_nr\nGROUP BY flgesbez\nORDER BY completed_flights DESC, flgesbez;\n```",
+    "seconds": 4.08
+  },
+  "Q11": {
+    "raw": "```sql\nSELECT k.kunnr AS customer_id, k.name1 AS name, ROUND(SUM(s.dekl_wert_usd), 2) AS total_declared_value_usd\nFROM knd_stamm k\nJOIN sndg s ON k.kunnr = s.kunnr\nWHERE s.stat != 'cancelled'\nGROUP BY k.kunnr, k.name1\nORDER BY total_declared_value_usd DESC, k.kunnr ASC\nLIMIT 5;\n```",
+    "seconds": 4.4
+  },
+  "Q12": {
+    "raw": "```sql\nSELECT iata_cd, COUNT(*) AS completed_arrivals\nFROM flug\nWHERE stat = 'completed'\nGROUP BY iata_cd\nHAVING COUNT(*) > 150\nORDER BY completed_arrivals DESC, iata_cd ASC;\n```",
+    "seconds": 3.45
+  },
+  "Q13": {
+    "raw": "```sql\nSELECT f.ort, AVG(julianday(f.ank_ist) - julianday(f.abfl_plan)) * 1440 AS avg_departure_delay_min\nFROM flug f\nWHERE f.stat = 'completed'\nGROUP BY f.ort\nHAVING COUNT(f.flug_id) >= 40\nORDER BY avg_departure_delay_min DESC, f.ort;\n```",
+    "seconds": 4.05
+  },
+  "Q14": {
+    "raw": "SELECT kunnr, name1 FROM knd_stamm WHERE kunnr NOT IN (SELECT kunnr FROM sndg WHERE stat != 'cancelled') ORDER BY kunnr",
+    "seconds": 3.07
+  },
+  "Q15": {
+    "raw": "```sql\nSELECT kunnr AS customer_id, SUM(fracht_usd) AS total_invoiced_usd, SUM(COALESCE(betr_usd, 0)) AS total_paid_usd, ROUND(SUM(fracht_usd) - SUM(COALESCE(betr_usd, 0)), 2) AS outstanding_usd\nFROM rech_kopf\nLEFT JOIN zahlg ON rech_kopf.rech_id = zahlg.rech_id\nGROUP BY kunnr\nHAVING outstanding_usd > 0\nORDER BY outstanding_usd DESC\nLIMIT 10;\n```",
+    "seconds": 5.05
+  },
+  "Q16": {
+    "raw": "```sql\nSELECT s.serv_lvl AS service_level, COUNT(*) AS connecting_shipments\nFROM sndg s\nJOIN flug_ladg fl ON s.sndg_nr = fl.sndg_nr\nWHERE fl.abschn_stat = 'flown'\nGROUP BY s.serv_lvl\nORDER BY s.serv_lvl;\n```",
+    "seconds": 3.64
+  },
+  "Q17": {
+    "raw": "```sql\nSELECT lft.mdl, ROUND(SUM(snd.fracht_gew_kg) * 100 / lft.max_nutzl_kg, 1) AS avg_load_factor_pct\nFROM lfz_typ lft\nJOIN lfz l ON lft.typ_nr = l.typ_nr\nJOIN flug_ladg flg_l ON l.lfz_nr = flg_l.lfz_nr\nJOIN sndg snd ON flg_l.sndg_nr = snd.sndg_nr\nWHERE flg_l.abschn_stat = 'flown' AND snd.fracht_gew_kg > 0\nGROUP BY lft.mdl\nORDER BY avg_load_factor_pct DESC;\n```",
+    "seconds": 5.33
+  },
+  "Q18": {
+    "raw": "```sql\nSELECT \n  strftime('%Y-%m', T1.abfl_plan) AS month, \n  ROUND(SUM(T2.fracht_gew_kg), 1) AS total_kg_flown\nFROM \n  flug AS T1\nJOIN \n  sndg AS T2 ON T1.flugnr = T2.flugnr\nWHERE \n  T1.stat = 'completed' AND T2.stat = 'delivered'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+    "seconds": 4.53
+  },
+  "Q19": {
+    "raw": "```sql\nSELECT f1.iata_cd AS origin_iata, f2.iata_cd AS destination_iata, COUNT(f2.flug_id) AS completed_flights\nFROM flghf f1\nJOIN flug f ON f.abfl_fh = f1(fh_nr)\nJOIN flghf f2 ON f.ziel_fh = f2(fh_nr)\nWHERE f.stat = 'completed'\nGROUP BY f1.iata_cd, f2.iata_cd\nORDER BY f1.iata_cd, f2.iata_cd;\n```",
+    "seconds": 4.56
+  },
+  "Q20": {
+    "raw": "```sql\nSELECT sndg_nr AS shipment_id, ROUND((strftime('%s', ank_ist) - strftime('%s', ank_plan)) / 3600, 1) AS hours_late\nFROM flug_ladg\nJOIN flug ON flug_ladg.flug_id = flug.flug_id\nJOIN sndg ON flug_ladg.sndg_nr = sndg.sndg_nr\nWHERE sndg.stat = 'delivered'\nORDER BY ank_ist DESC, sndg_nr ASC\nLIMIT 10;\n```",
+    "seconds": 4.72
+  },
+  "Q21": {
+    "raw": "SELECT kunnr, name1 FROM knd_stamm WHERE kunnr IN (SELECT kunnr FROM sndg WHERE stat = 'delivered') AND kunnr NOT IN (SELECT kunnr FROM vorf WHERE stat = 'approved' OR stat = 'rejected' OR stat = 'paid') ORDER BY kunnr",
+    "seconds": 3.77
+  },
+  "Q22": {
+    "raw": "SELECT kunnr AS customer_id, MAX(buch_dat) AS latest_booking_date, MAX(sndg_nr) AS shipment_id FROM sndg GROUP BY kunnr ORDER BY customer_id",
+    "seconds": 3.1
+  },
+  "Q23": {
+    "raw": "```sql\nSELECT r.belnr AS invoice_id, k.name1 AS customer_name, julianday('2025-12-20') - julianday(r.ausst_dat) AS days_overdue, ROUND(SUM(r.fracht_usd) - SUM(z.betr_usd), 2) AS outstanding_usd\nFROM rech_kopf r\nJOIN knd_stamm k ON r.kunnr = k.kunnr\nLEFT JOIN zahlg z ON r.rech_id = z.rech_id\nWHERE r.ausst_dat < '2025-12-20' AND (z.betr_usd IS NULL OR z.betr_usd < r.fracht_usd)\nGROUP BY r.belnr, k.name1\nORDER BY days_overdue DESC, r.belnr ASC\nLIMIT 10;\n```",
+    "seconds": 6.23
+  },
+  "Q24": {
+    "raw": "```sql\nSELECT s.waren_kat AS commodity_category, COUNT(DISTINCT f.fh_nr) AS flown_legs, COUNT(v.vorf_id) AS incidents, ROUND(COUNT(v.vorf_id) / COUNT(DISTINCT f.fh_nr), 4) AS incident_rate\nFROM sndg s\nLEFT JOIN flug_ladg fl ON s.sndg_nr = fl.sndg_nr\nLEFT JOIN flug f ON fl.flug_id = f.flug_id\nLEFT JOIN vorf v ON fl.ladg_id = v.ladg_id\nWHERE fl.leg_status = 'flown'\nGROUP BY s.waren_kat\nORDER BY incident_rate DESC, commodity_category;\n```",
+    "seconds": 5.38
+  },
+  "Q25": {
+    "raw": "```sql\nSELECT \n    a1.iata_cd AS airport_a, \n    a2.iata_cd AS airport_b, \n    COUNT(CASE WHEN f1.abfl_fh = a1.fh_nr AND f1.ank_ist IS NOT NULL THEN 1 END) AS flights_a_to_b, \n    COUNT(CASE WHEN f2.abfl_fh = a2.fh_nr AND f2.ank_ist IS NOT NULL THEN 1 END) AS flights_b_to_a\nFROM \n    flghf a1\nJOIN \n    flghf a2 ON a1.iata_cd < a2.iata_cd\nLEFT JOIN \n    flug f1 ON a1.fh_nr = f1.abfl_fh AND a2.fh_nr = f1.ank_fh\nLEFT JOIN \n    flug f2 ON a2.fh_nr = f2.abfl_fh AND a1.fh_nr = f2.ank_fh\nWHERE \n    f1.stat = 'completed' AND f2.stat = 'completed'\nGROUP BY \n    airport_a, airport_b\nORDER BY \n    airport_a, airport_b;\n```",
+    "seconds": 7.15
+  },
+  "Q26": {
+    "raw": "SELECT COUNT(*) AS bonded_warehouses FROM lgr WHERE zolllager_kz = 1",
+    "seconds": 2.76
+  },
+  "Q27": {
+    "raw": "```sql\nSELECT pers_nr AS employee_number, vorname AS first_name, nachname AS last_name FROM bes_mitgl WHERE lizenz_ablauf < '2025-12-20' AND dienstgrad != 'loadmaster' ORDER BY pers_nr;\n```",
+    "seconds": 3.61
+  },
+  "Q28": {
+    "raw": "```sql\nSELECT dg_class, COUNT(*) AS shipment_count FROM sndg WHERE gefgut_kz = 1 GROUP BY dg_class ORDER BY dg_class;\n```",
+    "seconds": 3.04
+  },
+  "Q29": {
+    "raw": "SELECT kto_cd, name1 FROM knd_stamm WHERE treue_stufe = 'platinum' ORDER BY kto_cd",
+    "seconds": 2.77
+  },
+  "Q30": {
+    "raw": "```sql\nSELECT ROUND(SUM(betank_kg * 0.001), 1) AS total_co2_tonnes FROM betankg WHERE flug_id IN (SELECT flug_id FROM flug WHERE stat = 'completed');\n```",
+    "seconds": 3.44
+  },
+  "Q31": {
+    "raw": "```sql\nSELECT storno_grund AS cancellation_reason, COUNT(*) AS cancelled_flights \nFROM flug \nWHERE stat = 'cancelled' \nGROUP BY storno_grund \nORDER BY cancelled_flights DESC, cancellation_reason ASC;\n```",
+    "seconds": 3.32
+  },
+  "Q32": {
+    "raw": "```sql\nSELECT flghf.iata_cd, ROUND(AVG(betankg.preis_usd_l), 4) AS avg_price_usd_per_litre\nFROM flug\nJOIN betankg ON flug.flug_id = betankg.flug_id\nJOIN flghf ON flug.abfl_fh = flghf(fh_nr)\nGROUP BY flghf.iata_cd\nORDER BY avg_price_usd_per_litre DESC, flghf.iata_cd ASC;\n```",
+    "seconds": 4.47
+  },
+  "Q33": {
+    "raw": "```sql\nSELECT zoll_land AS customs_country, ROUND(SUM(zoll_betr_usd), 2) AS total_duty_usd, ROUND(SUM(zoll_betr_usd * zollsatz_pct / 100), 2) AS total_vat_usd, ROUND(SUM(zoll_betr_usd) + SUM(zoll_betr_usd * zollsatz_pct / 100), 2) AS total_taxes_usd\nFROM zoll_anm\nWHERE anm_art = 'import' AND stat = 'cleared'\nGROUP BY zoll_land\nORDER BY total_taxes_usd DESC, customs_country ASC;\n```",
+    "seconds": 5.25
+  },
+  "Q34": {
+    "raw": "```sql\nSELECT flgesbez, dienstgrad, COUNT(*) AS active_crew\nFROM flges\nJOIN bes_mitgl ON flges.flges_nr = bes_mitgl.flges_nr\nJOIN flghf ON bes_mitgl.basis_fh = flghf(fh_nr)\nWHERE aktiv_kz = 1\nGROUP BY flgesbez, dienstgrad\nORDER BY flgesbez, dienstgrad;\n```",
+    "seconds": 4.22
+  },
+  "Q35": {
+    "raw": "```sql\nSELECT l.kennz, ROUND(SUM(w.teile_kost_usd + w.lohn_kost_usd), 2) AS total_maintenance_cost_usd\nFROM lfz l\nJOIN wartg w ON l.lfz_nr = w.lfz_nr\nWHERE w.stat = 'completed'\nGROUP BY l.kennz\nORDER BY total_maintenance_cost_usd DESC, l.kennz ASC\nLIMIT 5;\n```",
+    "seconds": 4.27
+  },
+  "Q36": {
+    "raw": "```sql\nSELECT v.versicherer AS insurer_name, COUNT(v.schad_id) AS claims, ROUND(SUM(CASE WHEN v.stat IN ('approved', 'paid') THEN v.ford_usd ELSE 0 END), 2) AS total_approved_usd\nFROM vers_schad v\nGROUP BY v.versicherer\nORDER BY insurer_name;\n```",
+    "seconds": 3.91
+  },
+  "Q37": {
+    "raw": "```sql\nSELECT lgr.lgr_cd AS warehouse_code, flghf.iata_cd, COUNT(sdg_verfolg.ereig_id) AS rcs_scans\nFROM sdg_verfolg\nJOIN flug ON sdg_verfolg.flug_id = flug.flug_id\nJOIN flghf ON flug.urspr_fh = flghf(fh_nr)\nJOIN lgr ON sdg_verfolg.lgr_nr = lgr.lgr_nr\nWHERE sdg_verfolg.ereig_cd = 'RCS'\nGROUP BY lgr.lgr_cd, flghf.iata_cd\nHAVING rcs_scans > 150\nORDER BY rcs_scans DESC, lgr.lgr_cd ASC;\n```",
+    "seconds": 5.37
+  },
+  "Q38": {
+    "raw": "```sql\nSELECT lftyp.mdl, SUM(betank.verbr_kg) * 100 / SUM(flg.entf_km) AS fuel_kg_per_100km\nFROM lfz_typ lftyp\nJOIN lfz lfz ON lftyp.typ_nr = lfz.typ_nr\nJOIN flug flg ON lfz.lfz_nr = flg.lfz_nr\nJOIN betankg betank ON flg.flug_id = betank.flug_id\nWHERE flg.stat = 'completed'\nGROUP BY lftyp.mdl\nORDER BY fuel_kg_per_100km DESC, lftyp.mdl ASC;\n```",
+    "seconds": 5.26
+  },
+  "Q39": {
+    "raw": "```sql\nSELECT f.allianz, b.pers_nr, ROUND(SUM(b.block_min) / 60, 1) AS block_hours\nFROM flges f\nJOIN bes_mitgl b ON f.flges_nr = b.flges_nr\nJOIN bes_eins e ON b.pers_nr = e.pers_nr\nWHERE b.dienstgrad = 'captain' AND e.eins_stat = 'completed'\nGROUP BY f.allianz, b.pers_nr\nORDER BY f.allianz, b.pers_nr;\n```",
+    "seconds": 4.74
+  },
+  "Q40": {
+    "raw": "```sql\nSELECT lft.mdl, ROUND(SUM(bet.verbr_kg) * 1000 / SUM(snd.fracht_gew_kg / 1000 * flg.entf_km), 1) AS grams_per_tonne_km\nFROM lfz_typ lft\nJOIN lfz lfz ON lft.typ_nr = lfz.typ_nr\nJOIN flug flg ON lfz.lfz_nr = flg.lfz_nr\nJOIN betankg bet ON flg.flug_id = bet.flug_id\nJOIN sndg snd ON bet.sndg_nr = snd.sndg_nr\nWHERE flg.stat = 'completed' AND snd.fracht_gew_kg > 0\nGROUP BY lft.mdl\nORDER BY grams_per_tonne_km ASC, lft.mdl ASC;\n```",
+    "seconds": 5.95
+  },
+  "Q41": {
+    "raw": "```sql\nSELECT s.serv_lvl AS service_level, COUNT(CASE WHEN sd.ereig_cd = 'DLV' THEN 1 ELSE NULL END) AS delivered_shipments, COUNT(CASE WHEN sd.ereig_cd = 'DLV' AND sd.ereig_zeit > s.wunsch_lief_dat THEN 1 ELSE NULL END) AS late_shipments, ROUND(COUNT(CASE WHEN sd.ereig_cd = 'DLV' AND sd.ereig_zeit > s.wunsch_lief_dat THEN 1 ELSE NULL END) * 100.0 / COUNT(CASE WHEN sd.ereig_cd = 'DLV' THEN 1 ELSE NULL END), 1) AS late_pct FROM sndg s JOIN sdg_verfolg sd ON s.sndg_nr = sd.sndg_nr WHERE sd.ereig_cd = 'DLV' GROUP BY s.serv_lvl ORDER BY s.serv_lvl;\n```",
+    "seconds": 6.36
+  },
+  "Q42": {
+    "raw": "```sql\nSELECT zoll_land AS customs_country, COUNT(sndg_nr) AS cleared_imports, AVG((strftime('%s', freigabe) - strftime('%s', eingereicht)) / 3600) AS avg_clearance_hours\nFROM zoll_anm\nWHERE anm_art = 'import' AND stat = 'cleared'\nGROUP BY zoll_land\nHAVING cleared_imports >= 50\nORDER BY avg_clearance_hours ASC, customs_country ASC;\n```",
+    "seconds": 4.48
+  },
+  "Q43": {
+    "raw": "```sql\nSELECT \n    sndg_nr AS shipment_id, \n    lbf_nr AS awb_number, \n    SUM(CASE WHEN temperature_c IS NOT NULL AND (temperature_c < temp_min_c OR temperature_c > temp_max_c) THEN 1 ELSE 0 END) AS out_of_range_readings, \n    MAX(CASE WHEN temperature_c IS NOT NULL AND (temperature_c < temp_min_c OR temperature_c > temp_max_c) THEN \n        LEAST(ABS(temperature_c - temp_min_c), ABS(temperature_c - temp_max_c)) ELSE 0 END) AS max_deviation_c\nFROM \n    sdg_verfolg\nJOIN \n    sndg ON sdg.sndg_nr = sndg.sndg_nr\nGROUP BY \n    sndg_nr, lbf_nr\nORDER BY \n    sndg_nr;\n```",
+    "seconds": 5.98
+  },
+  "Q44": {
+    "raw": "```sql\nSELECT v.ursache AS root_cause, COUNT(v.vorf_id) AS incidents, SUM(CASE WHEN vs.stat IN ('approved', 'paid') THEN vs.ford_usd ELSE 0 END) AS total_approved_usd\nFROM vorf v\nLEFT JOIN vers_schad vs ON v.vorf_id = vs.vorf_id\nGROUP BY v.ursache\nORDER BY v.ursache;\n```",
+    "seconds": 4.2
+  },
+  "Q45": {
+    "raw": "```sql\nSELECT s.awb_number, s.destination_iata, z.import_status\nFROM sndg s\nLEFT JOIN (\n    SELECT sndg_nr, declaration_type, MAX(ereig_zeit) AS last_event_time\n    FROM sdg_verfolg\n    WHERE ereig_cd = 'DLV'\n    GROUP BY sndg_nr\n) d ON s.sndg_nr = d.sndg_nr\nLEFT JOIN (\n    SELECT sndg_nr, declaration_type, CASE WHEN ereig_cd = 'DLV' THEN 'Handed over' ELSE NULL END AS import_status\n    FROM sdg_verfolg\n    WHERE ereig_cd = 'DLV'\n) z ON s.sndg_nr = z.sndg_nr\nWHERE s.stat = 'delivered' AND (d.last_event_time IS NULL OR d.last_event_time < '2025-12-20')\nORDER BY s.awb_number;\n```",
+    "seconds": 6.4
+  }
+}
