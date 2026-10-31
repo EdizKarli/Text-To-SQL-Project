@@ -1,0 +1,182 @@
+{
+  "Q01": {
+    "raw": "SELECT COUNT(*) AS hub_count FROM airports WHERE is_cargo_hub = 1",
+    "seconds": 3.99
+  },
+  "Q02": {
+    "raw": "SELECT tail_number, year_manufactured FROM aircraft WHERE status = 'active' AND year_manufactured >= 2015 ORDER BY year_manufactured DESC, tail_number ASC",
+    "seconds": 3.16
+  },
+  "Q03": {
+    "raw": "SELECT COUNT(*) AS cancelled_flights FROM flights WHERE status = 'cancelled';",
+    "seconds": 2.57
+  },
+  "Q04": {
+    "raw": "SELECT model, max_payload_kg FROM aircraft_types ORDER BY max_payload_kg DESC",
+    "seconds": 2.7
+  },
+  "Q05": {
+    "raw": "SELECT SUM(declared_value_usd) AS total_declared_value_usd FROM shipments WHERE commodity_category = 'pharmaceuticals' AND status = 'delivered'",
+    "seconds": 3.05
+  },
+  "Q06": {
+    "raw": "SELECT name, country FROM customers WHERE payment_terms_days = 45 ORDER BY name, country",
+    "seconds": 2.72
+  },
+  "Q07": {
+    "raw": "SELECT status, COUNT(*) AS shipment_count FROM shipments GROUP BY status ORDER BY status ASC",
+    "seconds": 2.62
+  },
+  "Q08": {
+    "raw": "SELECT tail_number FROM aircraft WHERE aircraft_id NOT IN (SELECT aircraft_id FROM flights) ORDER BY tail_number",
+    "seconds": 2.75
+  },
+  "Q09": {
+    "raw": "SELECT COUNT(*) AS completed_fra_departures FROM flights WHERE origin_airport_id = (SELECT airport_id FROM airports WHERE iata_code = 'FRA') AND status = 'completed';",
+    "seconds": 3.08
+  },
+  "Q10": {
+    "raw": "```sql\nSELECT a.name AS airline_name, COUNT(f.flight_id) AS completed_flights\nFROM airlines a\nLEFT JOIN flights f ON a.airline_id = f.airline_id AND f.status = 'completed'\nGROUP BY a.name\nORDER BY completed_flights DESC, a.name;\n```",
+    "seconds": 3.59
+  },
+  "Q11": {
+    "raw": "```sql\nSELECT c.customer_id, c.name, ROUND(SUM(s.declared_value_usd), 2) AS total_declared_value_usd\nFROM customers c\nJOIN shipments s ON c.customer_id = s.customer_id\nWHERE s.status != 'cancelled'\nGROUP BY c.customer_id, c.name\nORDER BY total_declared_value_usd DESC, c.customer_id ASC\nLIMIT 5;\n```",
+    "seconds": 3.98
+  },
+  "Q12": {
+    "raw": "```sql\nSELECT T2.iata_code, COUNT(T1.completed_arrival) AS completed_arrivals\nFROM flights AS T1\nJOIN airports AS T2 ON T1.destination_airport_id = T2.airport_id\nWHERE T1.status = 'completed'\nGROUP BY T2.iata_code\nHAVING COUNT(T1.completed_arrival) > 150\nORDER BY completed_arrivals DESC, T2.iata_code ASC;\n```",
+    "seconds": 4.17
+  },
+  "Q13": {
+    "raw": "SELECT a.iata_code, ROUND(AVG(julianday(f.actual_departure) - julianday(f.scheduled_departure)) * 24 * 60, 1) AS avg_departure_delay_min FROM airports a JOIN flights f ON a.airport_id = f.origin_airport_id WHERE f.status = 'completed' GROUP BY a.iata_code HAVING COUNT(f.flight_id) >= 40 ORDER BY avg_departure_delay_min DESC, a.iata_code",
+    "seconds": 4.42
+  },
+  "Q14": {
+    "raw": "SELECT customer_id, name FROM customers WHERE customer_id NOT IN (SELECT customer_id FROM shipments WHERE status != 'cancelled') ORDER BY customer_id",
+    "seconds": 2.91
+  },
+  "Q15": {
+    "raw": "```sql\nSELECT \n    i.customer_id, \n    SUM(i.amount_usd) AS total_invoiced_usd, \n    SUM(COALESCE(p.amount_usd, 0)) AS total_paid_usd, \n    ROUND(SUM(i.amount_usd) - SUM(COALESCE(p.amount_usd, 0)), 2) AS outstanding_usd\nFROM \n    invoices i\nLEFT JOIN \n    payments p ON i.invoice_id = p.invoice_id\nWHERE \n    i.status = 'unpaid'\nGROUP BY \n    i.customer_id\nORDER BY \n    outstanding_usd DESC, \n    i.customer_id\nLIMIT 10;\n```",
+    "seconds": 5.19
+  },
+  "Q16": {
+    "raw": "```sql\nSELECT service_level, COUNT(*) AS connecting_shipments\nFROM shipments\nJOIN flight_cargo ON shipments.shipment_id = flight_cargo.shipment_id\nWHERE leg_number > 1\nGROUP BY service_level\nORDER BY service_level;\n```",
+    "seconds": 3.38
+  },
+  "Q17": {
+    "raw": "SELECT T1.model, ROUND(SUM(T2.total_weight_kg) / T1.max_payload_kg * 100, 1) AS avg_load_factor_pct FROM aircraft_types AS T1 INNER JOIN aircraft AS T2 ON T1.type_id = T2.type_id INNER JOIN flights AS T3 ON T2.aircraft_id = T3.aircraft_id INNER JOIN flight_cargo AS T4 ON T3.flight_id = T4.flight_id INNER JOIN shipments AS T5 ON T4.shipment_id = T5.shipment_id WHERE T3.status = 'completed' GROUP BY T1.model ORDER BY avg_load_factor_pct DESC",
+    "seconds": 5.09
+  },
+  "Q18": {
+    "raw": "```sql\nSELECT \n  strftime('%Y-%m', T1.actual_departure) AS month, \n  SUM(T2.chargeable_weight_kg) AS total_kg_flown \nFROM \n  flights AS T1 \nJOIN \n  shipments AS T2 ON T1.shipment_id = T2.shipment_id \nWHERE \n  T1.status = 'completed' \n  AND T2.chargeable_weight_kg > 0 \n  AND T1.actual_departure LIKE '2025-%' \nGROUP BY \n  month \nORDER BY \n  month;\n```",
+    "seconds": 4.82
+  },
+  "Q19": {
+    "raw": "```sql\nSELECT origin_airport_id AS origin_iata, destination_airport_id AS destination_iata, COUNT(*) AS completed_flights\nFROM flights\nWHERE status = 'completed'\nGROUP BY origin_airport_id, destination_airport_id\nORDER BY origin_airport_id, destination_airport_id;\n```",
+    "seconds": 3.57
+  },
+  "Q20": {
+    "raw": "```sql\nSELECT shipment_id, ROUND((strftime('%s', T1.actual_arrival) - strftime('%s', T1.scheduled_arrival)) / 3600, 1) AS hours_late\nFROM flights AS T1\nJOIN flight_cargo AS T2 ON T1.flight_id = T2.flight_id\nWHERE T2.leg_number = (SELECT MAX(leg_number) FROM flight_cargo WHERE shipment_id = T2.shipment_id)\nAND T1.status = 'completed'\nAND T2.leg_status = 'flown'\nORDER BY hours_late DESC, shipment_id ASC\nLIMIT 10;\n```",
+    "seconds": 5.11
+  },
+  "Q21": {
+    "raw": "SELECT c.customer_id, c.name FROM customers c WHERE c.customer_id IN (SELECT s.customer_id FROM shipments s WHERE s.status = 'delivered') AND c.customer_id NOT IN (SELECT i.customer_id FROM incidents i JOIN flight_cargo fc ON i.flight_cargo_id = fc.flight_cargo_id JOIN shipments s ON fc.shipment_id = s.shipment_id WHERE s.status = 'delivered') ORDER BY c.customer_id",
+    "seconds": 4.17
+  },
+  "Q22": {
+    "raw": "SELECT customer_id, MAX(booking_date) AS latest_booking_date, MAX(shipment_id) AS shipment_id FROM shipments GROUP BY customer_id ORDER BY customer_id",
+    "seconds": 2.98
+  },
+  "Q23": {
+    "raw": "```sql\nSELECT i.invoice_id, c.name AS customer_name, julianday('2025-12-20') - julianday(i.due_date) AS days_overdue, ROUND(i.amount_usd - SUM(p.amount_usd), 2) AS outstanding_usd\nFROM invoices i\nJOIN customers c ON i.customer_id = c.customer_id\nLEFT JOIN payments p ON i.invoice_id = p.invoice_id\nWHERE i.due_date < '2025-12-20' AND (p.amount_usd IS NULL OR p.amount_usd < i.amount_usd)\nGROUP BY i.invoice_id, c.name\nORDER BY days_overdue DESC, i.invoice_id ASC\nLIMIT 10;\n```",
+    "seconds": 5.59
+  },
+  "Q24": {
+    "raw": "```sql\nSELECT c.commodity_category, COUNT(fcl.flight_cargo_id) AS flown_legs, SUM(CASE WHEN i.incident_id IS NOT NULL THEN 1 ELSE 0 END) AS incidents, ROUND(SUM(CASE WHEN i.incident_id IS NOT NULL THEN 1 ELSE 0 END) * 1.0 / COUNT(fcl.flight_cargo_id), 4) AS incident_rate\nFROM shipments s\nLEFT JOIN flight_cargo fcl ON s.shipment_id = fcl.shipment_id AND fcl.leg_status = 'flown'\nLEFT JOIN incidents i ON fcl.flight_cargo_id = i.flight_cargo_id\nGROUP BY c.commodity_category\nORDER BY incident_rate DESC, commodity_category;\n```",
+    "seconds": 5.53
+  },
+  "Q25": {
+    "raw": "```sql\nSELECT \n    a1.iata_code AS airport_a, \n    a2.iata_code AS airport_b, \n    COUNT(CASE WHEN f1.origin_airport_id = a1.airport_id AND f1.destination_airport_id = a2.airport_id THEN 1 END) AS flights_a_to_b, \n    COUNT(CASE WHEN f2.origin_airport_id = a2.airport_id AND f2.destination_airport_id = a1.airport_id THEN 1 END) AS flights_b_to_a\nFROM \n    airports a1\nJOIN \n    airports a2 ON a1.iata_code < a2.iata_code\nLEFT JOIN \n    flights f1 ON a1.airport_id = f1.origin_airport_id AND a2.airport_id = f1.destination_airport_id AND f1.status = 'completed'\nLEFT JOIN \n    flights f2 ON a2.airport_id = f2.origin_airport_id AND a1.airport_id = f2.destination_airport_id AND f2.status = 'completed'\nGROUP BY \n    a1.iata_code, a2.iata_code\nHAVING \n    flights_a_to_b > 0 AND flights_b_to_a > 0\nORDER BY \n    a1.iata_code, a2.iata_code;\n```",
+    "seconds": 7.88
+  },
+  "Q26": {
+    "raw": "SELECT COUNT(*) AS bonded_warehouses FROM warehouses WHERE is_bonded = 1",
+    "seconds": 2.61
+  },
+  "Q27": {
+    "raw": "```sql\nSELECT employee_number, first_name, last_name FROM crew_members WHERE crew_rank = 'captain' AND license_expiry_date < '2025-12-20' ORDER BY employee_number;\n```",
+    "seconds": 3.27
+  },
+  "Q28": {
+    "raw": "SELECT dg_class, COUNT(*) AS shipment_count FROM shipments WHERE dg_class IS NOT NULL GROUP BY dg_class ORDER BY dg_class",
+    "seconds": 2.8
+  },
+  "Q29": {
+    "raw": "SELECT account_code, name FROM customers WHERE loyalty_tier = 'platinum' ORDER BY account_code",
+    "seconds": 2.74
+  },
+  "Q30": {
+    "raw": "```sql\nSELECT ROUND(SUM(co2_emissions_kg) / 1000, 1) AS total_co2_tonnes FROM fuel_uplifts WHERE flight_id IN (SELECT flight_id FROM flights WHERE status = 'completed');\n```",
+    "seconds": 3.42
+  },
+  "Q31": {
+    "raw": "```sql\nSELECT cancellation_reason, COUNT(*) AS cancelled_flights \nFROM flights \nWHERE status = 'cancelled' \nGROUP BY cancellation_reason \nORDER BY cancelled_flights DESC, cancellation_reason ASC;\n```",
+    "seconds": 3.15
+  },
+  "Q32": {
+    "raw": "SELECT T1.iata_code, ROUND(AVG(T2.price_usd_per_litre), 4) AS avg_price_usd_per_litre FROM airports AS T1 INNER JOIN fuel_uplifts AS T2 ON T1.airport_id = T2.airport_id GROUP BY T1.iata_code ORDER BY avg_price_usd_per_litre DESC, T1.iata_code ASC",
+    "seconds": 3.98
+  },
+  "Q33": {
+    "raw": "```sql\nSELECT customs_country, ROUND(SUM(duty_amount_usd), 2) AS total_duty_usd, ROUND(SUM(vat_amount_usd), 2) AS total_vat_usd, ROUND(SUM(duty_amount_usd + vat_amount_usd), 2) AS total_taxes_usd\nFROM customs_declarations\nWHERE declaration_type = 'import' AND status = 'cleared'\nGROUP BY customs_country\nORDER BY total_taxes_usd DESC, customs_country ASC;\n```",
+    "seconds": 4.52
+  },
+  "Q34": {
+    "raw": "```sql\nSELECT a.name AS airline_name, c.crew_rank, COUNT(c.crew_member_id) AS active_crew\nFROM airlines a\nJOIN crew_members c ON a.airline_id = c.airline_id\nWHERE c.is_active = 1\nGROUP BY a.name, c.crew_rank\nORDER BY a.name, c.crew_rank;\n```",
+    "seconds": 3.83
+  },
+  "Q35": {
+    "raw": "```sql\nSELECT a.tail_number, ROUND(SUM(m.parts_cost_usd + m.labor_cost_usd), 2) AS total_maintenance_cost_usd\nFROM aircraft a\nJOIN maintenance_records m ON a.aircraft_id = m.aircraft_id\nWHERE m.status = 'completed'\nGROUP BY a.tail_number\nORDER BY total_maintenance_cost_usd DESC, a.tail_number ASC\nLIMIT 5;\n```",
+    "seconds": 4.13
+  },
+  "Q36": {
+    "raw": "```sql\nSELECT insurer_name, COUNT(*) AS claims, ROUND(SUM(CASE WHEN status IN ('approved', 'paid') THEN approved_amount_usd ELSE 0 END), 2) AS total_approved_usd FROM insurance_claims GROUP BY insurer_name ORDER BY insurer_name;\n```",
+    "seconds": 3.53
+  },
+  "Q37": {
+    "raw": "```sql\nSELECT w.warehouse_code, a.iata_code, COUNT(t.event_id) AS rcs_scans\nFROM warehouses w\nJOIN airports a ON w.airport_id = a.airport_id\nJOIN tracking_events t ON w.warehouse_id = t.warehouse_id\nWHERE t.event_code = 'RCS'\nGROUP BY w.warehouse_code, a.iata_code\nHAVING rcs_scans > 150\nORDER BY rcs_scans DESC, w.warehouse_code ASC;\n```",
+    "seconds": 4.51
+  },
+  "Q38": {
+    "raw": "```sql\nSELECT a.model, ROUND(SUM(f.fuel_burned_kg) * 100 / SUM(f.distance_km), 1) AS fuel_kg_per_100km\nFROM aircraft a\nJOIN aircraft_types at ON a.type_id = at.type_id\nJOIN flights f ON a.aircraft_id = f.aircraft_id\nWHERE f.status = 'completed'\nGROUP BY a.model\nORDER BY fuel_kg_per_100km DESC, a.model ASC;\n```",
+    "seconds": 4.52
+  },
+  "Q39": {
+    "raw": "```sql\nSELECT a.name AS airline_name, c.employee_number, ROUND(SUM(ca.block_minutes_credited) / 60, 1) AS block_hours\nFROM airlines a\nJOIN crew_members c ON a.airline_id = c.airline_id\nJOIN crew_assignments ca ON c.crew_member_id = ca.crew_member_id\nWHERE ca.duty_role = 'captain' AND ca.assignment_status = 'completed'\nGROUP BY a.name, c.employee_number\nORDER BY a.name, c.employee_number ASC;\n```",
+    "seconds": 4.6
+  },
+  "Q40": {
+    "raw": "```sql\nSELECT a.model, ROUND(SUM(f.fuel_burned_kg) * 1000 / SUM(s.total_weight_kg / 1000 * f.distance_km), 1) AS grams_per_tonne_km\nFROM aircraft a\nJOIN aircraft_types at ON a.type_id = at.type_id\nJOIN flights f ON a.aircraft_id = f.aircraft_id\nJOIN flight_cargo fc ON f.flight_id = fc.flight_id\nJOIN shipments s ON fc.shipment_id = s.shipment_id\nWHERE f.status = 'completed' AND s.total_weight_kg > 0\nGROUP BY a.model\nORDER BY grams_per_tonne_km ASC, a.model ASC;\n```",
+    "seconds": 5.42
+  },
+  "Q41": {
+    "raw": "```sql\nSELECT \n    s.service_level, \n    COUNT(CASE WHEN te.event_code = 'DLV' THEN 1 END) AS delivered_shipments, \n    COUNT(CASE WHEN te.event_code = 'DLV' AND te.event_time > s.requested_delivery_date THEN 1 END) AS late_shipments, \n    ROUND(COUNT(CASE WHEN te.event_code = 'DLV' AND te.event_time > s.requested_delivery_date THEN 1 END) * 100.0 / COUNT(CASE WHEN te.event_code = 'DLV' THEN 1 END), 1) AS late_pct\nFROM \n    shipments s\nJOIN \n    tracking_events te ON s.shipment_id = te.shipment_id\nGROUP BY \n    s.service_level\nORDER BY \n    s.service_level;\n```",
+    "seconds": 5.86
+  },
+  "Q42": {
+    "raw": "```sql\nSELECT customs_country, COUNT(*) AS cleared_imports, AVG((strftime('%s', cleared_at) - strftime('%s', submitted_at)) / 3600) AS avg_clearance_hours\nFROM customs_declarations\nWHERE declaration_type = 'import' AND status = 'cleared'\nGROUP BY customs_country\nHAVING cleared_imports >= 50\nORDER BY avg_clearance_hours ASC, customs_country ASC;\n```",
+    "seconds": 4.21
+  },
+  "Q43": {
+    "raw": "```sql\nSELECT \n    t1.shipment_id, \n    t1.awb_number, \n    SUM(CASE WHEN t2.temperature_c IS NOT NULL AND (t2.temperature_c < t1.min_temperature_c OR t2.temperature_c > t1.max_temperature_c) THEN 1 ELSE 0 END) AS out_of_range_readings, \n    MAX(CASE WHEN t2.temperature_c IS NOT NULL AND (t2.temperature_c < t1.min_temperature_c OR t2.temperature_c > t1.max_temperature_c) THEN \n        CASE WHEN t2.temperature_c < t1.min_temperature_c THEN t1.min_temperature_c - t2.temperature_c ELSE t2.temperature_c - t1.max_temperature_c END \n    ELSE 0 END) AS max_deviation_c\nFROM \n    shipments t1\nLEFT JOIN \n    tracking_events t2 ON t1.shipment_id = t2.shipment_id\nGROUP BY \n    t1.shipment_id, t1.awb_number\nORDER BY \n    t1.shipment_id;\n```",
+    "seconds": 6.69
+  },
+  "Q44": {
+    "raw": "```sql\nSELECT \n    i.root_cause, \n    COUNT(*) AS incidents, \n    SUM(CASE WHEN ic.status IN ('approved', 'paid') THEN 1 ELSE 0 END) AS claims, \n    ROUND(SUM(CASE WHEN ic.status IN ('approved', 'paid') THEN ic.approved_amount_usd ELSE 0 END), 2) AS total_approved_usd\nFROM \n    incidents i\nLEFT JOIN \n    insurance_claims ic ON i.incident_id = ic.incident_id\nGROUP BY \n    i.root_cause\nORDER BY \n    i.root_cause;\n```",
+    "seconds": 4.95
+  },
+  "Q45": {
+    "raw": "```sql\nSELECT s.awb_number, a.iata_code, cd.status AS import_status\nFROM shipments s\nJOIN airports a ON s.destination_airport_id = a.airport_id\nLEFT JOIN customs_declarations cd ON s.shipment_id = cd.shipment_id AND cd.declaration_type = 'import'\nWHERE s.status = 'delivered' AND s.awb_number NOT IN (\n    SELECT DISTINCT te.shipment_id\n    FROM tracking_events te\n    WHERE te.event_code = 'DLV'\n)\nORDER BY s.awb_number;\n```",
+    "seconds": 4.66
+  }
+}

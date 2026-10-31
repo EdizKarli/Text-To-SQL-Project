@@ -1,0 +1,582 @@
+[
+  {
+    "id": "Q01",
+    "difficulty": "easy",
+    "concepts": [
+      "COUNT",
+      "WHERE"
+    ],
+    "question": "How many airports are flagged as cargo hubs?",
+    "answer_spec": "One row, one column `hub_count` (integer).",
+    "gold_sql": "SELECT COUNT(*) AS hub_count FROM flghf AS flghf WHERE flghf.hub_kz = 1",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q02",
+    "difficulty": "easy",
+    "concepts": [
+      "filtering",
+      "ORDER BY"
+    ],
+    "question": "List the tail number and year of manufacture of every active aircraft built in 2015 or later, newest first; break ties by tail number alphabetically.",
+    "answer_spec": "Columns: tail_number, year_manufactured. Ordered by year_manufactured DESC, tail_number ASC.",
+    "gold_sql": "SELECT lfz.kennz AS kennz, lfz.baujahr AS baujahr FROM lfz AS lfz WHERE lfz.stat = 'active' AND lfz.baujahr >= 2015 ORDER BY baujahr DESC, kennz ASC",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q03",
+    "difficulty": "easy",
+    "concepts": [
+      "COUNT",
+      "WHERE"
+    ],
+    "question": "How many flights were cancelled?",
+    "answer_spec": "One row, one column `cancelled_flights`.",
+    "gold_sql": "SELECT COUNT(*) AS cancelled_flights FROM flug AS flug WHERE flug.stat = 'cancelled'",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q04",
+    "difficulty": "easy",
+    "concepts": [
+      "projection",
+      "ORDER BY"
+    ],
+    "question": "List every aircraft model with its maximum payload in kg, from the highest payload to the lowest.",
+    "answer_spec": "Columns: model, max_payload_kg. Ordered by max_payload_kg DESC.",
+    "gold_sql": "SELECT lfz_typ.mdl AS mdl, lfz_typ.max_nutzl_kg AS max_nutzl_kg FROM lfz_typ AS lfz_typ ORDER BY max_nutzl_kg DESC",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q05",
+    "difficulty": "easy",
+    "concepts": [
+      "SUM",
+      "WHERE"
+    ],
+    "question": "What is the total declared value in USD of delivered pharmaceutical shipments?",
+    "answer_spec": "One row, one column `total_declared_value_usd` rounded to 2 decimals. 'Pharmaceutical' = commodity_category 'pharmaceuticals'.",
+    "gold_sql": "SELECT ROUND(SUM(sndg.dekl_wert_usd), 2) AS total_declared_value_usd FROM sndg AS sndg WHERE sndg.stat = 'delivered' AND sndg.waren_kat = 'pharmaceuticals'",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q06",
+    "difficulty": "easy",
+    "concepts": [
+      "filtering",
+      "ORDER BY"
+    ],
+    "question": "List the name and country of all customers with 45-day payment terms, alphabetically by name and then by country.",
+    "answer_spec": "Columns: name, country. Customers sharing a name in different countries both appear.",
+    "gold_sql": "SELECT knd_stamm.name1 AS name1, knd_stamm.land AS land FROM knd_stamm AS knd_stamm WHERE knd_stamm.zahlbed_tg = 45 ORDER BY name1, land",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q07",
+    "difficulty": "easy",
+    "concepts": [
+      "GROUP BY",
+      "COUNT"
+    ],
+    "question": "How many shipments are there in each status?",
+    "answer_spec": "Columns: status, shipment_count. Ordered by status alphabetically.",
+    "gold_sql": "SELECT sndg.stat AS stat, COUNT(*) AS shipment_count FROM sndg AS sndg GROUP BY sndg.stat ORDER BY stat",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q08",
+    "difficulty": "easy",
+    "concepts": [
+      "NOT EXISTS",
+      "anti-join"
+    ],
+    "question": "Which aircraft (tail numbers) have never been assigned to any flight? Sort alphabetically.",
+    "answer_spec": "Column: tail_number. Includes aircraft of every status.",
+    "gold_sql": "SELECT a.kennz AS kennz FROM lfz AS a WHERE NOT EXISTS(SELECT 1 AS \"1\" FROM flug AS f WHERE f.lfz_nr = a.lfz_nr) ORDER BY a.kennz",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q09",
+    "difficulty": "medium",
+    "concepts": [
+      "JOIN",
+      "GROUP BY",
+      "COUNT"
+    ],
+    "question": "How many completed flights departed from Frankfurt (FRA)?",
+    "answer_spec": "One row, one column `completed_fra_departures`.",
+    "gold_sql": "SELECT COUNT(*) AS completed_fra_departures FROM flug AS f JOIN flghf AS a ON a.fh_nr = f.abfl_fh WHERE a.iata_cd = 'FRA' AND f.stat = 'completed'",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q10",
+    "difficulty": "medium",
+    "concepts": [
+      "LEFT JOIN",
+      "GROUP BY",
+      "conditional join"
+    ],
+    "question": "For each airline, how many completed flights did it operate? Include airlines with zero. Order by count descending, then airline name.",
+    "answer_spec": "Columns: airline_name, completed_flights. LEFT JOIN semantics: zero-count airlines must appear.",
+    "gold_sql": "SELECT al.bez AS airline_name, COUNT(f.flug_id) AS completed_flights FROM flges AS al LEFT JOIN lfz AS ac ON ac.flges_nr = al.flges_nr LEFT JOIN flug AS f ON f.lfz_nr = ac.lfz_nr AND f.stat = 'completed' GROUP BY al.flges_nr, al.bez ORDER BY completed_flights DESC, airline_name",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q11",
+    "difficulty": "medium",
+    "concepts": [
+      "JOIN",
+      "SUM",
+      "ORDER BY",
+      "LIMIT"
+    ],
+    "question": "Who are the top 5 customers by total declared value of their non-cancelled shipments? Break ties by lower customer_id.",
+    "answer_spec": "Columns: customer_id, name, total_declared_value_usd (rounded to 2 decimals; sort by the rounded value). Cancelled shipments are excluded.",
+    "gold_sql": "SELECT c.kunnr AS kunnr, c.name1 AS name1, ROUND(SUM(s.dekl_wert_usd), 2) AS total_declared_value_usd FROM knd_stamm AS c JOIN sndg AS s ON s.kunnr = c.kunnr WHERE s.stat <> 'cancelled' GROUP BY c.kunnr, c.name1 ORDER BY total_declared_value_usd DESC, kunnr ASC LIMIT 5",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q12",
+    "difficulty": "medium",
+    "concepts": [
+      "JOIN",
+      "GROUP BY",
+      "HAVING"
+    ],
+    "question": "Which destination airports (IATA codes) received more than 150 completed flights? Show the count, highest first, ties by IATA code.",
+    "answer_spec": "Columns: iata_code, completed_arrivals. Ordered by completed_arrivals DESC, iata_code ASC.",
+    "gold_sql": "SELECT a.iata_cd AS iata_cd, COUNT(*) AS completed_arrivals FROM flug AS f JOIN flghf AS a ON a.fh_nr = f.ziel_fh WHERE f.stat = 'completed' GROUP BY a.fh_nr, a.iata_cd HAVING COUNT(*) > 150 ORDER BY completed_arrivals DESC, iata_cd ASC",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q13",
+    "difficulty": "medium",
+    "concepts": [
+      "date arithmetic",
+      "AVG",
+      "HAVING"
+    ],
+    "question": "For each origin airport with at least 40 completed departures, what is the average departure delay in minutes (actual minus scheduled)? Round to 1 decimal; highest delay first, ties by IATA code.",
+    "answer_spec": "Columns: iata_code, avg_departure_delay_min. Early departures count as negative delay. Only completed flights.",
+    "gold_sql": "SELECT a.iata_cd AS iata_cd, ROUND(AVG((JULIANDAY(f.abfl_ist) - JULIANDAY(f.abfl_plan)) * 1440), 1) AS avg_departure_delay_min FROM flug AS f JOIN flghf AS a ON a.fh_nr = f.abfl_fh WHERE f.stat = 'completed' GROUP BY a.fh_nr, a.iata_cd HAVING COUNT(*) >= 40 ORDER BY avg_departure_delay_min DESC, iata_cd ASC",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q14",
+    "difficulty": "medium",
+    "concepts": [
+      "LEFT JOIN",
+      "NOT EXISTS",
+      "NULL handling"
+    ],
+    "question": "Which customers have never booked any shipment (of any status)? List customer_id and name ordered by customer_id.",
+    "answer_spec": "Columns: customer_id, name. Customers with only cancelled shipments are NOT included.",
+    "gold_sql": "SELECT c.kunnr AS kunnr, c.name1 AS name1 FROM knd_stamm AS c WHERE NOT EXISTS(SELECT 1 AS \"1\" FROM sndg AS s WHERE s.kunnr = c.kunnr) ORDER BY c.kunnr",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q15",
+    "difficulty": "medium",
+    "concepts": [
+      "subquery",
+      "join multiplication",
+      "SUM",
+      "HAVING"
+    ],
+    "question": "For each customer with an outstanding balance, show total invoiced, total paid and outstanding (invoiced minus paid) in USD, largest outstanding first (ties by customer_id). Show only the top 10.",
+    "answer_spec": "Columns: customer_id, total_invoiced_usd, total_paid_usd, outstanding_usd (all rounded to 2 decimals). Invoices without payments count as paid 0. Outstanding > 0 only. Beware: joining invoices to payments directly repeats invoice amounts.",
+    "gold_sql": "WITH paid AS (SELECT zahlg.rech_id AS rech_id, SUM(zahlg.betr_usd) AS paid_usd FROM zahlg AS zahlg GROUP BY zahlg.rech_id) SELECT s.kunnr AS kunnr, ROUND(SUM(i.brutto_usd), 2) AS total_invoiced_usd, ROUND(SUM(COALESCE(p.paid_usd, 0)), 2) AS total_paid_usd, ROUND(SUM(i.brutto_usd) - SUM(COALESCE(p.paid_usd, 0)), 2) AS outstanding_usd FROM rech_kopf AS i JOIN sndg AS s ON s.sndg_nr = i.sndg_nr LEFT JOIN paid AS p ON p.rech_id = i.rech_id GROUP BY s.kunnr HAVING ROUND(SUM(i.brutto_usd) - SUM(COALESCE(p.paid_usd, 0)), 2) > 0 ORDER BY outstanding_usd DESC, kunnr ASC LIMIT 10",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q16",
+    "difficulty": "medium",
+    "concepts": [
+      "GROUP BY",
+      "subquery"
+    ],
+    "question": "How many shipments needed more than one flight (a connection), broken down by service level? Order by service level.",
+    "answer_spec": "Columns: service_level, connecting_shipments. Service levels without connecting shipments are omitted.",
+    "gold_sql": "SELECT s.serv_lvl AS serv_lvl, COUNT(*) AS connecting_shipments FROM sndg AS s WHERE (SELECT COUNT(*) AS _col_0 FROM flug_ladg AS fc WHERE fc.sndg_nr = s.sndg_nr) > 1 GROUP BY s.serv_lvl ORDER BY serv_lvl",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q17",
+    "difficulty": "hard",
+    "concepts": [
+      "CTE",
+      "JOIN",
+      "AVG",
+      "GROUP BY"
+    ],
+    "question": "For each aircraft model, what is the average payload load factor (percent of max payload used) across its completed flights that carried at least one shipment? Round to 1 decimal; highest first.",
+    "answer_spec": "Columns: model, avg_load_factor_pct. Load factor of a flight = SUM(total_weight_kg of shipments on it) / max_payload_kg * 100. Flights without cargo are excluded; each flight counts once.",
+    "gold_sql": "WITH load AS (SELECT fc.flug_id AS flug_id, SUM(s.ges_gew_kg) AS kg FROM flug_ladg AS fc JOIN sndg AS s ON s.sndg_nr = fc.sndg_nr GROUP BY fc.flug_id) SELECT t.mdl AS mdl, ROUND(AVG(l.kg * 100.0 / t.max_nutzl_kg), 1) AS avg_load_factor_pct FROM load AS l JOIN flug AS f ON f.flug_id = l.flug_id AND f.stat = 'completed' JOIN lfz AS a ON a.lfz_nr = f.lfz_nr JOIN lfz_typ AS t ON t.typ_nr = a.typ_nr GROUP BY t.typ_nr, t.mdl ORDER BY avg_load_factor_pct DESC, mdl",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q18",
+    "difficulty": "hard",
+    "concepts": [
+      "date functions",
+      "JOIN",
+      "SUM",
+      "GROUP BY"
+    ],
+    "question": "For each month of 2025 (by actual departure date), how many kilograms of cargo were flown on completed flights? A shipment on two flights counts on each flight.",
+    "answer_spec": "Columns: month ('YYYY-MM'), total_kg_flown (rounded to 1 decimal). Only months with completed flights carrying cargo appear. Ordered by month.",
+    "gold_sql": "SELECT SUBSTRING(f.abfl_ist, 1, 7) AS month, ROUND(SUM(s.ges_gew_kg), 1) AS total_kg_flown FROM flug_ladg AS fc JOIN flug AS f ON f.flug_id = fc.flug_id JOIN sndg AS s ON s.sndg_nr = fc.sndg_nr WHERE f.stat = 'completed' AND SUBSTRING(f.abfl_ist, 1, 4) = '2025' GROUP BY SUBSTRING(f.abfl_ist, 1, 7) ORDER BY month",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q19",
+    "difficulty": "hard",
+    "concepts": [
+      "window function",
+      "ROW_NUMBER",
+      "tie-breaking"
+    ],
+    "question": "For each origin airport, which destination was served by the most completed flights? If two destinations tie, choose the alphabetically smaller IATA code. Order the result by origin IATA code.",
+    "answer_spec": "Columns: origin_iata, destination_iata, completed_flights. One row per origin airport that has at least one completed departure.",
+    "gold_sql": "WITH r AS (SELECT o.iata_cd AS origin_iata, d.iata_cd AS destination_iata, COUNT(*) AS completed_flights, ROW_NUMBER() OVER (PARTITION BY o.fh_nr ORDER BY COUNT(*) DESC, d.iata_cd ASC) AS rn FROM flug AS f JOIN flghf AS o ON o.fh_nr = f.abfl_fh JOIN flghf AS d ON d.fh_nr = f.ziel_fh WHERE f.stat = 'completed' GROUP BY o.fh_nr, o.iata_cd, d.fh_nr, d.iata_cd) SELECT r.origin_iata AS origin_iata, r.destination_iata AS destination_iata, r.completed_flights AS completed_flights FROM r AS r WHERE r.rn = 1 ORDER BY origin_iata",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q20",
+    "difficulty": "hard",
+    "concepts": [
+      "JOIN",
+      "date arithmetic",
+      "ORDER BY",
+      "LIMIT"
+    ],
+    "question": "Among delivered shipments, which 10 arrived the latest relative to the scheduled arrival of their final leg? Show hours late (actual minus scheduled arrival of the last leg), rounded to 1 decimal. Break ties by lower shipment_id.",
+    "answer_spec": "Columns: shipment_id, hours_late. Sort by the ROUNDED hours_late. Positive = late. Only the final leg (highest leg_number) is considered.",
+    "gold_sql": "SELECT s.sndg_nr AS sndg_nr, ROUND((JULIANDAY(f.ank_ist) - JULIANDAY(f.ank_plan)) * 24, 1) AS hours_late FROM sndg AS s JOIN flug_ladg AS fc ON fc.sndg_nr = s.sndg_nr AND fc.abschn_nr = (SELECT MAX(x.abschn_nr) AS _col_0 FROM flug_ladg AS x WHERE x.sndg_nr = s.sndg_nr) JOIN flug AS f ON f.flug_id = fc.flug_id WHERE s.stat = 'delivered' ORDER BY hours_late DESC, s.sndg_nr ASC LIMIT 10",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q21",
+    "difficulty": "hard",
+    "concepts": [
+      "EXISTS",
+      "NOT EXISTS",
+      "multi-hop join"
+    ],
+    "question": "Which customers have at least one delivered shipment but have never had an incident reported on any of their shipments? Order by customer_id.",
+    "answer_spec": "Columns: customer_id, name. Incidents are linked to shipments through flight_cargo. Customers with no delivered shipment are excluded.",
+    "gold_sql": "SELECT c.kunnr AS kunnr, c.name1 AS name1 FROM knd_stamm AS c WHERE EXISTS(SELECT 1 AS \"1\" FROM sndg AS s WHERE s.kunnr = c.kunnr AND s.stat = 'delivered') AND NOT EXISTS(SELECT 1 AS \"1\" FROM sndg AS s JOIN flug_ladg AS fc ON fc.sndg_nr = s.sndg_nr JOIN vorf AS i ON i.ladg_id = fc.ladg_id WHERE s.kunnr = c.kunnr) ORDER BY c.kunnr",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q22",
+    "difficulty": "hard",
+    "concepts": [
+      "window function",
+      "ROW_NUMBER",
+      "CTE"
+    ],
+    "question": "For every customer that has at least one shipment, what is the booking date and ID of their most recent shipment (any status)? If several share the latest booking date, take the highest shipment_id. Order by customer_id.",
+    "answer_spec": "Columns: customer_id, latest_booking_date, shipment_id.",
+    "gold_sql": "WITH r AS (SELECT sndg.kunnr AS kunnr, sndg.buch_dat AS buch_dat, sndg.sndg_nr AS sndg_nr, ROW_NUMBER() OVER (PARTITION BY sndg.kunnr ORDER BY sndg.buch_dat DESC, sndg.sndg_nr DESC) AS rn FROM sndg AS sndg) SELECT r.kunnr AS kunnr, r.buch_dat AS latest_booking_date, r.sndg_nr AS sndg_nr FROM r AS r WHERE r.rn = 1 ORDER BY kunnr",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q23",
+    "difficulty": "hard",
+    "concepts": [
+      "date arithmetic",
+      "JOIN",
+      "business rule"
+    ],
+    "question": "As of 2025-12-20, which invoices are overdue (due before 2025-12-20 and not fully paid)? Show the 10 with the most days overdue: invoice_id, customer name, days overdue, outstanding amount. Break ties by lower invoice_id.",
+    "answer_spec": "Columns: invoice_id, customer_name, days_overdue (integer, as-of date minus due date), outstanding_usd (rounded to 2 decimals). Outstanding = amount minus payments received.",
+    "gold_sql": "WITH paid AS (SELECT zahlg.rech_id AS rech_id, SUM(zahlg.betr_usd) AS paid_usd FROM zahlg AS zahlg GROUP BY zahlg.rech_id) SELECT i.rech_id AS rech_id, c.name1 AS customer_name, CAST(JULIANDAY('2025-12-20') - JULIANDAY(i.faell_dat) AS INTEGER) AS days_overdue, ROUND(i.brutto_usd - COALESCE(p.paid_usd, 0), 2) AS outstanding_usd FROM rech_kopf AS i JOIN sndg AS s ON s.sndg_nr = i.sndg_nr JOIN knd_stamm AS c ON c.kunnr = s.kunnr LEFT JOIN paid AS p ON p.rech_id = i.rech_id WHERE i.faell_dat < '2025-12-20' AND i.stat <> 'paid' ORDER BY days_overdue DESC, i.rech_id ASC LIMIT 10",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q24",
+    "difficulty": "hard",
+    "concepts": [
+      "subqueries",
+      "join multiplication",
+      "rates"
+    ],
+    "question": "For each commodity category, what is the incident rate: incidents per flown shipment leg (rounded to 4 decimals)? Include categories with zero incidents; highest rate first, ties by category.",
+    "answer_spec": "Columns: commodity_category, flown_legs, incidents, incident_rate. A flown leg = flight_cargo row with leg_status 'flown'. Do not let the incidents join inflate flown_legs.",
+    "gold_sql": "WITH legs AS (SELECT s.waren_kat AS waren_kat, COUNT(*) AS flown_legs FROM flug_ladg AS fc JOIN sndg AS s ON s.sndg_nr = fc.sndg_nr WHERE fc.abschn_stat = 'flown' GROUP BY s.waren_kat), inc AS (SELECT s.waren_kat AS waren_kat, COUNT(*) AS incidents FROM vorf AS i JOIN flug_ladg AS fc ON fc.ladg_id = i.ladg_id JOIN sndg AS s ON s.sndg_nr = fc.sndg_nr GROUP BY s.waren_kat) SELECT l.waren_kat AS waren_kat, l.flown_legs AS flown_legs, COALESCE(n.incidents, 0) AS incidents, ROUND(COALESCE(n.incidents, 0) * 1.0 / l.flown_legs, 4) AS incident_rate FROM legs AS l LEFT JOIN inc AS n ON n.waren_kat = l.waren_kat ORDER BY incident_rate DESC, l.waren_kat",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q25",
+    "difficulty": "hard",
+    "concepts": [
+      "self-join",
+      "CTE",
+      "bidirectional"
+    ],
+    "question": "Which airport pairs have completed flights in both directions? List each pair once with the smaller IATA code first, the number of completed flights in each direction, ordered by pair.",
+    "answer_spec": "Columns: airport_a, airport_b, flights_a_to_b, flights_b_to_a, where airport_a < airport_b alphabetically. Ordered by airport_a, airport_b.",
+    "gold_sql": "WITH r AS (SELECT o.iata_cd AS o, d.iata_cd AS d, COUNT(*) AS n FROM flug AS f JOIN flghf AS o ON o.fh_nr = f.abfl_fh JOIN flghf AS d ON d.fh_nr = f.ziel_fh WHERE f.stat = 'completed' GROUP BY o.iata_cd, d.iata_cd) SELECT x.o AS airport_a, x.d AS airport_b, x.n AS flights_a_to_b, y.n AS flights_b_to_a FROM r AS x JOIN r AS y ON y.o = x.d AND y.d = x.o WHERE x.o < x.d ORDER BY airport_a, airport_b",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q26",
+    "difficulty": "easy",
+    "concepts": [
+      "COUNT",
+      "WHERE"
+    ],
+    "question": "How many warehouses are customs-bonded?",
+    "answer_spec": "One row, one column `bonded_warehouses`.",
+    "gold_sql": "SELECT COUNT(*) AS bonded_warehouses FROM lgr AS lgr WHERE lgr.zolllager_kz = 1",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q27",
+    "difficulty": "easy",
+    "concepts": [
+      "filtering",
+      "dates",
+      "ORDER BY"
+    ],
+    "question": "Which pilots have a licence that expired before 2025-12-20? Show employee number, first name and last name, ordered by employee number.",
+    "answer_spec": "Columns: employee_number, first_name, last_name. Loadmasters hold no licence and never qualify. Ordered by employee_number.",
+    "gold_sql": "SELECT bes_mitgl.ma_nr AS ma_nr, bes_mitgl.vorname AS vorname, bes_mitgl.nachname AS nachname FROM bes_mitgl AS bes_mitgl WHERE bes_mitgl.lizenz_ablauf < '2025-12-20' ORDER BY ma_nr",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q28",
+    "difficulty": "easy",
+    "concepts": [
+      "GROUP BY",
+      "NULL filtering"
+    ],
+    "question": "How many dangerous-goods shipments are there in each dangerous-goods class? Order by class.",
+    "answer_spec": "Columns: dg_class, shipment_count. Shipments that are not dangerous goods (NULL class) are excluded. Ordered by dg_class.",
+    "gold_sql": "SELECT sndg.gefgut_kl AS gefgut_kl, COUNT(*) AS shipment_count FROM sndg AS sndg WHERE sndg.gefgut_kz = 1 GROUP BY sndg.gefgut_kl ORDER BY gefgut_kl",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q29",
+    "difficulty": "easy",
+    "concepts": [
+      "filtering",
+      "ORDER BY"
+    ],
+    "question": "List the account code and name of every platinum-tier customer, ordered by account code.",
+    "answer_spec": "Columns: account_code, name. Ordered by account_code.",
+    "gold_sql": "SELECT knd_stamm.kto_cd AS kto_cd, knd_stamm.name1 AS name1 FROM knd_stamm AS knd_stamm WHERE knd_stamm.treue_stufe = 'platinum' ORDER BY kto_cd",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q30",
+    "difficulty": "easy",
+    "concepts": [
+      "SUM",
+      "unit conversion"
+    ],
+    "question": "What is the total CO2 emitted by the burned fuel of all completed flights, in tonnes? Round to 1 decimal.",
+    "answer_spec": "One row, one column `total_co2_tonnes` = SUM(co2_emissions_kg) / 1000 over fuel uplifts (one per completed flight), rounded to 1 decimal.",
+    "gold_sql": "SELECT ROUND(SUM(betankg.co2_kg) / 1000.0, 1) AS total_co2_tonnes FROM betankg AS betankg",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q31",
+    "difficulty": "easy",
+    "concepts": [
+      "GROUP BY",
+      "COUNT",
+      "ORDER BY"
+    ],
+    "question": "How many flights were cancelled for each cancellation reason? Most frequent reason first, ties alphabetically.",
+    "answer_spec": "Columns: cancellation_reason, cancelled_flights. Ordered by cancelled_flights DESC, cancellation_reason ASC.",
+    "gold_sql": "SELECT flug.storno_grund AS storno_grund, COUNT(*) AS cancelled_flights FROM flug AS flug WHERE flug.stat = 'cancelled' GROUP BY flug.storno_grund ORDER BY cancelled_flights DESC, storno_grund ASC",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q32",
+    "difficulty": "medium",
+    "concepts": [
+      "JOIN",
+      "AVG",
+      "GROUP BY"
+    ],
+    "question": "What is the average fuel price per litre at each departure airport? Show the IATA code and the average rounded to 4 decimals, most expensive first, ties by IATA code.",
+    "answer_spec": "Columns: iata_code, avg_price_usd_per_litre. Simple (unweighted) average over fuel uplifts. Ordered by avg_price_usd_per_litre DESC, iata_code ASC.",
+    "gold_sql": "SELECT a.iata_cd AS iata_cd, ROUND(AVG(u.preis_usd_l), 4) AS avg_price_usd_per_litre FROM betankg AS u JOIN flghf AS a ON a.fh_nr = u.fh_nr GROUP BY a.fh_nr, a.iata_cd ORDER BY avg_price_usd_per_litre DESC, iata_cd ASC",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q33",
+    "difficulty": "medium",
+    "concepts": [
+      "GROUP BY",
+      "SUM",
+      "filtering"
+    ],
+    "question": "For each customs country, how much import duty and import VAT was charged on cleared import declarations? Show both totals and their sum, largest sum first.",
+    "answer_spec": "Columns: customs_country, total_duty_usd, total_vat_usd, total_taxes_usd (all rounded to 2 decimals; total = duty + VAT). Only declaration_type 'import' with status 'cleared'. Ordered by total_taxes_usd DESC, customs_country ASC.",
+    "gold_sql": "SELECT zoll_anm.zoll_land AS zoll_land, ROUND(SUM(zoll_anm.zoll_betr_usd), 2) AS total_duty_usd, ROUND(SUM(zoll_anm.eust_usd), 2) AS total_vat_usd, ROUND(SUM(zoll_anm.zoll_betr_usd + zoll_anm.eust_usd), 2) AS total_taxes_usd FROM zoll_anm AS zoll_anm WHERE zoll_anm.anm_art = 'import' AND zoll_anm.stat = 'cleared' GROUP BY zoll_anm.zoll_land ORDER BY total_taxes_usd DESC, zoll_land ASC",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q34",
+    "difficulty": "medium",
+    "concepts": [
+      "JOIN",
+      "GROUP BY",
+      "multi-column grouping"
+    ],
+    "question": "How many active crew members does each airline have in each rank? Order by airline name, then rank.",
+    "answer_spec": "Columns: airline_name, crew_rank, active_crew. Only is_active = 1. Ordered by airline_name, crew_rank.",
+    "gold_sql": "SELECT al.bez AS airline_name, m.dienstgrad AS dienstgrad, COUNT(*) AS active_crew FROM bes_mitgl AS m JOIN flges AS al ON al.flges_nr = m.flges_nr WHERE m.aktiv_kz = 1 GROUP BY al.flges_nr, al.bez, m.dienstgrad ORDER BY airline_name, dienstgrad",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q35",
+    "difficulty": "medium",
+    "concepts": [
+      "JOIN",
+      "SUM",
+      "ORDER BY",
+      "LIMIT"
+    ],
+    "question": "Which 5 aircraft had the highest total cost (parts plus labour) of completed maintenance? Show tail number and cost; ties by tail number.",
+    "answer_spec": "Columns: tail_number, total_maintenance_cost_usd (rounded to 2 decimals; sort by the rounded value). Only status 'completed'. Ordered by cost DESC, tail_number ASC.",
+    "gold_sql": "SELECT a.kennz AS kennz, ROUND(SUM(m.teile_kost_usd + m.lohn_kost_usd), 2) AS total_maintenance_cost_usd FROM wartg AS m JOIN lfz AS a ON a.lfz_nr = m.lfz_nr WHERE m.stat = 'completed' GROUP BY a.lfz_nr, a.kennz ORDER BY total_maintenance_cost_usd DESC, kennz ASC LIMIT 5",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q36",
+    "difficulty": "medium",
+    "concepts": [
+      "conditional aggregation",
+      "COALESCE",
+      "GROUP BY"
+    ],
+    "question": "For each insurer, how many claims were filed and what is the total approved amount of claims that were approved or paid? Order by insurer name.",
+    "answer_spec": "Columns: insurer_name, claims, total_approved_usd (rounded to 2 decimals; 0 when nothing approved). Every claim counts in `claims`; only status 'approved' or 'paid' count in the total.",
+    "gold_sql": "SELECT vers_schad.versicherer AS versicherer, COUNT(*) AS claims, ROUND(COALESCE(SUM(CASE WHEN vers_schad.stat IN ('approved', 'paid') THEN vers_schad.genehm_usd END), 0), 2) AS total_approved_usd FROM vers_schad AS vers_schad GROUP BY vers_schad.versicherer ORDER BY versicherer",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q37",
+    "difficulty": "medium",
+    "concepts": [
+      "JOIN",
+      "GROUP BY",
+      "HAVING"
+    ],
+    "question": "Which warehouses received more than 150 shipments from shippers (RCS scans)? Show warehouse code, airport IATA code and the number of RCS scans, highest first, ties by warehouse code.",
+    "answer_spec": "Columns: warehouse_code, iata_code, rcs_scans. event_code 'RCS' = received from shipper. Ordered by rcs_scans DESC, warehouse_code ASC.",
+    "gold_sql": "SELECT w.lgr_cd AS lgr_cd, a.iata_cd AS iata_cd, COUNT(*) AS rcs_scans FROM sdg_verfolg AS e JOIN lgr AS w ON w.lgr_nr = e.lgr_nr JOIN flghf AS a ON a.fh_nr = w.fh_nr WHERE e.ereig_cd = 'RCS' GROUP BY w.lgr_nr, w.lgr_cd, a.iata_cd HAVING COUNT(*) > 150 ORDER BY rcs_scans DESC, lgr_cd ASC",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q38",
+    "difficulty": "medium",
+    "concepts": [
+      "multi-hop join",
+      "ratio of sums",
+      "GROUP BY"
+    ],
+    "question": "For each aircraft model, how many kilograms of fuel were burned per 100 km flown on completed flights? Round to 1 decimal, highest first.",
+    "answer_spec": "Columns: model, fuel_kg_per_100km = SUM(fuel_burned_kg) * 100 / SUM(distance_km) over completed flights of that model (ratio of sums, not average of ratios). Ordered by fuel_kg_per_100km DESC, model ASC.",
+    "gold_sql": "SELECT t.mdl AS mdl, ROUND(SUM(u.verbr_kg) * 100.0 / SUM(f.entf_km), 1) AS fuel_kg_per_100km FROM betankg AS u JOIN flug AS f ON f.flug_id = u.flug_id JOIN lfz AS a ON a.lfz_nr = f.lfz_nr JOIN lfz_typ AS t ON t.typ_nr = a.typ_nr WHERE f.stat = 'completed' GROUP BY t.typ_nr, t.mdl ORDER BY fuel_kg_per_100km DESC, mdl ASC",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q39",
+    "difficulty": "hard",
+    "concepts": [
+      "window function",
+      "ROW_NUMBER",
+      "multi-hop join",
+      "tie-breaking"
+    ],
+    "question": "For each airline, which captain credited the most block hours in the captain role on completed flights? Show airline name, employee number and block hours (1 decimal). Ties go to the smaller employee number. Order by airline name.",
+    "answer_spec": "Columns: airline_name, employee_number, block_hours (= SUM(block_minutes_credited) / 60, rounded to 1 decimal). Only duty_role 'captain' and assignment_status 'completed'. One row per airline that has such assignments.",
+    "gold_sql": "WITH h AS (SELECT m.flges_nr AS flges_nr, m.ma_nr AS ma_nr, SUM(ca.block_min) AS minutes FROM bes_eins AS ca JOIN bes_mitgl AS m ON m.pers_nr = ca.pers_nr WHERE ca.funktion = 'captain' AND ca.eins_stat = 'completed' GROUP BY m.pers_nr, m.flges_nr, m.ma_nr), r AS (SELECT h.flges_nr AS flges_nr, h.ma_nr AS ma_nr, h.minutes AS minutes, ROW_NUMBER() OVER (PARTITION BY h.flges_nr ORDER BY h.minutes DESC, h.ma_nr ASC) AS rn FROM h AS h) SELECT al.bez AS airline_name, r.ma_nr AS ma_nr, ROUND(r.minutes / 60.0, 1) AS block_hours FROM r AS r JOIN flges AS al ON al.flges_nr = r.flges_nr WHERE r.rn = 1 ORDER BY airline_name",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q40",
+    "difficulty": "hard",
+    "concepts": [
+      "CTE",
+      "join multiplication",
+      "ratio of sums"
+    ],
+    "question": "For each aircraft model, what is the fuel efficiency in grams of fuel burned per tonne-kilometre of cargo, over completed flights that carried cargo? Round to 1 decimal; most efficient (lowest) first.",
+    "answer_spec": "Columns: model, grams_per_tonne_km = SUM(fuel_burned_kg) * 1000 / SUM(cargo_tonnes * distance_km), where cargo_tonnes of a flight = SUM(total_weight_kg of its shipments) / 1000. Flights without cargo are excluded. Beware: joining fuel uplifts to flight_cargo directly repeats each flight's fuel once per shipment. Ordered by grams_per_tonne_km ASC, model ASC.",
+    "gold_sql": "WITH load AS (SELECT fc.flug_id AS flug_id, SUM(s.ges_gew_kg) / 1000.0 AS tonnes FROM flug_ladg AS fc JOIN sndg AS s ON s.sndg_nr = fc.sndg_nr GROUP BY fc.flug_id) SELECT t.mdl AS mdl, ROUND(SUM(u.verbr_kg) * 1000.0 / SUM(l.tonnes * f.entf_km), 1) AS grams_per_tonne_km FROM load AS l JOIN flug AS f ON f.flug_id = l.flug_id AND f.stat = 'completed' JOIN betankg AS u ON u.flug_id = f.flug_id JOIN lfz AS a ON a.lfz_nr = f.lfz_nr JOIN lfz_typ AS t ON t.typ_nr = a.typ_nr GROUP BY t.typ_nr, t.mdl ORDER BY grams_per_tonne_km ASC, mdl ASC",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q41",
+    "difficulty": "hard",
+    "concepts": [
+      "JOIN",
+      "conditional aggregation",
+      "dates",
+      "percentages"
+    ],
+    "question": "For each service level, what percentage of shipments handed to the consignee (DLV scan) were delivered after the requested delivery date? Round to 1 decimal; order by service level.",
+    "answer_spec": "Columns: service_level, delivered_shipments, late_shipments, late_pct. Late = date part of the DLV event_time > requested_delivery_date. Only shipments with a DLV event count. late_pct = 100 * late / delivered, rounded to 1 decimal.",
+    "gold_sql": "SELECT s.serv_lvl AS serv_lvl, COUNT(*) AS delivered_shipments, SUM(CASE WHEN SUBSTRING(e.ereig_zeit, 1, 10) > s.wunsch_lief_dat THEN 1 ELSE 0 END) AS late_shipments, ROUND(100.0 * SUM(CASE WHEN SUBSTRING(e.ereig_zeit, 1, 10) > s.wunsch_lief_dat THEN 1 ELSE 0 END) / COUNT(*), 1) AS late_pct FROM sndg AS s JOIN sdg_verfolg AS e ON e.sndg_nr = s.sndg_nr AND e.ereig_cd = 'DLV' GROUP BY s.serv_lvl ORDER BY serv_lvl",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q42",
+    "difficulty": "hard",
+    "concepts": [
+      "date arithmetic",
+      "AVG",
+      "HAVING"
+    ],
+    "question": "For each customs country with at least 50 cleared import declarations, what is the average clearance time in hours (submission to clearance)? Round to 2 decimals; fastest first, ties by country.",
+    "answer_spec": "Columns: customs_country, cleared_imports, avg_clearance_hours. Only declaration_type 'import' and status 'cleared'. Ordered by avg_clearance_hours ASC, customs_country ASC.",
+    "gold_sql": "SELECT zoll_anm.zoll_land AS zoll_land, COUNT(*) AS cleared_imports, ROUND(AVG((JULIANDAY(zoll_anm.freigabe) - JULIANDAY(zoll_anm.eingereicht)) * 24), 2) AS avg_clearance_hours FROM zoll_anm AS zoll_anm WHERE zoll_anm.anm_art = 'import' AND zoll_anm.stat = 'cleared' GROUP BY zoll_anm.zoll_land HAVING COUNT(*) >= 50 ORDER BY avg_clearance_hours ASC, zoll_land ASC",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q43",
+    "difficulty": "hard",
+    "concepts": [
+      "JOIN",
+      "range comparison across tables",
+      "GROUP BY"
+    ],
+    "question": "Which temperature-controlled shipments had at least one probe reading outside their allowed temperature range? Show shipment ID, air waybill number, the number of out-of-range readings and the largest deviation from the range in degrees (1 decimal). Order by shipment ID.",
+    "answer_spec": "Columns: shipment_id, awb_number, out_of_range_readings, max_deviation_c. A reading is out of range when temperature_c < min_temperature_c or > max_temperature_c; deviation = distance to the nearest range limit. Readings that are NULL are ignored.",
+    "gold_sql": "SELECT s.sndg_nr AS sndg_nr, s.lbf_nr AS lbf_nr, COUNT(*) AS out_of_range_readings, ROUND(MAX(CASE WHEN e.temp_c > s.temp_max_c THEN e.temp_c - s.temp_max_c ELSE s.temp_min_c - e.temp_c END), 1) AS max_deviation_c FROM sdg_verfolg AS e JOIN sndg AS s ON s.sndg_nr = e.sndg_nr WHERE s.temp_kz = 1 AND (e.temp_c < s.temp_min_c OR e.temp_c > s.temp_max_c) GROUP BY s.sndg_nr, s.lbf_nr ORDER BY sndg_nr",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q44",
+    "difficulty": "hard",
+    "concepts": [
+      "LEFT JOIN",
+      "COALESCE",
+      "conditional aggregation"
+    ],
+    "question": "For each incident root cause, how many incidents were there, how many of them led to an insurance claim, and what is the total approved claim amount (approved or paid claims)? Order by root cause.",
+    "answer_spec": "Columns: root_cause, incidents, claims, total_approved_usd (rounded to 2 decimals, 0 when none). Every root cause with at least one incident appears, even without claims. Ordered by root_cause.",
+    "gold_sql": "SELECT i.ursache AS ursache, COUNT(*) AS incidents, COUNT(c.schad_id) AS claims, ROUND(COALESCE(SUM(CASE WHEN c.stat IN ('approved', 'paid') THEN c.genehm_usd END), 0), 2) AS total_approved_usd FROM vorf AS i LEFT JOIN vers_schad AS c ON c.vorf_id = i.vorf_id GROUP BY i.ursache ORDER BY ursache",
+    "schema_variant": "mixed"
+  },
+  {
+    "id": "Q45",
+    "difficulty": "hard",
+    "concepts": [
+      "NOT EXISTS",
+      "LEFT JOIN",
+      "multi-hop join"
+    ],
+    "question": "Which shipments have landed at their final destination (status delivered) but, as of 2025-12-20, have not been handed over to the consignee (no DLV scan)? Show air waybill number, destination IATA code and the status of the import customs declaration (NULL if none). Order by air waybill number.",
+    "answer_spec": "Columns: awb_number, destination_iata, import_status. 'Handed over' = a tracking event with event_code 'DLV'. import_status comes from the shipment's declaration_type 'import' row, NULL when there is none.",
+    "gold_sql": "SELECT s.lbf_nr AS lbf_nr, a.iata_cd AS destination_iata, d.stat AS import_status FROM sndg AS s JOIN flghf AS a ON a.fh_nr = s.ziel_fh LEFT JOIN zoll_anm AS d ON d.sndg_nr = s.sndg_nr AND d.anm_art = 'import' WHERE s.stat = 'delivered' AND NOT EXISTS(SELECT 1 AS \"1\" FROM sdg_verfolg AS e WHERE e.sndg_nr = s.sndg_nr AND e.ereig_cd = 'DLV') ORDER BY s.lbf_nr",
+    "schema_variant": "mixed"
+  }
+]

@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
-"""Single source of truth for questions + Gold SQL. Writes questions/questions.json (stable IDs)."""
+"""Single source of truth for questions + Gold SQL (NORMAL schema). Writes questions/questions_normal.json (stable IDs).
+
+The same questions are used for all three schema variants; scripts/build_variants.py translates the Gold SQL into
+questions_mixed.json and questions_cryptic.json and checks that every translation returns the identical result.
+Q01-Q25 use the original 12 tables; Q26-Q45 use the tables and columns added in schema version 2.
+"""
 import json, os
 
 AS_OF = "2025-12-20"
 Q = []
 def add(qid, difficulty, concepts, question, spec, sql):
-    Q.append(dict(id=qid, difficulty=difficulty, concepts=concepts, question=question, answer_spec=spec, gold_sql=sql.strip()))
+    # stored on one line (whitespace collapsed) so the JSON holds no \n; no Gold SQL has multi-space string literals
+    Q.append(dict(id=qid, difficulty=difficulty, concepts=concepts, question=question, answer_spec=spec, gold_sql=" ".join(sql.split())))
 
 # ------------------------------------------------------------------ EASY
 add("Q01", "easy", ["COUNT", "WHERE"],
@@ -238,8 +244,187 @@ FROM r x JOIN r y ON y.o = x.d AND y.d = x.o
 WHERE x.o < x.d
 ORDER BY airport_a, airport_b;""")
 
+# ------------------------------------------------------------------ EASY (v2 tables)
+add("Q26", "easy", ["COUNT", "WHERE"],
+    "How many warehouses are customs-bonded?",
+    "One row, one column `bonded_warehouses`.",
+    "SELECT COUNT(*) AS bonded_warehouses FROM warehouses WHERE is_bonded = 1;")
+add("Q27", "easy", ["filtering", "dates", "ORDER BY"],
+    f"Which pilots have a licence that expired before {AS_OF}? Show employee number, first name and last name, ordered by employee number.",
+    "Columns: employee_number, first_name, last_name. Loadmasters hold no licence and never qualify. Ordered by employee_number.",
+    f"""SELECT employee_number, first_name, last_name FROM crew_members
+WHERE license_expiry_date < '{AS_OF}'
+ORDER BY employee_number;""")
+add("Q28", "easy", ["GROUP BY", "NULL filtering"],
+    "How many dangerous-goods shipments are there in each dangerous-goods class? Order by class.",
+    "Columns: dg_class, shipment_count. Shipments that are not dangerous goods (NULL class) are excluded. Ordered by dg_class.",
+    """SELECT dg_class, COUNT(*) AS shipment_count FROM shipments
+WHERE is_dangerous_goods = 1
+GROUP BY dg_class ORDER BY dg_class;""")
+add("Q29", "easy", ["filtering", "ORDER BY"],
+    "List the account code and name of every platinum-tier customer, ordered by account code.",
+    "Columns: account_code, name. Ordered by account_code.",
+    "SELECT account_code, name FROM customers WHERE loyalty_tier = 'platinum' ORDER BY account_code;")
+add("Q30", "easy", ["SUM", "unit conversion"],
+    "What is the total CO2 emitted by the burned fuel of all completed flights, in tonnes? Round to 1 decimal.",
+    "One row, one column `total_co2_tonnes` = SUM(co2_emissions_kg) / 1000 over fuel uplifts (one per completed flight), rounded to 1 decimal.",
+    "SELECT ROUND(SUM(co2_emissions_kg) / 1000.0, 1) AS total_co2_tonnes FROM fuel_uplifts;")
+add("Q31", "easy", ["GROUP BY", "COUNT", "ORDER BY"],
+    "How many flights were cancelled for each cancellation reason? Most frequent reason first, ties alphabetically.",
+    "Columns: cancellation_reason, cancelled_flights. Ordered by cancelled_flights DESC, cancellation_reason ASC.",
+    """SELECT cancellation_reason, COUNT(*) AS cancelled_flights FROM flights
+WHERE status = 'cancelled'
+GROUP BY cancellation_reason
+ORDER BY cancelled_flights DESC, cancellation_reason ASC;""")
+
+# ------------------------------------------------------------------ MEDIUM (v2 tables)
+add("Q32", "medium", ["JOIN", "AVG", "GROUP BY"],
+    "What is the average fuel price per litre at each departure airport? Show the IATA code and the average rounded to 4 decimals, most expensive first, ties by IATA code.",
+    "Columns: iata_code, avg_price_usd_per_litre. Simple (unweighted) average over fuel uplifts. Ordered by avg_price_usd_per_litre DESC, iata_code ASC.",
+    """SELECT a.iata_code, ROUND(AVG(u.price_usd_per_litre), 4) AS avg_price_usd_per_litre
+FROM fuel_uplifts u JOIN airports a ON a.airport_id = u.airport_id
+GROUP BY a.airport_id, a.iata_code
+ORDER BY avg_price_usd_per_litre DESC, a.iata_code ASC;""")
+add("Q33", "medium", ["GROUP BY", "SUM", "filtering"],
+    "For each customs country, how much import duty and import VAT was charged on cleared import declarations? Show both totals and their sum, largest sum first.",
+    "Columns: customs_country, total_duty_usd, total_vat_usd, total_taxes_usd (all rounded to 2 decimals; total = duty + VAT). Only declaration_type 'import' with status 'cleared'. Ordered by total_taxes_usd DESC, customs_country ASC.",
+    """SELECT customs_country,
+       ROUND(SUM(duty_amount_usd), 2) AS total_duty_usd,
+       ROUND(SUM(vat_amount_usd), 2) AS total_vat_usd,
+       ROUND(SUM(duty_amount_usd + vat_amount_usd), 2) AS total_taxes_usd
+FROM customs_declarations
+WHERE declaration_type = 'import' AND status = 'cleared'
+GROUP BY customs_country
+ORDER BY total_taxes_usd DESC, customs_country ASC;""")
+add("Q34", "medium", ["JOIN", "GROUP BY", "multi-column grouping"],
+    "How many active crew members does each airline have in each rank? Order by airline name, then rank.",
+    "Columns: airline_name, crew_rank, active_crew. Only is_active = 1. Ordered by airline_name, crew_rank.",
+    """SELECT al.name AS airline_name, m.crew_rank, COUNT(*) AS active_crew
+FROM crew_members m JOIN airlines al ON al.airline_id = m.airline_id
+WHERE m.is_active = 1
+GROUP BY al.airline_id, al.name, m.crew_rank
+ORDER BY airline_name, m.crew_rank;""")
+add("Q35", "medium", ["JOIN", "SUM", "ORDER BY", "LIMIT"],
+    "Which 5 aircraft had the highest total cost (parts plus labour) of completed maintenance? Show tail number and cost; ties by tail number.",
+    "Columns: tail_number, total_maintenance_cost_usd (rounded to 2 decimals; sort by the rounded value). Only status 'completed'. Ordered by cost DESC, tail_number ASC.",
+    """SELECT a.tail_number, ROUND(SUM(m.parts_cost_usd + m.labor_cost_usd), 2) AS total_maintenance_cost_usd
+FROM maintenance_records m JOIN aircraft a ON a.aircraft_id = m.aircraft_id
+WHERE m.status = 'completed'
+GROUP BY a.aircraft_id, a.tail_number
+ORDER BY total_maintenance_cost_usd DESC, a.tail_number ASC
+LIMIT 5;""")
+add("Q36", "medium", ["conditional aggregation", "COALESCE", "GROUP BY"],
+    "For each insurer, how many claims were filed and what is the total approved amount of claims that were approved or paid? Order by insurer name.",
+    "Columns: insurer_name, claims, total_approved_usd (rounded to 2 decimals; 0 when nothing approved). Every claim counts in `claims`; only status 'approved' or 'paid' count in the total.",
+    """SELECT insurer_name, COUNT(*) AS claims,
+       ROUND(COALESCE(SUM(CASE WHEN status IN ('approved', 'paid') THEN approved_amount_usd END), 0), 2) AS total_approved_usd
+FROM insurance_claims
+GROUP BY insurer_name ORDER BY insurer_name;""")
+add("Q37", "medium", ["JOIN", "GROUP BY", "HAVING"],
+    "Which warehouses received more than 150 shipments from shippers (RCS scans)? Show warehouse code, airport IATA code and the number of RCS scans, highest first, ties by warehouse code.",
+    "Columns: warehouse_code, iata_code, rcs_scans. event_code 'RCS' = received from shipper. Ordered by rcs_scans DESC, warehouse_code ASC.",
+    """SELECT w.warehouse_code, a.iata_code, COUNT(*) AS rcs_scans
+FROM tracking_events e
+JOIN warehouses w ON w.warehouse_id = e.warehouse_id
+JOIN airports a ON a.airport_id = w.airport_id
+WHERE e.event_code = 'RCS'
+GROUP BY w.warehouse_id, w.warehouse_code, a.iata_code
+HAVING COUNT(*) > 150
+ORDER BY rcs_scans DESC, w.warehouse_code ASC;""")
+add("Q38", "medium", ["multi-hop join", "ratio of sums", "GROUP BY"],
+    "For each aircraft model, how many kilograms of fuel were burned per 100 km flown on completed flights? Round to 1 decimal, highest first.",
+    "Columns: model, fuel_kg_per_100km = SUM(fuel_burned_kg) * 100 / SUM(distance_km) over completed flights of that model (ratio of sums, not average of ratios). Ordered by fuel_kg_per_100km DESC, model ASC.",
+    """SELECT t.model, ROUND(SUM(u.fuel_burned_kg) * 100.0 / SUM(f.distance_km), 1) AS fuel_kg_per_100km
+FROM fuel_uplifts u
+JOIN flights f ON f.flight_id = u.flight_id
+JOIN aircraft a ON a.aircraft_id = f.aircraft_id
+JOIN aircraft_types t ON t.type_id = a.type_id
+WHERE f.status = 'completed'
+GROUP BY t.type_id, t.model
+ORDER BY fuel_kg_per_100km DESC, t.model ASC;""")
+
+# ------------------------------------------------------------------ HARD (v2 tables)
+add("Q39", "hard", ["window function", "ROW_NUMBER", "multi-hop join", "tie-breaking"],
+    "For each airline, which captain credited the most block hours in the captain role on completed flights? Show airline name, employee number and block hours (1 decimal). Ties go to the smaller employee number. Order by airline name.",
+    "Columns: airline_name, employee_number, block_hours (= SUM(block_minutes_credited) / 60, rounded to 1 decimal). Only duty_role 'captain' and assignment_status 'completed'. One row per airline that has such assignments.",
+    """WITH h AS (
+  SELECT m.airline_id, m.employee_number, SUM(ca.block_minutes_credited) AS minutes
+  FROM crew_assignments ca JOIN crew_members m ON m.crew_member_id = ca.crew_member_id
+  WHERE ca.duty_role = 'captain' AND ca.assignment_status = 'completed'
+  GROUP BY m.crew_member_id, m.airline_id, m.employee_number
+), r AS (
+  SELECT h.*, ROW_NUMBER() OVER (PARTITION BY airline_id ORDER BY minutes DESC, employee_number ASC) AS rn FROM h
+)
+SELECT al.name AS airline_name, r.employee_number, ROUND(r.minutes / 60.0, 1) AS block_hours
+FROM r JOIN airlines al ON al.airline_id = r.airline_id
+WHERE r.rn = 1
+ORDER BY airline_name;""")
+add("Q40", "hard", ["CTE", "join multiplication", "ratio of sums"],
+    "For each aircraft model, what is the fuel efficiency in grams of fuel burned per tonne-kilometre of cargo, over completed flights that carried cargo? Round to 1 decimal; most efficient (lowest) first.",
+    "Columns: model, grams_per_tonne_km = SUM(fuel_burned_kg) * 1000 / SUM(cargo_tonnes * distance_km), where cargo_tonnes of a flight = SUM(total_weight_kg of its shipments) / 1000. Flights without cargo are excluded. Beware: joining fuel uplifts to flight_cargo directly repeats each flight's fuel once per shipment. Ordered by grams_per_tonne_km ASC, model ASC.",
+    """WITH load AS (
+  SELECT fc.flight_id, SUM(s.total_weight_kg) / 1000.0 AS tonnes
+  FROM flight_cargo fc JOIN shipments s ON s.shipment_id = fc.shipment_id
+  GROUP BY fc.flight_id
+)
+SELECT t.model,
+       ROUND(SUM(u.fuel_burned_kg) * 1000.0 / SUM(l.tonnes * f.distance_km), 1) AS grams_per_tonne_km
+FROM load l
+JOIN flights f ON f.flight_id = l.flight_id AND f.status = 'completed'
+JOIN fuel_uplifts u ON u.flight_id = f.flight_id
+JOIN aircraft a ON a.aircraft_id = f.aircraft_id
+JOIN aircraft_types t ON t.type_id = a.type_id
+GROUP BY t.type_id, t.model
+ORDER BY grams_per_tonne_km ASC, t.model ASC;""")
+add("Q41", "hard", ["JOIN", "conditional aggregation", "dates", "percentages"],
+    "For each service level, what percentage of shipments handed to the consignee (DLV scan) were delivered after the requested delivery date? Round to 1 decimal; order by service level.",
+    "Columns: service_level, delivered_shipments, late_shipments, late_pct. Late = date part of the DLV event_time > requested_delivery_date. Only shipments with a DLV event count. late_pct = 100 * late / delivered, rounded to 1 decimal.",
+    """SELECT s.service_level, COUNT(*) AS delivered_shipments,
+       SUM(CASE WHEN substr(e.event_time, 1, 10) > s.requested_delivery_date THEN 1 ELSE 0 END) AS late_shipments,
+       ROUND(100.0 * SUM(CASE WHEN substr(e.event_time, 1, 10) > s.requested_delivery_date THEN 1 ELSE 0 END) / COUNT(*), 1) AS late_pct
+FROM shipments s JOIN tracking_events e ON e.shipment_id = s.shipment_id AND e.event_code = 'DLV'
+GROUP BY s.service_level ORDER BY s.service_level;""")
+add("Q42", "hard", ["date arithmetic", "AVG", "HAVING"],
+    "For each customs country with at least 50 cleared import declarations, what is the average clearance time in hours (submission to clearance)? Round to 2 decimals; fastest first, ties by country.",
+    "Columns: customs_country, cleared_imports, avg_clearance_hours. Only declaration_type 'import' and status 'cleared'. Ordered by avg_clearance_hours ASC, customs_country ASC.",
+    """SELECT customs_country, COUNT(*) AS cleared_imports,
+       ROUND(AVG((julianday(cleared_at) - julianday(submitted_at)) * 24), 2) AS avg_clearance_hours
+FROM customs_declarations
+WHERE declaration_type = 'import' AND status = 'cleared'
+GROUP BY customs_country
+HAVING COUNT(*) >= 50
+ORDER BY avg_clearance_hours ASC, customs_country ASC;""")
+add("Q43", "hard", ["JOIN", "range comparison across tables", "GROUP BY"],
+    "Which temperature-controlled shipments had at least one probe reading outside their allowed temperature range? Show shipment ID, air waybill number, the number of out-of-range readings and the largest deviation from the range in degrees (1 decimal). Order by shipment ID.",
+    "Columns: shipment_id, awb_number, out_of_range_readings, max_deviation_c. A reading is out of range when temperature_c < min_temperature_c or > max_temperature_c; deviation = distance to the nearest range limit. Readings that are NULL are ignored.",
+    """SELECT s.shipment_id, s.awb_number, COUNT(*) AS out_of_range_readings,
+       ROUND(MAX(CASE WHEN e.temperature_c > s.max_temperature_c THEN e.temperature_c - s.max_temperature_c
+                      ELSE s.min_temperature_c - e.temperature_c END), 1) AS max_deviation_c
+FROM tracking_events e JOIN shipments s ON s.shipment_id = e.shipment_id
+WHERE s.is_temperature_controlled = 1
+  AND (e.temperature_c < s.min_temperature_c OR e.temperature_c > s.max_temperature_c)
+GROUP BY s.shipment_id, s.awb_number
+ORDER BY s.shipment_id;""")
+add("Q44", "hard", ["LEFT JOIN", "COALESCE", "conditional aggregation"],
+    "For each incident root cause, how many incidents were there, how many of them led to an insurance claim, and what is the total approved claim amount (approved or paid claims)? Order by root cause.",
+    "Columns: root_cause, incidents, claims, total_approved_usd (rounded to 2 decimals, 0 when none). Every root cause with at least one incident appears, even without claims. Ordered by root_cause.",
+    """SELECT i.root_cause, COUNT(*) AS incidents, COUNT(c.claim_id) AS claims,
+       ROUND(COALESCE(SUM(CASE WHEN c.status IN ('approved', 'paid') THEN c.approved_amount_usd END), 0), 2) AS total_approved_usd
+FROM incidents i LEFT JOIN insurance_claims c ON c.incident_id = i.incident_id
+GROUP BY i.root_cause ORDER BY i.root_cause;""")
+add("Q45", "hard", ["NOT EXISTS", "LEFT JOIN", "multi-hop join"],
+    f"Which shipments have landed at their final destination (status delivered) but, as of {AS_OF}, have not been handed over to the consignee (no DLV scan)? Show air waybill number, destination IATA code and the status of the import customs declaration (NULL if none). Order by air waybill number.",
+    "Columns: awb_number, destination_iata, import_status. 'Handed over' = a tracking event with event_code 'DLV'. import_status comes from the shipment's declaration_type 'import' row, NULL when there is none.",
+    """SELECT s.awb_number, a.iata_code AS destination_iata, d.status AS import_status
+FROM shipments s
+JOIN airports a ON a.airport_id = s.destination_airport_id
+LEFT JOIN customs_declarations d ON d.shipment_id = s.shipment_id AND d.declaration_type = 'import'
+WHERE s.status = 'delivered'
+  AND NOT EXISTS (SELECT 1 FROM tracking_events e WHERE e.shipment_id = s.shipment_id AND e.event_code = 'DLV')
+ORDER BY s.awb_number;""")
+
 if __name__ == "__main__":
-    out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "questions.json")
+    out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "questions_normal.json")
     with open(out, "w", encoding="utf-8") as fh:
         json.dump(Q, fh, indent=2, ensure_ascii=False)
     print(f"wrote {len(Q)} questions -> {out}")

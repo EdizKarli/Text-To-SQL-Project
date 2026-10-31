@@ -2,7 +2,12 @@
 """Score model-generated SQL against the Gold results.
 
 Predictions file (JSON):  {"Q01": "SELECT ...", "Q02": "SELECT ...", ...}
-Usage: python evaluation/evaluate.py predictions.json [--db cargo_flights.db] [--timeout 30] [--out results.json]
+Usage: python evaluation/evaluate.py predictions.json [--variant normal|mixed|cryptic] [--timeout 30] [--out results.json]
+       (--db / --questions override the variant defaults databases/cargo_<variant>.db, questions/questions_<variant>.json)
+
+Schema variants: the three databases contain identical rows and the questions are identical, so a model's
+accuracy can be compared directly across normal / mixed / cryptic schemas. Predictions must be written against the
+schema of the chosen variant (schema/schema_<variant>.sql). Gold results are the same in all three.
 
 Protocol
  * Each prediction runs on a READ-ONLY connection with a wall-clock timeout; only the first statement is executed.
@@ -43,11 +48,16 @@ def same(a, b, tol=0.011):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("predictions"); ap.add_argument("--db", default=os.path.join(ROOT, "cargo_flights.db"))
+    ap.add_argument("predictions")
+    ap.add_argument("--variant", choices=["normal", "mixed", "cryptic"], default="normal")
+    ap.add_argument("--db"); ap.add_argument("--questions")
     ap.add_argument("--timeout", type=float, default=30); ap.add_argument("--out")
     a = ap.parse_args()
-    preds = json.load(open(a.predictions))
-    questions = json.load(open(os.path.join(ROOT, "questions", "questions.json")))
+    a.db = a.db or os.path.join(ROOT, "databases", f"cargo_{a.variant}.db")
+    a.questions = a.questions or os.path.join(ROOT, "questions", f"questions_{a.variant}.json")
+    preds = json.load(open(a.predictions, encoding="utf-8"))
+    questions = json.load(open(a.questions, encoding="utf-8"))
+    print(f"Variant: {a.variant}   database: {os.path.relpath(a.db, ROOT)}   questions: {len(questions)}")
     results, by_diff = [], {}
     for q in questions:
         _, gold, _ = run(a.db, q["gold_sql"], a.timeout)
@@ -57,7 +67,7 @@ def main():
         else:
             st, got, ms = run(a.db, sql, a.timeout)
             outcome = "correct" if st == "ok" and same(got, gold) else "wrong_result" if st == "ok" else ("timeout" if st == "timeout" else "execution_error")
-        results.append(dict(id=q["id"], difficulty=q["difficulty"], outcome=outcome, latency_ms=ms and round(ms, 1)))
+        results.append(dict(id=q["id"], difficulty=q["difficulty"], variant=a.variant, outcome=outcome, latency_ms=ms and round(ms, 1)))
         d = by_diff.setdefault(q["difficulty"], collections_counter()); d[outcome] += 1; d["total"] += 1
     n = len(results); ok = sum(r["outcome"] == "correct" for r in results)
     print(f"Execution-correct answers: {ok}/{n} ({100*ok/n:.1f}%)")
@@ -66,7 +76,7 @@ def main():
         if d: print(f"  {diff:7s} correct {d['correct']}/{d['total']}  wrong_result {d['wrong_result']}  errors {d['execution_error']+d['timeout']}  missing {d['missing']}")
     for r in results:
         if r["outcome"] != "correct": print(f"  {r['id']}: {r['outcome']}")
-    if a.out: json.dump(results, open(a.out, "w"), indent=2)
+    if a.out: json.dump(results, open(a.out, "w", encoding="utf-8"), indent=2)
 
 def collections_counter():
     import collections; return collections.Counter()

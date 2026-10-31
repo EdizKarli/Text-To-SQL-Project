@@ -2,19 +2,28 @@
 integrity_check ........ ok
 foreign_key_check ...... 0 violations
 
-== Layer 2: row counts ==
-aircraft                22
-aircraft_types           5
-airlines                 5
-airports                18
-benchmark_meta           4
-customers               63
-flight_cargo          3818
-flights               2252
-incidents              160
-invoices              2909
-payments              2544
-shipments             3110
+== Layer 2: size (row and column counts) ==
+aircraft                    22 rows   16 columns
+aircraft_types               5 rows   16 columns
+airlines                     5 rows   14 columns
+airports                    18 rows   17 columns
+benchmark_meta               5 rows    2 columns
+crew_assignments          5630 rows   12 columns
+crew_members               235 rows   16 columns
+customers                   63 rows   18 columns
+customs_declarations      4181 rows   18 columns
+flight_cargo              3818 rows   12 columns
+flights                   2252 rows   19 columns
+fuel_uplifts              2092 rows   16 columns
+incidents                  160 rows   15 columns
+insurance_claims            78 rows   16 columns
+invoices                  2909 rows   15 columns
+maintenance_records        450 rows   16 columns
+payments                  2544 rows   12 columns
+shipments                 3110 rows   22 columns
+tracking_events          22104 rows   12 columns
+warehouses                  54 rows   16 columns
+[PASS] schema size: 20 tables, 300 columns (target 20 / 300)
 
 == Layer 3: business-rule, coverage and distribution checks ==
 [PASS] flight_prefix_matches_airline                       0   Flight number prefix equals the operating airline's IATA code
@@ -47,16 +56,71 @@ shipments             3110
 [PASS] temperature_incident_commodity                      0   Temperature excursions only for pharmaceuticals/perishables
 [PASS] claim_not_above_declared_value                      0   Claim amount never exceeds the shipment's declared value
 [PASS] incident_report_time_in_range                       0   Incident reported after the flight departed and not after the as-of moment
+[PASS] aircraft_delivered_before_first_flight              0   An aircraft is delivered before its first scheduled departure
+[PASS] heavy_check_after_delivery                          0   The last heavy check is after delivery and before 2025
+[PASS] takeoff_weight_within_mtow                          0   Take-off weight never exceeds the type's maximum take-off weight
+[PASS] takeoff_weight_equals_components                    0   Take-off weight = empty weight + cargo on board + fuel uplifted (+-1 kg)
+[PASS] weather_cancellations_have_bad_weather              0   Flights cancelled for weather had snow, fog or thunderstorms
+[PASS] delay_code_iff_departure_late                       0   A delay code is present exactly for completed flights departing > 15 min late
+[PASS] one_fuel_uplift_per_completed_flight                0   Every completed flight has exactly one fuel uplift; other flights have none
+[PASS] fuel_uplift_at_origin_before_departure              0   Fuel is uplifted at the departure airport before actual departure
+[PASS] fuel_within_tank_capacity                           0   Uplifted fuel fits in the tanks of the aircraft type
+[PASS] fuel_quantities_and_cost_consistent                 0   kg = litres x density (+-1 kg); cost = litres x price (+-0.01); CO2 = 3.16 x burned (+-1)
+[PASS] fuel_type_matches_country                           0   Jet A is used at US airports, Jet A-1 everywhere else
+[PASS] crew_role_matches_rank                              0   captain role -> captain; first_officer/relief_pilot -> first officer; loadmaster -> loadmaster
+[PASS] crew_airline_and_type_rating_match_aircraft         0   Crew belong to the operating airline; pilots are rated on the aircraft type
+[PASS] crew_license_valid_on_duty                          0   Pilots never fly after their licence expiry date
+[PASS] inactive_crew_not_rostered                          0   Inactive crew members have no assignments
+[PASS] flight_crew_complement                              0   Each non-cancelled flight has 1 captain, 1 first officer, exactly 1 pilot flying; cancelled flights have no crew
+[PASS] crew_no_overlapping_duties                          0   A crew member is never on two duties at once
+[PASS] crew_rest_minutes_consistent                        0   rest_minutes_before = minutes since the previous release, and always >= 12 h
+[PASS] crew_block_and_hotel_consistent                     0   Credited block minutes equal the flight's actual block time; hotel iff landing away from base
+[PASS] maintenance_no_overlap_with_flights                 0   An aircraft is never in maintenance during one of its non-cancelled flights
+[PASS] maintenance_at_aircraft_location                    0   Maintenance happens where the aircraft's previous non-cancelled flight landed
+[PASS] maintenance_status_matches_as_of                    0   completed ends before the as-of moment, planned starts after it, in_progress spans it
+[PASS] grounded_aircraft_in_maintenance                    0   Aircraft with status 'maintenance' have an in-progress maintenance record
+[PASS] every_airport_has_bonded_warehouse                  0   Each airport has at least one customs-bonded warehouse
+[PASS] awb_check_digit                                     0   Air waybill serial: last digit = first 7 serial digits mod 7
+[PASS] chargeable_weight_rule                              0   Chargeable weight = max(actual weight, volume x 167), to one rounding unit (0.1 kg)
+[PASS] temperature_control_matches_commodity               0   Exactly pharmaceuticals and perishables are temperature-controlled; documents are never dangerous goods
+[PASS] main_deck_positions_not_exceeded                    0   Main-deck ULDs per flight never exceed the type's main-deck positions
+[PASS] uld_positions_unique_per_flight                     0   No two ULDs occupy the same position on one flight (bulk hold excluded)
+[PASS] loaded_before_departure                             0   Flown legs were loaded before the flight actually departed
+[PASS] invoice_components_sum_to_total                     0   freight + fuel + security + handling + DG surcharges - discount = amount (+-0.011)
+[PASS] invoice_rules_follow_customer_and_goods             0   Invoice terms = customer terms; DG surcharge only for DG; discount only for gold/platinum
+[PASS] payment_fx_consistent                               0   original amount x exchange rate = USD amount (+-0.05)
+[PASS] incident_location_consistent                        0   Incident airport = destination of its leg; its warehouse (if any) is at that airport
+[PASS] claims_match_incidents                              0   Claimed amount = incident claim; claim customer = shipment customer; filed after the incident
+[PASS] claim_dates_ordered                                 0   filed <= decision <= settlement <= as-of day
+[PASS] customs_only_cross_border                           0   Declarations exist only when origin and destination are in different customs territories (DE+NL = EU)
+[PASS] customs_lodged_at_bonded_warehouse                  0   Export at an origin bonded warehouse, import at a destination one; country matches the airport
+[PASS] customs_amounts_consistent                          0   Customs value = declared value; duty = value x rate; export duty and VAT are zero
+[PASS] customs_timing                                      0   Exports are cleared before leg 1 departs; imports are lodged after the final leg arrives
+[PASS] tracking_not_after_as_of                            0   No tracking event is later than the as-of moment
+[PASS] tracking_flight_events_match_flights                0   DEP/ARR events carry the flight's actual time and airport, and only for flights the shipment flies on
+[PASS] tracking_chronology                                 0   BKD first; RCS before the first DEP; RCF < NFD < DLV after the last ARR
+[PASS] delivery_requires_import_clearance                  0   DLV only after a cleared import (if one is needed); held/pending imports block delivery
+[PASS] tracking_event_presence                             0   Every shipment has a BKD event; exactly the cancelled ones have a CAN event; weight only on RCS
+[PASS] temperature_readings_only_controlled                0   Temperature readings exist only for temperature-controlled shipments
+[PASS] out_of_range_readings_have_incident                 0   Every out-of-range probe reading belongs to a shipment with a temperature_excursion incident
 [PASS] coverage_flight_statuses                            0   Every flight status appears at least once
 [PASS] coverage_shipment_statuses                          0   Every shipment status appears at least once
 [PASS] coverage_invoice_statuses                           0   Every invoice status appears at least once
 [PASS] coverage_incident_types                             0   Every incident type appears at least once
 [PASS] coverage_commodities                                0   Every commodity category appears at least once
 [PASS] multi_leg_shipments_present                         0   At least some shipments need a connection (2+ legs)
+[PASS] coverage_v2_categories                              0   Every warehouse type, check type, crew rank, customs status and claim status appears
+[PASS] coverage_event_codes                                0   Every tracking event code appears at least once
 [INFO] customers_without_shipments                         3   Customers who never booked (kept on purpose for LEFT JOIN / NOT EXISTS questions)
 [INFO] duplicate_customer_names                            1   Customer names that occur in more than one country (kept on purpose)
 [INFO] aircraft_never_flown                                2   Aircraft without any flight (maintenance/retired, kept on purpose)
 [INFO] flights_without_cargo                             412   Non-cancelled flights carrying no cargo (empty legs / repositioning)
+[INFO] delivered_without_dlv_scan                         59   Delivered (landed) shipments with no DLV scan yet: import held by customs (kept on purpose)
+[INFO] crew_never_rostered                                21   Crew members without any assignment (inactive or on a grounded fleet; kept on purpose)
+[INFO] pilots_with_expired_licence                        10   Pilots whose licence expired before the as-of day (grounded after expiry)
+[INFO] airports_without_cold_chain                         5   Airports without a cold-chain warehouse (temperature cargo handled in general warehouses)
+[INFO] domestic_shipments_without_customs                898   Non-cancelled shipments needing no customs (domestic or intra-EU)
+(94 checks)
 
 == Layer 4: reproducibility (clean rebuild) ==
 [PASS] generator output identical across runs

@@ -1,0 +1,1208 @@
+{
+ "normal": {
+  "benchmark_meta": {
+   "name": "benchmark_meta",
+   "columns": {
+    "meta_key": "meta_key",
+    "meta_value": "meta_value"
+   }
+  },
+  "airports": {
+   "name": "airports",
+   "columns": {
+    "airport_id": "airport_id",
+    "iata_code": "iata_code",
+    "icao_code": "icao_code",
+    "name": "name",
+    "city": "city",
+    "country": "country",
+    "region": "region",
+    "timezone": "timezone",
+    "latitude": "latitude",
+    "longitude": "longitude",
+    "elevation_m": "elevation_m",
+    "runway_count": "runway_count",
+    "longest_runway_m": "longest_runway_m",
+    "is_cargo_hub": "is_cargo_hub",
+    "annual_cargo_capacity_t": "annual_cargo_capacity_t",
+    "has_24h_customs": "has_24h_customs",
+    "night_curfew": "night_curfew"
+   }
+  },
+  "airlines": {
+   "name": "airlines",
+   "columns": {
+    "airline_id": "airline_id",
+    "iata_code": "iata_code",
+    "icao_code": "icao_code",
+    "name": "name",
+    "callsign": "callsign",
+    "country": "country",
+    "headquarters_city": "headquarters_city",
+    "founded_year": "founded_year",
+    "home_hub_airport_id": "home_hub_airport_id",
+    "alliance": "alliance",
+    "is_cargo_only": "is_cargo_only",
+    "aoc_number": "aoc_number",
+    "website": "website",
+    "contact_email": "contact_email"
+   }
+  },
+  "aircraft_types": {
+   "name": "aircraft_types",
+   "columns": {
+    "type_id": "type_id",
+    "model": "model",
+    "icao_type_designator": "icao_type_designator",
+    "manufacturer": "manufacturer",
+    "engine_count": "engine_count",
+    "engine_model": "engine_model",
+    "max_payload_kg": "max_payload_kg",
+    "max_volume_m3": "max_volume_m3",
+    "max_range_km": "max_range_km",
+    "cruise_speed_kmh": "cruise_speed_kmh",
+    "max_takeoff_weight_kg": "max_takeoff_weight_kg",
+    "operating_empty_weight_kg": "operating_empty_weight_kg",
+    "fuel_capacity_kg": "fuel_capacity_kg",
+    "fuel_burn_kg_per_hour": "fuel_burn_kg_per_hour",
+    "main_deck_positions": "main_deck_positions",
+    "wingspan_m": "wingspan_m"
+   }
+  },
+  "aircraft": {
+   "name": "aircraft",
+   "columns": {
+    "aircraft_id": "aircraft_id",
+    "tail_number": "tail_number",
+    "serial_number": "serial_number",
+    "type_id": "type_id",
+    "airline_id": "airline_id",
+    "home_airport_id": "home_airport_id",
+    "registration_country": "registration_country",
+    "year_manufactured": "year_manufactured",
+    "delivery_date": "delivery_date",
+    "ownership": "ownership",
+    "lessor_name": "lessor_name",
+    "lease_end_date": "lease_end_date",
+    "total_flight_hours": "total_flight_hours",
+    "total_cycles": "total_cycles",
+    "last_heavy_check_date": "last_heavy_check_date",
+    "status": "status"
+   }
+  },
+  "customers": {
+   "name": "customers",
+   "columns": {
+    "customer_id": "customer_id",
+    "account_code": "account_code",
+    "name": "name",
+    "customer_type": "customer_type",
+    "country": "country",
+    "city": "city",
+    "address_line": "address_line",
+    "postal_code": "postal_code",
+    "contact_name": "contact_name",
+    "contact_email": "contact_email",
+    "contact_phone": "contact_phone",
+    "website": "website",
+    "sales_region": "sales_region",
+    "credit_limit_usd": "credit_limit_usd",
+    "payment_terms_days": "payment_terms_days",
+    "is_known_shipper": "is_known_shipper",
+    "loyalty_tier": "loyalty_tier",
+    "created_date": "created_date"
+   }
+  },
+  "warehouses": {
+   "name": "warehouses",
+   "columns": {
+    "warehouse_id": "warehouse_id",
+    "warehouse_code": "warehouse_code",
+    "airport_id": "airport_id",
+    "operator_name": "operator_name",
+    "warehouse_type": "warehouse_type",
+    "floor_area_m2": "floor_area_m2",
+    "capacity_tonnes": "capacity_tonnes",
+    "cold_room_count": "cold_room_count",
+    "min_temperature_c": "min_temperature_c",
+    "dock_door_count": "dock_door_count",
+    "has_dg_area": "has_dg_area",
+    "is_bonded": "is_bonded",
+    "security_level": "security_level",
+    "operates_24h": "operates_24h",
+    "opened_year": "opened_year",
+    "monthly_rent_usd": "monthly_rent_usd"
+   }
+  },
+  "crew_members": {
+   "name": "crew_members",
+   "columns": {
+    "crew_member_id": "crew_member_id",
+    "employee_number": "employee_number",
+    "first_name": "first_name",
+    "last_name": "last_name",
+    "email": "email",
+    "airline_id": "airline_id",
+    "base_airport_id": "base_airport_id",
+    "crew_rank": "crew_rank",
+    "type_rating_id": "type_rating_id",
+    "license_number": "license_number",
+    "license_expiry_date": "license_expiry_date",
+    "medical_expiry_date": "medical_expiry_date",
+    "hire_date": "hire_date",
+    "seniority_number": "seniority_number",
+    "total_flight_hours": "total_flight_hours",
+    "is_active": "is_active"
+   }
+  },
+  "flights": {
+   "name": "flights",
+   "columns": {
+    "flight_id": "flight_id",
+    "flight_number": "flight_number",
+    "flight_type": "flight_type",
+    "aircraft_id": "aircraft_id",
+    "origin_airport_id": "origin_airport_id",
+    "destination_airport_id": "destination_airport_id",
+    "scheduled_departure": "scheduled_departure",
+    "scheduled_arrival": "scheduled_arrival",
+    "actual_departure": "actual_departure",
+    "actual_arrival": "actual_arrival",
+    "departure_stand": "departure_stand",
+    "arrival_stand": "arrival_stand",
+    "distance_km": "distance_km",
+    "planned_cruise_altitude_ft": "planned_cruise_altitude_ft",
+    "takeoff_weight_kg": "takeoff_weight_kg",
+    "weather_at_departure": "weather_at_departure",
+    "delay_code": "delay_code",
+    "cancellation_reason": "cancellation_reason",
+    "status": "status"
+   }
+  },
+  "crew_assignments": {
+   "name": "crew_assignments",
+   "columns": {
+    "assignment_id": "assignment_id",
+    "flight_id": "flight_id",
+    "crew_member_id": "crew_member_id",
+    "duty_role": "duty_role",
+    "is_pilot_flying": "is_pilot_flying",
+    "report_time": "report_time",
+    "release_time": "release_time",
+    "block_minutes_credited": "block_minutes_credited",
+    "rest_minutes_before": "rest_minutes_before",
+    "per_diem_usd": "per_diem_usd",
+    "hotel_required": "hotel_required",
+    "assignment_status": "assignment_status"
+   }
+  },
+  "maintenance_records": {
+   "name": "maintenance_records",
+   "columns": {
+    "maintenance_id": "maintenance_id",
+    "work_order_number": "work_order_number",
+    "aircraft_id": "aircraft_id",
+    "airport_id": "airport_id",
+    "check_type": "check_type",
+    "ata_chapter": "ata_chapter",
+    "mro_provider": "mro_provider",
+    "start_time": "start_time",
+    "end_time": "end_time",
+    "labor_hours": "labor_hours",
+    "parts_cost_usd": "parts_cost_usd",
+    "labor_cost_usd": "labor_cost_usd",
+    "deferred_items_count": "deferred_items_count",
+    "is_aog": "is_aog",
+    "next_due_date": "next_due_date",
+    "status": "status"
+   }
+  },
+  "fuel_uplifts": {
+   "name": "fuel_uplifts",
+   "columns": {
+    "fuel_uplift_id": "fuel_uplift_id",
+    "fuel_ticket_number": "fuel_ticket_number",
+    "flight_id": "flight_id",
+    "airport_id": "airport_id",
+    "supplier_name": "supplier_name",
+    "fuel_type": "fuel_type",
+    "delivery_method": "delivery_method",
+    "uplift_time": "uplift_time",
+    "quantity_kg": "quantity_kg",
+    "quantity_litres": "quantity_litres",
+    "density_kg_per_l": "density_kg_per_l",
+    "price_usd_per_litre": "price_usd_per_litre",
+    "total_cost_usd": "total_cost_usd",
+    "saf_blend_pct": "saf_blend_pct",
+    "fuel_burned_kg": "fuel_burned_kg",
+    "co2_emissions_kg": "co2_emissions_kg"
+   }
+  },
+  "shipments": {
+   "name": "shipments",
+   "columns": {
+    "shipment_id": "shipment_id",
+    "awb_number": "awb_number",
+    "customer_id": "customer_id",
+    "customer_reference": "customer_reference",
+    "consignee_name": "consignee_name",
+    "origin_airport_id": "origin_airport_id",
+    "destination_airport_id": "destination_airport_id",
+    "booking_date": "booking_date",
+    "requested_delivery_date": "requested_delivery_date",
+    "service_level": "service_level",
+    "commodity_category": "commodity_category",
+    "pieces": "pieces",
+    "total_weight_kg": "total_weight_kg",
+    "total_volume_m3": "total_volume_m3",
+    "chargeable_weight_kg": "chargeable_weight_kg",
+    "declared_value_usd": "declared_value_usd",
+    "is_dangerous_goods": "is_dangerous_goods",
+    "dg_class": "dg_class",
+    "is_temperature_controlled": "is_temperature_controlled",
+    "min_temperature_c": "min_temperature_c",
+    "max_temperature_c": "max_temperature_c",
+    "status": "status"
+   }
+  },
+  "flight_cargo": {
+   "name": "flight_cargo",
+   "columns": {
+    "flight_cargo_id": "flight_cargo_id",
+    "shipment_id": "shipment_id",
+    "flight_id": "flight_id",
+    "leg_number": "leg_number",
+    "uld_type": "uld_type",
+    "uld_number": "uld_number",
+    "deck": "deck",
+    "position_code": "position_code",
+    "load_sequence": "load_sequence",
+    "seal_number": "seal_number",
+    "loaded_at": "loaded_at",
+    "leg_status": "leg_status"
+   }
+  },
+  "invoices": {
+   "name": "invoices",
+   "columns": {
+    "invoice_id": "invoice_id",
+    "invoice_number": "invoice_number",
+    "shipment_id": "shipment_id",
+    "issued_date": "issued_date",
+    "due_date": "due_date",
+    "payment_terms_days": "payment_terms_days",
+    "freight_charge_usd": "freight_charge_usd",
+    "fuel_surcharge_usd": "fuel_surcharge_usd",
+    "security_fee_usd": "security_fee_usd",
+    "handling_fee_usd": "handling_fee_usd",
+    "dg_surcharge_usd": "dg_surcharge_usd",
+    "discount_usd": "discount_usd",
+    "amount_usd": "amount_usd",
+    "sent_via": "sent_via",
+    "status": "status"
+   }
+  },
+  "payments": {
+   "name": "payments",
+   "columns": {
+    "payment_id": "payment_id",
+    "payment_reference": "payment_reference",
+    "invoice_id": "invoice_id",
+    "customer_id": "customer_id",
+    "payment_date": "payment_date",
+    "amount_usd": "amount_usd",
+    "original_currency": "original_currency",
+    "original_amount": "original_amount",
+    "exchange_rate_to_usd": "exchange_rate_to_usd",
+    "method": "method",
+    "bank_charges_usd": "bank_charges_usd",
+    "is_reconciled": "is_reconciled"
+   }
+  },
+  "incidents": {
+   "name": "incidents",
+   "columns": {
+    "incident_id": "incident_id",
+    "flight_cargo_id": "flight_cargo_id",
+    "airport_id": "airport_id",
+    "warehouse_id": "warehouse_id",
+    "incident_type": "incident_type",
+    "severity": "severity",
+    "root_cause": "root_cause",
+    "reported_by": "reported_by",
+    "reported_at": "reported_at",
+    "pieces_affected": "pieces_affected",
+    "delay_minutes": "delay_minutes",
+    "claim_amount_usd": "claim_amount_usd",
+    "corrective_action": "corrective_action",
+    "resolved": "resolved",
+    "resolved_at": "resolved_at"
+   }
+  },
+  "insurance_claims": {
+   "name": "insurance_claims",
+   "columns": {
+    "claim_id": "claim_id",
+    "claim_number": "claim_number",
+    "incident_id": "incident_id",
+    "customer_id": "customer_id",
+    "policy_number": "policy_number",
+    "insurer_name": "insurer_name",
+    "coverage_type": "coverage_type",
+    "filed_date": "filed_date",
+    "claimed_amount_usd": "claimed_amount_usd",
+    "deductible_usd": "deductible_usd",
+    "approved_amount_usd": "approved_amount_usd",
+    "status": "status",
+    "decision_date": "decision_date",
+    "rejection_reason": "rejection_reason",
+    "settlement_date": "settlement_date",
+    "adjuster_name": "adjuster_name"
+   }
+  },
+  "customs_declarations": {
+   "name": "customs_declarations",
+   "columns": {
+    "declaration_id": "declaration_id",
+    "declaration_number": "declaration_number",
+    "shipment_id": "shipment_id",
+    "warehouse_id": "warehouse_id",
+    "declaration_type": "declaration_type",
+    "customs_country": "customs_country",
+    "hs_code": "hs_code",
+    "goods_description": "goods_description",
+    "customs_value_usd": "customs_value_usd",
+    "duty_rate_pct": "duty_rate_pct",
+    "duty_amount_usd": "duty_amount_usd",
+    "vat_amount_usd": "vat_amount_usd",
+    "broker_name": "broker_name",
+    "inspection_required": "inspection_required",
+    "inspection_result": "inspection_result",
+    "submitted_at": "submitted_at",
+    "cleared_at": "cleared_at",
+    "status": "status"
+   }
+  },
+  "tracking_events": {
+   "name": "tracking_events",
+   "columns": {
+    "event_id": "event_id",
+    "shipment_id": "shipment_id",
+    "flight_id": "flight_id",
+    "airport_id": "airport_id",
+    "warehouse_id": "warehouse_id",
+    "event_code": "event_code",
+    "event_time": "event_time",
+    "pieces": "pieces",
+    "weight_kg": "weight_kg",
+    "temperature_c": "temperature_c",
+    "recorded_by": "recorded_by",
+    "scanner_id": "scanner_id"
+   }
+  }
+ },
+ "mixed": {
+  "benchmark_meta": {
+   "name": "bm_param",
+   "columns": {
+    "meta_key": "param_schl",
+    "meta_value": "param_wert"
+   }
+  },
+  "airports": {
+   "name": "flghf",
+   "columns": {
+    "airport_id": "fh_nr",
+    "iata_code": "iata_cd",
+    "icao_code": "icao_cd",
+    "name": "bez",
+    "city": "ort",
+    "country": "land",
+    "region": "reg",
+    "timezone": "zeitz",
+    "latitude": "breite",
+    "longitude": "laenge",
+    "elevation_m": "hoehe_m",
+    "runway_count": "anz_slb",
+    "longest_runway_m": "max_slb_m",
+    "is_cargo_hub": "hub_kz",
+    "annual_cargo_capacity_t": "kap_jahr_t",
+    "has_24h_customs": "zoll_24h_kz",
+    "night_curfew": "nachtflugverb_kz"
+   }
+  },
+  "airlines": {
+   "name": "flges",
+   "columns": {
+    "airline_id": "flges_nr",
+    "iata_code": "iata_cd",
+    "icao_code": "icao_cd",
+    "name": "bez",
+    "callsign": "rufz",
+    "country": "land",
+    "headquarters_city": "sitz_ort",
+    "founded_year": "gruend_jahr",
+    "home_hub_airport_id": "hub_fh_nr",
+    "alliance": "allianz",
+    "is_cargo_only": "nur_fracht_kz",
+    "aoc_number": "aoc_nr",
+    "website": "web_adr",
+    "contact_email": "kontakt_mail"
+   }
+  },
+  "aircraft_types": {
+   "name": "lfz_typ",
+   "columns": {
+    "type_id": "typ_nr",
+    "model": "mdl",
+    "icao_type_designator": "icao_typ",
+    "manufacturer": "herst",
+    "engine_count": "anz_trw",
+    "engine_model": "trw_mdl",
+    "max_payload_kg": "max_nutzl_kg",
+    "max_volume_m3": "max_vol_m3",
+    "max_range_km": "max_reichw_km",
+    "cruise_speed_kmh": "reise_geschw_kmh",
+    "max_takeoff_weight_kg": "mtow_kg",
+    "operating_empty_weight_kg": "leergew_kg",
+    "fuel_capacity_kg": "tank_kap_kg",
+    "fuel_burn_kg_per_hour": "verbr_kg_h",
+    "main_deck_positions": "anz_hd_pos",
+    "wingspan_m": "spannw_m"
+   }
+  },
+  "aircraft": {
+   "name": "lfz",
+   "columns": {
+    "aircraft_id": "lfz_nr",
+    "tail_number": "kennz",
+    "serial_number": "msn",
+    "type_id": "typ_nr",
+    "airline_id": "flges_nr",
+    "home_airport_id": "heimat_fh_nr",
+    "registration_country": "zul_land",
+    "year_manufactured": "baujahr",
+    "delivery_date": "ausl_dat",
+    "ownership": "eigt_art",
+    "lessor_name": "leasgeb",
+    "lease_end_date": "leas_ende_dat",
+    "total_flight_hours": "ges_flugstd",
+    "total_cycles": "ges_zyklen",
+    "last_heavy_check_date": "letzt_c_chk_dat",
+    "status": "stat"
+   }
+  },
+  "customers": {
+   "name": "knd_stamm",
+   "columns": {
+    "customer_id": "kunnr",
+    "account_code": "kto_cd",
+    "name": "name1",
+    "customer_type": "knd_typ",
+    "country": "land",
+    "city": "ort",
+    "address_line": "strasse",
+    "postal_code": "plz",
+    "contact_name": "ansprechp",
+    "contact_email": "ansp_mail",
+    "contact_phone": "ansp_tel",
+    "website": "web_adr",
+    "sales_region": "vertr_reg",
+    "credit_limit_usd": "kredlim_usd",
+    "payment_terms_days": "zahlbed_tg",
+    "is_known_shipper": "bek_versender_kz",
+    "loyalty_tier": "treue_stufe",
+    "created_date": "erdat"
+   }
+  },
+  "warehouses": {
+   "name": "lgr",
+   "columns": {
+    "warehouse_id": "lgr_nr",
+    "warehouse_code": "lgr_cd",
+    "airport_id": "fh_nr",
+    "operator_name": "betreiber",
+    "warehouse_type": "lgr_typ",
+    "floor_area_m2": "flaeche_m2",
+    "capacity_tonnes": "kap_t",
+    "cold_room_count": "anz_kuehlr",
+    "min_temperature_c": "min_temp_c",
+    "dock_door_count": "anz_tore",
+    "has_dg_area": "gefgut_ber_kz",
+    "is_bonded": "zolllager_kz",
+    "security_level": "sich_stufe",
+    "operates_24h": "betr_24h_kz",
+    "opened_year": "eroeff_jahr",
+    "monthly_rent_usd": "miete_mon_usd"
+   }
+  },
+  "crew_members": {
+   "name": "bes_mitgl",
+   "columns": {
+    "crew_member_id": "pers_nr",
+    "employee_number": "ma_nr",
+    "first_name": "vorname",
+    "last_name": "nachname",
+    "email": "mail",
+    "airline_id": "flges_nr",
+    "base_airport_id": "basis_fh",
+    "crew_rank": "dienstgrad",
+    "type_rating_id": "musterber_typ",
+    "license_number": "lizenz_nr",
+    "license_expiry_date": "lizenz_ablauf",
+    "medical_expiry_date": "med_ablauf",
+    "hire_date": "eintr_dat",
+    "seniority_number": "dienstalter_nr",
+    "total_flight_hours": "ges_flugstd",
+    "is_active": "aktiv_kz"
+   }
+  },
+  "flights": {
+   "name": "flug",
+   "columns": {
+    "flight_id": "flug_id",
+    "flight_number": "flugnr",
+    "flight_type": "flug_art",
+    "aircraft_id": "lfz_nr",
+    "origin_airport_id": "abfl_fh",
+    "destination_airport_id": "ziel_fh",
+    "scheduled_departure": "abfl_plan",
+    "scheduled_arrival": "ank_plan",
+    "actual_departure": "abfl_ist",
+    "actual_arrival": "ank_ist",
+    "departure_stand": "abfl_pos",
+    "arrival_stand": "ank_pos",
+    "distance_km": "entf_km",
+    "planned_cruise_altitude_ft": "reiseflughoehe_ft",
+    "takeoff_weight_kg": "tow_kg",
+    "weather_at_departure": "wetter_abfl",
+    "delay_code": "versp_cd",
+    "cancellation_reason": "storno_grund",
+    "status": "stat"
+   }
+  },
+  "crew_assignments": {
+   "name": "bes_eins",
+   "columns": {
+    "assignment_id": "eins_id",
+    "flight_id": "flug_id",
+    "crew_member_id": "pers_nr",
+    "duty_role": "funktion",
+    "is_pilot_flying": "pf_kz",
+    "report_time": "meld_zeit",
+    "release_time": "ende_zeit",
+    "block_minutes_credited": "block_min",
+    "rest_minutes_before": "ruhe_min_vor",
+    "per_diem_usd": "spesen_usd",
+    "hotel_required": "hotel_kz",
+    "assignment_status": "eins_stat"
+   }
+  },
+  "maintenance_records": {
+   "name": "wartg",
+   "columns": {
+    "maintenance_id": "wartg_id",
+    "work_order_number": "auftr_nr",
+    "aircraft_id": "lfz_nr",
+    "airport_id": "fh_nr",
+    "check_type": "chk_art",
+    "ata_chapter": "ata_kap",
+    "mro_provider": "mro_dienstl",
+    "start_time": "beginn",
+    "end_time": "ende",
+    "labor_hours": "arb_std",
+    "parts_cost_usd": "teile_kost_usd",
+    "labor_cost_usd": "lohn_kost_usd",
+    "deferred_items_count": "anz_zurueckgest",
+    "is_aog": "aog_kz",
+    "next_due_date": "naechst_faell",
+    "status": "stat"
+   }
+  },
+  "fuel_uplifts": {
+   "name": "betankg",
+   "columns": {
+    "fuel_uplift_id": "betank_id",
+    "fuel_ticket_number": "beleg_nr",
+    "flight_id": "flug_id",
+    "airport_id": "fh_nr",
+    "supplier_name": "lieferant",
+    "fuel_type": "krst_art",
+    "delivery_method": "liefer_art",
+    "uplift_time": "betank_zeit",
+    "quantity_kg": "menge_kg",
+    "quantity_litres": "menge_l",
+    "density_kg_per_l": "dichte",
+    "price_usd_per_litre": "preis_usd_l",
+    "total_cost_usd": "ges_kost_usd",
+    "saf_blend_pct": "saf_ant_pct",
+    "fuel_burned_kg": "verbr_kg",
+    "co2_emissions_kg": "co2_kg"
+   }
+  },
+  "shipments": {
+   "name": "sndg",
+   "columns": {
+    "shipment_id": "sndg_nr",
+    "awb_number": "lbf_nr",
+    "customer_id": "kunnr",
+    "customer_reference": "knd_ref",
+    "consignee_name": "empf_name",
+    "origin_airport_id": "urspr_fh",
+    "destination_airport_id": "ziel_fh",
+    "booking_date": "buch_dat",
+    "requested_delivery_date": "wunsch_lief_dat",
+    "service_level": "serv_lvl",
+    "commodity_category": "waren_kat",
+    "pieces": "anz_stk",
+    "total_weight_kg": "ges_gew_kg",
+    "total_volume_m3": "ges_vol_m3",
+    "chargeable_weight_kg": "fracht_gew_kg",
+    "declared_value_usd": "dekl_wert_usd",
+    "is_dangerous_goods": "gefgut_kz",
+    "dg_class": "gefgut_kl",
+    "is_temperature_controlled": "temp_kz",
+    "min_temperature_c": "temp_min_c",
+    "max_temperature_c": "temp_max_c",
+    "status": "stat"
+   }
+  },
+  "flight_cargo": {
+   "name": "flug_ladg",
+   "columns": {
+    "flight_cargo_id": "ladg_id",
+    "shipment_id": "sndg_nr",
+    "flight_id": "flug_id",
+    "leg_number": "abschn_nr",
+    "uld_type": "uld_typ",
+    "uld_number": "uld_nr",
+    "deck": "deck_cd",
+    "position_code": "pos_cd",
+    "load_sequence": "lade_folge",
+    "seal_number": "plomben_nr",
+    "loaded_at": "geladen_um",
+    "leg_status": "abschn_stat"
+   }
+  },
+  "invoices": {
+   "name": "rech_kopf",
+   "columns": {
+    "invoice_id": "rech_id",
+    "invoice_number": "belnr",
+    "shipment_id": "sndg_nr",
+    "issued_date": "ausst_dat",
+    "due_date": "faell_dat",
+    "payment_terms_days": "zahlbed_tg",
+    "freight_charge_usd": "fracht_usd",
+    "fuel_surcharge_usd": "treibst_zuschl_usd",
+    "security_fee_usd": "sich_geb_usd",
+    "handling_fee_usd": "abfert_geb_usd",
+    "dg_surcharge_usd": "gefgut_zuschl_usd",
+    "discount_usd": "rabatt_usd",
+    "amount_usd": "brutto_usd",
+    "sent_via": "versand_weg",
+    "status": "stat"
+   }
+  },
+  "payments": {
+   "name": "zahlg",
+   "columns": {
+    "payment_id": "zahlg_id",
+    "payment_reference": "zahl_ref",
+    "invoice_id": "rech_id",
+    "customer_id": "kunnr",
+    "payment_date": "zahl_dat",
+    "amount_usd": "betr_usd",
+    "original_currency": "orig_waehr",
+    "original_amount": "orig_betr",
+    "exchange_rate_to_usd": "wkurs_usd",
+    "method": "zahl_art",
+    "bank_charges_usd": "bankgeb_usd",
+    "is_reconciled": "abgestimmt_kz"
+   }
+  },
+  "incidents": {
+   "name": "vorf",
+   "columns": {
+    "incident_id": "vorf_id",
+    "flight_cargo_id": "ladg_id",
+    "airport_id": "fh_nr",
+    "warehouse_id": "lgr_nr",
+    "incident_type": "vorf_art",
+    "severity": "schwere",
+    "root_cause": "ursache",
+    "reported_by": "gemeldet_von",
+    "reported_at": "meld_zeit",
+    "pieces_affected": "betr_stk",
+    "delay_minutes": "versp_min",
+    "claim_amount_usd": "ford_betr_usd",
+    "corrective_action": "korr_massn",
+    "resolved": "erledigt_kz",
+    "resolved_at": "erledigt_am"
+   }
+  },
+  "insurance_claims": {
+   "name": "vers_schad",
+   "columns": {
+    "claim_id": "schad_id",
+    "claim_number": "schad_nr",
+    "incident_id": "vorf_id",
+    "customer_id": "kunnr",
+    "policy_number": "police_nr",
+    "insurer_name": "versicherer",
+    "coverage_type": "deckung_art",
+    "filed_date": "meld_dat",
+    "claimed_amount_usd": "ford_usd",
+    "deductible_usd": "selbstbeh_usd",
+    "approved_amount_usd": "genehm_usd",
+    "status": "stat",
+    "decision_date": "entsch_dat",
+    "rejection_reason": "ablehn_grund",
+    "settlement_date": "reg_dat",
+    "adjuster_name": "sachbearb"
+   }
+  },
+  "customs_declarations": {
+   "name": "zoll_anm",
+   "columns": {
+    "declaration_id": "anm_id",
+    "declaration_number": "anm_nr",
+    "shipment_id": "sndg_nr",
+    "warehouse_id": "lgr_nr",
+    "declaration_type": "anm_art",
+    "customs_country": "zoll_land",
+    "hs_code": "zolltarif_nr",
+    "goods_description": "waren_bez",
+    "customs_value_usd": "zollwert_usd",
+    "duty_rate_pct": "zollsatz_pct",
+    "duty_amount_usd": "zoll_betr_usd",
+    "vat_amount_usd": "eust_usd",
+    "broker_name": "zollagent",
+    "inspection_required": "beschau_kz",
+    "inspection_result": "beschau_erg",
+    "submitted_at": "eingereicht",
+    "cleared_at": "freigabe",
+    "status": "stat"
+   }
+  },
+  "tracking_events": {
+   "name": "sdg_verfolg",
+   "columns": {
+    "event_id": "ereig_id",
+    "shipment_id": "sndg_nr",
+    "flight_id": "flug_id",
+    "airport_id": "fh_nr",
+    "warehouse_id": "lgr_nr",
+    "event_code": "ereig_cd",
+    "event_time": "ereig_zeit",
+    "pieces": "anz_stk",
+    "weight_kg": "gew_kg",
+    "temperature_c": "temp_c",
+    "recorded_by": "erfasst_von",
+    "scanner_id": "scanner_nr"
+   }
+  }
+ },
+ "cryptic": {
+  "benchmark_meta": {
+   "name": "ts4p",
+   "columns": {
+    "meta_key": "c01",
+    "meta_value": "c02"
+   }
+  },
+  "airports": {
+   "name": "ts53",
+   "columns": {
+    "airport_id": "c01",
+    "iata_code": "c02",
+    "icao_code": "c03",
+    "name": "c04",
+    "city": "c05",
+    "country": "c06",
+    "region": "c07",
+    "timezone": "c08",
+    "latitude": "c09",
+    "longitude": "c10",
+    "elevation_m": "c11",
+    "runway_count": "c12",
+    "longest_runway_m": "c13",
+    "is_cargo_hub": "c14",
+    "annual_cargo_capacity_t": "c15",
+    "has_24h_customs": "c16",
+    "night_curfew": "c17"
+   }
+  },
+  "airlines": {
+   "name": "twxv",
+   "columns": {
+    "airline_id": "c01",
+    "iata_code": "c02",
+    "icao_code": "c03",
+    "name": "c04",
+    "callsign": "c05",
+    "country": "c06",
+    "headquarters_city": "c07",
+    "founded_year": "c08",
+    "home_hub_airport_id": "c09",
+    "alliance": "c10",
+    "is_cargo_only": "c11",
+    "aoc_number": "c12",
+    "website": "c13",
+    "contact_email": "c14"
+   }
+  },
+  "aircraft_types": {
+   "name": "tumf",
+   "columns": {
+    "type_id": "c01",
+    "model": "c02",
+    "icao_type_designator": "c03",
+    "manufacturer": "c04",
+    "engine_count": "c05",
+    "engine_model": "c06",
+    "max_payload_kg": "c07",
+    "max_volume_m3": "c08",
+    "max_range_km": "c09",
+    "cruise_speed_kmh": "c10",
+    "max_takeoff_weight_kg": "c11",
+    "operating_empty_weight_kg": "c12",
+    "fuel_capacity_kg": "c13",
+    "fuel_burn_kg_per_hour": "c14",
+    "main_deck_positions": "c15",
+    "wingspan_m": "c16"
+   }
+  },
+  "aircraft": {
+   "name": "tu5q",
+   "columns": {
+    "aircraft_id": "c01",
+    "tail_number": "c02",
+    "serial_number": "c03",
+    "type_id": "c04",
+    "airline_id": "c05",
+    "home_airport_id": "c06",
+    "registration_country": "c07",
+    "year_manufactured": "c08",
+    "delivery_date": "c09",
+    "ownership": "c10",
+    "lessor_name": "c11",
+    "lease_end_date": "c12",
+    "total_flight_hours": "c13",
+    "total_cycles": "c14",
+    "last_heavy_check_date": "c15",
+    "status": "c16"
+   }
+  },
+  "customers": {
+   "name": "th77",
+   "columns": {
+    "customer_id": "c01",
+    "account_code": "c02",
+    "name": "c03",
+    "customer_type": "c04",
+    "country": "c05",
+    "city": "c06",
+    "address_line": "c07",
+    "postal_code": "c08",
+    "contact_name": "c09",
+    "contact_email": "c10",
+    "contact_phone": "c11",
+    "website": "c12",
+    "sales_region": "c13",
+    "credit_limit_usd": "c14",
+    "payment_terms_days": "c15",
+    "is_known_shipper": "c16",
+    "loyalty_tier": "c17",
+    "created_date": "c18"
+   }
+  },
+  "warehouses": {
+   "name": "trhn",
+   "columns": {
+    "warehouse_id": "c01",
+    "warehouse_code": "c02",
+    "airport_id": "c03",
+    "operator_name": "c04",
+    "warehouse_type": "c05",
+    "floor_area_m2": "c06",
+    "capacity_tonnes": "c07",
+    "cold_room_count": "c08",
+    "min_temperature_c": "c09",
+    "dock_door_count": "c10",
+    "has_dg_area": "c11",
+    "is_bonded": "c12",
+    "security_level": "c13",
+    "operates_24h": "c14",
+    "opened_year": "c15",
+    "monthly_rent_usd": "c16"
+   }
+  },
+  "crew_members": {
+   "name": "t6sc",
+   "columns": {
+    "crew_member_id": "c01",
+    "employee_number": "c02",
+    "first_name": "c03",
+    "last_name": "c04",
+    "email": "c05",
+    "airline_id": "c06",
+    "base_airport_id": "c07",
+    "crew_rank": "c08",
+    "type_rating_id": "c09",
+    "license_number": "c10",
+    "license_expiry_date": "c11",
+    "medical_expiry_date": "c12",
+    "hire_date": "c13",
+    "seniority_number": "c14",
+    "total_flight_hours": "c15",
+    "is_active": "c16"
+   }
+  },
+  "flights": {
+   "name": "tx7n",
+   "columns": {
+    "flight_id": "c01",
+    "flight_number": "c02",
+    "flight_type": "c03",
+    "aircraft_id": "c04",
+    "origin_airport_id": "c05",
+    "destination_airport_id": "c06",
+    "scheduled_departure": "c07",
+    "scheduled_arrival": "c08",
+    "actual_departure": "c09",
+    "actual_arrival": "c10",
+    "departure_stand": "c11",
+    "arrival_stand": "c12",
+    "distance_km": "c13",
+    "planned_cruise_altitude_ft": "c14",
+    "takeoff_weight_kg": "c15",
+    "weather_at_departure": "c16",
+    "delay_code": "c17",
+    "cancellation_reason": "c18",
+    "status": "c19"
+   }
+  },
+  "crew_assignments": {
+   "name": "tpsn",
+   "columns": {
+    "assignment_id": "c01",
+    "flight_id": "c02",
+    "crew_member_id": "c03",
+    "duty_role": "c04",
+    "is_pilot_flying": "c05",
+    "report_time": "c06",
+    "release_time": "c07",
+    "block_minutes_credited": "c08",
+    "rest_minutes_before": "c09",
+    "per_diem_usd": "c10",
+    "hotel_required": "c11",
+    "assignment_status": "c12"
+   }
+  },
+  "maintenance_records": {
+   "name": "tcse",
+   "columns": {
+    "maintenance_id": "c01",
+    "work_order_number": "c02",
+    "aircraft_id": "c03",
+    "airport_id": "c04",
+    "check_type": "c05",
+    "ata_chapter": "c06",
+    "mro_provider": "c07",
+    "start_time": "c08",
+    "end_time": "c09",
+    "labor_hours": "c10",
+    "parts_cost_usd": "c11",
+    "labor_cost_usd": "c12",
+    "deferred_items_count": "c13",
+    "is_aog": "c14",
+    "next_due_date": "c15",
+    "status": "c16"
+   }
+  },
+  "fuel_uplifts": {
+   "name": "t875",
+   "columns": {
+    "fuel_uplift_id": "c01",
+    "fuel_ticket_number": "c02",
+    "flight_id": "c03",
+    "airport_id": "c04",
+    "supplier_name": "c05",
+    "fuel_type": "c06",
+    "delivery_method": "c07",
+    "uplift_time": "c08",
+    "quantity_kg": "c09",
+    "quantity_litres": "c10",
+    "density_kg_per_l": "c11",
+    "price_usd_per_litre": "c12",
+    "total_cost_usd": "c13",
+    "saf_blend_pct": "c14",
+    "fuel_burned_kg": "c15",
+    "co2_emissions_kg": "c16"
+   }
+  },
+  "shipments": {
+   "name": "t89v",
+   "columns": {
+    "shipment_id": "c01",
+    "awb_number": "c02",
+    "customer_id": "c03",
+    "customer_reference": "c04",
+    "consignee_name": "c05",
+    "origin_airport_id": "c06",
+    "destination_airport_id": "c07",
+    "booking_date": "c08",
+    "requested_delivery_date": "c09",
+    "service_level": "c10",
+    "commodity_category": "c11",
+    "pieces": "c12",
+    "total_weight_kg": "c13",
+    "total_volume_m3": "c14",
+    "chargeable_weight_kg": "c15",
+    "declared_value_usd": "c16",
+    "is_dangerous_goods": "c17",
+    "dg_class": "c18",
+    "is_temperature_controlled": "c19",
+    "min_temperature_c": "c20",
+    "max_temperature_c": "c21",
+    "status": "c22"
+   }
+  },
+  "flight_cargo": {
+   "name": "tg6t",
+   "columns": {
+    "flight_cargo_id": "c01",
+    "shipment_id": "c02",
+    "flight_id": "c03",
+    "leg_number": "c04",
+    "uld_type": "c05",
+    "uld_number": "c06",
+    "deck": "c07",
+    "position_code": "c08",
+    "load_sequence": "c09",
+    "seal_number": "c10",
+    "loaded_at": "c11",
+    "leg_status": "c12"
+   }
+  },
+  "invoices": {
+   "name": "tajj",
+   "columns": {
+    "invoice_id": "c01",
+    "invoice_number": "c02",
+    "shipment_id": "c03",
+    "issued_date": "c04",
+    "due_date": "c05",
+    "payment_terms_days": "c06",
+    "freight_charge_usd": "c07",
+    "fuel_surcharge_usd": "c08",
+    "security_fee_usd": "c09",
+    "handling_fee_usd": "c10",
+    "dg_surcharge_usd": "c11",
+    "discount_usd": "c12",
+    "amount_usd": "c13",
+    "sent_via": "c14",
+    "status": "c15"
+   }
+  },
+  "payments": {
+   "name": "t8tg",
+   "columns": {
+    "payment_id": "c01",
+    "payment_reference": "c02",
+    "invoice_id": "c03",
+    "customer_id": "c04",
+    "payment_date": "c05",
+    "amount_usd": "c06",
+    "original_currency": "c07",
+    "original_amount": "c08",
+    "exchange_rate_to_usd": "c09",
+    "method": "c10",
+    "bank_charges_usd": "c11",
+    "is_reconciled": "c12"
+   }
+  },
+  "incidents": {
+   "name": "t95g",
+   "columns": {
+    "incident_id": "c01",
+    "flight_cargo_id": "c02",
+    "airport_id": "c03",
+    "warehouse_id": "c04",
+    "incident_type": "c05",
+    "severity": "c06",
+    "root_cause": "c07",
+    "reported_by": "c08",
+    "reported_at": "c09",
+    "pieces_affected": "c10",
+    "delay_minutes": "c11",
+    "claim_amount_usd": "c12",
+    "corrective_action": "c13",
+    "resolved": "c14",
+    "resolved_at": "c15"
+   }
+  },
+  "insurance_claims": {
+   "name": "tm8a",
+   "columns": {
+    "claim_id": "c01",
+    "claim_number": "c02",
+    "incident_id": "c03",
+    "customer_id": "c04",
+    "policy_number": "c05",
+    "insurer_name": "c06",
+    "coverage_type": "c07",
+    "filed_date": "c08",
+    "claimed_amount_usd": "c09",
+    "deductible_usd": "c10",
+    "approved_amount_usd": "c11",
+    "status": "c12",
+    "decision_date": "c13",
+    "rejection_reason": "c14",
+    "settlement_date": "c15",
+    "adjuster_name": "c16"
+   }
+  },
+  "customs_declarations": {
+   "name": "t3v5",
+   "columns": {
+    "declaration_id": "c01",
+    "declaration_number": "c02",
+    "shipment_id": "c03",
+    "warehouse_id": "c04",
+    "declaration_type": "c05",
+    "customs_country": "c06",
+    "hs_code": "c07",
+    "goods_description": "c08",
+    "customs_value_usd": "c09",
+    "duty_rate_pct": "c10",
+    "duty_amount_usd": "c11",
+    "vat_amount_usd": "c12",
+    "broker_name": "c13",
+    "inspection_required": "c14",
+    "inspection_result": "c15",
+    "submitted_at": "c16",
+    "cleared_at": "c17",
+    "status": "c18"
+   }
+  },
+  "tracking_events": {
+   "name": "t3z7",
+   "columns": {
+    "event_id": "c01",
+    "shipment_id": "c02",
+    "flight_id": "c03",
+    "airport_id": "c04",
+    "warehouse_id": "c05",
+    "event_code": "c06",
+    "event_time": "c07",
+    "pieces": "c08",
+    "weight_kg": "c09",
+    "temperature_c": "c10",
+    "recorded_by": "c11",
+    "scanner_id": "c12"
+   }
+  }
+ }
+}
