@@ -4,7 +4,8 @@
 For each variant this script writes
   schema/schema_<variant>.sql          DDL with renamed tables/columns/indexes (comments stripped: they would leak meaning)
   databases/cargo_<variant>.db         same rows as the normal database, copied table by table
-  questions/questions_<variant>.json   same questions, Gold SQL translated with scripts/sql_translate.py
+  questions/questions_<variant>.json   same questions (schema_aware wording rendered with the variant's names),
+                                       Gold SQL translated with scripts/sql_translate.py
 and schema/naming_map.json (normal -> mixed -> cryptic for every table and column).
 Every translated Gold query is executed on its variant database and must return exactly the normal Gold result.
 
@@ -155,30 +156,37 @@ def main():
     if a.skip_questions:
         return
     from sql_translate import translate
+    sys.path.insert(0, os.path.join(ROOT, "questions"))
+    from build_questions import render
     qpath = os.path.join(ROOT, "questions", "questions_normal.json")
     questions = json.load(open(qpath, encoding="utf-8"))
     failures = 0
     for v in VARIANTS:
         vcon = sqlite3.connect(db_path(v))
-        out = []
+        out, done = [], {}                    # done: base_id -> translated Gold SQL (shared by the 4 phrasings)
         for q in questions:
-            gold = ncon.execute(q["gold_sql"]).fetchall()
-            sql = q.get(f"gold_sql_{v}") or translate(q["gold_sql"], maps[v], types)
-            try:
-                got = vcon.execute(sql).fetchall()
-                ok = got == gold
-            except sqlite3.Error as e:
-                ok, got = False, str(e)
-            if not ok:
-                failures += 1
-                print(f"[{v}] {q['id']} translation mismatch: {str(got)[:200]}\n{sql}")
-            nq = {k: val for k, val in q.items() if not k.startswith("gold_sql_")}
-            nq["gold_sql"] = sql
+            key = q.get("base_id", q["id"])
+            if key not in done:
+                gold = ncon.execute(q["gold_sql"]).fetchall()
+                sql = translate(q["gold_sql"], maps[v], types)
+                try:
+                    got = vcon.execute(sql).fetchall()
+                    ok = got == gold
+                except sqlite3.Error as e:
+                    ok, got = False, str(e)
+                if not ok:
+                    failures += 1
+                    print(f"[{v}] {key} translation mismatch: {str(got)[:200]}\n{sql}")
+                done[key] = sql
+            nq = dict(q)
+            if "question_template" in q:      # schema_aware phrasings name the variant's own tables and columns
+                nq["question"] = render(q["question_template"], naming[v])
+            nq["gold_sql"] = done[key]
             nq["schema_variant"] = v
             out.append(nq)
         with open(os.path.join(ROOT, "questions", f"questions_{v}.json"), "w", encoding="utf-8", newline="\n") as fh:
             json.dump(out, fh, indent=2, ensure_ascii=False)
-        print(f"[{v}] {len(out)} Gold queries translated and verified against the normal results")
+        print(f"[{v}] {len(out)} questions written; {len(done)} Gold queries translated and verified against the normal results")
     sys.exit(1 if failures else 0)
 
 
