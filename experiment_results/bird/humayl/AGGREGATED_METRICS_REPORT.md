@@ -1,0 +1,624 @@
+# Master Experiment Results: Comprehensive Metric Report
+
+This document provides a complete conversion of all benchmark metrics and statistics into a clear, bullet-point format. It evaluates 500 questions from the BIRD Mini-Dev benchmark running on standard CPU hardware across all 8 tested model and prompt configurations.
+
+
+## Overview of Tested Setups
+- **Workload:** 500 natural-language database questions evaluated against ground-truth SQLite execution results.
+- **Models Evaluated:**
+  - **Qwen2.5-Coder-7B:** 7-billion parameter code-specialized model.
+  - **Qwen2.5-Coder-1.5B:** 1.5-billion parameter lightweight model for edge deployment.
+- **Prompt Formats:**
+  - **Full Database Schema:** Every table and column definition is included in the model prompt.
+  - **Pruned Schema (v2):** Context-filtered schema selecting only question-relevant tables and columns using keyword and BM25 search.
+- **Execution Cascades:**
+  - **Homogeneous (Single-Model):** The same model writes initial SQL and repairs its own execution failures.
+  - **Cascade 1 (Fast Writer → Expert Repairer):** 1.5B writes initial SQL; 7B repairs only the queries that produced runtime errors.
+  - **Cascade 2 (Strong Writer → Fast Syntax Doctor):** 7B writes initial SQL; 1.5B repairs only the queries that produced runtime errors.
+
+---
+## 1. Complete Metric Breakdown by Configuration
+Below is the complete profile for each configuration, covering accuracy, latency distributions, token counts, throughput, error recovery, and difficulty tiers.
+
+
+--- 
+
+### Configuration 1: 7B (Self-Repair) — Full Schema
+- **System Setup:**
+  - Procedure: Same Model Repair
+  - Query Writing Model: 7B
+  - Error Repairing Model: 7B
+  - Schema Format: Full Schema
+  - Total Benchmark Questions: 500
+- **Execution Accuracy (Query Correctness):**
+  - Initial Accuracy: **48.00%** (240 / 500 correct)
+  - Repaired Accuracy: **51.40%** (257 / 500 correct)
+  - Absolute Accuracy Gain: **+3.40%** (+17 net correct queries)
+- **Accuracy by Question Difficulty (Initial → Repaired):**
+  - Simple Questions (148 total): 66.89% → **68.24%**
+  - Moderate Questions (250 total): 44.00% → **47.60%**
+  - Challenging Questions (102 total): 30.39% → **36.27%**
+- **Initial Query Response Time (Latency):**
+  - Median Response Time (P50): **5.60 seconds**
+  - Mean Response Time: **5.81 seconds**
+  - Fastest Query (Minimum): **2.76 seconds**
+  - Slowest Query (Maximum): **31.14 seconds**
+  - 90th Percentile Response Time (P90): **7.55 seconds**
+  - 95th Percentile Response Time (P95): **8.34 seconds**
+- **End-to-End Response Time (Initial Generation + Repair Overhead):**
+  - Average Extra Repair Time per Question (Amortized): **+0.96 seconds**
+  - Total End-to-End Mean Response Time: **6.77 seconds**
+  - Total End-to-End Median Response Time: **5.88 seconds**
+  - Total End-to-End 90th Percentile (P90): **11.13 seconds**
+- **Error Recovery & Self-Repair Dynamics:**
+  - Initial Queries with Execution Errors: **70** (out of 500)
+  - Queries Fixed into Working SQL: **42** (Fix Rate: **60.0%**)
+  - Queries Fixed into Completely Correct SQL: **17** (Correct Recovery Rate: **24.3%**)
+  - Total Time Spent on All Repairs: **477.9 seconds**
+  - Average Time per Repair Generation: **6.69 seconds**
+- **Token Usage (Prompt & Output Size):**
+  - Average Prompt Tokens per Question: **742.3 tokens**
+  - Total Prompt Tokens for Benchmark: **371,155 tokens**
+  - Average Generated SQL Tokens per Question: **57.4 tokens**
+  - Total Generated SQL Tokens: **28,694 tokens**
+  - Total Output Tokens Spent on Repairs: **4,782 tokens**
+- **Generation Speed & Hardware Efficiency (On CPU):**
+  - Average Generation Speed: **16.93 tokens per second**
+  - Median Generation Speed: **17.11 tokens per second**
+  - Average Time per Token (Decoding Latency): **111.8 milliseconds per token**
+
+---
+
+### Configuration 2: 7B (Self-Repair) — Pruned v2
+- **System Setup:**
+  - Procedure: Same Model Repair
+  - Query Writing Model: 7B
+  - Error Repairing Model: 7B
+  - Schema Format: Pruned v2
+  - Total Benchmark Questions: 500
+- **Execution Accuracy (Query Correctness):**
+  - Initial Accuracy: **44.60%** (223 / 500 correct)
+  - Repaired Accuracy: **48.60%** (243 / 500 correct)
+  - Absolute Accuracy Gain: **+4.00%** (+20 net correct queries)
+- **Accuracy by Question Difficulty (Initial → Repaired):**
+  - Simple Questions (148 total): 62.84% → **64.86%**
+  - Moderate Questions (250 total): 40.80% → **45.20%**
+  - Challenging Questions (102 total): 27.45% → **33.33%**
+- **Initial Query Response Time (Latency):**
+  - Median Response Time (P50): **5.85 seconds**
+  - Mean Response Time: **6.02 seconds**
+  - Fastest Query (Minimum): **3.02 seconds**
+  - Slowest Query (Maximum): **28.46 seconds**
+  - 90th Percentile Response Time (P90): **7.61 seconds**
+  - 95th Percentile Response Time (P95): **8.54 seconds**
+- **End-to-End Response Time (Initial Generation + Repair Overhead):**
+  - Average Extra Repair Time per Question (Amortized): **+1.09 seconds**
+  - Total End-to-End Mean Response Time: **7.12 seconds**
+  - Total End-to-End Median Response Time: **6.20 seconds**
+  - Total End-to-End 90th Percentile (P90): **11.50 seconds**
+- **Error Recovery & Self-Repair Dynamics:**
+  - Initial Queries with Execution Errors: **79** (out of 500)
+  - Queries Fixed into Working SQL: **39** (Fix Rate: **49.4%**)
+  - Queries Fixed into Completely Correct SQL: **20** (Correct Recovery Rate: **25.3%**)
+  - Total Time Spent on All Repairs: **547.2 seconds**
+  - Average Time per Repair Generation: **6.69 seconds**
+- **Token Usage (Prompt & Output Size):**
+  - Average Prompt Tokens per Question: **428.9 tokens**
+  - Total Prompt Tokens for Benchmark: **214,467 tokens**
+  - Average Generated SQL Tokens per Question: **59.1 tokens**
+  - Total Generated SQL Tokens: **29,562 tokens**
+  - Total Output Tokens Spent on Repairs: **5,182 tokens**
+- **Generation Speed & Hardware Efficiency (On CPU):**
+  - Average Generation Speed: **17.20 tokens per second**
+  - Median Generation Speed: **17.31 tokens per second**
+  - Average Time per Token (Decoding Latency): **111.5 milliseconds per token**
+
+---
+
+### Configuration 3: 1.5B (Self-Repair) — Full Schema
+- **System Setup:**
+  - Procedure: Same Model Repair
+  - Query Writing Model: 1.5B
+  - Error Repairing Model: 1.5B
+  - Schema Format: Full Schema
+  - Total Benchmark Questions: 500
+- **Execution Accuracy (Query Correctness):**
+  - Initial Accuracy: **22.80%** (114 / 500 correct)
+  - Repaired Accuracy: **26.20%** (131 / 500 correct)
+  - Absolute Accuracy Gain: **+3.40%** (+17 net correct queries)
+- **Accuracy by Question Difficulty (Initial → Repaired):**
+  - Simple Questions (148 total): 37.84% → **43.24%**
+  - Moderate Questions (250 total): 18.00% → **21.60%**
+  - Challenging Questions (102 total): 12.75% → **12.75%**
+- **Initial Query Response Time (Latency):**
+  - Median Response Time (P50): **2.83 seconds**
+  - Mean Response Time: **3.95 seconds**
+  - Fastest Query (Minimum): **2.37 seconds**
+  - Slowest Query (Maximum): **182.05 seconds**
+  - 90th Percentile Response Time (P90): **3.16 seconds**
+  - 95th Percentile Response Time (P95): **3.31 seconds**
+- **End-to-End Response Time (Initial Generation + Repair Overhead):**
+  - Average Extra Repair Time per Question (Amortized): **+1.73 seconds**
+  - Total End-to-End Mean Response Time: **5.68 seconds**
+  - Total End-to-End Median Response Time: **5.26 seconds**
+  - Total End-to-End 90th Percentile (P90): **6.29 seconds**
+- **Error Recovery & Self-Repair Dynamics:**
+  - Initial Queries with Execution Errors: **294** (out of 500)
+  - Queries Fixed into Working SQL: **32** (Fix Rate: **10.9%**)
+  - Queries Fixed into Completely Correct SQL: **17** (Correct Recovery Rate: **5.8%**)
+  - Total Time Spent on All Repairs: **866.5 seconds**
+  - Average Time per Repair Generation: **2.93 seconds**
+- **Token Usage (Prompt & Output Size):**
+  - Average Prompt Tokens per Question: **739.4 tokens**
+  - Total Prompt Tokens for Benchmark: **369,678 tokens**
+  - Average Generated SQL Tokens per Question: **59.0 tokens**
+  - Total Generated SQL Tokens: **29,475 tokens**
+  - Total Output Tokens Spent on Repairs: **17,415 tokens**
+- **Generation Speed & Hardware Efficiency (On CPU):**
+  - Average Generation Speed: **83.29 tokens per second**
+  - Median Generation Speed: **84.32 tokens per second**
+  - Average Time per Token (Decoding Latency): **56.9 milliseconds per token**
+
+---
+
+### Configuration 4: 1.5B (Self-Repair) — Pruned v2
+- **System Setup:**
+  - Procedure: Same Model Repair
+  - Query Writing Model: 1.5B
+  - Error Repairing Model: 1.5B
+  - Schema Format: Pruned v2
+  - Total Benchmark Questions: 500
+- **Execution Accuracy (Query Correctness):**
+  - Initial Accuracy: **24.80%** (124 / 500 correct)
+  - Repaired Accuracy: **27.60%** (138 / 500 correct)
+  - Absolute Accuracy Gain: **+2.80%** (+14 net correct queries)
+- **Accuracy by Question Difficulty (Initial → Repaired):**
+  - Simple Questions (148 total): 41.89% → **47.30%**
+  - Moderate Questions (250 total): 19.60% → **21.20%**
+  - Challenging Questions (102 total): 12.75% → **14.71%**
+- **Initial Query Response Time (Latency):**
+  - Median Response Time (P50): **2.89 seconds**
+  - Mean Response Time: **4.00 seconds**
+  - Fastest Query (Minimum): **2.32 seconds**
+  - Slowest Query (Maximum): **182.05 seconds**
+  - 90th Percentile Response Time (P90): **3.22 seconds**
+  - 95th Percentile Response Time (P95): **3.35 seconds**
+- **End-to-End Response Time (Initial Generation + Repair Overhead):**
+  - Average Extra Repair Time per Question (Amortized): **+2.01 seconds**
+  - Total End-to-End Mean Response Time: **6.01 seconds**
+  - Total End-to-End Median Response Time: **5.37 seconds**
+  - Total End-to-End 90th Percentile (P90): **6.34 seconds**
+- **Error Recovery & Self-Repair Dynamics:**
+  - Initial Queries with Execution Errors: **275** (out of 500)
+  - Queries Fixed into Working SQL: **24** (Fix Rate: **8.7%**)
+  - Queries Fixed into Completely Correct SQL: **14** (Correct Recovery Rate: **5.1%**)
+  - Total Time Spent on All Repairs: **1004.0 seconds**
+  - Average Time per Repair Generation: **3.64 seconds**
+- **Token Usage (Prompt & Output Size):**
+  - Average Prompt Tokens per Question: **426.6 tokens**
+  - Total Prompt Tokens for Benchmark: **213,275 tokens**
+  - Average Generated SQL Tokens per Question: **60.0 tokens**
+  - Total Generated SQL Tokens: **30,011 tokens**
+  - Total Output Tokens Spent on Repairs: **16,966 tokens**
+- **Generation Speed & Hardware Efficiency (On CPU):**
+  - Average Generation Speed: **88.76 tokens per second**
+  - Median Generation Speed: **90.13 tokens per second**
+  - Average Time per Token (Decoding Latency): **56.0 milliseconds per token**
+
+---
+
+### Configuration 5: 1.5B → 7B — Full Schema
+- **System Setup:**
+  - Procedure: Cross-Model Repair
+  - Query Writing Model: 1.5B
+  - Error Repairing Model: 7B
+  - Schema Format: Full Schema
+  - Total Benchmark Questions: 500
+- **Execution Accuracy (Query Correctness):**
+  - Initial Accuracy: **22.80%** (114 / 500 correct)
+  - Repaired Accuracy: **41.00%** (205 / 500 correct)
+  - Absolute Accuracy Gain: **+18.20%** (+91 net correct queries)
+- **Accuracy by Question Difficulty (Initial → Repaired):**
+  - Simple Questions (148 total): 37.84% → **60.81%**
+  - Moderate Questions (250 total): 18.00% → **34.40%**
+  - Challenging Questions (102 total): 12.75% → **28.43%**
+- **Initial Query Response Time (Latency):**
+  - Median Response Time (P50): **2.83 seconds**
+  - Mean Response Time: **3.95 seconds**
+  - Fastest Query (Minimum): **2.37 seconds**
+  - Slowest Query (Maximum): **182.05 seconds**
+  - 90th Percentile Response Time (P90): **3.16 seconds**
+  - 95th Percentile Response Time (P95): **3.31 seconds**
+- **End-to-End Response Time (Initial Generation + Repair Overhead):**
+  - Average Extra Repair Time per Question (Amortized): **+3.98 seconds**
+  - Total End-to-End Mean Response Time: **7.93 seconds**
+  - Total End-to-End Median Response Time: **7.69 seconds**
+  - Total End-to-End 90th Percentile (P90): **10.95 seconds**
+- **Error Recovery & Self-Repair Dynamics:**
+  - Initial Queries with Execution Errors: **294** (out of 500)
+  - Queries Fixed into Working SQL: **199** (Fix Rate: **67.7%**)
+  - Queries Fixed into Completely Correct SQL: **91** (Correct Recovery Rate: **31.0%**)
+  - Total Time Spent on All Repairs: **1988.6 seconds**
+  - Average Time per Repair Generation: **6.60 seconds**
+- **Token Usage (Prompt & Output Size):**
+  - Average Prompt Tokens per Question: **739.4 tokens**
+  - Total Prompt Tokens for Benchmark: **369,678 tokens**
+  - Average Generated SQL Tokens per Question: **59.0 tokens**
+  - Total Generated SQL Tokens: **29,475 tokens**
+  - Total Output Tokens Spent on Repairs: **19,523 tokens**
+- **Generation Speed & Hardware Efficiency (On CPU):**
+  - Average Generation Speed: **83.29 tokens per second**
+  - Median Generation Speed: **84.32 tokens per second**
+  - Average Time per Token (Decoding Latency): **56.9 milliseconds per token**
+
+---
+
+### Configuration 6: 1.5B → 7B — Pruned v2
+- **System Setup:**
+  - Procedure: Cross-Model Repair
+  - Query Writing Model: 1.5B
+  - Error Repairing Model: 7B
+  - Schema Format: Pruned v2
+  - Total Benchmark Questions: 500
+- **Execution Accuracy (Query Correctness):**
+  - Initial Accuracy: **24.80%** (124 / 500 correct)
+  - Repaired Accuracy: **39.20%** (196 / 500 correct)
+  - Absolute Accuracy Gain: **+14.40%** (+73 net correct queries)
+- **Accuracy by Question Difficulty (Initial → Repaired):**
+  - Simple Questions (148 total): 41.89% → **58.78%**
+  - Moderate Questions (250 total): 19.60% → **33.20%**
+  - Challenging Questions (102 total): 12.75% → **25.49%**
+- **Initial Query Response Time (Latency):**
+  - Median Response Time (P50): **2.89 seconds**
+  - Mean Response Time: **4.00 seconds**
+  - Fastest Query (Minimum): **2.32 seconds**
+  - Slowest Query (Maximum): **182.05 seconds**
+  - 90th Percentile Response Time (P90): **3.22 seconds**
+  - 95th Percentile Response Time (P95): **3.35 seconds**
+- **End-to-End Response Time (Initial Generation + Repair Overhead):**
+  - Average Extra Repair Time per Question (Amortized): **+3.86 seconds**
+  - Total End-to-End Mean Response Time: **7.86 seconds**
+  - Total End-to-End Median Response Time: **7.76 seconds**
+  - Total End-to-End 90th Percentile (P90): **10.99 seconds**
+- **Error Recovery & Self-Repair Dynamics:**
+  - Initial Queries with Execution Errors: **275** (out of 500)
+  - Queries Fixed into Working SQL: **177** (Fix Rate: **64.4%**)
+  - Queries Fixed into Completely Correct SQL: **73** (Correct Recovery Rate: **26.5%**)
+  - Total Time Spent on All Repairs: **1927.7 seconds**
+  - Average Time per Repair Generation: **6.83 seconds**
+- **Token Usage (Prompt & Output Size):**
+  - Average Prompt Tokens per Question: **426.6 tokens**
+  - Total Prompt Tokens for Benchmark: **213,275 tokens**
+  - Average Generated SQL Tokens per Question: **60.0 tokens**
+  - Total Generated SQL Tokens: **30,011 tokens**
+  - Total Output Tokens Spent on Repairs: **18,864 tokens**
+- **Generation Speed & Hardware Efficiency (On CPU):**
+  - Average Generation Speed: **88.76 tokens per second**
+  - Median Generation Speed: **90.13 tokens per second**
+  - Average Time per Token (Decoding Latency): **56.0 milliseconds per token**
+
+---
+
+### Configuration 7: 7B → 1.5B — Full Schema
+- **System Setup:**
+  - Procedure: Cross-Model Repair
+  - Query Writing Model: 7B
+  - Error Repairing Model: 1.5B
+  - Schema Format: Full Schema
+  - Total Benchmark Questions: 500
+- **Execution Accuracy (Query Correctness):**
+  - Initial Accuracy: **48.00%** (240 / 500 correct)
+  - Repaired Accuracy: **49.40%** (247 / 500 correct)
+  - Absolute Accuracy Gain: **+1.40%** (+7 net correct queries)
+- **Accuracy by Question Difficulty (Initial → Repaired):**
+  - Simple Questions (148 total): 66.89% → **68.24%**
+  - Moderate Questions (250 total): 44.00% → **45.60%**
+  - Challenging Questions (102 total): 30.39% → **31.37%**
+- **Initial Query Response Time (Latency):**
+  - Median Response Time (P50): **5.60 seconds**
+  - Mean Response Time: **5.81 seconds**
+  - Fastest Query (Minimum): **2.76 seconds**
+  - Slowest Query (Maximum): **31.14 seconds**
+  - 90th Percentile Response Time (P90): **7.55 seconds**
+  - 95th Percentile Response Time (P95): **8.34 seconds**
+- **End-to-End Response Time (Initial Generation + Repair Overhead):**
+  - Average Extra Repair Time per Question (Amortized): **+0.45 seconds**
+  - Total End-to-End Mean Response Time: **6.26 seconds**
+  - Total End-to-End Median Response Time: **5.87 seconds**
+  - Total End-to-End 90th Percentile (P90): **8.84 seconds**
+- **Error Recovery & Self-Repair Dynamics:**
+  - Initial Queries with Execution Errors: **70** (out of 500)
+  - Queries Fixed into Working SQL: **9** (Fix Rate: **12.9%**)
+  - Queries Fixed into Completely Correct SQL: **7** (Correct Recovery Rate: **10.0%**)
+  - Total Time Spent on All Repairs: **225.0 seconds**
+  - Average Time per Repair Generation: **3.14 seconds**
+- **Token Usage (Prompt & Output Size):**
+  - Average Prompt Tokens per Question: **742.3 tokens**
+  - Total Prompt Tokens for Benchmark: **371,155 tokens**
+  - Average Generated SQL Tokens per Question: **57.4 tokens**
+  - Total Generated SQL Tokens: **28,694 tokens**
+  - Total Output Tokens Spent on Repairs: **4,835 tokens**
+- **Generation Speed & Hardware Efficiency (On CPU):**
+  - Average Generation Speed: **16.93 tokens per second**
+  - Median Generation Speed: **17.11 tokens per second**
+  - Average Time per Token (Decoding Latency): **111.8 milliseconds per token**
+
+---
+
+### Configuration 8: 7B → 1.5B — Pruned v2
+- **System Setup:**
+  - Procedure: Cross-Model Repair
+  - Query Writing Model: 7B
+  - Error Repairing Model: 1.5B
+  - Schema Format: Pruned v2
+  - Total Benchmark Questions: 500
+- **Execution Accuracy (Query Correctness):**
+  - Initial Accuracy: **44.60%** (223 / 500 correct)
+  - Repaired Accuracy: **46.00%** (230 / 500 correct)
+  - Absolute Accuracy Gain: **+1.40%** (+7 net correct queries)
+- **Accuracy by Question Difficulty (Initial → Repaired):**
+  - Simple Questions (148 total): 62.84% → **64.19%**
+  - Moderate Questions (250 total): 40.80% → **42.00%**
+  - Challenging Questions (102 total): 27.45% → **29.41%**
+- **Initial Query Response Time (Latency):**
+  - Median Response Time (P50): **5.85 seconds**
+  - Mean Response Time: **6.02 seconds**
+  - Fastest Query (Minimum): **3.02 seconds**
+  - Slowest Query (Maximum): **28.46 seconds**
+  - 90th Percentile Response Time (P90): **7.61 seconds**
+  - 95th Percentile Response Time (P95): **8.54 seconds**
+- **End-to-End Response Time (Initial Generation + Repair Overhead):**
+  - Average Extra Repair Time per Question (Amortized): **+0.49 seconds**
+  - Total End-to-End Mean Response Time: **6.52 seconds**
+  - Total End-to-End Median Response Time: **6.18 seconds**
+  - Total End-to-End 90th Percentile (P90): **9.12 seconds**
+- **Error Recovery & Self-Repair Dynamics:**
+  - Initial Queries with Execution Errors: **79** (out of 500)
+  - Queries Fixed into Working SQL: **10** (Fix Rate: **12.7%**)
+  - Queries Fixed into Completely Correct SQL: **7** (Correct Recovery Rate: **8.9%**)
+  - Total Time Spent on All Repairs: **246.4 seconds**
+  - Average Time per Repair Generation: **3.04 seconds**
+- **Token Usage (Prompt & Output Size):**
+  - Average Prompt Tokens per Question: **428.9 tokens**
+  - Total Prompt Tokens for Benchmark: **214,467 tokens**
+  - Average Generated SQL Tokens per Question: **59.1 tokens**
+  - Total Generated SQL Tokens: **29,562 tokens**
+  - Total Output Tokens Spent on Repairs: **5,270 tokens**
+- **Generation Speed & Hardware Efficiency (On CPU):**
+  - Average Generation Speed: **17.20 tokens per second**
+  - Median Generation Speed: **17.31 tokens per second**
+  - Average Time per Token (Decoding Latency): **111.5 milliseconds per token**
+
+---
+
+## 2. Direct Metric-by-Metric Comparisons
+For easy comparison across all 8 configurations, the metrics are grouped below by category.
+
+---
+
+### A. Execution Accuracy (Initial → Repaired & Net Gain)
+- **7B (Self-Repair) (Full Schema):** Initial **48.00%** → Repaired **51.40%** (Net Gain: **+3.40%**, +17 correct queries)
+- **7B (Self-Repair) (Pruned v2):** Initial **44.60%** → Repaired **48.60%** (Net Gain: **+4.00%**, +20 correct queries)
+- **1.5B (Self-Repair) (Full Schema):** Initial **22.80%** → Repaired **26.20%** (Net Gain: **+3.40%**, +17 correct queries)
+- **1.5B (Self-Repair) (Pruned v2):** Initial **24.80%** → Repaired **27.60%** (Net Gain: **+2.80%**, +14 correct queries)
+- **1.5B → 7B (Full Schema):** Initial **22.80%** → Repaired **41.00%** (Net Gain: **+18.20%**, +91 correct queries)
+- **1.5B → 7B (Pruned v2):** Initial **24.80%** → Repaired **39.20%** (Net Gain: **+14.40%**, +73 correct queries)
+- **7B → 1.5B (Full Schema):** Initial **48.00%** → Repaired **49.40%** (Net Gain: **+1.40%**, +7 correct queries)
+- **7B → 1.5B (Pruned v2):** Initial **44.60%** → Repaired **46.00%** (Net Gain: **+1.40%**, +7 correct queries)
+
+---
+
+### B. Latency Profile (Initial Median, Initial Mean, and End-to-End Mean)
+- **7B (Self-Repair) (Full Schema):** 
+  - Initial Median: **5.60s** 
+  - Initial Mean: **5.81s**
+  - Repair Overhead: **+0.96s**
+  - End-to-End Mean: **6.77s** 
+  - End-to-End Median: **5.88s**
+- **7B (Self-Repair) (Pruned v2):** 
+  - Initial Median: **5.85s** | 
+  - Initial Mean: **6.02s** | 
+  - Repair Overhead: **+1.09s** | 
+  - End-to-End Mean: **7.12s** | 
+  - End-to-End Median: **6.20s**
+- **1.5B (Self-Repair) (Full Schema):** 
+  - Initial Median: **2.83s** | 
+  - Initial Mean: **3.95s** | 
+  - Repair Overhead: **+1.73s** | 
+  - End-to-End Mean: **5.68s** | 
+  - End-to-End Median: **5.26s**
+- **1.5B (Self-Repair) (Pruned v2):** 
+  - Initial Median: **2.89s** 
+  - Initial Mean: **4.00s**
+  - Repair Overhead: **+2.01s** 
+  - End-to-End Mean: **6.01s** 
+  - End-to-End Median: **5.37s**
+- **1.5B → 7B (Full Schema):** 
+  - Initial Median: **2.83s** 
+  - Initial Mean: **3.95s**
+  - Repair Overhead: **+3.98s** 
+  - End-to-End Mean: **7.93s** 
+  - End-to-End Median: **7.69s**
+- **1.5B → 7B (Pruned v2):** 
+  - Initial Median: **2.89s** 
+  - Initial Mean: **4.00s**
+  - Repair Overhead: **+3.86s** 
+  - End-to-End Mean: **7.86s** 
+  - End-to-End Median: **7.76s**
+- **7B → 1.5B (Full Schema):** 
+  - Initial Median: **5.60s** 
+  - Initial Mean: **5.81s** 
+  - Repair Overhead: **+0.45s** 
+  - End-to-End Mean: **6.26s** 
+  - End-to-End Median: **5.87s**
+- **7B → 1.5B (Pruned v2):** 
+  - Initial Median: **5.85s** 
+  - Initial Mean: **6.02s** 
+  - Repair Overhead: **+0.49s** 
+  - End-to-End Mean: **6.52s**
+  - End-to-End Median: **6.18s**
+
+---
+
+### C. Generation Speed (Tokens per Second) & Decoding Latency
+- **7B (Self-Repair) (Full Schema):** 
+  - Average Speed: **16.93 tokens/sec**
+  - Median Speed: **17.11 tokens/sec** 
+  - Time per Token: **111.8 ms/token**
+- **7B (Self-Repair) (Pruned v2):** 
+  - Average Speed: **17.20 tokens/sec** 
+  - Median Speed: **17.31 tokens/sec** 
+  - Time per Token: **111.5 ms/token**
+- **1.5B (Self-Repair) (Full Schema):** 
+  - Average Speed: **83.29 tokens/sec**  
+  - Median Speed: **84.32 tokens/sec** 
+  - Time per Token: **56.9 ms/token**
+- **1.5B (Self-Repair) (Pruned v2):** 
+  - Average Speed: **88.76 tokens/sec**  
+  - Median Speed: **90.13 tokens/sec** 
+  - Time per Token: **56.0 ms/token**
+- **1.5B → 7B (Full Schema):** 
+  - Average Speed: **83.29 tokens/sec** 
+  - Median Speed: **84.32 tokens/sec** 
+  - Time per Token: **56.9 ms/token**
+- **1.5B → 7B (Pruned v2):** 
+  - Average Speed: **88.76 tokens/sec** 
+  - Median Speed: **90.13 tokens/sec** 
+  - Time per Token: **56.0 ms/token**
+- **7B → 1.5B (Full Schema):** 
+  - Average Speed: **16.93 tokens/sec**
+  - Median Speed: **17.11 tokens/sec** 
+  - Time per Token: **111.8 ms/token**
+- **7B → 1.5B (Pruned v2):** 
+  - Average Speed: **17.20 tokens/sec** 
+  - Median Speed: **17.31 tokens/sec**
+  - Time per Token: **111.5 ms/token**
+
+---
+
+### D. Token Volume (Average Prompt Tokens vs Generated Tokens)
+- **7B (Self-Repair) (Full Schema):** 
+  - Mean Prompt Tokens: **742.3** (Total: 371,155) 
+  - Mean Generated Tokens: **57.4** (Total: 28,694)
+- **7B (Self-Repair) (Pruned v2):** 
+  - Mean Prompt Tokens: **428.9** (Total: 214,467) 
+  - Mean Generated Tokens: **59.1** (Total: 29,562)
+- **1.5B (Self-Repair) (Full Schema):** 
+  - Mean Prompt Tokens: **739.4** (Total: 369,678) 
+  - Mean Generated Tokens: **59.0** (Total: 29,475)
+- **1.5B (Self-Repair) (Pruned v2):** 
+  - Mean Prompt Tokens: **426.6** (Total: 213,275) 
+  - Mean Generated Tokens: **60.0** (Total: 30,011)
+- **1.5B → 7B (Full Schema):** 
+  - Mean Prompt Tokens: **739.4** (Total: 369,678) 
+  - Mean Generated Tokens: **59.0** (Total: 29,475)
+- **1.5B → 7B (Pruned v2):** 
+  - Mean Prompt Tokens: **426.6** (Total: 213,275) 
+  - Mean Generated Tokens: **60.0** (Total: 30,011)
+- **7B → 1.5B (Full Schema):** 
+  - Mean Prompt Tokens: **742.3** (Total: 371,155) 
+  - Mean Generated Tokens: **57.4** (Total: 28,694)
+- **7B → 1.5B (Pruned v2):** 
+  - Mean Prompt Tokens: **428.9** (Total: 214,467) 
+  - Mean Generated Tokens: **59.1** (Total: 29,562)
+
+---
+
+### E. Self-Repair Execution Recovery Performance
+- **7B (Self-Repair) (Full Schema):** 
+  - Failing Queries: **70**
+  - Working SQL Fixed: **42** (60.0%) 
+  - Correct Queries Gained: **+17** (24.3%) 
+  - Total Repair Time: **477.9s**
+- **7B (Self-Repair) (Pruned v2):** 
+  - Failing Queries: **79**  
+  - Working SQL Fixed: **39** (49.4%)  
+  - Correct Queries Gained: **+20** (25.3%)  
+  - Total Repair Time: **547.2s**
+- **1.5B (Self-Repair) (Full Schema):** 
+  - Failing Queries: **294** 
+  - Working SQL Fixed: **32** (10.9%)  
+  - Correct Queries Gained: **+17** (5.8%) 
+  - Total Repair Time: **866.5s**
+- **1.5B (Self-Repair) (Pruned v2):** 
+  - Failing Queries: **275** 
+  - Working SQL Fixed: **24** (8.7%)  
+  - Correct Queries Gained: **+14** (5.1%)  
+  - Total Repair Time: **1004.0s**
+- **1.5B → 7B (Full Schema):** 
+  - Failing Queries: **294** 
+  - Working SQL Fixed: **199** (67.7%)  
+  - Correct Queries Gained: **+91** (31.0%)  
+  - Total Repair Time: **1988.6s**
+- **1.5B → 7B (Pruned v2):** 
+  - Failing Queries: **275**  
+  - Working SQL Fixed: **177** (64.4%)  
+  - Correct Queries Gained: **+73** (26.5%)  
+  - Total Repair Time: **1927.7s**
+- **7B → 1.5B (Full Schema):** 
+  - Failing Queries: **70**  
+  - Working SQL Fixed: **9** (12.9%)  
+  - Correct Queries Gained: **+7** (10.0%)  
+  - Total Repair Time: **225.0s**
+- **7B → 1.5B (Pruned v2):** 
+  - Failing Queries: **79** 
+  - Working SQL Fixed: **10** (12.7%)  
+  - Correct Queries Gained: **+7** (8.9%)  
+  - Total Repair Time: **246.4s**
+
+---
+
+### F. Question Difficulty Tier Accuracy (Simple, Moderate, Challenging)
+- **7B (Self-Repair) (Full Schema):**
+  - Simple (148 questions): Initial **66.89%** → Repaired **68.24%**
+  - Moderate (250 questions): Initial **44.00%** → Repaired **47.60%**
+  - Challenging (102 questions): Initial **30.39%** → Repaired **36.27%**
+- **7B (Self-Repair) (Pruned v2):**
+  - Simple (148 questions): Initial **62.84%** → Repaired **64.86%**
+  - Moderate (250 questions): Initial **40.80%** → Repaired **45.20%**
+  - Challenging (102 questions): Initial **27.45%** → Repaired **33.33%**
+- **1.5B (Self-Repair) (Full Schema):**
+  - Simple (148 questions): Initial **37.84%** → Repaired **43.24%**
+  - Moderate (250 questions): Initial **18.00%** → Repaired **21.60%**
+  - Challenging (102 questions): Initial **12.75%** → Repaired **12.75%**
+- **1.5B (Self-Repair) (Pruned v2):**
+  - Simple (148 questions): Initial **41.89%** → Repaired **47.30%**
+  - Moderate (250 questions): Initial **19.60%** → Repaired **21.20%**
+  - Challenging (102 questions): Initial **12.75%** → Repaired **14.71%**
+- **1.5B → 7B (Full Schema):**
+  - Simple (148 questions): Initial **37.84%** → Repaired **60.81%**
+  - Moderate (250 questions): Initial **18.00%** → Repaired **34.40%**
+  - Challenging (102 questions): Initial **12.75%** → Repaired **28.43%**
+- **1.5B → 7B (Pruned v2):**
+  - Simple (148 questions): Initial **41.89%** → Repaired **58.78%**
+  - Moderate (250 questions): Initial **19.60%** → Repaired **33.20%**
+  - Challenging (102 questions): Initial **12.75%** → Repaired **25.49%**
+- **7B → 1.5B (Full Schema):**
+  - Simple (148 questions): Initial **66.89%** → Repaired **68.24%**
+  - Moderate (250 questions): Initial **44.00%** → Repaired **45.60%**
+  - Challenging (102 questions): Initial **30.39%** → Repaired **31.37%**
+- **7B → 1.5B (Pruned v2):**
+  - Simple (148 questions): Initial **62.84%** → Repaired **64.19%**
+  - Moderate (250 questions): Initial **40.80%** → Repaired **42.00%**
+  - Challenging (102 questions): Initial **27.45%** → Repaired **29.41%**
+
+---
+
+## 3. Key Findings & Insights
+- **1. The Two-Model Team (1.5B Writer → 7B Repairer) Delivers the Largest Accuracy Jump:**
+  - Running the 1.5B model alone yields only **22.80% accuracy** on Full Schema due to 294 execution errors.
+  - When errors are escalated to the 7B repairer, the 7B model fixes **199 out of 294 errors (67.7% success rate)**, yielding **+91 correct answers**.
+  - Final accuracy reaches **41.00%** on Full Schema (+18.20% gain) and **39.20%** on Pruned Schema (+14.40% gain).
+  - **Practical Value:** 206 queries are returned in **~2.8 seconds** with zero 7B compute, while harder queries receive expert repair.
+- **2. The Fast Syntax Doctor (7B Writer → 1.5B Repairer) Adds Free Correctness:**
+  - When 7B makes minor syntax or naming errors, calling the lightweight 1.5B model fixed 9–10 queries, gaining **+7 correct queries** on both schema formats.
+  - Because the 1.5B model generates at ~85 tokens/second, this added only **0.45 seconds of extra waiting time** per query across the benchmark.
+- **3. Highest Overall Accuracy Remains Single-Model 7B Self-Repair:**
+  - 7B repairing its own errors achieved **51.40% accuracy** on Full Schema and **48.60% accuracy** on Pruned Schema.
+  - It fixed 42 out of 70 failing queries, recovering 17 correct queries.
+- **4. Schema Pruning Slashes Context Size by 42.2%:**
+  - Prompt tokens dropped from **~740 tokens down to ~428 tokens** per question (~157,000 total tokens saved).
+  - For the 1.5B model, pruning actually increased initial accuracy from **22.80% to 24.80%** because fewer irrelevant tables reduced hallucinated column selections.
+- **5. Hardware Speed Disparity on CPU:**
+  - The 1.5B model processes tokens at **83.3–88.8 tokens/second** (~56 ms/token) with a median latency of **2.83–2.89 seconds**.
+  - The 7B model processes tokens at **16.9–17.2 tokens/second** (~111 ms/token) with a median latency of **5.60–5.85 seconds**.
