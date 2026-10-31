@@ -1,20 +1,20 @@
 # Master Experiment Results: Comprehensive Metric Report
 
-This document provides a complete conversion of all benchmark metrics and statistics into a clear, bullet-point format. It evaluates 500 questions from the BIRD Mini-Dev benchmark running on standard CPU hardware across all 8 tested model and prompt configurations.
+This document provides a complete conversion of all benchmark metrics and statistics into a clear, bullet-point format. It evaluates 500 questions from the BIRD Mini-Dev benchmark across all 8 tested model and prompt configurations on an NVIDIA GeForce RTX 3050 Laptop GPU (6GB VRAM, CUDA acceleration via Ollama).
 
 
 ## Overview of Tested Setups
 - **Workload:** 500 natural-language database questions evaluated against ground-truth SQLite execution results.
 - **Models Evaluated:**
-  - **Qwen2.5-Coder-7B:** 7-billion parameter code-specialized model.
-  - **Qwen2.5-Coder-1.5B:** 1.5-billion parameter lightweight model for edge deployment.
+  - Qwen2.5-Coder-7B
+  - Qwen2.5-Coder-1.5B
 - **Prompt Formats:**
-  - **Full Database Schema:** Every table and column definition is included in the model prompt.
-  - **Pruned Schema (v2):** Context-filtered schema selecting only question-relevant tables and columns using keyword and BM25 search.
-- **Execution Cascades:**
-  - **Homogeneous (Single-Model):** The same model writes initial SQL and repairs its own execution failures.
-  - **Cascade 1 (Fast Writer → Expert Repairer):** 1.5B writes initial SQL; 7B repairs only the queries that produced runtime errors.
-  - **Cascade 2 (Strong Writer → Fast Syntax Doctor):** 7B writes initial SQL; 1.5B repairs only the queries that produced runtime errors.
+  - Full Database Schema
+  - Pruned Schema (v2)
+- **Execution Procedures:**
+  - Homogeneous (Same-Model Repairer)
+  - Cascade 1 (1.5B Writer → 7B Repairer)
+  - Cascade 2 (7B Writer → 1.5B Repairer)
 
 ---
 ## 1. Complete Metric Breakdown by Configuration
@@ -62,7 +62,7 @@ Below is the complete profile for each configuration, covering accuracy, latency
   - Average Generated SQL Tokens per Question: **57.4 tokens**
   - Total Generated SQL Tokens: **28,694 tokens**
   - Total Output Tokens Spent on Repairs: **4,782 tokens**
-- **Generation Speed & Hardware Efficiency (On CPU):**
+- **Generation Speed & Hardware Efficiency:**
   - Average Generation Speed: **16.93 tokens per second**
   - Median Generation Speed: **17.11 tokens per second**
   - Average Time per Token (Decoding Latency): **111.8 milliseconds per token**
@@ -108,7 +108,7 @@ Below is the complete profile for each configuration, covering accuracy, latency
   - Average Generated SQL Tokens per Question: **59.1 tokens**
   - Total Generated SQL Tokens: **29,562 tokens**
   - Total Output Tokens Spent on Repairs: **5,182 tokens**
-- **Generation Speed & Hardware Efficiency (On CPU):**
+- **Generation Speed & Hardware Efficiency:**
   - Average Generation Speed: **17.20 tokens per second**
   - Median Generation Speed: **17.31 tokens per second**
   - Average Time per Token (Decoding Latency): **111.5 milliseconds per token**
@@ -154,7 +154,7 @@ Below is the complete profile for each configuration, covering accuracy, latency
   - Average Generated SQL Tokens per Question: **59.0 tokens**
   - Total Generated SQL Tokens: **29,475 tokens**
   - Total Output Tokens Spent on Repairs: **17,415 tokens**
-- **Generation Speed & Hardware Efficiency (On CPU):**
+- **Generation Speed & Hardware Efficiency:**
   - Average Generation Speed: **83.29 tokens per second**
   - Median Generation Speed: **84.32 tokens per second**
   - Average Time per Token (Decoding Latency): **56.9 milliseconds per token**
@@ -200,7 +200,7 @@ Below is the complete profile for each configuration, covering accuracy, latency
   - Average Generated SQL Tokens per Question: **60.0 tokens**
   - Total Generated SQL Tokens: **30,011 tokens**
   - Total Output Tokens Spent on Repairs: **16,966 tokens**
-- **Generation Speed & Hardware Efficiency (On CPU):**
+- **Generation Speed & Hardware Efficiency:**
   - Average Generation Speed: **88.76 tokens per second**
   - Median Generation Speed: **90.13 tokens per second**
   - Average Time per Token (Decoding Latency): **56.0 milliseconds per token**
@@ -246,7 +246,7 @@ Below is the complete profile for each configuration, covering accuracy, latency
   - Average Generated SQL Tokens per Question: **59.0 tokens**
   - Total Generated SQL Tokens: **29,475 tokens**
   - Total Output Tokens Spent on Repairs: **19,523 tokens**
-- **Generation Speed & Hardware Efficiency (On CPU):**
+- **Generation Speed & Hardware Efficiency:**
   - Average Generation Speed: **83.29 tokens per second**
   - Median Generation Speed: **84.32 tokens per second**
   - Average Time per Token (Decoding Latency): **56.9 milliseconds per token**
@@ -292,7 +292,7 @@ Below is the complete profile for each configuration, covering accuracy, latency
   - Average Generated SQL Tokens per Question: **60.0 tokens**
   - Total Generated SQL Tokens: **30,011 tokens**
   - Total Output Tokens Spent on Repairs: **18,864 tokens**
-- **Generation Speed & Hardware Efficiency (On CPU):**
+- **Generation Speed & Hardware Efficiency:**
   - Average Generation Speed: **88.76 tokens per second**
   - Median Generation Speed: **90.13 tokens per second**
   - Average Time per Token (Decoding Latency): **56.0 milliseconds per token**
@@ -338,7 +338,7 @@ Below is the complete profile for each configuration, covering accuracy, latency
   - Average Generated SQL Tokens per Question: **57.4 tokens**
   - Total Generated SQL Tokens: **28,694 tokens**
   - Total Output Tokens Spent on Repairs: **4,835 tokens**
-- **Generation Speed & Hardware Efficiency (On CPU):**
+- **Generation Speed & Hardware Efficiency:**
   - Average Generation Speed: **16.93 tokens per second**
   - Median Generation Speed: **17.11 tokens per second**
   - Average Time per Token (Decoding Latency): **111.8 milliseconds per token**
@@ -384,7 +384,7 @@ Below is the complete profile for each configuration, covering accuracy, latency
   - Average Generated SQL Tokens per Question: **59.1 tokens**
   - Total Generated SQL Tokens: **29,562 tokens**
   - Total Output Tokens Spent on Repairs: **5,270 tokens**
-- **Generation Speed & Hardware Efficiency (On CPU):**
+- **Generation Speed & Hardware Efficiency:**
   - Average Generation Speed: **17.20 tokens per second**
   - Median Generation Speed: **17.31 tokens per second**
   - Average Time per Token (Decoding Latency): **111.5 milliseconds per token**
@@ -619,6 +619,6 @@ For easy comparison across all 8 configurations, the metrics are grouped below b
 - **4. Schema Pruning Slashes Context Size by 42.2%:**
   - Prompt tokens dropped from **~740 tokens down to ~428 tokens** per question (~157,000 total tokens saved).
   - For the 1.5B model, pruning actually increased initial accuracy from **22.80% to 24.80%** because fewer irrelevant tables reduced hallucinated column selections.
-- **5. Hardware Speed Disparity on CPU:**
+- **5. Hardware Speed Disparity:**
   - The 1.5B model processes tokens at **83.3–88.8 tokens/second** (~56 ms/token) with a median latency of **2.83–2.89 seconds**.
   - The 7B model processes tokens at **16.9–17.2 tokens/second** (~111 ms/token) with a median latency of **5.60–5.85 seconds**.
