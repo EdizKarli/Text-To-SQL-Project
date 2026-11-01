@@ -59,7 +59,8 @@ def translate(sql, mapping, schema):
                         origin_names = {k for k, v in mapping[src.name][1].items() if v == proj.this.name}
                     elif isinstance(src, Scope):
                         origin_names = {k for k, v in derived.get(id(src.expression), {}).items() if v == proj.this.name}
-                    if proj.alias in origin_names:
+                    taken = {p.alias_or_name for p in sel.expressions if p is not proj}
+                    if proj.alias in origin_names and proj.this.name not in taken:   # never create duplicate output names
                         renamed_outputs[proj.alias] = proj.this.name
                         proj.set("alias", exp.to_identifier(proj.this.name))
             order = sel.args.get("order")

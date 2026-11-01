@@ -5,7 +5,8 @@
    constraints and indexes per table; column types and NOT NULL flags line up.
 2. Naming: naming_map.json is complete and one-to-one; no normal table/column name leaks into the cryptic DDL.
 3. Data: every table holds exactly the same rows as its normal counterpart (EXCEPT in both directions).
-4. Questions: same IDs and wording in every questions_<variant>.json; each variant Gold query returns the normal result.
+4. Questions: same IDs/styles/specs in every questions_<variant>.json; schema_aware wording uses the variant's names;
+   each variant Gold query returns the normal result.
 5. Integrity: PRAGMA integrity_check / foreign_key_check on every variant.
 Usage: python validation/test_variants.py   (run scripts/build_variants.py first)
 """
@@ -74,17 +75,29 @@ def main():
         check(f"{v}: integrity_check ok", con.execute("PRAGMA integrity_check").fetchone()[0] == "ok")
         check(f"{v}: no foreign key violations", not con.execute("PRAGMA foreign_key_check").fetchall())
         vq = json.load(open(os.path.join(ROOT, "questions", f"questions_{v}.json"), encoding="utf-8"))
-        check(f"{v}: same question IDs, wording and answer specs as normal",
-              [(q["id"], q["question"], q["answer_spec"], q["difficulty"]) for q in vq]
-              == [(q["id"], q["question"], q["answer_spec"], q["difficulty"]) for q in nq])
-        bad_q = []
+        meta = lambda q: (q["id"], q["base_id"], q["difficulty"], q["style"], q["answer_spec"], q["question_template"])
+        check(f"{v}: same question IDs, styles, templates and answer specs as normal", [meta(q) for q in vq] == [meta(q) for q in nq])
+        sys.path.insert(0, os.path.join(ROOT, "questions"))
+        from build_questions import render
+        wording_ok = all((qv["question"] == render(qv["question_template"], m)) if qv["style"] == "schema_aware"
+                         else qv["question"] == qn["question"] for qn, qv in zip(nq, vq))
+        check(f"{v}: non-schema-aware wording identical; schema_aware wording uses the {v} names", wording_ok)
+        if v == "cryptic":
+            sch = [qv["question"] for qv in vq if qv["style"] == "schema_aware"]
+            ident = {c for t in tables for c in naming["normal"][t]["columns"] if "_" in c} | {t for t in tables if "_" in t}
+            leaks = sorted({w for txt in sch for w in re.findall(r"[a-z_0-9]+", txt) if w in ident})
+            check("cryptic: schema_aware questions contain no normal table/column identifiers", not leaks, str(leaks))
+        bad_q, seen = [], set()
         for qn, qv in zip(nq, vq):
+            if qn["base_id"] in seen:
+                continue
+            seen.add(qn["base_id"])
             try:
                 if normal.execute(qn["gold_sql"]).fetchall() != con.execute(qv["gold_sql"]).fetchall():
-                    bad_q.append(qn["id"])
+                    bad_q.append(qn["base_id"])
             except sqlite3.Error as e:
-                bad_q.append(f"{qn['id']}: {e}")
-        check(f"{v}: all {len(vq)} Gold queries return the normal Gold result", not bad_q, str(bad_q))
+                bad_q.append(f"{qn['base_id']}: {e}")
+        check(f"{v}: all {len(seen)} Gold queries return the normal Gold result", not bad_q, str(bad_q))
     print(f"\nRESULT: {'ALL VARIANT CHECKS PASSED' if not fails else str(len(fails)) + ' FAILED: ' + ', '.join(fails)}")
     sys.exit(1 if fails else 0)
 
