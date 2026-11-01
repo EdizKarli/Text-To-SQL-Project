@@ -4,7 +4,7 @@ Strict% = EX but rows and columns must come out in exactly the Gold order
 VER% = Valid execution rate
 lat s = Latency
 p95 s = 95% of questions finished within this time, so it shows the slow tail.
-tok = Tokens created
+tok = Average of the tokens created for the answer
 ms/tok = Latency per token
 tok/s = Tokens per second
 
@@ -32,4 +32,4 @@ EX % by difficulty x style
   hard                       2.5                12.5                 5.0                 0.0
 
 Outcomes: {'correct': 164, 'wrong_result': 176, 'execution_error': 140}
-Prompt tokens per question (mean): 3293.7
+Prompt tokens per question (mean, how many tokens the model had to read before answering): 3293.7

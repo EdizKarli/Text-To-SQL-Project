@@ -12,6 +12,7 @@
   "summary": {
     "overall": {
       "questions": 480,
+      "model_failures": 0,
       "EX_pct": 16.5,
       "EX_strict_pct": 15.4,
       "VER_pct": 92.1,
@@ -23,7 +24,7 @@
       "tokens_total": 23938,
       "ms_per_token": 65.91,
       "tokens_per_s": 47.33,
-      "sql_exec_ms_mean": 0.8,
+      "sql_exec_ms_mean": 1.0,
       "outcomes": {
         "wrong_result": 363,
         "correct": 79,
@@ -33,6 +34,7 @@
     "by_difficulty": {
       "easy": {
         "questions": 160,
+        "model_failures": 0,
         "EX_pct": 41.9,
         "EX_strict_pct": 41.2,
         "VER_pct": 98.1,
@@ -44,7 +46,7 @@
         "tokens_total": 3991,
         "ms_per_token": 112.11,
         "tokens_per_s": 44.41,
-        "sql_exec_ms_mean": 0.6,
+        "sql_exec_ms_mean": 1.1,
         "outcomes": {
           "wrong_result": 90,
           "correct": 67,
@@ -53,6 +55,7 @@
       },
       "moderate": {
         "questions": 160,
+        "model_failures": 0,
         "EX_pct": 6.2,
         "EX_strict_pct": 5.0,
         "VER_pct": 87.5,
@@ -64,7 +67,7 @@
         "tokens_total": 7424,
         "ms_per_token": 69.31,
         "tokens_per_s": 46.95,
-        "sql_exec_ms_mean": 0.7,
+        "sql_exec_ms_mean": 1.1,
         "outcomes": {
           "execution_error": 20,
           "wrong_result": 130,
@@ -73,6 +76,7 @@
       },
       "hard": {
         "questions": 160,
+        "model_failures": 0,
         "EX_pct": 1.2,
         "EX_strict_pct": 0.0,
         "VER_pct": 90.6,
@@ -84,7 +88,7 @@
         "tokens_total": 12523,
         "ms_per_token": 49.16,
         "tokens_per_s": 48.59,
-        "sql_exec_ms_mean": 1.0,
+        "sql_exec_ms_mean": 0.9,
         "outcomes": {
           "execution_error": 15,
           "wrong_result": 143,
@@ -95,6 +99,7 @@
     "by_style": {
       "casual": {
         "questions": 120,
+        "model_failures": 0,
         "EX_pct": 10.0,
         "EX_strict_pct": 10.0,
         "VER_pct": 89.2,
@@ -106,7 +111,7 @@
         "tokens_total": 6594,
         "ms_per_token": 61.95,
         "tokens_per_s": 47.38,
-        "sql_exec_ms_mean": 0.8,
+        "sql_exec_ms_mean": 1.0,
         "outcomes": {
           "wrong_result": 95,
           "correct": 12,
@@ -115,6 +120,7 @@
       },
       "schema_aware": {
         "questions": 120,
+        "model_failures": 0,
         "EX_pct": 41.7,
         "EX_strict_pct": 37.5,
         "VER_pct": 90.8,
@@ -126,7 +132,7 @@
         "tokens_total": 6518,
         "ms_per_token": 62.19,
         "tokens_per_s": 47.96,
-        "sql_exec_ms_mean": 1.0,
+        "sql_exec_ms_mean": 1.2,
         "outcomes": {
           "correct": 50,
           "wrong_result": 59,
@@ -135,6 +141,7 @@
       },
       "business_executive": {
         "questions": 120,
+        "model_failures": 0,
         "EX_pct": 10.0,
         "EX_strict_pct": 10.0,
         "VER_pct": 90.0,
@@ -146,7 +153,7 @@
         "tokens_total": 6127,
         "ms_per_token": 64.76,
         "tokens_per_s": 47.27,
-        "sql_exec_ms_mean": 0.7,
+        "sql_exec_ms_mean": 1.1,
         "outcomes": {
           "wrong_result": 96,
           "correct": 12,
@@ -155,6 +162,7 @@
       },
       "vague": {
         "questions": 120,
+        "model_failures": 0,
         "EX_pct": 4.2,
         "EX_strict_pct": 4.2,
         "VER_pct": 98.3,
@@ -166,7 +174,7 @@
         "tokens_total": 4699,
         "ms_per_token": 78.1,
         "tokens_per_s": 46.49,
-        "sql_exec_ms_mean": 0.6,
+        "sql_exec_ms_mean": 0.8,
         "outcomes": {
           "wrong_result": 113,
           "correct": 5,
@@ -204,11 +212,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 1.0,
       "latency_s": 4.115,
       "tokens": 21,
       "gen_s": 0.404682,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "E01-SCH",
@@ -218,11 +227,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.692,
       "tokens": 20,
       "gen_s": 0.491251,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E01-BIZ",
@@ -236,7 +246,8 @@
       "latency_s": 3.016,
       "tokens": 37,
       "gen_s": 0.789568,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E01-VAG",
@@ -246,11 +257,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.111,
       "tokens": 43,
       "gen_s": 0.898664,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "E02-CAS",
@@ -260,11 +272,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.5,
+      "sql_ms": 3.6,
       "latency_s": 2.701,
       "tokens": 21,
       "gen_s": 0.439303,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E02-SCH",
@@ -274,11 +287,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.5,
+      "sql_ms": 0.8,
       "latency_s": 2.821,
       "tokens": 26,
       "gen_s": 0.57647,
-      "prompt_tokens": 3221
+      "prompt_tokens": 3221,
+      "model_error": null
     },
     {
       "id": "E02-BIZ",
@@ -288,11 +302,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 2.1,
       "latency_s": 2.797,
       "tokens": 23,
       "gen_s": 0.563801,
-      "prompt_tokens": 3223
+      "prompt_tokens": 3223,
+      "model_error": null
     },
     {
       "id": "E02-VAG",
@@ -302,11 +317,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.9,
+      "sql_ms": 3.3,
       "latency_s": 2.681,
       "tokens": 21,
       "gen_s": 0.492125,
-      "prompt_tokens": 3209
+      "prompt_tokens": 3209,
+      "model_error": null
     },
     {
       "id": "E03-CAS",
@@ -316,11 +332,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.758,
       "tokens": 22,
       "gen_s": 0.511345,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "E03-SCH",
@@ -330,11 +347,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.844,
       "tokens": 28,
       "gen_s": 0.629314,
-      "prompt_tokens": 3222
+      "prompt_tokens": 3222,
+      "model_error": null
     },
     {
       "id": "E03-BIZ",
@@ -344,11 +362,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.703,
       "tokens": 22,
       "gen_s": 0.464447,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E03-VAG",
@@ -358,11 +377,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.737,
       "tokens": 22,
       "gen_s": 0.535471,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "E04-CAS",
@@ -372,11 +392,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.6,
       "latency_s": 2.762,
       "tokens": 22,
       "gen_s": 0.512606,
-      "prompt_tokens": 3209
+      "prompt_tokens": 3209,
+      "model_error": null
     },
     {
       "id": "E04-SCH",
@@ -386,11 +407,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.738,
       "tokens": 21,
       "gen_s": 0.475703,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "E04-BIZ",
@@ -400,11 +422,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.8,
       "latency_s": 3.122,
       "tokens": 45,
       "gen_s": 0.958015,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "E04-VAG",
@@ -414,11 +437,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.6,
       "latency_s": 2.874,
       "tokens": 31,
       "gen_s": 0.663205,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "E05-CAS",
@@ -432,7 +456,8 @@
       "latency_s": 2.655,
       "tokens": 20,
       "gen_s": 0.470421,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "E05-SCH",
@@ -442,11 +467,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 2.696,
       "tokens": 20,
       "gen_s": 0.473113,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "E05-BIZ",
@@ -456,11 +482,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.679,
       "tokens": 20,
       "gen_s": 0.46412,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "E05-VAG",
@@ -470,11 +497,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.708,
       "tokens": 20,
       "gen_s": 0.489244,
-      "prompt_tokens": 3209
+      "prompt_tokens": 3209,
+      "model_error": null
     },
     {
       "id": "E06-CAS",
@@ -484,11 +512,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.793,
       "tokens": 26,
       "gen_s": 0.567739,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "E06-SCH",
@@ -498,11 +527,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.811,
       "tokens": 25,
       "gen_s": 0.555627,
-      "prompt_tokens": 3222
+      "prompt_tokens": 3222,
+      "model_error": null
     },
     {
       "id": "E06-BIZ",
@@ -512,11 +542,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.948,
       "tokens": 29,
       "gen_s": 0.701119,
-      "prompt_tokens": 3218
+      "prompt_tokens": 3218,
+      "model_error": null
     },
     {
       "id": "E06-VAG",
@@ -526,11 +557,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.638,
       "tokens": 21,
       "gen_s": 0.435608,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "E07-CAS",
@@ -540,11 +572,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.871,
       "tokens": 29,
       "gen_s": 0.643007,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E07-SCH",
@@ -554,11 +587,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.73,
       "tokens": 22,
       "gen_s": 0.540294,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "E07-BIZ",
@@ -568,11 +602,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.857,
       "tokens": 29,
       "gen_s": 0.632669,
-      "prompt_tokens": 3220
+      "prompt_tokens": 3220,
+      "model_error": null
     },
     {
       "id": "E07-VAG",
@@ -582,11 +617,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.866,
       "tokens": 29,
       "gen_s": 0.645065,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "E08-CAS",
@@ -596,11 +632,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 3.029,
       "tokens": 36,
       "gen_s": 0.818182,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "E08-SCH",
@@ -610,11 +647,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.726,
       "tokens": 25,
       "gen_s": 0.491468,
-      "prompt_tokens": 3221
+      "prompt_tokens": 3221,
+      "model_error": null
     },
     {
       "id": "E08-BIZ",
@@ -624,11 +662,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.126,
       "tokens": 41,
       "gen_s": 0.891874,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E08-VAG",
@@ -638,11 +677,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.941,
       "tokens": 32,
       "gen_s": 0.70435,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "E09-CAS",
@@ -652,11 +692,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.779,
       "tokens": 28,
       "gen_s": 0.575962,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E09-SCH",
@@ -666,11 +707,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.8,
       "latency_s": 2.656,
       "tokens": 21,
       "gen_s": 0.428747,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "E09-BIZ",
@@ -680,11 +722,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 3.346,
       "tokens": 50,
       "gen_s": 1.128023,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E09-VAG",
@@ -694,11 +737,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 2.792,
       "tokens": 28,
       "gen_s": 0.573307,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "E10-CAS",
@@ -708,11 +752,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.906,
       "tokens": 27,
       "gen_s": 0.649721,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "E10-SCH",
@@ -722,11 +767,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.722,
       "tokens": 23,
       "gen_s": 0.511485,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "E10-BIZ",
@@ -736,11 +782,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.884,
       "tokens": 30,
       "gen_s": 0.651848,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "E10-VAG",
@@ -750,11 +797,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.827,
       "tokens": 29,
       "gen_s": 0.647896,
-      "prompt_tokens": 3209
+      "prompt_tokens": 3209,
+      "model_error": null
     },
     {
       "id": "E11-CAS",
@@ -764,11 +812,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.92,
       "tokens": 29,
       "gen_s": 0.672005,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "E11-SCH",
@@ -778,11 +827,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.868,
       "tokens": 29,
       "gen_s": 0.631641,
-      "prompt_tokens": 3224
+      "prompt_tokens": 3224,
+      "model_error": null
     },
     {
       "id": "E11-BIZ",
@@ -792,11 +842,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 2.869,
       "tokens": 29,
       "gen_s": 0.639268,
-      "prompt_tokens": 3209
+      "prompt_tokens": 3209,
+      "model_error": null
     },
     {
       "id": "E11-VAG",
@@ -806,11 +857,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.742,
       "tokens": 21,
       "gen_s": 0.495772,
-      "prompt_tokens": 3209
+      "prompt_tokens": 3209,
+      "model_error": null
     },
     {
       "id": "E12-CAS",
@@ -820,11 +872,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.828,
       "tokens": 25,
       "gen_s": 0.576212,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "E12-SCH",
@@ -834,11 +887,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.931,
       "tokens": 30,
       "gen_s": 0.665917,
-      "prompt_tokens": 3226
+      "prompt_tokens": 3226,
+      "model_error": null
     },
     {
       "id": "E12-BIZ",
@@ -848,11 +902,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.818,
       "tokens": 28,
       "gen_s": 0.614626,
-      "prompt_tokens": 3218
+      "prompt_tokens": 3218,
+      "model_error": null
     },
     {
       "id": "E12-VAG",
@@ -862,11 +917,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 2.681,
       "tokens": 20,
       "gen_s": 0.467153,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "E13-CAS",
@@ -876,11 +932,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 0.8,
       "latency_s": 2.666,
       "tokens": 20,
       "gen_s": 0.446692,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "E13-SCH",
@@ -894,7 +951,8 @@
       "latency_s": 2.712,
       "tokens": 21,
       "gen_s": 0.481743,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E13-BIZ",
@@ -904,11 +962,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 0.9,
       "latency_s": 2.743,
       "tokens": 20,
       "gen_s": 0.494293,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "E13-VAG",
@@ -918,11 +977,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 1.1,
       "latency_s": 2.667,
       "tokens": 20,
       "gen_s": 0.427098,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "E14-CAS",
@@ -932,11 +992,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.9,
       "latency_s": 2.752,
       "tokens": 21,
       "gen_s": 0.515285999,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "E14-SCH",
@@ -946,11 +1007,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.8,
+      "sql_ms": 0.7,
       "latency_s": 2.61,
       "tokens": 16,
       "gen_s": 0.358936,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "E14-BIZ",
@@ -960,11 +1022,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 0.9,
       "latency_s": 2.714,
       "tokens": 21,
       "gen_s": 0.468011,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "E14-VAG",
@@ -974,11 +1037,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.8,
       "latency_s": 2.635,
       "tokens": 19,
       "gen_s": 0.443885,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "E15-CAS",
@@ -988,11 +1052,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.9,
       "latency_s": 2.895,
       "tokens": 28,
       "gen_s": 0.655666,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E15-SCH",
@@ -1002,11 +1067,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 1.0,
       "latency_s": 2.866,
       "tokens": 28,
       "gen_s": 0.616526,
-      "prompt_tokens": 3221
+      "prompt_tokens": 3221,
+      "model_error": null
     },
     {
       "id": "E15-BIZ",
@@ -1016,11 +1082,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.7,
+      "sql_ms": 0.8,
       "latency_s": 2.847,
       "tokens": 28,
       "gen_s": 0.630394,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E15-VAG",
@@ -1030,11 +1097,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.7,
       "latency_s": 2.876,
       "tokens": 28,
       "gen_s": 0.65004,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "E16-CAS",
@@ -1044,11 +1112,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.7,
       "latency_s": 2.743,
       "tokens": 22,
       "gen_s": 0.503059,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E16-SCH",
@@ -1058,11 +1127,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.8,
       "latency_s": 2.692,
       "tokens": 22,
       "gen_s": 0.43022,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "E16-BIZ",
@@ -1072,11 +1142,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.8,
       "latency_s": 2.747,
       "tokens": 22,
       "gen_s": 0.549939,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "E16-VAG",
@@ -1086,11 +1157,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.8,
       "latency_s": 2.647,
       "tokens": 22,
       "gen_s": 0.425651,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "E17-CAS",
@@ -1100,11 +1172,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.7,
       "latency_s": 2.93,
       "tokens": 29,
       "gen_s": 0.703808,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "E17-SCH",
@@ -1114,11 +1187,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 1.0,
+      "sql_ms": 1.1,
       "latency_s": 2.696,
       "tokens": 20,
       "gen_s": 0.448679,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "E17-BIZ",
@@ -1128,11 +1202,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.0,
+      "sql_ms": 1.4,
       "latency_s": 2.86,
       "tokens": 30,
       "gen_s": 0.651149,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "E17-VAG",
@@ -1142,11 +1217,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.769,
       "tokens": 24,
       "gen_s": 0.558817,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "E18-CAS",
@@ -1156,11 +1232,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 0.9,
       "latency_s": 2.684,
       "tokens": 21,
       "gen_s": 0.446749,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "E18-SCH",
@@ -1170,11 +1247,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.671,
       "tokens": 19,
       "gen_s": 0.438574,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "E18-BIZ",
@@ -1184,11 +1262,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 0.9,
       "latency_s": 2.718,
       "tokens": 21,
       "gen_s": 0.513948999,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E18-VAG",
@@ -1198,11 +1277,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 1.6,
       "latency_s": 2.715,
       "tokens": 21,
       "gen_s": 0.483591,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "E19-CAS",
@@ -1212,11 +1292,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.173,
       "tokens": 42,
       "gen_s": 0.931208,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "E19-SCH",
@@ -1226,11 +1307,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.049,
       "tokens": 36,
       "gen_s": 0.771941,
-      "prompt_tokens": 3231
+      "prompt_tokens": 3231,
+      "model_error": null
     },
     {
       "id": "E19-BIZ",
@@ -1244,7 +1326,8 @@
       "latency_s": 3.024,
       "tokens": 39,
       "gen_s": 0.766663,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E19-VAG",
@@ -1254,11 +1337,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.806,
       "tokens": 27,
       "gen_s": 0.59117,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "E20-CAS",
@@ -1268,11 +1352,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.9,
       "latency_s": 2.709,
       "tokens": 21,
       "gen_s": 0.475217,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "E20-SCH",
@@ -1282,11 +1367,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.9,
       "latency_s": 2.704,
       "tokens": 21,
       "gen_s": 0.474715,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E20-BIZ",
@@ -1296,11 +1382,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.9,
       "latency_s": 2.743,
       "tokens": 21,
       "gen_s": 0.511689,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "E20-VAG",
@@ -1310,11 +1397,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.7,
       "latency_s": 2.702,
       "tokens": 21,
       "gen_s": 0.4723,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "E21-CAS",
@@ -1324,11 +1412,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 1.3,
       "latency_s": 2.762,
       "tokens": 22,
       "gen_s": 0.533527,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "E21-SCH",
@@ -1338,11 +1427,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.8,
       "latency_s": 2.73,
       "tokens": 22,
       "gen_s": 0.499366,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "E21-BIZ",
@@ -1352,11 +1442,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.706,
       "tokens": 21,
       "gen_s": 0.462944,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "E21-VAG",
@@ -1366,11 +1457,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.8,
       "latency_s": 2.693,
       "tokens": 22,
       "gen_s": 0.498054,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "E22-CAS",
@@ -1380,11 +1472,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.8,
       "latency_s": 2.974,
       "tokens": 33,
       "gen_s": 0.73314,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "E22-SCH",
@@ -1394,11 +1487,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.7,
       "latency_s": 2.743,
       "tokens": 25,
       "gen_s": 0.490398,
-      "prompt_tokens": 3219
+      "prompt_tokens": 3219,
+      "model_error": null
     },
     {
       "id": "E22-BIZ",
@@ -1408,11 +1502,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.9,
       "latency_s": 2.843,
       "tokens": 28,
       "gen_s": 0.621979,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "E22-VAG",
@@ -1422,11 +1517,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 1.0,
       "latency_s": 2.796,
       "tokens": 25,
       "gen_s": 0.550184,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "E23-CAS",
@@ -1436,11 +1532,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.7,
+      "sql_ms": 1.0,
       "latency_s": 2.71,
       "tokens": 21,
       "gen_s": 0.481263,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "E23-SCH",
@@ -1450,11 +1547,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.7,
+      "sql_ms": 0.9,
       "latency_s": 2.725,
       "tokens": 21,
       "gen_s": 0.48395,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E23-BIZ",
@@ -1464,11 +1562,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.7,
+      "sql_ms": 0.9,
       "latency_s": 2.722,
       "tokens": 21,
       "gen_s": 0.49628,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E23-VAG",
@@ -1478,11 +1577,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 2.524,
       "tokens": 13,
       "gen_s": 0.32267,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "E24-CAS",
@@ -1492,11 +1592,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.7,
+      "sql_ms": 0.9,
       "latency_s": 2.823,
       "tokens": 24,
       "gen_s": 0.5928,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "E24-SCH",
@@ -1506,11 +1607,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.7,
+      "sql_ms": 0.8,
       "latency_s": 2.599,
       "tokens": 17,
       "gen_s": 0.399501,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "E24-BIZ",
@@ -1520,11 +1622,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.7,
+      "sql_ms": 0.9,
       "latency_s": 2.763,
       "tokens": 23,
       "gen_s": 0.567111,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "E24-VAG",
@@ -1534,11 +1637,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.731,
       "tokens": 23,
       "gen_s": 0.53046,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "E25-CAS",
@@ -1548,11 +1652,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 2.71,
       "tokens": 20,
       "gen_s": 0.474794,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "E25-SCH",
@@ -1562,11 +1667,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.7,
+      "sql_ms": 1.0,
       "latency_s": 2.724,
       "tokens": 21,
       "gen_s": 0.469252,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E25-BIZ",
@@ -1576,11 +1682,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 1.0,
       "latency_s": 2.731,
       "tokens": 23,
       "gen_s": 0.518886999,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "E25-VAG",
@@ -1590,11 +1697,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 0.9,
       "latency_s": 2.682,
       "tokens": 20,
       "gen_s": 0.455171,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "E26-CAS",
@@ -1604,11 +1712,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 1.0,
       "latency_s": 2.773,
       "tokens": 24,
       "gen_s": 0.552605,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "E26-SCH",
@@ -1618,11 +1727,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.7,
+      "sql_ms": 1.1,
       "latency_s": 2.927,
       "tokens": 29,
       "gen_s": 0.69333,
-      "prompt_tokens": 3224
+      "prompt_tokens": 3224,
+      "model_error": null
     },
     {
       "id": "E26-BIZ",
@@ -1632,11 +1742,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 1.2,
       "latency_s": 2.906,
       "tokens": 31,
       "gen_s": 0.671059,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "E26-VAG",
@@ -1646,11 +1757,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 1.0,
       "latency_s": 2.805,
       "tokens": 27,
       "gen_s": 0.60609,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "E27-CAS",
@@ -1660,11 +1772,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 1.2,
       "latency_s": 2.679,
       "tokens": 20,
       "gen_s": 0.4779,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "E27-SCH",
@@ -1674,11 +1787,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 1.0,
       "latency_s": 2.764,
       "tokens": 20,
       "gen_s": 0.485717,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "E27-BIZ",
@@ -1688,11 +1802,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.9,
       "latency_s": 2.662,
       "tokens": 20,
       "gen_s": 0.41836,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E27-VAG",
@@ -1702,11 +1817,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.6,
       "latency_s": 2.769,
       "tokens": 22,
       "gen_s": 0.540087,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "E28-CAS",
@@ -1716,11 +1832,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.8,
       "latency_s": 2.698,
       "tokens": 21,
       "gen_s": 0.469668,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E28-SCH",
@@ -1730,11 +1847,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.9,
       "latency_s": 2.724,
       "tokens": 21,
       "gen_s": 0.521160999,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E28-BIZ",
@@ -1744,11 +1862,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.6,
       "latency_s": 2.616,
       "tokens": 20,
       "gen_s": 0.384137,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "E28-VAG",
@@ -1758,11 +1877,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 0.9,
       "latency_s": 2.697,
       "tokens": 20,
       "gen_s": 0.490906,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "E29-CAS",
@@ -1772,11 +1892,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.7,
+      "sql_ms": 0.9,
       "latency_s": 2.664,
       "tokens": 20,
       "gen_s": 0.418616,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "E29-SCH",
@@ -1786,11 +1907,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.7,
+      "sql_ms": 1.1,
       "latency_s": 2.672,
       "tokens": 20,
       "gen_s": 0.432757,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "E29-BIZ",
@@ -1800,11 +1922,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.7,
+      "sql_ms": 0.9,
       "latency_s": 2.7,
       "tokens": 20,
       "gen_s": 0.487211,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "E29-VAG",
@@ -1814,11 +1937,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 1.1,
       "latency_s": 2.697,
       "tokens": 21,
       "gen_s": 0.473706,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "E30-CAS",
@@ -1828,11 +1952,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 1.0,
       "latency_s": 2.804,
       "tokens": 28,
       "gen_s": 0.624379,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "E30-SCH",
@@ -1842,11 +1967,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.8,
       "latency_s": 2.709,
       "tokens": 21,
       "gen_s": 0.514375,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E30-BIZ",
@@ -1856,11 +1982,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 1.1,
       "latency_s": 3.06,
       "tokens": 37,
       "gen_s": 0.798403,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E30-VAG",
@@ -1870,11 +1997,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 1.1,
       "latency_s": 2.692,
       "tokens": 21,
       "gen_s": 0.486267,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "E31-CAS",
@@ -1884,11 +2012,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.701,
       "tokens": 21,
       "gen_s": 0.48038,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "E31-SCH",
@@ -1898,11 +2027,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 1.0,
       "latency_s": 2.715,
       "tokens": 21,
       "gen_s": 0.488874,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E31-BIZ",
@@ -1912,11 +2042,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.71,
       "tokens": 21,
       "gen_s": 0.472284,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E31-VAG",
@@ -1926,11 +2057,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.8,
       "latency_s": 2.749,
       "tokens": 22,
       "gen_s": 0.518815,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "E32-CAS",
@@ -1940,11 +2072,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 1.1,
       "latency_s": 3.051,
       "tokens": 37,
       "gen_s": 0.808909,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "E32-SCH",
@@ -1954,11 +2087,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.9,
       "latency_s": 2.849,
       "tokens": 27,
       "gen_s": 0.607226,
-      "prompt_tokens": 3228
+      "prompt_tokens": 3228,
+      "model_error": null
     },
     {
       "id": "E32-BIZ",
@@ -1968,11 +2102,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 0.8,
       "latency_s": 3.071,
       "tokens": 38,
       "gen_s": 0.805233,
-      "prompt_tokens": 3218
+      "prompt_tokens": 3218,
+      "model_error": null
     },
     {
       "id": "E32-VAG",
@@ -1982,11 +2117,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.4,
+      "sql_ms": 2.8,
       "latency_s": 3.232,
       "tokens": 48,
       "gen_s": 1.042761,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "E33-CAS",
@@ -1996,11 +2132,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 2.853,
       "tokens": 28,
       "gen_s": 0.62857,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E33-SCH",
@@ -2010,11 +2147,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.709,
       "tokens": 23,
       "gen_s": 0.48775,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "E33-BIZ",
@@ -2024,11 +2162,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.917,
       "tokens": 29,
       "gen_s": 0.715452,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "E33-VAG",
@@ -2038,11 +2177,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.6,
       "latency_s": 2.753,
       "tokens": 33,
       "gen_s": 0.650824,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "E34-CAS",
@@ -2052,11 +2192,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.795,
       "tokens": 27,
       "gen_s": 0.577831,
-      "prompt_tokens": 3209
+      "prompt_tokens": 3209,
+      "model_error": null
     },
     {
       "id": "E34-SCH",
@@ -2066,11 +2207,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.742,
       "tokens": 21,
       "gen_s": 0.465711,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E34-BIZ",
@@ -2080,11 +2222,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.671,
       "tokens": 21,
       "gen_s": 0.47939,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "E34-VAG",
@@ -2094,11 +2237,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.732,
       "tokens": 22,
       "gen_s": 0.501798,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "E35-CAS",
@@ -2108,11 +2252,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.73,
       "tokens": 21,
       "gen_s": 0.506188,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "E35-SCH",
@@ -2122,11 +2267,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.723,
       "tokens": 21,
       "gen_s": 0.484175,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "E35-BIZ",
@@ -2136,11 +2282,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.714,
       "tokens": 21,
       "gen_s": 0.474163,
-      "prompt_tokens": 3209
+      "prompt_tokens": 3209,
+      "model_error": null
     },
     {
       "id": "E35-VAG",
@@ -2150,11 +2297,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.697,
       "tokens": 21,
       "gen_s": 0.494446,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "E36-CAS",
@@ -2164,11 +2312,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.799,
       "tokens": 23,
       "gen_s": 0.56643,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E36-SCH",
@@ -2178,11 +2327,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.732,
       "tokens": 21,
       "gen_s": 0.477663,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E36-BIZ",
@@ -2192,11 +2342,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.727,
       "tokens": 21,
       "gen_s": 0.49815,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "E36-VAG",
@@ -2206,11 +2357,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.6,
       "latency_s": 2.828,
       "tokens": 28,
       "gen_s": 0.63252,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "E37-CAS",
@@ -2220,11 +2372,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 1.4,
       "latency_s": 2.878,
       "tokens": 29,
       "gen_s": 0.646262,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E37-SCH",
@@ -2234,11 +2387,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 1.1,
+      "sql_ms": 1.4,
       "latency_s": 2.82,
       "tokens": 29,
       "gen_s": 0.575289,
-      "prompt_tokens": 3224
+      "prompt_tokens": 3224,
+      "model_error": null
     },
     {
       "id": "E37-BIZ",
@@ -2248,11 +2402,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 2.6,
+      "sql_ms": 34.9,
       "latency_s": 2.706,
       "tokens": 21,
       "gen_s": 0.479679,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E37-VAG",
@@ -2262,11 +2417,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.9,
       "latency_s": 2.732,
       "tokens": 23,
       "gen_s": 0.519099,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "E38-CAS",
@@ -2276,11 +2432,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.776,
       "tokens": 22,
       "gen_s": 0.548497,
-      "prompt_tokens": 3209
+      "prompt_tokens": 3209,
+      "model_error": null
     },
     {
       "id": "E38-SCH",
@@ -2290,11 +2447,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 1.0,
+      "sql_ms": 1.3,
       "latency_s": 2.701,
       "tokens": 21,
       "gen_s": 0.482065,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "E38-BIZ",
@@ -2304,11 +2462,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.938,
       "tokens": 31,
       "gen_s": 0.712854,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "E38-VAG",
@@ -2318,11 +2477,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 1.0,
       "latency_s": 2.967,
       "tokens": 36,
       "gen_s": 0.778817,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "E39-CAS",
@@ -2332,11 +2492,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 2.2,
+      "sql_ms": 2.6,
       "latency_s": 2.713,
       "tokens": 22,
       "gen_s": 0.50088,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "E39-SCH",
@@ -2346,11 +2507,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 2.2,
+      "sql_ms": 2.3,
       "latency_s": 2.763,
       "tokens": 22,
       "gen_s": 0.498071,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "E39-BIZ",
@@ -2360,11 +2522,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 1.1,
       "latency_s": 2.719,
       "tokens": 21,
       "gen_s": 0.482076,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "E39-VAG",
@@ -2374,11 +2537,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 1.1,
       "latency_s": 2.683,
       "tokens": 21,
       "gen_s": 0.487605,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "E40-CAS",
@@ -2388,11 +2552,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 0.8,
       "latency_s": 2.856,
       "tokens": 27,
       "gen_s": 0.600395,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "E40-SCH",
@@ -2402,11 +2567,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 2.3,
+      "sql_ms": 2.4,
       "latency_s": 2.622,
       "tokens": 17,
       "gen_s": 0.402543,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "E40-BIZ",
@@ -2416,11 +2582,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.79,
       "tokens": 26,
       "gen_s": 0.592563,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "E40-VAG",
@@ -2430,11 +2597,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.98,
       "tokens": 32,
       "gen_s": 0.778678,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "M01-CAS",
@@ -2444,11 +2612,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.317,
       "tokens": 51,
       "gen_s": 1.084679,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "M01-SCH",
@@ -2458,11 +2627,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.964,
       "tokens": 84,
       "gen_s": 1.685266,
-      "prompt_tokens": 3234
+      "prompt_tokens": 3234,
+      "model_error": null
     },
     {
       "id": "M01-BIZ",
@@ -2472,11 +2642,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.894,
       "tokens": 32,
       "gen_s": 0.663408,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "M01-VAG",
@@ -2486,11 +2657,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 3.212,
       "tokens": 46,
       "gen_s": 0.989916,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "M02-CAS",
@@ -2500,11 +2672,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.877,
       "tokens": 30,
       "gen_s": 0.673792,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "M02-SCH",
@@ -2514,11 +2687,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.8,
       "latency_s": 3.599,
       "tokens": 63,
       "gen_s": 1.354184,
-      "prompt_tokens": 3228
+      "prompt_tokens": 3228,
+      "model_error": null
     },
     {
       "id": "M02-BIZ",
@@ -2528,11 +2702,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.947,
       "tokens": 35,
       "gen_s": 0.72776,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "M02-VAG",
@@ -2542,11 +2717,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.659,
       "tokens": 21,
       "gen_s": 0.476437,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "M03-CAS",
@@ -2556,11 +2732,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.8,
       "latency_s": 3.113,
       "tokens": 43,
       "gen_s": 0.874417,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "M03-SCH",
@@ -2570,11 +2747,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.6,
+      "sql_ms": 0.8,
       "latency_s": 3.125,
       "tokens": 42,
       "gen_s": 0.893621,
-      "prompt_tokens": 3231
+      "prompt_tokens": 3231,
+      "model_error": null
     },
     {
       "id": "M03-BIZ",
@@ -2584,11 +2762,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.8,
       "latency_s": 3.177,
       "tokens": 44,
       "gen_s": 0.944031,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "M03-VAG",
@@ -2598,11 +2777,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.7,
       "latency_s": 2.706,
       "tokens": 20,
       "gen_s": 0.476766,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "M04-CAS",
@@ -2616,7 +2796,8 @@
       "latency_s": 4.65,
       "tokens": 116,
       "gen_s": 2.396337,
-      "prompt_tokens": 3221
+      "prompt_tokens": 3221,
+      "model_error": null
     },
     {
       "id": "M04-SCH",
@@ -2626,11 +2807,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 1.5,
+      "sql_ms": 2.6,
       "latency_s": 4.362,
       "tokens": 101,
       "gen_s": 2.087829,
-      "prompt_tokens": 3233
+      "prompt_tokens": 3233,
+      "model_error": null
     },
     {
       "id": "M04-BIZ",
@@ -2640,11 +2822,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 1.1,
       "latency_s": 2.983,
       "tokens": 36,
       "gen_s": 0.761778,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "M04-VAG",
@@ -2654,11 +2837,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.7,
       "latency_s": 3.273,
       "tokens": 49,
       "gen_s": 1.053071999,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "M05-CAS",
@@ -2668,11 +2852,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 1.0,
       "latency_s": 2.854,
       "tokens": 28,
       "gen_s": 0.609482,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "M05-SCH",
@@ -2682,11 +2867,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.2,
+      "sql_ms": 1.8,
       "latency_s": 4.224,
       "tokens": 92,
       "gen_s": 1.983967,
-      "prompt_tokens": 3244
+      "prompt_tokens": 3244,
+      "model_error": null
     },
     {
       "id": "M05-BIZ",
@@ -2696,11 +2882,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.7,
       "latency_s": 3.273,
       "tokens": 50,
       "gen_s": 1.054550999,
-      "prompt_tokens": 3220
+      "prompt_tokens": 3220,
+      "model_error": null
     },
     {
       "id": "M05-VAG",
@@ -2710,11 +2897,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.8,
       "latency_s": 2.689,
       "tokens": 23,
       "gen_s": 0.479913,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "M06-CAS",
@@ -2724,11 +2912,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.4,
+      "sql_ms": 1.6,
       "latency_s": 2.944,
       "tokens": 30,
       "gen_s": 0.7352,
-      "prompt_tokens": 3209
+      "prompt_tokens": 3209,
+      "model_error": null
     },
     {
       "id": "M06-SCH",
@@ -2742,7 +2931,8 @@
       "latency_s": 3.741,
       "tokens": 71,
       "gen_s": 1.488518,
-      "prompt_tokens": 3229
+      "prompt_tokens": 3229,
+      "model_error": null
     },
     {
       "id": "M06-BIZ",
@@ -2752,11 +2942,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.8,
       "latency_s": 2.978,
       "tokens": 37,
       "gen_s": 0.741088,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "M06-VAG",
@@ -2766,11 +2957,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.0,
+      "sql_ms": 1.5,
       "latency_s": 2.913,
       "tokens": 33,
       "gen_s": 0.67273,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "M07-CAS",
@@ -2780,11 +2972,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 2.821,
       "tokens": 28,
       "gen_s": 0.63102,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "M07-SCH",
@@ -2794,11 +2987,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.3,
+      "sql_ms": 2.6,
       "latency_s": 4.244,
       "tokens": 98,
       "gen_s": 2.022879,
-      "prompt_tokens": 3240
+      "prompt_tokens": 3240,
+      "model_error": null
     },
     {
       "id": "M07-BIZ",
@@ -2808,11 +3002,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.264,
       "tokens": 50,
       "gen_s": 1.020297,
-      "prompt_tokens": 3218
+      "prompt_tokens": 3218,
+      "model_error": null
     },
     {
       "id": "M07-VAG",
@@ -2822,11 +3017,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.724,
       "tokens": 21,
       "gen_s": 0.490083,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "M08-CAS",
@@ -2836,11 +3032,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.965,
       "tokens": 32,
       "gen_s": 0.72555,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "M08-SCH",
@@ -2850,11 +3047,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.3,
+      "sql_ms": 0.6,
       "latency_s": 3.088,
       "tokens": 40,
       "gen_s": 0.857948,
-      "prompt_tokens": 3220
+      "prompt_tokens": 3220,
+      "model_error": null
     },
     {
       "id": "M08-BIZ",
@@ -2864,11 +3062,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 3.022,
       "tokens": 37,
       "gen_s": 0.801943,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "M08-VAG",
@@ -2878,11 +3077,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 1.0,
       "latency_s": 3.076,
       "tokens": 39,
       "gen_s": 0.890012,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "M09-CAS",
@@ -2892,11 +3092,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 3.412,
       "tokens": 57,
       "gen_s": 1.16231,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "M09-SCH",
@@ -2906,11 +3107,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 3.489,
       "tokens": 61,
       "gen_s": 1.240392,
-      "prompt_tokens": 3224
+      "prompt_tokens": 3224,
+      "model_error": null
     },
     {
       "id": "M09-BIZ",
@@ -2920,11 +3122,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.8,
       "latency_s": 3.355,
       "tokens": 54,
       "gen_s": 1.15216,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "M09-VAG",
@@ -2934,11 +3137,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 3.488,
       "tokens": 59,
       "gen_s": 1.264818,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "M10-CAS",
@@ -2948,11 +3152,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.333,
       "tokens": 54,
       "gen_s": 1.15146,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "M10-SCH",
@@ -2962,11 +3167,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.998,
       "tokens": 36,
       "gen_s": 0.781058,
-      "prompt_tokens": 3222
+      "prompt_tokens": 3222,
+      "model_error": null
     },
     {
       "id": "M10-BIZ",
@@ -2976,11 +3182,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 3.031,
       "tokens": 38,
       "gen_s": 0.81898,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "M10-VAG",
@@ -2990,11 +3197,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.157,
       "tokens": 45,
       "gen_s": 0.979416,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "M11-CAS",
@@ -3004,11 +3212,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 4.129,
       "tokens": 92,
       "gen_s": 1.923339,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "M11-SCH",
@@ -3018,11 +3227,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.8,
       "latency_s": 3.009,
       "tokens": 34,
       "gen_s": 0.73678,
-      "prompt_tokens": 3227
+      "prompt_tokens": 3227,
+      "model_error": null
     },
     {
       "id": "M11-BIZ",
@@ -3032,11 +3242,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.8,
       "latency_s": 3.059,
       "tokens": 36,
       "gen_s": 0.83001,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "M11-VAG",
@@ -3046,11 +3257,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.8,
       "latency_s": 2.774,
       "tokens": 25,
       "gen_s": 0.567465,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "M12-CAS",
@@ -3060,11 +3272,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.7,
       "latency_s": 2.894,
       "tokens": 30,
       "gen_s": 0.676179,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "M12-SCH",
@@ -3074,11 +3287,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 2.3,
+      "sql_ms": 4.1,
       "latency_s": 2.928,
       "tokens": 31,
       "gen_s": 0.673674,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "M12-BIZ",
@@ -3088,11 +3302,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.949,
       "tokens": 33,
       "gen_s": 0.747262,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "M12-VAG",
@@ -3102,11 +3317,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 3.57,
       "tokens": 62,
       "gen_s": 1.327246,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "M13-CAS",
@@ -3116,11 +3332,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 1.1,
       "latency_s": 2.814,
       "tokens": 26,
       "gen_s": 0.585612,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "M13-SCH",
@@ -3130,11 +3347,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 1.9,
       "latency_s": 3.401,
       "tokens": 52,
       "gen_s": 1.171138,
-      "prompt_tokens": 3229
+      "prompt_tokens": 3229,
+      "model_error": null
     },
     {
       "id": "M13-BIZ",
@@ -3144,11 +3362,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.289,
       "tokens": 51,
       "gen_s": 1.089062,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "M13-VAG",
@@ -3158,11 +3377,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.182,
       "tokens": 46,
       "gen_s": 0.929869,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "M14-CAS",
@@ -3172,11 +3392,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.837,
       "tokens": 75,
       "gen_s": 1.567732,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "M14-SCH",
@@ -3186,11 +3407,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.8,
       "latency_s": 3.25,
       "tokens": 50,
       "gen_s": 1.000075,
-      "prompt_tokens": 3228
+      "prompt_tokens": 3228,
+      "model_error": null
     },
     {
       "id": "M14-BIZ",
@@ -3200,11 +3422,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.6,
       "latency_s": 4.098,
       "tokens": 90,
       "gen_s": 1.870974,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "M14-VAG",
@@ -3214,11 +3437,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 3.388,
       "tokens": 57,
       "gen_s": 1.175481,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "M15-CAS",
@@ -3228,11 +3452,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.6,
       "latency_s": 2.961,
       "tokens": 35,
       "gen_s": 0.739847,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "M15-SCH",
@@ -3242,11 +3467,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 2.815,
       "tokens": 28,
       "gen_s": 0.605427,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "M15-BIZ",
@@ -3256,11 +3482,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.7,
       "latency_s": 2.976,
       "tokens": 35,
       "gen_s": 0.760067,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "M15-VAG",
@@ -3270,11 +3497,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.702,
       "tokens": 21,
       "gen_s": 0.496361,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "M16-CAS",
@@ -3284,11 +3512,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 1.2,
       "latency_s": 3.359,
       "tokens": 50,
       "gen_s": 1.117238,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "M16-SCH",
@@ -3298,11 +3527,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.9,
+      "sql_ms": 3.5,
       "latency_s": 3.221,
       "tokens": 49,
       "gen_s": 0.977145,
-      "prompt_tokens": 3226
+      "prompt_tokens": 3226,
+      "model_error": null
     },
     {
       "id": "M16-BIZ",
@@ -3312,11 +3542,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 3.198,
       "tokens": 45,
       "gen_s": 0.961435,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "M16-VAG",
@@ -3326,11 +3557,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.7,
       "latency_s": 3.213,
       "tokens": 46,
       "gen_s": 0.989053,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "M17-CAS",
@@ -3340,11 +3572,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.3,
+      "sql_ms": 1.7,
       "latency_s": 3.174,
       "tokens": 44,
       "gen_s": 0.947478,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "M17-SCH",
@@ -3354,11 +3587,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.2,
+      "sql_ms": 1.8,
       "latency_s": 3.029,
       "tokens": 36,
       "gen_s": 0.777742,
-      "prompt_tokens": 3224
+      "prompt_tokens": 3224,
+      "model_error": null
     },
     {
       "id": "M17-BIZ",
@@ -3368,11 +3602,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.3,
+      "sql_ms": 1.8,
       "latency_s": 3.17,
       "tokens": 44,
       "gen_s": 0.938937,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "M17-VAG",
@@ -3382,11 +3617,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.2,
+      "sql_ms": 1.8,
       "latency_s": 2.888,
       "tokens": 31,
       "gen_s": 0.684292,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "M18-CAS",
@@ -3396,11 +3632,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.3,
+      "sql_ms": 1.9,
       "latency_s": 3.02,
       "tokens": 34,
       "gen_s": 0.779419,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "M18-SCH",
@@ -3410,11 +3647,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 3.0,
+      "sql_ms": 4.6,
       "latency_s": 3.677,
       "tokens": 71,
       "gen_s": 1.418751,
-      "prompt_tokens": 3230
+      "prompt_tokens": 3230,
+      "model_error": null
     },
     {
       "id": "M18-BIZ",
@@ -3424,11 +3662,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.8,
+      "sql_ms": 3.2,
       "latency_s": 3.795,
       "tokens": 74,
       "gen_s": 1.563842,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "M18-VAG",
@@ -3438,11 +3677,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.6,
+      "sql_ms": 2.5,
       "latency_s": 3.55,
       "tokens": 62,
       "gen_s": 1.326544,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "M19-CAS",
@@ -3452,11 +3692,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 3.736,
       "tokens": 71,
       "gen_s": 1.509586,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "M19-SCH",
@@ -3466,11 +3707,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.2,
+      "sql_ms": 3.1,
       "latency_s": 3.012,
       "tokens": 35,
       "gen_s": 0.756039,
-      "prompt_tokens": 3222
+      "prompt_tokens": 3222,
+      "model_error": null
     },
     {
       "id": "M19-BIZ",
@@ -3480,11 +3722,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 2.727,
       "tokens": 22,
       "gen_s": 0.495252,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "M19-VAG",
@@ -3494,11 +3737,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 1.0,
       "latency_s": 3.932,
       "tokens": 84,
       "gen_s": 1.753184,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "M20-CAS",
@@ -3508,11 +3752,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.9,
+      "sql_ms": 1.4,
       "latency_s": 3.049,
       "tokens": 38,
       "gen_s": 0.836725,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "M20-SCH",
@@ -3522,11 +3767,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.0,
+      "sql_ms": 1.4,
       "latency_s": 2.76,
       "tokens": 26,
       "gen_s": 0.568273,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "M20-BIZ",
@@ -3536,11 +3782,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.3,
+      "sql_ms": 2.0,
       "latency_s": 3.104,
       "tokens": 40,
       "gen_s": 0.886252,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "M20-VAG",
@@ -3550,11 +3797,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 1.7,
       "latency_s": 2.835,
       "tokens": 28,
       "gen_s": 0.605974,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "M21-CAS",
@@ -3564,11 +3812,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.0,
+      "sql_ms": 1.7,
       "latency_s": 2.884,
       "tokens": 30,
       "gen_s": 0.668704,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "M21-SCH",
@@ -3578,11 +3827,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.9,
+      "sql_ms": 1.5,
       "latency_s": 2.89,
       "tokens": 30,
       "gen_s": 0.613422,
-      "prompt_tokens": 3219
+      "prompt_tokens": 3219,
+      "model_error": null
     },
     {
       "id": "M21-BIZ",
@@ -3592,11 +3842,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 1.1,
       "latency_s": 2.885,
       "tokens": 30,
       "gen_s": 0.663632,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "M21-VAG",
@@ -3606,11 +3857,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 1.5,
       "latency_s": 2.936,
       "tokens": 30,
       "gen_s": 0.720466,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "M22-CAS",
@@ -3620,11 +3872,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 3.62,
       "tokens": 67,
       "gen_s": 1.413231,
-      "prompt_tokens": 3219
+      "prompt_tokens": 3219,
+      "model_error": null
     },
     {
       "id": "M22-SCH",
@@ -3634,11 +3887,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 2.9,
+      "sql_ms": 3.0,
       "latency_s": 3.584,
       "tokens": 63,
       "gen_s": 1.357744,
-      "prompt_tokens": 3230
+      "prompt_tokens": 3230,
+      "model_error": null
     },
     {
       "id": "M22-BIZ",
@@ -3648,11 +3902,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.5,
+      "sql_ms": 2.0,
       "latency_s": 2.978,
       "tokens": 33,
       "gen_s": 0.763742,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "M22-VAG",
@@ -3662,11 +3917,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 0.9,
       "latency_s": 2.809,
       "tokens": 27,
       "gen_s": 0.607229,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "M23-CAS",
@@ -3676,11 +3932,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.9,
+      "sql_ms": 2.2,
       "latency_s": 2.989,
       "tokens": 36,
       "gen_s": 0.796617,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "M23-SCH",
@@ -3690,11 +3947,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 1.0,
       "latency_s": 4.505,
       "tokens": 108,
       "gen_s": 2.244037,
-      "prompt_tokens": 3233
+      "prompt_tokens": 3233,
+      "model_error": null
     },
     {
       "id": "M23-BIZ",
@@ -3704,11 +3962,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 2.0,
       "latency_s": 2.993,
       "tokens": 36,
       "gen_s": 0.777316,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "M23-VAG",
@@ -3718,11 +3977,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.9,
+      "sql_ms": 1.4,
       "latency_s": 3.079,
       "tokens": 39,
       "gen_s": 0.837958,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "M24-CAS",
@@ -3732,11 +3992,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 3.142,
       "tokens": 42,
       "gen_s": 0.914966,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "M24-SCH",
@@ -3746,11 +4007,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 3.023,
       "tokens": 35,
       "gen_s": 0.767075,
-      "prompt_tokens": 3221
+      "prompt_tokens": 3221,
+      "model_error": null
     },
     {
       "id": "M24-BIZ",
@@ -3760,11 +4022,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.323,
       "tokens": 52,
       "gen_s": 1.118804,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "M24-VAG",
@@ -3774,11 +4037,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.036,
       "tokens": 38,
       "gen_s": 0.814577,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "M25-CAS",
@@ -3788,11 +4052,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.2,
+      "sql_ms": 1.9,
       "latency_s": 2.742,
       "tokens": 23,
       "gen_s": 0.525956,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "M25-SCH",
@@ -3802,11 +4067,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 1.0,
       "latency_s": 3.897,
       "tokens": 79,
       "gen_s": 1.643927,
-      "prompt_tokens": 3226
+      "prompt_tokens": 3226,
+      "model_error": null
     },
     {
       "id": "M25-BIZ",
@@ -3816,11 +4082,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.7,
       "latency_s": 2.859,
       "tokens": 29,
       "gen_s": 0.66132,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "M25-VAG",
@@ -3830,11 +4097,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 1.8,
       "latency_s": 2.887,
       "tokens": 28,
       "gen_s": 0.638357,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "M26-CAS",
@@ -3844,11 +4112,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 3.275,
       "tokens": 50,
       "gen_s": 1.062885,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "M26-SCH",
@@ -3858,11 +4127,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": true,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 3.166,
       "tokens": 44,
       "gen_s": 0.932465,
-      "prompt_tokens": 3225
+      "prompt_tokens": 3225,
+      "model_error": null
     },
     {
       "id": "M26-BIZ",
@@ -3872,11 +4142,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.191,
       "tokens": 47,
       "gen_s": 0.996676,
-      "prompt_tokens": 3218
+      "prompt_tokens": 3218,
+      "model_error": null
     },
     {
       "id": "M26-VAG",
@@ -3886,11 +4157,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 3.018,
       "tokens": 38,
       "gen_s": 0.801258,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "M27-CAS",
@@ -3900,11 +4172,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 4.106,
       "tokens": 91,
       "gen_s": 1.841677,
-      "prompt_tokens": 3219
+      "prompt_tokens": 3219,
+      "model_error": null
     },
     {
       "id": "M27-SCH",
@@ -3914,11 +4187,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 3.524,
       "tokens": 61,
       "gen_s": 1.286863,
-      "prompt_tokens": 3228
+      "prompt_tokens": 3228,
+      "model_error": null
     },
     {
       "id": "M27-BIZ",
@@ -3928,11 +4202,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 3.332,
       "tokens": 49,
       "gen_s": 1.087889,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "M27-VAG",
@@ -3942,11 +4217,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 2.965,
       "tokens": 35,
       "gen_s": 0.736857,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "M28-CAS",
@@ -3956,11 +4232,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.8,
+      "sql_ms": 3.0,
       "latency_s": 3.023,
       "tokens": 39,
       "gen_s": 0.845466,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "M28-SCH",
@@ -3970,11 +4247,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 3.0,
+      "sql_ms": 3.7,
       "latency_s": 3.161,
       "tokens": 44,
       "gen_s": 0.937881,
-      "prompt_tokens": 3224
+      "prompt_tokens": 3224,
+      "model_error": null
     },
     {
       "id": "M28-BIZ",
@@ -3984,11 +4262,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.8,
+      "sql_ms": 2.5,
       "latency_s": 3.126,
       "tokens": 42,
       "gen_s": 0.913337,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "M28-VAG",
@@ -3998,11 +4277,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.9,
+      "sql_ms": 0.7,
       "latency_s": 2.834,
       "tokens": 28,
       "gen_s": 0.622968,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "M29-CAS",
@@ -4012,11 +4292,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.5,
+      "sql_ms": 17.2,
       "latency_s": 3.093,
       "tokens": 40,
       "gen_s": 0.883374,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "M29-SCH",
@@ -4026,11 +4307,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": false,
-      "sql_ms": 1.3,
+      "sql_ms": 1.1,
       "latency_s": 3.053,
       "tokens": 40,
       "gen_s": 0.794017,
-      "prompt_tokens": 3228
+      "prompt_tokens": 3228,
+      "model_error": null
     },
     {
       "id": "M29-BIZ",
@@ -4040,11 +4322,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 0.9,
       "latency_s": 4.371,
       "tokens": 104,
       "gen_s": 2.162659,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "M29-VAG",
@@ -4054,11 +4337,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 3.148,
       "tokens": 43,
       "gen_s": 0.926303,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "M30-CAS",
@@ -4068,11 +4352,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.9,
+      "sql_ms": 1.0,
       "latency_s": 4.106,
       "tokens": 92,
       "gen_s": 1.861482,
-      "prompt_tokens": 3225
+      "prompt_tokens": 3225,
+      "model_error": null
     },
     {
       "id": "M30-SCH",
@@ -4082,11 +4367,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.9,
+      "sql_ms": 0.8,
       "latency_s": 3.639,
       "tokens": 67,
       "gen_s": 1.403873,
-      "prompt_tokens": 3238
+      "prompt_tokens": 3238,
+      "model_error": null
     },
     {
       "id": "M30-BIZ",
@@ -4096,11 +4382,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 4.275,
       "tokens": 100,
       "gen_s": 2.02626,
-      "prompt_tokens": 3223
+      "prompt_tokens": 3223,
+      "model_error": null
     },
     {
       "id": "M30-VAG",
@@ -4110,11 +4397,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 1.0,
       "latency_s": 3.498,
       "tokens": 61,
       "gen_s": 1.282094,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "M31-CAS",
@@ -4128,7 +4416,8 @@
       "latency_s": 3.592,
       "tokens": 66,
       "gen_s": 1.330652,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "M31-SCH",
@@ -4138,11 +4427,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 2.6,
+      "sql_ms": 2.2,
       "latency_s": 2.956,
       "tokens": 32,
       "gen_s": 0.689654,
-      "prompt_tokens": 3226
+      "prompt_tokens": 3226,
+      "model_error": null
     },
     {
       "id": "M31-BIZ",
@@ -4152,11 +4442,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 2.991,
       "tokens": 37,
       "gen_s": 0.783743,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "M31-VAG",
@@ -4166,11 +4457,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 2.87,
       "tokens": 31,
       "gen_s": 0.668521,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "M32-CAS",
@@ -4180,11 +4472,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.2,
+      "sql_ms": 1.1,
       "latency_s": 2.877,
       "tokens": 32,
       "gen_s": 0.635383,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "M32-SCH",
@@ -4194,11 +4487,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 2.86,
       "tokens": 30,
       "gen_s": 0.652705,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "M32-BIZ",
@@ -4212,7 +4506,8 @@
       "latency_s": 3.264,
       "tokens": 50,
       "gen_s": 1.017654,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "M32-VAG",
@@ -4222,11 +4517,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 2.639,
       "tokens": 17,
       "gen_s": 0.414698,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "M33-CAS",
@@ -4236,11 +4532,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 0.9,
       "latency_s": 3.707,
       "tokens": 70,
       "gen_s": 1.459421,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "M33-SCH",
@@ -4250,11 +4547,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 1.1,
       "latency_s": 3.346,
       "tokens": 52,
       "gen_s": 1.109225,
-      "prompt_tokens": 3221
+      "prompt_tokens": 3221,
+      "model_error": null
     },
     {
       "id": "M33-BIZ",
@@ -4264,11 +4562,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.3,
+      "sql_ms": 1.5,
       "latency_s": 3.969,
       "tokens": 84,
       "gen_s": 1.743931,
-      "prompt_tokens": 3222
+      "prompt_tokens": 3222,
+      "model_error": null
     },
     {
       "id": "M33-VAG",
@@ -4282,7 +4581,8 @@
       "latency_s": 3.219,
       "tokens": 48,
       "gen_s": 1.000711,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "M34-CAS",
@@ -4296,7 +4596,8 @@
       "latency_s": 4.1,
       "tokens": 91,
       "gen_s": 1.838734,
-      "prompt_tokens": 3220
+      "prompt_tokens": 3220,
+      "model_error": null
     },
     {
       "id": "M34-SCH",
@@ -4310,7 +4611,8 @@
       "latency_s": 2.82,
       "tokens": 26,
       "gen_s": 0.577908,
-      "prompt_tokens": 3226
+      "prompt_tokens": 3226,
+      "model_error": null
     },
     {
       "id": "M34-BIZ",
@@ -4320,11 +4622,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 3.631,
       "tokens": 64,
       "gen_s": 1.407227,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "M34-VAG",
@@ -4334,11 +4637,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 2.576,
       "tokens": 17,
       "gen_s": 0.38946,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "M35-CAS",
@@ -4348,11 +4652,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.9,
+      "sql_ms": 1.0,
       "latency_s": 3.531,
       "tokens": 62,
       "gen_s": 1.313207,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "M35-SCH",
@@ -4362,11 +4667,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 2.955,
       "tokens": 34,
       "gen_s": 0.724687,
-      "prompt_tokens": 3225
+      "prompt_tokens": 3225,
+      "model_error": null
     },
     {
       "id": "M35-BIZ",
@@ -4376,11 +4682,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.5,
       "latency_s": 3.016,
       "tokens": 39,
       "gen_s": 0.763206,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "M35-VAG",
@@ -4390,11 +4697,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.6,
+      "sql_ms": 1.5,
       "latency_s": 2.866,
       "tokens": 29,
       "gen_s": 0.635178,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "M36-CAS",
@@ -4404,11 +4712,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 3.177,
       "tokens": 42,
       "gen_s": 0.95586,
-      "prompt_tokens": 3219
+      "prompt_tokens": 3219,
+      "model_error": null
     },
     {
       "id": "M36-SCH",
@@ -4418,11 +4727,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 0.7,
       "latency_s": 3.263,
       "tokens": 49,
       "gen_s": 1.026558,
-      "prompt_tokens": 3231
+      "prompt_tokens": 3231,
+      "model_error": null
     },
     {
       "id": "M36-BIZ",
@@ -4436,7 +4746,8 @@
       "latency_s": 3.037,
       "tokens": 39,
       "gen_s": 0.791296,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "M36-VAG",
@@ -4446,11 +4757,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 3.08,
       "tokens": 37,
       "gen_s": 0.843282,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "M37-CAS",
@@ -4460,11 +4772,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 3.528,
       "tokens": 60,
       "gen_s": 1.281111,
-      "prompt_tokens": 3218
+      "prompt_tokens": 3218,
+      "model_error": null
     },
     {
       "id": "M37-SCH",
@@ -4478,7 +4791,8 @@
       "latency_s": 2.854,
       "tokens": 28,
       "gen_s": 0.610225,
-      "prompt_tokens": 3218
+      "prompt_tokens": 3218,
+      "model_error": null
     },
     {
       "id": "M37-BIZ",
@@ -4488,11 +4802,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 3.482,
       "tokens": 61,
       "gen_s": 1.281031,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "M37-VAG",
@@ -4502,11 +4817,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 3.004,
       "tokens": 36,
       "gen_s": 0.761223,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "M38-CAS",
@@ -4516,11 +4832,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 2.917,
       "tokens": 34,
       "gen_s": 0.662688,
-      "prompt_tokens": 3221
+      "prompt_tokens": 3221,
+      "model_error": null
     },
     {
       "id": "M38-SCH",
@@ -4534,7 +4851,8 @@
       "latency_s": 3.248,
       "tokens": 46,
       "gen_s": 0.970866,
-      "prompt_tokens": 3233
+      "prompt_tokens": 3233,
+      "model_error": null
     },
     {
       "id": "M38-BIZ",
@@ -4544,11 +4862,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 2.954,
       "tokens": 32,
       "gen_s": 0.700221,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "M38-VAG",
@@ -4558,11 +4877,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 1.1,
       "latency_s": 2.71,
       "tokens": 22,
       "gen_s": 0.45737,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "M39-CAS",
@@ -4576,7 +4896,8 @@
       "latency_s": 3.006,
       "tokens": 36,
       "gen_s": 0.789667,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "M39-SCH",
@@ -4590,7 +4911,8 @@
       "latency_s": 3.044,
       "tokens": 36,
       "gen_s": 0.785645,
-      "prompt_tokens": 3223
+      "prompt_tokens": 3223,
+      "model_error": null
     },
     {
       "id": "M39-BIZ",
@@ -4600,11 +4922,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 2.896,
       "tokens": 31,
       "gen_s": 0.684322,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "M39-VAG",
@@ -4614,11 +4937,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 2.71,
       "tokens": 22,
       "gen_s": 0.491977,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "M40-CAS",
@@ -4632,7 +4956,8 @@
       "latency_s": 2.874,
       "tokens": 28,
       "gen_s": 0.661958,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "M40-SCH",
@@ -4646,7 +4971,8 @@
       "latency_s": 3.047,
       "tokens": 38,
       "gen_s": 0.820786,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "M40-BIZ",
@@ -4656,11 +4982,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 3.692,
       "tokens": 71,
       "gen_s": 1.508377,
-      "prompt_tokens": 3209
+      "prompt_tokens": 3209,
+      "model_error": null
     },
     {
       "id": "M40-VAG",
@@ -4670,11 +4997,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 0.6,
       "latency_s": 2.88,
       "tokens": 30,
       "gen_s": 0.649779,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "H01-CAS",
@@ -4688,7 +5016,8 @@
       "latency_s": 4.299,
       "tokens": 101,
       "gen_s": 2.082485999,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "H01-SCH",
@@ -4702,7 +5031,8 @@
       "latency_s": 3.197,
       "tokens": 44,
       "gen_s": 0.926628,
-      "prompt_tokens": 3236
+      "prompt_tokens": 3236,
+      "model_error": null
     },
     {
       "id": "H01-BIZ",
@@ -4712,11 +5042,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.922,
       "tokens": 84,
       "gen_s": 1.667803,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "H01-VAG",
@@ -4726,11 +5057,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 4.139,
       "tokens": 94,
       "gen_s": 1.939626,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "H02-CAS",
@@ -4740,11 +5072,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.5,
+      "sql_ms": 1.6,
       "latency_s": 4.795,
       "tokens": 123,
       "gen_s": 2.543708,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "H02-SCH",
@@ -4754,11 +5087,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.5,
+      "sql_ms": 1.6,
       "latency_s": 3.866,
       "tokens": 79,
       "gen_s": 1.640221,
-      "prompt_tokens": 3232
+      "prompt_tokens": 3232,
+      "model_error": null
     },
     {
       "id": "H02-BIZ",
@@ -4772,7 +5106,8 @@
       "latency_s": 4.561,
       "tokens": 116,
       "gen_s": 2.349852,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "H02-VAG",
@@ -4782,11 +5117,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 4.012,
       "tokens": 88,
       "gen_s": 1.825765,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "H03-CAS",
@@ -4800,7 +5136,8 @@
       "latency_s": 4.627,
       "tokens": 115,
       "gen_s": 2.35035,
-      "prompt_tokens": 3225
+      "prompt_tokens": 3225,
+      "model_error": null
     },
     {
       "id": "H03-SCH",
@@ -4814,7 +5151,8 @@
       "latency_s": 3.449,
       "tokens": 60,
       "gen_s": 1.181871,
-      "prompt_tokens": 3231
+      "prompt_tokens": 3231,
+      "model_error": null
     },
     {
       "id": "H03-BIZ",
@@ -4828,7 +5166,8 @@
       "latency_s": 5.412,
       "tokens": 156,
       "gen_s": 3.181793,
-      "prompt_tokens": 3219
+      "prompt_tokens": 3219,
+      "model_error": null
     },
     {
       "id": "H03-VAG",
@@ -4838,11 +5177,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 0.6,
       "latency_s": 2.869,
       "tokens": 29,
       "gen_s": 0.644924,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "H04-CAS",
@@ -4856,7 +5196,8 @@
       "latency_s": 4.807,
       "tokens": 126,
       "gen_s": 2.537135,
-      "prompt_tokens": 3223
+      "prompt_tokens": 3223,
+      "model_error": null
     },
     {
       "id": "H04-SCH",
@@ -4866,11 +5207,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.2,
+      "sql_ms": 1.3,
       "latency_s": 4.293,
       "tokens": 99,
       "gen_s": 2.020775,
-      "prompt_tokens": 3224
+      "prompt_tokens": 3224,
+      "model_error": null
     },
     {
       "id": "H04-BIZ",
@@ -4880,11 +5222,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.9,
+      "sql_ms": 1.0,
       "latency_s": 5.51,
       "tokens": 161,
       "gen_s": 3.283147,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "H04-VAG",
@@ -4898,7 +5241,8 @@
       "latency_s": 2.997,
       "tokens": 38,
       "gen_s": 0.752451,
-      "prompt_tokens": 3209
+      "prompt_tokens": 3209,
+      "model_error": null
     },
     {
       "id": "H05-CAS",
@@ -4912,7 +5256,8 @@
       "latency_s": 3.855,
       "tokens": 81,
       "gen_s": 1.60713,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "H05-SCH",
@@ -4922,11 +5267,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 3.997,
       "tokens": 83,
       "gen_s": 1.708655,
-      "prompt_tokens": 3239
+      "prompt_tokens": 3239,
+      "model_error": null
     },
     {
       "id": "H05-BIZ",
@@ -4936,11 +5282,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.3,
+      "sql_ms": 1.1,
       "latency_s": 3.995,
       "tokens": 84,
       "gen_s": 1.751571,
-      "prompt_tokens": 3214
+      "prompt_tokens": 3214,
+      "model_error": null
     },
     {
       "id": "H05-VAG",
@@ -4950,11 +5297,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 1.4,
       "latency_s": 4.958,
       "tokens": 134,
       "gen_s": 2.747702,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "H06-CAS",
@@ -4968,7 +5316,8 @@
       "latency_s": 3.595,
       "tokens": 65,
       "gen_s": 1.355675,
-      "prompt_tokens": 3222
+      "prompt_tokens": 3222,
+      "model_error": null
     },
     {
       "id": "H06-SCH",
@@ -4978,11 +5327,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.6,
+      "sql_ms": 1.7,
       "latency_s": 3.227,
       "tokens": 51,
       "gen_s": 1.001766,
-      "prompt_tokens": 3231
+      "prompt_tokens": 3231,
+      "model_error": null
     },
     {
       "id": "H06-BIZ",
@@ -4992,11 +5342,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.5,
+      "sql_ms": 2.3,
       "latency_s": 4.064,
       "tokens": 89,
       "gen_s": 1.842216,
-      "prompt_tokens": 3220
+      "prompt_tokens": 3220,
+      "model_error": null
     },
     {
       "id": "H06-VAG",
@@ -5006,11 +5357,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.4,
+      "sql_ms": 1.6,
       "latency_s": 4.232,
       "tokens": 97,
       "gen_s": 2.014305,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "H07-CAS",
@@ -5020,11 +5372,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.5,
       "latency_s": 3.747,
       "tokens": 73,
       "gen_s": 1.498702,
-      "prompt_tokens": 3223
+      "prompt_tokens": 3223,
+      "model_error": null
     },
     {
       "id": "H07-SCH",
@@ -5034,11 +5387,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 4.528,
       "tokens": 110,
       "gen_s": 2.252688,
-      "prompt_tokens": 3242
+      "prompt_tokens": 3242,
+      "model_error": null
     },
     {
       "id": "H07-BIZ",
@@ -5048,11 +5402,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 1.1,
       "latency_s": 4.038,
       "tokens": 86,
       "gen_s": 1.791774,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "H07-VAG",
@@ -5066,7 +5421,8 @@
       "latency_s": 3.977,
       "tokens": 84,
       "gen_s": 1.774283,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "H08-CAS",
@@ -5076,11 +5432,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 3.3,
+      "sql_ms": 1.4,
       "latency_s": 3.937,
       "tokens": 84,
       "gen_s": 1.724622,
-      "prompt_tokens": 3218
+      "prompt_tokens": 3218,
+      "model_error": null
     },
     {
       "id": "H08-SCH",
@@ -5090,11 +5447,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 4.261,
       "tokens": 99,
       "gen_s": 2.029495,
-      "prompt_tokens": 3235
+      "prompt_tokens": 3235,
+      "model_error": null
     },
     {
       "id": "H08-BIZ",
@@ -5108,7 +5466,8 @@
       "latency_s": 4.535,
       "tokens": 112,
       "gen_s": 2.288331,
-      "prompt_tokens": 3218
+      "prompt_tokens": 3218,
+      "model_error": null
     },
     {
       "id": "H08-VAG",
@@ -5118,11 +5477,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 2.707,
       "tokens": 22,
       "gen_s": 0.503659,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "H09-CAS",
@@ -5132,11 +5492,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.6,
       "latency_s": 4.356,
       "tokens": 104,
       "gen_s": 2.124967999,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "H09-SCH",
@@ -5146,11 +5507,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 1.0,
       "latency_s": 3.756,
       "tokens": 75,
       "gen_s": 1.514705,
-      "prompt_tokens": 3228
+      "prompt_tokens": 3228,
+      "model_error": null
     },
     {
       "id": "H09-BIZ",
@@ -5160,11 +5522,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 2.654,
       "tokens": 22,
       "gen_s": 0.495816,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "H09-VAG",
@@ -5178,7 +5541,8 @@
       "latency_s": 3.288,
       "tokens": 53,
       "gen_s": 1.068676999,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "H10-CAS",
@@ -5188,11 +5552,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.3,
       "latency_s": 3.041,
       "tokens": 39,
       "gen_s": 0.833502,
-      "prompt_tokens": 3228
+      "prompt_tokens": 3228,
+      "model_error": null
     },
     {
       "id": "H10-SCH",
@@ -5202,11 +5567,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": false,
-      "sql_ms": 1.4,
+      "sql_ms": 1.0,
       "latency_s": 3.237,
       "tokens": 48,
       "gen_s": 0.951264,
-      "prompt_tokens": 3232
+      "prompt_tokens": 3232,
+      "model_error": null
     },
     {
       "id": "H10-BIZ",
@@ -5216,11 +5582,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 3.002,
       "tokens": 38,
       "gen_s": 0.746718,
-      "prompt_tokens": 3224
+      "prompt_tokens": 3224,
+      "model_error": null
     },
     {
       "id": "H10-VAG",
@@ -5230,11 +5597,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 0.7,
       "latency_s": 2.934,
       "tokens": 33,
       "gen_s": 0.701942,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "H11-CAS",
@@ -5244,11 +5612,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.0,
+      "sql_ms": 0.7,
       "latency_s": 3.937,
       "tokens": 83,
       "gen_s": 1.702164,
-      "prompt_tokens": 3220
+      "prompt_tokens": 3220,
+      "model_error": null
     },
     {
       "id": "H11-SCH",
@@ -5258,11 +5627,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 6.1,
+      "sql_ms": 5.2,
       "latency_s": 4.804,
       "tokens": 123,
       "gen_s": 2.534583,
-      "prompt_tokens": 3249
+      "prompt_tokens": 3249,
+      "model_error": null
     },
     {
       "id": "H11-BIZ",
@@ -5272,11 +5642,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.4,
+      "sql_ms": 1.0,
       "latency_s": 4.582,
       "tokens": 113,
       "gen_s": 2.337449,
-      "prompt_tokens": 3219
+      "prompt_tokens": 3219,
+      "model_error": null
     },
     {
       "id": "H11-VAG",
@@ -5286,11 +5657,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.2,
+      "sql_ms": 1.1,
       "latency_s": 3.747,
       "tokens": 73,
       "gen_s": 1.537632,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "H12-CAS",
@@ -5304,7 +5676,8 @@
       "latency_s": 3.859,
       "tokens": 78,
       "gen_s": 1.615524,
-      "prompt_tokens": 3219
+      "prompt_tokens": 3219,
+      "model_error": null
     },
     {
       "id": "H12-SCH",
@@ -5314,11 +5687,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.3,
+      "sql_ms": 1.6,
       "latency_s": 4.449,
       "tokens": 109,
       "gen_s": 2.210937,
-      "prompt_tokens": 3239
+      "prompt_tokens": 3239,
+      "model_error": null
     },
     {
       "id": "H12-BIZ",
@@ -5332,7 +5706,8 @@
       "latency_s": 3.809,
       "tokens": 78,
       "gen_s": 1.552583,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "H12-VAG",
@@ -5342,11 +5717,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.5,
       "latency_s": 3.236,
       "tokens": 48,
       "gen_s": 1.001922,
-      "prompt_tokens": 3209
+      "prompt_tokens": 3209,
+      "model_error": null
     },
     {
       "id": "H13-CAS",
@@ -5360,7 +5736,8 @@
       "latency_s": 3.99,
       "tokens": 84,
       "gen_s": 1.742123,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "H13-SCH",
@@ -5370,11 +5747,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 3.029,
       "tokens": 38,
       "gen_s": 0.804329,
-      "prompt_tokens": 3230
+      "prompt_tokens": 3230,
+      "model_error": null
     },
     {
       "id": "H13-BIZ",
@@ -5384,11 +5762,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 4.094,
       "tokens": 91,
       "gen_s": 1.888996,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "H13-VAG",
@@ -5402,7 +5781,8 @@
       "latency_s": 3.812,
       "tokens": 79,
       "gen_s": 1.573839,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "H14-CAS",
@@ -5412,11 +5792,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.5,
+      "sql_ms": 2.1,
       "latency_s": 4.693,
       "tokens": 123,
       "gen_s": 2.446984,
-      "prompt_tokens": 3219
+      "prompt_tokens": 3219,
+      "model_error": null
     },
     {
       "id": "H14-SCH",
@@ -5426,11 +5807,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.2,
+      "sql_ms": 1.4,
       "latency_s": 4.387,
       "tokens": 107,
       "gen_s": 2.197818,
-      "prompt_tokens": 3230
+      "prompt_tokens": 3230,
+      "model_error": null
     },
     {
       "id": "H14-BIZ",
@@ -5444,7 +5826,8 @@
       "latency_s": 4.454,
       "tokens": 109,
       "gen_s": 2.247344,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "H14-VAG",
@@ -5454,11 +5837,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 3.068,
       "tokens": 34,
       "gen_s": 0.802274,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "H15-CAS",
@@ -5468,11 +5852,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.9,
+      "sql_ms": 1.7,
       "latency_s": 3.861,
       "tokens": 79,
       "gen_s": 1.634389,
-      "prompt_tokens": 3220
+      "prompt_tokens": 3220,
+      "model_error": null
     },
     {
       "id": "H15-SCH",
@@ -5486,7 +5871,8 @@
       "latency_s": 3.19,
       "tokens": 46,
       "gen_s": 0.940557,
-      "prompt_tokens": 3236
+      "prompt_tokens": 3236,
+      "model_error": null
     },
     {
       "id": "H15-BIZ",
@@ -5496,11 +5882,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 2.892,
       "tokens": 33,
       "gen_s": 0.702043,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "H15-VAG",
@@ -5510,11 +5897,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 2.824,
       "tokens": 27,
       "gen_s": 0.595549,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "H16-CAS",
@@ -5524,11 +5912,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.505,
       "tokens": 60,
       "gen_s": 1.259312,
-      "prompt_tokens": 3224
+      "prompt_tokens": 3224,
+      "model_error": null
     },
     {
       "id": "H16-SCH",
@@ -5538,11 +5927,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.6,
+      "sql_ms": 1.7,
       "latency_s": 2.963,
       "tokens": 36,
       "gen_s": 0.729391,
-      "prompt_tokens": 3224
+      "prompt_tokens": 3224,
+      "model_error": null
     },
     {
       "id": "H16-BIZ",
@@ -5552,11 +5942,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 3.842,
       "tokens": 78,
       "gen_s": 1.601426,
-      "prompt_tokens": 3225
+      "prompt_tokens": 3225,
+      "model_error": null
     },
     {
       "id": "H16-VAG",
@@ -5566,11 +5957,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 2.716,
       "tokens": 20,
       "gen_s": 0.456623,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "H17-CAS",
@@ -5580,11 +5972,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 4.0,
+      "sql_ms": 4.2,
       "latency_s": 4.431,
       "tokens": 108,
       "gen_s": 2.224766,
-      "prompt_tokens": 3227
+      "prompt_tokens": 3227,
+      "model_error": null
     },
     {
       "id": "H17-SCH",
@@ -5598,7 +5991,8 @@
       "latency_s": 4.352,
       "tokens": 101,
       "gen_s": 2.049855,
-      "prompt_tokens": 3249
+      "prompt_tokens": 3249,
+      "model_error": null
     },
     {
       "id": "H17-BIZ",
@@ -5608,11 +6002,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.0,
+      "sql_ms": 0.9,
       "latency_s": 5.187,
       "tokens": 143,
       "gen_s": 2.926479,
-      "prompt_tokens": 3224
+      "prompt_tokens": 3224,
+      "model_error": null
     },
     {
       "id": "H17-VAG",
@@ -5622,11 +6017,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 0.7,
       "latency_s": 3.325,
       "tokens": 54,
       "gen_s": 1.129152,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "H18-CAS",
@@ -5636,11 +6032,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.2,
+      "sql_ms": 1.4,
       "latency_s": 3.643,
       "tokens": 68,
       "gen_s": 1.41871,
-      "prompt_tokens": 3219
+      "prompt_tokens": 3219,
+      "model_error": null
     },
     {
       "id": "H18-SCH",
@@ -5650,11 +6047,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 4.0,
+      "sql_ms": 4.5,
       "latency_s": 4.842,
       "tokens": 127,
       "gen_s": 2.599838,
-      "prompt_tokens": 3253
+      "prompt_tokens": 3253,
+      "model_error": null
     },
     {
       "id": "H18-BIZ",
@@ -5668,7 +6066,8 @@
       "latency_s": 3.893,
       "tokens": 80,
       "gen_s": 1.666354,
-      "prompt_tokens": 3213
+      "prompt_tokens": 3213,
+      "model_error": null
     },
     {
       "id": "H18-VAG",
@@ -5678,11 +6077,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.8,
+      "sql_ms": 0.9,
       "latency_s": 2.698,
       "tokens": 22,
       "gen_s": 0.500052,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "H19-CAS",
@@ -5696,7 +6096,8 @@
       "latency_s": 4.52,
       "tokens": 111,
       "gen_s": 2.266715,
-      "prompt_tokens": 3224
+      "prompt_tokens": 3224,
+      "model_error": null
     },
     {
       "id": "H19-SCH",
@@ -5706,11 +6107,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.3,
       "latency_s": 3.27,
       "tokens": 48,
       "gen_s": 1.038242,
-      "prompt_tokens": 3225
+      "prompt_tokens": 3225,
+      "model_error": null
     },
     {
       "id": "H19-BIZ",
@@ -5720,11 +6122,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 4.327,
       "tokens": 104,
       "gen_s": 2.076871,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "H19-VAG",
@@ -5734,11 +6137,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 2.831,
       "tokens": 29,
       "gen_s": 0.619395,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "H20-CAS",
@@ -5752,7 +6156,8 @@
       "latency_s": 4.099,
       "tokens": 92,
       "gen_s": 1.849879,
-      "prompt_tokens": 3218
+      "prompt_tokens": 3218,
+      "model_error": null
     },
     {
       "id": "H20-SCH",
@@ -5762,11 +6167,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 2.2,
+      "sql_ms": 2.1,
       "latency_s": 4.155,
       "tokens": 92,
       "gen_s": 1.879542,
-      "prompt_tokens": 3247
+      "prompt_tokens": 3247,
+      "model_error": null
     },
     {
       "id": "H20-BIZ",
@@ -5776,11 +6182,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 1.0,
       "latency_s": 3.271,
       "tokens": 49,
       "gen_s": 1.032992,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "H20-VAG",
@@ -5794,7 +6201,8 @@
       "latency_s": 3.57,
       "tokens": 66,
       "gen_s": 1.367445,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "H21-CAS",
@@ -5804,11 +6212,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.9,
+      "sql_ms": 1.1,
       "latency_s": 5.584,
       "tokens": 164,
       "gen_s": 3.354271,
-      "prompt_tokens": 3225
+      "prompt_tokens": 3225,
+      "model_error": null
     },
     {
       "id": "H21-SCH",
@@ -5818,11 +6227,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.9,
+      "sql_ms": 1.0,
       "latency_s": 4.923,
       "tokens": 132,
       "gen_s": 2.689171,
-      "prompt_tokens": 3240
+      "prompt_tokens": 3240,
+      "model_error": null
     },
     {
       "id": "H21-BIZ",
@@ -5832,11 +6242,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.4,
+      "sql_ms": 2.0,
       "latency_s": 4.32,
       "tokens": 100,
       "gen_s": 2.062161,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "H21-VAG",
@@ -5846,11 +6257,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.4,
       "latency_s": 3.217,
       "tokens": 49,
       "gen_s": 1.006689,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "H22-CAS",
@@ -5860,11 +6272,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 2.5,
+      "sql_ms": 0.7,
       "latency_s": 2.98,
       "tokens": 34,
       "gen_s": 0.736157,
-      "prompt_tokens": 3227
+      "prompt_tokens": 3227,
+      "model_error": null
     },
     {
       "id": "H22-SCH",
@@ -5874,11 +6287,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 2.0,
+      "sql_ms": 1.5,
       "latency_s": 4.333,
       "tokens": 101,
       "gen_s": 2.052965,
-      "prompt_tokens": 3248
+      "prompt_tokens": 3248,
+      "model_error": null
     },
     {
       "id": "H22-BIZ",
@@ -5888,11 +6302,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.0,
+      "sql_ms": 0.8,
       "latency_s": 3.621,
       "tokens": 65,
       "gen_s": 1.359345,
-      "prompt_tokens": 3227
+      "prompt_tokens": 3227,
+      "model_error": null
     },
     {
       "id": "H22-VAG",
@@ -5902,11 +6317,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.9,
+      "sql_ms": 0.7,
       "latency_s": 2.674,
       "tokens": 22,
       "gen_s": 0.462665,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "H23-CAS",
@@ -5916,11 +6332,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.6,
       "latency_s": 4.236,
       "tokens": 96,
       "gen_s": 1.977764,
-      "prompt_tokens": 3218
+      "prompt_tokens": 3218,
+      "model_error": null
     },
     {
       "id": "H23-SCH",
@@ -5930,11 +6347,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.3,
+      "sql_ms": 1.6,
       "latency_s": 3.908,
       "tokens": 81,
       "gen_s": 1.665182,
-      "prompt_tokens": 3237
+      "prompt_tokens": 3237,
+      "model_error": null
     },
     {
       "id": "H23-BIZ",
@@ -5944,11 +6362,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.6,
       "latency_s": 3.002,
       "tokens": 35,
       "gen_s": 0.745108,
-      "prompt_tokens": 3221
+      "prompt_tokens": 3221,
+      "model_error": null
     },
     {
       "id": "H23-VAG",
@@ -5958,11 +6377,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.2,
+      "sql_ms": 1.0,
       "latency_s": 6.946,
       "tokens": 232,
       "gen_s": 4.711348,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "H24-CAS",
@@ -5976,7 +6396,8 @@
       "latency_s": 3.134,
       "tokens": 42,
       "gen_s": 0.879003,
-      "prompt_tokens": 3227
+      "prompt_tokens": 3227,
+      "model_error": null
     },
     {
       "id": "H24-SCH",
@@ -5986,11 +6407,12 @@
       "variant": "cryptic",
       "outcome": "correct",
       "strict_correct": false,
-      "sql_ms": 3.3,
+      "sql_ms": 4.1,
       "latency_s": 3.39,
       "tokens": 57,
       "gen_s": 1.16948,
-      "prompt_tokens": 3237
+      "prompt_tokens": 3237,
+      "model_error": null
     },
     {
       "id": "H24-BIZ",
@@ -6000,11 +6422,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 0.8,
       "latency_s": 2.985,
       "tokens": 34,
       "gen_s": 0.72273,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "H24-VAG",
@@ -6014,11 +6437,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 0.5,
       "latency_s": 2.923,
       "tokens": 34,
       "gen_s": 0.727662,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "H25-CAS",
@@ -6028,11 +6452,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 3.904,
       "tokens": 81,
       "gen_s": 1.675932,
-      "prompt_tokens": 3225
+      "prompt_tokens": 3225,
+      "model_error": null
     },
     {
       "id": "H25-SCH",
@@ -6042,11 +6467,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.5,
+      "sql_ms": 1.8,
       "latency_s": 3.805,
       "tokens": 77,
       "gen_s": 1.534386,
-      "prompt_tokens": 3241
+      "prompt_tokens": 3241,
+      "model_error": null
     },
     {
       "id": "H25-BIZ",
@@ -6056,11 +6482,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 3.543,
       "tokens": 64,
       "gen_s": 1.281483,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "H25-VAG",
@@ -6070,11 +6497,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.9,
+      "sql_ms": 0.7,
       "latency_s": 2.82,
       "tokens": 27,
       "gen_s": 0.601923,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "H26-CAS",
@@ -6084,11 +6512,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 3.609,
       "tokens": 64,
       "gen_s": 1.359703,
-      "prompt_tokens": 3223
+      "prompt_tokens": 3223,
+      "model_error": null
     },
     {
       "id": "H26-SCH",
@@ -6098,11 +6527,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 4.119,
       "tokens": 94,
       "gen_s": 1.865107,
-      "prompt_tokens": 3238
+      "prompt_tokens": 3238,
+      "model_error": null
     },
     {
       "id": "H26-BIZ",
@@ -6112,11 +6542,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.3,
       "latency_s": 2.919,
       "tokens": 34,
       "gen_s": 0.718822,
-      "prompt_tokens": 3219
+      "prompt_tokens": 3219,
+      "model_error": null
     },
     {
       "id": "H26-VAG",
@@ -6126,11 +6557,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 3.889,
       "tokens": 79,
       "gen_s": 1.645238,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "H27-CAS",
@@ -6140,11 +6572,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 0.7,
       "latency_s": 5.01,
       "tokens": 137,
       "gen_s": 2.764816,
-      "prompt_tokens": 3223
+      "prompt_tokens": 3223,
+      "model_error": null
     },
     {
       "id": "H27-SCH",
@@ -6154,11 +6587,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 2.4,
+      "sql_ms": 1.7,
       "latency_s": 4.852,
       "tokens": 127,
       "gen_s": 2.573357,
-      "prompt_tokens": 3233
+      "prompt_tokens": 3233,
+      "model_error": null
     },
     {
       "id": "H27-BIZ",
@@ -6168,11 +6602,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.4,
+      "sql_ms": 1.3,
       "latency_s": 4.172,
       "tokens": 93,
       "gen_s": 1.966296,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "H27-VAG",
@@ -6186,7 +6621,8 @@
       "latency_s": 4.107,
       "tokens": 91,
       "gen_s": 1.874963,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "H28-CAS",
@@ -6196,11 +6632,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 0.5,
       "latency_s": 5.259,
       "tokens": 149,
       "gen_s": 3.004117,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "H28-SCH",
@@ -6210,11 +6647,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.8,
+      "sql_ms": 1.7,
       "latency_s": 4.552,
       "tokens": 112,
       "gen_s": 2.291463,
-      "prompt_tokens": 3226
+      "prompt_tokens": 3226,
+      "model_error": null
     },
     {
       "id": "H28-BIZ",
@@ -6224,11 +6662,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 0.5,
       "latency_s": 4.776,
       "tokens": 127,
       "gen_s": 2.5635,
-      "prompt_tokens": 3210
+      "prompt_tokens": 3210,
+      "model_error": null
     },
     {
       "id": "H28-VAG",
@@ -6242,7 +6681,8 @@
       "latency_s": 2.887,
       "tokens": 32,
       "gen_s": 0.648847,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "H29-CAS",
@@ -6252,11 +6692,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.5,
       "latency_s": 3.098,
       "tokens": 41,
       "gen_s": 0.871518,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "H29-SCH",
@@ -6270,7 +6711,8 @@
       "latency_s": 3.924,
       "tokens": 83,
       "gen_s": 1.642232,
-      "prompt_tokens": 3237
+      "prompt_tokens": 3237,
+      "model_error": null
     },
     {
       "id": "H29-BIZ",
@@ -6280,11 +6722,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.6,
       "latency_s": 3.383,
       "tokens": 55,
       "gen_s": 1.17096,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "H29-VAG",
@@ -6298,7 +6741,8 @@
       "latency_s": 2.709,
       "tokens": 21,
       "gen_s": 0.502378,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "H30-CAS",
@@ -6308,11 +6752,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.7,
       "latency_s": 4.57,
       "tokens": 110,
       "gen_s": 2.320094,
-      "prompt_tokens": 3222
+      "prompt_tokens": 3222,
+      "model_error": null
     },
     {
       "id": "H30-SCH",
@@ -6322,11 +6767,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 4.35,
       "tokens": 101,
       "gen_s": 2.059039,
-      "prompt_tokens": 3248
+      "prompt_tokens": 3248,
+      "model_error": null
     },
     {
       "id": "H30-BIZ",
@@ -6340,7 +6786,8 @@
       "latency_s": 3.233,
       "tokens": 46,
       "gen_s": 0.974938,
-      "prompt_tokens": 3218
+      "prompt_tokens": 3218,
+      "model_error": null
     },
     {
       "id": "H30-VAG",
@@ -6350,11 +6797,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 0.9,
       "latency_s": 3.527,
       "tokens": 63,
       "gen_s": 1.305251,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "H31-CAS",
@@ -6368,7 +6816,8 @@
       "latency_s": 4.941,
       "tokens": 132,
       "gen_s": 2.708617,
-      "prompt_tokens": 3223
+      "prompt_tokens": 3223,
+      "model_error": null
     },
     {
       "id": "H31-SCH",
@@ -6378,11 +6827,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.5,
       "latency_s": 5.234,
       "tokens": 146,
       "gen_s": 2.981642,
-      "prompt_tokens": 3249
+      "prompt_tokens": 3249,
+      "model_error": null
     },
     {
       "id": "H31-BIZ",
@@ -6396,7 +6846,8 @@
       "latency_s": 3.854,
       "tokens": 78,
       "gen_s": 1.627267,
-      "prompt_tokens": 3222
+      "prompt_tokens": 3222,
+      "model_error": null
     },
     {
       "id": "H31-VAG",
@@ -6410,7 +6861,8 @@
       "latency_s": 4.177,
       "tokens": 94,
       "gen_s": 1.937009,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "H32-CAS",
@@ -6420,11 +6872,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 4.575,
       "tokens": 113,
       "gen_s": 2.313489,
-      "prompt_tokens": 3229
+      "prompt_tokens": 3229,
+      "model_error": null
     },
     {
       "id": "H32-SCH",
@@ -6434,11 +6887,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 1.7,
       "latency_s": 4.086,
       "tokens": 92,
       "gen_s": 1.82851,
-      "prompt_tokens": 3244
+      "prompt_tokens": 3244,
+      "model_error": null
     },
     {
       "id": "H32-BIZ",
@@ -6452,7 +6906,8 @@
       "latency_s": 3.326,
       "tokens": 50,
       "gen_s": 1.082753,
-      "prompt_tokens": 3225
+      "prompt_tokens": 3225,
+      "model_error": null
     },
     {
       "id": "H32-VAG",
@@ -6462,11 +6917,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 2.682,
       "tokens": 20,
       "gen_s": 0.455895,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "H33-CAS",
@@ -6480,7 +6936,8 @@
       "latency_s": 4.25,
       "tokens": 97,
       "gen_s": 2.052223,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "H33-SCH",
@@ -6490,11 +6947,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 1.0,
       "latency_s": 3.915,
       "tokens": 84,
       "gen_s": 1.663861,
-      "prompt_tokens": 3233
+      "prompt_tokens": 3233,
+      "model_error": null
     },
     {
       "id": "H33-BIZ",
@@ -6504,11 +6962,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 2.762,
       "tokens": 25,
       "gen_s": 0.54344,
-      "prompt_tokens": 3211
+      "prompt_tokens": 3211,
+      "model_error": null
     },
     {
       "id": "H33-VAG",
@@ -6522,7 +6981,8 @@
       "latency_s": 3.064,
       "tokens": 40,
       "gen_s": 0.868218,
-      "prompt_tokens": 3204
+      "prompt_tokens": 3204,
+      "model_error": null
     },
     {
       "id": "H34-CAS",
@@ -6532,11 +6992,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 0.6,
       "latency_s": 4.135,
       "tokens": 94,
       "gen_s": 1.892921,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "H34-SCH",
@@ -6550,7 +7011,8 @@
       "latency_s": 5.219,
       "tokens": 146,
       "gen_s": 2.985028,
-      "prompt_tokens": 3239
+      "prompt_tokens": 3239,
+      "model_error": null
     },
     {
       "id": "H34-BIZ",
@@ -6560,11 +7022,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.3,
+      "sql_ms": 0.8,
       "latency_s": 3.483,
       "tokens": 59,
       "gen_s": 1.25046,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "H34-VAG",
@@ -6574,11 +7037,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 3.133,
       "tokens": 42,
       "gen_s": 0.898983,
-      "prompt_tokens": 3207
+      "prompt_tokens": 3207,
+      "model_error": null
     },
     {
       "id": "H35-CAS",
@@ -6588,11 +7052,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.6,
+      "sql_ms": 0.4,
       "latency_s": 3.177,
       "tokens": 47,
       "gen_s": 0.934507,
-      "prompt_tokens": 3221
+      "prompt_tokens": 3221,
+      "model_error": null
     },
     {
       "id": "H35-SCH",
@@ -6602,11 +7067,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.5,
+      "sql_ms": 2.0,
       "latency_s": 3.326,
       "tokens": 53,
       "gen_s": 1.041571999,
-      "prompt_tokens": 3226
+      "prompt_tokens": 3226,
+      "model_error": null
     },
     {
       "id": "H35-BIZ",
@@ -6616,11 +7082,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 0.9,
       "latency_s": 3.173,
       "tokens": 44,
       "gen_s": 0.975319,
-      "prompt_tokens": 3215
+      "prompt_tokens": 3215,
+      "model_error": null
     },
     {
       "id": "H35-VAG",
@@ -6630,11 +7097,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.7,
+      "sql_ms": 0.6,
       "latency_s": 3.126,
       "tokens": 44,
       "gen_s": 0.949402,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     },
     {
       "id": "H36-CAS",
@@ -6644,11 +7112,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.9,
+      "sql_ms": 0.6,
       "latency_s": 3.25,
       "tokens": 48,
       "gen_s": 1.010803,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "H36-SCH",
@@ -6658,11 +7127,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.3,
       "latency_s": 3.435,
       "tokens": 56,
       "gen_s": 1.209258,
-      "prompt_tokens": 3228
+      "prompt_tokens": 3228,
+      "model_error": null
     },
     {
       "id": "H36-BIZ",
@@ -6672,11 +7142,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 3.078,
       "tokens": 41,
       "gen_s": 0.855788,
-      "prompt_tokens": 3212
+      "prompt_tokens": 3212,
+      "model_error": null
     },
     {
       "id": "H36-VAG",
@@ -6686,11 +7157,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.8,
+      "sql_ms": 0.9,
       "latency_s": 2.775,
       "tokens": 24,
       "gen_s": 0.541947,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "H37-CAS",
@@ -6700,11 +7172,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.1,
+      "sql_ms": 1.5,
       "latency_s": 4.405,
       "tokens": 106,
       "gen_s": 2.165687,
-      "prompt_tokens": 3219
+      "prompt_tokens": 3219,
+      "model_error": null
     },
     {
       "id": "H37-SCH",
@@ -6714,11 +7187,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.7,
+      "sql_ms": 2.1,
       "latency_s": 4.746,
       "tokens": 122,
       "gen_s": 2.491332,
-      "prompt_tokens": 3245
+      "prompt_tokens": 3245,
+      "model_error": null
     },
     {
       "id": "H37-BIZ",
@@ -6732,7 +7206,8 @@
       "latency_s": 3.875,
       "tokens": 78,
       "gen_s": 1.613974,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "H37-VAG",
@@ -6746,7 +7221,8 @@
       "latency_s": 2.705,
       "tokens": 22,
       "gen_s": 0.509098,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "H38-CAS",
@@ -6756,11 +7232,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.7,
+      "sql_ms": 1.3,
       "latency_s": 3.743,
       "tokens": 72,
       "gen_s": 1.486086,
-      "prompt_tokens": 3223
+      "prompt_tokens": 3223,
+      "model_error": null
     },
     {
       "id": "H38-SCH",
@@ -6770,11 +7247,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.7,
+      "sql_ms": 1.8,
       "latency_s": 4.33,
       "tokens": 103,
       "gen_s": 2.052358,
-      "prompt_tokens": 3231
+      "prompt_tokens": 3231,
+      "model_error": null
     },
     {
       "id": "H38-BIZ",
@@ -6784,11 +7262,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.6,
+      "sql_ms": 1.3,
       "latency_s": 3.799,
       "tokens": 75,
       "gen_s": 1.564607,
-      "prompt_tokens": 3216
+      "prompt_tokens": 3216,
+      "model_error": null
     },
     {
       "id": "H38-VAG",
@@ -6798,11 +7277,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 1.5,
+      "sql_ms": 1.2,
       "latency_s": 3.016,
       "tokens": 37,
       "gen_s": 0.820644,
-      "prompt_tokens": 3208
+      "prompt_tokens": 3208,
+      "model_error": null
     },
     {
       "id": "H39-CAS",
@@ -6812,11 +7292,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.4,
       "latency_s": 3.631,
       "tokens": 67,
       "gen_s": 1.388395,
-      "prompt_tokens": 3219
+      "prompt_tokens": 3219,
+      "model_error": null
     },
     {
       "id": "H39-SCH",
@@ -6826,11 +7307,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.5,
+      "sql_ms": 0.6,
       "latency_s": 4.327,
       "tokens": 103,
       "gen_s": 2.048347,
-      "prompt_tokens": 3236
+      "prompt_tokens": 3236,
+      "model_error": null
     },
     {
       "id": "H39-BIZ",
@@ -6844,7 +7326,8 @@
       "latency_s": 4.824,
       "tokens": 126,
       "gen_s": 2.602305,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "H39-VAG",
@@ -6854,11 +7337,12 @@
       "variant": "cryptic",
       "outcome": "wrong_result",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 3.291,
       "tokens": 52,
       "gen_s": 1.048097,
-      "prompt_tokens": 3205
+      "prompt_tokens": 3205,
+      "model_error": null
     },
     {
       "id": "H40-CAS",
@@ -6868,11 +7352,12 @@
       "variant": "cryptic",
       "outcome": "execution_error",
       "strict_correct": false,
-      "sql_ms": 0.4,
+      "sql_ms": 0.7,
       "latency_s": 4.475,
       "tokens": 108,
       "gen_s": 2.236859,
-      "prompt_tokens": 3223
+      "prompt_tokens": 3223,
+      "model_error": null
     },
     {
       "id": "H40-SCH",
@@ -6886,7 +7371,8 @@
       "latency_s": 4.636,
       "tokens": 118,
       "gen_s": 2.35794,
-      "prompt_tokens": 3242
+      "prompt_tokens": 3242,
+      "model_error": null
     },
     {
       "id": "H40-BIZ",
@@ -6900,7 +7386,8 @@
       "latency_s": 3.838,
       "tokens": 80,
       "gen_s": 1.587325,
-      "prompt_tokens": 3217
+      "prompt_tokens": 3217,
+      "model_error": null
     },
     {
       "id": "H40-VAG",
@@ -6914,7 +7401,8 @@
       "latency_s": 3.822,
       "tokens": 77,
       "gen_s": 1.608615,
-      "prompt_tokens": 3206
+      "prompt_tokens": 3206,
+      "model_error": null
     }
   ]
 }

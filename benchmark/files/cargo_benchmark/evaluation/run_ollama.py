@@ -12,7 +12,8 @@
 Writes evaluation/predictions/pred_<tag>.json ({"E01-CAS": "SELECT ...", ...}) and pred_<tag>_raw.json with, per
 question, the raw model text and Ollama's own counters (eval_count = tokens generated, eval_duration, prompt tokens,
 total/load durations) plus the wall-clock latency. evaluate.py reads both files. The run is saved after every
-question; re-running the same command resumes where it stopped (use --restart to start over).
+question; re-running the same command resumes where it stopped (use --restart to start over). An untimed warm-up
+call loads the model first, so the first question's latency does not include model loading (--no-warmup to skip).
 
 Prompt context: the variant's schema (+ optional evidence) and the question. The answer specification is NOT shown
 by default, because it is shared by all four phrasing styles and would hide their differences (show it with
@@ -108,6 +109,7 @@ def main():
     ap.add_argument("--restart", action="store_true", help="ignore an existing partial run and start over")
     ap.add_argument("--evaluate", action="store_true", help="run evaluation/evaluate.py on the result")
     ap.add_argument("--print-prompt", action="store_true", help="show the first prompt and exit (no model call)")
+    ap.add_argument("--no-warmup", action="store_true", help="skip the untimed warm-up call that loads the model")
     a = ap.parse_args()
 
     db = os.path.join(ROOT, "databases", f"cargo_{a.variant}.db")
@@ -143,6 +145,15 @@ def main():
         print(f"Resuming: {len(preds)} questions already answered (use --restart to start over)")
 
     todo = [q for q in questions if q["id"] not in preds]
+    if todo and not a.no_warmup:
+        # Load the model before timing starts, with the same num_ctx (a different num_ctx would make Ollama reload it).
+        t0 = time.time()
+        try:
+            w = ask(a.url, a.model, "SELECT 1;", a.num_ctx, a.timeout)
+            print(f"Warm-up: model ready in {time.time() - t0:.1f}s (load {(w.get('load_duration') or 0) / 1e9:.1f}s); "
+                  "not included in the results")
+        except Exception as e:
+            print(f"Warm-up call failed ({e}); continuing")
     for k, q in enumerate(todo, 1):
         prompt = build_prompt(schema, evidence, q, a.with_spec)
         t0 = time.time()
