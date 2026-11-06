@@ -483,6 +483,17 @@ SELECT COUNT(*) FROM crew_members WHERE license_expiry_date < '2025-12-20';
 -- @check airports_without_cold_chain | info | Airports without a cold-chain warehouse (temperature cargo handled in general warehouses)
 SELECT COUNT(*) FROM airports a WHERE NOT EXISTS (SELECT 1 FROM warehouses w WHERE w.airport_id = a.airport_id AND w.warehouse_type = 'cold_chain');
 
--- @check domestic_shipments_without_customs | info | Non-cancelled shipments needing no customs (domestic or intra-EU)
-SELECT COUNT(*) FROM shipments s WHERE s.status <> 'cancelled'
-AND NOT EXISTS (SELECT 1 FROM customs_declarations d WHERE d.shipment_id = s.shipment_id);
+-- @check shipments_needing_no_customs | info | Non-cancelled shipments within one customs territory (domestic or intra-EU), so no declaration
+SELECT COUNT(*) FROM shipments s
+JOIN airports o ON o.airport_id = s.origin_airport_id JOIN airports t ON t.airport_id = s.destination_airport_id
+WHERE s.status <> 'cancelled'
+  AND (CASE WHEN o.country IN ('Germany', 'Netherlands') THEN 'EU' ELSE o.country END)
+    = (CASE WHEN t.country IN ('Germany', 'Netherlands') THEN 'EU' ELSE t.country END);
+
+-- @check cross_border_without_declaration_yet | info | Non-cancelled cross-border shipments with no declaration yet (booked; export not lodged before the as-of moment)
+SELECT COUNT(*) FROM shipments s
+JOIN airports o ON o.airport_id = s.origin_airport_id JOIN airports t ON t.airport_id = s.destination_airport_id
+WHERE s.status <> 'cancelled'
+  AND (CASE WHEN o.country IN ('Germany', 'Netherlands') THEN 'EU' ELSE o.country END)
+   <> (CASE WHEN t.country IN ('Germany', 'Netherlands') THEN 'EU' ELSE t.country END)
+  AND NOT EXISTS (SELECT 1 FROM customs_declarations d WHERE d.shipment_id = s.shipment_id);

@@ -45,7 +45,7 @@ def main():
              "only table, column and index names differ, so every question has the same Gold result in every variant.", "",
              "| Variant | Tables | Columns | Naming style | Files |", "|---|---|---|---|---|",
              "| normal | 20 | 300 | full English words (`shipments.declared_value_usd`) | `schema/schema.sql`, `databases/cargo_normal.db`, `questions/questions_normal.json` |",
-             "| mixed | 20 | 300 | SAP-style abbreviations, mostly German mixed with English (`sndg.dekl_wert_usd`) | `schema/schema_mixed.sql`, `databases/cargo_mixed.db`, `questions/questions_mixed.json` |",
+             "| mixed | 20 | 300 | SAP-style abbreviations, mostly German mixed with English (`sndg.dekl_wert_usd`); comments stripped | `schema/schema_mixed.sql`, `databases/cargo_mixed.db`, `questions/questions_mixed.json` |",
              "| cryptic | 20 | 300 | random table codes and positional columns (`t89v.c16`); comments stripped | `schema/schema_cryptic.sql`, `databases/cargo_cryptic.db`, `questions/questions_cryptic.json` |",
              "", "## Tables", "", "| normal | mixed | cryptic | columns |", "|---|---|---|---:|"]
     for t in tables:
