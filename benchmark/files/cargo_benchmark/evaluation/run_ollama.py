@@ -21,8 +21,9 @@ by default, because it is shared by all four phrasing styles and would hide thei
 
 Schema formats (--schema):
   compact (default)  CREATE TABLE with column names, types, PK, FK and the allowed values of coded columns,
-                     about 2.4k (cryptic) to 3.4k (normal) tokens: fits an 8k context window
-  full               the variant's schema file as written (normal is about 8.3k tokens: use --num-ctx 16384)
+                     about 3.0k (normal), 3.2k (cryptic) and 3.3k (mixed) prompt tokens for Qwen2.5-Coder:
+                     fits an 8k context window
+  full               the variant's schema file as written (too close to 8k for normal: use --num-ctx 16384)
 """
 import argparse, json, os, re, sqlite3, subprocess, sys, time
 import urllib.request

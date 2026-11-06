@@ -119,8 +119,9 @@ warehouses                  54 rows   16 columns
 [INFO] crew_never_rostered                                21   Crew members without any assignment (inactive or on a grounded fleet; kept on purpose)
 [INFO] pilots_with_expired_licence                        10   Pilots whose licence expired before the as-of day (grounded after expiry)
 [INFO] airports_without_cold_chain                         5   Airports without a cold-chain warehouse (temperature cargo handled in general warehouses)
-[INFO] domestic_shipments_without_customs                898   Non-cancelled shipments needing no customs (domestic or intra-EU)
-(94 checks)
+[INFO] shipments_needing_no_customs                      845   Non-cancelled shipments within one customs territory (domestic or intra-EU), so no declaration
+[INFO] cross_border_without_declaration_yet               53   Non-cancelled cross-border shipments with no declaration yet (booked; export not lodged before the as-of moment)
+(95 checks)
 
 == Layer 4: reproducibility (clean rebuild) ==
 [PASS] generator output identical across runs

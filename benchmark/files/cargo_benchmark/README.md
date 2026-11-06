@@ -16,7 +16,7 @@ The same rows are published under three naming styles so that the effect of sche
 * The natural-language questions and answer specifications are **identical** in all three files, except that *schema-aware* questions name the tables and columns of their own variant. Only the Gold SQL differs, and the Gold *results* are identical, so accuracies are directly comparable.
 * The normal schema is the single source of truth. `scripts/build_variants.py` renames it with the maps in `scripts/naming.py`, copies the data, translates every Gold query with `scripts/sql_translate.py` (sqlglot) and verifies that each translated query returns exactly the normal result.
 * `schema/naming_map.json` (and the readable `docs/schema_variants.md`) list every table and column in all three forms, including a glossary of the German abbreviations. They can be given to a model as optional "evidence" in a with-dictionary experiment.
-* Cryptic DDL has its comments removed (they would reveal meaning). CHECK constraints and data values (e.g. `'completed'`, `'FRA'`) stay in English in every variant.
+* The mixed and cryptic DDL files have their comments removed (the English comments would reveal what the names mean); only the normal `schema/schema.sql` is commented. CHECK constraints and data values (e.g. `'completed'`, `'FRA'`) stay in English in every variant.
 
 ## Size
 | Table | Rows | Cols | | Table | Rows | Cols |
@@ -41,7 +41,7 @@ python questions/build_questions.py               # question_bank.py -> question
 python scripts/build_variants.py                  # -> mixed + cryptic schema, databases, questions (verified)
 python scripts/make_docs.py                       # -> docs/ERD.md, docs/schema_variants.md
 
-python validation/run_validation.py               # integrity, 20/300 shape, 94 SQL checks, clean-rebuild test
+python validation/run_validation.py               # integrity, 20/300 shape, 95 SQL checks, clean-rebuild test
 python validation/test_gold.py                    # Gold SQL: executability, recomputation, edge-case fixtures
 python validation/test_checks_catch_errors.py     # mutation test: do the checks catch corrupted data?
 python validation/test_variants.py                # variants: same shape, same rows, same Gold results, no name leaks
@@ -49,7 +49,7 @@ python validation/test_variants.py                # variants: same shape, same r
 python evaluation/run_ollama.py --variant cryptic --model qwen2.5-coder:1.5b --evaluate   # ask a local model + score
 python evaluation/compare_runs.py "evaluation/predictions/*_results.json" --csv comparison.csv
 ```
-Requires Python 3.8+ and SQLite 3.25+ (window functions). The committed databases and JSON files are already built; the commands above only need to be re-run after a change.
+Requires Python 3.9+ (sqlglot needs 3.9; the other scripts also run on 3.8) and SQLite 3.25+ (window functions). The committed databases and JSON files are already built; the commands above only need to be re-run after a change.
 
 ## Layout
 ```
@@ -70,6 +70,7 @@ evaluation/run_ollama.py         asks a local Ollama model the questions for one
 evaluation/evaluate.py           EX, strict EX, valid execution rate, latency, tokens, ms/token, tokens/s by difficulty x style
 evaluation/compare_runs.py       side-by-side table of several *_results.json (variants, models)
 evaluation/example_predictions.json   normal-schema example with a few deliberate mistakes
+hints/                           reasoning hints for every question and variant (see hints/README.md)
 docs/ERD.md, data_dictionary.md, schema_variants.md
 ```
 
@@ -97,7 +98,7 @@ python evaluation/run_ollama.py --variant normal --print-prompt   # inspect the 
 ```
 Add `--difficulty easy|moderate|hard`, `--style casual|schema_aware|business_executive|vague` or `--ids E01-CAS,H07-VAG` to run a slice. A run is saved after every question and resumes automatically if interrupted (`--restart` to start over).
 
-Prompt = schema of the variant + (optional) evidence + question. The answer specification is **not** shown by default (it is the same for all four styles and would erase their differences); `--with-spec` adds it. `--schema compact` (default) lists columns, types, keys and allowed coded values in about 2.4k (cryptic) to 3.4k (normal) tokens, so it fits the 8k context used for small models; `--schema full` sends the whole DDL (normal is about 8.3k tokens, use `--num-ctx 16384`). Outputs in `evaluation/predictions/`: `pred_<tag>.json` (SQL), `pred_<tag>_raw.json` (raw text + Ollama counters per question) and `pred_<tag>_results.json` (scores).
+Prompt = schema of the variant + (optional) evidence + question. The answer specification is **not** shown by default (it is the same for all four styles and would erase their differences); `--with-spec` adds it. `--schema compact` (default) lists columns, types, keys and allowed coded values in about 3.0k (normal), 3.2k (cryptic) and 3.3k (mixed) prompt tokens as measured by Ollama for Qwen2.5-Coder, so it fits the 8k context used for small models (the short German abbreviations split into more tokens than English words); `--schema full` sends the whole DDL, which is too close to 8k for normal, so use `--num-ctx 16384`. Outputs in `evaluation/predictions/`: `pred_<tag>.json` (SQL), `pred_<tag>_raw.json` (raw text + Ollama counters per question) and `pred_<tag>_results.json` (scores).
 
 ## Evaluation protocol and metrics
 The model gets the question and the schema of one variant (permitted context only; optionally the naming map as evidence). Its SQL runs read-only with a timeout on that variant's database. `evaluate.py` reports, overall, by difficulty, by style and as a difficulty × style grid:
@@ -107,7 +108,7 @@ The model gets the question and the schema of one variant (permitted context onl
 | **Execution accuracy (EX)** | share of questions whose result matches the Gold result: same rows and columns, row order and column order ignored, numbers equal to the precision shown in the Gold result (62.2 matches 62.23, not 62.3), text exact |
 | EX strict | rows in Gold order, columns in Gold order, tolerance 0.011 (meaningful for `--with-spec` runs) |
 | **Valid execution rate (VER)** | share of questions whose SQL ran without error or timeout, right or wrong |
-| **Latency** | wall-clock seconds per question for the model call: mean, median, p95, total. Model calls that fail or time out (`--timeout`, default 300 s) are scored as `missing` and left out of all speed metrics; `evaluate.py` lists them. An untimed warm-up call loads the model before the first question |
+| **Latency** | wall-clock seconds per question for the model call: mean, median, p95, total. Model calls that fail or time out (`run_ollama.py --timeout`, default 300 s; `evaluate.py --timeout`, default 30 s, is the separate limit for running each SQL query) are scored as `missing` and left out of all speed metrics; `evaluate.py` lists them. An untimed warm-up call loads the model before the first question |
 | **Tokens created** | tokens generated by the model (Ollama `eval_count`): mean and total; prompt tokens are reported too |
 | **Latency per token** | total latency / total tokens created, in ms/token (includes prompt processing and loading) |
 | **Tokens per second** | total tokens created / total generation time (Ollama `eval_duration`): pure decoding speed |
