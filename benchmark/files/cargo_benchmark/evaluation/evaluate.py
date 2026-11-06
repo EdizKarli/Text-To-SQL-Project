@@ -2,10 +2,11 @@
 """Score model-generated SQL against the Gold results, with accuracy and speed metrics.
 
 Usage: python evaluation/evaluate.py predictions.json [--variant normal|mixed|cryptic] [--stats pred_x_raw.json]
-                                     [--out results.json] [--timeout 30] [--only-predicted]
+                                     [--out results.json] [--timeout 30] [--only-predicted] [--split test]
   predictions.json : {"E01-CAS": "SELECT ...", ...} (written by evaluation/run_ollama.py, or by any other system)
   --stats          : per-question model counters; defaults to <predictions>_raw.json next to the predictions
   --only-predicted : score only the questions present in the predictions file (for runs on a slice)
+  --split          : score only one part of splits/split_80_20.json (train/dev/test)
 
 Metrics
   EX   execution accuracy        share of questions whose result matches the Gold result (relaxed matching, below)
@@ -159,6 +160,8 @@ def main():
     ap.add_argument("--db"); ap.add_argument("--questions"); ap.add_argument("--stats")
     ap.add_argument("--timeout", type=float, default=30); ap.add_argument("--out")
     ap.add_argument("--only-predicted", action="store_true")
+    ap.add_argument("--split", choices=["train", "dev", "test"],
+                    help="score only that part of splits/split_80_20.json (e.g. compare a base model and a fine-tuned one on test)")
     a = ap.parse_args()
     a.db = a.db or os.path.join(ROOT, "databases", f"cargo_{a.variant}.db")
     a.questions = a.questions or os.path.join(ROOT, "questions", f"questions_{a.variant}.json")
@@ -168,6 +171,9 @@ def main():
     questions = json.load(open(a.questions, encoding="utf-8"))
     if a.only_predicted:
         questions = [q for q in questions if q["id"] in preds]
+    if a.split:
+        keep = set(json.load(open(os.path.join(ROOT, "splits", "split_80_20.json"), encoding="utf-8"))["questions"][a.split])
+        questions = [q for q in questions if q["id"] in keep]
     print(f"Variant: {a.variant}   database: {os.path.relpath(a.db, ROOT)}   questions: {len(questions)}   "
           f"model stats: {os.path.basename(stats_path) if stats else 'none (latency/token metrics unavailable)'}")
     if stats.get("_run"):

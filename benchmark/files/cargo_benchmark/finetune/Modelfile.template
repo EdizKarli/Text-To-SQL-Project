@@ -1,0 +1,20 @@
+# Ollama Modelfile for a fine-tuned Qwen2.5-Coder model (export_gguf.sh fills in the FROM line).
+# The template is the Qwen2.5 chat format that the model was trained with (train_lora.py uses the tokenizer's
+# chat template, which adds the same default system message when there is none). To be sure it matches your
+# Ollama version, compare with:  ollama show qwen2.5-coder:7b --template
+FROM __GGUF__
+
+TEMPLATE """{{- if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ else }}<|im_start|>system
+You are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>
+{{ end }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+<|im_start|>assistant
+"""
+
+PARAMETER stop "<|im_start|>"
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|endoftext|>"
+PARAMETER temperature 0
+PARAMETER num_ctx 8192
