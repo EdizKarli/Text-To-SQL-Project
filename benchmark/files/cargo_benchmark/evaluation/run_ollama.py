@@ -6,6 +6,7 @@
     python evaluation/run_ollama.py --variant mixed   --model qwen2.5-coder:1.5b --evaluate
     python evaluation/run_ollama.py --variant cryptic --model qwen2.5-coder:1.5b --evaluate
     python evaluation/run_ollama.py --variant cryptic --model qwen2.5-coder:1.5b --evidence --evaluate   # + naming hints
+    python evaluation/run_ollama.py --variant cryptic --model qwen2.5-coder:7b --dictionary --evaluate   # + data dictionary
     python evaluation/run_ollama.py --variant normal --difficulty easy --style vague         # a slice only
     python evaluation/run_ollama.py --variant normal --print-prompt                          # show a prompt, no model call
     python evaluation/run_ollama.py --variant normal --split test --model cargo-a-7b --evaluate   # fine-tuned, test split
@@ -39,7 +40,18 @@ import urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-def compact_schema(db_path, ddl_path):
+def dictionary_for(variant):
+    """Meaning of every table and column of a variant, from schema/descriptions.json (written for the normal names)
+    and schema/naming_map.json: {variant_table: (table description, {variant_column: column description})}."""
+    desc = json.load(open(os.path.join(ROOT, "schema", "descriptions.json"), encoding="utf-8"))
+    names = json.load(open(os.path.join(ROOT, "schema", "naming_map.json"), encoding="utf-8"))[variant]
+    return {names[t]["name"]: (d["description"], {names[t]["columns"][c]: cd for c, cd in d["columns"].items()})
+            for t, d in desc.items()}
+
+
+def compact_schema(db_path, ddl_path, dictionary=None):
+    """CREATE TABLE statements with types, keys and allowed values. With a dictionary (dictionary_for()), each table
+    gets a comment line with its meaning and each column a short comment with its meaning."""
     con = sqlite3.connect(db_path)
     ddl = open(ddl_path, encoding="utf-8").read()
     tables = [t for (t,) in con.execute("SELECT name FROM sqlite_master WHERE type='table' ORDER BY rowid")]
@@ -55,9 +67,17 @@ def compact_schema(db_path, ddl_path):
                 line += " PRIMARY KEY"
             if name in fks:
                 line += f" REFERENCES {fks[name]}"
-            cols.append((line, f" -- values: {' '.join(allowed[name].split())}" if name in allowed else ""))
+            notes = []
+            if dictionary:
+                notes.append(dictionary[t][1][name])
+            if name in allowed:
+                vals = [v.strip() for v in allowed[name].split(",")]
+                if not (dictionary and all(v in notes[0] for v in vals)):    # skip when the description lists them
+                    notes.append(f"values: {' '.join(allowed[name].split())}")
+            cols.append((line, f" -- {'; '.join(notes)}" if notes else ""))
         body_lines = [decl + ("," if i < len(cols) - 1 else "") + note for i, (decl, note) in enumerate(cols)]
-        parts.append(f"CREATE TABLE {t} (\n" + "\n".join(body_lines) + "\n);")
+        head = f"-- {t}: {dictionary[t][0]}\n" if dictionary else ""
+        parts.append(head + f"CREATE TABLE {t} (\n" + "\n".join(body_lines) + "\n);")
     return "\n".join(parts)
 
 
@@ -132,17 +152,23 @@ def main():
     ap.add_argument("--model", default="qwen2.5-coder:1.5b")
     ap.add_argument("--schema", choices=["compact", "full"], default="compact")
     ap.add_argument("--evidence", action="store_true", help="add the naming map as hints (mixed/cryptic)")
+    ap.add_argument("--dictionary", action="store_true",
+                    help="data dictionary: a plain-English meaning for every table and column, as comments in the "
+                         "schema (schema/descriptions.json); raises --num-ctx to 16384 unless set")
     ap.add_argument("--with-spec", action="store_true", help="also show the answer specification")
     ap.add_argument("--difficulty", choices=["easy", "moderate", "hard"], help="run one difficulty only")
     ap.add_argument("--style", choices=["casual", "schema_aware", "business_executive", "vague"], help="run one style only")
     ap.add_argument("--ids", help="comma-separated question IDs (e.g. E01-CAS,H07-VAG)")
     ap.add_argument("--split", choices=["train", "dev", "test"], help="run one part of splits/split_80_20.json")
+    ap.add_argument("--bases-per-difficulty", type=int, choices=range(1, 81), metavar="1-80",
+                    help="run only the first N base questions of each difficulty, all 4 styles (12 x N questions); "
+                         "40 = the original 480 questions (E/M/H01-40)")
     ap.add_argument("--reasoning", choices=["none", "hint"], default="none",
                     help="hint: reasoning in the hint format before the SQL (fine-tuning condition B)")
     ap.add_argument("--num-predict", type=int, default=None,
                     help="max tokens to generate (default: Ollama's own; 1024 is used for --reasoning hint)")
     ap.add_argument("--url", default="http://localhost:11434/api/generate")
-    ap.add_argument("--num-ctx", type=int, default=8192)
+    ap.add_argument("--num-ctx", type=int, default=None, help="context window (default 8192, 16384 with --dictionary)")
     ap.add_argument("--timeout", type=int, default=300)
     ap.add_argument("--out")
     ap.add_argument("--restart", action="store_true", help="ignore an existing partial run and start over")
@@ -153,7 +179,12 @@ def main():
 
     db = os.path.join(ROOT, "databases", f"cargo_{a.variant}.db")
     ddl_path = os.path.join(ROOT, "schema", "schema.sql" if a.variant == "normal" else f"schema_{a.variant}.sql")
-    schema = compact_schema(db, ddl_path) if a.schema == "compact" else open(ddl_path, encoding="utf-8").read()
+    if a.num_ctx is None:
+        a.num_ctx = 16384 if a.dictionary else 8192
+    if a.dictionary and a.schema != "compact":
+        sys.exit("--dictionary works with --schema compact")
+    schema = (compact_schema(db, ddl_path, dictionary_for(a.variant) if a.dictionary else None)
+              if a.schema == "compact" else open(ddl_path, encoding="utf-8").read())
     evidence = evidence_text(a.variant) if a.evidence else ""
     questions = json.load(open(os.path.join(ROOT, "questions", f"questions_{a.variant}.json"), encoding="utf-8"))
     if a.difficulty:
@@ -166,12 +197,14 @@ def main():
     if a.split:
         keep = load_split(a.split)
         questions = [q for q in questions if q["id"] in keep]
+    if a.bases_per_difficulty:
+        questions = [q for q in questions if int(q["base_id"][1:]) <= a.bases_per_difficulty]
     if a.reasoning == "hint" and not a.num_predict:
         a.num_predict = 1024
 
-    tag = (f"{a.variant}_{re.sub(r'[^A-Za-z0-9.]+', '-', a.model)}_{a.schema}" + ("_evidence" if a.evidence else "")
+    tag = (f"{a.variant}_{re.sub(r'[^A-Za-z0-9.]+', '-', a.model)}_{a.schema}" + ("_evidence" if a.evidence else "") + ("_dict" if a.dictionary else "")
            + ("_spec" if a.with_spec else "") + ("_hint" if a.reasoning == "hint" else "")
-           + (f"_{a.split}" if a.split else "") + (f"_{a.difficulty}" if a.difficulty else "") + (f"_{a.style}" if a.style else ""))
+           + (f"_{a.split}" if a.split else "") + (f"_b{a.bases_per_difficulty}" if a.bases_per_difficulty else "") + (f"_{a.difficulty}" if a.difficulty else "") + (f"_{a.style}" if a.style else ""))
     out = a.out or os.path.join(ROOT, "evaluation", "predictions", f"pred_{tag}.json")
     raw_path = out[:-5] + "_raw.json"
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
@@ -183,7 +216,7 @@ def main():
         return
 
     preds, raw_log = {}, {"_run": dict(variant=a.variant, model=a.model, schema=a.schema, evidence=a.evidence,
-                                         with_spec=a.with_spec, num_ctx=a.num_ctx,
+                                         dictionary=a.dictionary, with_spec=a.with_spec, num_ctx=a.num_ctx,
                                          reasoning=a.reasoning, split=a.split)}
     if not a.restart and os.path.exists(out) and os.path.exists(raw_path):
         preds = json.load(open(out, encoding="utf-8"))
@@ -228,7 +261,7 @@ def main():
     if a.evaluate:
         cmd = [sys.executable, os.path.join(ROOT, "evaluation", "evaluate.py"), out, "--variant", a.variant,
                "--out", out[:-5] + "_results.json"]
-        if a.difficulty or a.style or a.ids or a.split:
+        if a.difficulty or a.style or a.ids or a.split or a.bases_per_difficulty:
             cmd.append("--only-predicted")
         subprocess.run(cmd, check=False)
 

@@ -77,6 +77,8 @@ hints/                           reasoning hints for every question and variant 
 splits/split_80_20.json          train / dev / test split by base question (make_split.py, check_split.py)
 finetune/                        LoRA fine-tuning on a GPU cluster: datasets, training, SLURM jobs, export to Ollama
 docs/ERD.md, data_dictionary.md, schema_variants.md
+docs/data_dictionary_cryptic.md  meaning of every cryptic table and column (scripts/make_dictionary.py)
+schema/descriptions.json         plain-English meaning of all 20 tables and 300 columns (source of the dictionary)
 ```
 
 ## Questions
@@ -101,9 +103,12 @@ python evaluation/run_ollama.py --variant normal  --model qwen2.5-coder:1.5b --e
 python evaluation/run_ollama.py --variant mixed   --model qwen2.5-coder:1.5b --evaluate
 python evaluation/run_ollama.py --variant cryptic --model qwen2.5-coder:1.5b --evaluate
 python evaluation/run_ollama.py --variant cryptic --model qwen2.5-coder:1.5b --evidence --evaluate   # + naming-map hints
+python evaluation/run_ollama.py --variant cryptic --model qwen2.5-coder:7b --dictionary --evaluate   # + data dictionary
 python evaluation/run_ollama.py --variant normal --print-prompt   # inspect the exact prompt, no model call
 ```
-Add `--difficulty easy|moderate|hard`, `--style casual|schema_aware|business_executive|vague`, `--ids E01-CAS,H07-VAG` or `--split test` to run a slice. `--reasoning hint` asks for the hint format before the SQL (for models fine-tuned on hints). A run is saved after every question and resumes automatically if interrupted (`--restart` to start over).
+`--dictionary` adds a data dictionary: a plain-English meaning for every table and column (from `schema/descriptions.json`), written as comments in the schema. It makes the prompt about 2.3 times longer (cryptic: about 2.4k to 5.5k estimated tokens), so it raises `--num-ctx` to 16384. Unlike `--evidence`, it does not give the normal names, only what each name means; readable version: `docs/data_dictionary_cryptic.md`.
+
+Add `--difficulty easy|moderate|hard`, `--style casual|schema_aware|business_executive|vague`, `--ids E01-CAS,H07-VAG`, `--split test` or `--bases-per-difficulty 40` (the original 480 questions; any N from 1 to 80 gives 12 × N questions) to run a slice. `--reasoning hint` asks for the hint format before the SQL (for models fine-tuned on hints). A run is saved after every question and resumes automatically if interrupted (`--restart` to start over).
 
 Prompt = schema of the variant + (optional) evidence + question. The answer specification is **not** shown by default (it is the same for all four styles and would erase their differences); `--with-spec` adds it. `--schema compact` (default) lists columns, types, keys and allowed coded values in about 3.0k (normal), 3.2k (cryptic) and 3.3k (mixed) prompt tokens as measured by Ollama for Qwen2.5-Coder, so it fits the 8k context used for small models (the short German abbreviations split into more tokens than English words); `--schema full` sends the whole DDL, which is too close to 8k for normal, so use `--num-ctx 16384`. Outputs in `evaluation/predictions/`: `pred_<tag>.json` (SQL), `pred_<tag>_raw.json` (raw text + Ollama counters per question) and `pred_<tag>_results.json` (scores).
 
