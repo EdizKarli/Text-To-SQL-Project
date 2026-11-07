@@ -10,7 +10,7 @@ For each hint it checks that:
   5. every table and column named in #schema exists in that variant (no invented names)
   6. no placeholder is left, and in mixed/cryptic no normal name is used where the variant name differs
      (the normal name may only appear once, in brackets, as the meaning)
-It also checks that there are 480 hints per variant and 1440 in total.
+It also checks that there are 960 hints per variant and 2880 in total.
 
 Usage (from the cargo_benchmark folder):
   python hints/validate_hints.py
@@ -24,7 +24,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 VARIANTS = ("normal", "mixed", "cryptic")
-EXPECTED_PER_VARIANT = 480
+EXPECTED_PER_VARIANT = 960
 STEP_LABELS = ("Source", "Joins", "Filters", "Grouping/aggregation", "Ordering/limits", "Traps")
 
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Build questions/questions_normal.json from questions/question_bank.py.
 
-120 base questions x 4 phrasing styles = 480 questions: 160 per difficulty, 40 per style within each difficulty.
-Use --bases-per-difficulty 30 for 360 questions (120 per difficulty, 30 per style).
+240 base questions x 4 phrasing styles = 960 questions: 320 per difficulty, 80 per style within each difficulty.
+Use --bases-per-difficulty 40 for the earlier 480-question set (E/M/H01-40 only).
 All four phrasings of a base question share one Gold SQL, so their Gold results are identical.
 
 Each entry: id (e.g. 'E07-BIZ'), base_id, difficulty (easy/moderate/hard), style, concepts, question (rendered for
@@ -36,10 +36,11 @@ def normal_naming():
     return {t: {"name": t, "columns": {r[1]: r[1] for r in con.execute(f"PRAGMA table_info({t})")}} for t in tables}
 
 
-def build(bases_per_difficulty=40):
+def build(bases_per_difficulty=80):
     naming = normal_naming()
     talk = {**qb.TALK_EASY, **qb.TALK_MODERATE, **qb.TALK_HARD}
-    assert len(qb.EASY + qb.MODERATE + qb.HARD) == 120 and len(talk) == 120, "bank incomplete"
+    assert len(qb.EASY) == len(qb.MODERATE) == len(qb.HARD) == 80 and len(talk) == 240, "bank incomplete"
+    assert len({b[0] for b in qb.EASY + qb.MODERATE + qb.HARD}) == 240, "duplicate base id"
     bases = qb.EASY[:bases_per_difficulty] + qb.MODERATE[:bases_per_difficulty] + qb.HARD[:bases_per_difficulty]
     out = []
     for base_id, concepts, spec, sql in bases:
@@ -61,8 +62,8 @@ def build(bases_per_difficulty=40):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--bases-per-difficulty", type=int, default=40, choices=range(1, 41), metavar="1-40",
-                    help="40 (default) -> 160 questions per difficulty (40 per style); 30 -> 120 per difficulty (30 per style)")
+    ap.add_argument("--bases-per-difficulty", type=int, default=80, choices=range(1, 81), metavar="1-80",
+                    help="80 (default) -> 320 questions per difficulty (80 per style); 40 -> the earlier 480-question set")
     qs = build(ap.parse_args().bases_per_difficulty)
     path = os.path.join(HERE, "questions_normal.json")
     with open(path, "w", encoding="utf-8", newline="\n") as fh:
