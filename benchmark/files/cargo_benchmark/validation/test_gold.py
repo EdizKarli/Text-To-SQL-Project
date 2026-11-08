@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gold SQL validation for the 120 base questions (each shared by 4 phrasings).
+"""Gold SQL validation for the 240 base questions (each shared by 4 phrasings).
 
 (1) executability and shape: every Gold query runs, returns rows, is not all-NULL; the 4 phrasings of a base
     question share exactly one Gold query; LIMIT queries have no tie at the cut-off (else the answer is arbitrary);
@@ -107,6 +107,55 @@ def layer2(con):
     # H03 running total equals total invoiced in 2025
     tot25 = q("SELECT ROUND(SUM(amount_usd), 2) FROM invoices WHERE issued_date LIKE '2025%'")[0][0]
     check("H03 running total ends at the 2025 total", abs(run(con, "H03")[-1][-1] - tot25) < 0.02)
+    # M47 customers without shipments (anti-join)
+    shippers = {c for (c,) in q("SELECT customer_id FROM shipments")}
+    check("M47 matches Python", run(con, "M47") == sorted((n,) for c, n in names.items() if c not in shippers))
+    # H46 open balance: payments summed per invoice before the join
+    paid = collections.defaultdict(float)
+    for iid, a in q("SELECT invoice_id, amount_usd FROM payments"):
+        paid[iid] += a
+    bal = collections.defaultdict(float)
+    for iid, amt, cid in q("""SELECT i.invoice_id, i.amount_usd, s.customer_id FROM invoices i JOIN shipments s USING(shipment_id)
+                              WHERE i.status IN ('unpaid', 'partially_paid')"""):
+        bal[cid] += amt - paid[iid]
+    exp = sorted(((names[c], round(v, 2)) for c, v in bal.items()), key=lambda r: -r[1])[:5]
+    got = run(con, "H46")
+    check("H46 matches Python (tolerance 0.02)", [g[0] for g in got] == [e[0] for e in exp] and all(abs(g[1] - e[1]) < 0.02 for g, e in zip(got, exp)))
+    # H52 median chargeable weight per service level
+    w = collections.defaultdict(list)
+    for lvl, kg in q("SELECT service_level, chargeable_weight_kg FROM shipments WHERE status = 'delivered'"):
+        w[lvl].append(kg)
+    def median(v):
+        v = sorted(v); n = len(v)
+        return v[n // 2] if n % 2 else (v[n // 2 - 1] + v[n // 2]) / 2
+    exp = [(k, median(v)) for k, v in sorted(w.items())]
+    got = run(con, "H52")
+    check("H52 matches Python (tolerance 0.051, SQLite rounds halves up)",
+          [g[0] for g in got] == [e[0] for e in exp] and all(abs(g[1] - e[1]) <= 0.051 for g, e in zip(got, exp)))
+    # H58 ageing buckets cover every invoice that is not paid
+    tot = q("SELECT COUNT(*), ROUND(SUM(amount_usd), 2) FROM invoices WHERE status <> 'paid'")[0]
+    got = run(con, "H58")
+    check("H58 buckets add up to all invoices not paid", sum(r[1] for r in got) == tot[0] and abs(sum(r[2] for r in got) - tot[1]) < 0.05)
+    # H74 zero-filled months: 12 rows that add up to all weather cancellations
+    n = q("SELECT COUNT(*) FROM flights WHERE cancellation_reason = 'weather'")[0][0]
+    got = run(con, "H74")
+    check("H74 has 12 months summing to all weather cancellations", len(got) == 12 and sum(r[1] for r in got) == n)
+    # H75 longest run of consecutive flying days per aircraft
+    days = collections.defaultdict(set)
+    for tail, d0 in q("""SELECT a.tail_number, date(f.actual_departure) FROM flights f JOIN aircraft a USING(aircraft_id)
+                         WHERE f.status = 'completed'"""):
+        days[tail].add(dt.date.fromisoformat(d0))
+    best = {}
+    for tail, s in days.items():
+        b = 0
+        for x in s:
+            if x - dt.timedelta(days=1) not in s:
+                k = 1
+                while x + dt.timedelta(days=k) in s:
+                    k += 1
+                b = max(b, k)
+        best[tail] = b
+    check("H75 matches Python", run(con, "H75") == sorted(((t, b) for t, b in best.items() if b >= 3), key=lambda r: (-r[1], r[0])))
 
 
 # ------------------------------------------------------------------ 3. tiny edge-case datasets

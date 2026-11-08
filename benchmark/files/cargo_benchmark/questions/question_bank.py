@@ -1,4 +1,4 @@
-"""Question bank: 120 base questions (40 easy, 40 moderate, 40 hard), each with ONE Gold SQL query (normal schema)
+"""Question bank: 240 base questions (80 easy, 80 moderate, 80 hard), each with ONE Gold SQL query (normal schema)
 and FOUR phrasings of the same information need:
 
   casual              everyday language, no schema terms
@@ -1044,3 +1044,1068 @@ TALK_HARD = {
         "For split payments, how long does the second instalment take by customer segment?",
         "Instalment gaps?"),
 }
+
+# ---------------------------------------------------------------------------------------------------------
+# Extension (960 questions): base questions E41-E80, M41-M80, H41-H80, written in the same format as above.
+# ---------------------------------------------------------------------------------------------------------
+EASY += [
+("E41", ["filtering", "ORDER BY"], "Column: iata_code of airports with has_24h_customs = 0, ordered by iata_code.",
+ "SELECT iata_code FROM airports WHERE has_24h_customs = 0 ORDER BY iata_code"),
+("E42", ["filtering", ">=", "ORDER BY"], "Columns: iata_code, runway_count of airports with at least 5 runways; ordered by runway_count DESC, iata_code.",
+ "SELECT iata_code, runway_count FROM airports WHERE runway_count >= 5 ORDER BY runway_count DESC, iata_code"),
+("E43", ["COUNT", "WHERE"], "One value: tracking events with recorded_by 'customer_portal'.",
+ "SELECT COUNT(*) AS portal_events FROM tracking_events WHERE recorded_by = 'customer_portal'"),
+("E44", ["filtering", "<", "ORDER BY"], "Columns: name, founded_year of airlines founded before 2000; ordered by founded_year.",
+ "SELECT name, founded_year FROM airlines WHERE founded_year < 2000 ORDER BY founded_year"),
+("E45", ["filtering"], "Column: name of airlines with is_cargo_only = 0 (they also carry passengers), ordered by name.",
+ "SELECT name FROM airlines WHERE is_cargo_only = 0 ORDER BY name"),
+("E46", ["ORDER BY", "LIMIT"], "Columns: model, max_payload_kg of the aircraft type with the largest max_payload_kg (one row).",
+ "SELECT model, max_payload_kg FROM aircraft_types ORDER BY max_payload_kg DESC LIMIT 1"),
+("E47", ["filtering", ">=", "ORDER BY"], "Columns: model, max_range_km of aircraft types with max_range_km of at least 8000; ordered by max_range_km DESC.",
+ "SELECT model, max_range_km FROM aircraft_types WHERE max_range_km >= 8000 ORDER BY max_range_km DESC"),
+("E48", ["COUNT", "<"], "One value: aircraft with year_manufactured before 2010 (any status).",
+ "SELECT COUNT(*) AS aircraft_before_2010 FROM aircraft WHERE year_manufactured < 2010"),
+("E49", ["filtering", "AND", "date comparison"], "Columns: tail_number, lessor_name, lease_end_date of leased aircraft whose lease ends before 2030-01-01; ordered by lease_end_date.",
+ "SELECT tail_number, lessor_name, lease_end_date FROM aircraft WHERE ownership = 'leased' AND lease_end_date < '2030-01-01' ORDER BY lease_end_date"),
+("E50", ["ORDER BY", "LIMIT"], "Columns: tail_number, total_flight_hours of the aircraft with the most total_flight_hours (one row).",
+ "SELECT tail_number, total_flight_hours FROM aircraft ORDER BY total_flight_hours DESC LIMIT 1"),
+("E51", ["COUNT", "WHERE"], "One value: customers with is_known_shipper = 0.",
+ "SELECT COUNT(*) AS unknown_shippers FROM customers WHERE is_known_shipper = 0"),
+("E52", ["ORDER BY", "LIMIT"], "Columns: name, credit_limit_usd of the 5 customers with the highest credit_limit_usd; ordered by credit_limit_usd DESC.",
+ "SELECT name, credit_limit_usd FROM customers ORDER BY credit_limit_usd DESC LIMIT 5"),
+("E53", ["COUNT", "date filtering"], "One value: customers whose created_date is in 2024.",
+ "SELECT COUNT(*) AS customers_created_2024 FROM customers WHERE created_date >= '2024-01-01' AND created_date < '2025-01-01'"),
+("E54", ["AVG", "ROUND"], "One value: AVG(credit_limit_usd) of customers with loyalty_tier 'platinum', rounded to 2 decimals.",
+ "SELECT ROUND(AVG(credit_limit_usd), 2) AS avg_platinum_credit_limit_usd FROM customers WHERE loyalty_tier = 'platinum'"),
+("E55", ["filtering", "ORDER BY"], "Column: warehouse_code of warehouses with operates_24h = 0, ordered by warehouse_code.",
+ "SELECT warehouse_code FROM warehouses WHERE operates_24h = 0 ORDER BY warehouse_code"),
+("E56", ["ORDER BY", "LIMIT"], "Columns: warehouse_code, monthly_rent_usd of the 3 warehouses with the highest monthly_rent_usd; ordered by rent DESC.",
+ "SELECT warehouse_code, monthly_rent_usd FROM warehouses ORDER BY monthly_rent_usd DESC LIMIT 3"),
+("E57", ["AVG", "AND", "ROUND"], "One value: AVG(duty_rate_pct) of import declarations with customs_country 'Japan', rounded to 2 decimals.",
+ "SELECT ROUND(AVG(duty_rate_pct), 2) AS avg_japan_duty_rate_pct FROM customs_declarations WHERE declaration_type = 'import' AND customs_country = 'Japan'"),
+("E58", ["COUNT", "AND"], "One value: warehouses with is_bonded = 1 and security_level 'high'.",
+ "SELECT COUNT(*) AS bonded_high_security FROM warehouses WHERE is_bonded = 1 AND security_level = 'high'"),
+("E59", ["COUNT", "date comparison"], "One value: crew members whose license_expiry_date is before 2026-01-01 (crew without a licence are not counted).",
+ "SELECT COUNT(*) AS licences_expiring_2025 FROM crew_members WHERE license_expiry_date < '2026-01-01'"),
+("E60", ["ORDER BY", "LIMIT"], "Columns: employee_number, first_name, last_name, hire_date of the crew member hired first (one row).",
+ "SELECT employee_number, first_name, last_name, hire_date FROM crew_members ORDER BY hire_date LIMIT 1"),
+("E61", ["COUNT", "AND"], "One value: incidents with incident_type 'damage' and root_cause 'packaging'.",
+ "SELECT COUNT(*) AS packaging_damage FROM incidents WHERE incident_type = 'damage' AND root_cause = 'packaging'"),
+("E62", ["COUNT", "WHERE"], "One value: flights with status 'scheduled' (not yet flown).",
+ "SELECT COUNT(*) AS scheduled_flights FROM flights WHERE status = 'scheduled'"),
+("E63", ["AVG", "ROUND"], "One value: AVG(distance_km) of completed flights, rounded to 1 decimal.",
+ "SELECT ROUND(AVG(distance_km), 1) AS avg_distance_km FROM flights WHERE status = 'completed'"),
+("E64", ["COUNT", "WHERE"], "One value: flights with delay_code '93' (any status).",
+ "SELECT COUNT(*) AS delay_93_flights FROM flights WHERE delay_code = '93'"),
+("E65", ["IN", "ORDER BY"], "Columns: claim_number, claimed_amount_usd of insurance claims with status 'filed' or 'under_review'; ordered by claim_number.",
+ "SELECT claim_number, claimed_amount_usd FROM insurance_claims WHERE status IN ('filed', 'under_review') ORDER BY claim_number"),
+("E66", ["SUM", "WHERE", "ROUND"], "One value: SUM(per_diem_usd) of crew assignments with duty_role 'loadmaster' (any status), rounded to 2 decimals.",
+ "SELECT ROUND(SUM(per_diem_usd), 2) AS loadmaster_per_diem_usd FROM crew_assignments WHERE duty_role = 'loadmaster'"),
+("E67", ["COUNT", "WHERE"], "One value: crew assignments with assignment_status 'rostered'.",
+ "SELECT COUNT(*) AS rostered_assignments FROM crew_assignments WHERE assignment_status = 'rostered'"),
+("E68", ["AVG", "ROUND"], "One value: AVG(block_minutes_credited) of completed crew assignments, rounded to 1 decimal.",
+ "SELECT ROUND(AVG(block_minutes_credited), 1) AS avg_block_minutes FROM crew_assignments WHERE assignment_status = 'completed'"),
+("E69", ["DISTINCT", "ORDER BY"], "Column: the distinct mro_provider names in maintenance records, ordered by name.",
+ "SELECT DISTINCT mro_provider FROM maintenance_records ORDER BY mro_provider"),
+("E70", ["SUM", "AND", "ROUND"], "One value: SUM(labor_hours) of completed 'A_check' maintenance, rounded to 1 decimal.",
+ "SELECT ROUND(SUM(labor_hours), 1) AS a_check_labor_hours FROM maintenance_records WHERE check_type = 'A_check' AND status = 'completed'"),
+("E71", ["filtering", "<>", "ORDER BY"], "Columns: work_order_number, status of maintenance records whose status is not 'completed'; ordered by work_order_number.",
+ "SELECT work_order_number, status FROM maintenance_records WHERE status <> 'completed' ORDER BY work_order_number"),
+("E72", ["COUNT", ">"], "One value: fuel uplifts with saf_blend_pct greater than 0.",
+ "SELECT COUNT(*) AS saf_uplifts FROM fuel_uplifts WHERE saf_blend_pct > 0"),
+("E73", ["MAX"], "One value: the largest total_cost_usd of any fuel uplift.",
+ "SELECT MAX(total_cost_usd) AS max_fuel_bill_usd FROM fuel_uplifts"),
+("E74", ["SUM", "WHERE", "ROUND"], "One value: SUM(total_cost_usd) of fuel uplifts from supplier 'Skyline Fuels', rounded to 2 decimals.",
+ "SELECT ROUND(SUM(total_cost_usd), 2) AS skyline_fuel_cost_usd FROM fuel_uplifts WHERE supplier_name = 'Skyline Fuels'"),
+("E75", ["COUNT", "WHERE"], "One value: shipments with status 'cancelled'.",
+ "SELECT COUNT(*) AS cancelled_shipments FROM shipments WHERE status = 'cancelled'"),
+("E76", ["GROUP BY", "IS NOT NULL"], "Columns: dg_class, number of shipments; dangerous-goods shipments only (dg_class not NULL), any status; ordered by dg_class.",
+ "SELECT dg_class, COUNT(*) AS shipments FROM shipments WHERE dg_class IS NOT NULL GROUP BY dg_class ORDER BY dg_class"),
+("E77", ["SUM", "WHERE"], "One value: SUM(pieces) of shipments with commodity_category 'pharmaceuticals' (any status).",
+ "SELECT SUM(pieces) AS pharma_pieces FROM shipments WHERE commodity_category = 'pharmaceuticals'"),
+("E78", ["COUNT", "WHERE"], "One value: flight_cargo rows with leg_number = 2 (second legs of connecting shipments).",
+ "SELECT COUNT(*) AS second_legs FROM flight_cargo WHERE leg_number = 2"),
+("E79", ["COUNT", ">"], "One value: invoices with dg_surcharge_usd greater than 0.",
+ "SELECT COUNT(*) AS invoices_with_dg_surcharge FROM invoices WHERE dg_surcharge_usd > 0"),
+("E80", ["COUNT", "WHERE"], "One value: payments with is_reconciled = 0.",
+ "SELECT COUNT(*) AS unreconciled_payments FROM payments WHERE is_reconciled = 0"),
+]
+
+MODERATE += [
+("M41", ["JOIN", "foreign key"], "Columns: airline name, iata_code of its home hub airport; ordered by airline name.",
+ """SELECT al.name AS airline_name, ap.iata_code AS home_hub
+FROM airlines al JOIN airports ap ON ap.airport_id = al.home_hub_airport_id ORDER BY airline_name"""),
+("M42", ["JOIN", "GROUP BY"], "Columns: manufacturer, number of aircraft (any status) built by it; ordered by manufacturer.",
+ """SELECT t.manufacturer, COUNT(*) AS aircraft
+FROM aircraft a JOIN aircraft_types t ON t.type_id = a.type_id GROUP BY t.manufacturer ORDER BY t.manufacturer"""),
+("M43", ["GROUP BY", "HAVING"], "Columns: country, number of customers; only countries with at least 5 customers; ordered by count DESC, country.",
+ """SELECT country, COUNT(*) AS customers FROM customers GROUP BY country HAVING COUNT(*) >= 5
+ORDER BY customers DESC, country"""),
+("M44", ["JOIN", "GROUP BY", "WHERE"], "Columns: iata_code, completed departures; airports in region 'europe' only; ordered by count DESC, iata_code.",
+ """SELECT ap.iata_code, COUNT(*) AS completed_departures
+FROM flights f JOIN airports ap ON ap.airport_id = f.origin_airport_id
+WHERE ap.region = 'europe' AND f.status = 'completed'
+GROUP BY ap.airport_id, ap.iata_code ORDER BY completed_departures DESC, ap.iata_code"""),
+("M45", ["GROUP BY two columns"], "Columns: flight_type, status, number of flights; one row per combination that occurs; ordered by flight_type, status.",
+ "SELECT flight_type, status, COUNT(*) AS flights FROM flights GROUP BY flight_type, status ORDER BY flight_type, status"),
+("M46", ["anti-join", "NOT EXISTS"], "Column: tail_number of aircraft that have no flight at all (any status); ordered.",
+ """SELECT a.tail_number FROM aircraft a
+WHERE NOT EXISTS (SELECT 1 FROM flights f WHERE f.aircraft_id = a.aircraft_id) ORDER BY a.tail_number"""),
+("M47", ["anti-join", "LEFT JOIN"], "Column: name of customers with no shipment at all; ordered by name.",
+ """SELECT c.name FROM customers c LEFT JOIN shipments s ON s.customer_id = c.customer_id
+WHERE s.shipment_id IS NULL ORDER BY c.name"""),
+("M48", ["JOIN", "conditional aggregation"], "Columns: airline name, active crew members, active captains among them; ordered by airline name.",
+ """SELECT al.name AS airline_name, COUNT(*) AS active_crew,
+       SUM(CASE WHEN m.crew_rank = 'captain' THEN 1 ELSE 0 END) AS active_captains
+FROM crew_members m JOIN airlines al ON al.airline_id = m.airline_id
+WHERE m.is_active = 1 GROUP BY al.airline_id, al.name ORDER BY airline_name"""),
+("M49", ["JOIN", "SUM", "LIMIT"], "Columns: iata_code, SUM(quantity_litres) of fuel uplifted there; the 5 airports with the most litres; ordered DESC.",
+ """SELECT ap.iata_code, SUM(fu.quantity_litres) AS litres
+FROM fuel_uplifts fu JOIN airports ap ON ap.airport_id = fu.airport_id
+GROUP BY ap.airport_id, ap.iata_code ORDER BY litres DESC LIMIT 5"""),
+("M50", ["multi-hop join", "AVG"], "Columns: airline name, AVG(saf_blend_pct) over the fuel uplifts of its flights, rounded to 2 decimals; ordered by average DESC.",
+ """SELECT al.name AS airline_name, ROUND(AVG(fu.saf_blend_pct), 2) AS avg_saf_pct
+FROM fuel_uplifts fu JOIN flights f ON f.flight_id = fu.flight_id JOIN aircraft a ON a.aircraft_id = f.aircraft_id
+JOIN airlines al ON al.airline_id = a.airline_id
+GROUP BY al.airline_id, al.name ORDER BY avg_saf_pct DESC, airline_name"""),
+("M51", ["GROUP BY", "WHERE"], "Columns: mro_provider, number of AOG maintenance records (is_aog = 1); providers without AOG omitted; ordered by count DESC, provider.",
+ """SELECT mro_provider, COUNT(*) AS aog_records FROM maintenance_records WHERE is_aog = 1
+GROUP BY mro_provider ORDER BY aog_records DESC, mro_provider"""),
+("M52", ["JOIN", "SUM", "LIMIT"], "Columns: tail_number, total cost (parts + labour) of its completed maintenance, rounded to 2 decimals; the 5 most expensive aircraft.",
+ """SELECT a.tail_number, ROUND(SUM(m.parts_cost_usd + m.labor_cost_usd), 2) AS maintenance_cost_usd
+FROM maintenance_records m JOIN aircraft a ON a.aircraft_id = m.aircraft_id
+WHERE m.status = 'completed' GROUP BY a.aircraft_id, a.tail_number ORDER BY maintenance_cost_usd DESC LIMIT 5"""),
+("M53", ["JOIN", "GROUP BY", "HAVING"], "Columns: iata_code, number of maintenance records done at that airport; only airports with at least 30; ordered by count DESC, iata_code.",
+ """SELECT ap.iata_code, COUNT(*) AS maintenance_records
+FROM maintenance_records m JOIN airports ap ON ap.airport_id = m.airport_id
+GROUP BY ap.airport_id, ap.iata_code HAVING COUNT(*) >= 30 ORDER BY maintenance_records DESC, ap.iata_code"""),
+("M54", ["JOIN", "GROUP BY", "LIMIT"], "Columns: destination iata_code, number of delivered shipments to it; the top 5 destinations.",
+ """SELECT ap.iata_code, COUNT(*) AS delivered_shipments
+FROM shipments s JOIN airports ap ON ap.airport_id = s.destination_airport_id
+WHERE s.status = 'delivered' GROUP BY ap.airport_id, ap.iata_code ORDER BY delivered_shipments DESC LIMIT 5"""),
+("M55", ["JOIN", "GROUP BY", "SUM"], "Columns: customer_type, number of shipments (any status), SUM(declared_value_usd) rounded to 2 decimals; ordered by customer_type.",
+ """SELECT c.customer_type, COUNT(*) AS shipments, ROUND(SUM(s.declared_value_usd), 2) AS declared_value_usd
+FROM shipments s JOIN customers c ON c.customer_id = s.customer_id GROUP BY c.customer_type ORDER BY c.customer_type"""),
+("M56", ["date grouping", "substr", "WHERE"], "Columns: booking month 'YYYY-MM', number of temperature-controlled shipments booked that month (any status); ordered by month.",
+ """SELECT substr(booking_date, 1, 7) AS booking_month, COUNT(*) AS temp_controlled_shipments
+FROM shipments WHERE is_temperature_controlled = 1 GROUP BY substr(booking_date, 1, 7) ORDER BY booking_month"""),
+("M57", ["JOIN", "GROUP BY", "AVG"], "Columns: uld_type, number of shipment legs, AVG(total_weight_kg) of the shipments on those legs rounded to 1 decimal; ordered by uld_type.",
+ """SELECT fc.uld_type, COUNT(*) AS legs, ROUND(AVG(s.total_weight_kg), 1) AS avg_shipment_kg
+FROM flight_cargo fc JOIN shipments s ON s.shipment_id = fc.shipment_id GROUP BY fc.uld_type ORDER BY fc.uld_type"""),
+("M58", ["multi-hop join", "date comparison", "GROUP BY"], "Columns: customer sales_region, number of overdue invoices (status not 'paid' and due_date before 2025-12-20); ordered by count DESC, region.",
+ """SELECT c.sales_region, COUNT(*) AS overdue_invoices
+FROM invoices i JOIN shipments s ON s.shipment_id = i.shipment_id JOIN customers c ON c.customer_id = s.customer_id
+WHERE i.status <> 'paid' AND i.due_date < '2025-12-20'
+GROUP BY c.sales_region ORDER BY overdue_invoices DESC, c.sales_region"""),
+("M59", ["JOIN", "GROUP BY", "AVG"], "Columns: service_level, AVG(amount_usd) of its invoices rounded to 2 decimals; ordered by service_level.",
+ """SELECT s.service_level, ROUND(AVG(i.amount_usd), 2) AS avg_invoice_usd
+FROM invoices i JOIN shipments s ON s.shipment_id = i.shipment_id GROUP BY s.service_level ORDER BY s.service_level"""),
+("M60", ["GROUP BY", "<>", "SUM"], "Columns: original_currency, number of payments, SUM(amount_usd) rounded to 2 decimals; non-USD payments only; ordered by sum DESC.",
+ """SELECT original_currency, COUNT(*) AS payments, ROUND(SUM(amount_usd), 2) AS amount_usd
+FROM payments WHERE original_currency <> 'USD' GROUP BY original_currency ORDER BY amount_usd DESC"""),
+("M61", ["JOIN", "SUM", "LIMIT"], "Columns: customer name, SUM(bank_charges_usd) of its payments rounded to 2 decimals; the 5 customers with the highest bank charges.",
+ """SELECT c.name, ROUND(SUM(p.bank_charges_usd), 2) AS bank_charges_usd
+FROM payments p JOIN customers c ON c.customer_id = p.customer_id
+GROUP BY c.customer_id, c.name ORDER BY bank_charges_usd DESC LIMIT 5"""),
+("M62", ["GROUP BY", "conditional aggregation"], "Columns: root_cause, number of incidents, number of resolved incidents; ordered by root_cause.",
+ """SELECT root_cause, COUNT(*) AS incidents, SUM(CASE WHEN resolved = 1 THEN 1 ELSE 0 END) AS resolved_incidents
+FROM incidents GROUP BY root_cause ORDER BY root_cause"""),
+("M63", ["multi-hop join", "GROUP BY"], "Columns: airline name (airline operating the flight of the incident's shipment leg), number of incidents; ordered by count DESC, name.",
+ """SELECT al.name AS airline_name, COUNT(*) AS incidents
+FROM incidents i JOIN flight_cargo fc ON fc.flight_cargo_id = i.flight_cargo_id JOIN flights f ON f.flight_id = fc.flight_id
+JOIN aircraft a ON a.aircraft_id = f.aircraft_id JOIN airlines al ON al.airline_id = a.airline_id
+GROUP BY al.airline_id, al.name ORDER BY incidents DESC, airline_name"""),
+("M64", ["JOIN", "GROUP BY", "HAVING"], "Columns: customer name, number of insurance claims, SUM(claimed_amount_usd) rounded to 2 decimals; customers with at least 3 claims; ordered by claims DESC, name.",
+ """SELECT c.name, COUNT(*) AS claims, ROUND(SUM(ic.claimed_amount_usd), 2) AS claimed_usd
+FROM insurance_claims ic JOIN customers c ON c.customer_id = ic.customer_id
+GROUP BY c.customer_id, c.name HAVING COUNT(*) >= 3 ORDER BY claims DESC, c.name"""),
+("M65", ["GROUP BY", "WHERE"], "Columns: customs_country, number of declarations with status 'held'; ordered by count DESC, country.",
+ """SELECT customs_country, COUNT(*) AS held_declarations FROM customs_declarations WHERE status = 'held'
+GROUP BY customs_country ORDER BY held_declarations DESC, customs_country"""),
+("M66", ["GROUP BY", "SUM", "LIMIT"], "Columns: goods_description, SUM(customs_value_usd) of import declarations rounded to 2 decimals; the top 5 goods.",
+ """SELECT goods_description, ROUND(SUM(customs_value_usd), 2) AS import_value_usd
+FROM customs_declarations WHERE declaration_type = 'import'
+GROUP BY goods_description ORDER BY import_value_usd DESC LIMIT 5"""),
+("M67", ["JOIN", "GROUP BY", "LIMIT"], "Columns: warehouse_code, number of customs declarations lodged at it; the 5 warehouses with most declarations.",
+ """SELECT w.warehouse_code, COUNT(*) AS declarations
+FROM customs_declarations cd JOIN warehouses w ON w.warehouse_id = cd.warehouse_id
+GROUP BY w.warehouse_id, w.warehouse_code ORDER BY declarations DESC LIMIT 5"""),
+("M68", ["JOIN", "GROUP BY", "LIMIT"], "Columns: iata_code, number of NFD (notified for delivery) tracking events at that airport; the 5 airports with most.",
+ """SELECT ap.iata_code, COUNT(*) AS nfd_events
+FROM tracking_events te JOIN airports ap ON ap.airport_id = te.airport_id
+WHERE te.event_code = 'NFD' GROUP BY ap.airport_id, ap.iata_code ORDER BY nfd_events DESC LIMIT 5"""),
+("M69", ["anti-join", "NOT EXISTS", "GROUP BY"], "Columns: destination iata_code, number of shipments with status 'delivered' that have no DLV tracking event (not yet handed over); airports with none omitted; ordered by count DESC, iata_code.",
+ """SELECT ap.iata_code, COUNT(*) AS delivered_not_handed_over
+FROM shipments s JOIN airports ap ON ap.airport_id = s.destination_airport_id
+WHERE s.status = 'delivered'
+  AND NOT EXISTS (SELECT 1 FROM tracking_events te WHERE te.shipment_id = s.shipment_id AND te.event_code = 'DLV')
+GROUP BY ap.airport_id, ap.iata_code ORDER BY delivered_not_handed_over DESC, ap.iata_code"""),
+("M70", ["JOIN", "GROUP BY", "LIMIT"], "Columns: employee_number, number of completed assignments as pilot flying (is_pilot_flying = 1); the 3 crew members with most (ties at the top by employee_number).",
+ """SELECT m.employee_number, COUNT(*) AS sectors_flown
+FROM crew_assignments ca JOIN crew_members m ON m.crew_member_id = ca.crew_member_id
+WHERE ca.is_pilot_flying = 1 AND ca.assignment_status = 'completed'
+GROUP BY m.crew_member_id, m.employee_number ORDER BY sectors_flown DESC, m.employee_number LIMIT 3"""),
+("M71", ["JOIN", "GROUP BY", "AVG"], "Columns: base airport iata_code, number of active captains based there, AVG(total_flight_hours) of them rounded to 0 decimals; ordered by iata_code.",
+ """SELECT ap.iata_code, COUNT(*) AS active_captains, ROUND(AVG(m.total_flight_hours), 0) AS avg_flight_hours
+FROM crew_members m JOIN airports ap ON ap.airport_id = m.base_airport_id
+WHERE m.crew_rank = 'captain' AND m.is_active = 1 GROUP BY ap.airport_id, ap.iata_code ORDER BY ap.iata_code"""),
+("M72", ["multi-hop join", "SUM"], "Columns: airline name (the crew member's airline), SUM(per_diem_usd) of completed assignments rounded to 2 decimals; ordered by sum DESC.",
+ """SELECT al.name AS airline_name, ROUND(SUM(ca.per_diem_usd), 2) AS per_diem_usd
+FROM crew_assignments ca JOIN crew_members m ON m.crew_member_id = ca.crew_member_id JOIN airlines al ON al.airline_id = m.airline_id
+WHERE ca.assignment_status = 'completed' GROUP BY al.airline_id, al.name ORDER BY per_diem_usd DESC"""),
+("M73", ["GROUP BY", "date arithmetic", "IS NOT NULL"], "Columns: weather_at_departure, number of completed flights, average departure delay in minutes (actual - scheduled departure) rounded to 1 decimal; flights without weather omitted; ordered by delay DESC.",
+ """SELECT weather_at_departure, COUNT(*) AS completed_flights,
+       ROUND(AVG((julianday(actual_departure) - julianday(scheduled_departure)) * 1440), 1) AS avg_departure_delay_min
+FROM flights WHERE status = 'completed' AND weather_at_departure IS NOT NULL
+GROUP BY weather_at_departure ORDER BY avg_departure_delay_min DESC"""),
+("M74", ["date grouping", "substr", "WHERE"], "Columns: month 'YYYY-MM' of scheduled_departure, number of cancelled flights; months without cancellations omitted; ordered by month.",
+ """SELECT substr(scheduled_departure, 1, 7) AS month, COUNT(*) AS cancelled_flights
+FROM flights WHERE status = 'cancelled' GROUP BY substr(scheduled_departure, 1, 7) ORDER BY month"""),
+("M75", ["LEFT JOIN", "conditional aggregation"], "Columns: airline name, owned aircraft, leased aircraft (any status, 0 if none); ordered by airline name.",
+ """SELECT al.name AS airline_name,
+       SUM(CASE WHEN a.ownership = 'owned' THEN 1 ELSE 0 END) AS owned_aircraft,
+       SUM(CASE WHEN a.ownership = 'leased' THEN 1 ELSE 0 END) AS leased_aircraft
+FROM airlines al LEFT JOIN aircraft a ON a.airline_id = al.airline_id
+GROUP BY al.airline_id, al.name ORDER BY airline_name"""),
+("M76", ["JOIN", "GROUP BY", "WHERE"], "Columns: iata_code, number of warehouses, SUM(floor_area_m2); airports in region 'asia_pacific'; ordered by area DESC.",
+ """SELECT ap.iata_code, COUNT(*) AS warehouses, SUM(w.floor_area_m2) AS floor_area_m2
+FROM warehouses w JOIN airports ap ON ap.airport_id = w.airport_id
+WHERE ap.region = 'asia_pacific' GROUP BY ap.airport_id, ap.iata_code ORDER BY floor_area_m2 DESC"""),
+("M77", ["JOIN", "date arithmetic", "AVG"], "Columns: origin iata_code, average days between booking_date and requested_delivery_date of express shipments (any status) rounded to 2; ordered by iata_code.",
+ """SELECT ap.iata_code, ROUND(AVG(julianday(s.requested_delivery_date) - julianday(s.booking_date)), 2) AS avg_requested_days
+FROM shipments s JOIN airports ap ON ap.airport_id = s.origin_airport_id
+WHERE s.service_level = 'express' GROUP BY ap.airport_id, ap.iata_code ORDER BY ap.iata_code"""),
+("M78", ["GROUP BY", "AVG"], "Columns: payment_terms_days, number of invoices, AVG(amount_usd) rounded to 2 decimals; ordered by payment_terms_days.",
+ """SELECT payment_terms_days, COUNT(*) AS invoices, ROUND(AVG(amount_usd), 2) AS avg_amount_usd
+FROM invoices GROUP BY payment_terms_days ORDER BY payment_terms_days"""),
+("M79", ["JOIN", "GROUP BY", "HAVING"], "Columns: customer name, number of dangerous-goods shipments (any status); customers with at least 8; ordered by count DESC, name.",
+ """SELECT c.name, COUNT(*) AS dg_shipments
+FROM shipments s JOIN customers c ON c.customer_id = s.customer_id
+WHERE s.is_dangerous_goods = 1 GROUP BY c.customer_id, c.name HAVING COUNT(*) >= 8 ORDER BY dg_shipments DESC, c.name"""),
+("M80", ["multi-hop join", "AVG"], "Columns: aircraft model, AVG(fuel_burned_kg) per fuel uplift (one per flight) rounded to 0 decimals; ordered by average DESC.",
+ """SELECT t.model, ROUND(AVG(fu.fuel_burned_kg), 0) AS avg_fuel_burned_kg
+FROM fuel_uplifts fu JOIN flights f ON f.flight_id = fu.flight_id JOIN aircraft a ON a.aircraft_id = f.aircraft_id
+JOIN aircraft_types t ON t.type_id = a.type_id GROUP BY t.type_id, t.model ORDER BY avg_fuel_burned_kg DESC"""),
+]
+
+HARD += [
+("H41", ["CTE", "ROW_NUMBER", "multi-hop join"], "Columns: sales_region, customer name, invoiced USD rounded to 2: per sales region the customer with the largest SUM(invoices.amount_usd) (ties: smaller customer_id); ordered by sales_region.",
+ """WITH r AS (
+  SELECT c.customer_id, c.name, c.sales_region, SUM(i.amount_usd) AS invoiced
+  FROM invoices i JOIN shipments s ON s.shipment_id = i.shipment_id JOIN customers c ON c.customer_id = s.customer_id
+  GROUP BY c.customer_id, c.name, c.sales_region
+), k AS (
+  SELECT r.*, ROW_NUMBER() OVER (PARTITION BY sales_region ORDER BY invoiced DESC, customer_id) AS rn FROM r
+)
+SELECT sales_region, name, ROUND(invoiced, 2) AS invoiced_usd FROM k WHERE rn = 1 ORDER BY sales_region"""),
+("H42", ["CTE", "moving average", "window frame"], "Columns: month 'YYYY-MM' of uplift_time, fuel cost that month, 3-month moving average (this month and the 2 before; fewer at the start), both rounded to 2; ordered by month.",
+ """WITH m AS (
+  SELECT substr(uplift_time, 1, 7) AS month, SUM(total_cost_usd) AS cost FROM fuel_uplifts GROUP BY substr(uplift_time, 1, 7)
+)
+SELECT month, ROUND(cost, 2) AS fuel_cost_usd,
+       ROUND(AVG(cost) OVER (ORDER BY month ROWS BETWEEN 2 PRECEDING AND CURRENT ROW), 2) AS moving_avg_3m_usd
+FROM m ORDER BY month"""),
+("H43", ["CTE", "LAG", "date arithmetic", "LIMIT"], "Columns: tail_number, longest gap in days between the start_time of two consecutive completed maintenance records of the same aircraft (rounded 1); the 5 aircraft with the longest gap.",
+ """WITH g AS (
+  SELECT aircraft_id,
+         julianday(start_time) - julianday(LAG(start_time) OVER (PARTITION BY aircraft_id ORDER BY start_time)) AS gap_days
+  FROM maintenance_records WHERE status = 'completed'
+)
+SELECT a.tail_number, ROUND(MAX(g.gap_days), 1) AS longest_gap_days
+FROM g JOIN aircraft a ON a.aircraft_id = g.aircraft_id
+GROUP BY a.aircraft_id, a.tail_number ORDER BY MAX(g.gap_days) DESC LIMIT 5"""),
+("H44", ["CTE", "ROW_NUMBER", "SUM"], "Columns: airline name, captain employee_number, credited block hours (SUM(block_minutes_credited)/60 over completed assignments in the 'captain' duty role, rounded 1): per airline the captain with most hours (ties: employee_number); ordered by airline name.",
+ """WITH h AS (
+  SELECT m.airline_id, m.employee_number, SUM(ca.block_minutes_credited) AS minutes
+  FROM crew_assignments ca JOIN crew_members m ON m.crew_member_id = ca.crew_member_id
+  WHERE ca.duty_role = 'captain' AND ca.assignment_status = 'completed'
+  GROUP BY m.crew_member_id, m.airline_id, m.employee_number
+), r AS (
+  SELECT h.*, ROW_NUMBER() OVER (PARTITION BY airline_id ORDER BY minutes DESC, employee_number) AS rn FROM h
+)
+SELECT al.name AS airline_name, r.employee_number, ROUND(r.minutes / 60.0, 1) AS block_hours
+FROM r JOIN airlines al ON al.airline_id = r.airline_id WHERE r.rn = 1 ORDER BY airline_name"""),
+("H45", ["conditional aggregation", "HAVING", "half-years"], "Columns: customer name, invoiced USD in H1 2025 (issued Jan-Jun), in H2 2025 (Jul-Dec), both rounded 2; customers whose H2 amount is more than 1.5 times the H1 amount; ordered by name.",
+ """SELECT c.name,
+       ROUND(SUM(CASE WHEN i.issued_date < '2025-07-01' THEN i.amount_usd ELSE 0 END), 2) AS h1_usd,
+       ROUND(SUM(CASE WHEN i.issued_date >= '2025-07-01' THEN i.amount_usd ELSE 0 END), 2) AS h2_usd
+FROM invoices i JOIN shipments s ON s.shipment_id = i.shipment_id JOIN customers c ON c.customer_id = s.customer_id
+WHERE i.issued_date >= '2025-01-01' AND i.issued_date < '2026-01-01'
+GROUP BY c.customer_id, c.name
+HAVING SUM(CASE WHEN i.issued_date >= '2025-07-01' THEN i.amount_usd ELSE 0 END)
+     > 1.5 * SUM(CASE WHEN i.issued_date < '2025-07-01' THEN i.amount_usd ELSE 0 END)
+ORDER BY c.name"""),
+("H46", ["CTE", "aggregate before join", "LEFT JOIN", "LIMIT"], "Columns: customer name, open balance in USD = invoice amount minus payments received, summed over its invoices with status 'unpaid' or 'partially_paid' (rounded 2); the 5 customers with the largest open balance.",
+ """WITH paid AS (
+  SELECT invoice_id, SUM(amount_usd) AS paid_usd FROM payments GROUP BY invoice_id
+)
+SELECT c.name, ROUND(SUM(i.amount_usd - COALESCE(p.paid_usd, 0)), 2) AS open_balance_usd
+FROM invoices i LEFT JOIN paid p ON p.invoice_id = i.invoice_id
+JOIN shipments s ON s.shipment_id = i.shipment_id JOIN customers c ON c.customer_id = s.customer_id
+WHERE i.status IN ('unpaid', 'partially_paid')
+GROUP BY c.customer_id, c.name ORDER BY open_balance_usd DESC LIMIT 5"""),
+("H47", ["NOT EXISTS", "conditional aggregation", "percentage"], "Columns: model, completed flights, completed flights without any shipment leg, share of such empty flights in percent (rounded 1); ordered by model.",
+ """SELECT t.model, COUNT(*) AS completed_flights,
+       SUM(CASE WHEN NOT EXISTS (SELECT 1 FROM flight_cargo fc WHERE fc.flight_id = f.flight_id) THEN 1 ELSE 0 END) AS empty_flights,
+       ROUND(100.0 * SUM(CASE WHEN NOT EXISTS (SELECT 1 FROM flight_cargo fc WHERE fc.flight_id = f.flight_id) THEN 1 ELSE 0 END) / COUNT(*), 1) AS empty_pct
+FROM flights f JOIN aircraft a ON a.aircraft_id = f.aircraft_id JOIN aircraft_types t ON t.type_id = a.type_id
+WHERE f.status = 'completed' GROUP BY t.type_id, t.model ORDER BY t.model"""),
+("H48", ["two CTEs", "ratio of aggregates", "LIMIT"], "Columns: iata_code, shipments originating there (any status), incidents reported at that airport, incidents per 1000 originating shipments (rounded 2); the 5 airports with the highest rate.",
+ """WITH s AS (
+  SELECT origin_airport_id AS airport_id, COUNT(*) AS shipments FROM shipments GROUP BY origin_airport_id
+), i AS (
+  SELECT airport_id, COUNT(*) AS incidents FROM incidents GROUP BY airport_id
+)
+SELECT ap.iata_code, s.shipments, i.incidents, ROUND(1000.0 * i.incidents / s.shipments, 2) AS incidents_per_1000
+FROM airports ap JOIN s ON s.airport_id = ap.airport_id JOIN i ON i.airport_id = ap.airport_id
+ORDER BY incidents_per_1000 DESC LIMIT 5"""),
+("H49", ["relational division", "HAVING COUNT DISTINCT", "scalar subquery"], "Columns: operator_name of warehouse operators that run at least one warehouse at every airport in region 'europe'; ordered.",
+ """SELECT w.operator_name
+FROM warehouses w JOIN airports ap ON ap.airport_id = w.airport_id
+WHERE ap.region = 'europe'
+GROUP BY w.operator_name
+HAVING COUNT(DISTINCT w.airport_id) = (SELECT COUNT(*) FROM airports WHERE region = 'europe')
+ORDER BY w.operator_name"""),
+("H50", ["CTE", "DENSE_RANK", "second highest"], "Columns: commodity_category, awb_number, declared_value_usd of the shipment with the second-highest declared value in each category (any status); ordered by category.",
+ """WITH r AS (
+  SELECT commodity_category, awb_number, declared_value_usd,
+         DENSE_RANK() OVER (PARTITION BY commodity_category ORDER BY declared_value_usd DESC) AS dr
+  FROM shipments
+)
+SELECT commodity_category, awb_number, declared_value_usd FROM r WHERE dr = 2 ORDER BY commodity_category"""),
+("H51", ["CTE", "window SUM", "share within group"], "Columns: airline name, model, completed flights of that airline on that model, share of the airline's completed flights in percent (rounded 1); ordered by airline name, flights DESC.",
+ """WITH c AS (
+  SELECT a.airline_id, t.model, COUNT(*) AS flights
+  FROM flights f JOIN aircraft a ON a.aircraft_id = f.aircraft_id JOIN aircraft_types t ON t.type_id = a.type_id
+  WHERE f.status = 'completed' GROUP BY a.airline_id, t.model
+)
+SELECT al.name AS airline_name, c.model, c.flights,
+       ROUND(100.0 * c.flights / SUM(c.flights) OVER (PARTITION BY c.airline_id), 1) AS share_pct
+FROM c JOIN airlines al ON al.airline_id = c.airline_id ORDER BY airline_name, c.flights DESC"""),
+("H52", ["CTE", "median", "ROW_NUMBER", "COUNT OVER"], "Columns: service_level, median chargeable_weight_kg of its delivered shipments (mean of the two middle values when the count is even, rounded 1); ordered by service_level.",
+ """WITH o AS (
+  SELECT service_level, chargeable_weight_kg,
+         ROW_NUMBER() OVER (PARTITION BY service_level ORDER BY chargeable_weight_kg) AS rn,
+         COUNT(*) OVER (PARTITION BY service_level) AS n
+  FROM shipments WHERE status = 'delivered'
+)
+SELECT service_level, ROUND(AVG(chargeable_weight_kg), 1) AS median_chargeable_kg
+FROM o WHERE rn IN ((n + 1) / 2, (n + 2) / 2)
+GROUP BY service_level ORDER BY service_level"""),
+("H53", ["CTE", "ROW_NUMBER", "first per group"], "Columns: service_level of each customer's first shipment (earliest booking_date, ties by smaller shipment_id, any status), number of customers; ordered by service_level.",
+ """WITH f AS (
+  SELECT customer_id, service_level,
+         ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY booking_date, shipment_id) AS rn
+  FROM shipments
+)
+SELECT service_level, COUNT(*) AS customers FROM f WHERE rn = 1 GROUP BY service_level ORDER BY service_level"""),
+("H54", ["correlated subquery", "MIN", "date arithmetic"], "Columns: airline name, AOG maintenance events (completed, is_aog = 1) followed by a completed flight of the same aircraft, average hours from the maintenance end_time to that aircraft's first completed departure after it (rounded 1); ordered by airline name.",
+ """WITH r AS (
+  SELECT a.airline_id,
+         (SELECT MIN(f.actual_departure) FROM flights f
+          WHERE f.aircraft_id = m.aircraft_id AND f.status = 'completed' AND f.actual_departure >= m.end_time) AS next_departure,
+         m.end_time
+  FROM maintenance_records m JOIN aircraft a ON a.aircraft_id = m.aircraft_id
+  WHERE m.is_aog = 1 AND m.status = 'completed'
+)
+SELECT al.name AS airline_name, COUNT(*) AS aog_events,
+       ROUND(AVG((julianday(next_departure) - julianday(end_time)) * 24), 1) AS avg_hours_to_next_departure
+FROM r JOIN airlines al ON al.airline_id = r.airline_id
+WHERE next_departure IS NOT NULL GROUP BY al.airline_id, al.name ORDER BY airline_name"""),
+("H55", ["CTE", "running total", "strftime"], "Columns: year of created_date, customers created that year, cumulative customers up to that year; ordered by year.",
+ """WITH y AS (
+  SELECT substr(created_date, 1, 4) AS year, COUNT(*) AS new_customers FROM customers GROUP BY substr(created_date, 1, 4)
+)
+SELECT year, new_customers, SUM(new_customers) OVER (ORDER BY year) AS cumulative_customers FROM y ORDER BY year"""),
+("H56", ["CTE", "ROW_NUMBER", "top N per group"], "Columns: airline name, origin iata_code, destination iata_code, completed flights: each airline's 3 busiest directed routes (ties: origin code, then destination code); ordered by airline name, flights DESC, origin, destination.",
+ """WITH c AS (
+  SELECT a.airline_id, o.iata_code AS origin, d.iata_code AS destination, COUNT(*) AS flights
+  FROM flights f JOIN aircraft a ON a.aircraft_id = f.aircraft_id
+  JOIN airports o ON o.airport_id = f.origin_airport_id JOIN airports d ON d.airport_id = f.destination_airport_id
+  WHERE f.status = 'completed' GROUP BY a.airline_id, o.iata_code, d.iata_code
+), r AS (
+  SELECT c.*, ROW_NUMBER() OVER (PARTITION BY airline_id ORDER BY flights DESC, origin, destination) AS rn FROM c
+)
+SELECT al.name AS airline_name, r.origin, r.destination, r.flights
+FROM r JOIN airlines al ON al.airline_id = r.airline_id WHERE r.rn <= 3
+ORDER BY airline_name, r.flights DESC, r.origin, r.destination"""),
+("H57", ["conditional aggregation", "HAVING", "percentage"], "Columns: employee_number, completed pilot duties (duty_role captain or first_officer), pilot-flying share in percent (rounded 1); pilots with at least 20 such duties and a share below 35%; ordered by share, employee_number.",
+ """SELECT m.employee_number, COUNT(*) AS pilot_duties,
+       ROUND(100.0 * SUM(ca.is_pilot_flying) / COUNT(*), 1) AS pilot_flying_pct
+FROM crew_assignments ca JOIN crew_members m ON m.crew_member_id = ca.crew_member_id
+WHERE ca.assignment_status = 'completed' AND ca.duty_role IN ('captain', 'first_officer')
+GROUP BY m.crew_member_id, m.employee_number
+HAVING COUNT(*) >= 20 AND 100.0 * SUM(ca.is_pilot_flying) / COUNT(*) < 35
+ORDER BY pilot_flying_pct, m.employee_number"""),
+("H58", ["CASE buckets", "date arithmetic", "GROUP BY expression"], "Columns: ageing bucket of invoices with status not 'paid' by days past due_date on 2025-12-20 ('not due', '1-30', '31-60', '61+'), number of invoices, SUM(amount_usd) rounded 2; ordered by the bucket order above.",
+ """WITH b AS (
+  SELECT amount_usd,
+         CASE WHEN julianday('2025-12-20') - julianday(due_date) <= 0 THEN 'not due'
+              WHEN julianday('2025-12-20') - julianday(due_date) <= 30 THEN '1-30'
+              WHEN julianday('2025-12-20') - julianday(due_date) <= 60 THEN '31-60'
+              ELSE '61+' END AS bucket
+  FROM invoices WHERE status <> 'paid'
+)
+SELECT bucket, COUNT(*) AS invoices, ROUND(SUM(amount_usd), 2) AS amount_usd FROM b GROUP BY bucket
+ORDER BY CASE bucket WHEN 'not due' THEN 0 WHEN '1-30' THEN 1 WHEN '31-60' THEN 2 ELSE 3 END"""),
+("H59", ["CTE", "ROW_NUMBER", "month grouping"], "Columns: airline name, month 'YYYY-MM' (by actual_departure) with the most completed flights for that airline (ties: earlier month), completed flights that month; ordered by airline name.",
+ """WITH c AS (
+  SELECT a.airline_id, substr(f.actual_departure, 1, 7) AS month, COUNT(*) AS flights
+  FROM flights f JOIN aircraft a ON a.aircraft_id = f.aircraft_id
+  WHERE f.status = 'completed' GROUP BY a.airline_id, substr(f.actual_departure, 1, 7)
+), r AS (
+  SELECT c.*, ROW_NUMBER() OVER (PARTITION BY airline_id ORDER BY flights DESC, month) AS rn FROM c
+)
+SELECT al.name AS airline_name, r.month, r.flights FROM r JOIN airlines al ON al.airline_id = r.airline_id
+WHERE r.rn = 1 ORDER BY airline_name"""),
+("H60", ["two-level aggregation", "join multiplication trap"], "Columns: model, average number of crew assigned per completed flight (rounded 2); ordered by model.",
+ """WITH c AS (
+  SELECT ca.flight_id, COUNT(*) AS crew FROM crew_assignments ca GROUP BY ca.flight_id
+)
+SELECT t.model, ROUND(AVG(c.crew), 2) AS avg_crew_per_flight
+FROM flights f JOIN c ON c.flight_id = f.flight_id JOIN aircraft a ON a.aircraft_id = f.aircraft_id
+JOIN aircraft_types t ON t.type_id = a.type_id
+WHERE f.status = 'completed' GROUP BY t.type_id, t.model ORDER BY t.model"""),
+("H61", ["multi-hop join", "ratio of sums"], "Columns: model, fuel burned per 100 km over completed flights with a fuel uplift = SUM(fuel_burned_kg) / SUM(distance_km) * 100 (rounded 1); ordered by the ratio DESC.",
+ """SELECT t.model, ROUND(SUM(fu.fuel_burned_kg) * 100.0 / SUM(f.distance_km), 1) AS fuel_kg_per_100km
+FROM fuel_uplifts fu JOIN flights f ON f.flight_id = fu.flight_id JOIN aircraft a ON a.aircraft_id = f.aircraft_id
+JOIN aircraft_types t ON t.type_id = a.type_id
+WHERE f.status = 'completed' GROUP BY t.type_id, t.model ORDER BY fuel_kg_per_100km DESC"""),
+("H62", ["JOIN", "conditional aggregation", "HAVING", "LIMIT"], "Columns: customer name, payments, share of payments made after the invoice's due_date in percent (rounded 1); customers with at least 30 payments; the 5 with the highest late share.",
+ """SELECT c.name, COUNT(*) AS payments,
+       ROUND(100.0 * SUM(CASE WHEN p.payment_date > i.due_date THEN 1 ELSE 0 END) / COUNT(*), 1) AS late_pct
+FROM payments p JOIN invoices i ON i.invoice_id = p.invoice_id JOIN customers c ON c.customer_id = p.customer_id
+GROUP BY c.customer_id, c.name HAVING COUNT(*) >= 30
+ORDER BY 100.0 * SUM(CASE WHEN p.payment_date > i.due_date THEN 1 ELSE 0 END) / COUNT(*) DESC LIMIT 5"""),
+("H63", ["self-join", "COUNT DISTINCT", "HAVING"], "Columns: captain employee_number, number of different first officers flown with (completed assignments, roles captain and first_officer on the same flight); captains with at least 11; ordered by count DESC, employee_number.",
+ """SELECT m.employee_number, COUNT(DISTINCT fo.crew_member_id) AS distinct_first_officers
+FROM crew_assignments cp
+JOIN crew_assignments fo ON fo.flight_id = cp.flight_id AND fo.duty_role = 'first_officer' AND fo.assignment_status = 'completed'
+JOIN crew_members m ON m.crew_member_id = cp.crew_member_id
+WHERE cp.duty_role = 'captain' AND cp.assignment_status = 'completed'
+GROUP BY m.crew_member_id, m.employee_number HAVING COUNT(DISTINCT fo.crew_member_id) >= 11
+ORDER BY distinct_first_officers DESC, m.employee_number"""),
+("H64", ["scalar subquery", "HAVING", "comparison with overall average"], "Columns: destination iata_code, average arrival delay in minutes of completed flights there (rounded 1); only airports whose average is above the average over all completed flights; ordered by delay DESC.",
+ """SELECT ap.iata_code, ROUND(AVG((julianday(f.actual_arrival) - julianday(f.scheduled_arrival)) * 1440), 1) AS avg_arrival_delay_min
+FROM flights f JOIN airports ap ON ap.airport_id = f.destination_airport_id
+WHERE f.status = 'completed'
+GROUP BY ap.airport_id, ap.iata_code
+HAVING AVG((julianday(f.actual_arrival) - julianday(f.scheduled_arrival)) * 1440)
+     > (SELECT AVG((julianday(actual_arrival) - julianday(scheduled_arrival)) * 1440) FROM flights WHERE status = 'completed')
+ORDER BY avg_arrival_delay_min DESC"""),
+("H65", ["CTE", "COUNT DISTINCT", "date()", "LIMIT"], "Columns: tail_number, completed block hours per day flown = SUM(actual arrival - actual departure in hours) / number of distinct actual_departure dates (rounded 2); the 5 highest.",
+ """SELECT a.tail_number,
+       ROUND(SUM((julianday(f.actual_arrival) - julianday(f.actual_departure)) * 24)
+             / COUNT(DISTINCT date(f.actual_departure)), 2) AS block_hours_per_day
+FROM flights f JOIN aircraft a ON a.aircraft_id = f.aircraft_id
+WHERE f.status = 'completed' GROUP BY a.aircraft_id, a.tail_number ORDER BY block_hours_per_day DESC LIMIT 5"""),
+("H66", ["self-join", "date arithmetic", "HAVING"], "Columns: customs_country of the import declaration, shipments with a cleared export and a cleared import declaration, average hours from the export's cleared_at to the import's cleared_at (rounded 1); countries with at least 100 such shipments; ordered by hours DESC, country.",
+ """SELECT im.customs_country, COUNT(*) AS shipments,
+       ROUND(AVG((julianday(im.cleared_at) - julianday(ex.cleared_at)) * 24), 1) AS avg_hours_export_to_import
+FROM customs_declarations im
+JOIN customs_declarations ex ON ex.shipment_id = im.shipment_id AND ex.declaration_type = 'export' AND ex.status = 'cleared'
+WHERE im.declaration_type = 'import' AND im.status = 'cleared'
+GROUP BY im.customs_country HAVING COUNT(*) >= 100 ORDER BY avg_hours_export_to_import DESC, im.customs_country"""),
+("H67", ["JOIN events", "date arithmetic", "MAX"], "Columns: service_level, shipments handed over (with a DLV event), average days from booking_date to the DLV event time (rounded 2), longest such time in days (rounded 2); ordered by service_level.",
+ """SELECT s.service_level, COUNT(*) AS handed_over,
+       ROUND(AVG(julianday(te.event_time) - julianday(s.booking_date)), 2) AS avg_days_to_handover,
+       ROUND(MAX(julianday(te.event_time) - julianday(s.booking_date)), 2) AS max_days_to_handover
+FROM shipments s JOIN tracking_events te ON te.shipment_id = s.shipment_id AND te.event_code = 'DLV'
+GROUP BY s.service_level ORDER BY s.service_level"""),
+("H68", ["multi-hop join", "date arithmetic", "conditional aggregation"], "Columns: insurer_name, claims, average days from the incident's reported_at to the claim's filed_date (rounded 1), share of claims with status 'paid' in percent (rounded 1); ordered by insurer_name.",
+ """SELECT ic.insurer_name, COUNT(*) AS claims,
+       ROUND(AVG(julianday(ic.filed_date) - julianday(i.reported_at)), 1) AS avg_days_to_file,
+       ROUND(100.0 * SUM(CASE WHEN ic.status = 'paid' THEN 1 ELSE 0 END) / COUNT(*), 1) AS paid_pct
+FROM insurance_claims ic JOIN incidents i ON i.incident_id = ic.incident_id
+GROUP BY ic.insurer_name ORDER BY ic.insurer_name"""),
+("H69", ["CTE", "DENSE_RANK", "top N per group with ties"], "Columns: sales_region, customer name, non-cancelled shipments, dense rank within the region: customers ranked 1 to 2 by shipments in their sales region (ties share a rank); ordered by region, rank, name.",
+ """WITH c AS (
+  SELECT cu.sales_region, cu.name, COUNT(*) AS shipments
+  FROM shipments s JOIN customers cu ON cu.customer_id = s.customer_id
+  WHERE s.status <> 'cancelled' GROUP BY cu.customer_id, cu.sales_region, cu.name
+), r AS (
+  SELECT c.*, DENSE_RANK() OVER (PARTITION BY sales_region ORDER BY shipments DESC) AS region_rank FROM c
+)
+SELECT sales_region, name, shipments, region_rank FROM r WHERE region_rank <= 2 ORDER BY sales_region, region_rank, name"""),
+("H70", ["strftime('%w')", "CASE", "GROUP BY expression"], "Columns: weekday number of scheduled_departure (0 = Sunday ... 6 = Saturday), completed flights, average departure delay in minutes (rounded 1); ordered by weekday number.",
+ """SELECT CAST(strftime('%w', scheduled_departure) AS INTEGER) AS weekday, COUNT(*) AS completed_flights,
+       ROUND(AVG((julianday(actual_departure) - julianday(scheduled_departure)) * 1440), 1) AS avg_departure_delay_min
+FROM flights WHERE status = 'completed' GROUP BY CAST(strftime('%w', scheduled_departure) AS INTEGER) ORDER BY weekday"""),
+("H71", ["CTE", "COUNT DISTINCT", "two-level aggregation"], "Columns: airline name, completed flights carrying shipments of at least 3 different customers; ordered by count DESC, name.",
+ """WITH m AS (
+  SELECT fc.flight_id FROM flight_cargo fc JOIN shipments s ON s.shipment_id = fc.shipment_id
+  GROUP BY fc.flight_id HAVING COUNT(DISTINCT s.customer_id) >= 3
+)
+SELECT al.name AS airline_name, COUNT(*) AS multi_customer_flights
+FROM m JOIN flights f ON f.flight_id = m.flight_id JOIN aircraft a ON a.aircraft_id = f.aircraft_id
+JOIN airlines al ON al.airline_id = a.airline_id
+WHERE f.status = 'completed' GROUP BY al.airline_id, al.name ORDER BY multi_customer_flights DESC, airline_name"""),
+("H72", ["CTE", "NTILE", "share of total"], "Columns: revenue quintile (NTILE(5) over customers by invoiced USD DESC, ties by customer_id; 1 = top), customers in it, invoiced USD (rounded 2), share of all invoiced revenue in percent (rounded 1); ordered by quintile.",
+ """WITH r AS (
+  SELECT s.customer_id, SUM(i.amount_usd) AS revenue
+  FROM invoices i JOIN shipments s ON s.shipment_id = i.shipment_id GROUP BY s.customer_id
+), q AS (
+  SELECT r.*, NTILE(5) OVER (ORDER BY revenue DESC, customer_id) AS quintile FROM r
+)
+SELECT quintile, COUNT(*) AS customers, ROUND(SUM(revenue), 2) AS invoiced_usd,
+       ROUND(100.0 * SUM(revenue) / (SELECT SUM(revenue) FROM r), 1) AS share_pct
+FROM q GROUP BY quintile ORDER BY quintile"""),
+("H73", ["anti-join", "NOT EXISTS", "GROUP BY"], "Columns: origin iata_code, temperature-controlled shipments (any status) originating there; only airports without any 'cold_chain' warehouse; ordered by count DESC, iata_code.",
+ """SELECT ap.iata_code, COUNT(*) AS temp_controlled_shipments
+FROM shipments s JOIN airports ap ON ap.airport_id = s.origin_airport_id
+WHERE s.is_temperature_controlled = 1
+  AND NOT EXISTS (SELECT 1 FROM warehouses w WHERE w.airport_id = ap.airport_id AND w.warehouse_type = 'cold_chain')
+GROUP BY ap.airport_id, ap.iata_code ORDER BY temp_controlled_shipments DESC, ap.iata_code"""),
+("H74", ["WITH RECURSIVE", "LEFT JOIN", "zero-filled series"], "Columns: every month '2025-01' to '2025-12', number of flights with cancellation_reason 'weather' scheduled that month (0 when none); ordered by month.",
+ """WITH RECURSIVE months(m) AS (
+  SELECT '2025-01-01' UNION ALL SELECT date(m, '+1 month') FROM months WHERE m < '2025-12-01'
+)
+SELECT substr(months.m, 1, 7) AS month, COUNT(f.flight_id) AS weather_cancellations
+FROM months LEFT JOIN flights f
+  ON substr(f.scheduled_departure, 1, 7) = substr(months.m, 1, 7) AND f.cancellation_reason = 'weather'
+GROUP BY months.m ORDER BY month"""),
+("H75", ["gaps and islands", "ROW_NUMBER", "julianday"], "Columns: tail_number, longest run of consecutive calendar days with at least one completed departure (by date of actual_departure); aircraft with a run of at least 3 days; ordered by run DESC, tail_number.",
+ """WITH d AS (
+  SELECT DISTINCT aircraft_id, date(actual_departure) AS day FROM flights WHERE status = 'completed'
+), g AS (
+  SELECT aircraft_id, day,
+         julianday(day) - ROW_NUMBER() OVER (PARTITION BY aircraft_id ORDER BY day) AS grp
+  FROM d
+), runs AS (
+  SELECT aircraft_id, grp, COUNT(*) AS run_days FROM g GROUP BY aircraft_id, grp
+)
+SELECT a.tail_number, MAX(r.run_days) AS longest_run_days
+FROM runs r JOIN aircraft a ON a.aircraft_id = r.aircraft_id
+GROUP BY a.aircraft_id, a.tail_number HAVING MAX(r.run_days) >= 3 ORDER BY longest_run_days DESC, a.tail_number"""),
+("H76", ["CTE", "AVG OVER PARTITION", "comparison with group average"], "Columns: customer name, customer_type, average invoice amount_usd of the customer, average over the customers of the same type (mean of the customer averages), both rounded 2; customers at least 1.5 times their type average; ordered by customer_type, name.",
+ """WITH c AS (
+  SELECT cu.customer_id, cu.name, cu.customer_type, AVG(i.amount_usd) AS avg_invoice
+  FROM invoices i JOIN shipments s ON s.shipment_id = i.shipment_id JOIN customers cu ON cu.customer_id = s.customer_id
+  GROUP BY cu.customer_id, cu.name, cu.customer_type
+), t AS (
+  SELECT c.*, AVG(avg_invoice) OVER (PARTITION BY customer_type) AS type_avg FROM c
+)
+SELECT name, customer_type, ROUND(avg_invoice, 2) AS avg_invoice_usd, ROUND(type_avg, 2) AS type_avg_usd
+FROM t WHERE avg_invoice >= 1.5 * type_avg ORDER BY customer_type, name"""),
+("H77", ["date arithmetic", "conditional aggregation", "resolved only"], "Columns: severity, resolved incidents, average days from reported_at to resolved_at (rounded 1), share resolved within 30 days in percent (rounded 1); ordered by severity.",
+ """SELECT severity, COUNT(*) AS resolved_incidents,
+       ROUND(AVG(julianday(resolved_at) - julianday(reported_at)), 1) AS avg_days_to_resolve,
+       ROUND(100.0 * SUM(CASE WHEN julianday(resolved_at) - julianday(reported_at) <= 30 THEN 1 ELSE 0 END) / COUNT(*), 1) AS within_30d_pct
+FROM incidents WHERE resolved = 1 GROUP BY severity ORDER BY severity"""),
+("H78", ["CTE", "ROW_NUMBER", "derived ratio"], "Columns: commodity_category, awb_number, invoice USD per chargeable kg (amount_usd / chargeable_weight_kg, rounded 2): per category the invoiced shipment with the highest yield (ties: smaller shipment_id); ordered by category.",
+ """WITH y AS (
+  SELECT s.commodity_category, s.awb_number, s.shipment_id, i.amount_usd / s.chargeable_weight_kg AS usd_per_kg
+  FROM invoices i JOIN shipments s ON s.shipment_id = i.shipment_id
+), r AS (
+  SELECT y.*, ROW_NUMBER() OVER (PARTITION BY commodity_category ORDER BY usd_per_kg DESC, shipment_id) AS rn FROM y
+)
+SELECT commodity_category, awb_number, ROUND(usd_per_kg, 2) AS usd_per_chargeable_kg FROM r WHERE rn = 1 ORDER BY commodity_category"""),
+("H79", ["CTE", "window SUM", "market share"], "Columns: month 'YYYY-MM' (Oct-Dec 2025, by actual_departure), airline name, completed flights, share of that month's completed flights in percent (rounded 1); ordered by month, flights DESC, airline name.",
+ """WITH c AS (
+  SELECT substr(f.actual_departure, 1, 7) AS month, a.airline_id, COUNT(*) AS flights
+  FROM flights f JOIN aircraft a ON a.aircraft_id = f.aircraft_id
+  WHERE f.status = 'completed' AND f.actual_departure >= '2025-10-01' AND f.actual_departure < '2026-01-01'
+  GROUP BY substr(f.actual_departure, 1, 7), a.airline_id
+)
+SELECT c.month, al.name AS airline_name, c.flights,
+       ROUND(100.0 * c.flights / SUM(c.flights) OVER (PARTITION BY c.month), 1) AS share_pct
+FROM c JOIN airlines al ON al.airline_id = c.airline_id ORDER BY c.month, c.flights DESC, airline_name"""),
+("H80", ["self-join on legs", "multi-hop join", "GROUP BY"], "Columns: airline name of leg 1, number of two-leg shipments whose leg 2 is flown by a different airline (interline); ordered by count DESC, name.",
+ """SELECT al.name AS first_leg_airline, COUNT(*) AS interline_shipments
+FROM flight_cargo l1
+JOIN flight_cargo l2 ON l2.shipment_id = l1.shipment_id AND l2.leg_number = 2
+JOIN flights f1 ON f1.flight_id = l1.flight_id JOIN aircraft a1 ON a1.aircraft_id = f1.aircraft_id
+JOIN flights f2 ON f2.flight_id = l2.flight_id JOIN aircraft a2 ON a2.aircraft_id = f2.aircraft_id
+JOIN airlines al ON al.airline_id = a1.airline_id
+WHERE l1.leg_number = 1 AND a1.airline_id <> a2.airline_id
+GROUP BY al.airline_id, al.name ORDER BY interline_shipments DESC, first_leg_airline"""),
+]
+
+TALK_EASY.update({
+"E41": ("Which airports don't have customs open around the clock? Just the codes.",
+        "List [[airports.iata_code]] from [[airports]] where [[airports.has_24h_customs]] = 0, sorted by code.",
+        "Which stations lack 24-hour customs clearance? Give the airport codes for the night-operations review.",
+        "No 24h customs where?"),
+"E42": ("Which airports have five or more runways, and how many does each have?",
+        "Return [[airports.iata_code]] and [[airports.runway_count]] from [[airports]] where [[airports.runway_count]] >= 5, most runways first, then by code.",
+        "Which stations in the network offer five or more runways? Show the runway count per airport code.",
+        "Airports with lots of runways?"),
+"E43": ("How many tracking scans came in through the customer portal?",
+        "Count the rows in [[tracking_events]] where [[tracking_events.recorded_by]] = 'customer_portal'.",
+        "What is the volume of shipment status events captured via the customer self-service portal?",
+        "Portal scans?"),
+"E44": ("Which airlines were founded before 2000, and in what year?",
+        "Select [[airlines.name]] and [[airlines.founded_year]] from [[airlines]] where [[airlines.founded_year]] < 2000, ordered by year.",
+        "Which of our partner carriers were established before 2000? List them with their founding year.",
+        "Old airlines?"),
+"E45": ("Which airlines aren't pure cargo operators?",
+        "List [[airlines.name]] from [[airlines]] where [[airlines.is_cargo_only]] = 0, sorted by name.",
+        "Which carriers run a mixed passenger and cargo business rather than a freighter-only model?",
+        "Not cargo-only airlines?"),
+"E46": ("Which aircraft type can carry the most payload, and how much?",
+        "From [[aircraft_types]] return [[aircraft_types.model]] and [[aircraft_types.max_payload_kg]] for the row with the highest [[aircraft_types.max_payload_kg]].",
+        "Which freighter model in our fleet mix has the highest payload capability, in kg?",
+        "Biggest plane?"),
+"E47": ("Which aircraft types can fly at least 8,000 km, and what's their range?",
+        "Select [[aircraft_types.model]], [[aircraft_types.max_range_km]] from [[aircraft_types]] where [[aircraft_types.max_range_km]] >= 8000, longest range first.",
+        "Which models give us long-haul reach of 8,000 km or more? Show the range of each.",
+        "Long-range models?"),
+"E48": ("How many of our planes were built before 2010?",
+        "Count rows in [[aircraft]] where [[aircraft.year_manufactured]] < 2010.",
+        "How many airframes in the fleet were manufactured before 2010, for the fleet renewal case?",
+        "How many old planes?"),
+"E49": ("Which leased planes have leases ending before 2030, who are they leased from, and when do the leases end?",
+        "Return [[aircraft.tail_number]], [[aircraft.lessor_name]], [[aircraft.lease_end_date]] from [[aircraft]] where [[aircraft.ownership]] = 'leased' and [[aircraft.lease_end_date]] < '2030-01-01', ordered by end date.",
+        "Which leased airframes come off lease before 2030? List tail, lessor and lease expiry for the fleet planning committee.",
+        "Leases ending soon?"),
+"E50": ("Which plane has the most flight hours on it, and how many?",
+        "From [[aircraft]] return [[aircraft.tail_number]] and [[aircraft.total_flight_hours]] of the row with the largest [[aircraft.total_flight_hours]].",
+        "Which airframe carries the highest accumulated flight hours in the fleet?",
+        "Most used plane?"),
+"E51": ("How many customers aren't known shippers?",
+        "Count rows in [[customers]] with [[customers.is_known_shipper]] = 0.",
+        "How many accounts lack known-shipper security status and so need extra screening?",
+        "Unscreened customers?"),
+"E52": ("Which five customers have the biggest credit limits, and what are they?",
+        "Return [[customers.name]] and [[customers.credit_limit_usd]] from [[customers]], top 5 by [[customers.credit_limit_usd]] descending.",
+        "Who are the five accounts with the highest approved credit exposure, and at what limit?",
+        "Top credit limits?"),
+"E53": ("How many customers signed up with us in 2024?",
+        "Count rows in [[customers]] whose [[customers.created_date]] falls in 2024.",
+        "How many new accounts did we onboard in calendar year 2024?",
+        "New customers last year?"),
+"E54": ("What's the average credit limit of our platinum customers?",
+        "Return AVG([[customers.credit_limit_usd]]) over [[customers]] where [[customers.loyalty_tier]] = 'platinum', rounded to 2 decimals.",
+        "What is the mean credit line extended to platinum-tier accounts, in USD?",
+        "Platinum credit?"),
+"E55": ("Which warehouses aren't open 24 hours? Give me their codes.",
+        "List [[warehouses.warehouse_code]] from [[warehouses]] where [[warehouses.operates_24h]] = 0, sorted.",
+        "Which handling facilities do not run a 24/7 operation? Provide the warehouse codes.",
+        "Warehouses that close?"),
+"E56": ("Which three warehouses have the highest monthly rent, and how much is it?",
+        "Return [[warehouses.warehouse_code]] and [[warehouses.monthly_rent_usd]] from [[warehouses]], top 3 by [[warehouses.monthly_rent_usd]] descending.",
+        "Which three facilities carry the highest monthly lease cost, and what do we pay for each?",
+        "Priciest warehouses?"),
+"E57": ("On average, what duty rate do we pay on imports into Japan?",
+        "Return AVG([[customs_declarations.duty_rate_pct]]) from [[customs_declarations]] where [[customs_declarations.declaration_type]] = 'import' and [[customs_declarations.customs_country]] = 'Japan', rounded to 2.",
+        "What is the average import duty rate, in percent, applied to our consignments entering Japan?",
+        "Japan duty rate?"),
+"E58": ("How many warehouses are both bonded and high security?",
+        "Count rows in [[warehouses]] with [[warehouses.is_bonded]] = 1 and [[warehouses.security_level]] = 'high'.",
+        "How many facilities combine customs-bonded status with a high security rating?",
+        "Bonded high-security sites?"),
+"E59": ("How many crew licences run out before 2026?",
+        "Count rows in [[crew_members]] whose [[crew_members.license_expiry_date]] is before '2026-01-01'.",
+        "How many crew licences lapse before the start of 2026, for the compliance tracker?",
+        "Licences expiring?"),
+"E60": ("Who's our longest-serving crew member, going by hire date?",
+        "From [[crew_members]] return [[crew_members.employee_number]], [[crew_members.first_name]], [[crew_members.last_name]], [[crew_members.hire_date]] of the earliest [[crew_members.hire_date]].",
+        "Which crew member has the longest tenure with us, and when were they hired?",
+        "Earliest hire?"),
+"E61": ("How many damage incidents were caused by bad packaging?",
+        "Count rows in [[incidents]] where [[incidents.incident_type]] = 'damage' and [[incidents.root_cause]] = 'packaging'.",
+        "How many cargo damage cases trace back to packaging failures?",
+        "Packaging damage count?"),
+"E62": ("How many flights are still scheduled and haven't flown yet?",
+        "Count rows in [[flights]] where [[flights.status]] = 'scheduled'.",
+        "How many departures remain on the forward schedule?",
+        "Upcoming flights?"),
+"E63": ("How far is an average completed flight, in km?",
+        "Return AVG([[flights.distance_km]]) over [[flights]] where [[flights.status]] = 'completed', rounded to 1 decimal.",
+        "What is the average stage length of the sectors we actually operated, in kilometres?",
+        "Average flight length?"),
+"E64": ("How many flights got delay code 93?",
+        "Count rows in [[flights]] where [[flights.delay_code]] = '93'.",
+        "How many sectors were coded with IATA delay code 93 (reactionary, aircraft rotation)?",
+        "Code 93 delays?"),
+"E65": ("Which insurance claims are still open, and how much was claimed on each?",
+        "Return [[insurance_claims.claim_number]] and [[insurance_claims.claimed_amount_usd]] from [[insurance_claims]] where [[insurance_claims.status]] is 'filed' or 'under_review', ordered by claim number.",
+        "Which claims are still awaiting a decision from the insurer, and what is the claimed exposure on each?",
+        "Open claims?"),
+"E66": ("How much per diem have loadmasters been paid in total?",
+        "Return SUM([[crew_assignments.per_diem_usd]]) from [[crew_assignments]] where [[crew_assignments.duty_role]] = 'loadmaster', rounded to 2.",
+        "What is the total per diem spend on loadmaster duties, in USD?",
+        "Loadmaster allowances?"),
+"E67": ("How many crew assignments are rostered but not flown yet?",
+        "Count rows in [[crew_assignments]] where [[crew_assignments.assignment_status]] = 'rostered'.",
+        "How many crew duties are currently on the forward roster?",
+        "Rostered duties?"),
+"E68": ("On average, how many block minutes does a completed crew duty get credited?",
+        "Return AVG([[crew_assignments.block_minutes_credited]]) over [[crew_assignments]] where [[crew_assignments.assignment_status]] = 'completed', rounded to 1.",
+        "What is the average credited block time per completed crew duty, in minutes?",
+        "Average block minutes?"),
+"E69": ("Which maintenance companies have worked on our planes?",
+        "List the DISTINCT [[maintenance_records.mro_provider]] values in [[maintenance_records]], sorted.",
+        "Which MRO providers appear in our maintenance history? One line each.",
+        "Who does our maintenance?"),
+"E70": ("How many labour hours went into completed A-checks?",
+        "Return SUM([[maintenance_records.labor_hours]]) from [[maintenance_records]] where [[maintenance_records.check_type]] = 'A_check' and [[maintenance_records.status]] = 'completed', rounded to 1.",
+        "What is the total labour-hour consumption of completed A-checks?",
+        "A-check hours?"),
+"E71": ("Which maintenance jobs aren't finished yet, and what state are they in?",
+        "Return [[maintenance_records.work_order_number]], [[maintenance_records.status]] from [[maintenance_records]] where [[maintenance_records.status]] <> 'completed', ordered by work order.",
+        "Which work orders are still open (planned or in progress)? List each with its status.",
+        "Open work orders?"),
+"E72": ("How many fuel uplifts had some sustainable aviation fuel blended in?",
+        "Count rows in [[fuel_uplifts]] where [[fuel_uplifts.saf_blend_pct]] > 0.",
+        "How many refuelling events included a SAF blend, for the sustainability report?",
+        "SAF uplifts?"),
+"E73": ("What's the biggest single fuel bill we've had?",
+        "Return MAX([[fuel_uplifts.total_cost_usd]]) from [[fuel_uplifts]].",
+        "What was the highest cost of a single fuel uplift, in USD?",
+        "Biggest fuel bill?"),
+"E74": ("How much have we spent on fuel from Skyline Fuels?",
+        "Return SUM([[fuel_uplifts.total_cost_usd]]) from [[fuel_uplifts]] where [[fuel_uplifts.supplier_name]] = 'Skyline Fuels', rounded to 2.",
+        "What is our total fuel spend with the supplier Skyline Fuels?",
+        "Skyline spend?"),
+"E75": ("How many shipments got cancelled?",
+        "Count rows in [[shipments]] where [[shipments.status]] = 'cancelled'.",
+        "How many bookings were cancelled before carriage?",
+        "Cancellations?"),
+"E76": ("How many dangerous goods shipments do we have in each DG class?",
+        "Group [[shipments]] where [[shipments.dg_class]] IS NOT NULL by [[shipments.dg_class]] and count rows, ordered by class.",
+        "What is the split of our dangerous-goods bookings by hazard class?",
+        "DG classes?"),
+"E77": ("How many pieces of pharma cargo have been booked in total?",
+        "Return SUM([[shipments.pieces]]) from [[shipments]] where [[shipments.commodity_category]] = 'pharmaceuticals'.",
+        "What is the total piece count booked in the pharmaceuticals vertical?",
+        "Pharma pieces?"),
+"E78": ("How many shipment legs were the second leg of a connection?",
+        "Count rows in [[flight_cargo]] where [[flight_cargo.leg_number]] = 2.",
+        "How many onward (second-sector) legs did we handle for connecting shipments?",
+        "Second legs?"),
+"E79": ("How many invoices included a dangerous goods surcharge?",
+        "Count rows in [[invoices]] where [[invoices.dg_surcharge_usd]] > 0.",
+        "How many invoices carried a DG surcharge line?",
+        "DG surcharge invoices?"),
+"E80": ("How many payments haven't been reconciled yet?",
+        "Count rows in [[payments]] with [[payments.is_reconciled]] = 0.",
+        "How many receipts are still unreconciled in finance?",
+        "Unreconciled?"),
+})
+
+TALK_MODERATE.update({
+"M41": ("What's the home hub airport of each airline?",
+        "Join [[airlines]] to [[airports]] on [[airlines.home_hub_airport_id]] = [[airports.airport_id]]; return [[airlines.name]] and [[airports.iata_code]], ordered by airline name.",
+        "Where is each carrier's home hub? Give the airport code per airline.",
+        "Airline hubs?"),
+"M42": ("How many of our planes are Airbus and how many are Boeing?",
+        "Join [[aircraft]] to [[aircraft_types]] on [[aircraft.type_id]] and count [[aircraft]] rows per [[aircraft_types.manufacturer]], ordered by manufacturer.",
+        "What is the fleet split by airframe manufacturer?",
+        "Fleet by maker?"),
+"M43": ("Which countries have at least five of our customers, and how many each?",
+        "Group [[customers]] by [[customers.country]], count rows, keep groups with COUNT(*) >= 5; order by count descending, then country.",
+        "In which countries do we hold five or more customer accounts? Rank them by account count.",
+        "Where are most customers?"),
+"M44": ("How many completed flights left from each European airport?",
+        "Join [[flights]] to [[airports]] on [[flights.origin_airport_id]]; for [[airports.region]] = 'europe' and [[flights.status]] = 'completed', count per [[airports.iata_code]], most first.",
+        "How many completed departures did each European station generate? Rank the stations.",
+        "Europe departures?"),
+"M45": ("How do our flights break down by type and status?",
+        "Group [[flights]] by [[flights.flight_type]] and [[flights.status]], count rows, order by type then status.",
+        "Give me the flight count matrix of scheduled vs charter operations by flight status.",
+        "Flights by type and status?"),
+"M46": ("Which planes have never had a single flight?",
+        "Return [[aircraft.tail_number]] for rows in [[aircraft]] with no matching row in [[flights]] on [[flights.aircraft_id]], sorted.",
+        "Which airframes have not been assigned to any flight at all?",
+        "Planes not flying?"),
+"M47": ("Which customers have never shipped anything with us?",
+        "Return [[customers.name]] from [[customers]] that have no row in [[shipments]] with the same [[shipments.customer_id]], sorted by name.",
+        "Which accounts have zero shipment activity on record?",
+        "Inactive customers?"),
+"M48": ("For each airline, how many active crew do they have, and how many of them are captains?",
+        "Join [[crew_members]] to [[airlines]]; for [[crew_members.is_active]] = 1 return per [[airlines.name]] COUNT(*) and the count where [[crew_members.crew_rank]] = 'captain'; order by airline name.",
+        "What is each carrier's active crew headcount, and how many commanders are in it?",
+        "Crew per airline?"),
+"M49": ("At which five airports did we take on the most fuel, in litres?",
+        "Join [[fuel_uplifts]] to [[airports]] on [[fuel_uplifts.airport_id]]; SUM([[fuel_uplifts.quantity_litres]]) per [[airports.iata_code]]; top 5 descending.",
+        "Which five stations account for the largest fuel uplift volumes, in litres?",
+        "Where do we fuel most?"),
+"M50": ("Which airline uses the most sustainable aviation fuel on average?",
+        "Join [[fuel_uplifts]] to [[flights]], [[aircraft]] and [[airlines]]; AVG([[fuel_uplifts.saf_blend_pct]]) per [[airlines.name]] rounded to 2, highest first.",
+        "Rank the carriers by their average SAF blend percentage across all uplifts.",
+        "SAF by airline?"),
+"M51": ("How many AOG jobs has each maintenance company handled?",
+        "Count rows of [[maintenance_records]] with [[maintenance_records.is_aog]] = 1 per [[maintenance_records.mro_provider]]; order by count descending, then provider.",
+        "Which MRO providers handle our aircraft-on-ground events, and how many each?",
+        "AOG by MRO?"),
+"M52": ("Which five planes cost the most to maintain, counting finished jobs only?",
+        "Join [[maintenance_records]] to [[aircraft]]; for [[maintenance_records.status]] = 'completed' SUM([[maintenance_records.parts_cost_usd]] + [[maintenance_records.labor_cost_usd]]) per [[aircraft.tail_number]], rounded to 2; top 5.",
+        "Which five airframes drove the highest completed maintenance spend (parts plus labour)?",
+        "Most expensive planes to fix?"),
+"M53": ("Which airports have done at least 30 maintenance jobs, and how many?",
+        "Join [[maintenance_records]] to [[airports]] on [[maintenance_records.airport_id]]; count per [[airports.iata_code]] with HAVING COUNT(*) >= 30; order by count descending, code.",
+        "Which stations are our main maintenance bases, with 30 or more work orders each?",
+        "Maintenance bases?"),
+"M54": ("Which five airports received the most delivered shipments?",
+        "Join [[shipments]] to [[airports]] on [[shipments.destination_airport_id]]; count rows with [[shipments.status]] = 'delivered' per [[airports.iata_code]]; top 5.",
+        "What are our top five inbound destinations by delivered shipments?",
+        "Top destinations?"),
+"M55": ("For each type of customer, how many shipments and how much declared value do we have?",
+        "Join [[shipments]] to [[customers]]; per [[customers.customer_type]] return COUNT(*) and SUM([[shipments.declared_value_usd]]) rounded to 2, ordered by type.",
+        "Break down shipment volume and declared cargo value by customer segment.",
+        "Value by customer type?"),
+"M56": ("How many temperature-controlled shipments were booked each month?",
+        "Count [[shipments]] with [[shipments.is_temperature_controlled]] = 1 grouped by substr([[shipments.booking_date]], 1, 7), ordered by month.",
+        "What is the monthly booking trend for our temperature-controlled product?",
+        "Cold shipments per month?"),
+"M57": ("For each kind of ULD, how many legs did we load and how heavy was the average shipment on them?",
+        "Join [[flight_cargo]] to [[shipments]]; per [[flight_cargo.uld_type]] return COUNT(*) and AVG([[shipments.total_weight_kg]]) rounded to 1; order by ULD type.",
+        "By unit load device type, how many legs were built and what was the average shipment weight per leg?",
+        "ULD stats?"),
+"M58": ("How many unpaid invoices are past their due date, by customer region?",
+        "Join [[invoices]] to [[shipments]] and [[customers]]; count invoices with [[invoices.status]] <> 'paid' and [[invoices.due_date]] < '2025-12-20' per [[customers.sales_region]]; most first.",
+        "Where is our overdue receivables count concentrated, by sales region?",
+        "Overdue invoices by region?"),
+"M59": ("What's the average invoice for each service level?",
+        "Join [[invoices]] to [[shipments]]; AVG([[invoices.amount_usd]]) per [[shipments.service_level]] rounded to 2, ordered by service level.",
+        "What is the average billed value per shipment for each product tier (express, standard, economy)?",
+        "Invoice size by service?"),
+"M60": ("For each foreign currency we got paid in, how many payments were there and what were they worth in dollars?",
+        "From [[payments]] where [[payments.original_currency]] <> 'USD', group by [[payments.original_currency]]: COUNT(*) and SUM([[payments.amount_usd]]) rounded to 2; largest sum first.",
+        "What is our non-dollar cash collection by currency, in count and USD value?",
+        "Foreign currency payments?"),
+"M61": ("Which five customers paid the most in bank charges?",
+        "Join [[payments]] to [[customers]] on [[payments.customer_id]]; SUM([[payments.bank_charges_usd]]) per [[customers.name]] rounded to 2; top 5.",
+        "Which five accounts incur the highest bank fees on their remittances?",
+        "Bank fees by customer?"),
+"M62": ("For each root cause, how many incidents were there and how many got resolved?",
+        "Group [[incidents]] by [[incidents.root_cause]]: COUNT(*) and the count with [[incidents.resolved]] = 1; order by root cause.",
+        "Give the incident count and the resolved count per root cause category.",
+        "Incidents by cause?"),
+"M63": ("Which airline's flights had the most cargo incidents?",
+        "Join [[incidents]] to [[flight_cargo]], [[flights]], [[aircraft]] and [[airlines]]; count incidents per [[airlines.name]], most first.",
+        "Rank the operating carriers by the number of cargo incidents on their flights.",
+        "Incidents per airline?"),
+"M64": ("Which customers have filed three or more insurance claims, and how much have they claimed?",
+        "Join [[insurance_claims]] to [[customers]] on [[insurance_claims.customer_id]]; per [[customers.name]] COUNT(*) and SUM([[insurance_claims.claimed_amount_usd]]) rounded to 2; HAVING COUNT(*) >= 3; order by count descending, name.",
+        "Which accounts are repeat claimants (three or more claims), and what is their total claimed amount?",
+        "Frequent claimants?"),
+"M65": ("In which countries do our customs declarations get held, and how often?",
+        "Count rows of [[customs_declarations]] with [[customs_declarations.status]] = 'held' per [[customs_declarations.customs_country]]; most first, then country.",
+        "Which customs jurisdictions hold our declarations most often?",
+        "Customs holds?"),
+"M66": ("Which five kinds of goods brought in the most import value through customs?",
+        "From [[customs_declarations]] with [[customs_declarations.declaration_type]] = 'import', SUM([[customs_declarations.customs_value_usd]]) per [[customs_declarations.goods_description]] rounded to 2; top 5.",
+        "What are our top five import commodities by declared customs value?",
+        "Top imports?"),
+"M67": ("Which five warehouses handle the most customs paperwork?",
+        "Join [[customs_declarations]] to [[warehouses]] on [[customs_declarations.warehouse_id]]; count per [[warehouses.warehouse_code]]; top 5.",
+        "Which five facilities process the highest number of customs declarations?",
+        "Busiest customs warehouses?"),
+"M68": ("At which five airports do customers get notified to pick up cargo most often?",
+        "Join [[tracking_events]] to [[airports]]; count rows with [[tracking_events.event_code]] = 'NFD' per [[airports.iata_code]]; top 5.",
+        "Which five stations issue the most notifications for delivery (NFD)?",
+        "Most NFDs?"),
+"M69": ("Which airports have shipments marked delivered that were never actually handed over?",
+        "Join [[shipments]] to [[airports]] on [[shipments.destination_airport_id]]; count [[shipments]] with [[shipments.status]] = 'delivered' and no [[tracking_events]] row with [[tracking_events.event_code]] = 'DLV'; per [[airports.iata_code]], most first.",
+        "Where do we have landed-but-not-released consignments (delivered status, no DLV handover scan), by destination?",
+        "Delivered but not handed over?"),
+"M70": ("Which three pilots have flown the most completed sectors as pilot flying?",
+        "Join [[crew_assignments]] to [[crew_members]]; count rows with [[crew_assignments.is_pilot_flying]] = 1 and [[crew_assignments.assignment_status]] = 'completed' per [[crew_members.employee_number]]; top 3 (ties by employee number).",
+        "Who are the three most active handling pilots by completed sectors flown?",
+        "Who flies the most?"),
+"M71": ("At each base, how many active captains are there and how many flight hours do they average?",
+        "Join [[crew_members]] to [[airports]] on [[crew_members.base_airport_id]]; for [[crew_members.crew_rank]] = 'captain' and [[crew_members.is_active]] = 1, COUNT(*) and AVG([[crew_members.total_flight_hours]]) rounded to 0 per [[airports.iata_code]]; order by code.",
+        "What is the active captain headcount and average experience (flight hours) at each crew base?",
+        "Captains per base?"),
+"M72": ("How much per diem has each airline paid its crew on completed duties?",
+        "Join [[crew_assignments]] to [[crew_members]] and [[airlines]] (via [[crew_members.airline_id]]); SUM([[crew_assignments.per_diem_usd]]) where [[crew_assignments.assignment_status]] = 'completed', rounded to 2, per [[airlines.name]]; largest first.",
+        "Rank the carriers by crew per diem cost on completed duties.",
+        "Per diem by airline?"),
+"M73": ("How late do completed flights leave in each kind of weather?",
+        "From [[flights]] where [[flights.status]] = 'completed' and [[flights.weather_at_departure]] IS NOT NULL: per weather COUNT(*) and AVG(([[flights.actual_departure]] - [[flights.scheduled_departure]]) in minutes) rounded to 1; worst first.",
+        "What is the average departure delay by weather condition at departure?",
+        "Weather delays?"),
+"M74": ("How many flights were cancelled each month?",
+        "Count [[flights]] with [[flights.status]] = 'cancelled' grouped by substr([[flights.scheduled_departure]], 1, 7), ordered by month.",
+        "Show the monthly flight cancellation count.",
+        "Cancellations per month?"),
+"M75": ("How many owned and how many leased planes does each airline have?",
+        "LEFT JOIN [[airlines]] to [[aircraft]]; per [[airlines.name]] count rows with [[aircraft.ownership]] = 'owned' and with 'leased' (0 if none); order by airline name.",
+        "What is the owned versus leased fleet mix for each carrier?",
+        "Owned vs leased?"),
+"M76": ("For each Asia-Pacific airport, how many warehouses and how much floor space do we have?",
+        "Join [[warehouses]] to [[airports]]; for [[airports.region]] = 'asia_pacific' return COUNT(*) and SUM([[warehouses.floor_area_m2]]) per [[airports.iata_code]]; largest area first.",
+        "What is our warehouse footprint (facilities and square metres) at each Asia-Pacific station?",
+        "APAC warehouse space?"),
+"M77": ("For express shipments, how many days do customers give us between booking and requested delivery, by origin airport?",
+        "Join [[shipments]] to [[airports]] on [[shipments.origin_airport_id]]; for [[shipments.service_level]] = 'express' AVG(julianday([[shipments.requested_delivery_date]]) - julianday([[shipments.booking_date]])) rounded to 2 per [[airports.iata_code]]; order by code.",
+        "What lead time do express customers request from booking to delivery, by origin station?",
+        "Express lead times?"),
+"M78": ("For each payment term, how many invoices are there and what's the average amount?",
+        "Group [[invoices]] by [[invoices.payment_terms_days]]: COUNT(*) and AVG([[invoices.amount_usd]]) rounded to 2; order by terms.",
+        "Break down invoice count and average ticket size by credit terms.",
+        "Invoices by terms?"),
+"M79": ("Which customers ship dangerous goods most often (at least 8 times)?",
+        "Join [[shipments]] to [[customers]]; count rows with [[shipments.is_dangerous_goods]] = 1 per [[customers.name]], HAVING COUNT(*) >= 8; order by count descending, name.",
+        "Which accounts are our heavy DG shippers, with eight or more dangerous-goods bookings?",
+        "Big DG customers?"),
+"M80": ("For each aircraft model, how much fuel does a flight burn on average?",
+        "Join [[fuel_uplifts]] to [[flights]], [[aircraft]] and [[aircraft_types]]; AVG([[fuel_uplifts.fuel_burned_kg]]) per [[aircraft_types.model]] rounded to 0; highest first.",
+        "What is the average trip fuel burn per sector for each fleet type?",
+        "Fuel burn by model?"),
+})
+
+TALK_HARD.update({
+"H41": ("In each sales region, which customer have we invoiced the most, and how much?",
+        "Per [[customers.sales_region]], find the [[customers.name]] with the largest SUM([[invoices.amount_usd]]) (via [[shipments]]; ties: smaller [[customers.customer_id]]) and that sum rounded to 2.",
+        "Who is the top revenue account in each sales region?",
+        "Best customer per region?"),
+"H42": ("What did we spend on fuel each month, and what's the three-month moving average?",
+        "Per month of [[fuel_uplifts.uplift_time]], SUM([[fuel_uplifts.total_cost_usd]]) and AVG of that monthly sum over the current and 2 preceding months (window ROWS 2 PRECEDING), both rounded to 2.",
+        "Show monthly fuel spend with a rolling three-month average to smooth out the trend.",
+        "Fuel cost trend?"),
+"H43": ("Which five planes went the longest between two maintenance jobs, and how many days was that?",
+        "For completed [[maintenance_records]], use LAG([[maintenance_records.start_time]]) per [[maintenance_records.aircraft_id]] to get gaps in days; return [[aircraft.tail_number]] and the largest gap rounded to 1; top 5.",
+        "Which five airframes had the longest interval between consecutive maintenance visits?",
+        "Longest without maintenance?"),
+"H44": ("In each airline, which captain has logged the most block hours as captain, and how many?",
+        "Per [[crew_members.airline_id]], the [[crew_members.employee_number]] with the largest SUM([[crew_assignments.block_minutes_credited]])/60 over completed [[crew_assignments]] with [[crew_assignments.duty_role]] = 'captain' (ties: employee number); return [[airlines.name]], employee number and hours rounded to 1.",
+        "Who is the most productive commander at each carrier, measured by credited block hours?",
+        "Top captain per airline?"),
+"H45": ("Which customers did we invoice more than 1.5 times as much in the second half of 2025 as in the first half?",
+        "Per [[customers.name]] (via [[shipments]]), SUM([[invoices.amount_usd]]) for [[invoices.issued_date]] in Jan-Jun and in Jul-Dec 2025, rounded to 2; keep customers where H2 > 1.5 * H1; order by name.",
+        "Which accounts grew billed revenue by more than 50% from H1 to H2 2025? Show both halves.",
+        "Customers growing fast?"),
+"H46": ("Which five customers owe us the most on invoices that aren't fully paid?",
+        "For [[invoices]] with [[invoices.status]] in ('unpaid', 'partially_paid'), subtract the SUM([[payments.amount_usd]]) per invoice (0 if none) from [[invoices.amount_usd]]; sum per [[customers.name]] (via [[shipments]]) rounded to 2; top 5.",
+        "Which five accounts carry the largest outstanding receivable balance after partial payments?",
+        "Who owes us most?"),
+"H47": ("For each aircraft model, how many completed flights flew with no cargo at all, and what share is that?",
+        "Per [[aircraft_types.model]], count completed [[flights]], those with no row in [[flight_cargo]], and that share in percent rounded to 1; order by model.",
+        "What share of operated sectors per fleet type flew empty, without any booked shipment leg?",
+        "Empty flights?"),
+"H48": ("Which five airports have the most incidents compared with the number of shipments starting there?",
+        "Count [[shipments]] per [[shipments.origin_airport_id]] and [[incidents]] per [[incidents.airport_id]] separately, join both to [[airports]]; return [[airports.iata_code]], both counts and 1000 * incidents / shipments rounded to 2; top 5 by the rate.",
+        "Which five stations have the worst incident rate per 1,000 originating shipments?",
+        "Riskiest airports?"),
+"H49": ("Which warehouse operators have a warehouse at every European airport?",
+        "Return [[warehouses.operator_name]] whose [[warehouses]] cover every [[airports]] row with [[airports.region]] = 'europe' (COUNT(DISTINCT [[warehouses.airport_id]]) = number of European airports); sorted.",
+        "Which handling partners offer full coverage across all our European stations?",
+        "Operators everywhere in Europe?"),
+"H50": ("For each commodity type, which shipment has the second-highest declared value, and what is it?",
+        "Per [[shipments.commodity_category]], rank [[shipments]] by [[shipments.declared_value_usd]] with DENSE_RANK descending and return [[shipments.awb_number]] and value where the rank is 2; order by category.",
+        "What is the runner-up shipment by declared value in each commodity vertical?",
+        "Second most valuable per category?"),
+"H51": ("For each airline, how many completed flights did each aircraft model fly, and what share of the airline's flights is that?",
+        "Count completed [[flights]] per [[airlines.name]] and [[aircraft_types.model]]; add 100 * count / SUM(count) OVER (PARTITION BY airline) rounded to 1; order by airline, count descending.",
+        "What is each carrier's flying mix by fleet type, as a share of its completed sectors?",
+        "Fleet usage mix?"),
+"H52": ("What's the median chargeable weight of delivered shipments for each service level?",
+        "For [[shipments]] with [[shipments.status]] = 'delivered', compute the median [[shipments.chargeable_weight_kg]] per [[shipments.service_level]] with ROW_NUMBER and COUNT windows (average of the two middle values if even), rounded to 1.",
+        "What is the typical (median) chargeable weight per delivered shipment in each product tier?",
+        "Typical shipment weight?"),
+"H53": ("When customers first shipped with us, which service level did they pick? Count customers per level.",
+        "For each [[shipments.customer_id]], take the row with the earliest [[shipments.booking_date]] (ties: smaller [[shipments.shipment_id]]) and count customers per [[shipments.service_level]]; order by service level.",
+        "Which product do customers choose for their very first booking? Give the customer count by service level.",
+        "First shipment service?"),
+"H54": ("After an AOG repair, how many hours does it take before the plane flies again, by airline?",
+        "For completed [[maintenance_records]] with [[maintenance_records.is_aog]] = 1, find the MIN([[flights.actual_departure]]) of a completed flight of the same aircraft at or after [[maintenance_records.end_time]]; per [[airlines.name]] count events with such a flight and average the hours between, rounded to 1.",
+        "What is our average return-to-service time after aircraft-on-ground events, by carrier?",
+        "AOG recovery time?"),
+"H55": ("How many customers did we gain each year, and what's the running total?",
+        "Group [[customers]] by the year of [[customers.created_date]], count rows, and add SUM(count) OVER (ORDER BY year); order by year.",
+        "Show customer acquisition per year with the cumulative account base.",
+        "Customer growth?"),
+"H56": ("What are the three busiest routes of each airline?",
+        "Per [[airlines.name]], count completed [[flights]] per ([[flights.origin_airport_id]], [[flights.destination_airport_id]]) as [[airports.iata_code]] pairs, and keep the top 3 with ROW_NUMBER (ties: origin code, then destination code).",
+        "For each carrier, which three directed city pairs carry the most completed flights?",
+        "Top routes per airline?"),
+"H57": ("Which pilots with at least 20 completed duties are pilot flying less than 35% of the time?",
+        "For completed [[crew_assignments]] with [[crew_assignments.duty_role]] in ('captain', 'first_officer'), per [[crew_members.employee_number]] return COUNT(*) and 100 * SUM([[crew_assignments.is_pilot_flying]]) / COUNT(*) rounded to 1; keep COUNT(*) >= 20 and share < 35; order by share, employee number.",
+        "Which pilots get too few handling sectors (below 35% pilot flying) given at least 20 completed duties?",
+        "Pilots who rarely fly?"),
+"H58": ("How do our unpaid invoices age as of 20 December 2025: not due, 1-30, 31-60 and over 60 days late?",
+        "For [[invoices]] with [[invoices.status]] <> 'paid', bucket julianday('2025-12-20') - julianday([[invoices.due_date]]) into 'not due', '1-30', '31-60', '61+'; per bucket COUNT(*) and SUM([[invoices.amount_usd]]) rounded to 2, in that order.",
+        "Give me the receivables ageing schedule: count and value by days past due.",
+        "Invoice ageing?"),
+"H59": ("For each airline, which month was the busiest for completed flights?",
+        "Per [[airlines.name]], count completed [[flights]] per month of [[flights.actual_departure]] and keep the month with most (ties: earlier month) with its count.",
+        "What was each carrier's peak month of operations in 2025?",
+        "Peak month per airline?"),
+"H60": ("On average, how many crew are on a completed flight, for each aircraft model?",
+        "Count [[crew_assignments]] per [[crew_assignments.flight_id]] first, then AVG of that count over completed [[flights]] per [[aircraft_types.model]], rounded to 2.",
+        "What is the average crew complement per operated sector by fleet type?",
+        "Crew per flight?"),
+"H61": ("How much fuel does each aircraft model burn per 100 km?",
+        "Over completed [[flights]] joined to [[fuel_uplifts]], [[aircraft]] and [[aircraft_types]]: SUM([[fuel_uplifts.fuel_burned_kg]]) * 100 / SUM([[flights.distance_km]]) per [[aircraft_types.model]], rounded to 1; highest first.",
+        "What is the fuel intensity of each fleet type, in kg burned per 100 km flown?",
+        "Fuel efficiency?"),
+"H62": ("Among customers with at least 30 payments, which five pay late most often?",
+        "Join [[payments]] to [[invoices]] and [[customers]]; per [[customers.name]] COUNT(*) and the share with [[payments.payment_date]] > [[invoices.due_date]] in percent rounded to 1; HAVING COUNT(*) >= 30; top 5 by share.",
+        "Which five regular payers have the worst payment discipline, by share of late payments?",
+        "Late payers?"),
+"H63": ("Which captains have flown with at least 11 different first officers?",
+        "Self-join [[crew_assignments]] on [[crew_assignments.flight_id]]: captain rows with first-officer rows, both completed; COUNT(DISTINCT first officer) per captain [[crew_members.employee_number]]; keep >= 11; order by count descending, employee number.",
+        "Which commanders have the broadest pairing history, with 11 or more different first officers?",
+        "Captains with many partners?"),
+"H64": ("Which airports have worse average arrival delays than the network as a whole?",
+        "Per destination [[airports.iata_code]], AVG(([[flights.actual_arrival]] - [[flights.scheduled_arrival]]) in minutes) over completed [[flights]], rounded to 1; keep airports above the average over all completed flights; worst first.",
+        "Which inbound stations underperform the network average on arrival punctuality?",
+        "Worst arrival airports?"),
+"H65": ("Which five planes fly the most hours per day they're in use?",
+        "Per [[aircraft.tail_number]], SUM of completed block hours ([[flights.actual_arrival]] - [[flights.actual_departure]]) divided by COUNT(DISTINCT date([[flights.actual_departure]])), rounded to 2; top 5.",
+        "Which five airframes achieve the highest daily utilisation on the days they operate?",
+        "Most utilised planes?"),
+"H66": ("When both customs clearances go through, how many hours pass between export and import clearance, by import country?",
+        "Self-join [[customs_declarations]] on [[customs_declarations.shipment_id]]: cleared export with cleared import; per import [[customs_declarations.customs_country]] COUNT(*) and AVG hours between the two [[customs_declarations.cleared_at]] values, rounded to 1; countries with at least 100; slowest first.",
+        "What is the end-to-end customs cycle time, export clearance to import clearance, per destination jurisdiction?",
+        "Customs gap by country?"),
+"H67": ("For each service level, how long does it take from booking to handing the cargo over, on average and at worst?",
+        "Join [[shipments]] to [[tracking_events]] with [[tracking_events.event_code]] = 'DLV'; per [[shipments.service_level]] COUNT(*), AVG and MAX of [[tracking_events.event_time]] - [[shipments.booking_date]] in days, rounded to 2.",
+        "What is the booking-to-handover lead time per product tier, average and maximum?",
+        "Door-to-door time?"),
+"H68": ("For each insurer, how many days after an incident do claims get filed, and what share of claims gets paid?",
+        "Join [[insurance_claims]] to [[incidents]]; per [[insurance_claims.insurer_name]] COUNT(*), AVG([[insurance_claims.filed_date]] - [[incidents.reported_at]]) in days rounded to 1, and the share with [[insurance_claims.status]] = 'paid' in percent rounded to 1.",
+        "By insurer, how quickly are claims lodged after the incident, and what is the payout rate?",
+        "Insurer performance?"),
+"H69": ("In each sales region, who are the top two customers by number of shipments (ties count together)?",
+        "Per [[customers.sales_region]], DENSE_RANK customers by COUNT of non-cancelled [[shipments]] descending; return region, [[customers.name]], count and rank for ranks 1-2; order by region, rank, name.",
+        "Who are the two leading accounts by shipment count in each sales region?",
+        "Top customers per region?"),
+"H70": ("Which day of the week has the worst departure delays?",
+        "Group completed [[flights]] by strftime('%w', [[flights.scheduled_departure]]) as an integer; COUNT(*) and AVG departure delay in minutes rounded to 1; order by weekday.",
+        "How does departure punctuality vary by day of the week?",
+        "Delays by weekday?"),
+"H71": ("For each airline, how many completed flights carried cargo for three or more different customers?",
+        "Find [[flight_cargo.flight_id]] values whose legs belong to at least 3 distinct [[shipments.customer_id]]; count those completed [[flights]] per [[airlines.name]]; most first.",
+        "How many operated sectors per carrier were consolidated loads serving three or more customers?",
+        "Shared flights?"),
+"H72": ("If we split customers into five equal groups by revenue, how much does each group bring in and what share is that?",
+        "NTILE(5) over customers ordered by SUM([[invoices.amount_usd]]) (via [[shipments]]) descending, ties by customer id; per quintile COUNT(*), SUM rounded to 2 and share of total in percent rounded to 1.",
+        "Show revenue concentration by customer quintile: accounts, billed USD and share.",
+        "Revenue by customer group?"),
+"H73": ("Which airports send out temperature-controlled shipments without having a cold-chain warehouse, and how many?",
+        "Join [[shipments]] to [[airports]] on [[shipments.origin_airport_id]]; count rows with [[shipments.is_temperature_controlled]] = 1 at airports with no [[warehouses]] row of [[warehouses.warehouse_type]] = 'cold_chain'; most first.",
+        "Where are we originating temperature-sensitive cargo without dedicated cold-chain infrastructure?",
+        "Cold chain gaps?"),
+"H74": ("How many flights were cancelled because of weather in each month of 2025, including months with none?",
+        "Generate months 2025-01 to 2025-12 with a recursive CTE, LEFT JOIN [[flights]] with [[flights.cancellation_reason]] = 'weather' by month of [[flights.scheduled_departure]] and COUNT, giving 0 for empty months.",
+        "Give a complete 12-month view of weather-driven cancellations, showing zero months too.",
+        "Weather cancellations by month?"),
+"H75": ("Which planes flew on three or more days in a row, and what's their longest streak?",
+        "Per [[aircraft.tail_number]], find the longest run of consecutive dates of completed [[flights.actual_departure]] (gaps and islands: date minus ROW_NUMBER); keep runs of at least 3; order by run descending, tail number.",
+        "Which airframes had the longest unbroken streaks of operating days?",
+        "Longest flying streaks?"),
+"H76": ("Which customers have an average invoice at least 1.5 times the average for their customer type?",
+        "Per customer, AVG([[invoices.amount_usd]]) (via [[shipments]]); compare with AVG of these per [[customers.customer_type]] (window); return [[customers.name]], type and both averages rounded to 2 where the customer is >= 1.5 times the type average; order by type, name.",
+        "Which accounts have an average ticket far above their segment norm (1.5x or more)?",
+        "Big spenders for their type?"),
+"H77": ("For resolved incidents, how many days did they take to close by severity, and what share closed within 30 days?",
+        "For [[incidents]] with [[incidents.resolved]] = 1, per [[incidents.severity]] COUNT(*), AVG days from [[incidents.reported_at]] to [[incidents.resolved_at]] rounded to 1, and the share resolved within 30 days in percent rounded to 1.",
+        "What is the incident resolution cycle time per severity level, and the 30-day closure rate?",
+        "How fast are incidents fixed?"),
+"H78": ("For each commodity, which invoiced shipment earned the most per chargeable kilo?",
+        "Join [[invoices]] to [[shipments]]; per [[shipments.commodity_category]] the [[shipments.awb_number]] with the highest [[invoices.amount_usd]] / [[shipments.chargeable_weight_kg]] (ties: smaller [[shipments.shipment_id]]), rounded to 2.",
+        "Which shipment delivered the best yield per chargeable kg in each commodity vertical?",
+        "Best yield per category?"),
+"H79": ("In each month of Q4 2025, what share of completed flights did each airline operate?",
+        "For completed [[flights]] with [[flights.actual_departure]] from 2025-10-01 to 2025-12-31, count per month and [[airlines.name]] and add 100 * count / SUM(count) OVER (PARTITION BY month) rounded to 1; order by month, count descending, airline.",
+        "What was each carrier's monthly share of operated flights during Q4 2025?",
+        "Airline share last quarter?"),
+"H80": ("For two-leg shipments, how often does the second leg go on a different airline, by first-leg airline?",
+        "Self-join [[flight_cargo]] on [[flight_cargo.shipment_id]] (leg 1 and leg 2), map each leg to its airline via [[flights]] and [[aircraft]]; count shipments where the airlines differ, per leg-1 [[airlines.name]]; most first.",
+        "How many connecting shipments did each carrier hand over to another airline for the onward leg (interline)?",
+        "Interline transfers?"),
+})

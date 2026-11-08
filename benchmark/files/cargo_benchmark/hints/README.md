@@ -1,6 +1,6 @@
 # Reasoning hints
 
-One hint for every question in the cargo benchmark: 480 questions × 3 variants = 1440 hints.
+One hint for every question in the cargo benchmark: 960 questions × 3 variants = 2880 hints.
 
 Each hint uses the same skeleton:
 
@@ -16,7 +16,7 @@ Each hint uses the same skeleton:
 
 | file | what it is |
 |---|---|
-| `hint_bank_easy.py`, `hint_bank_moderate.py`, `hint_bank_hard.py` | the hand-written reasoning, one entry per base question (E01-E40, M01-M40, H01-H40) |
+| `hint_bank_easy.py`, `hint_bank_moderate.py`, `hint_bank_hard.py` | the hand-written reasoning, one entry per base question (E01-E80, M01-M80, H01-H80) |
 | `build_hints.py` | turns the bank into hints for each variant |
 | `validate_hints.py` | checks every hint |
 | `hints_normal.jsonl`, `hints_mixed.jsonl`, `hints_cryptic.jsonl` | the hints, one JSON row per question: `id, base_id, variant, style, difficulty, hint` |
@@ -42,12 +42,12 @@ phrasing:
 - #sql runs on the matching database and returns the Gold result
 - every table and column in #schema exists in that variant
 - no normal name slips into a mixed or cryptic hint
-- there are 480 hints per variant
+- there are 960 hints per variant
 
 ```
 cd benchmark/files/cargo_benchmark
 python hints/build_hints.py
-python hints/validate_hints.py      # all 1440 hints pass
+python hints/validate_hints.py      # all 2880 hints pass
 ```
 
 The facts the traps rely on (for example: takeoff weight is only filled for completed flights,
