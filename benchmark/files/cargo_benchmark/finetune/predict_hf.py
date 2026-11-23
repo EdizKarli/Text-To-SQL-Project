@@ -13,7 +13,7 @@ and write prediction files that evaluation/evaluate.py scores, in the same forma
     python evaluation/evaluate.py evaluation/predictions/pred_cryptic_B-7b_hf_hint_test.json --variant cryptic --split test
 
 The prompt is build_prompt() from evaluation/run_ollama.py (compact schema, no answer spec), formatted with the
-model's chat template, decoded greedily. The SQL is taken from the answer (after the last '#sql' with
+model's chat template, decoded greedily. The SQL is taken from the answer (inside the last <sql>...</sql> with
 --reasoning hint). pred_<tag>_raw.json stores the raw text, generated tokens (eval_count), prompt tokens and the
 wall-clock time per question. With --batch-size > 1 the time of a batch is shared equally by its questions, so use
 --batch-size 1 when latency matters; latency on a cluster GPU is not comparable with Ollama on a laptop.

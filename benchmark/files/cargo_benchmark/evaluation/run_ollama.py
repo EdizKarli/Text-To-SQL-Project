@@ -23,10 +23,10 @@ by default, because it is shared by all four phrasing styles and would hide thei
 --with-spec). Scoring therefore uses order- and column-order-insensitive result matching (see evaluate.py).
 
 --split train|dev|test runs only that part of splits/split_80_20.json (the fine-tuning split; test = 192 questions
-per variant). --reasoning hint asks the model to write the reasoning in the hint format (#schema, #think, #trace)
-and then the SQL after a final "#sql" line; this is the prompt that condition B models are trained on
+per variant). --reasoning hint asks the model to write the reasoning in the hint format (<schema>, <think>, <trace>)
+and then the SQL inside a final <sql></sql>; this is the prompt that condition B models are trained on
 (finetune/build_dataset.py uses build_prompt from this file, so training and test prompts are identical). The
-SQL is taken from after the last "#sql"; the full text stays in pred_<tag>_raw.json.
+SQL is taken from the last <sql>...</sql>; the full text stays in pred_<tag>_raw.json.
 
 Schema formats (--schema):
   compact (default)  CREATE TABLE with column names, types, PK, FK and the allowed values of coded columns,
@@ -120,14 +120,14 @@ def ask(url, model, prompt, num_ctx, timeout, num_predict=None):
         return json.loads(r.read())
 
 
-HINT_INSTRUCTION = ("First reason step by step in this format, one line per item: #schema (tables and columns you need), "
-                    "#think (Goal, Output columns, Interpretation), #trace (1. Source, 2. Joins, 3. Filters, "
-                    "4. Grouping/aggregation, 5. Ordering/limits, 6. Traps). "
-                    "Then write #sql followed by one valid SQLite query on a single line, without markdown fences.\n")
+HINT_INSTRUCTION = ("First reason step by step in this format, one line per item: <schema>tables and columns you need</schema>, "
+                    "<think> (Goal, Output columns, Interpretation) </think>, <trace> (1. Source, 2. Joins, 3. Filters, "
+                    "4. Grouping/aggregation, 5. Ordering/limits, 6. Traps) </trace>. "
+                    "Then write one valid SQLite query on a single line inside <sql></sql>, without markdown fences.\n")
 
 
 def build_prompt(schema, evidence, q, with_spec, reasoning="none"):
-    """reasoning='none': answer with the SQL only. reasoning='hint': reasoning in the hint format, then #sql <query>."""
+    """reasoning='none': answer with the SQL only. reasoning='hint': reasoning in the hint format, then <sql>query</sql>."""
     head = ("You are an expert SQL assistant. Given the following SQLite database schema:\n"
             f"```sql\n{schema}\n```\n\n"
             + (f"{evidence}\n\n" if evidence else "")
@@ -141,10 +141,13 @@ def build_prompt(schema, evidence, q, with_spec, reasoning="none"):
 
 
 def extract_sql(raw, reasoning="none"):
-    """The SQL part of a model answer: everything after the last '#sql' in hint mode, the whole text otherwise."""
+    """The SQL part of a model answer: what is inside the last <sql>...</sql> in hint mode, the whole text otherwise.
+    If the model opens <sql> but never closes it (for example it runs out of tokens), everything after <sql> is used."""
     if reasoning == "hint":
-        i = raw.rfind("#sql")
-        raw = raw[i + 4:] if i >= 0 else ""          # no #sql line -> no answer (scored as missing)
+        i = raw.rfind("<sql>")
+        if i < 0:
+            return ""                                 # no <sql> tag -> no answer (scored as missing)
+        raw = raw[i + len("<sql>"):].split("</sql>")[0]
     return sanitize_sql(raw)
 
 

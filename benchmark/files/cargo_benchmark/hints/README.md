@@ -2,14 +2,47 @@
 
 One hint for every question in the cargo benchmark: 960 questions × 3 variants = 2880 hints.
 
-Each hint uses the same skeleton:
+Each hint uses the same skeleton. Every part sits inside its own tag, so a script can cut out any part
+without guessing where it ends:
 
 ```
-#question  the question, exactly as in the benchmark
-#schema    the tables and columns the hint uses, with the variant's names
-#think     Goal, Output columns, Interpretation
-#trace     1. Source  2. Joins  3. Filters  4. Grouping/aggregation  5. Ordering/limits  6. Traps
-#sql       the Gold SQL of that variant, unchanged
+<question>the question, exactly as in the benchmark</question>
+<schema>the tables and columns the hint uses, with the variant's names</schema>
+<think>
+- Goal: ...
+- Output columns: ...
+- Interpretation: ...
+</think>
+<trace>
+1. Source: ...
+2. Joins: ...
+3. Filters: ...
+4. Grouping/aggregation: ...
+5. Ordering/limits: ...
+6. Traps: ...
+</trace>
+<sql>the Gold SQL of that variant, unchanged</sql>
+```
+
+A real example (E01-CAS, normal):
+
+```
+<question>How many of our airports are cargo hubs?</question>
+<schema>airports(is_cargo_hub)</schema>
+<think>
+- Goal: one number, a count of airports.
+- Output columns: the count only.
+- Interpretation: '(cargo) hubs' = airports flagged is_cargo_hub = 1.
+</think>
+<trace>
+1. Source: airports, one row per airport.
+2. Joins: none needed, every value is in this one table.
+3. Filters: is_cargo_hub = 1.
+4. Grouping/aggregation: COUNT(*).
+5. Ordering/limits: none.
+6. Traps: is_cargo_hub is a 0/1 flag, compare it with 1 and do not count all airports.
+</trace>
+<sql>SELECT COUNT(*) AS hub_airports FROM airports WHERE is_cargo_hub = 1</sql>
 ```
 
 ## Files
@@ -26,9 +59,9 @@ Each hint uses the same skeleton:
 The reasoning is written once per base question, with normal names inside placeholders
 (`[[table]]`, `[[table.column]]`, `{{table.column}}`). `build_hints.py` fills them with the names of
 each variant from `schema/naming_map.json`. In mixed and cryptic, the meaning is shown once in the
-#schema line, e.g. `sndg (shipments)`.
+`<schema>` line, e.g. `sndg (shipments)`.
 
-The four phrasings of a question share the #trace. #question and the Interpretation line follow the
+The four phrasings of a question share the `<trace>`. `<question>` and the Interpretation line follow the
 phrasing:
 - schema_aware: no interpretation needed, the question names the tables and columns
 - vague: the reading taken from the answer_spec
@@ -37,10 +70,10 @@ phrasing:
 ## Checks
 
 `validate_hints.py` checks that:
-- every hint has the full skeleton and each step is one line
-- #question is the benchmark text and #sql is exactly the Gold SQL
-- #sql runs on the matching database and returns the Gold result
-- every table and column in #schema exists in that variant
+- every hint has the full skeleton in the right order, every tag is closed and each step is one line
+- `<question>` is the benchmark text and `<sql>` is exactly the Gold SQL
+- `<sql>` runs on the matching database and returns the Gold result
+- every table and column in `<schema>` exists in that variant
 - no normal name slips into a mixed or cryptic hint
 - there are 960 hints per variant
 
