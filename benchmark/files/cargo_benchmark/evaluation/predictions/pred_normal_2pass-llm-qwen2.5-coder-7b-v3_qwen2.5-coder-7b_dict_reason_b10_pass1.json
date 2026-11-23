@@ -1,0 +1,4193 @@
+{
+ "E01-CAS": {
+  "tables": [
+   "airports"
+  ],
+  "columns": [
+   "airports.airport_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports\n#output count(*) \n#filter is_cargo_hub = 1",
+  "eval_count": 19,
+  "error": null,
+  "seconds": 0.536,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-SCH": {
+  "tables": [
+   "airports"
+  ],
+  "columns": [
+   "airports.airport_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports\n#output count(*)\n#filter is_cargo_hub = 1",
+  "eval_count": 19,
+  "error": null,
+  "seconds": 0.49,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-BIZ": {
+  "tables": [
+   "airports"
+  ],
+  "columns": [
+   "airports.airport_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports\n#output count(*) \n#filter is_cargo_hub = 1",
+  "eval_count": 19,
+  "error": null,
+  "seconds": 0.502,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-VAG": {
+  "tables": [
+   "airports",
+   "airlines"
+  ],
+  "columns": [
+   "airlines.airline_id",
+   "airlines.home_hub_airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airlines, airports\n#output count(DISTINCT home_hub_airport_id)\n#filter none",
+  "eval_count": 22,
+  "error": null,
+  "seconds": 0.549,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E02-CAS": {
+  "tables": [
+   "airports"
+  ],
+  "columns": [
+   "airports.iata_code",
+   "airports.night_curfew",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.iata_code"
+  ],
+  "filter_columns": [
+   "airports.night_curfew"
+  ],
+  "output_text": "airports.iata_code",
+  "filter_text": "airports.night_curfew = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports\n#output airports.iata_code\n#filter airports.night_curfew = 1",
+  "eval_count": 22,
+  "error": null,
+  "seconds": 0.563,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E02-SCH": {
+  "tables": [
+   "airports"
+  ],
+  "columns": [
+   "airports.iata_code",
+   "airports.night_curfew",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.iata_code"
+  ],
+  "filter_columns": [
+   "airports.night_curfew"
+  ],
+  "output_text": "airports.iata_code",
+  "filter_text": "airports.night_curfew = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports\n#output airports.iata_code\n#filter airports.night_curfew = 1",
+  "eval_count": 22,
+  "error": null,
+  "seconds": 0.55,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E02-BIZ": {
+  "tables": [
+   "airports"
+  ],
+  "columns": [
+   "airports.iata_code",
+   "airports.night_curfew",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.iata_code"
+  ],
+  "filter_columns": [
+   "airports.night_curfew"
+  ],
+  "output_text": "airports.iata_code",
+  "filter_text": "airports.night_curfew = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports\n#output airports.iata_code\n#filter airports.night_curfew = 1",
+  "eval_count": 22,
+  "error": null,
+  "seconds": 0.548,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E02-VAG": {
+  "tables": [
+   "airports",
+   "crew_members",
+   "flights",
+   "crew_assignments"
+  ],
+  "columns": [
+   "airports.name",
+   "airports.night_curfew",
+   "flights.flight_id",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "crew_members.crew_member_id",
+   "crew_members.base_airport_id",
+   "airports.airport_id",
+   "crew_assignments.assignment_id",
+   "crew_assignments.crew_member_id",
+   "crew_assignments.flight_id"
+  ],
+  "output_columns": [
+   "airports.name"
+  ],
+  "filter_columns": [
+   "airports.night_curfew"
+  ],
+  "output_text": "airports.name",
+  "filter_text": "airports.night_curfew = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, crew_members, flights, crew_assignments\n#output airports.name\n#filter airports.night_curfew = 1",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.692,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "E03-CAS": {
+  "tables": [
+   "airlines"
+  ],
+  "columns": [
+   "airlines.name",
+   "airlines.alliance",
+   "airlines.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name"
+  ],
+  "filter_columns": [
+   "airlines.alliance"
+  ],
+  "output_text": "airlines.name",
+  "filter_text": "airlines.alliance = 'CargoLink'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airlines\n#output airlines.name\n#filter airlines.alliance = 'CargoLink'",
+  "eval_count": 20,
+  "error": null,
+  "seconds": 0.514,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-SCH": {
+  "tables": [
+   "airlines"
+  ],
+  "columns": [
+   "airlines.name",
+   "airlines.alliance",
+   "airlines.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name"
+  ],
+  "filter_columns": [
+   "airlines.alliance"
+  ],
+  "output_text": "airlines.name",
+  "filter_text": "airlines.alliance = 'CargoLink'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airlines\n#output airlines.name\n#filter airlines.alliance = 'CargoLink'",
+  "eval_count": 20,
+  "error": null,
+  "seconds": 0.509,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-BIZ": {
+  "tables": [
+   "airlines"
+  ],
+  "columns": [
+   "airlines.name",
+   "airlines.alliance",
+   "airlines.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name"
+  ],
+  "filter_columns": [
+   "airlines.alliance"
+  ],
+  "output_text": "airlines.name",
+  "filter_text": "airlines.alliance = 'CargoLink'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airlines\n#output airlines.name\n#filter airlines.alliance = 'CargoLink'",
+  "eval_count": 20,
+  "error": null,
+  "seconds": 0.506,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-VAG": {
+  "tables": [
+   "airlines"
+  ],
+  "columns": [
+   "airlines.name",
+   "airlines.alliance",
+   "airlines.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name"
+  ],
+  "filter_columns": [
+   "airlines.alliance"
+  ],
+  "output_text": "airlines.name",
+  "filter_text": "airlines.alliance = 'CargoLink'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airlines\n#output airlines.name\n#filter airlines.alliance = 'CargoLink'",
+  "eval_count": 20,
+  "error": null,
+  "seconds": 0.499,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-CAS": {
+  "tables": [
+   "aircraft_types"
+  ],
+  "columns": [
+   "aircraft_types.model",
+   "aircraft_types.manufacturer",
+   "aircraft_types.type_id"
+  ],
+  "output_columns": [
+   "aircraft_types.model"
+  ],
+  "filter_columns": [
+   "aircraft_types.manufacturer"
+  ],
+  "output_text": "aircraft_types.model",
+  "filter_text": "aircraft_types.manufacturer, 'Airbus'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft_types\n#output aircraft_types.model\n#filter aircraft_types.manufacturer, 'Airbus'",
+  "eval_count": 23,
+  "error": null,
+  "seconds": 0.565,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-SCH": {
+  "tables": [
+   "aircraft_types"
+  ],
+  "columns": [
+   "aircraft_types.model",
+   "aircraft_types.manufacturer",
+   "aircraft_types.type_id"
+  ],
+  "output_columns": [
+   "aircraft_types.model"
+  ],
+  "filter_columns": [
+   "aircraft_types.manufacturer"
+  ],
+  "output_text": "aircraft_types.model",
+  "filter_text": "aircraft_types.manufacturer = 'Airbus'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft_types\n#output aircraft_types.model\n#filter aircraft_types.manufacturer = 'Airbus'",
+  "eval_count": 23,
+  "error": null,
+  "seconds": 0.594,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-BIZ": {
+  "tables": [
+   "aircraft_types"
+  ],
+  "columns": [
+   "aircraft_types.model",
+   "aircraft_types.manufacturer",
+   "aircraft_types.type_id"
+  ],
+  "output_columns": [
+   "aircraft_types.model"
+  ],
+  "filter_columns": [
+   "aircraft_types.manufacturer"
+  ],
+  "output_text": "aircraft_types.model",
+  "filter_text": "aircraft_types.manufacturer, 'Airbus'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft_types\n#output aircraft_types.model\n#filter aircraft_types.manufacturer, 'Airbus'",
+  "eval_count": 23,
+  "error": null,
+  "seconds": 0.57,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-VAG": {
+  "tables": [
+   "aircraft_types"
+  ],
+  "columns": [
+   "aircraft_types.type_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft_types\n#output model\n#filter manufacturer, 'Airbus'",
+  "eval_count": 18,
+  "error": null,
+  "seconds": 0.467,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-CAS": {
+  "tables": [
+   "aircraft"
+  ],
+  "columns": [
+   "aircraft.ownership",
+   "aircraft.aircraft_id"
+  ],
+  "output_columns": [
+   "aircraft.ownership"
+  ],
+  "filter_columns": [
+   "aircraft.ownership"
+  ],
+  "output_text": "aircraft.ownership",
+  "filter_text": "aircraft.ownership = 'leased'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft\n#output aircraft.ownership\n#filter aircraft.ownership = 'leased'",
+  "eval_count": 20,
+  "error": null,
+  "seconds": 0.51,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-SCH": {
+  "tables": [
+   "aircraft"
+  ],
+  "columns": [
+   "aircraft.aircraft_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft\n#output count(*) \n#filter ownership = 'leased'",
+  "eval_count": 17,
+  "error": null,
+  "seconds": 0.449,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-BIZ": {
+  "tables": [
+   "airlines",
+   "aircraft"
+  ],
+  "columns": [
+   "airlines.airline_id",
+   "aircraft.aircraft_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, airlines\n#output count(*) \n#filter ownership = 'leased'",
+  "eval_count": 19,
+  "error": null,
+  "seconds": 0.493,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E05-VAG": {
+  "tables": [
+   "aircraft"
+  ],
+  "columns": [
+   "aircraft.aircraft_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft\n#output count(*) \n#filter ownership = 'leased'",
+  "eval_count": 17,
+  "error": null,
+  "seconds": 0.446,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E06-CAS": {
+  "tables": [
+   "aircraft_types",
+   "aircraft",
+   "crew_members"
+  ],
+  "columns": [
+   "aircraft.tail_number",
+   "aircraft.status",
+   "crew_members.is_active",
+   "crew_members.crew_member_id",
+   "crew_members.type_rating_id",
+   "aircraft_types.type_id",
+   "aircraft.aircraft_id",
+   "aircraft.type_id"
+  ],
+  "output_columns": [
+   "aircraft.tail_number",
+   "aircraft.status"
+  ],
+  "filter_columns": [
+   "aircraft.status",
+   "crew_members.is_active"
+  ],
+  "output_text": "aircraft.tail_number, aircraft.status",
+  "filter_text": "aircraft.status, crew_members.is_active",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, crew_members\n#output aircraft.tail_number, aircraft.status\n#filter aircraft.status, crew_members.is_active",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.638,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E06-SCH": {
+  "tables": [
+   "aircraft"
+  ],
+  "columns": [
+   "aircraft.tail_number",
+   "aircraft.status",
+   "aircraft.aircraft_id"
+  ],
+  "output_columns": [
+   "aircraft.tail_number",
+   "aircraft.status"
+  ],
+  "filter_columns": [
+   "aircraft.status"
+  ],
+  "output_text": "aircraft.tail_number, aircraft.status",
+  "filter_text": "aircraft.status",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft\n#output aircraft.tail_number, aircraft.status\n#filter aircraft.status",
+  "eval_count": 18,
+  "error": null,
+  "seconds": 0.472,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E06-BIZ": {
+  "tables": [
+   "aircraft",
+   "maintenance_records"
+  ],
+  "columns": [
+   "aircraft.tail_number",
+   "aircraft.status",
+   "maintenance_records.maintenance_id",
+   "maintenance_records.aircraft_id",
+   "aircraft.aircraft_id"
+  ],
+  "output_columns": [
+   "aircraft.tail_number",
+   "aircraft.status"
+  ],
+  "filter_columns": [
+   "aircraft.status",
+   "aircraft.status"
+  ],
+  "output_text": "aircraft.tail_number, aircraft.status",
+  "filter_text": "aircraft.status = 'maintenance' OR aircraft.status = 'retired'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, maintenance_records\n#output aircraft.tail_number, aircraft.status\n#filter aircraft.status = 'maintenance' OR aircraft.status = 'retired'",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.784,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E06-VAG": {
+  "tables": [
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "aircraft.tail_number",
+   "aircraft.status",
+   "flights.status",
+   "flights.flight_id",
+   "flights.aircraft_id",
+   "aircraft.aircraft_id"
+  ],
+  "output_columns": [
+   "aircraft.tail_number"
+  ],
+  "filter_columns": [
+   "aircraft.status",
+   "flights.status"
+  ],
+  "output_text": "aircraft.tail_number",
+  "filter_text": "aircraft.status, flights.status",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, flights\n#output aircraft.tail_number\n#filter aircraft.status, flights.status",
+  "eval_count": 20,
+  "error": null,
+  "seconds": 0.512,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E07-CAS": {
+  "tables": [
+   "customers"
+  ],
+  "columns": [
+   "customers.customer_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables customers\n#output loyalty_tier, COUNT(customer_id)\n#filter none",
+  "eval_count": 18,
+  "error": null,
+  "seconds": 0.47,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-SCH": {
+  "tables": [
+   "customers"
+  ],
+  "columns": [
+   "customers.customer_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables customers\n#output loyalty_tier, count(*)\n#filter none",
+  "eval_count": 17,
+  "error": null,
+  "seconds": 0.447,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-BIZ": {
+  "tables": [
+   "customers"
+  ],
+  "columns": [
+   "customers.customer_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables customers\n#output loyalty_tier, COUNT(customer_id)\n#filter none",
+  "eval_count": 18,
+  "error": null,
+  "seconds": 0.469,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-VAG": {
+  "tables": [
+   "customers"
+  ],
+  "columns": [
+   "customers.customer_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables customers, loyalty_tier\n#output loyalty_tier, COUNT(customer_id)\n#filter none",
+  "eval_count": 22,
+  "error": null,
+  "seconds": 0.549,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E08-CAS": {
+  "tables": [
+   "customers"
+  ],
+  "columns": [
+   "customers.name",
+   "customers.city",
+   "customers.country",
+   "customers.customer_id"
+  ],
+  "output_columns": [
+   "customers.name",
+   "customers.city"
+  ],
+  "filter_columns": [
+   "customers.country"
+  ],
+  "output_text": "customers.name, customers.city",
+  "filter_text": "customers.country = 'Germany'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables customers\n#output customers.name, customers.city\n#filter customers.country = 'Germany'",
+  "eval_count": 21,
+  "error": null,
+  "seconds": 0.533,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E08-SCH": {
+  "tables": [
+   "customers"
+  ],
+  "columns": [
+   "customers.name",
+   "customers.city",
+   "customers.country",
+   "customers.customer_id"
+  ],
+  "output_columns": [
+   "customers.name",
+   "customers.city"
+  ],
+  "filter_columns": [
+   "customers.country"
+  ],
+  "output_text": "customers.name, customers.city",
+  "filter_text": "customers.country = 'Germany'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables customers\n#output customers.name, customers.city\n#filter customers.country = 'Germany'",
+  "eval_count": 21,
+  "error": null,
+  "seconds": 0.531,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E08-BIZ": {
+  "tables": [
+   "customers"
+  ],
+  "columns": [
+   "customers.account_code",
+   "customers.country",
+   "customers.customer_id"
+  ],
+  "output_columns": [
+   "customers.account_code"
+  ],
+  "filter_columns": [
+   "customers.country"
+  ],
+  "output_text": "customers.account_code, customers.home_city",
+  "filter_text": "customers.country = 'Germany'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables customers\n#output customers.account_code, customers.home_city\n#filter customers.country = 'Germany'",
+  "eval_count": 23,
+  "error": null,
+  "seconds": 0.573,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E08-VAG": {
+  "tables": [
+   "customers"
+  ],
+  "columns": [
+   "customers.name",
+   "customers.country",
+   "customers.customer_id"
+  ],
+  "output_columns": [
+   "customers.name",
+   "customers.country"
+  ],
+  "filter_columns": [
+   "customers.country"
+  ],
+  "output_text": "customers.name, customers.country",
+  "filter_text": "customers.country = 'Germany'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables customers\n#output customers.name, customers.country\n#filter customers.country = 'Germany'",
+  "eval_count": 21,
+  "error": null,
+  "seconds": 0.53,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-CAS": {
+  "tables": [
+   "warehouses"
+  ],
+  "columns": [
+   "warehouses.warehouse_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables warehouses\n#output warehouse_type, count(*)\n#filter none",
+  "eval_count": 16,
+  "error": null,
+  "seconds": 0.429,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-SCH": {
+  "tables": [
+   "warehouses"
+  ],
+  "columns": [
+   "warehouses.warehouse_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables warehouses\n#output warehouse_type, count(*)\n#filter none",
+  "eval_count": 16,
+  "error": null,
+  "seconds": 0.426,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-BIZ": {
+  "tables": [
+   "warehouses"
+  ],
+  "columns": [
+   "warehouses.warehouse_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables warehouses, warehouse_type\n#output warehouse_type, count(*) as warehouse_count\n#filter none",
+  "eval_count": 22,
+  "error": null,
+  "seconds": 0.55,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-VAG": {
+  "tables": [
+   "airports",
+   "warehouses"
+  ],
+  "columns": [
+   "warehouses.warehouse_type",
+   "warehouses.warehouse_id",
+   "warehouses.airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "warehouses.warehouse_type",
+   "warehouses.warehouse_id"
+  ],
+  "filter_columns": [],
+  "output_text": "warehouses.warehouse_type, COUNT(warehouses.warehouse_id)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables warehouses, airports\n#output warehouses.warehouse_type, COUNT(warehouses.warehouse_id)\n#filter none",
+  "eval_count": 25,
+  "error": null,
+  "seconds": 0.611,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E10-CAS": {
+  "tables": [
+   "warehouses"
+  ],
+  "columns": [
+   "warehouses.warehouse_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables warehouses\n#output sum(floor_area_m2)\n#filter warehouse_type = 'cold_chain'",
+  "eval_count": 22,
+  "error": null,
+  "seconds": 0.552,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-SCH": {
+  "tables": [
+   "warehouses"
+  ],
+  "columns": [
+   "warehouses.floor_area_m2",
+   "warehouses.warehouse_type",
+   "warehouses.warehouse_id"
+  ],
+  "output_columns": [
+   "warehouses.floor_area_m2"
+  ],
+  "filter_columns": [
+   "warehouses.warehouse_type"
+  ],
+  "output_text": "warehouses.floor_area_m2",
+  "filter_text": "warehouses.warehouse_type = 'cold_chain'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables warehouses\n#output warehouses.floor_area_m2\n#filter warehouses.warehouse_type = 'cold_chain'",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.595,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-BIZ": {
+  "tables": [
+   "warehouses"
+  ],
+  "columns": [
+   "warehouses.warehouse_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables warehouses\n#output sum(floor_area_m2)\n#filter warehouse_type = 'cold_chain'",
+  "eval_count": 22,
+  "error": null,
+  "seconds": 0.553,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-VAG": {
+  "tables": [
+   "warehouses"
+  ],
+  "columns": [
+   "warehouses.floor_area_m2",
+   "warehouses.warehouse_type",
+   "warehouses.warehouse_id"
+  ],
+  "output_columns": [
+   "warehouses.floor_area_m2"
+  ],
+  "filter_columns": [
+   "warehouses.warehouse_type"
+  ],
+  "output_text": "warehouses.floor_area_m2",
+  "filter_text": "warehouses.warehouse_type = 'cold_chain'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables warehouses\n#output warehouses.floor_area_m2\n#filter warehouses.warehouse_type = 'cold_chain'",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.61,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "M01-CAS": {
+  "tables": [
+   "airlines",
+   "aircraft"
+  ],
+  "columns": [
+   "airlines.name",
+   "aircraft.aircraft_id",
+   "airlines.airline_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name",
+   "aircraft.aircraft_id"
+  ],
+  "filter_columns": [],
+  "output_text": "airlines.name, COUNT(aircraft.aircraft_id) AS plane_count",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, airlines\n#output airlines.name, COUNT(aircraft.aircraft_id) AS plane_count\n#filter none",
+  "eval_count": 27,
+  "error": null,
+  "seconds": 0.653,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M01-SCH": {
+  "tables": [
+   "airlines",
+   "aircraft"
+  ],
+  "columns": [
+   "airlines.name",
+   "aircraft.aircraft_id",
+   "airlines.airline_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name",
+   "aircraft.aircraft_id"
+  ],
+  "filter_columns": [],
+  "output_text": "airlines.name, COUNT(aircraft.aircraft_id)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airlines, aircraft\n#output airlines.name, COUNT(aircraft.aircraft_id)\n#filter none",
+  "eval_count": 23,
+  "error": null,
+  "seconds": 0.591,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M01-BIZ": {
+  "tables": [
+   "airlines",
+   "aircraft"
+  ],
+  "columns": [
+   "airlines.name",
+   "aircraft.aircraft_id",
+   "airlines.airline_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name",
+   "aircraft.aircraft_id"
+  ],
+  "filter_columns": [],
+  "output_text": "airlines.name, COUNT(aircraft.aircraft_id) AS fleet_size",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, airlines\n#output airlines.name, COUNT(aircraft.aircraft_id) AS fleet_size\n#filter none",
+  "eval_count": 27,
+  "error": null,
+  "seconds": 0.655,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M01-VAG": {
+  "tables": [
+   "airlines",
+   "aircraft"
+  ],
+  "columns": [
+   "airlines.name",
+   "aircraft.aircraft_id",
+   "airlines.airline_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name",
+   "aircraft.aircraft_id"
+  ],
+  "filter_columns": [],
+  "output_text": "airlines.name, COUNT(aircraft.aircraft_id)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, airlines\n#output airlines.name, COUNT(aircraft.aircraft_id)\n#filter none",
+  "eval_count": 23,
+  "error": null,
+  "seconds": 0.566,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-CAS": {
+  "tables": [
+   "aircraft_types",
+   "aircraft"
+  ],
+  "columns": [
+   "aircraft_types.model",
+   "aircraft.aircraft_id",
+   "aircraft.status",
+   "aircraft_types.type_id",
+   "aircraft.type_id"
+  ],
+  "output_columns": [
+   "aircraft_types.model",
+   "aircraft.aircraft_id"
+  ],
+  "filter_columns": [
+   "aircraft.status",
+   "aircraft_types.type_id"
+  ],
+  "output_text": "aircraft_types.model, COUNT(aircraft.aircraft_id)",
+  "filter_text": "aircraft.status, aircraft_types.type_id",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, aircraft_types\n#output aircraft_types.model, COUNT(aircraft.aircraft_id)\n#filter aircraft.status, aircraft_types.type_id",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.74,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-SCH": {
+  "tables": [
+   "aircraft_types",
+   "aircraft"
+  ],
+  "columns": [
+   "aircraft_types.model",
+   "aircraft.aircraft_id",
+   "aircraft.status",
+   "aircraft_types.type_id",
+   "aircraft.type_id"
+  ],
+  "output_columns": [
+   "aircraft_types.model",
+   "aircraft.aircraft_id"
+  ],
+  "filter_columns": [
+   "aircraft.status"
+  ],
+  "output_text": "aircraft_types.model, COUNT(aircraft.aircraft_id)",
+  "filter_text": "aircraft.status = 'active'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, aircraft_types\n#output aircraft_types.model, COUNT(aircraft.aircraft_id)\n#filter aircraft.status = 'active'",
+  "eval_count": 30,
+  "error": null,
+  "seconds": 0.72,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-BIZ": {
+  "tables": [
+   "aircraft_types",
+   "aircraft"
+  ],
+  "columns": [
+   "aircraft_types.model",
+   "aircraft.aircraft_id",
+   "aircraft.status",
+   "aircraft_types.type_id",
+   "aircraft.type_id"
+  ],
+  "output_columns": [
+   "aircraft_types.model",
+   "aircraft.aircraft_id"
+  ],
+  "filter_columns": [
+   "aircraft.status",
+   "aircraft_types.type_id"
+  ],
+  "output_text": "aircraft_types.model, COUNT(aircraft.aircraft_id) AS active_count",
+  "filter_text": "aircraft.status, aircraft_types.type_id",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, aircraft_types\n#output aircraft_types.model, COUNT(aircraft.aircraft_id) AS active_count\n#filter aircraft.status, aircraft_types.type_id",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.822,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-VAG": {
+  "tables": [
+   "aircraft_types",
+   "aircraft"
+  ],
+  "columns": [
+   "aircraft_types.model",
+   "aircraft.aircraft_id",
+   "aircraft.status",
+   "aircraft_types.type_id",
+   "aircraft.type_id"
+  ],
+  "output_columns": [
+   "aircraft_types.model",
+   "aircraft.aircraft_id"
+  ],
+  "filter_columns": [
+   "aircraft.status",
+   "aircraft_types.type_id"
+  ],
+  "output_text": "aircraft_types.model, COUNT(aircraft.aircraft_id) AS active_planes",
+  "filter_text": "aircraft.status, aircraft_types.type_id",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, aircraft_types\n#output aircraft_types.model, COUNT(aircraft.aircraft_id) AS active_planes\n#filter aircraft.status, aircraft_types.type_id",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.821,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-CAS": {
+  "tables": [
+   "airports",
+   "flights"
+  ],
+  "columns": [
+   "flights.flight_id",
+   "airports.city",
+   "flights.origin_airport_id",
+   "airports.airport_id",
+   "flights.status",
+   "flights.destination_airport_id"
+  ],
+  "output_columns": [
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "airports.city",
+   "flights.origin_airport_id",
+   "airports.airport_id",
+   "flights.status"
+  ],
+  "output_text": "count(flights.flight_id)",
+  "filter_text": "airports.city = 'Istanbul', flights.origin_airport_id = airports.airport_id, flights.status = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, flights\n#output count(flights.flight_id)\n#filter airports.city = 'Istanbul', flights.origin_airport_id = airports.airport_id, flights.status = 'completed'",
+  "eval_count": 42,
+  "error": null,
+  "seconds": 0.969,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-SCH": {
+  "tables": [
+   "airports",
+   "flights"
+  ],
+  "columns": [
+   "flights.status",
+   "flights.origin_airport_id",
+   "flights.flight_id",
+   "flights.destination_airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [
+   "flights.status",
+   "flights.origin_airport_id"
+  ],
+  "output_text": "",
+  "filter_text": "flights.status = 'completed', flights.origin_airport_id = (SELECT airport_id FROM airports WHERE iata_code = 'IST')",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, airports\n#output count(*)\n#filter flights.status = 'completed', flights.origin_airport_id = (SELECT airport_id FROM airports WHERE iata_code = 'IST')",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.925,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-BIZ": {
+  "tables": [
+   "airports",
+   "flights"
+  ],
+  "columns": [
+   "flights.status",
+   "airports.icao_code",
+   "flights.flight_id",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [
+   "flights.status",
+   "airports.icao_code"
+  ],
+  "output_text": "",
+  "filter_text": "flights.status = 'completed', airports.icao_code = 'IST'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, airports\n#output SUM(flights.pieces), SUM(flights.total_weight_kg)\n#filter flights.status = 'completed', airports.icao_code = 'IST'",
+  "eval_count": 39,
+  "error": null,
+  "seconds": 0.908,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-VAG": {
+  "tables": [
+   "airports",
+   "flights",
+   "tracking_events"
+  ],
+  "columns": [
+   "airports.name",
+   "tracking_events.event_id",
+   "airports.iata_code",
+   "tracking_events.event_code",
+   "tracking_events.airport_id",
+   "tracking_events.flight_id",
+   "flights.flight_id",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.name",
+   "tracking_events.event_id"
+  ],
+  "filter_columns": [
+   "airports.iata_code",
+   "tracking_events.event_code"
+  ],
+  "output_text": "airports.name, COUNT(tracking_events.event_id) AS event_count",
+  "filter_text": "airports.iata_code = 'IST', tracking_events.event_code IN ('DEP', 'ARR')",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, flights, tracking_events\n#output airports.name, COUNT(tracking_events.event_id) AS event_count\n#filter airports.iata_code = 'IST', tracking_events.event_code IN ('DEP', 'ARR')",
+  "eval_count": 48,
+  "error": null,
+  "seconds": 1.085,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M04-CAS": {
+  "tables": [
+   "airports",
+   "flights"
+  ],
+  "columns": [
+   "flights.flight_id",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, airports\n#output origin_airport_id, destination_airport_id, count(*) as flight_count\n#filter status = 'completed'",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.764,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-SCH": {
+  "tables": [
+   "airports",
+   "flights"
+  ],
+  "columns": [
+   "airports.iata_code",
+   "flights.flight_id",
+   "flights.status",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.iata_code",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status",
+   "airports.iata_code"
+  ],
+  "output_text": "airports.iata_code, COUNT(flights.flight_id)",
+  "filter_text": "flights.status, airports.iata_code",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, airports\n#output airports.iata_code, COUNT(flights.flight_id)\n#filter flights.status, airports.iata_code",
+  "eval_count": 30,
+  "error": null,
+  "seconds": 0.732,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-BIZ": {
+  "tables": [
+   "airports",
+   "flights",
+   "flight_cargo"
+  ],
+  "columns": [
+   "airports.name",
+   "flights.flight_id",
+   "flights.status",
+   "flight_cargo.leg_number",
+   "flight_cargo.flight_cargo_id",
+   "flight_cargo.flight_id",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.name",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status",
+   "flight_cargo.leg_number"
+  ],
+  "output_text": "airports.name, COUNT(flights.flight_id) AS flight_count",
+  "filter_text": "flights.status = 'completed', flight_cargo.leg_number = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, flights, flight_cargo\n#output airports.name, COUNT(flights.flight_id) AS flight_count\n#filter flights.status = 'completed', flight_cargo.leg_number = 1\n#group airports.name\n#order airports.name, flight_count DESC\n#limit 5",
+  "eval_count": 63,
+  "error": null,
+  "seconds": 1.402,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M04-VAG": {
+  "tables": [
+   "airports",
+   "flights"
+  ],
+  "columns": [
+   "flights.flight_id",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, airports\n#output origin_airport_id, destination_airport_id, count(*) as flight_count\n#filter none",
+  "eval_count": 28,
+  "error": null,
+  "seconds": 0.69,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M05-CAS": {
+  "tables": [
+   "flights"
+  ],
+  "columns": [
+   "flights.status",
+   "flights.flight_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "",
+  "filter_text": "flights.status = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights\n#output AVG(flights.delay_minutes)\n#filter flights.status = 'completed'",
+  "eval_count": 21,
+  "error": null,
+  "seconds": 0.527,
+  "recall": {
+   "tables_found": 0.3333333333333333,
+   "all_tables_found": false,
+   "columns_listed": 0.125,
+   "columns_in_schema": 0.5,
+   "tables_kept": 1
+  }
+ },
+ "M05-SCH": {
+  "tables": [
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "flights.actual_arrival",
+   "flights.scheduled_arrival",
+   "flights.status",
+   "flights.flight_id",
+   "flights.aircraft_id",
+   "aircraft.aircraft_id"
+  ],
+  "output_columns": [
+   "flights.actual_arrival",
+   "flights.scheduled_arrival"
+  ],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "aircraft.model, AVG((strftime('%s', flights.actual_arrival) - strftime('%s', flights.scheduled_arrival)) / 60) AS avg_delay_minutes",
+  "filter_text": "flights.status = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, aircraft\n#output aircraft.model, AVG((strftime('%s', flights.actual_arrival) - strftime('%s', flights.scheduled_arrival)) / 60) AS avg_delay_minutes\n#filter flights.status = 'completed'",
+  "eval_count": 52,
+  "error": null,
+  "seconds": 1.196,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.625,
+   "columns_in_schema": 0.75,
+   "tables_kept": 2
+  }
+ },
+ "M05-BIZ": {
+  "tables": [
+   "airlines",
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "airlines.name",
+   "flights.status",
+   "flights.flight_id",
+   "flights.aircraft_id",
+   "airlines.airline_id",
+   "aircraft.aircraft_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name"
+  ],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "airlines.name, AVG(flights.delay_minutes)",
+  "filter_text": "flights.status = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, airlines\n#output airlines.name, AVG(flights.delay_minutes)\n#filter flights.status = 'completed'",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.639,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M05-VAG": {
+  "tables": [
+   "airlines"
+  ],
+  "columns": [
+   "airlines.name",
+   "airlines.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name"
+  ],
+  "filter_columns": [],
+  "output_text": "airlines.name",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airlines\n#output airlines.name\n#filter none",
+  "eval_count": 13,
+  "error": null,
+  "seconds": 0.358,
+  "recall": {
+   "tables_found": 0.3333333333333333,
+   "all_tables_found": false,
+   "columns_listed": 0.25,
+   "columns_in_schema": 0.25,
+   "tables_kept": 1
+  }
+ },
+ "M06-CAS": {
+  "tables": [
+   "airlines",
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "airlines.name",
+   "flights.flight_id",
+   "flights.status",
+   "flights.aircraft_id",
+   "airlines.airline_id",
+   "aircraft.aircraft_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "airlines.name, COUNT(flights.flight_id)",
+  "filter_text": "flights.status = 'cancelled'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airlines, flights\n#output airlines.name, COUNT(flights.flight_id)\n#filter flights.status = 'cancelled'",
+  "eval_count": 27,
+  "error": null,
+  "seconds": 0.668,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M06-SCH": {
+  "tables": [
+   "airlines",
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "airlines.name",
+   "flights.flight_id",
+   "flights.status",
+   "flights.aircraft_id",
+   "airlines.airline_id",
+   "aircraft.aircraft_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "airlines.name, COUNT(flights.flight_id)",
+  "filter_text": "flights.status = 'cancelled'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, aircraft, airlines\n#output airlines.name, COUNT(flights.flight_id)\n#filter flights.status = 'cancelled'",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.697,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M06-BIZ": {
+  "tables": [
+   "airlines",
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "airlines.name",
+   "flights.flight_id",
+   "flights.status",
+   "flights.aircraft_id",
+   "airlines.airline_id",
+   "aircraft.aircraft_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "airlines.name, COUNT(flights.flight_id) AS cancellation_volume",
+  "filter_text": "flights.status = 'cancelled'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, airlines\n#output airlines.name, COUNT(flights.flight_id) AS cancellation_volume\n#filter flights.status = 'cancelled'",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.732,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M06-VAG": {
+  "tables": [
+   "airlines",
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "airlines.name",
+   "flights.flight_id",
+   "flights.status",
+   "flights.aircraft_id",
+   "airlines.airline_id",
+   "aircraft.aircraft_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "airlines.name, COUNT(flights.flight_id) AS cancellation_count",
+  "filter_text": "flights.status = 'cancelled'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, airlines\n#output airlines.name, COUNT(flights.flight_id) AS cancellation_count\n#filter flights.status = 'cancelled'",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.736,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M07-CAS": {
+  "tables": [
+   "airlines",
+   "aircraft",
+   "flights",
+   "maintenance_records"
+  ],
+  "columns": [
+   "airlines.name",
+   "maintenance_records.maintenance_id",
+   "maintenance_records.aircraft_id",
+   "flights.flight_id",
+   "flights.aircraft_id",
+   "airlines.airline_id",
+   "aircraft.aircraft_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name"
+  ],
+  "filter_columns": [],
+  "output_text": "airlines.name, SUM(flights.co2_emissions_kg) / 1000 AS total_co2_tonnes",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, aircraft, maintenance_records\n#output airlines.name, SUM(flights.co2_emissions_kg) / 1000 AS total_co2_tonnes\n#filter none",
+  "eval_count": 42,
+  "error": null,
+  "seconds": 0.968,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.75,
+   "columns_in_schema": 0.75,
+   "tables_kept": 4
+  }
+ },
+ "M07-SCH": {
+  "tables": [
+   "airlines",
+   "aircraft",
+   "flights",
+   "fuel_uplifts"
+  ],
+  "columns": [
+   "airlines.name",
+   "fuel_uplifts.co2_emissions_kg",
+   "flights.flight_id",
+   "flights.aircraft_id",
+   "airlines.airline_id",
+   "fuel_uplifts.fuel_uplift_id",
+   "fuel_uplifts.flight_id",
+   "aircraft.aircraft_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name",
+   "fuel_uplifts.co2_emissions_kg"
+  ],
+  "filter_columns": [],
+  "output_text": "airlines.name, SUM(fuel_uplifts.co2_emissions_kg / 1000) AS avg_co2_emissions_kg",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables fuel_uplifts, flights, aircraft, airlines\n#output airlines.name, SUM(fuel_uplifts.co2_emissions_kg / 1000) AS avg_co2_emissions_kg\n#filter none",
+  "eval_count": 50,
+  "error": null,
+  "seconds": 1.148,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "M07-BIZ": {
+  "tables": [
+   "aircraft",
+   "flights",
+   "fuel_uplifts"
+  ],
+  "columns": [
+   "aircraft.airline_id",
+   "fuel_uplifts.co2_emissions_kg",
+   "flights.flight_id",
+   "flights.aircraft_id",
+   "fuel_uplifts.fuel_uplift_id",
+   "fuel_uplifts.flight_id",
+   "aircraft.aircraft_id"
+  ],
+  "output_columns": [
+   "aircraft.airline_id",
+   "fuel_uplifts.co2_emissions_kg"
+  ],
+  "filter_columns": [],
+  "output_text": "aircraft.airline_id, SUM(fuel_uplifts.co2_emissions_kg) / 1000 AS carbon_footprint_tonnes",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, fuel_uplifts, flights\n#output aircraft.airline_id, SUM(fuel_uplifts.co2_emissions_kg) / 1000 AS carbon_footprint_tonnes\n#filter none",
+  "eval_count": 49,
+  "error": null,
+  "seconds": 1.129,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.75,
+   "columns_in_schema": 0.75,
+   "tables_kept": 3
+  }
+ },
+ "M07-VAG": {
+  "tables": [
+   "airports",
+   "airlines",
+   "aircraft",
+   "fuel_uplifts"
+  ],
+  "columns": [
+   "airlines.name",
+   "fuel_uplifts.co2_emissions_kg",
+   "fuel_uplifts.fuel_uplift_id",
+   "fuel_uplifts.airport_id",
+   "airlines.airline_id",
+   "airlines.home_hub_airport_id",
+   "airports.airport_id",
+   "aircraft.aircraft_id",
+   "aircraft.home_airport_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name",
+   "fuel_uplifts.co2_emissions_kg"
+  ],
+  "filter_columns": [],
+  "output_text": "airlines.name, SUM(fuel_uplifts.co2_emissions_kg) AS total_emissions_kg",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables fuel_uplifts, aircraft, airlines\n#output airlines.name, SUM(fuel_uplifts.co2_emissions_kg) AS total_emissions_kg\n#filter none",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.925,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.625,
+   "columns_in_schema": 0.75,
+   "tables_kept": 4
+  }
+ },
+ "M08-CAS": {
+  "tables": [
+   "airports",
+   "fuel_uplifts"
+  ],
+  "columns": [
+   "airports.region",
+   "fuel_uplifts.price_usd_per_litre",
+   "fuel_uplifts.fuel_uplift_id",
+   "fuel_uplifts.airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.region",
+   "fuel_uplifts.price_usd_per_litre"
+  ],
+  "filter_columns": [],
+  "output_text": "airports.region, AVG(fuel_uplifts.price_usd_per_litre)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables fuel_uplifts, airports\n#output airports.region, AVG(fuel_uplifts.price_usd_per_litre)\n#filter none",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.738,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-SCH": {
+  "tables": [
+   "airports",
+   "fuel_uplifts"
+  ],
+  "columns": [
+   "airports.region",
+   "fuel_uplifts.price_usd_per_litre",
+   "fuel_uplifts.fuel_uplift_id",
+   "fuel_uplifts.airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.region",
+   "fuel_uplifts.price_usd_per_litre"
+  ],
+  "filter_columns": [],
+  "output_text": "airports.region, AVG(fuel_uplifts.price_usd_per_litre)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, fuel_uplifts\n#output airports.region, AVG(fuel_uplifts.price_usd_per_litre)\n#filter none",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.741,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-BIZ": {
+  "tables": [
+   "airports",
+   "fuel_uplifts"
+  ],
+  "columns": [
+   "airports.region",
+   "fuel_uplifts.price_usd_per_litre",
+   "fuel_uplifts.fuel_uplift_id",
+   "fuel_uplifts.airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.region",
+   "fuel_uplifts.price_usd_per_litre"
+  ],
+  "filter_columns": [],
+  "output_text": "airports.region, AVG(fuel_uplifts.price_usd_per_litre)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables fuel_uplifts, airports\n#output airports.region, AVG(fuel_uplifts.price_usd_per_litre)\n#filter none",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.739,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-VAG": {
+  "tables": [
+   "airports",
+   "fuel_uplifts"
+  ],
+  "columns": [
+   "airports.country",
+   "fuel_uplifts.price_usd_per_litre",
+   "fuel_uplifts.fuel_uplift_id",
+   "fuel_uplifts.airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.country",
+   "fuel_uplifts.price_usd_per_litre"
+  ],
+  "filter_columns": [],
+  "output_text": "airports.country, AVG(fuel_uplifts.price_usd_per_litre) AS avg_fuel_price",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables fuel_uplifts, airports\n#output airports.country, AVG(fuel_uplifts.price_usd_per_litre) AS avg_fuel_price\n#filter none",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.886,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-CAS": {
+  "tables": [
+   "airports",
+   "warehouses"
+  ],
+  "columns": [
+   "airports.airport_id",
+   "airports.name",
+   "warehouses.warehouse_id",
+   "warehouses.airport_id"
+  ],
+  "output_columns": [
+   "airports.airport_id",
+   "airports.name",
+   "warehouses.warehouse_id"
+  ],
+  "filter_columns": [],
+  "output_text": "airports.airport_id, airports.name, COUNT(warehouses.warehouse_id) AS warehouse_count",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, warehouses\n#output airports.airport_id, airports.name, COUNT(warehouses.warehouse_id) AS warehouse_count\n#filter none",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.779,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-SCH": {
+  "tables": [
+   "airports",
+   "warehouses"
+  ],
+  "columns": [
+   "airports.iata_code",
+   "warehouses.warehouse_id",
+   "warehouses.airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.iata_code",
+   "warehouses.warehouse_id"
+  ],
+  "filter_columns": [],
+  "output_text": "airports.iata_code, COUNT(warehouses.warehouse_id)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, warehouses\n#output airports.iata_code, COUNT(warehouses.warehouse_id)\n#filter none",
+  "eval_count": 25,
+  "error": null,
+  "seconds": 0.623,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-BIZ": {
+  "tables": [
+   "airports",
+   "warehouses"
+  ],
+  "columns": [
+   "airports.name",
+   "warehouses.warehouse_id",
+   "warehouses.airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.name",
+   "warehouses.warehouse_id"
+  ],
+  "filter_columns": [],
+  "output_text": "airports.name, COUNT(warehouses.warehouse_id) AS warehouse_count",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, warehouses\n#output airports.name, COUNT(warehouses.warehouse_id) AS warehouse_count\n#filter none",
+  "eval_count": 27,
+  "error": null,
+  "seconds": 0.653,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-VAG": {
+  "tables": [
+   "airports",
+   "warehouses"
+  ],
+  "columns": [
+   "airports.airport_id",
+   "airports.name",
+   "warehouses.warehouse_id",
+   "warehouses.airport_id"
+  ],
+  "output_columns": [
+   "airports.airport_id",
+   "airports.name",
+   "warehouses.warehouse_id"
+  ],
+  "filter_columns": [],
+  "output_text": "airports.airport_id, airports.name, COUNT(warehouses.warehouse_id) AS warehouse_count",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, warehouses\n#output airports.airport_id, airports.name, COUNT(warehouses.warehouse_id) AS warehouse_count\n#filter none",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.752,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-CAS": {
+  "tables": [
+   "airports",
+   "warehouses"
+  ],
+  "columns": [
+   "airports.airport_id",
+   "airports.name",
+   "warehouses.is_bonded",
+   "warehouses.warehouse_id",
+   "warehouses.airport_id"
+  ],
+  "output_columns": [
+   "airports.airport_id",
+   "airports.name"
+  ],
+  "filter_columns": [
+   "warehouses.is_bonded",
+   "airports.airport_id"
+  ],
+  "output_text": "airports.airport_id, airports.name",
+  "filter_text": "warehouses.is_bonded, airports.airport_id",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, warehouses\n#output airports.airport_id, airports.name\n#filter warehouses.is_bonded, airports.airport_id",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.692,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-SCH": {
+  "tables": [
+   "airports",
+   "warehouses"
+  ],
+  "columns": [
+   "airports.iata_code",
+   "warehouses.warehouse_id",
+   "warehouses.is_bonded",
+   "warehouses.airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.iata_code",
+   "warehouses.warehouse_id"
+  ],
+  "filter_columns": [
+   "warehouses.is_bonded"
+  ],
+  "output_text": "airports.iata_code, COUNT(warehouses.warehouse_id)",
+  "filter_text": "warehouses.is_bonded = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, warehouses\n#output airports.iata_code, COUNT(warehouses.warehouse_id)\n#filter warehouses.is_bonded = 1",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.758,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-BIZ": {
+  "tables": [
+   "airports",
+   "warehouses"
+  ],
+  "columns": [
+   "airports.name",
+   "warehouses.warehouse_id",
+   "warehouses.is_bonded",
+   "warehouses.airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.name",
+   "warehouses.warehouse_id"
+  ],
+  "filter_columns": [
+   "warehouses.is_bonded",
+   "airports.name"
+  ],
+  "output_text": "airports.name, COUNT(warehouses.warehouse_id) AS bonded_count",
+  "filter_text": "warehouses.is_bonded = 1, GROUP BY airports.name",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, warehouses\n#output airports.name, COUNT(warehouses.warehouse_id) AS bonded_count\n#filter warehouses.is_bonded = 1, GROUP BY airports.name",
+  "eval_count": 39,
+  "error": null,
+  "seconds": 0.906,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-VAG": {
+  "tables": [
+   "airports",
+   "warehouses"
+  ],
+  "columns": [
+   "airports.airport_id",
+   "airports.name",
+   "warehouses.warehouse_id",
+   "warehouses.is_bonded",
+   "warehouses.airport_id"
+  ],
+  "output_columns": [
+   "airports.airport_id",
+   "airports.name",
+   "warehouses.warehouse_id"
+  ],
+  "filter_columns": [
+   "warehouses.is_bonded"
+  ],
+  "output_text": "airports.airport_id, airports.name, COUNT(warehouses.warehouse_id) AS bonded_warehouse_count",
+  "filter_text": "warehouses.is_bonded = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, warehouses\n#output airports.airport_id, airports.name, COUNT(warehouses.warehouse_id) AS bonded_warehouse_count\n#filter warehouses.is_bonded = 1",
+  "eval_count": 41,
+  "error": null,
+  "seconds": 0.942,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H01-CAS": {
+  "tables": [
+   "airlines",
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "airlines.name",
+   "aircraft.tail_number",
+   "flights.flight_id",
+   "flights.status",
+   "flights.aircraft_id",
+   "airlines.airline_id",
+   "aircraft.aircraft_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name",
+   "aircraft.tail_number",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "airlines.name, aircraft.tail_number, COUNT(flights.flight_id) AS flight_count",
+  "filter_text": "flights.status = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airlines, aircraft, flights\n#output airlines.name, aircraft.tail_number, COUNT(flights.flight_id) AS flight_count\n#filter flights.status = 'completed'",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.862,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H01-SCH": {
+  "tables": [
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "aircraft.tail_number",
+   "flights.flight_id",
+   "flights.status",
+   "flights.aircraft_id",
+   "aircraft.aircraft_id"
+  ],
+  "output_columns": [
+   "aircraft.tail_number",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "aircraft.tail_number, COUNT(flights.flight_id)",
+  "filter_text": "flights.status = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, flights\n#output aircraft.tail_number, COUNT(flights.flight_id)\n#filter flights.status = 'completed'",
+  "eval_count": 28,
+  "error": null,
+  "seconds": 0.693,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5714285714285714,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 2
+  }
+ },
+ "H01-BIZ": {
+  "tables": [
+   "airlines",
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "airlines.name",
+   "flights.flight_id",
+   "flights.status",
+   "flights.aircraft_id",
+   "airlines.airline_id",
+   "aircraft.aircraft_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airlines.name",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "airlines.name, aircraft.model, COUNT(flights.flight_id) AS completed_flights",
+  "filter_text": "flights.status = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, flights, airlines\n#output airlines.name, aircraft.model, COUNT(flights.flight_id) AS completed_flights\n#filter flights.status = 'completed'",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.862,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8571428571428571,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H01-VAG": {
+  "tables": [
+   "airlines",
+   "aircraft_types",
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "airlines.name",
+   "aircraft_types.model",
+   "flights.flight_id",
+   "flights.aircraft_id",
+   "airlines.airline_id",
+   "aircraft_types.type_id",
+   "aircraft.aircraft_id",
+   "aircraft.airline_id",
+   "aircraft.type_id"
+  ],
+  "output_columns": [
+   "airlines.name",
+   "aircraft_types.model",
+   "flights.flight_id"
+  ],
+  "filter_columns": [],
+  "output_text": "airlines.name, aircraft_types.model, COUNT(flights.flight_id) AS flight_count",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airlines, aircraft, flights, aircraft_types\n#output airlines.name, aircraft_types.model, COUNT(flights.flight_id) AS flight_count\n#filter none",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.816,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.7142857142857143,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H02-CAS": {
+  "tables": [
+   "airports",
+   "flights",
+   "crew_assignments"
+  ],
+  "columns": [
+   "airports.name",
+   "flights.destination_airport_id",
+   "flights.flight_id",
+   "flights.status",
+   "flights.origin_airport_id",
+   "airports.airport_id",
+   "crew_assignments.assignment_id",
+   "crew_assignments.flight_id"
+  ],
+  "output_columns": [
+   "airports.name",
+   "flights.destination_airport_id",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "airports.name, flights.destination_airport_id, COUNT(flights.flight_id) AS flight_count",
+  "filter_text": "flights.status = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, flights, crew_assignments\n#output airports.name, flights.destination_airport_id, COUNT(flights.flight_id) AS flight_count\n#filter flights.status = 'completed'",
+  "eval_count": 41,
+  "error": null,
+  "seconds": 0.948,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.5555555555555556,
+   "tables_kept": 3
+  }
+ },
+ "H02-SCH": {
+  "tables": [
+   "airports",
+   "airlines",
+   "flights"
+  ],
+  "columns": [
+   "airports.iata_code",
+   "airports.name",
+   "flights.flight_id",
+   "flights.status",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "airlines.airline_id",
+   "airlines.home_hub_airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.iata_code",
+   "airports.name",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status",
+   "airports.iata_code"
+  ],
+  "output_text": "airports.iata_code, airports.name, COUNT(flights.flight_id) AS flight_count",
+  "filter_text": "flights.status = 'completed', airports.iata_code",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, flights, airlines\n#output airports.iata_code, airports.name, COUNT(flights.flight_id) AS flight_count\n#filter flights.status = 'completed', airports.iata_code",
+  "eval_count": 42,
+  "error": null,
+  "seconds": 0.988,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.5555555555555556,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H02-BIZ": {
+  "tables": [
+   "airports",
+   "airlines",
+   "flights"
+  ],
+  "columns": [
+   "airports.name",
+   "airlines.name",
+   "flights.flight_id",
+   "flights.status",
+   "flights.actual_arrival",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "airlines.airline_id",
+   "airlines.home_hub_airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.name",
+   "airlines.name",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status",
+   "flights.actual_arrival"
+  ],
+  "output_text": "airports.name, airlines.name, COUNT(flights.flight_id) AS completed_arrivals",
+  "filter_text": "flights.status = 'completed', flights.actual_arrival IS NOT NULL",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, airports, airlines\n#output airports.name, airlines.name, COUNT(flights.flight_id) AS completed_arrivals\n#filter flights.status = 'completed', flights.actual_arrival IS NOT NULL",
+  "eval_count": 44,
+  "error": null,
+  "seconds": 1.011,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.5555555555555556,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H02-VAG": {
+  "tables": [
+   "airports",
+   "airlines",
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "airports.name",
+   "flights.flight_id",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "flights.aircraft_id",
+   "airlines.airline_id",
+   "airlines.home_hub_airport_id",
+   "airports.airport_id",
+   "aircraft.aircraft_id",
+   "aircraft.home_airport_id",
+   "aircraft.airline_id"
+  ],
+  "output_columns": [
+   "airports.name",
+   "flights.flight_id"
+  ],
+  "filter_columns": [],
+  "output_text": "airports.name, COUNT(flights.flight_id) as flight_count",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airlines, airports, flights, aircraft\n#output airports.name, COUNT(flights.flight_id) as flight_count\n#filter none",
+  "eval_count": 30,
+  "error": null,
+  "seconds": 0.711,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H03-CAS": {
+  "tables": [
+   "benchmark_meta",
+   "invoices"
+  ],
+  "columns": [
+   "invoices.issued_date",
+   "invoices.amount_usd",
+   "benchmark_meta.meta_key",
+   "invoices.invoice_id"
+  ],
+  "output_columns": [
+   "invoices.issued_date",
+   "invoices.amount_usd"
+  ],
+  "filter_columns": [
+   "invoices.issued_date"
+  ],
+  "output_text": "invoices.issued_date, SUM(invoices.amount_usd) AS total_invoiced",
+  "filter_text": "invoices.issued_date LIKE '2025-%'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables invoices, benchmark_meta\n#output invoices.issued_date, SUM(invoices.amount_usd) AS total_invoiced\n#filter invoices.issued_date LIKE '2025-%'",
+  "eval_count": 42,
+  "error": null,
+  "seconds": 0.967,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H03-SCH": {
+  "tables": [
+   "benchmark_meta",
+   "invoices"
+  ],
+  "columns": [
+   "invoices.issued_date",
+   "invoices.amount_usd",
+   "benchmark_meta.meta_key",
+   "invoices.invoice_id"
+  ],
+  "output_columns": [
+   "invoices.issued_date",
+   "invoices.amount_usd",
+   "invoices.amount_usd",
+   "invoices.issued_date"
+  ],
+  "filter_columns": [
+   "invoices.issued_date"
+  ],
+  "output_text": "invoices.issued_date, SUM(invoices.amount_usd), SUM(SUM(invoices.amount_usd)) OVER (ORDER BY invoices.issued_date)",
+  "filter_text": "invoices.issued_date LIKE '2025%'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables invoices, benchmark_meta\n#output invoices.issued_date, SUM(invoices.amount_usd), SUM(SUM(invoices.amount_usd)) OVER (ORDER BY invoices.issued_date)\n#filter invoices.issued_date LIKE '2025%'",
+  "eval_count": 53,
+  "error": null,
+  "seconds": 1.215,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H03-BIZ": {
+  "tables": [
+   "invoices",
+   "payments"
+  ],
+  "columns": [
+   "invoices.amount_usd",
+   "payments.amount_usd",
+   "invoices.issued_date",
+   "payments.invoice_id",
+   "invoices.invoice_id",
+   "payments.payment_id"
+  ],
+  "output_columns": [
+   "invoices.amount_usd",
+   "payments.amount_usd"
+  ],
+  "filter_columns": [
+   "invoices.issued_date",
+   "payments.invoice_id",
+   "invoices.invoice_id"
+  ],
+  "output_text": "invoices.month, SUM(invoices.amount_usd) AS billed_revenue, SUM(payments.amount_usd) AS paid_amount",
+  "filter_text": "invoices.issued_date LIKE '2025%', payments.invoice_id = invoices.invoice_id",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables invoices, payments\n#output invoices.month, SUM(invoices.amount_usd) AS billed_revenue, SUM(payments.amount_usd) AS paid_amount\n#filter invoices.issued_date LIKE '2025%', payments.invoice_id = invoices.invoice_id",
+  "eval_count": 56,
+  "error": null,
+  "seconds": 1.258,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H03-VAG": {
+  "tables": [
+   "invoices",
+   "payments"
+  ],
+  "columns": [
+   "invoices.amount_usd",
+   "payments.amount_usd",
+   "payments.payment_id",
+   "payments.invoice_id",
+   "invoices.invoice_id"
+  ],
+  "output_columns": [
+   "invoices.amount_usd",
+   "payments.amount_usd"
+  ],
+  "filter_columns": [],
+  "output_text": "invoices.amount_usd, payments.amount_usd",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables invoices, payments\n#output invoices.amount_usd, payments.amount_usd\n#filter none",
+  "eval_count": 22,
+  "error": null,
+  "seconds": 0.549,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-CAS": {
+  "tables": [
+   "benchmark_meta",
+   "flights"
+  ],
+  "columns": [
+   "flights.status",
+   "benchmark_meta.meta_key",
+   "flights.flight_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "",
+  "filter_text": "flights.status, benchmark_meta.as_of_timestamp",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, benchmark_meta\n#output flights.month, flights.count, flights.change\n#filter flights.status, benchmark_meta.as_of_timestamp",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.713,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-SCH": {
+  "tables": [
+   "benchmark_meta",
+   "flights"
+  ],
+  "columns": [
+   "flights.status",
+   "flights.actual_departure",
+   "benchmark_meta.meta_key",
+   "benchmark_meta.meta_value",
+   "flights.flight_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [
+   "flights.status",
+   "flights.actual_departure",
+   "benchmark_meta.meta_key",
+   "benchmark_meta.meta_value"
+  ],
+  "output_text": "",
+  "filter_text": "flights.status, flights.actual_departure, benchmark_meta.meta_key, benchmark_meta.meta_value",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, benchmark_meta\n#output flights.month, flights.completed_flights, flights.completed_flights_lag, flights.difference\n#filter flights.status, flights.actual_departure, benchmark_meta.meta_key, benchmark_meta.meta_value",
+  "eval_count": 48,
+  "error": null,
+  "seconds": 1.095,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-BIZ": {
+  "tables": [
+   "airports",
+   "aircraft",
+   "crew_members",
+   "flights",
+   "crew_assignments",
+   "maintenance_records",
+   "fuel_uplifts",
+   "shipments",
+   "flight_cargo",
+   "invoices",
+   "payments",
+   "incidents",
+   "insurance_claims",
+   "customs_declarations",
+   "tracking_events"
+  ],
+  "columns": [
+   "flights.distance_km",
+   "flights.status",
+   "flights.scheduled_departure",
+   "shipments.shipment_id",
+   "shipments.destination_airport_id",
+   "shipments.origin_airport_id",
+   "crew_members.crew_member_id",
+   "crew_members.base_airport_id",
+   "flight_cargo.flight_cargo_id",
+   "flight_cargo.flight_id",
+   "flight_cargo.shipment_id",
+   "payments.payment_id",
+   "payments.invoice_id",
+   "customs_declarations.declaration_id",
+   "customs_declarations.shipment_id",
+   "tracking_events.event_id",
+   "tracking_events.airport_id",
+   "tracking_events.flight_id",
+   "tracking_events.shipment_id",
+   "insurance_claims.claim_id",
+   "insurance_claims.incident_id",
+   "invoices.invoice_id",
+   "invoices.shipment_id",
+   "maintenance_records.maintenance_id",
+   "maintenance_records.airport_id",
+   "maintenance_records.aircraft_id",
+   "airports.airport_id",
+   "incidents.incident_id",
+   "incidents.airport_id",
+   "incidents.flight_cargo_id",
+   "aircraft.aircraft_id",
+   "aircraft.home_airport_id",
+   "flights.flight_id",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "flights.aircraft_id",
+   "fuel_uplifts.fuel_uplift_id",
+   "fuel_uplifts.airport_id",
+   "fuel_uplifts.flight_id",
+   "crew_assignments.assignment_id",
+   "crew_assignments.crew_member_id",
+   "crew_assignments.flight_id"
+  ],
+  "output_columns": [
+   "flights.distance_km",
+   "flights.distance_km",
+   "flights.distance_km",
+   "flights.distance_km"
+  ],
+  "filter_columns": [
+   "flights.status",
+   "flights.scheduled_departure"
+  ],
+  "output_text": "flights.month, SUM(flights.distance_km) AS total_volume_km, (SUM(flights.distance_km) - LAG(SUM(flights.distance_km)) OVER (ORDER BY flights.month)) / LAG(SUM(flights.distance_km)) OVER (ORDER BY flights.month) AS month_over_month_change",
+  "filter_text": "flights.status = 'completed', flights.scheduled_departure LIKE '%/%/2023'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, airports, aircraft, crew_members, crew_assignments, maintenance_records, fuel_uplifts, shipments, flight_cargo, invoices, payments, incidents, insurance_claims, customs_declarations, tracking_events\n#output flights.month, SUM(flights.distance_km) AS total_volume_km, (SUM(flights.distance_km) - LAG(SUM(flights.distance_km)) OVER (ORDER BY flights.month)) / LAG(SUM(flights.distance_km)) OVER (ORDER BY flights.month) AS month_over_month_change\n#filter flights.status = 'completed', flights.scheduled_departure LIKE '%/%/2023'",
+  "eval_count": 132,
+  "error": null,
+  "seconds": 2.85,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 15
+  }
+ },
+ "H04-VAG": {
+  "tables": [
+   "benchmark_meta",
+   "airports",
+   "flights"
+  ],
+  "columns": [
+   "flights.flight_id",
+   "benchmark_meta.meta_key",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "flights.flight_id"
+  ],
+  "filter_columns": [],
+  "output_text": "flights.month, count(flights.flight_id)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, airports, benchmark_meta\n#output flights.month, count(flights.flight_id)\n#filter none",
+  "eval_count": 25,
+  "error": null,
+  "seconds": 0.614,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H05-CAS": {
+  "tables": [
+   "aircraft",
+   "flights",
+   "crew_assignments"
+  ],
+  "columns": [
+   "aircraft.tail_number",
+   "flights.scheduled_departure",
+   "flights.scheduled_arrival",
+   "flights.status",
+   "flights.flight_id",
+   "flights.aircraft_id",
+   "crew_assignments.assignment_id",
+   "crew_assignments.flight_id",
+   "aircraft.aircraft_id"
+  ],
+  "output_columns": [
+   "aircraft.tail_number",
+   "flights.scheduled_departure",
+   "flights.scheduled_arrival"
+  ],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "aircraft.tail_number, AVG(flights.scheduled_departure - flights.scheduled_arrival) AS avg_ground_time",
+  "filter_text": "flights.status = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, flights, crew_assignments\n#output aircraft.tail_number, AVG(flights.scheduled_departure - flights.scheduled_arrival) AS avg_ground_time\n#filter flights.status = 'completed'",
+  "eval_count": 44,
+  "error": null,
+  "seconds": 1.015,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H05-SCH": {
+  "tables": [
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "aircraft.tail_number",
+   "flights.actual_departure",
+   "flights.actual_arrival",
+   "flights.status",
+   "flights.flight_id",
+   "flights.aircraft_id",
+   "aircraft.aircraft_id"
+  ],
+  "output_columns": [
+   "aircraft.tail_number",
+   "flights.actual_departure",
+   "flights.actual_arrival"
+  ],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "aircraft.tail_number, AVG(julianday(flights.actual_departure) - julianday(flights.actual_arrival)) AS avg_time_diff",
+  "filter_text": "flights.status = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, flights\n#output aircraft.tail_number, AVG(julianday(flights.actual_departure) - julianday(flights.actual_arrival)) AS avg_time_diff\n#filter flights.status = 'completed'",
+  "eval_count": 48,
+  "error": null,
+  "seconds": 1.111,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H05-BIZ": {
+  "tables": [
+   "aircraft",
+   "flights",
+   "crew_assignments"
+  ],
+  "columns": [
+   "aircraft.tail_number",
+   "flights.actual_arrival",
+   "flights.scheduled_departure",
+   "flights.status",
+   "flights.flight_id",
+   "flights.aircraft_id",
+   "crew_assignments.assignment_id",
+   "crew_assignments.flight_id",
+   "aircraft.aircraft_id"
+  ],
+  "output_columns": [
+   "aircraft.tail_number",
+   "flights.actual_arrival",
+   "flights.scheduled_departure"
+  ],
+  "filter_columns": [
+   "flights.status"
+  ],
+  "output_text": "aircraft.tail_number, AVG(julianday(flights.actual_arrival) - julianday(flights.scheduled_departure)) AS avg_turnaround",
+  "filter_text": "flights.status = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, flights, crew_assignments\n#output aircraft.tail_number, AVG(julianday(flights.actual_arrival) - julianday(flights.scheduled_departure)) AS avg_turnaround\n#filter flights.status = 'completed'",
+  "eval_count": 53,
+  "error": null,
+  "seconds": 1.204,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H05-VAG": {
+  "tables": [
+   "airports",
+   "aircraft_types",
+   "aircraft",
+   "crew_members",
+   "flights",
+   "crew_assignments",
+   "maintenance_records",
+   "fuel_uplifts",
+   "shipments",
+   "flight_cargo",
+   "tracking_events"
+  ],
+  "columns": [
+   "flights.flight_number",
+   "flights.scheduled_departure",
+   "flights.scheduled_arrival",
+   "flights.actual_departure",
+   "flights.actual_arrival",
+   "flights.delay_code",
+   "flights.status",
+   "shipments.shipment_id",
+   "shipments.destination_airport_id",
+   "shipments.origin_airport_id",
+   "crew_members.crew_member_id",
+   "crew_members.type_rating_id",
+   "crew_members.base_airport_id",
+   "flight_cargo.flight_cargo_id",
+   "flight_cargo.flight_id",
+   "flight_cargo.shipment_id",
+   "tracking_events.event_id",
+   "tracking_events.airport_id",
+   "tracking_events.flight_id",
+   "tracking_events.shipment_id",
+   "aircraft_types.type_id",
+   "maintenance_records.maintenance_id",
+   "maintenance_records.airport_id",
+   "maintenance_records.aircraft_id",
+   "airports.airport_id",
+   "aircraft.aircraft_id",
+   "aircraft.home_airport_id",
+   "aircraft.type_id",
+   "flights.flight_id",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "flights.aircraft_id",
+   "fuel_uplifts.fuel_uplift_id",
+   "fuel_uplifts.airport_id",
+   "fuel_uplifts.flight_id",
+   "crew_assignments.assignment_id",
+   "crew_assignments.crew_member_id",
+   "crew_assignments.flight_id"
+  ],
+  "output_columns": [
+   "flights.flight_number",
+   "flights.scheduled_departure",
+   "flights.scheduled_arrival",
+   "flights.actual_departure",
+   "flights.actual_arrival",
+   "flights.delay_code"
+  ],
+  "filter_columns": [
+   "flights.status",
+   "flights.scheduled_departure",
+   "flights.scheduled_arrival",
+   "flights.actual_departure",
+   "flights.actual_arrival"
+  ],
+  "output_text": "flights.flight_number, flights.scheduled_departure, flights.scheduled_arrival, flights.actual_departure, flights.actual_arrival, flights.delay_code",
+  "filter_text": "flights.status, flights.scheduled_departure, flights.scheduled_arrival, flights.actual_departure, flights.actual_arrival",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, aircraft, crew_members, crew_assignments, maintenance_records, fuel_uplifts, shipments, flight_cargo, tracking_events\n#output flights.flight_number, flights.scheduled_departure, flights.scheduled_arrival, flights.actual_departure, flights.actual_arrival, flights.delay_code\n#filter flights.status, flights.scheduled_departure, flights.scheduled_arrival, flights.actual_departure, flights.actual_arrival",
+  "eval_count": 90,
+  "error": null,
+  "seconds": 1.96,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 11
+  }
+ },
+ "H06-CAS": {
+  "tables": [
+   "customers",
+   "invoices",
+   "payments"
+  ],
+  "columns": [
+   "customers.customer_id",
+   "customers.name",
+   "invoices.amount_usd",
+   "payments.payment_id",
+   "payments.customer_id",
+   "payments.invoice_id",
+   "invoices.invoice_id"
+  ],
+  "output_columns": [
+   "customers.customer_id",
+   "customers.name",
+   "invoices.amount_usd",
+   "invoices.amount_usd"
+  ],
+  "filter_columns": [],
+  "output_text": "customers.customer_id, customers.name, SUM(invoices.amount_usd) AS total_invoiced, (SUM(invoices.amount_usd) / (SELECT SUM(amount_usd) FROM invoices)) * 100 AS share",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables invoices, customers\n#output customers.customer_id, customers.name, SUM(invoices.amount_usd) AS total_invoiced, (SUM(invoices.amount_usd) / (SELECT SUM(amount_usd) FROM invoices)) * 100 AS share\n#filter none",
+  "eval_count": 59,
+  "error": null,
+  "seconds": 1.331,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "H06-SCH": {
+  "tables": [
+   "customers",
+   "shipments",
+   "invoices"
+  ],
+  "columns": [
+   "customers.name",
+   "invoices.amount_usd",
+   "shipments.shipment_id",
+   "shipments.customer_id",
+   "customers.customer_id",
+   "invoices.invoice_id",
+   "invoices.shipment_id"
+  ],
+  "output_columns": [
+   "customers.name",
+   "invoices.amount_usd",
+   "invoices.amount_usd"
+  ],
+  "filter_columns": [],
+  "output_text": "customers.name, SUM(invoices.amount_usd) / SUM(invoices.amount_usd) AS percentage",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables shipments, invoices, customers\n#output customers.name, SUM(invoices.amount_usd) / SUM(invoices.amount_usd) AS percentage\n#filter none",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.823,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-BIZ": {
+  "tables": [
+   "customers",
+   "invoices",
+   "payments"
+  ],
+  "columns": [
+   "customers.account_code",
+   "invoices.amount_usd",
+   "payments.payment_id",
+   "payments.customer_id",
+   "payments.invoice_id",
+   "customers.customer_id",
+   "invoices.invoice_id"
+  ],
+  "output_columns": [
+   "customers.account_code",
+   "invoices.amount_usd",
+   "invoices.amount_usd"
+  ],
+  "filter_columns": [],
+  "output_text": "customers.account_code, SUM(invoices.amount_usd) AS revenue, (SUM(invoices.amount_usd) / (SELECT SUM(amount_usd) FROM invoices)) * 100 AS share",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables invoices, payments, customers\n#output customers.account_code, SUM(invoices.amount_usd) AS revenue, (SUM(invoices.amount_usd) / (SELECT SUM(amount_usd) FROM invoices)) * 100 AS share\n#filter none",
+  "eval_count": 55,
+  "error": null,
+  "seconds": 1.241,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "H06-VAG": {
+  "tables": [
+   "customers",
+   "invoices",
+   "payments"
+  ],
+  "columns": [
+   "customers.customer_id",
+   "customers.name",
+   "invoices.amount_usd",
+   "payments.payment_id",
+   "payments.customer_id",
+   "payments.invoice_id",
+   "invoices.invoice_id"
+  ],
+  "output_columns": [
+   "customers.customer_id",
+   "customers.name",
+   "invoices.amount_usd"
+  ],
+  "filter_columns": [],
+  "output_text": "customers.customer_id, customers.name, SUM(invoices.amount_usd) AS total_revenue",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables invoices, payments, customers\n#output customers.customer_id, customers.name, SUM(invoices.amount_usd) AS total_revenue\n#filter none",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.776,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "H07-CAS": {
+  "tables": [
+   "airports",
+   "flights",
+   "flight_cargo"
+  ],
+  "columns": [
+   "airports.airport_id",
+   "airports.name",
+   "flight_cargo.flight_cargo_id",
+   "flight_cargo.flight_id",
+   "flights.flight_id",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id"
+  ],
+  "output_columns": [
+   "airports.airport_id",
+   "airports.name"
+  ],
+  "filter_columns": [],
+  "output_text": "airports.airport_id, airports.name, SUM(flight_cargo.chargeable_weight_kg) AS total_cargo_tonnes",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, flights, flight_cargo\n#output airports.airport_id, airports.name, SUM(flight_cargo.chargeable_weight_kg) AS total_cargo_tonnes\n#filter none",
+  "eval_count": 44,
+  "error": null,
+  "seconds": 1.017,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.4444444444444444,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H07-SCH": {
+  "tables": [
+   "airports",
+   "flights",
+   "flight_cargo"
+  ],
+  "columns": [
+   "airports.name",
+   "flights.status",
+   "flight_cargo.leg_status",
+   "flight_cargo.flight_cargo_id",
+   "flight_cargo.flight_id",
+   "flights.flight_id",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.name"
+  ],
+  "filter_columns": [
+   "flights.status",
+   "flight_cargo.leg_status"
+  ],
+  "output_text": "airports.name, SUM(flight_cargo.total_weight_kg / 1000) AS tonnes",
+  "filter_text": "flights.status = 'completed', flight_cargo.leg_status = 'flown'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flights, flight_cargo, airports\n#output airports.name, SUM(flight_cargo.total_weight_kg / 1000) AS tonnes\n#filter flights.status = 'completed', flight_cargo.leg_status = 'flown'",
+  "eval_count": 54,
+  "error": null,
+  "seconds": 1.256,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.5555555555555556,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H07-BIZ": {
+  "tables": [
+   "airports",
+   "aircraft",
+   "flights",
+   "shipments"
+  ],
+  "columns": [
+   "airports.name",
+   "shipments.total_weight_kg",
+   "shipments.shipment_id",
+   "shipments.destination_airport_id",
+   "shipments.origin_airport_id",
+   "flights.flight_id",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "flights.aircraft_id",
+   "airports.airport_id",
+   "aircraft.aircraft_id",
+   "aircraft.home_airport_id"
+  ],
+  "output_columns": [
+   "airports.name",
+   "shipments.total_weight_kg"
+  ],
+  "filter_columns": [],
+  "output_text": "airports.name, SUM(shipments.total_weight_kg) AS outbound_tonnage",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, flights, aircraft, shipments\n#output airports.name, SUM(shipments.total_weight_kg) AS outbound_tonnage\n#filter none",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.784,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.5555555555555556,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 4
+  }
+ },
+ "H07-VAG": {
+  "tables": [
+   "airports",
+   "shipments",
+   "customs_declarations"
+  ],
+  "columns": [
+   "airports.name",
+   "customs_declarations.declaration_id",
+   "customs_declarations.declaration_type",
+   "shipments.shipment_id",
+   "shipments.destination_airport_id",
+   "shipments.origin_airport_id",
+   "customs_declarations.shipment_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "airports.name",
+   "customs_declarations.declaration_id"
+  ],
+  "filter_columns": [
+   "customs_declarations.declaration_type"
+  ],
+  "output_text": "airports.name, COUNT(customs_declarations.declaration_id) AS export_count",
+  "filter_text": "customs_declarations.declaration_type = 'export'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, customs_declarations\n#output airports.name, COUNT(customs_declarations.declaration_id) AS export_count\n#filter customs_declarations.declaration_type = 'export'",
+  "eval_count": 39,
+  "error": null,
+  "seconds": 0.903,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.2222222222222222,
+   "columns_in_schema": 0.4444444444444444,
+   "tables_kept": 3
+  }
+ },
+ "H08-CAS": {
+  "tables": [
+   "aircraft_types",
+   "aircraft",
+   "flights",
+   "flight_cargo"
+  ],
+  "columns": [
+   "aircraft_types.model",
+   "flights.flight_id",
+   "flights.status",
+   "flight_cargo.load_sequence",
+   "flights.aircraft_id",
+   "aircraft_types.type_id",
+   "flight_cargo.flight_cargo_id",
+   "flight_cargo.flight_id",
+   "aircraft.aircraft_id",
+   "aircraft.type_id"
+  ],
+  "output_columns": [
+   "aircraft_types.model",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status",
+   "flight_cargo.load_sequence"
+  ],
+  "output_text": "aircraft_types.model, COUNT(flights.flight_id)",
+  "filter_text": "flights.status = 'completed', flight_cargo.load_sequence = 1, flight_cargo.total_volume_m3 * 0.5 < flight_cargo.volume_m3",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, aircraft_types, flights, flight_cargo\n#output aircraft_types.model, COUNT(flights.flight_id)\n#filter flights.status = 'completed', flight_cargo.load_sequence = 1, flight_cargo.total_volume_m3 * 0.5 < flight_cargo.volume_m3",
+  "eval_count": 63,
+  "error": null,
+  "seconds": 1.428,
+  "recall": {
+   "tables_found": 0.8,
+   "all_tables_found": false,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 0.8333333333333334,
+   "tables_kept": 4
+  }
+ },
+ "H08-SCH": {
+  "tables": [
+   "aircraft_types",
+   "aircraft",
+   "flights",
+   "flight_cargo"
+  ],
+  "columns": [
+   "aircraft_types.model",
+   "flights.flight_id",
+   "flights.status",
+   "aircraft_types.max_volume_m3",
+   "flights.aircraft_id",
+   "aircraft_types.type_id",
+   "flight_cargo.flight_cargo_id",
+   "flight_cargo.flight_id",
+   "aircraft.aircraft_id",
+   "aircraft.type_id"
+  ],
+  "output_columns": [
+   "aircraft_types.model",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status",
+   "aircraft_types.max_volume_m3"
+  ],
+  "output_text": "aircraft_types.model, COUNT(flights.flight_id)",
+  "filter_text": "flights.status = 'completed', SUM(flight_cargo.total_volume_m3) > 0.5 * aircraft_types.max_volume_m3",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft_types, aircraft, flights, flight_cargo\n#output aircraft_types.model, COUNT(flights.flight_id)\n#filter flights.status = 'completed', SUM(flight_cargo.total_volume_m3) > 0.5 * aircraft_types.max_volume_m3",
+  "eval_count": 57,
+  "error": null,
+  "seconds": 1.305,
+  "recall": {
+   "tables_found": 0.8,
+   "all_tables_found": false,
+   "columns_listed": 0.75,
+   "columns_in_schema": 0.8333333333333334,
+   "tables_kept": 4
+  }
+ },
+ "H08-BIZ": {
+  "tables": [
+   "aircraft_types",
+   "aircraft",
+   "flights",
+   "flight_cargo"
+  ],
+  "columns": [
+   "aircraft_types.model",
+   "flights.flight_id",
+   "flights.status",
+   "flight_cargo.leg_status",
+   "aircraft_types.max_volume_m3",
+   "flights.aircraft_id",
+   "aircraft_types.type_id",
+   "flight_cargo.flight_cargo_id",
+   "flight_cargo.flight_id",
+   "aircraft.aircraft_id",
+   "aircraft.type_id"
+  ],
+  "output_columns": [
+   "aircraft_types.model",
+   "flights.flight_id"
+  ],
+  "filter_columns": [
+   "flights.status",
+   "flight_cargo.leg_status",
+   "aircraft_types.max_volume_m3"
+  ],
+  "output_text": "aircraft_types.model, COUNT(flights.flight_id)",
+  "filter_text": "flights.status = 'completed', flight_cargo.leg_status = 'flown', (flight_cargo.total_volume_m3 / aircraft_types.max_volume_m3) > 0.5",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, aircraft_types, flights, flight_cargo\n#output aircraft_types.model, COUNT(flights.flight_id)\n#filter flights.status = 'completed', flight_cargo.leg_status = 'flown', (flight_cargo.total_volume_m3 / aircraft_types.max_volume_m3) > 0.5",
+  "eval_count": 67,
+  "error": null,
+  "seconds": 1.505,
+  "recall": {
+   "tables_found": 0.8,
+   "all_tables_found": false,
+   "columns_listed": 0.75,
+   "columns_in_schema": 0.8333333333333334,
+   "tables_kept": 4
+  }
+ },
+ "H08-VAG": {
+  "tables": [
+   "aircraft_types",
+   "aircraft",
+   "flights",
+   "flight_cargo"
+  ],
+  "columns": [
+   "aircraft_types.model",
+   "aircraft_types.max_payload_kg",
+   "flights.flight_id",
+   "flights.aircraft_id",
+   "aircraft_types.type_id",
+   "flight_cargo.flight_cargo_id",
+   "flight_cargo.flight_id",
+   "aircraft.aircraft_id",
+   "aircraft.type_id"
+  ],
+  "output_columns": [
+   "aircraft_types.model",
+   "aircraft_types.max_payload_kg"
+  ],
+  "filter_columns": [],
+  "output_text": "aircraft_types.model, AVG(flight_cargo.chargeable_weight_kg / aircraft_types.max_payload_kg) AS fill_ratio",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, aircraft_types, flights, flight_cargo\n#output aircraft_types.model, AVG(flight_cargo.chargeable_weight_kg / aircraft_types.max_payload_kg) AS fill_ratio\n#filter none",
+  "eval_count": 46,
+  "error": null,
+  "seconds": 1.05,
+  "recall": {
+   "tables_found": 0.8,
+   "all_tables_found": false,
+   "columns_listed": 0.5833333333333334,
+   "columns_in_schema": 0.8333333333333334,
+   "tables_kept": 4
+  }
+ },
+ "H09-CAS": {
+  "tables": [
+   "airports",
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "aircraft.tail_number",
+   "airports.is_cargo_hub",
+   "flights.status",
+   "flights.actual_arrival",
+   "flights.flight_id",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "flights.aircraft_id",
+   "airports.airport_id",
+   "aircraft.aircraft_id",
+   "aircraft.home_airport_id"
+  ],
+  "output_columns": [
+   "aircraft.tail_number"
+  ],
+  "filter_columns": [
+   "airports.is_cargo_hub",
+   "flights.status",
+   "flights.actual_arrival"
+  ],
+  "output_text": "aircraft.tail_number",
+  "filter_text": "airports.is_cargo_hub = 1, flights.status = 'completed', flights.actual_arrival IS NOT NULL",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables airports, aircraft, flights\n#output aircraft.tail_number\n#filter airports.is_cargo_hub = 1, flights.status = 'completed', flights.actual_arrival IS NOT NULL",
+  "eval_count": 39,
+  "error": null,
+  "seconds": 0.907,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H09-SCH": {
+  "tables": [
+   "airports",
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "aircraft.tail_number",
+   "airports.is_cargo_hub",
+   "flights.destination_airport_id",
+   "airports.airport_id",
+   "flights.status",
+   "flights.flight_id",
+   "flights.origin_airport_id",
+   "flights.aircraft_id",
+   "aircraft.aircraft_id",
+   "aircraft.home_airport_id"
+  ],
+  "output_columns": [
+   "aircraft.tail_number"
+  ],
+  "filter_columns": [
+   "airports.is_cargo_hub",
+   "flights.destination_airport_id",
+   "airports.airport_id",
+   "flights.status"
+  ],
+  "output_text": "aircraft.tail_number",
+  "filter_text": "airports.is_cargo_hub = 1, flights.destination_airport_id = airports.airport_id, flights.status = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, flights, airports\n#output aircraft.tail_number\n#filter airports.is_cargo_hub = 1, flights.destination_airport_id = airports.airport_id, flights.status = 'completed'",
+  "eval_count": 43,
+  "error": null,
+  "seconds": 0.991,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H09-BIZ": {
+  "tables": [
+   "airports",
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "aircraft.tail_number",
+   "flights.status",
+   "airports.region",
+   "flights.flight_id",
+   "flights.destination_airport_id",
+   "flights.origin_airport_id",
+   "flights.aircraft_id",
+   "airports.airport_id",
+   "aircraft.aircraft_id",
+   "aircraft.home_airport_id"
+  ],
+  "output_columns": [
+   "aircraft.tail_number"
+  ],
+  "filter_columns": [
+   "flights.status",
+   "airports.region"
+  ],
+  "output_text": "aircraft.tail_number",
+  "filter_text": "flights.status = 'completed', airports.region = 'north_america'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, flights, airports\n#output aircraft.tail_number\n#filter flights.status = 'completed', airports.region = 'north_america'",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.766,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8571428571428571,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H09-VAG": {
+  "tables": [
+   "aircraft",
+   "flights"
+  ],
+  "columns": [
+   "flights.flight_number",
+   "flights.origin_airport_id",
+   "flights.flight_id",
+   "flights.aircraft_id",
+   "aircraft.aircraft_id"
+  ],
+  "output_columns": [
+   "flights.flight_number",
+   "flights.origin_airport_id"
+  ],
+  "filter_columns": [],
+  "output_text": "flights.flight_number, COUNT(DISTINCT flights.origin_airport_id) AS airports_visited",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables aircraft, flights\n#output flights.flight_number, COUNT(DISTINCT flights.origin_airport_id) AS airports_visited\n#filter none",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.737,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.2857142857142857,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 2
+  }
+ },
+ "H10-CAS": {
+  "tables": [
+   "airports",
+   "shipments",
+   "customs_declarations"
+  ],
+  "columns": [
+   "shipments.shipment_id",
+   "shipments.destination_airport_id",
+   "shipments.origin_airport_id",
+   "customs_declarations.declaration_id",
+   "customs_declarations.shipment_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables customs_declarations, airports\n#output customs_country, COUNT(*) AS tax_events\n#filter duty_rate_pct, vat_amount_usd, customs_value_usd",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.842,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H10-SCH": {
+  "tables": [
+   "customs_declarations"
+  ],
+  "columns": [
+   "customs_declarations.customs_country",
+   "customs_declarations.declaration_id",
+   "customs_declarations.declaration_type",
+   "customs_declarations.duty_amount_usd",
+   "customs_declarations.vat_amount_usd",
+   "customs_declarations.customs_value_usd"
+  ],
+  "output_columns": [
+   "customs_declarations.customs_country",
+   "customs_declarations.declaration_id"
+  ],
+  "filter_columns": [
+   "customs_declarations.declaration_type",
+   "customs_declarations.duty_amount_usd",
+   "customs_declarations.vat_amount_usd",
+   "customs_declarations.customs_value_usd"
+  ],
+  "output_text": "customs_declarations.customs_country, COUNT(customs_declarations.declaration_id)",
+  "filter_text": "customs_declarations.declaration_type = 'import', customs_declarations.duty_amount_usd + customs_declarations.vat_amount_usd > 0.2 * customs_declarations.customs_value_usd",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables customs_declarations\n#output customs_declarations.customs_country, COUNT(customs_declarations.declaration_id)\n#filter customs_declarations.declaration_type = 'import', customs_declarations.duty_amount_usd + customs_declarations.vat_amount_usd > 0.2 * customs_declarations.customs_value_usd",
+  "eval_count": 68,
+  "error": null,
+  "seconds": 1.527,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "H10-BIZ": {
+  "tables": [
+   "customs_declarations"
+  ],
+  "columns": [
+   "customs_declarations.declaration_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables customs_declarations\n#output customs_country, COUNT(*) AS entry_count\n#filter duty_rate_pct > 20",
+  "eval_count": 27,
+  "error": null,
+  "seconds": 0.659,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "H10-VAG": {
+  "tables": [
+   "airports",
+   "shipments",
+   "customs_declarations"
+  ],
+  "columns": [
+   "customs_declarations.customs_country",
+   "customs_declarations.duty_rate_pct",
+   "shipments.shipment_id",
+   "shipments.destination_airport_id",
+   "shipments.origin_airport_id",
+   "customs_declarations.declaration_id",
+   "customs_declarations.shipment_id",
+   "airports.airport_id"
+  ],
+  "output_columns": [
+   "customs_declarations.customs_country",
+   "customs_declarations.duty_rate_pct"
+  ],
+  "filter_columns": [],
+  "output_text": "customs_declarations.customs_country, AVG(customs_declarations.duty_rate_pct) AS avg_duty_rate",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables customs_declarations, airports\n#output customs_declarations.customs_country, AVG(customs_declarations.duty_rate_pct) AS avg_duty_rate\n#filter none",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.86,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.2,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ }
+}

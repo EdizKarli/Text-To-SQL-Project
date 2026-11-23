@@ -1,0 +1,4322 @@
+{
+ "E01-CAS": {
+  "tables": [
+   "flghf"
+  ],
+  "columns": [
+   "flghf.hub_kz",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.hub_kz"
+  ],
+  "filter_columns": [
+   "flghf.hub_kz"
+  ],
+  "output_text": "flghf.hub_kz",
+  "filter_text": "flghf.hub_kz, 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf\n#output flghf.hub_kz\n#filter flghf.hub_kz, 1",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 3.104,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-SCH": {
+  "tables": [
+   "flghf"
+  ],
+  "columns": [
+   "flghf.fh_nr"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf\n#output count(*)\n#filter hub_kz = 1",
+  "eval_count": 20,
+  "error": null,
+  "seconds": 0.523,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-BIZ": {
+  "tables": [
+   "flghf"
+  ],
+  "columns": [
+   "flghf.hub_kz",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.hub_kz"
+  ],
+  "filter_columns": [
+   "flghf.hub_kz"
+  ],
+  "output_text": "count(flghf.hub_kz)",
+  "filter_text": "flghf.hub_kz = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf\n#output count(flghf.hub_kz)\n#filter flghf.hub_kz = 1",
+  "eval_count": 30,
+  "error": null,
+  "seconds": 0.721,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-VAG": {
+  "tables": [
+   "flghf"
+  ],
+  "columns": [
+   "flghf.fh_nr"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf\n#output count(DISTINCT hub_fh_nr)\n#filter hub_kz = 1",
+  "eval_count": 25,
+  "error": null,
+  "seconds": 0.616,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E02-CAS": {
+  "tables": [
+   "flghf"
+  ],
+  "columns": [
+   "flghf.icao_cd",
+   "flghf.nachtflugverb_kz",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.icao_cd"
+  ],
+  "filter_columns": [
+   "flghf.nachtflugverb_kz"
+  ],
+  "output_text": "flghf.icao_cd",
+  "filter_text": "flghf.nachtflugverb_kz, 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf\n#output flghf.icao_cd\n#filter flghf.nachtflugverb_kz, 1",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.744,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E02-SCH": {
+  "tables": [
+   "flghf"
+  ],
+  "columns": [
+   "flghf.iata_cd",
+   "flghf.nachtflugverb_kz",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.iata_cd"
+  ],
+  "filter_columns": [
+   "flghf.nachtflugverb_kz"
+  ],
+  "output_text": "flghf.iata_cd",
+  "filter_text": "flghf.nachtflugverb_kz = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf\n#output flghf.iata_cd\n#filter flghf.nachtflugverb_kz = 1",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.732,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E02-BIZ": {
+  "tables": [
+   "flghf"
+  ],
+  "columns": [
+   "flghf.icao_cd",
+   "flghf.nachtflugverb_kz",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.icao_cd"
+  ],
+  "filter_columns": [
+   "flghf.nachtflugverb_kz"
+  ],
+  "output_text": "flghf.icao_cd",
+  "filter_text": "flghf.nachtflugverb_kz, 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf\n#output flghf.icao_cd\n#filter flghf.nachtflugverb_kz, 1",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.752,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E02-VAG": {
+  "tables": [
+   "flghf",
+   "lfz",
+   "flug"
+  ],
+  "columns": [
+   "flghf.ort",
+   "flghf.land",
+   "flug.ank_ist",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flug.lfz_nr",
+   "flghf.fh_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr"
+  ],
+  "output_columns": [
+   "flghf.ort",
+   "flghf.land"
+  ],
+  "filter_columns": [
+   "flug.ank_ist"
+  ],
+  "output_text": "flghf.ort, flghf.land",
+  "filter_text": "flug.ank_ist, lfz.nachtflugverb_kz",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf, lfz, flug\n#output flghf.ort, flghf.land\n#filter flug.ank_ist, lfz.nachtflugverb_kz",
+  "eval_count": 44,
+  "error": null,
+  "seconds": 1.005,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E03-CAS": {
+  "tables": [
+   "flges",
+   "lfz_typ",
+   "bes_mitgl"
+  ],
+  "columns": [
+   "flges.bez",
+   "flges.allianz",
+   "flges.flges_nr",
+   "lfz_typ.typ_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.flges_nr"
+  ],
+  "output_columns": [
+   "flges.bez"
+  ],
+  "filter_columns": [
+   "flges.allianz"
+  ],
+  "output_text": "flges.bez",
+  "filter_text": "flges.allianz = 'CargoLink'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flges, lfz_typ\n#output flges.bez\n#filter flges.allianz = 'CargoLink'",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.695,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E03-SCH": {
+  "tables": [
+   "flges"
+  ],
+  "columns": [
+   "flges.bez",
+   "flges.allianz",
+   "flges.flges_nr"
+  ],
+  "output_columns": [
+   "flges.bez"
+  ],
+  "filter_columns": [
+   "flges.allianz"
+  ],
+  "output_text": "flges.bez",
+  "filter_text": "flges.allianz = 'CargoLink'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flges\n#output flges.bez\n#filter flges.allianz = 'CargoLink'",
+  "eval_count": 25,
+  "error": null,
+  "seconds": 0.615,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-BIZ": {
+  "tables": [
+   "flges"
+  ],
+  "columns": [
+   "flges.bez",
+   "flges.allianz",
+   "flges.flges_nr"
+  ],
+  "output_columns": [
+   "flges.bez"
+  ],
+  "filter_columns": [
+   "flges.allianz"
+  ],
+  "output_text": "flges.bez",
+  "filter_text": "flges.allianz = 'CargoLink'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flges\n#output flges.bez\n#filter flges.allianz = 'CargoLink'",
+  "eval_count": 25,
+  "error": null,
+  "seconds": 0.613,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-VAG": {
+  "tables": [
+   "flges",
+   "lfz_typ",
+   "lfz",
+   "bes_mitgl"
+  ],
+  "columns": [
+   "flges.flges_nr",
+   "flges.bez",
+   "flges.allianz",
+   "lfz_typ.mdl",
+   "lfz_typ.typ_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.flges_nr",
+   "lfz.lfz_nr",
+   "lfz.flges_nr",
+   "lfz.typ_nr"
+  ],
+  "output_columns": [
+   "flges.flges_nr",
+   "flges.bez"
+  ],
+  "filter_columns": [
+   "flges.allianz",
+   "lfz_typ.mdl"
+  ],
+  "output_text": "flges.flges_nr, flges.bez",
+  "filter_text": "flges.allianz, lfz_typ.mdl",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flges, lfz, lfz_typ\n#output flges.flges_nr, flges.bez\n#filter flges.allianz, lfz_typ.mdl",
+  "eval_count": 38,
+  "error": null,
+  "seconds": 0.877,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "E04-CAS": {
+  "tables": [
+   "lfz_typ"
+  ],
+  "columns": [
+   "lfz_typ.mdl",
+   "lfz_typ.herst",
+   "lfz_typ.typ_nr"
+  ],
+  "output_columns": [
+   "lfz_typ.mdl"
+  ],
+  "filter_columns": [
+   "lfz_typ.herst"
+  ],
+  "output_text": "lfz_typ.mdl",
+  "filter_text": "lfz_typ.herst, 'Airbus'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz_typ\n#output lfz_typ.mdl\n#filter lfz_typ.herst, 'Airbus'",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.631,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-SCH": {
+  "tables": [
+   "lfz_typ"
+  ],
+  "columns": [
+   "lfz_typ.mdl",
+   "lfz_typ.herst",
+   "lfz_typ.typ_nr"
+  ],
+  "output_columns": [
+   "lfz_typ.mdl"
+  ],
+  "filter_columns": [
+   "lfz_typ.herst"
+  ],
+  "output_text": "lfz_typ.mdl",
+  "filter_text": "lfz_typ.herst",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz_typ\n#output lfz_typ.mdl\n#filter lfz_typ.herst",
+  "eval_count": 21,
+  "error": null,
+  "seconds": 0.542,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-BIZ": {
+  "tables": [
+   "lfz_typ"
+  ],
+  "columns": [
+   "lfz_typ.mdl",
+   "lfz_typ.herst",
+   "lfz_typ.typ_nr"
+  ],
+  "output_columns": [
+   "lfz_typ.mdl"
+  ],
+  "filter_columns": [
+   "lfz_typ.herst"
+  ],
+  "output_text": "lfz_typ.mdl",
+  "filter_text": "lfz_typ.herst, 'Airbus'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz_typ\n#output lfz_typ.mdl\n#filter lfz_typ.herst, 'Airbus'",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.633,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-VAG": {
+  "tables": [
+   "lfz_typ"
+  ],
+  "columns": [
+   "lfz_typ.mdl",
+   "lfz_typ.herst",
+   "lfz_typ.typ_nr"
+  ],
+  "output_columns": [
+   "lfz_typ.mdl"
+  ],
+  "filter_columns": [
+   "lfz_typ.herst"
+  ],
+  "output_text": "lfz_typ.mdl",
+  "filter_text": "lfz_typ.herst = 'Airbus'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz_typ\n#output lfz_typ.mdl\n#filter lfz_typ.herst = 'Airbus'",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.642,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-CAS": {
+  "tables": [
+   "lfz"
+  ],
+  "columns": [
+   "lfz.eigt_art",
+   "lfz.lfz_nr"
+  ],
+  "output_columns": [
+   "lfz.eigt_art"
+  ],
+  "filter_columns": [
+   "lfz.eigt_art"
+  ],
+  "output_text": "lfz.eigt_art",
+  "filter_text": "lfz.eigt_art = 'leased'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz\n#output lfz.eigt_art\n#filter lfz.eigt_art = 'leased'",
+  "eval_count": 25,
+  "error": null,
+  "seconds": 0.613,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-SCH": {
+  "tables": [
+   "lfz"
+  ],
+  "columns": [
+   "lfz.eigt_art",
+   "lfz.lfz_nr"
+  ],
+  "output_columns": [],
+  "filter_columns": [
+   "lfz.eigt_art"
+  ],
+  "output_text": "",
+  "filter_text": "lfz.eigt_art = 'leased'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz\n#output count(*) \n#filter lfz.eigt_art = 'leased'",
+  "eval_count": 22,
+  "error": null,
+  "seconds": 0.55,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-BIZ": {
+  "tables": [
+   "lfz"
+  ],
+  "columns": [
+   "lfz.eigt_art",
+   "lfz.lfz_nr"
+  ],
+  "output_columns": [
+   "lfz.eigt_art"
+  ],
+  "filter_columns": [
+   "lfz.eigt_art"
+  ],
+  "output_text": "lfz.eigt_art",
+  "filter_text": "lfz.eigt_art = 'leased'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz\n#output lfz.eigt_art\n#filter lfz.eigt_art = 'leased'",
+  "eval_count": 25,
+  "error": null,
+  "seconds": 0.616,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-VAG": {
+  "tables": [
+   "lfz"
+  ],
+  "columns": [
+   "lfz.eigt_art",
+   "lfz.lfz_nr"
+  ],
+  "output_columns": [
+   "lfz.eigt_art"
+  ],
+  "filter_columns": [
+   "lfz.eigt_art"
+  ],
+  "output_text": "lfz.eigt_art",
+  "filter_text": "lfz.eigt_art = 'leased'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz\n#output lfz.eigt_art\n#filter lfz.eigt_art = 'leased'",
+  "eval_count": 25,
+  "error": null,
+  "seconds": 0.615,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E06-CAS": {
+  "tables": [
+   "flges",
+   "lfz",
+   "bes_mitgl"
+  ],
+  "columns": [
+   "lfz.kennz",
+   "lfz.stat",
+   "bes_mitgl.aktiv_kz",
+   "flges.flges_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.flges_nr",
+   "lfz.lfz_nr",
+   "lfz.flges_nr"
+  ],
+  "output_columns": [
+   "lfz.kennz",
+   "lfz.stat"
+  ],
+  "filter_columns": [
+   "lfz.stat",
+   "bes_mitgl.aktiv_kz"
+  ],
+  "output_text": "lfz.kennz, lfz.stat",
+  "filter_text": "lfz.stat, bes_mitgl.aktiv_kz",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, bes_mitgl\n#output lfz.kennz, lfz.stat\n#filter lfz.stat, bes_mitgl.aktiv_kz",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.888,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E06-SCH": {
+  "tables": [
+   "lfz"
+  ],
+  "columns": [
+   "lfz.kennz",
+   "lfz.stat",
+   "lfz.lfz_nr"
+  ],
+  "output_columns": [
+   "lfz.kennz",
+   "lfz.stat"
+  ],
+  "filter_columns": [
+   "lfz.stat"
+  ],
+  "output_text": "lfz.kennz, lfz.stat",
+  "filter_text": "lfz.stat, 'active'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz\n#output lfz.kennz, lfz.stat\n#filter lfz.stat, 'active'",
+  "eval_count": 27,
+  "error": null,
+  "seconds": 0.66,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E06-BIZ": {
+  "tables": [
+   "lfz_typ",
+   "lfz"
+  ],
+  "columns": [
+   "lfz.kennz",
+   "lfz.stat",
+   "lfz_typ.typ_nr",
+   "lfz.lfz_nr",
+   "lfz.typ_nr"
+  ],
+  "output_columns": [
+   "lfz.kennz",
+   "lfz.stat"
+  ],
+  "filter_columns": [
+   "lfz.stat"
+  ],
+  "output_text": "lfz.kennz, lfz.stat",
+  "filter_text": "lfz.stat, lfz_typ.musterber_typ",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, lfz_typ\n#output lfz.kennz, lfz.stat\n#filter lfz.stat, lfz_typ.musterber_typ",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.824,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E06-VAG": {
+  "tables": [
+   "lfz",
+   "flug"
+  ],
+  "columns": [
+   "lfz.kennz",
+   "flug.stat",
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "lfz.lfz_nr"
+  ],
+  "output_columns": [
+   "lfz.kennz"
+  ],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "lfz.kennz",
+  "filter_text": "flug.stat = 'cancelled'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, flug\n#output lfz.kennz\n#filter flug.stat = 'cancelled'",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.631,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E07-CAS": {
+  "tables": [
+   "knd_stamm"
+  ],
+  "columns": [
+   "knd_stamm.treue_stufe",
+   "knd_stamm.kunnr"
+  ],
+  "output_columns": [
+   "knd_stamm.treue_stufe",
+   "knd_stamm.kunnr"
+  ],
+  "filter_columns": [],
+  "output_text": "knd_stamm.treue_stufe, COUNT(knd_stamm.kunnr)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables knd_stamm\n#output knd_stamm.treue_stufe, COUNT(knd_stamm.kunnr)\n#filter none",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.762,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-SCH": {
+  "tables": [
+   "knd_stamm"
+  ],
+  "columns": [
+   "knd_stamm.kunnr"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables knd_stamm\n#output treue_stufe, COUNT(kunnr)\n#filter none",
+  "eval_count": 23,
+  "error": null,
+  "seconds": 0.586,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-BIZ": {
+  "tables": [
+   "knd_stamm"
+  ],
+  "columns": [
+   "knd_stamm.treue_stufe",
+   "knd_stamm.kunnr"
+  ],
+  "output_columns": [
+   "knd_stamm.treue_stufe",
+   "knd_stamm.kunnr"
+  ],
+  "filter_columns": [],
+  "output_text": "knd_stamm.treue_stufe, COUNT(knd_stamm.kunnr)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables knd_stamm\n#output knd_stamm.treue_stufe, COUNT(knd_stamm.kunnr)\n#filter none",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.764,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-VAG": {
+  "tables": [
+   "bm_param",
+   "knd_stamm"
+  ],
+  "columns": [
+   "knd_stamm.treue_stufe",
+   "knd_stamm.kunnr",
+   "bm_param.param_schl"
+  ],
+  "output_columns": [
+   "knd_stamm.treue_stufe",
+   "knd_stamm.kunnr"
+  ],
+  "filter_columns": [],
+  "output_text": "knd_stamm.treue_stufe, COUNT(knd_stamm.kunnr)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables knd_stamm, bm_param\n#output knd_stamm.treue_stufe, COUNT(knd_stamm.kunnr)\n#filter none",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.814,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E08-CAS": {
+  "tables": [
+   "knd_stamm"
+  ],
+  "columns": [
+   "knd_stamm.name1",
+   "knd_stamm.ort",
+   "knd_stamm.land",
+   "knd_stamm.kunnr"
+  ],
+  "output_columns": [
+   "knd_stamm.name1",
+   "knd_stamm.ort"
+  ],
+  "filter_columns": [
+   "knd_stamm.land"
+  ],
+  "output_text": "knd_stamm.name1, knd_stamm.ort",
+  "filter_text": "knd_stamm.land = 'Germany'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables knd_stamm\n#output knd_stamm.name1, knd_stamm.ort\n#filter knd_stamm.land = 'Germany'",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.818,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E08-SCH": {
+  "tables": [
+   "knd_stamm"
+  ],
+  "columns": [
+   "knd_stamm.name1",
+   "knd_stamm.ort",
+   "knd_stamm.land",
+   "knd_stamm.kunnr"
+  ],
+  "output_columns": [
+   "knd_stamm.name1",
+   "knd_stamm.ort"
+  ],
+  "filter_columns": [
+   "knd_stamm.land"
+  ],
+  "output_text": "knd_stamm.name1, knd_stamm.ort",
+  "filter_text": "knd_stamm.land",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables knd_stamm\n#output knd_stamm.name1, knd_stamm.ort\n#filter knd_stamm.land",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.739,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E08-BIZ": {
+  "tables": [
+   "knd_stamm"
+  ],
+  "columns": [
+   "knd_stamm.name1",
+   "knd_stamm.ort",
+   "knd_stamm.land",
+   "knd_stamm.kunnr"
+  ],
+  "output_columns": [
+   "knd_stamm.name1",
+   "knd_stamm.ort"
+  ],
+  "filter_columns": [
+   "knd_stamm.land"
+  ],
+  "output_text": "knd_stamm.name1, knd_stamm.ort",
+  "filter_text": "knd_stamm.land, 'Germany'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables knd_stamm\n#output knd_stamm.name1, knd_stamm.ort\n#filter knd_stamm.land, 'Germany'",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.82,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E08-VAG": {
+  "tables": [
+   "knd_stamm"
+  ],
+  "columns": [
+   "knd_stamm.name1",
+   "knd_stamm.land",
+   "knd_stamm.kunnr"
+  ],
+  "output_columns": [
+   "knd_stamm.name1",
+   "knd_stamm.land"
+  ],
+  "filter_columns": [
+   "knd_stamm.land"
+  ],
+  "output_text": "knd_stamm.name1, knd_stamm.land",
+  "filter_text": "knd_stamm.land = 'Germany'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables knd_stamm\n#output knd_stamm.name1, knd_stamm.land\n#filter knd_stamm.land = 'Germany'",
+  "eval_count": 34,
+  "error": null,
+  "seconds": 0.815,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-CAS": {
+  "tables": [
+   "lgr"
+  ],
+  "columns": [
+   "lgr.lgr_typ",
+   "lgr.lgr_nr"
+  ],
+  "output_columns": [
+   "lgr.lgr_typ",
+   "lgr.lgr_nr"
+  ],
+  "filter_columns": [],
+  "output_text": "lgr.lgr_typ, COUNT(lgr.lgr_nr)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lgr\n#output lgr.lgr_typ, COUNT(lgr.lgr_nr)\n#filter none",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.594,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-SCH": {
+  "tables": [
+   "lgr"
+  ],
+  "columns": [
+   "lgr.lgr_typ",
+   "lgr.lgr_nr"
+  ],
+  "output_columns": [
+   "lgr.lgr_typ",
+   "lgr.lgr_nr"
+  ],
+  "filter_columns": [],
+  "output_text": "lgr.lgr_typ, COUNT(lgr.lgr_nr)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lgr\n#output lgr.lgr_typ, COUNT(lgr.lgr_nr)\n#filter none",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.605,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-BIZ": {
+  "tables": [
+   "flghf",
+   "lfz_typ",
+   "lgr",
+   "bes_mitgl"
+  ],
+  "columns": [
+   "lgr.lgr_nr",
+   "lfz_typ.typ_nr",
+   "flghf.fh_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.basis_fh",
+   "lgr.fh_nr"
+  ],
+  "output_columns": [
+   "lgr.lgr_nr"
+  ],
+  "filter_columns": [],
+  "output_text": "lfz_typ.lfg_typ, COUNT(lgr.lgr_nr)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz_typ, lgr\n#output lfz_typ.lfg_typ, COUNT(lgr.lgr_nr)\n#filter none",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.702,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "E09-VAG": {
+  "tables": [
+   "flghf",
+   "lfz_typ",
+   "lgr",
+   "bes_mitgl"
+  ],
+  "columns": [
+   "lgr.lgr_typ",
+   "lgr.lgr_nr",
+   "lfz_typ.typ_nr",
+   "flghf.fh_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.basis_fh",
+   "lgr.fh_nr"
+  ],
+  "output_columns": [
+   "lgr.lgr_typ",
+   "lgr.lgr_nr"
+  ],
+  "filter_columns": [],
+  "output_text": "lgr.lgr_typ, COUNT(lgr.lgr_nr)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lgr, lfz_typ\n#output lgr.lgr_typ, COUNT(lgr.lgr_nr)\n#filter none",
+  "eval_count": 28,
+  "error": null,
+  "seconds": 0.681,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "E10-CAS": {
+  "tables": [
+   "lgr"
+  ],
+  "columns": [
+   "lgr.flaeche_m2",
+   "lgr.lgr_typ",
+   "lgr.lgr_nr"
+  ],
+  "output_columns": [
+   "lgr.flaeche_m2"
+  ],
+  "filter_columns": [
+   "lgr.lgr_typ"
+  ],
+  "output_text": "lgr.flaeche_m2",
+  "filter_text": "lgr.lgr_typ = 'cold_chain'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lgr\n#output lgr.flaeche_m2\n#filter lgr.lgr_typ = 'cold_chain'",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.697,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-SCH": {
+  "tables": [
+   "lgr"
+  ],
+  "columns": [
+   "lgr.flaeche_m2",
+   "lgr.lgr_typ",
+   "lgr.lgr_nr"
+  ],
+  "output_columns": [
+   "lgr.flaeche_m2"
+  ],
+  "filter_columns": [
+   "lgr.lgr_typ"
+  ],
+  "output_text": "lgr.flaeche_m2",
+  "filter_text": "lgr.lgr_typ = 'cold_chain'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lgr\n#output lgr.flaeche_m2\n#filter lgr.lgr_typ = 'cold_chain'",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.699,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-BIZ": {
+  "tables": [
+   "lgr"
+  ],
+  "columns": [
+   "lgr.flaeche_m2",
+   "lgr.lgr_typ",
+   "lgr.lgr_nr"
+  ],
+  "output_columns": [
+   "lgr.flaeche_m2"
+  ],
+  "filter_columns": [
+   "lgr.lgr_typ"
+  ],
+  "output_text": "lgr.flaeche_m2",
+  "filter_text": "lgr.lgr_typ = 'cold_chain'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lgr\n#output lgr.flaeche_m2\n#filter lgr.lgr_typ = 'cold_chain'",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.699,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-VAG": {
+  "tables": [
+   "flghf",
+   "lfz",
+   "lgr"
+  ],
+  "columns": [
+   "lgr.flaeche_m2",
+   "lgr.lgr_typ",
+   "flghf.fh_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lgr.lgr_nr",
+   "lgr.fh_nr"
+  ],
+  "output_columns": [
+   "lgr.flaeche_m2"
+  ],
+  "filter_columns": [
+   "lgr.lgr_typ"
+  ],
+  "output_text": "lgr.flaeche_m2",
+  "filter_text": "lgr.lgr_typ = 'cold_chain'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, lgr\n#output lgr.flaeche_m2\n#filter lgr.lgr_typ = 'cold_chain'",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.754,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M01-CAS": {
+  "tables": [
+   "flges",
+   "lfz"
+  ],
+  "columns": [
+   "flges.bez",
+   "lfz.lfz_nr",
+   "flges.flges_nr",
+   "lfz.flges_nr"
+  ],
+  "output_columns": [
+   "flges.bez",
+   "lfz.lfz_nr"
+  ],
+  "filter_columns": [],
+  "output_text": "flges.bez, COUNT(lfz.lfz_nr)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, flges\n#output flges.bez, COUNT(lfz.lfz_nr)\n#filter none",
+  "eval_count": 28,
+  "error": null,
+  "seconds": 0.698,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M01-SCH": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz"
+  ],
+  "columns": [
+   "flges.bez",
+   "lfz.lfz_nr",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flghf.fh_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.flges_nr"
+  ],
+  "output_columns": [
+   "flges.bez",
+   "lfz.lfz_nr"
+  ],
+  "filter_columns": [],
+  "output_text": "flges.bez, COUNT(lfz.lfz_nr)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flges, lfz, flghf\n#output flges.bez, COUNT(lfz.lfz_nr)\n#filter none",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.774,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M01-BIZ": {
+  "tables": [
+   "flges",
+   "lfz"
+  ],
+  "columns": [
+   "flges.bez",
+   "lfz.lfz_nr",
+   "flges.flges_nr",
+   "lfz.flges_nr"
+  ],
+  "output_columns": [
+   "flges.bez",
+   "lfz.lfz_nr"
+  ],
+  "filter_columns": [],
+  "output_text": "flges.bez, COUNT(lfz.lfz_nr)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, flges\n#output flges.bez, COUNT(lfz.lfz_nr)\n#filter none",
+  "eval_count": 28,
+  "error": null,
+  "seconds": 0.677,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M01-VAG": {
+  "tables": [
+   "flges",
+   "lfz"
+  ],
+  "columns": [
+   "flges.bez",
+   "lfz.lfz_nr",
+   "flges.flges_nr",
+   "lfz.flges_nr"
+  ],
+  "output_columns": [
+   "flges.bez",
+   "lfz.lfz_nr"
+  ],
+  "filter_columns": [],
+  "output_text": "flges.bez, COUNT(lfz.lfz_nr)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, flges\n#output flges.bez, COUNT(lfz.lfz_nr)\n#filter none",
+  "eval_count": 28,
+  "error": null,
+  "seconds": 0.691,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-CAS": {
+  "tables": [
+   "bm_param",
+   "lfz_typ",
+   "lfz"
+  ],
+  "columns": [
+   "lfz_typ.mdl",
+   "lfz.lfz_nr",
+   "lfz.stat",
+   "bm_param.param_schl",
+   "bm_param.param_wert",
+   "lfz_typ.typ_nr",
+   "lfz.typ_nr"
+  ],
+  "output_columns": [
+   "lfz_typ.mdl",
+   "lfz.lfz_nr"
+  ],
+  "filter_columns": [
+   "lfz.stat",
+   "bm_param.param_schl",
+   "bm_param.param_wert"
+  ],
+  "output_text": "lfz_typ.mdl, COUNT(lfz.lfz_nr)",
+  "filter_text": "lfz.stat, bm_param.param_schl, bm_param.param_wert",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, lfz_typ, bm_param\n#output lfz_typ.mdl, COUNT(lfz.lfz_nr)\n#filter lfz.stat, bm_param.param_schl, bm_param.param_wert",
+  "eval_count": 46,
+  "error": null,
+  "seconds": 1.05,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M02-SCH": {
+  "tables": [
+   "lfz_typ",
+   "lfz"
+  ],
+  "columns": [
+   "lfz_typ.mdl",
+   "lfz.lfz_nr",
+   "lfz.stat",
+   "lfz_typ.typ_nr",
+   "lfz.typ_nr"
+  ],
+  "output_columns": [
+   "lfz_typ.mdl",
+   "lfz.lfz_nr"
+  ],
+  "filter_columns": [
+   "lfz.stat"
+  ],
+  "output_text": "lfz_typ.mdl, COUNT(lfz.lfz_nr)",
+  "filter_text": "lfz.stat = 'active'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, lfz_typ\n#output lfz_typ.mdl, COUNT(lfz.lfz_nr)\n#filter lfz.stat = 'active'",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.824,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-BIZ": {
+  "tables": [
+   "lfz_typ",
+   "lfz"
+  ],
+  "columns": [
+   "lfz_typ.mdl",
+   "lfz.lfz_nr",
+   "lfz.stat",
+   "lfz_typ.typ_nr",
+   "lfz.typ_nr"
+  ],
+  "output_columns": [
+   "lfz_typ.mdl",
+   "lfz.lfz_nr"
+  ],
+  "filter_columns": [
+   "lfz.stat",
+   "lfz_typ.typ_nr"
+  ],
+  "output_text": "lfz_typ.mdl, COUNT(lfz.lfz_nr)",
+  "filter_text": "lfz.stat, lfz_typ.typ_nr",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, lfz_typ\n#output lfz_typ.mdl, COUNT(lfz.lfz_nr)\n#filter lfz.stat, lfz_typ.typ_nr",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.862,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-VAG": {
+  "tables": [
+   "lfz_typ",
+   "lfz"
+  ],
+  "columns": [
+   "lfz_typ.mdl",
+   "lfz.lfz_nr",
+   "lfz.stat",
+   "lfz_typ.typ_nr",
+   "lfz.typ_nr"
+  ],
+  "output_columns": [
+   "lfz_typ.mdl",
+   "lfz.lfz_nr"
+  ],
+  "filter_columns": [
+   "lfz.stat",
+   "lfz_typ.typ_nr"
+  ],
+  "output_text": "lfz_typ.mdl, COUNT(lfz.lfz_nr)",
+  "filter_text": "lfz.stat, lfz_typ.typ_nr",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, lfz_typ\n#output lfz_typ.mdl, COUNT(lfz.lfz_nr)\n#filter lfz.stat, lfz_typ.typ_nr",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.861,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-CAS": {
+  "tables": [
+   "flghf",
+   "flug"
+  ],
+  "columns": [
+   "flug.stat",
+   "flug.abfl_fh",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [],
+  "filter_columns": [
+   "flug.stat",
+   "flug.abfl_fh"
+  ],
+  "output_text": "",
+  "filter_text": "flug.stat = 'completed', flug.abfl_fh = (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST')",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, flghf\n#output COUNT(flug_id)\n#filter flug.stat = 'completed', flug.abfl_fh = (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST')",
+  "eval_count": 48,
+  "error": null,
+  "seconds": 1.106,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-SCH": {
+  "tables": [
+   "flghf",
+   "flug"
+  ],
+  "columns": [
+   "flug.stat",
+   "flug.abfl_fh",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [],
+  "filter_columns": [
+   "flug.stat",
+   "flug.abfl_fh"
+  ],
+  "output_text": "",
+  "filter_text": "flug.stat = 'completed', flug.abfl_fh = (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST')",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, flghf\n#output count(flug_id)\n#filter flug.stat = 'completed', flug.abfl_fh = (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST')",
+  "eval_count": 48,
+  "error": null,
+  "seconds": 1.115,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-BIZ": {
+  "tables": [
+   "flghf",
+   "flug"
+  ],
+  "columns": [
+   "flug.abfl_ist",
+   "flug.entf_km",
+   "flghf.icao_cd",
+   "flug.stat",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [
+   "flug.abfl_ist",
+   "flug.entf_km"
+  ],
+  "filter_columns": [
+   "flghf.icao_cd",
+   "flug.stat"
+  ],
+  "output_text": "flug.abfl_ist, flug.entf_km",
+  "filter_text": "flghf.icao_cd = 'IST', flug.stat = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, flghf\n#output flug.abfl_ist, flug.entf_km\n#filter flghf.icao_cd = 'IST', flug.stat = 'completed'",
+  "eval_count": 44,
+  "error": null,
+  "seconds": 1.017,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-VAG": {
+  "tables": [
+   "flghf",
+   "flug"
+  ],
+  "columns": [
+   "flug.flug_id",
+   "flghf.bez",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [
+   "flug.flug_id"
+  ],
+  "filter_columns": [
+   "flghf.bez"
+  ],
+  "output_text": "flug.flug_id, flug.abfl_dat, flug.ank_dat",
+  "filter_text": "flghf.bez = 'IST'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf, flug\n#output flug.flug_id, flug.abfl_dat, flug.ank_dat\n#filter flghf.bez = 'IST'",
+  "eval_count": 41,
+  "error": null,
+  "seconds": 0.944,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-CAS": {
+  "tables": [
+   "flghf",
+   "flug"
+  ],
+  "columns": [
+   "flghf.bez",
+   "flug.flug_id",
+   "flug.stat",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.bez",
+   "flghf.bez",
+   "flug.flug_id"
+  ],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "flghf.bez AS from, flghf.bez AS to, COUNT(flug.flug_id) AS count",
+  "filter_text": "flug.stat = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, flghf\n#output flghf.bez AS from, flghf.bez AS to, COUNT(flug.flug_id) AS count\n#filter flug.stat = 'completed'",
+  "eval_count": 47,
+  "error": null,
+  "seconds": 1.077,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-SCH": {
+  "tables": [
+   "flghf",
+   "flug"
+  ],
+  "columns": [
+   "flug.flug_id",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [
+   "flug.flug_id"
+  ],
+  "filter_columns": [
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist"
+  ],
+  "output_text": "flghf_1.iata_cd, flghf_2.iata_cd, COUNT(flug.flug_id)",
+  "filter_text": "flug.stat, flug.abfl_ist, flug.ank_ist",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, flghf\n#output flghf_1.iata_cd, flghf_2.iata_cd, COUNT(flug.flug_id)\n#filter flug.stat, flug.abfl_ist, flug.ank_ist",
+  "eval_count": 56,
+  "error": null,
+  "seconds": 1.303,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-BIZ": {
+  "tables": [
+   "flug",
+   "flug_ladg"
+  ],
+  "columns": [
+   "flug_ladg.ladg_id",
+   "flug.stat",
+   "flug.flug_id",
+   "flug_ladg.flug_id"
+  ],
+  "output_columns": [
+   "flug_ladg.ladg_id",
+   "flug_ladg.ladg_id"
+  ],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "flug_ladg.ladg_id, COUNT(flug_ladg.ladg_id) AS completed_flights",
+  "filter_text": "flug.stat = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, flug_ladg\n#output flug_ladg.ladg_id, COUNT(flug_ladg.ladg_id) AS completed_flights\n#filter flug.stat = 'completed'",
+  "eval_count": 49,
+  "error": null,
+  "seconds": 1.116,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.2,
+   "columns_in_schema": 0.6,
+   "tables_kept": 2
+  }
+ },
+ "M04-VAG": {
+  "tables": [
+   "flghf",
+   "flug"
+  ],
+  "columns": [
+   "flghf.bez",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.bez",
+   "flghf.bez",
+   "flug.flug_id"
+  ],
+  "filter_columns": [],
+  "output_text": "flghf.bez AS departure, flghf.bez AS arrival, COUNT(flug.flug_id) AS flight_count",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, flghf\n#output flghf.bez AS departure, flghf.bez AS arrival, COUNT(flug.flug_id) AS flight_count\n#filter none",
+  "eval_count": 42,
+  "error": null,
+  "seconds": 0.966,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M05-CAS": {
+  "tables": [
+   "flug"
+  ],
+  "columns": [
+   "flug.stat",
+   "flug.flug_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "",
+  "filter_text": "flug.stat = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug\n#output flgesbez, AVG(CAST(REPLACE(SUBSTR(versp_cd, 4), ' ', '') AS REAL)) AS avg_delay_minutes\n#filter flug.stat = 'completed'",
+  "eval_count": 48,
+  "error": null,
+  "seconds": 1.099,
+  "recall": {
+   "tables_found": 0.3333333333333333,
+   "all_tables_found": false,
+   "columns_listed": 0.125,
+   "columns_in_schema": 0.5,
+   "tables_kept": 1
+  }
+ },
+ "M05-SCH": {
+  "tables": [
+   "flghf",
+   "lfz",
+   "flug"
+  ],
+  "columns": [
+   "flug.ank_ist",
+   "flug.ank_plan",
+   "flug.stat",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flug.lfz_nr",
+   "flghf.fh_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr"
+  ],
+  "output_columns": [
+   "flug.ank_ist",
+   "flug.ank_plan"
+  ],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "lfz.bez, AVG((strftime('%s', flug.ank_ist) - strftime('%s', flug.ank_plan)) / 60) AS avg_delay_minutes",
+  "filter_text": "flug.stat = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, lfz, flghf\n#output lfz.bez, AVG((strftime('%s', flug.ank_ist) - strftime('%s', flug.ank_plan)) / 60) AS avg_delay_minutes\n#filter flug.stat = 'completed'",
+  "eval_count": 63,
+  "error": null,
+  "seconds": 1.432,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.625,
+   "columns_in_schema": 0.75,
+   "tables_kept": 3
+  }
+ },
+ "M05-BIZ": {
+  "tables": [
+   "flghf",
+   "flges",
+   "flug"
+  ],
+  "columns": [
+   "flges.bez",
+   "flug.stat",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flghf.fh_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh"
+  ],
+  "output_columns": [
+   "flges.bez"
+  ],
+  "filter_columns": [
+   "flug.stat",
+   "flges.flges_nr"
+  ],
+  "output_text": "flges.bez, AVG(flug.versp_min)",
+  "filter_text": "flug.stat, flges.flges_nr",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, flges\n#output flges.bez, AVG(flug.versp_min)\n#filter flug.stat, flges.flges_nr",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.828,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.375,
+   "columns_in_schema": 0.75,
+   "tables_kept": 3
+  }
+ },
+ "M05-VAG": {
+  "tables": [
+   "flghf",
+   "flges",
+   "flug"
+  ],
+  "columns": [
+   "flges.bez",
+   "flug.stat",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flghf.fh_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh"
+  ],
+  "output_columns": [
+   "flges.bez"
+  ],
+  "filter_columns": [
+   "flug.stat",
+   "flges.flges_nr"
+  ],
+  "output_text": "flges.bez",
+  "filter_text": "flug.stat, flug.abfl_dat, flges.flges_nr",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flges, flug\n#output flges.bez\n#filter flug.stat, flug.abfl_dat, flges.flges_nr",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.778,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.375,
+   "columns_in_schema": 0.75,
+   "tables_kept": 3
+  }
+ },
+ "M06-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "flug"
+  ],
+  "columns": [
+   "flges.bez",
+   "flug.flug_id",
+   "flug.stat",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flghf.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh"
+  ],
+  "output_columns": [
+   "flges.bez",
+   "flug.flug_id"
+  ],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "flges.bez, COUNT(flug.flug_id)",
+  "filter_text": "flug.stat = 'cancelled'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flges, flug\n#output flges.bez, COUNT(flug.flug_id)\n#filter flug.stat = 'cancelled'",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.766,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "M06-SCH": {
+  "tables": [
+   "flghf",
+   "lfz",
+   "flug"
+  ],
+  "columns": [
+   "flghf.bez",
+   "flug.flug_id",
+   "flug.stat",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flug.lfz_nr",
+   "flghf.fh_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr"
+  ],
+  "output_columns": [
+   "flghf.bez",
+   "flug.flug_id"
+  ],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "flghf.bez, COUNT(flug.flug_id)",
+  "filter_text": "flug.stat = 'cancelled'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, lfz, flghf\n#output flghf.bez, COUNT(flug.flug_id)\n#filter flug.stat = 'cancelled'",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.862,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "M06-BIZ": {
+  "tables": [
+   "flghf",
+   "flges",
+   "flug"
+  ],
+  "columns": [
+   "flges.bez",
+   "flug.flug_id",
+   "flug.stat",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flghf.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh"
+  ],
+  "output_columns": [
+   "flges.bez",
+   "flug.flug_id"
+  ],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "flges.bez, COUNT(flug.flug_id) AS cancellation_volume",
+  "filter_text": "flug.stat = 'cancelled'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flges, flug\n#output flges.bez, COUNT(flug.flug_id) AS cancellation_volume\n#filter flug.stat = 'cancelled'",
+  "eval_count": 36,
+  "error": null,
+  "seconds": 0.837,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "M06-VAG": {
+  "tables": [
+   "flghf",
+   "flges",
+   "flug"
+  ],
+  "columns": [
+   "flges.bez",
+   "flug.flug_id",
+   "flug.stat",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flghf.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh"
+  ],
+  "output_columns": [
+   "flges.bez",
+   "flug.flug_id"
+  ],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "flges.bez, COUNT(flug.flug_id) AS cancellation_count",
+  "filter_text": "flug.stat = 'cancelled'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flges, flug\n#output flges.bez, COUNT(flug.flug_id) AS cancellation_count\n#filter flug.stat = 'cancelled'",
+  "eval_count": 36,
+  "error": null,
+  "seconds": 0.861,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "M07-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "flug",
+   "betankg"
+  ],
+  "columns": [
+   "flges.bez",
+   "betankg.co2_kg",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flghf.fh_nr",
+   "betankg.betank_id",
+   "betankg.fh_nr",
+   "betankg.flug_id",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh"
+  ],
+  "output_columns": [
+   "flges.bez",
+   "betankg.co2_kg"
+  ],
+  "filter_columns": [],
+  "output_text": "flges.bez, SUM(betankg.co2_kg) AS total_co2",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, betankg\n#output flges.bez, SUM(betankg.co2_kg) AS total_co2\n#filter none",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.825,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.625,
+   "columns_in_schema": 0.75,
+   "tables_kept": 4
+  }
+ },
+ "M07-SCH": {
+  "tables": [
+   "flges",
+   "lfz",
+   "flug",
+   "betankg"
+  ],
+  "columns": [
+   "flges.bez",
+   "betankg.co2_kg",
+   "flges.flges_nr",
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "lfz.lfz_nr",
+   "lfz.flges_nr",
+   "betankg.betank_id",
+   "betankg.flug_id"
+  ],
+  "output_columns": [
+   "flges.bez",
+   "betankg.co2_kg"
+  ],
+  "filter_columns": [],
+  "output_text": "flges.bez, SUM(betankg.co2_kg / 1000) AS avg_co2_kg",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables betankg, flug, lfz, flges\n#output flges.bez, SUM(betankg.co2_kg / 1000) AS avg_co2_kg\n#filter none",
+  "eval_count": 49,
+  "error": null,
+  "seconds": 1.134,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "M07-BIZ": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz",
+   "betankg"
+  ],
+  "columns": [
+   "flges.bez",
+   "betankg.co2_kg",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flghf.fh_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.flges_nr",
+   "betankg.betank_id",
+   "betankg.fh_nr"
+  ],
+  "output_columns": [
+   "flges.bez",
+   "betankg.co2_kg"
+  ],
+  "filter_columns": [],
+  "output_text": "flges.bez, SUM(betankg.co2_kg) AS total_co2",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flges, lfz, betankg\n#output flges.bez, SUM(betankg.co2_kg) AS total_co2\n#filter none",
+  "eval_count": 38,
+  "error": null,
+  "seconds": 0.886,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.625,
+   "columns_in_schema": 0.75,
+   "tables_kept": 4
+  }
+ },
+ "M07-VAG": {
+  "tables": [
+   "flug",
+   "betankg"
+  ],
+  "columns": [
+   "flug.flugnr",
+   "betankg.co2_kg",
+   "flug.flug_id",
+   "betankg.betank_id",
+   "betankg.flug_id"
+  ],
+  "output_columns": [
+   "flug.flugnr",
+   "betankg.co2_kg"
+  ],
+  "filter_columns": [],
+  "output_text": "flug.flugnr, SUM(betankg.co2_kg) AS total_co2_emissions",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables betankg, flug\n#output flug.flugnr, SUM(betankg.co2_kg) AS total_co2_emissions\n#filter none",
+  "eval_count": 38,
+  "error": null,
+  "seconds": 0.881,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.375,
+   "columns_in_schema": 0.5,
+   "tables_kept": 2
+  }
+ },
+ "M08-CAS": {
+  "tables": [
+   "flghf",
+   "betankg"
+  ],
+  "columns": [
+   "flghf.reg",
+   "betankg.preis_usd_l",
+   "flghf.fh_nr",
+   "betankg.betank_id",
+   "betankg.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.reg",
+   "betankg.preis_usd_l"
+  ],
+  "filter_columns": [],
+  "output_text": "flghf.reg, AVG(betankg.preis_usd_l)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables betankg, flghf\n#output flghf.reg, AVG(betankg.preis_usd_l)\n#filter none",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.76,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-SCH": {
+  "tables": [
+   "flghf",
+   "betankg"
+  ],
+  "columns": [
+   "flghf.reg",
+   "betankg.preis_usd_l",
+   "flghf.fh_nr",
+   "betankg.betank_id",
+   "betankg.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.reg",
+   "betankg.preis_usd_l"
+  ],
+  "filter_columns": [],
+  "output_text": "flghf.reg, AVG(betankg.preis_usd_l)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables betankg, flghf\n#output flghf.reg, AVG(betankg.preis_usd_l)\n#filter none",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.769,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-BIZ": {
+  "tables": [
+   "flghf",
+   "betankg"
+  ],
+  "columns": [
+   "flghf.reg",
+   "betankg.preis_usd_l",
+   "flghf.fh_nr",
+   "betankg.betank_id",
+   "betankg.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.reg",
+   "betankg.preis_usd_l"
+  ],
+  "filter_columns": [],
+  "output_text": "flghf.reg, AVG(betankg.preis_usd_l)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables betankg, flghf\n#output flghf.reg, AVG(betankg.preis_usd_l)\n#filter none",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.761,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-VAG": {
+  "tables": [
+   "flghf",
+   "flug",
+   "betankg"
+  ],
+  "columns": [
+   "flghf.ort",
+   "betankg.menge_kg",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flghf.fh_nr",
+   "betankg.betank_id",
+   "betankg.fh_nr",
+   "betankg.flug_id"
+  ],
+  "output_columns": [
+   "flghf.ort",
+   "betankg.menge_kg"
+  ],
+  "filter_columns": [],
+  "output_text": "flghf.ort, AVG(betankg.menge_kg)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables betankg, flug, flghf\n#output flghf.ort, AVG(betankg.menge_kg)\n#filter none",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.815,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M09-CAS": {
+  "tables": [
+   "flghf",
+   "lgr"
+  ],
+  "columns": [
+   "flghf.ort",
+   "lgr.lgr_nr",
+   "flghf.fh_nr",
+   "lgr.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.ort",
+   "lgr.lgr_nr"
+  ],
+  "filter_columns": [],
+  "output_text": "flghf.ort, COUNT(lgr.lgr_nr)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lgr, flghf\n#output flghf.ort, COUNT(lgr.lgr_nr)\n#filter none",
+  "eval_count": 28,
+  "error": null,
+  "seconds": 0.674,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-SCH": {
+  "tables": [
+   "flghf",
+   "lgr"
+  ],
+  "columns": [
+   "flghf.iata_cd",
+   "lgr.lgr_nr",
+   "flghf.fh_nr",
+   "lgr.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.iata_cd",
+   "lgr.lgr_nr"
+  ],
+  "filter_columns": [],
+  "output_text": "flghf.iata_cd, COUNT(lgr.lgr_nr)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf, lgr\n#output flghf.iata_cd, COUNT(lgr.lgr_nr)\n#filter none",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.691,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-BIZ": {
+  "tables": [
+   "flghf",
+   "lgr"
+  ],
+  "columns": [
+   "flghf.ort",
+   "lgr.lgr_nr",
+   "lgr.flaeche_m2",
+   "flghf.fh_nr",
+   "lgr.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.ort",
+   "lgr.lgr_nr"
+  ],
+  "filter_columns": [
+   "lgr.flaeche_m2"
+  ],
+  "output_text": "flghf.ort, COUNT(lgr.lgr_nr)",
+  "filter_text": "lgr.flaeche_m2 >= 4000",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf, lgr\n#output flghf.ort, COUNT(lgr.lgr_nr)\n#filter lgr.flaeche_m2 >= 4000",
+  "eval_count": 41,
+  "error": null,
+  "seconds": 0.939,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-VAG": {
+  "tables": [
+   "flghf",
+   "lgr"
+  ],
+  "columns": [
+   "flghf.ort",
+   "lgr.lgr_nr",
+   "flghf.fh_nr",
+   "lgr.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.ort",
+   "lgr.lgr_nr"
+  ],
+  "filter_columns": [],
+  "output_text": "flghf.ort, COUNT(lgr.lgr_nr) AS warehouse_count",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf, lgr\n#output flghf.ort, COUNT(lgr.lgr_nr) AS warehouse_count\n#filter none",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.76,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-CAS": {
+  "tables": [
+   "flghf",
+   "lgr"
+  ],
+  "columns": [
+   "flghf.ort",
+   "flghf.bez",
+   "lgr.zolllager_kz",
+   "flghf.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.ort",
+   "flghf.bez"
+  ],
+  "filter_columns": [
+   "lgr.zolllager_kz",
+   "flghf.ort"
+  ],
+  "output_text": "flghf.ort, flghf.bez",
+  "filter_text": "lgr.zolllager_kz, flghf.ort",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lgr, flghf\n#output flghf.ort, flghf.bez\n#filter lgr.zolllager_kz, flghf.ort",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.933,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-SCH": {
+  "tables": [
+   "flghf",
+   "lgr"
+  ],
+  "columns": [
+   "flghf.iata_cd",
+   "lgr.lgr_nr",
+   "lgr.zolllager_kz",
+   "flghf.fh_nr",
+   "lgr.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.iata_cd",
+   "lgr.lgr_nr"
+  ],
+  "filter_columns": [
+   "lgr.zolllager_kz"
+  ],
+  "output_text": "flghf.iata_cd, COUNT(lgr.lgr_nr)",
+  "filter_text": "lgr.zolllager_kz = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lgr, flghf\n#output flghf.iata_cd, COUNT(lgr.lgr_nr)\n#filter lgr.zolllager_kz = 1",
+  "eval_count": 39,
+  "error": null,
+  "seconds": 0.912,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-BIZ": {
+  "tables": [
+   "flghf",
+   "lgr"
+  ],
+  "columns": [
+   "flghf.ort",
+   "lgr.lgr_nr",
+   "lgr.zolllager_kz",
+   "flghf.fh_nr",
+   "lgr.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.ort",
+   "lgr.lgr_nr"
+  ],
+  "filter_columns": [
+   "lgr.zolllager_kz",
+   "flghf.ort"
+  ],
+  "output_text": "flghf.ort, COUNT(lgr.lgr_nr)",
+  "filter_text": "lgr.zolllager_kz, flghf.ort",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lgr, flghf\n#output flghf.ort, COUNT(lgr.lgr_nr)\n#filter lgr.zolllager_kz, flghf.ort",
+  "eval_count": 41,
+  "error": null,
+  "seconds": 0.964,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-VAG": {
+  "tables": [
+   "flghf",
+   "lgr"
+  ],
+  "columns": [
+   "flghf.ort",
+   "flghf.bez",
+   "lgr.lgr_nr",
+   "flghf.fh_nr",
+   "lgr.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.ort",
+   "flghf.bez",
+   "lgr.lgr_nr"
+  ],
+  "filter_columns": [],
+  "output_text": "flghf.ort, flghf.bez, COUNT(lgr.lgr_nr) AS bonded_warehouses",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lgr, flghf\n#output flghf.ort, flghf.bez, COUNT(lgr.lgr_nr) AS bonded_warehouses\n#filter none",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.932,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H01-CAS": {
+  "tables": [
+   "flges",
+   "lfz",
+   "flug"
+  ],
+  "columns": [
+   "flges.bez",
+   "flug.flug_id",
+   "flug.stat",
+   "flges.flges_nr",
+   "flug.lfz_nr",
+   "lfz.lfz_nr",
+   "lfz.flges_nr"
+  ],
+  "output_columns": [
+   "flges.bez",
+   "flug.flug_id"
+  ],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "flges.bez, COUNT(flug.flug_id) AS completed_flights",
+  "filter_text": "flug.stat = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, flug, flges\n#output flges.bez, COUNT(flug.flug_id) AS completed_flights\n#filter flug.stat = 'completed'",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.923,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8571428571428571,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H01-SCH": {
+  "tables": [
+   "flghf",
+   "lfz",
+   "flug"
+  ],
+  "columns": [
+   "flghf.bez",
+   "lfz.kennz",
+   "flug.flug_id",
+   "flug.stat",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flug.lfz_nr",
+   "flghf.fh_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr"
+  ],
+  "output_columns": [
+   "flghf.bez",
+   "lfz.kennz",
+   "flug.flug_id"
+  ],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "flghf.bez, lfz.kennz, COUNT(flug.flug_id)",
+  "filter_text": "flug.stat = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf, lfz, flug\n#output flghf.bez, lfz.kennz, COUNT(flug.flug_id)\n#filter flug.stat = 'completed'",
+  "eval_count": 43,
+  "error": null,
+  "seconds": 1.006,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5714285714285714,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 3
+  }
+ },
+ "H01-BIZ": {
+  "tables": [
+   "flges",
+   "lfz",
+   "flug"
+  ],
+  "columns": [
+   "flges.bez",
+   "lfz.kennz",
+   "flug.flug_id",
+   "flug.stat",
+   "lfz.stat",
+   "flges.flges_nr",
+   "flug.lfz_nr",
+   "lfz.lfz_nr",
+   "lfz.flges_nr"
+  ],
+  "output_columns": [
+   "flges.bez",
+   "lfz.kennz",
+   "flug.flug_id"
+  ],
+  "filter_columns": [
+   "flug.stat",
+   "lfz.stat"
+  ],
+  "output_text": "flges.bez, lfz.kennz, COUNT(flug.flug_id) AS completed_flights",
+  "filter_text": "flug.stat, lfz.stat",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, flug, flges\n#output flges.bez, lfz.kennz, COUNT(flug.flug_id) AS completed_flights\n#filter flug.stat, lfz.stat",
+  "eval_count": 46,
+  "error": null,
+  "seconds": 1.057,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H01-VAG": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz_typ",
+   "lfz",
+   "bes_mitgl",
+   "sndg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "flges.bez",
+   "lfz_typ.mdl",
+   "sndg.sndg_nr",
+   "lfz_typ.typ_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.sndg_nr",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.flges_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "flghf.fh_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.flges_nr",
+   "lfz.typ_nr"
+  ],
+  "output_columns": [
+   "flges.bez",
+   "lfz_typ.mdl",
+   "sndg.sndg_nr"
+  ],
+  "filter_columns": [],
+  "output_text": "flges.bez, lfz_typ.mdl, COUNT(sndg.sndg_nr) AS shipment_count",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, lfz_typ, flges, flug_ladg, sndg\n#output flges.bez, lfz_typ.mdl, COUNT(sndg.sndg_nr) AS shipment_count\n#filter none",
+  "eval_count": 50,
+  "error": null,
+  "seconds": 1.133,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5714285714285714,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 7
+  }
+ },
+ "H02-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz",
+   "flug"
+  ],
+  "columns": [
+   "flghf.ort",
+   "flges.bez",
+   "flug.flug_id",
+   "flug.stat",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flghf.fh_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.flges_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flug.lfz_nr"
+  ],
+  "output_columns": [
+   "flghf.ort",
+   "flges.bez",
+   "flug.flug_id"
+  ],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "flghf.ort, flges.bez, COUNT(flug.flug_id) AS landing_count",
+  "filter_text": "flug.stat = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf, flug, lfz\n#output flghf.ort, flges.bez, COUNT(flug.flug_id) AS landing_count\n#filter flug.stat = 'completed'",
+  "eval_count": 46,
+  "error": null,
+  "seconds": 1.055,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8888888888888888,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H02-SCH": {
+  "tables": [
+   "flghf",
+   "flges",
+   "flug"
+  ],
+  "columns": [
+   "flghf.iata_cd",
+   "flghf.bez",
+   "flges.bez",
+   "flug.flug_id",
+   "flug.stat",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flghf.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh"
+  ],
+  "output_columns": [
+   "flghf.iata_cd",
+   "flghf.bez",
+   "flges.bez",
+   "flug.flug_id"
+  ],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "flghf.iata_cd, flghf.bez, flges.bez, COUNT(flug.flug_id)",
+  "filter_text": "flug.stat = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, flghf, flges\n#output flghf.iata_cd, flghf.bez, flges.bez, COUNT(flug.flug_id)\n#filter flug.stat = 'completed'",
+  "eval_count": 49,
+  "error": null,
+  "seconds": 1.14,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H02-BIZ": {
+  "tables": [
+   "flghf",
+   "flges",
+   "flug"
+  ],
+  "columns": [
+   "flghf.ort",
+   "flges.bez",
+   "flug.flug_id",
+   "flug.stat",
+   "flug.ank_ist",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flghf.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh"
+  ],
+  "output_columns": [
+   "flghf.ort",
+   "flges.bez",
+   "flug.flug_id"
+  ],
+  "filter_columns": [
+   "flug.stat",
+   "flug.ank_ist"
+  ],
+  "output_text": "flghf.ort, flges.bez, COUNT(flug.flug_id) AS completed_arrivals",
+  "filter_text": "flug.stat = 'completed', flug.ank_ist IS NOT NULL",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, flges, flghf\n#output flghf.ort, flges.bez, COUNT(flug.flug_id) AS completed_arrivals\n#filter flug.stat = 'completed', flug.ank_ist IS NOT NULL",
+  "eval_count": 56,
+  "error": null,
+  "seconds": 1.261,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.5555555555555556,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H02-VAG": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz",
+   "flug"
+  ],
+  "columns": [
+   "flghf.ort",
+   "flges.bez",
+   "flug.flug_id",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flghf.fh_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.flges_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flug.lfz_nr"
+  ],
+  "output_columns": [
+   "flghf.ort",
+   "flges.bez",
+   "flug.flug_id"
+  ],
+  "filter_columns": [],
+  "output_text": "flghf.ort, flges.bez, COUNT(flug.flug_id) AS flight_count",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flges, flug, lfz, flghf\n#output flghf.ort, flges.bez, COUNT(flug.flug_id) AS flight_count\n#filter none",
+  "eval_count": 43,
+  "error": null,
+  "seconds": 0.984,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.7777777777777778,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H03-CAS": {
+  "tables": [
+   "bm_param",
+   "rech_kopf"
+  ],
+  "columns": [
+   "rech_kopf.ausst_dat",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.rech_id",
+   "bm_param.param_schl"
+  ],
+  "output_columns": [
+   "rech_kopf.ausst_dat",
+   "rech_kopf.brutto_usd"
+  ],
+  "filter_columns": [
+   "rech_kopf.ausst_dat"
+  ],
+  "output_text": "rech_kopf.ausst_dat, SUM(rech_kopf.brutto_usd) AS total_invoiced",
+  "filter_text": "rech_kopf.ausst_dat LIKE '2025-%'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables rech_kopf, bm_param\n#output rech_kopf.ausst_dat, SUM(rech_kopf.brutto_usd) AS total_invoiced\n#filter rech_kopf.ausst_dat LIKE '2025-%'",
+  "eval_count": 60,
+  "error": null,
+  "seconds": 1.343,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H03-SCH": {
+  "tables": [
+   "bm_param",
+   "rech_kopf"
+  ],
+  "columns": [
+   "rech_kopf.ausst_dat",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.rech_id",
+   "bm_param.param_schl"
+  ],
+  "output_columns": [
+   "rech_kopf.ausst_dat",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.ausst_dat"
+  ],
+  "filter_columns": [
+   "rech_kopf.ausst_dat"
+  ],
+  "output_text": "rech_kopf.ausst_dat, SUM(rech_kopf.brutto_usd), SUM(SUM(rech_kopf.brutto_usd)) OVER (ORDER BY rech_kopf.ausst_dat)",
+  "filter_text": "rech_kopf.ausst_dat LIKE '2025%'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables rech_kopf, bm_param\n#output rech_kopf.ausst_dat, SUM(rech_kopf.brutto_usd), SUM(SUM(rech_kopf.brutto_usd)) OVER (ORDER BY rech_kopf.ausst_dat)\n#filter rech_kopf.ausst_dat LIKE '2025%'",
+  "eval_count": 80,
+  "error": null,
+  "seconds": 1.774,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H03-BIZ": {
+  "tables": [
+   "flghf",
+   "flug",
+   "sndg",
+   "rech_kopf"
+  ],
+  "columns": [
+   "rech_kopf.ausst_dat",
+   "rech_kopf.brutto_usd",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "rech_kopf.rech_id",
+   "rech_kopf.sndg_nr",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [
+   "rech_kopf.ausst_dat",
+   "rech_kopf.brutto_usd"
+  ],
+  "filter_columns": [
+   "rech_kopf.ausst_dat"
+  ],
+  "output_text": "rech_kopf.ausst_dat, SUM(rech_kopf.brutto_usd) AS monthly_revenue",
+  "filter_text": "rech_kopf.ausst_dat LIKE '2025%'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables rech_kopf, flug, sndg\n#output rech_kopf.ausst_dat, SUM(rech_kopf.brutto_usd) AS monthly_revenue\n#filter rech_kopf.ausst_dat LIKE '2025%'",
+  "eval_count": 61,
+  "error": null,
+  "seconds": 1.367,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H03-VAG": {
+  "tables": [
+   "rech_kopf",
+   "zahlg"
+  ],
+  "columns": [
+   "zahlg.betr_usd",
+   "zahlg.zahlg_id",
+   "zahlg.rech_id",
+   "rech_kopf.rech_id"
+  ],
+  "output_columns": [
+   "zahlg.betr_usd"
+  ],
+  "filter_columns": [],
+  "output_text": "rech_kopf.betr_usd, SUM(zahlg.betr_usd) AS total_revenue",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables rech_kopf, zahlg\n#output rech_kopf.betr_usd, SUM(zahlg.betr_usd) AS total_revenue\n#filter none",
+  "eval_count": 42,
+  "error": null,
+  "seconds": 0.96,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-CAS": {
+  "tables": [
+   "flug",
+   "sdg_verfolg"
+  ],
+  "columns": [
+   "flug.abfl_plan",
+   "sdg_verfolg.ereig_id",
+   "sdg_verfolg.gew_kg",
+   "flug.stat",
+   "sdg_verfolg.ereig_cd",
+   "sdg_verfolg.flug_id",
+   "flug.flug_id"
+  ],
+  "output_columns": [
+   "flug.abfl_plan",
+   "sdg_verfolg.ereig_id",
+   "sdg_verfolg.gew_kg"
+  ],
+  "filter_columns": [
+   "flug.stat",
+   "sdg_verfolg.ereig_cd"
+  ],
+  "output_text": "flug.abfl_plan, COUNT(sdg_verfolg.ereig_id) AS flights_completed, AVG(sdg_verfolg.gew_kg) AS avg_weight",
+  "filter_text": "flug.stat = 'completed', sdg_verfolg.ereig_cd = 'DLV'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, sdg_verfolg\n#output flug.abfl_plan, COUNT(sdg_verfolg.ereig_id) AS flights_completed, AVG(sdg_verfolg.gew_kg) AS avg_weight\n#filter flug.stat = 'completed', sdg_verfolg.ereig_cd = 'DLV'",
+  "eval_count": 73,
+  "error": null,
+  "seconds": 1.628,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-SCH": {
+  "tables": [
+   "flug"
+  ],
+  "columns": [
+   "flug.abfl_ist",
+   "flug.stat",
+   "flug.flug_id"
+  ],
+  "output_columns": [
+   "flug.abfl_ist",
+   "flug.stat",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.stat"
+  ],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "flug.abfl_ist, flug.stat, LAG(COUNT(CASE WHEN flug.stat = 'completed' THEN 1 ELSE NULL END)) OVER (ORDER BY flug.abfl_ist) - COUNT(CASE WHEN flug.stat = 'completed' THEN 1 ELSE NULL END) AS diff",
+  "filter_text": "flug.stat = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug\n#output flug.abfl_ist, flug.stat, LAG(COUNT(CASE WHEN flug.stat = 'completed' THEN 1 ELSE NULL END)) OVER (ORDER BY flug.abfl_ist) - COUNT(CASE WHEN flug.stat = 'completed' THEN 1 ELSE NULL END) AS diff\n#filter flug.stat = 'completed'",
+  "eval_count": 82,
+  "error": null,
+  "seconds": 1.818,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "H04-BIZ": {
+  "tables": [
+   "flghf",
+   "flug"
+  ],
+  "columns": [
+   "flug.stat",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "",
+  "filter_text": "flug.stat = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, flghf\n#output flug.abfl_dat, COUNT(flug_id) AS completed_flights, LAG(COUNT(flug_id)) OVER (ORDER BY flug.abfl_dat) AS previous_month_flights\n#filter flug.stat = 'completed'",
+  "eval_count": 61,
+  "error": null,
+  "seconds": 1.364,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-VAG": {
+  "tables": [
+   "flghf",
+   "flug"
+  ],
+  "columns": [
+   "flug.abfl_plan",
+   "flghf.ort",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flghf.fh_nr"
+  ],
+  "output_columns": [
+   "flug.abfl_plan"
+  ],
+  "filter_columns": [
+   "flug.abfl_plan",
+   "flghf.ort"
+  ],
+  "output_text": "flug.abfl_plan, COUNT(flug_id)",
+  "filter_text": "flug.abfl_plan, flghf.ort",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, flghf\n#output flug.abfl_plan, COUNT(flug_id)\n#filter flug.abfl_plan, flghf.ort",
+  "eval_count": 36,
+  "error": null,
+  "seconds": 0.832,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H05-CAS": {
+  "tables": [
+   "lfz_typ",
+   "lfz",
+   "flug",
+   "betankg"
+  ],
+  "columns": [
+   "lfz.kennz",
+   "betankg.betank_zeit",
+   "betankg.menge_kg",
+   "lfz_typ.max_nutzl_kg",
+   "flug.stat",
+   "lfz.lfz_nr",
+   "lfz_typ.typ_nr",
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "lfz.typ_nr",
+   "betankg.betank_id",
+   "betankg.flug_id"
+  ],
+  "output_columns": [
+   "lfz.kennz",
+   "betankg.betank_zeit",
+   "betankg.menge_kg",
+   "lfz_typ.max_nutzl_kg"
+  ],
+  "filter_columns": [
+   "flug.stat",
+   "lfz.lfz_nr"
+  ],
+  "output_text": "lfz.kennz, AVG(betankg.betank_zeit - betankg.menge_kg / lfz_typ.max_nutzl_kg * 60)",
+  "filter_text": "flug.stat = 'completed', betankg.stat = 'completed', lfz.lfz_nr = betankg.lfz_nr",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, flug, betankg\n#output lfz.kennz, AVG(betankg.betank_zeit - betankg.menge_kg / lfz_typ.max_nutzl_kg * 60)\n#filter flug.stat = 'completed', betankg.stat = 'completed', lfz.lfz_nr = betankg.lfz_nr",
+  "eval_count": 85,
+  "error": null,
+  "seconds": 1.861,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H05-SCH": {
+  "tables": [
+   "lfz",
+   "flug"
+  ],
+  "columns": [
+   "lfz.kennz",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.stat",
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "lfz.lfz_nr"
+  ],
+  "output_columns": [
+   "lfz.kennz",
+   "flug.abfl_ist",
+   "flug.ank_ist"
+  ],
+  "filter_columns": [
+   "flug.stat"
+  ],
+  "output_text": "lfz.kennz, AVG((strftime('%s', flug.abfl_ist) - strftime('%s', flug.ank_ist)) / 3600) AS avg_time_diff",
+  "filter_text": "flug.stat = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, flug, lfz_nr, kennz, abfl_ist, ank_ist\n#output lfz.kennz, AVG((strftime('%s', flug.abfl_ist) - strftime('%s', flug.ank_ist)) / 3600) AS avg_time_diff\n#filter flug.stat = 'completed'",
+  "eval_count": 79,
+  "error": null,
+  "seconds": 1.76,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H05-BIZ": {
+  "tables": [
+   "flghf",
+   "lfz",
+   "flug",
+   "betankg",
+   "sndg",
+   "rech_kopf"
+  ],
+  "columns": [
+   "lfz.kennz",
+   "flug.abfl_ist",
+   "flug.abfl_plan",
+   "flug.stat",
+   "betankg.flug_id",
+   "flug.flug_id",
+   "betankg.betank_id",
+   "betankg.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flug.lfz_nr",
+   "rech_kopf.rech_id",
+   "rech_kopf.sndg_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "flghf.fh_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr"
+  ],
+  "output_columns": [
+   "lfz.kennz",
+   "flug.abfl_ist",
+   "flug.abfl_plan"
+  ],
+  "filter_columns": [
+   "flug.stat",
+   "betankg.flug_id",
+   "flug.flug_id",
+   "flug.flug_id"
+  ],
+  "output_text": "lfz.kennz, AVG(flug.abfl_ist - flug.abfl_plan)",
+  "filter_text": "flug.stat = 'completed', betankg.flug_id = flug.flug_id, rech_kopf.flug_id = flug.flug_id",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, flug, betankg, rech_kopf\n#output lfz.kennz, AVG(flug.abfl_ist - flug.abfl_plan)\n#filter flug.stat = 'completed', betankg.flug_id = flug.flug_id, rech_kopf.flug_id = flug.flug_id",
+  "eval_count": 77,
+  "error": null,
+  "seconds": 1.696,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "H05-VAG": {
+  "tables": [
+   "flug",
+   "flug_ladg",
+   "sdg_verfolg"
+  ],
+  "columns": [
+   "flug.flug_id",
+   "sdg_verfolg.ereig_zeit",
+   "flug.abfl_ist",
+   "flug.stat",
+   "sdg_verfolg.ereig_cd",
+   "sdg_verfolg.ereig_id",
+   "sdg_verfolg.flug_id",
+   "flug_ladg.ladg_id",
+   "flug_ladg.flug_id"
+  ],
+  "output_columns": [
+   "flug.flug_id",
+   "sdg_verfolg.ereig_zeit",
+   "flug.abfl_ist"
+  ],
+  "filter_columns": [
+   "flug.stat",
+   "sdg_verfolg.ereig_cd"
+  ],
+  "output_text": "flug.flug_id, MIN(sdg_verfolg.ereig_zeit - flug.abfl_ist) AS turnaround_time",
+  "filter_text": "flug.stat = 'completed', sdg_verfolg.ereig_cd = 'ARR'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, flug_ladg, sdg_verfolg\n#output flug.flug_id, MIN(sdg_verfolg.ereig_zeit - flug.abfl_ist) AS turnaround_time\n#filter flug.stat = 'completed', sdg_verfolg.ereig_cd = 'ARR'",
+  "eval_count": 71,
+  "error": null,
+  "seconds": 1.566,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "H06-CAS": {
+  "tables": [
+   "knd_stamm",
+   "sndg",
+   "rech_kopf"
+  ],
+  "columns": [
+   "knd_stamm.name1",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.rech_id",
+   "rech_kopf.sndg_nr",
+   "sndg.sndg_nr",
+   "sndg.kunnr",
+   "knd_stamm.kunnr"
+  ],
+  "output_columns": [
+   "knd_stamm.name1",
+   "rech_kopf.brutto_usd"
+  ],
+  "filter_columns": [],
+  "output_text": "knd_stamm.name1, SUM(rech_kopf.brutto_usd) AS total_invoiced",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables rech_kopf, knd_stamm\n#output knd_stamm.name1, SUM(rech_kopf.brutto_usd) AS total_invoiced\n#filter none",
+  "eval_count": 43,
+  "error": null,
+  "seconds": 0.987,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-SCH": {
+  "tables": [
+   "knd_stamm",
+   "sndg",
+   "rech_kopf"
+  ],
+  "columns": [
+   "knd_stamm.name1",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.rech_id",
+   "rech_kopf.sndg_nr",
+   "sndg.sndg_nr",
+   "sndg.kunnr",
+   "knd_stamm.kunnr"
+  ],
+  "output_columns": [
+   "knd_stamm.name1",
+   "rech_kopf.brutto_usd"
+  ],
+  "filter_columns": [],
+  "output_text": "knd_stamm.name1, AVG(rech_kopf.brutto_usd)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables sndg, rech_kopf, knd_stamm\n#output knd_stamm.name1, AVG(rech_kopf.brutto_usd)\n#filter none",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.945,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-BIZ": {
+  "tables": [
+   "knd_stamm",
+   "sndg",
+   "rech_kopf"
+  ],
+  "columns": [
+   "knd_stamm.kto_cd",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.rech_id",
+   "rech_kopf.sndg_nr",
+   "sndg.sndg_nr",
+   "sndg.kunnr",
+   "knd_stamm.kunnr"
+  ],
+  "output_columns": [
+   "knd_stamm.kto_cd",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.brutto_usd"
+  ],
+  "filter_columns": [],
+  "output_text": "knd_stamm.kto_cd, SUM(rech_kopf.brutto_usd) AS revenue, SUM(rech_kopf.brutto_usd) / ( SELECT SUM(brutto_usd) FROM rech_kopf ) * 100 AS share",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables rech_kopf, knd_stamm\n#output knd_stamm.kto_cd, SUM(rech_kopf.brutto_usd) AS revenue, SUM(rech_kopf.brutto_usd) / ( SELECT SUM(brutto_usd) FROM rech_kopf ) * 100 AS share\n#filter none",
+  "eval_count": 76,
+  "error": null,
+  "seconds": 1.672,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-VAG": {
+  "tables": [
+   "knd_stamm",
+   "sndg",
+   "rech_kopf"
+  ],
+  "columns": [
+   "knd_stamm.name1",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.rech_id",
+   "rech_kopf.sndg_nr",
+   "sndg.sndg_nr",
+   "sndg.kunnr",
+   "knd_stamm.kunnr"
+  ],
+  "output_columns": [
+   "knd_stamm.name1",
+   "rech_kopf.brutto_usd"
+  ],
+  "filter_columns": [],
+  "output_text": "knd_stamm.name1, SUM(rech_kopf.brutto_usd) AS total_revenue",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables knd_stamm, rech_kopf\n#output knd_stamm.name1, SUM(rech_kopf.brutto_usd) AS total_revenue\n#filter none",
+  "eval_count": 42,
+  "error": null,
+  "seconds": 0.981,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H07-CAS": {
+  "tables": [
+   "flghf",
+   "flug",
+   "betankg"
+  ],
+  "columns": [
+   "flghf.ort",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flghf.fh_nr",
+   "betankg.betank_id",
+   "betankg.fh_nr",
+   "betankg.flug_id"
+  ],
+  "output_columns": [
+   "flghf.ort"
+  ],
+  "filter_columns": [],
+  "output_text": "flghf.ort, SUM(betankg.fracht_gew_kg) as total_cargo",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf, flug, betankg\n#output flghf.ort, SUM(betankg.fracht_gew_kg) as total_cargo\n#filter none",
+  "eval_count": 42,
+  "error": null,
+  "seconds": 0.958,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.4444444444444444,
+   "tables_kept": 3
+  }
+ },
+ "H07-SCH": {
+  "tables": [
+   "flghf",
+   "flug",
+   "sndg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "flghf.ort",
+   "sndg.ges_gew_kg",
+   "flug.stat",
+   "flug_ladg.abschn_stat",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flghf.fh_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "flug_ladg.ladg_id",
+   "flug_ladg.flug_id",
+   "flug_ladg.sndg_nr"
+  ],
+  "output_columns": [
+   "flghf.ort",
+   "sndg.ges_gew_kg"
+  ],
+  "filter_columns": [
+   "flug.stat",
+   "flug_ladg.abschn_stat"
+  ],
+  "output_text": "flghf.ort, SUM(sndg.ges_gew_kg / 1000) AS tonnage",
+  "filter_text": "flug.stat = 'completed', flug_ladg.abschn_stat = 'flown'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug_ladg, flug, flghf, sndg\n#output flghf.ort, SUM(sndg.ges_gew_kg / 1000) AS tonnage\n#filter flug.stat = 'completed', flug_ladg.abschn_stat = 'flown'",
+  "eval_count": 70,
+  "error": null,
+  "seconds": 1.574,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8888888888888888,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H07-BIZ": {
+  "tables": [
+   "flghf",
+   "flug",
+   "sndg"
+  ],
+  "columns": [
+   "flghf.bez",
+   "sndg.fracht_gew_kg",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flghf.fh_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh"
+  ],
+  "output_columns": [
+   "flghf.bez",
+   "sndg.fracht_gew_kg"
+  ],
+  "filter_columns": [],
+  "output_text": "flghf.bez, SUM(sndg.fracht_gew_kg) AS outbound_tonnage",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf, flug, sndg\n#output flghf.bez, SUM(sndg.fracht_gew_kg) AS outbound_tonnage\n#filter none",
+  "eval_count": 41,
+  "error": null,
+  "seconds": 0.944,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.4444444444444444,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "H07-VAG": {
+  "tables": [
+   "flghf",
+   "lgr",
+   "zoll_anm"
+  ],
+  "columns": [
+   "flghf.ort",
+   "zoll_anm.anm_id",
+   "zoll_anm.anm_art",
+   "flghf.fh_nr",
+   "zoll_anm.lgr_nr",
+   "lgr.lgr_nr",
+   "lgr.fh_nr"
+  ],
+  "output_columns": [
+   "flghf.ort",
+   "zoll_anm.anm_id"
+  ],
+  "filter_columns": [
+   "zoll_anm.anm_art"
+  ],
+  "output_text": "flghf.ort, COUNT(zoll_anm.anm_id) AS export_count",
+  "filter_text": "zoll_anm.anm_art = 'export'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flghf, zoll_anm\n#output flghf.ort, COUNT(zoll_anm.anm_id) AS export_count\n#filter zoll_anm.anm_art = 'export'",
+  "eval_count": 46,
+  "error": null,
+  "seconds": 1.043,
+  "recall": {
+   "tables_found": 0.25,
+   "all_tables_found": false,
+   "columns_listed": 0.1111111111111111,
+   "columns_in_schema": 0.2222222222222222,
+   "tables_kept": 3
+  }
+ },
+ "H08-CAS": {
+  "tables": [
+   "flghf",
+   "lfz_typ",
+   "lfz",
+   "flug",
+   "sndg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "lfz_typ.mdl",
+   "flug.stat",
+   "flug_ladg.abschn_stat",
+   "flug_ladg.lade_folge",
+   "lfz_typ.max_vol_m3",
+   "lfz_typ.typ_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.flug_id",
+   "flug_ladg.sndg_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flug.lfz_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "flghf.fh_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.typ_nr"
+  ],
+  "output_columns": [
+   "lfz_typ.mdl"
+  ],
+  "filter_columns": [
+   "flug.stat",
+   "flug_ladg.abschn_stat",
+   "flug_ladg.lade_folge",
+   "flug_ladg.lade_folge",
+   "flug_ladg.lade_folge",
+   "lfz_typ.max_vol_m3"
+  ],
+  "output_text": "lfz_typ.mdl, COUNT(flug_id)",
+  "filter_text": "flug.stat = 'completed', flug_ladg.abschn_stat = 'flown', flug_ladg.lade_folge = 1, sndg.waren_vol_m3 * 167 < flug_ladg.lade_folge * flug_ladg.lade_folge * lfz_typ.max_vol_m3 / 2",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, flug, flug_ladg, sndg\n#output lfz_typ.mdl, COUNT(flug_id)\n#filter flug.stat = 'completed', flug_ladg.abschn_stat = 'flown', flug_ladg.lade_folge = 1, sndg.waren_vol_m3 * 167 < flug_ladg.lade_folge * flug_ladg.lade_folge * lfz_typ.max_vol_m3 / 2",
+  "eval_count": 111,
+  "error": null,
+  "seconds": 2.408,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.9166666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "H08-SCH": {
+  "tables": [
+   "lfz_typ",
+   "lfz",
+   "flug",
+   "flug_ladg"
+  ],
+  "columns": [
+   "lfz_typ.mdl",
+   "flug.stat",
+   "flug_ladg.abschn_stat",
+   "lfz_typ.max_vol_m3",
+   "lfz_typ.typ_nr",
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.flug_id",
+   "lfz.lfz_nr",
+   "lfz.typ_nr"
+  ],
+  "output_columns": [
+   "lfz_typ.mdl"
+  ],
+  "filter_columns": [
+   "flug.stat",
+   "flug_ladg.abschn_stat",
+   "lfz_typ.max_vol_m3"
+  ],
+  "output_text": "lfz_typ.mdl, COUNT(*) as completed_flights",
+  "filter_text": "flug.stat = 'completed', flug_ladg.abschn_stat = 'flown', SUM(flug_ladg.ges_vol_m3) > 0.5 * lfz_typ.max_vol_m3",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug_ladg, lfz_typ, lfz\n#output lfz_typ.mdl, COUNT(*) as completed_flights\n#filter flug.stat = 'completed', flug_ladg.abschn_stat = 'flown', SUM(flug_ladg.ges_vol_m3) > 0.5 * lfz_typ.max_vol_m3",
+  "eval_count": 77,
+  "error": null,
+  "seconds": 1.72,
+  "recall": {
+   "tables_found": 0.8,
+   "all_tables_found": false,
+   "columns_listed": 0.75,
+   "columns_in_schema": 0.8333333333333334,
+   "tables_kept": 4
+  }
+ },
+ "H08-BIZ": {
+  "tables": [
+   "lfz_typ",
+   "lfz",
+   "flug",
+   "flug_ladg"
+  ],
+  "columns": [
+   "lfz_typ.mdl",
+   "flug.stat",
+   "flug_ladg.abschn_stat",
+   "flug_ladg.uld_typ",
+   "lfz_typ.max_vol_m3",
+   "lfz_typ.typ_nr",
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.flug_id",
+   "lfz.lfz_nr",
+   "lfz.typ_nr"
+  ],
+  "output_columns": [
+   "lfz_typ.mdl"
+  ],
+  "filter_columns": [
+   "flug.stat",
+   "flug_ladg.abschn_stat",
+   "flug_ladg.uld_typ",
+   "lfz_typ.max_vol_m3"
+  ],
+  "output_text": "lfz_typ.mdl, COUNT(flug_id)",
+  "filter_text": "flug.stat = 'completed', flug_ladg.abschn_stat = 'flown', flug_ladg.uld_typ = 'PAG', (flug_ladg.ges_vol_m3 / lfz_typ.max_vol_m3) > 0.5",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, flug, flug_ladg, lfz_typ\n#output lfz_typ.mdl, COUNT(flug_id)\n#filter flug.stat = 'completed', flug_ladg.abschn_stat = 'flown', flug_ladg.uld_typ = 'PAG', (flug_ladg.ges_vol_m3 / lfz_typ.max_vol_m3) > 0.5",
+  "eval_count": 91,
+  "error": null,
+  "seconds": 2.004,
+  "recall": {
+   "tables_found": 0.8,
+   "all_tables_found": false,
+   "columns_listed": 0.75,
+   "columns_in_schema": 0.8333333333333334,
+   "tables_kept": 4
+  }
+ },
+ "H08-VAG": {
+  "tables": [
+   "flghf",
+   "lfz_typ",
+   "lfz",
+   "sndg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "lfz_typ.mdl",
+   "sndg.fracht_gew_kg",
+   "lfz_typ.max_nutzl_kg",
+   "lfz_typ.typ_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.sndg_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "flghf.fh_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.typ_nr"
+  ],
+  "output_columns": [
+   "lfz_typ.mdl",
+   "sndg.fracht_gew_kg",
+   "lfz_typ.max_nutzl_kg"
+  ],
+  "filter_columns": [],
+  "output_text": "lfz_typ.mdl, AVG(sndg.fracht_gew_kg / lfz_typ.max_nutzl_kg) AS avg_fill_rate",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, lfz_typ, flug_ladg, sndg\n#output lfz_typ.mdl, AVG(sndg.fracht_gew_kg / lfz_typ.max_nutzl_kg) AS avg_fill_rate\n#filter none",
+  "eval_count": 55,
+  "error": null,
+  "seconds": 1.242,
+  "recall": {
+   "tables_found": 0.8,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.75,
+   "tables_kept": 5
+  }
+ },
+ "H09-CAS": {
+  "tables": [
+   "flghf",
+   "lfz",
+   "flug"
+  ],
+  "columns": [
+   "lfz.kennz",
+   "flghf.hub_kz",
+   "flug.ank_ist",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flug.lfz_nr",
+   "flghf.fh_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr"
+  ],
+  "output_columns": [
+   "lfz.kennz"
+  ],
+  "filter_columns": [
+   "flghf.hub_kz",
+   "flug.ank_ist"
+  ],
+  "output_text": "lfz.kennz",
+  "filter_text": "flghf.hub_kz, flug.ank_ist",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, flghf, flug\n#output lfz.kennz\n#filter flghf.hub_kz, flug.ank_ist",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.869,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8571428571428571,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H09-SCH": {
+  "tables": [
+   "flghf",
+   "lfz",
+   "flug"
+  ],
+  "columns": [
+   "lfz.kennz",
+   "flghf.hub_kz",
+   "flug.stat",
+   "flug.ziel_fh",
+   "flghf.fh_nr",
+   "flug.flug_id",
+   "flug.abfl_fh",
+   "flug.lfz_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr"
+  ],
+  "output_columns": [
+   "lfz.kennz"
+  ],
+  "filter_columns": [
+   "flghf.hub_kz",
+   "flug.stat",
+   "flug.ziel_fh",
+   "flghf.fh_nr"
+  ],
+  "output_text": "lfz.kennz",
+  "filter_text": "flghf.hub_kz = 1, flug.stat = 'completed', flug.ziel_fh = flghf.fh_nr",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables flug, flghf, lfz\n#output lfz.kennz\n#filter flghf.hub_kz = 1, flug.stat = 'completed', flug.ziel_fh = flghf.fh_nr",
+  "eval_count": 53,
+  "error": null,
+  "seconds": 1.21,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H09-BIZ": {
+  "tables": [
+   "flghf",
+   "lfz",
+   "flug"
+  ],
+  "columns": [
+   "lfz.kennz",
+   "flug.stat",
+   "flug.abfl_fh",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.lfz_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr"
+  ],
+  "output_columns": [
+   "lfz.kennz"
+  ],
+  "filter_columns": [
+   "flug.stat",
+   "flug.abfl_fh",
+   "flghf.fh_nr",
+   "flghf.hub_kz"
+  ],
+  "output_text": "lfz.kennz",
+  "filter_text": "flug.stat = 'completed', flug.abfl_fh = flghf.fh_nr, flghf.hub_kz = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, flug, flghf\n#output lfz.kennz\n#filter flug.stat = 'completed', flug.abfl_fh = flghf.fh_nr, flghf.hub_kz = 1",
+  "eval_count": 53,
+  "error": null,
+  "seconds": 1.197,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H09-VAG": {
+  "tables": [
+   "lfz",
+   "flug",
+   "flug_ladg"
+  ],
+  "columns": [
+   "lfz.kennz",
+   "lfz.msn",
+   "flug.flugnr",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.flug_id",
+   "lfz.lfz_nr"
+  ],
+  "output_columns": [
+   "lfz.kennz",
+   "lfz.msn",
+   "flug.flugnr",
+   "flug.abfl_ist",
+   "flug.ank_ist"
+  ],
+  "filter_columns": [],
+  "output_text": "lfz.kennz, lfz.msn, flug.flugnr, flug.abfl_ist, flug.ank_ist",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables lfz, flug, flug_ladg\n#output lfz.kennz, lfz.msn, flug.flugnr, flug.abfl_ist, flug.ank_ist\n#filter none",
+  "eval_count": 51,
+  "error": null,
+  "seconds": 1.153,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.42857142857142855,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 3
+  }
+ },
+ "H10-CAS": {
+  "tables": [
+   "knd_stamm",
+   "sndg",
+   "zoll_anm"
+  ],
+  "columns": [
+   "zoll_anm.zoll_land",
+   "zoll_anm.anm_id",
+   "zoll_anm.zollsatz_pct",
+   "sndg.sndg_nr",
+   "sndg.kunnr",
+   "knd_stamm.kunnr",
+   "zoll_anm.sndg_nr"
+  ],
+  "output_columns": [
+   "zoll_anm.zoll_land",
+   "zoll_anm.anm_id"
+  ],
+  "filter_columns": [
+   "zoll_anm.zollsatz_pct"
+  ],
+  "output_text": "zoll_anm.zoll_land, COUNT(zoll_anm.anm_id)",
+  "filter_text": "zoll_anm.zollsatz_pct > 20",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables zoll_anm, knd_stamm\n#output zoll_anm.zoll_land, COUNT(zoll_anm.anm_id)\n#filter zoll_anm.zollsatz_pct > 20",
+  "eval_count": 46,
+  "error": null,
+  "seconds": 1.102,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.2,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H10-SCH": {
+  "tables": [
+   "zoll_anm"
+  ],
+  "columns": [
+   "zoll_anm.anm_id"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables zoll_anm\n#output zoll_land, COUNT(*)\n#filter zoll_art = 'import', zoll_betr_usd + eust_usd > 0.2 * zollwert_usd",
+  "eval_count": 48,
+  "error": null,
+  "seconds": 1.116,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "H10-BIZ": {
+  "tables": [
+   "zoll_anm"
+  ],
+  "columns": [
+   "zoll_anm.zoll_land",
+   "zoll_anm.anm_id",
+   "zoll_anm.zollsatz_pct"
+  ],
+  "output_columns": [
+   "zoll_anm.zoll_land",
+   "zoll_anm.anm_id"
+  ],
+  "filter_columns": [
+   "zoll_anm.zollsatz_pct"
+  ],
+  "output_text": "zoll_anm.zoll_land, COUNT(zoll_anm.anm_id)",
+  "filter_text": "zoll_anm.zollsatz_pct > 20",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables zoll_anm\n#output zoll_anm.zoll_land, COUNT(zoll_anm.anm_id)\n#filter zoll_anm.zollsatz_pct > 20",
+  "eval_count": 41,
+  "error": null,
+  "seconds": 0.961,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.2,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "H10-VAG": {
+  "tables": [
+   "bm_param",
+   "zoll_anm"
+  ],
+  "columns": [
+   "zoll_anm.zollwert_usd",
+   "zoll_anm.zollsatz_pct",
+   "bm_param.param_schl",
+   "zoll_anm.anm_id"
+  ],
+  "output_columns": [
+   "zoll_anm.zollwert_usd",
+   "zoll_anm.zollsatz_pct"
+  ],
+  "filter_columns": [
+   "bm_param.param_schl"
+  ],
+  "output_text": "zoll_anm.zollwert_usd, zoll_anm.zollsatz_pct",
+  "filter_text": "bm_param.param_schl = 'high_tax_countries'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables zoll_anm, bm_param\n#output zoll_anm.zollwert_usd, zoll_anm.zollsatz_pct\n#filter bm_param.param_schl = 'high_tax_countries'",
+  "eval_count": 45,
+  "error": null,
+  "seconds": 1.021,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.2,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ }
+}

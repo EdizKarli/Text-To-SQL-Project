@@ -1,0 +1,4209 @@
+{
+ "E01-CAS": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c01"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53\n#output count(*) \n#filter c14 = 1",
+  "eval_count": 20,
+  "error": null,
+  "seconds": 2.914,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-SCH": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c01"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53\n#output count(*)\n#filter c14 = 1",
+  "eval_count": 20,
+  "error": null,
+  "seconds": 0.504,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-BIZ": {
+  "tables": [
+   "ts53",
+   "tu5q"
+  ],
+  "columns": [
+   "ts53.c14",
+   "tu5q.c01",
+   "tu5q.c06",
+   "ts53.c01"
+  ],
+  "output_columns": [],
+  "filter_columns": [
+   "ts53.c14"
+  ],
+  "output_text": "",
+  "filter_text": "ts53.c14 = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53, tu5q\n#output count(*) \n#filter ts53.c14 = 1",
+  "eval_count": 27,
+  "error": null,
+  "seconds": 0.644,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E01-VAG": {
+  "tables": [
+   "ts53",
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c01",
+   "twxv.c09",
+   "ts53.c01"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53, twxv\n#output count(DISTINCT c09)\n#filter none",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.584,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E02-CAS": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c02",
+   "ts53.c17",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "ts53.c02"
+  ],
+  "filter_columns": [
+   "ts53.c17"
+  ],
+  "output_text": "ts53.c02",
+  "filter_text": "ts53.c17, 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53\n#output ts53.c02\n#filter ts53.c17, 1",
+  "eval_count": 27,
+  "error": null,
+  "seconds": 0.645,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E02-SCH": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c02",
+   "ts53.c17",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "ts53.c02"
+  ],
+  "filter_columns": [
+   "ts53.c17"
+  ],
+  "output_text": "ts53.c02",
+  "filter_text": "ts53.c17 = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53\n#output ts53.c02\n#filter ts53.c17 = 1",
+  "eval_count": 27,
+  "error": null,
+  "seconds": 0.653,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E02-BIZ": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c02",
+   "ts53.c17",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "ts53.c02"
+  ],
+  "filter_columns": [
+   "ts53.c17"
+  ],
+  "output_text": "ts53.c02",
+  "filter_text": "ts53.c17, 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53\n#output ts53.c02\n#filter ts53.c17, 1",
+  "eval_count": 27,
+  "error": null,
+  "seconds": 0.65,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E02-VAG": {
+  "tables": [
+   "ts53",
+   "t6sc"
+  ],
+  "columns": [
+   "ts53.c04",
+   "ts53.c06",
+   "t6sc.c16",
+   "ts53.c17",
+   "t6sc.c01",
+   "t6sc.c07",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "ts53.c04",
+   "ts53.c06"
+  ],
+  "filter_columns": [
+   "t6sc.c16",
+   "ts53.c17"
+  ],
+  "output_text": "ts53.c04, ts53.c06",
+  "filter_text": "t6sc.c16, ts53.c17",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53, t6sc\n#output ts53.c04, ts53.c06\n#filter t6sc.c16, ts53.c17",
+  "eval_count": 42,
+  "error": null,
+  "seconds": 0.953,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E03-CAS": {
+  "tables": [
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c04",
+   "twxv.c10",
+   "twxv.c01"
+  ],
+  "output_columns": [
+   "twxv.c04"
+  ],
+  "filter_columns": [
+   "twxv.c10"
+  ],
+  "output_text": "twxv.c04",
+  "filter_text": "twxv.c10, 'CargoLink'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv\n#output twxv.c04\n#filter twxv.c10, 'CargoLink'",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.687,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-SCH": {
+  "tables": [
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c04",
+   "twxv.c10",
+   "twxv.c01"
+  ],
+  "output_columns": [
+   "twxv.c04"
+  ],
+  "filter_columns": [
+   "twxv.c10"
+  ],
+  "output_text": "twxv.c04",
+  "filter_text": "twxv.c10",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv\n#output twxv.c04\n#filter twxv.c10",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.606,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-BIZ": {
+  "tables": [
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c04",
+   "twxv.c10",
+   "twxv.c01"
+  ],
+  "output_columns": [
+   "twxv.c04"
+  ],
+  "filter_columns": [
+   "twxv.c10"
+  ],
+  "output_text": "twxv.c04",
+  "filter_text": "twxv.c10, 'CargoLink'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv\n#output twxv.c04\n#filter twxv.c10, 'CargoLink'",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.688,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-VAG": {
+  "tables": [
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c04",
+   "twxv.c02",
+   "twxv.c10",
+   "twxv.c01"
+  ],
+  "output_columns": [
+   "twxv.c04",
+   "twxv.c02"
+  ],
+  "filter_columns": [
+   "twxv.c10"
+  ],
+  "output_text": "twxv.c04, twxv.c02",
+  "filter_text": "twxv.c10, 'CargoLink'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv\n#output twxv.c04, twxv.c02\n#filter twxv.c10, 'CargoLink'",
+  "eval_count": 36,
+  "error": null,
+  "seconds": 0.856,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-CAS": {
+  "tables": [
+   "tumf"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tumf.c04",
+   "tumf.c01"
+  ],
+  "output_columns": [
+   "tumf.c02"
+  ],
+  "filter_columns": [
+   "tumf.c04"
+  ],
+  "output_text": "tumf.c02",
+  "filter_text": "tumf.c04, 'Airbus'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tumf\n#output tumf.c02\n#filter tumf.c04, 'Airbus'",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.621,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-SCH": {
+  "tables": [
+   "tumf"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tumf.c04",
+   "tumf.c01"
+  ],
+  "output_columns": [
+   "tumf.c02"
+  ],
+  "filter_columns": [
+   "tumf.c04"
+  ],
+  "output_text": "tumf.c02",
+  "filter_text": "tumf.c04",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tumf\n#output tumf.c02\n#filter tumf.c04",
+  "eval_count": 21,
+  "error": null,
+  "seconds": 0.521,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-BIZ": {
+  "tables": [
+   "tumf",
+   "tu5q"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tumf.c04",
+   "tu5q.c04",
+   "tumf.c01",
+   "tu5q.c01"
+  ],
+  "output_columns": [
+   "tumf.c02"
+  ],
+  "filter_columns": [
+   "tumf.c04",
+   "tu5q.c04"
+  ],
+  "output_text": "tumf.c02",
+  "filter_text": "tumf.c04, tu5q.c04",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tumf, tu5q\n#output tumf.c02\n#filter tumf.c04, tu5q.c04",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.773,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E04-VAG": {
+  "tables": [
+   "tumf"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tumf.c04",
+   "tumf.c01"
+  ],
+  "output_columns": [
+   "tumf.c02"
+  ],
+  "filter_columns": [
+   "tumf.c04"
+  ],
+  "output_text": "tumf.c02",
+  "filter_text": "tumf.c04, 'Airbus'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tumf\n#output tumf.c02\n#filter tumf.c04, 'Airbus'",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.621,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-CAS": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c10",
+   "tu5q.c01"
+  ],
+  "output_columns": [
+   "tu5q.c10"
+  ],
+  "filter_columns": [
+   "tu5q.c10"
+  ],
+  "output_text": "tu5q.c10",
+  "filter_text": "tu5q.c10, 'leased'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q\n#output tu5q.c10\n#filter tu5q.c10, 'leased'",
+  "eval_count": 28,
+  "error": null,
+  "seconds": 0.671,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-SCH": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c01"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q\n#output count(*)\n#filter c10 = 'leased'",
+  "eval_count": 21,
+  "error": null,
+  "seconds": 0.521,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-BIZ": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c10",
+   "tu5q.c01"
+  ],
+  "output_columns": [
+   "tu5q.c10"
+  ],
+  "filter_columns": [
+   "tu5q.c10"
+  ],
+  "output_text": "tu5q.c10",
+  "filter_text": "tu5q.c10 = 'leased'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q\n#output tu5q.c10\n#filter tu5q.c10 = 'leased'",
+  "eval_count": 28,
+  "error": null,
+  "seconds": 0.672,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-VAG": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c10",
+   "tu5q.c01"
+  ],
+  "output_columns": [
+   "tu5q.c10"
+  ],
+  "filter_columns": [
+   "tu5q.c10"
+  ],
+  "output_text": "tu5q.c10",
+  "filter_text": "tu5q.c10, 'leased'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q\n#output tu5q.c10\n#filter tu5q.c10, 'leased'",
+  "eval_count": 28,
+  "error": null,
+  "seconds": 0.675,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E06-CAS": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tu5q.c16",
+   "tu5q.c01"
+  ],
+  "output_columns": [
+   "tu5q.c02",
+   "tu5q.c16"
+  ],
+  "filter_columns": [
+   "tu5q.c16"
+  ],
+  "output_text": "tu5q.c02, tu5q.c16",
+  "filter_text": "tu5q.c16, 'retired'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q\n#output tu5q.c02, tu5q.c16\n#filter tu5q.c16, 'retired'",
+  "eval_count": 36,
+  "error": null,
+  "seconds": 0.846,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E06-SCH": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tu5q.c16",
+   "tu5q.c01"
+  ],
+  "output_columns": [
+   "tu5q.c02",
+   "tu5q.c16"
+  ],
+  "filter_columns": [
+   "tu5q.c16"
+  ],
+  "output_text": "tu5q.c02, tu5q.c16",
+  "filter_text": "tu5q.c16, 'active'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q\n#output tu5q.c02, tu5q.c16\n#filter tu5q.c16, 'active'",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.823,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E06-BIZ": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tu5q.c16",
+   "tu5q.c01"
+  ],
+  "output_columns": [
+   "tu5q.c02",
+   "tu5q.c16"
+  ],
+  "filter_columns": [
+   "tu5q.c16"
+  ],
+  "output_text": "tu5q.c02, tu5q.c16",
+  "filter_text": "tu5q.c16, 'maintenance', 'retired'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q\n#output tu5q.c02, tu5q.c16\n#filter tu5q.c16, 'maintenance', 'retired'",
+  "eval_count": 39,
+  "error": null,
+  "seconds": 0.905,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E06-VAG": {
+  "tables": [
+   "tu5q",
+   "tcse"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tu5q.c08",
+   "tu5q.c13",
+   "tu5q.c16",
+   "tcse.c16",
+   "tu5q.c01",
+   "tcse.c01",
+   "tcse.c03"
+  ],
+  "output_columns": [
+   "tu5q.c02",
+   "tu5q.c08",
+   "tu5q.c13"
+  ],
+  "filter_columns": [
+   "tu5q.c16",
+   "tcse.c16"
+  ],
+  "output_text": "tu5q.c02, tu5q.c08, tu5q.c13",
+  "filter_text": "tu5q.c16, tcse.c16",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tcse\n#output tu5q.c02, tu5q.c08, tu5q.c13\n#filter tu5q.c16, tcse.c16",
+  "eval_count": 47,
+  "error": null,
+  "seconds": 1.076,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E07-CAS": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c01"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77\n#output th77.loyalty_tier, COUNT(th77.customer_id)\n#filter none",
+  "eval_count": 28,
+  "error": null,
+  "seconds": 0.676,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-SCH": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c17",
+   "th77.c01"
+  ],
+  "output_columns": [
+   "th77.c17",
+   "th77.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "th77.c17, COUNT(th77.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77\n#output th77.c17, COUNT(th77.c01)\n#filter none",
+  "eval_count": 27,
+  "error": null,
+  "seconds": 0.657,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-BIZ": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c01"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77\n#output th77.loyalty_tier, COUNT(th77.customer_id)\n#filter none",
+  "eval_count": 28,
+  "error": null,
+  "seconds": 0.688,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-VAG": {
+  "tables": [
+   "th77",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "th77.c17",
+   "tajj.c01",
+   "tajj.c03",
+   "t89v.c01",
+   "t89v.c03",
+   "th77.c01"
+  ],
+  "output_columns": [
+   "th77.c17",
+   "tajj.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "th77.c17, COUNT(tajj.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77, tajj\n#output th77.c17, COUNT(tajj.c01)\n#filter none",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.756,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E08-CAS": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c03",
+   "th77.c06",
+   "th77.c05",
+   "th77.c01"
+  ],
+  "output_columns": [
+   "th77.c03",
+   "th77.c06"
+  ],
+  "filter_columns": [
+   "th77.c05",
+   "th77.c06"
+  ],
+  "output_text": "th77.c03, th77.c06",
+  "filter_text": "th77.c05, th77.c06",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77\n#output th77.c03, th77.c06\n#filter th77.c05, th77.c06",
+  "eval_count": 38,
+  "error": null,
+  "seconds": 0.895,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E08-SCH": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c03",
+   "th77.c06",
+   "th77.c05",
+   "th77.c01"
+  ],
+  "output_columns": [
+   "th77.c03",
+   "th77.c06"
+  ],
+  "filter_columns": [
+   "th77.c05"
+  ],
+  "output_text": "th77.c03, th77.c06",
+  "filter_text": "th77.c05, 'Germany'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77\n#output th77.c03, th77.c06\n#filter th77.c05, 'Germany'",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.821,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E08-BIZ": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c03",
+   "th77.c06",
+   "th77.c05",
+   "th77.c01"
+  ],
+  "output_columns": [
+   "th77.c03",
+   "th77.c06"
+  ],
+  "filter_columns": [
+   "th77.c05"
+  ],
+  "output_text": "th77.c03, th77.c06",
+  "filter_text": "th77.c05, 'Germany'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77\n#output th77.c03, th77.c06\n#filter th77.c05, 'Germany'",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.817,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E08-VAG": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c03",
+   "th77.c05",
+   "th77.c04",
+   "th77.c01"
+  ],
+  "output_columns": [
+   "th77.c03",
+   "th77.c05"
+  ],
+  "filter_columns": [
+   "th77.c04",
+   "th77.c05"
+  ],
+  "output_text": "th77.c03, th77.c05",
+  "filter_text": "th77.c04, th77.c05",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77\n#output th77.c03, th77.c05\n#filter th77.c04, th77.c05",
+  "eval_count": 38,
+  "error": null,
+  "seconds": 0.877,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-CAS": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c05",
+   "trhn.c01"
+  ],
+  "output_columns": [
+   "trhn.c05",
+   "trhn.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "trhn.c05, COUNT(trhn.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#output trhn.c05, COUNT(trhn.c01)\n#filter none",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.591,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-SCH": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c05",
+   "trhn.c01"
+  ],
+  "output_columns": [
+   "trhn.c05",
+   "trhn.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "trhn.c05, COUNT(trhn.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#output trhn.c05, COUNT(trhn.c01)\n#filter none",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.607,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-BIZ": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c05",
+   "trhn.c01"
+  ],
+  "output_columns": [
+   "trhn.c05",
+   "trhn.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "trhn.c05, COUNT(trhn.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#output trhn.c05, COUNT(trhn.c01)\n#filter none",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.592,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-VAG": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c05",
+   "trhn.c01"
+  ],
+  "output_columns": [
+   "trhn.c05",
+   "trhn.c05",
+   "trhn.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "trhn.c05, trhn.c05, COUNT(trhn.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#output trhn.c05, trhn.c05, COUNT(trhn.c01)\n#filter none",
+  "eval_count": 30,
+  "error": null,
+  "seconds": 0.714,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-CAS": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c06",
+   "trhn.c05",
+   "trhn.c01"
+  ],
+  "output_columns": [
+   "trhn.c06"
+  ],
+  "filter_columns": [
+   "trhn.c05"
+  ],
+  "output_text": "trhn.c06",
+  "filter_text": "trhn.c05, 'cold_chain'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#output trhn.c06\n#filter trhn.c05, 'cold_chain'",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.633,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-SCH": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c06",
+   "trhn.c05",
+   "trhn.c01"
+  ],
+  "output_columns": [
+   "trhn.c06"
+  ],
+  "filter_columns": [
+   "trhn.c05"
+  ],
+  "output_text": "trhn.c06",
+  "filter_text": "trhn.c05, 'cold_chain'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#output trhn.c06\n#filter trhn.c05, 'cold_chain'",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.634,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-BIZ": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c06",
+   "trhn.c05",
+   "trhn.c01"
+  ],
+  "output_columns": [
+   "trhn.c06"
+  ],
+  "filter_columns": [
+   "trhn.c05"
+  ],
+  "output_text": "trhn.c06",
+  "filter_text": "trhn.c05 = 'cold_chain'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#output trhn.c06\n#filter trhn.c05 = 'cold_chain'",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.638,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-VAG": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c06",
+   "trhn.c07",
+   "trhn.c01"
+  ],
+  "output_columns": [
+   "trhn.c06",
+   "trhn.c07"
+  ],
+  "filter_columns": [],
+  "output_text": "trhn.c06, trhn.c07",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#output trhn.c06, trhn.c07\n#filter none",
+  "eval_count": 23,
+  "error": null,
+  "seconds": 0.587,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "M01-CAS": {
+  "tables": [
+   "twxv",
+   "tu5q"
+  ],
+  "columns": [
+   "twxv.c04",
+   "tu5q.c01",
+   "tu5q.c05",
+   "twxv.c01"
+  ],
+  "output_columns": [
+   "twxv.c04",
+   "tu5q.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "twxv.c04, COUNT(tu5q.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, twxv\n#output twxv.c04, COUNT(tu5q.c01)\n#filter none",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.764,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M01-SCH": {
+  "tables": [
+   "twxv",
+   "tu5q"
+  ],
+  "columns": [
+   "twxv.c04",
+   "tu5q.c01",
+   "tu5q.c05",
+   "twxv.c01"
+  ],
+  "output_columns": [
+   "twxv.c04",
+   "tu5q.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "twxv.c04, COUNT(tu5q.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv, tu5q\n#output twxv.c04, COUNT(tu5q.c01)\n#filter none",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.782,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M01-BIZ": {
+  "tables": [
+   "twxv",
+   "tu5q"
+  ],
+  "columns": [
+   "twxv.c02",
+   "tu5q.c01",
+   "tu5q.c05",
+   "twxv.c01"
+  ],
+  "output_columns": [
+   "twxv.c02",
+   "tu5q.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "twxv.c02, COUNT(tu5q.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, twxv\n#output twxv.c02, COUNT(tu5q.c01)\n#filter none",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.761,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M01-VAG": {
+  "tables": [
+   "twxv",
+   "tu5q"
+  ],
+  "columns": [
+   "twxv.c04",
+   "tu5q.c01",
+   "tu5q.c05",
+   "twxv.c01"
+  ],
+  "output_columns": [
+   "twxv.c04",
+   "tu5q.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "twxv.c04, COUNT(tu5q.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, twxv\n#output twxv.c04, COUNT(tu5q.c01)\n#filter none",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.759,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-CAS": {
+  "tables": [
+   "tumf",
+   "tu5q"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tu5q.c01",
+   "tu5q.c16",
+   "tumf.c01",
+   "tu5q.c04"
+  ],
+  "output_columns": [
+   "tumf.c02",
+   "tu5q.c01"
+  ],
+  "filter_columns": [
+   "tu5q.c16",
+   "tumf.c01"
+  ],
+  "output_text": "tumf.c02, COUNT(tu5q.c01)",
+  "filter_text": "tu5q.c16, tumf.c01",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tumf\n#output tumf.c02, COUNT(tu5q.c01)\n#filter tu5q.c16, tumf.c01",
+  "eval_count": 41,
+  "error": null,
+  "seconds": 0.968,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-SCH": {
+  "tables": [
+   "tumf",
+   "tu5q"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tu5q.c01",
+   "tu5q.c16",
+   "tumf.c01",
+   "tu5q.c04"
+  ],
+  "output_columns": [
+   "tumf.c02",
+   "tu5q.c01"
+  ],
+  "filter_columns": [
+   "tu5q.c16",
+   "tumf.c01"
+  ],
+  "output_text": "tumf.c02, COUNT(tu5q.c01)",
+  "filter_text": "tu5q.c16, tumf.c01",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tumf\n#output tumf.c02, COUNT(tu5q.c01)\n#filter tu5q.c16, tumf.c01",
+  "eval_count": 41,
+  "error": null,
+  "seconds": 0.993,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-BIZ": {
+  "tables": [
+   "tumf",
+   "tu5q"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tu5q.c01",
+   "tu5q.c16",
+   "tumf.c01",
+   "tu5q.c04"
+  ],
+  "output_columns": [
+   "tumf.c02",
+   "tu5q.c01"
+  ],
+  "filter_columns": [
+   "tu5q.c16",
+   "tumf.c01"
+  ],
+  "output_text": "tumf.c02, COUNT(tu5q.c01)",
+  "filter_text": "tu5q.c16, tumf.c01",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tumf\n#output tumf.c02, COUNT(tu5q.c01)\n#filter tu5q.c16, tumf.c01",
+  "eval_count": 41,
+  "error": null,
+  "seconds": 0.953,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-VAG": {
+  "tables": [
+   "tumf",
+   "tu5q"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tu5q.c01",
+   "tu5q.c16",
+   "tumf.c01",
+   "tu5q.c04"
+  ],
+  "output_columns": [
+   "tumf.c02",
+   "tu5q.c01"
+  ],
+  "filter_columns": [
+   "tu5q.c16",
+   "tumf.c01"
+  ],
+  "output_text": "tumf.c02, COUNT(tu5q.c01)",
+  "filter_text": "tu5q.c16, tumf.c01",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tumf\n#output tumf.c02, COUNT(tu5q.c01)\n#filter tu5q.c16, tumf.c01",
+  "eval_count": 41,
+  "error": null,
+  "seconds": 0.973,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-CAS": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c01",
+   "tx7n.c19",
+   "tx7n.c05",
+   "ts53.c01",
+   "tx7n.c06"
+  ],
+  "output_columns": [
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "tx7n.c05"
+  ],
+  "output_text": "COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19 = 'completed', tx7n.c05 = (SELECT c01 FROM ts53 WHERE c02 = 'IST')",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53\n#output COUNT(tx7n.c01)\n#filter tx7n.c19 = 'completed', tx7n.c05 = (SELECT c01 FROM ts53 WHERE c02 = 'IST')",
+  "eval_count": 57,
+  "error": null,
+  "seconds": 1.292,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-SCH": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c01",
+   "tx7n.c19",
+   "tx7n.c05",
+   "ts53.c01",
+   "ts53.c02",
+   "tx7n.c06"
+  ],
+  "output_columns": [
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "tx7n.c05",
+   "ts53.c01",
+   "ts53.c02"
+  ],
+  "output_text": "count(tx7n.c01)",
+  "filter_text": "tx7n.c19 = 'completed', tx7n.c05 = ts53.c01, ts53.c02 = 'IST'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53\n#output count(tx7n.c01)\n#filter tx7n.c19 = 'completed', tx7n.c05 = ts53.c01, ts53.c02 = 'IST'",
+  "eval_count": 57,
+  "error": null,
+  "seconds": 1.312,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-BIZ": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c13",
+   "tx7n.c01",
+   "tx7n.c19",
+   "tx7n.c05",
+   "ts53.c01",
+   "tx7n.c06"
+  ],
+  "output_columns": [
+   "tx7n.c13",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "tx7n.c05"
+  ],
+  "output_text": "SUM(tx7n.c13), COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19 = 'completed', tx7n.c05 = (SELECT c01 FROM ts53 WHERE c02 = 'IST')",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53\n#output SUM(tx7n.c13), COUNT(tx7n.c01)\n#filter tx7n.c19 = 'completed', tx7n.c05 = (SELECT c01 FROM ts53 WHERE c02 = 'IST')",
+  "eval_count": 65,
+  "error": null,
+  "seconds": 1.454,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-VAG": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c01",
+   "ts53.c02",
+   "ts53.c01",
+   "tx7n.c06",
+   "tx7n.c05"
+  ],
+  "output_columns": [
+   "tx7n.c01",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "ts53.c02"
+  ],
+  "output_text": "tx7n.c01, COUNT(tx7n.c01)",
+  "filter_text": "ts53.c02, 'IST'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53\n#output tx7n.c01, COUNT(tx7n.c01)\n#filter ts53.c02, 'IST'",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.952,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-CAS": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "ts53.c04",
+   "ts53.c06",
+   "tx7n.c01",
+   "tx7n.c19",
+   "ts53.c01",
+   "ts53.c02",
+   "tx7n.c06",
+   "tx7n.c05"
+  ],
+  "output_columns": [
+   "ts53.c04",
+   "ts53.c06",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "ts53.c01",
+   "ts53.c02"
+  ],
+  "output_text": "ts53.c04, ts53.c06, COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19, ts53.c01, ts53.c02",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53\n#output ts53.c04, ts53.c06, COUNT(tx7n.c01)\n#filter tx7n.c19, ts53.c01, ts53.c02",
+  "eval_count": 57,
+  "error": null,
+  "seconds": 1.291,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-SCH": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "ts53.c02",
+   "tx7n.c01",
+   "tx7n.c19",
+   "ts53.c01",
+   "tx7n.c06",
+   "tx7n.c05"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "ts53.c02"
+  ],
+  "output_text": "ts53.c02, COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19, ts53.c02",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53\n#output ts53.c02, COUNT(tx7n.c01)\n#filter tx7n.c19, ts53.c02",
+  "eval_count": 43,
+  "error": null,
+  "seconds": 1.039,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-BIZ": {
+  "tables": [
+   "tx7n",
+   "tg6t"
+  ],
+  "columns": [
+   "tg6t.c07",
+   "tx7n.c01",
+   "tx7n.c19",
+   "tg6t.c06",
+   "tg6t.c01",
+   "tg6t.c03"
+  ],
+  "output_columns": [
+   "tg6t.c07",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "tg6t.c06"
+  ],
+  "output_text": "tg6t.c07, COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19, tg6t.c06",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tg6t\n#output tg6t.c07, COUNT(tx7n.c01)\n#filter tx7n.c19, tg6t.c06",
+  "eval_count": 43,
+  "error": null,
+  "seconds": 0.992,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.2,
+   "columns_in_schema": 0.6,
+   "tables_kept": 2
+  }
+ },
+ "M04-VAG": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "ts53.c02",
+   "ts53.c04",
+   "tx7n.c01",
+   "ts53.c01",
+   "tx7n.c06",
+   "tx7n.c05"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "ts53.c04",
+   "tx7n.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "ts53.c02, ts53.c04, COUNT(tx7n.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53\n#output ts53.c02, ts53.c04, COUNT(tx7n.c01)\n#filter none",
+  "eval_count": 38,
+  "error": null,
+  "seconds": 0.881,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M05-CAS": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "twxv.c04",
+   "tx7n.c10",
+   "tx7n.c07",
+   "tx7n.c19",
+   "twxv.c01",
+   "twxv.c09",
+   "ts53.c01",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05"
+  ],
+  "output_columns": [
+   "twxv.c04",
+   "tx7n.c10",
+   "tx7n.c07"
+  ],
+  "filter_columns": [
+   "tx7n.c19"
+  ],
+  "output_text": "twxv.c04, AVG(julianday(tx7n.c10) - julianday(tx7n.c07)) * 24 * 60 AS average_late_minutes",
+  "filter_text": "tx7n.c19 = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n\n#output twxv.c04, AVG(julianday(tx7n.c10) - julianday(tx7n.c07)) * 24 * 60 AS average_late_minutes\n#filter tx7n.c19 = 'completed'",
+  "eval_count": 66,
+  "error": null,
+  "seconds": 1.497,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.75,
+   "tables_kept": 3
+  }
+ },
+ "M05-SCH": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c01",
+   "tx7n.c10",
+   "tx7n.c08",
+   "tx7n.c19",
+   "tx7n.c01",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "tu5q.c01",
+   "tx7n.c10",
+   "tx7n.c08"
+  ],
+  "filter_columns": [
+   "tx7n.c19"
+  ],
+  "output_text": "tu5q.c01, AVG(tx7n.c10 - tx7n.c08) AS avg_delay",
+  "filter_text": "tx7n.c19 = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tu5q\n#output tu5q.c01, AVG(tx7n.c10 - tx7n.c08) AS avg_delay\n#filter tx7n.c19 = 'completed'",
+  "eval_count": 51,
+  "error": null,
+  "seconds": 1.184,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.625,
+   "columns_in_schema": 0.75,
+   "tables_kept": 2
+  }
+ },
+ "M05-BIZ": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "twxv.c02",
+   "tx7n.c10",
+   "tx7n.c07",
+   "tx7n.c19",
+   "twxv.c01",
+   "twxv.c09",
+   "ts53.c01",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05"
+  ],
+  "output_columns": [
+   "twxv.c02",
+   "tx7n.c10",
+   "tx7n.c07"
+  ],
+  "filter_columns": [
+   "tx7n.c19"
+  ],
+  "output_text": "twxv.c02, AVG(tx7n.c10 - tx7n.c07)",
+  "filter_text": "tx7n.c19 = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, twxv\n#output twxv.c02, AVG(tx7n.c10 - tx7n.c07)\n#filter tx7n.c19 = 'completed'",
+  "eval_count": 47,
+  "error": null,
+  "seconds": 1.078,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.375,
+   "columns_in_schema": 0.75,
+   "tables_kept": 3
+  }
+ },
+ "M05-VAG": {
+  "tables": [
+   "ts4p",
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c04",
+   "twxv.c08",
+   "ts4p.c01",
+   "twxv.c01"
+  ],
+  "output_columns": [
+   "twxv.c04",
+   "twxv.c08"
+  ],
+  "filter_columns": [],
+  "output_text": "twxv.c04, twxv.c08",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv, ts4p\n#output twxv.c04, twxv.c08\n#filter none",
+  "eval_count": 30,
+  "error": null,
+  "seconds": 0.71,
+  "recall": {
+   "tables_found": 0.3333333333333333,
+   "all_tables_found": false,
+   "columns_listed": 0.25,
+   "columns_in_schema": 0.25,
+   "tables_kept": 2
+  }
+ },
+ "M06-CAS": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "twxv.c02",
+   "tx7n.c01",
+   "tx7n.c19",
+   "twxv.c01",
+   "twxv.c09",
+   "ts53.c01",
+   "tx7n.c06",
+   "tx7n.c05"
+  ],
+  "output_columns": [
+   "twxv.c02",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19"
+  ],
+  "output_text": "twxv.c02, COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19, 'cancelled'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv, tx7n\n#output twxv.c02, COUNT(tx7n.c01)\n#filter tx7n.c19, 'cancelled'",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.927,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "M06-SCH": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c01",
+   "tx7n.c01",
+   "tx7n.c19",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "tu5q.c01",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "tu5q.c01"
+  ],
+  "output_text": "tu5q.c01, COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19, tu5q.c01",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tu5q\n#output tu5q.c01, COUNT(tx7n.c01)\n#filter tx7n.c19, tu5q.c01",
+  "eval_count": 43,
+  "error": null,
+  "seconds": 1.016,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 2
+  }
+ },
+ "M06-BIZ": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "twxv.c02",
+   "tx7n.c01",
+   "tx7n.c19",
+   "twxv.c01",
+   "twxv.c09",
+   "ts53.c01",
+   "tx7n.c06",
+   "tx7n.c05"
+  ],
+  "output_columns": [
+   "twxv.c02",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19"
+  ],
+  "output_text": "twxv.c02, COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19, 'cancelled'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv, tx7n\n#output twxv.c02, COUNT(tx7n.c01)\n#filter tx7n.c19, 'cancelled'",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.924,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "M06-VAG": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "twxv.c04",
+   "tx7n.c19",
+   "twxv.c01",
+   "twxv.c09",
+   "ts53.c01",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05"
+  ],
+  "output_columns": [
+   "twxv.c04",
+   "tx7n.c19"
+  ],
+  "filter_columns": [
+   "tx7n.c19"
+  ],
+  "output_text": "twxv.c04, COUNT(tx7n.c19)",
+  "filter_text": "tx7n.c19 = 'cancelled'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv, tx7n\n#output twxv.c04, COUNT(tx7n.c19)\n#filter tx7n.c19 = 'cancelled'",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.923,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "M07-CAS": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "t875"
+  ],
+  "columns": [
+   "twxv.c02",
+   "t875.c16",
+   "t875.c01",
+   "t875.c04",
+   "twxv.c01",
+   "twxv.c09",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "twxv.c02",
+   "t875.c16"
+  ],
+  "filter_columns": [],
+  "output_text": "twxv.c02, SUM(t875.c16)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t875, twxv\n#output twxv.c02, SUM(t875.c16)\n#filter none",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.784,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.25,
+   "columns_in_schema": 0.5,
+   "tables_kept": 3
+  }
+ },
+ "M07-SCH": {
+  "tables": [
+   "twxv",
+   "tu5q",
+   "tx7n",
+   "t875"
+  ],
+  "columns": [
+   "twxv.c04",
+   "t875.c16",
+   "t875.c01",
+   "t875.c03",
+   "tu5q.c01",
+   "tu5q.c05",
+   "twxv.c01",
+   "tx7n.c01",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "twxv.c04",
+   "t875.c16"
+  ],
+  "filter_columns": [],
+  "output_text": "twxv.c04, SUM(t875.c16 / 1000) AS avg_fuel_cost_per_1000kg",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t875, tx7n, tu5q, twxv\n#output twxv.c04, SUM(t875.c16 / 1000) AS avg_fuel_cost_per_1000kg\n#filter none",
+  "eval_count": 60,
+  "error": null,
+  "seconds": 1.366,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "M07-BIZ": {
+  "tables": [
+   "ts53",
+   "tu5q",
+   "tcse",
+   "t875"
+  ],
+  "columns": [
+   "tu5q.c05",
+   "tcse.c15",
+   "t875.c01",
+   "t875.c04",
+   "tu5q.c01",
+   "tu5q.c06",
+   "tcse.c01",
+   "tcse.c04",
+   "tcse.c03",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "tu5q.c05",
+   "tcse.c15"
+  ],
+  "filter_columns": [],
+  "output_text": "tu5q.c05, SUM(tcse.c15)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, t875, tcse\n#output tu5q.c05, SUM(tcse.c15)\n#filter none",
+  "eval_count": 34,
+  "error": null,
+  "seconds": 0.825,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.25,
+   "columns_in_schema": 0.5,
+   "tables_kept": 4
+  }
+ },
+ "M07-VAG": {
+  "tables": [
+   "ts53",
+   "tcse",
+   "t875"
+  ],
+  "columns": [
+   "tcse.c03",
+   "tcse.c15",
+   "tcse.c16",
+   "t875.c01",
+   "t875.c04",
+   "tcse.c01",
+   "tcse.c04",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "tcse.c03",
+   "tcse.c15",
+   "tcse.c16"
+  ],
+  "filter_columns": [],
+  "output_text": "tcse.c03, SUM(tcse.c15), SUM(tcse.c16)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t875, tcse\n#output tcse.c03, SUM(tcse.c15), SUM(tcse.c16)\n#filter none",
+  "eval_count": 36,
+  "error": null,
+  "seconds": 0.838,
+  "recall": {
+   "tables_found": 0.25,
+   "all_tables_found": false,
+   "columns_listed": 0.0,
+   "columns_in_schema": 0.25,
+   "tables_kept": 3
+  }
+ },
+ "M08-CAS": {
+  "tables": [
+   "ts53",
+   "t875"
+  ],
+  "columns": [
+   "ts53.c07",
+   "t875.c11",
+   "t875.c01",
+   "t875.c04",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "ts53.c07",
+   "t875.c11"
+  ],
+  "filter_columns": [],
+  "output_text": "ts53.c07, AVG(t875.c11)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t875, ts53\n#output ts53.c07, AVG(t875.c11)\n#filter none",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.785,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-SCH": {
+  "tables": [
+   "ts53",
+   "t875"
+  ],
+  "columns": [
+   "ts53.c02",
+   "t875.c12",
+   "t875.c01",
+   "t875.c04",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "t875.c12"
+  ],
+  "filter_columns": [],
+  "output_text": "ts53.c02, AVG(t875.c12)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t875, ts53\n#output ts53.c02, AVG(t875.c12)\n#filter none",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.778,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-BIZ": {
+  "tables": [
+   "ts53",
+   "t875"
+  ],
+  "columns": [
+   "ts53.c07",
+   "t875.c11",
+   "t875.c01",
+   "t875.c04",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "ts53.c07",
+   "t875.c11"
+  ],
+  "filter_columns": [],
+  "output_text": "ts53.c07, AVG(t875.c11)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t875, ts53\n#output ts53.c07, AVG(t875.c11)\n#filter none",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.783,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-VAG": {
+  "tables": [
+   "ts53",
+   "t875"
+  ],
+  "columns": [
+   "t875.c16",
+   "ts53.c02",
+   "t875.c01",
+   "t875.c04",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "t875.c16",
+   "ts53.c02"
+  ],
+  "filter_columns": [],
+  "output_text": "t875.c16, ts53.c02",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t875, ts53\n#output t875.c16, ts53.c02\n#filter none",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.755,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-CAS": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "ts53.c02",
+   "trhn.c01",
+   "trhn.c03",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "trhn.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "ts53.c02, COUNT(trhn.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, ts53\n#output ts53.c02, COUNT(trhn.c01)\n#filter none",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.721,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-SCH": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "ts53.c02",
+   "trhn.c01",
+   "trhn.c03",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "trhn.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "ts53.c02, COUNT(trhn.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, ts53\n#output ts53.c02, COUNT(trhn.c01)\n#filter none",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.698,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-BIZ": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "ts53.c02",
+   "trhn.c01",
+   "trhn.c06",
+   "ts53.c01",
+   "trhn.c03"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "trhn.c01"
+  ],
+  "filter_columns": [
+   "trhn.c06",
+   "ts53.c01"
+  ],
+  "output_text": "ts53.c02, COUNT(trhn.c01)",
+  "filter_text": "trhn.c06, GROUP BY ts53.c01",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, ts53\n#output ts53.c02, COUNT(trhn.c01)\n#filter trhn.c06, GROUP BY ts53.c01",
+  "eval_count": 42,
+  "error": null,
+  "seconds": 0.971,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-VAG": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "ts53.c02",
+   "trhn.c01",
+   "trhn.c03",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "trhn.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "ts53.c02, COUNT(trhn.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, ts53\n#output ts53.c02, COUNT(trhn.c01)\n#filter none",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.709,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-CAS": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "ts53.c02",
+   "trhn.c01",
+   "trhn.c03",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "trhn.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "ts53.c02, COUNT(trhn.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, ts53\n#output ts53.c02, COUNT(trhn.c01)\n#filter none",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.691,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-SCH": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c02",
+   "trhn.c12",
+   "trhn.c01"
+  ],
+  "output_columns": [
+   "trhn.c02",
+   "trhn.c02"
+  ],
+  "filter_columns": [
+   "trhn.c12"
+  ],
+  "output_text": "trhn.c02, COUNT(trhn.c02)",
+  "filter_text": "trhn.c12 = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#output trhn.c02, COUNT(trhn.c02)\n#filter trhn.c12 = 1",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.74,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.25,
+   "columns_in_schema": 0.5,
+   "tables_kept": 1
+  }
+ },
+ "M10-BIZ": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "ts53.c02",
+   "trhn.c01",
+   "trhn.c12",
+   "ts53.c01",
+   "trhn.c03"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "trhn.c01"
+  ],
+  "filter_columns": [
+   "trhn.c12",
+   "ts53.c01"
+  ],
+  "output_text": "ts53.c02, COUNT(trhn.c01)",
+  "filter_text": "trhn.c12, ts53.c01",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, ts53\n#output ts53.c02, COUNT(trhn.c01)\n#filter trhn.c12, ts53.c01",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.926,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-VAG": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "ts53.c02",
+   "trhn.c01",
+   "trhn.c03",
+   "ts53.c01"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "trhn.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "ts53.c02, COUNT(trhn.c01)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, ts53\n#output ts53.c02, COUNT(trhn.c01)\n#filter none",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.695,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H01-CAS": {
+  "tables": [
+   "twxv",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "twxv.c04",
+   "tx7n.c01",
+   "tx7n.c19",
+   "tu5q.c01",
+   "tu5q.c05",
+   "twxv.c01",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "twxv.c04",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19"
+  ],
+  "output_text": "twxv.c04, COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19 = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv, tu5q, tx7n\n#output twxv.c04, COUNT(tx7n.c01)\n#filter tx7n.c19 = 'completed'",
+  "eval_count": 44,
+  "error": null,
+  "seconds": 1.013,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8571428571428571,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H01-SCH": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c01",
+   "tx7n.c19",
+   "tu5q.c01",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "tu5q.c02",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19"
+  ],
+  "output_text": "tu5q.c02, COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19 = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tu5q\n#output tu5q.c02, COUNT(tx7n.c01)\n#filter tx7n.c19 = 'completed'",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.958,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5714285714285714,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 2
+  }
+ },
+ "H01-BIZ": {
+  "tables": [
+   "twxv",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "twxv.c02",
+   "tu5q.c02",
+   "tx7n.c01",
+   "tx7n.c19",
+   "twxv.c01",
+   "tu5q.c05",
+   "tu5q.c01",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "twxv.c02",
+   "tu5q.c02",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "twxv.c01",
+   "tu5q.c05"
+  ],
+  "output_text": "twxv.c02, tu5q.c02, COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19, twxv.c01, tu5q.c05",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n, twxv\n#output twxv.c02, tu5q.c02, COUNT(tx7n.c01)\n#filter tx7n.c19, twxv.c01, tu5q.c05",
+  "eval_count": 61,
+  "error": null,
+  "seconds": 1.365,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8571428571428571,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H01-VAG": {
+  "tables": [
+   "twxv",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "twxv.c02",
+   "tx7n.c01",
+   "tu5q.c01",
+   "tu5q.c05",
+   "twxv.c01",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "twxv.c02",
+   "tx7n.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "twxv.c02, COUNT(tx7n.c01) as flight_count",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, twxv, tx7n\n#output twxv.c02, COUNT(tx7n.c01) as flight_count\n#filter none",
+  "eval_count": 39,
+  "error": null,
+  "seconds": 0.894,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5714285714285714,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H02-CAS": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "ts53.c02",
+   "twxv.c04",
+   "tx7n.c01",
+   "tx7n.c19",
+   "tx7n.c04",
+   "tx7n.c05",
+   "ts53.c01",
+   "twxv.c01",
+   "twxv.c09",
+   "tx7n.c06"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "twxv.c04",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "tx7n.c04",
+   "tx7n.c05",
+   "ts53.c01",
+   "twxv.c01"
+  ],
+  "output_text": "ts53.c02, twxv.c04, COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19, tx7n.c04, tx7n.c05, ts53.c01, twxv.c01",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53, twxv\n#output ts53.c02, twxv.c04, COUNT(tx7n.c01)\n#filter tx7n.c19, tx7n.c04, tx7n.c05, ts53.c01, twxv.c01",
+  "eval_count": 75,
+  "error": null,
+  "seconds": 1.66,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.7777777777777778,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H02-SCH": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "ts53.c02",
+   "twxv.c04",
+   "tx7n.c01",
+   "tx7n.c19",
+   "ts53.c01",
+   "twxv.c01",
+   "twxv.c09",
+   "tx7n.c06",
+   "tx7n.c05"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "twxv.c04",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "ts53.c01",
+   "twxv.c01"
+  ],
+  "output_text": "ts53.c02, twxv.c04, COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19, ts53.c01, twxv.c01",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53, twxv\n#output ts53.c02, twxv.c04, COUNT(tx7n.c01)\n#filter tx7n.c19, ts53.c01, twxv.c01",
+  "eval_count": 61,
+  "error": null,
+  "seconds": 1.395,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H02-BIZ": {
+  "tables": [
+   "twxv",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "twxv.c04",
+   "tx7n.c01",
+   "tx7n.c19",
+   "tu5q.c05",
+   "tx7n.c05",
+   "tu5q.c01",
+   "twxv.c01",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "twxv.c04",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "tu5q.c05",
+   "tx7n.c05"
+  ],
+  "output_text": "twxv.c04, COUNT(tx7n.c01) as total_arrivals",
+  "filter_text": "tx7n.c19 = 'completed', tu5q.c05 = tx7n.c05",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv, tx7n, tu5q\n#output twxv.c04, COUNT(tx7n.c01) as total_arrivals\n#filter tx7n.c19 = 'completed', tu5q.c05 = tx7n.c05",
+  "eval_count": 62,
+  "error": null,
+  "seconds": 1.396,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H02-VAG": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "ts53.c02",
+   "tx7n.c01",
+   "tu5q.c01",
+   "tu5q.c06",
+   "tu5q.c05",
+   "twxv.c01",
+   "twxv.c09",
+   "ts53.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "tx7n.c01"
+  ],
+  "filter_columns": [],
+  "output_text": "ts53.c02, COUNT(tx7n.c01) as flight_count",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv, tu5q, tx7n, ts53\n#output ts53.c02, COUNT(tx7n.c01) as flight_count\n#filter none",
+  "eval_count": 43,
+  "error": null,
+  "seconds": 1.009,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.7777777777777778,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H03-CAS": {
+  "tables": [
+   "ts4p",
+   "tajj"
+  ],
+  "columns": [
+   "tajj.c04",
+   "tajj.c13",
+   "ts4p.c01",
+   "tajj.c01"
+  ],
+  "output_columns": [
+   "tajj.c04",
+   "tajj.c13",
+   "tajj.c13",
+   "tajj.c04"
+  ],
+  "filter_columns": [
+   "tajj.c04"
+  ],
+  "output_text": "tajj.c04, SUM(tajj.c13) AS total_invoiced, SUM(SUM(tajj.c13)) OVER (ORDER BY tajj.c04) AS running_total",
+  "filter_text": "tajj.c04 LIKE '2025-%'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tajj, ts4p\n#output tajj.c04, SUM(tajj.c13) AS total_invoiced, SUM(SUM(tajj.c13)) OVER (ORDER BY tajj.c04) AS running_total\n#filter tajj.c04 LIKE '2025-%'",
+  "eval_count": 75,
+  "error": null,
+  "seconds": 1.669,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H03-SCH": {
+  "tables": [
+   "ts4p",
+   "tajj"
+  ],
+  "columns": [
+   "tajj.c04",
+   "tajj.c13",
+   "ts4p.c01",
+   "tajj.c01"
+  ],
+  "output_columns": [
+   "tajj.c04",
+   "tajj.c13",
+   "tajj.c13",
+   "tajj.c04"
+  ],
+  "filter_columns": [
+   "tajj.c04",
+   "ts4p.c01"
+  ],
+  "output_text": "tajj.c04, SUM(tajj.c13), SUM(SUM(tajj.c13)) OVER (ORDER BY tajj.c04)",
+  "filter_text": "tajj.c04, ts4p.c01 = 'as_of_timestamp'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tajj, ts4p\n#output tajj.c04, SUM(tajj.c13), SUM(SUM(tajj.c13)) OVER (ORDER BY tajj.c04)\n#filter tajj.c04, ts4p.c01 = 'as_of_timestamp'",
+  "eval_count": 70,
+  "error": null,
+  "seconds": 1.603,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H03-BIZ": {
+  "tables": [
+   "ts4p",
+   "tajj"
+  ],
+  "columns": [
+   "tajj.c04",
+   "tajj.c13",
+   "ts4p.c01",
+   "tajj.c01"
+  ],
+  "output_columns": [
+   "tajj.c04",
+   "tajj.c13"
+  ],
+  "filter_columns": [
+   "tajj.c04",
+   "ts4p.c01"
+  ],
+  "output_text": "tajj.c04, SUM(tajj.c13) AS billed_revenue",
+  "filter_text": "tajj.c04 LIKE '2025%', ts4p.c01 = 'as_of_timestamp'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tajj, ts4p\n#output tajj.c04, SUM(tajj.c13) AS billed_revenue\n#filter tajj.c04 LIKE '2025%', ts4p.c01 = 'as_of_timestamp'",
+  "eval_count": 60,
+  "error": null,
+  "seconds": 1.349,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H03-VAG": {
+  "tables": [
+   "th77",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "tajj.c03",
+   "tajj.c13",
+   "tajj.c01",
+   "t89v.c01",
+   "t89v.c03",
+   "th77.c01"
+  ],
+  "output_columns": [
+   "tajj.c03",
+   "tajj.c13"
+  ],
+  "filter_columns": [],
+  "output_text": "tajj.c03, SUM(tajj.c13) AS total_revenue",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tajj, th77\n#output tajj.c03, SUM(tajj.c13) AS total_revenue\n#filter none",
+  "eval_count": 36,
+  "error": null,
+  "seconds": 0.857,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H04-CAS": {
+  "tables": [
+   "ts4p",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c07",
+   "tx7n.c01",
+   "tx7n.c19",
+   "ts4p.c01"
+  ],
+  "output_columns": [
+   "tx7n.c07",
+   "tx7n.c01",
+   "tx7n.c01",
+   "tx7n.c07"
+  ],
+  "filter_columns": [
+   "tx7n.c19"
+  ],
+  "output_text": "tx7n.c07, COUNT(tx7n.c01), LAG(COUNT(tx7n.c01)) OVER (ORDER BY strftime('%Y-%m', tx7n.c07)) AS prev_month_count",
+  "filter_text": "tx7n.c19 = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts4p\n#output tx7n.c07, COUNT(tx7n.c01), LAG(COUNT(tx7n.c01)) OVER (ORDER BY strftime('%Y-%m', tx7n.c07)) AS prev_month_count\n#filter tx7n.c19 = 'completed'",
+  "eval_count": 73,
+  "error": null,
+  "seconds": 1.641,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-SCH": {
+  "tables": [
+   "ts4p",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c09",
+   "tx7n.c01",
+   "tx7n.c19",
+   "ts4p.c01"
+  ],
+  "output_columns": [
+   "tx7n.c09",
+   "tx7n.c01",
+   "tx7n.c01",
+   "tx7n.c09"
+  ],
+  "filter_columns": [
+   "tx7n.c19"
+  ],
+  "output_text": "tx7n.c09, COUNT(tx7n.c01) AS completed_flights, LAG(COUNT(tx7n.c01)) OVER (ORDER BY tx7n.c09) AS previous_month_flights",
+  "filter_text": "tx7n.c19 = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts4p\n#output tx7n.c09, COUNT(tx7n.c01) AS completed_flights, LAG(COUNT(tx7n.c01)) OVER (ORDER BY tx7n.c09) AS previous_month_flights\n#filter tx7n.c19 = 'completed'",
+  "eval_count": 73,
+  "error": null,
+  "seconds": 1.619,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-BIZ": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "ts53.c07",
+   "tx7n.c01",
+   "tx7n.c19",
+   "ts53.c01",
+   "tx7n.c06",
+   "tx7n.c05"
+  ],
+  "output_columns": [
+   "ts53.c07",
+   "tx7n.c01",
+   "tx7n.c01",
+   "ts53.c07",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "ts53.c07"
+  ],
+  "output_text": "ts53.c07, COUNT(tx7n.c01), LAG(COUNT(tx7n.c01)) OVER (ORDER BY ts53.c07) - COUNT(tx7n.c01) AS month_over_month_change",
+  "filter_text": "tx7n.c19, ts53.c07",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53\n#output ts53.c07, COUNT(tx7n.c01), LAG(COUNT(tx7n.c01)) OVER (ORDER BY ts53.c07) - COUNT(tx7n.c01) AS month_over_month_change\n#filter tx7n.c19, ts53.c07",
+  "eval_count": 80,
+  "error": null,
+  "seconds": 1.771,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-VAG": {
+  "tables": [
+   "ts4p",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c07",
+   "tx7n.c01",
+   "ts4p.c01"
+  ],
+  "output_columns": [
+   "tx7n.c07",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "ts4p.c01",
+   "tx7n.c07"
+  ],
+  "output_text": "tx7n.c07, COUNT(tx7n.c01)",
+  "filter_text": "ts4p.c01, tx7n.c07",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts4p\n#output tx7n.c07, COUNT(tx7n.c01)\n#filter ts4p.c01, tx7n.c07",
+  "eval_count": 43,
+  "error": null,
+  "seconds": 0.987,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H05-CAS": {
+  "tables": [
+   "tu5q",
+   "tx7n",
+   "tpsn"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tu5q.c15",
+   "tpsn.c06",
+   "tu5q.c01",
+   "tpsn.c03",
+   "tx7n.c01",
+   "tpsn.c02",
+   "tx7n.c19",
+   "tpsn.c01",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "tu5q.c02",
+   "tu5q.c15",
+   "tpsn.c06"
+  ],
+  "filter_columns": [
+   "tu5q.c01",
+   "tpsn.c03",
+   "tx7n.c01",
+   "tpsn.c02",
+   "tx7n.c19"
+  ],
+  "output_text": "tu5q.c02, AVG(tu5q.c15 - tpsn.c06)",
+  "filter_text": "tu5q.c01 = tpsn.c03, tx7n.c01 = tpsn.c02, tx7n.c19 = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n, tpsn\n#output tu5q.c02, AVG(tu5q.c15 - tpsn.c06)\n#filter tu5q.c01 = tpsn.c03, tx7n.c01 = tpsn.c02, tx7n.c19 = 'completed'",
+  "eval_count": 80,
+  "error": null,
+  "seconds": 1.768,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H05-SCH": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c09",
+   "tx7n.c10",
+   "tx7n.c19",
+   "tu5q.c01",
+   "tx7n.c01",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "tu5q.c02",
+   "tx7n.c09",
+   "tx7n.c10"
+  ],
+  "filter_columns": [
+   "tx7n.c19"
+  ],
+  "output_text": "tu5q.c02, AVG((julianday(tx7n.c09) - julianday(tx7n.c10)) * 24) AS avg_departure_interval",
+  "filter_text": "tx7n.c19 = 'completed'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tu5q\n#output tu5q.c02, AVG((julianday(tx7n.c09) - julianday(tx7n.c10)) * 24) AS avg_departure_interval\n#filter tx7n.c19 = 'completed'",
+  "eval_count": 68,
+  "error": null,
+  "seconds": 1.531,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H05-BIZ": {
+  "tables": [
+   "tu5q",
+   "tx7n",
+   "tpsn"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c08",
+   "tx7n.c07",
+   "tx7n.c19",
+   "tpsn.c12",
+   "tu5q.c01",
+   "tpsn.c03",
+   "tx7n.c01",
+   "tpsn.c02",
+   "tpsn.c01",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "tu5q.c02",
+   "tx7n.c08",
+   "tx7n.c07"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "tpsn.c12",
+   "tu5q.c01",
+   "tpsn.c03",
+   "tx7n.c01",
+   "tpsn.c02"
+  ],
+  "output_text": "tu5q.c02, AVG(tx7n.c08 - tx7n.c07) as avg_turnaround",
+  "filter_text": "tx7n.c19 = 'completed', tpsn.c12 = 'completed', tu5q.c01 = tpsn.c03, tx7n.c01 = tpsn.c02",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n, tpsn\n#output tu5q.c02, AVG(tx7n.c08 - tx7n.c07) as avg_turnaround\n#filter tx7n.c19 = 'completed', tpsn.c12 = 'completed', tu5q.c01 = tpsn.c03, tx7n.c01 = tpsn.c02\n#sort avg_turnaround ASC\n#limit 5",
+  "eval_count": 105,
+  "error": null,
+  "seconds": 2.289,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H05-VAG": {
+  "tables": [
+   "tx7n",
+   "tpsn"
+  ],
+  "columns": [
+   "tx7n.c01",
+   "tx7n.c07",
+   "tx7n.c10",
+   "tpsn.c06",
+   "tpsn.c07",
+   "tpsn.c01",
+   "tpsn.c02"
+  ],
+  "output_columns": [
+   "tx7n.c01",
+   "tx7n.c07",
+   "tx7n.c10",
+   "tpsn.c06",
+   "tpsn.c07"
+  ],
+  "filter_columns": [],
+  "output_text": "tx7n.c01, tx7n.c07, tx7n.c10, tpsn.c06, tpsn.c07",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tpsn\n#output tx7n.c01, tx7n.c07, tx7n.c10, tpsn.c06, tpsn.c07\n#filter none",
+  "eval_count": 51,
+  "error": null,
+  "seconds": 1.151,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.16666666666666666,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 2
+  }
+ },
+ "H06-CAS": {
+  "tables": [
+   "th77",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "th77.c03",
+   "tajj.c13",
+   "tajj.c01",
+   "tajj.c03",
+   "t89v.c01",
+   "t89v.c03",
+   "th77.c01"
+  ],
+  "output_columns": [
+   "th77.c03",
+   "tajj.c13"
+  ],
+  "filter_columns": [],
+  "output_text": "th77.c03, SUM(tajj.c13) / ( SELECT SUM(c13) FROM tajj ) AS share",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tajj, th77\n#output th77.c03, SUM(tajj.c13) / ( SELECT SUM(c13) FROM tajj ) AS share\n#filter none",
+  "eval_count": 47,
+  "error": null,
+  "seconds": 1.079,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-SCH": {
+  "tables": [
+   "th77",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "th77.c03",
+   "t89v.c13",
+   "tajj.c13",
+   "tajj.c01",
+   "tajj.c03",
+   "t89v.c01",
+   "t89v.c03",
+   "th77.c01"
+  ],
+  "output_columns": [
+   "th77.c03",
+   "t89v.c13",
+   "tajj.c13"
+  ],
+  "filter_columns": [],
+  "output_text": "th77.c03, SUM(t89v.c13) / SUM(tajj.c13) AS percentage",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t89v, tajj, th77\n#output th77.c03, SUM(t89v.c13) / SUM(tajj.c13) AS percentage\n#filter none",
+  "eval_count": 49,
+  "error": null,
+  "seconds": 1.14,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-BIZ": {
+  "tables": [
+   "th77",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "th77.c02",
+   "tajj.c13",
+   "tajj.c01",
+   "tajj.c03",
+   "t89v.c01",
+   "t89v.c03",
+   "th77.c01"
+  ],
+  "output_columns": [
+   "th77.c02",
+   "tajj.c13",
+   "tajj.c13"
+  ],
+  "filter_columns": [],
+  "output_text": "th77.c02, SUM(tajj.c13) AS revenue, SUM(tajj.c13) / (SELECT SUM(c13) FROM tajj) * 100 AS share",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tajj, th77\n#output th77.c02, SUM(tajj.c13) AS revenue, SUM(tajj.c13) / (SELECT SUM(c13) FROM tajj) * 100 AS share\n#filter none",
+  "eval_count": 63,
+  "error": null,
+  "seconds": 1.415,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-VAG": {
+  "tables": [
+   "th77",
+   "t89v",
+   "tajj",
+   "t8tg"
+  ],
+  "columns": [
+   "th77.c03",
+   "tajj.c13",
+   "t8tg.c01",
+   "t8tg.c04",
+   "t8tg.c03",
+   "tajj.c01",
+   "tajj.c03",
+   "t89v.c01",
+   "t89v.c03",
+   "th77.c01"
+  ],
+  "output_columns": [
+   "th77.c03",
+   "tajj.c13"
+  ],
+  "filter_columns": [],
+  "output_text": "th77.c03, SUM(tajj.c13) as total_revenue",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77, tajj, t8tg\n#output th77.c03, SUM(tajj.c13) as total_revenue\n#filter none",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.923,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H07-CAS": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "ts53.c02",
+   "tu5q.c15",
+   "tu5q.c01",
+   "tu5q.c06",
+   "tu5q.c05",
+   "twxv.c01",
+   "twxv.c09",
+   "ts53.c01",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "tu5q.c15"
+  ],
+  "filter_columns": [],
+  "output_text": "ts53.c02, SUM(tu5q.c15) as total_cargo",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tu5q, twxv, ts53\n#output ts53.c02, SUM(tu5q.c15) as total_cargo\n#filter none",
+  "eval_count": 45,
+  "error": null,
+  "seconds": 1.034,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.4444444444444444,
+   "columns_in_schema": 0.4444444444444444,
+   "tables_kept": 4
+  }
+ },
+ "H07-SCH": {
+  "tables": [
+   "ts53",
+   "tx7n",
+   "tg6t"
+  ],
+  "columns": [
+   "ts53.c02",
+   "tx7n.c19",
+   "tg6t.c12",
+   "tg6t.c01",
+   "tg6t.c03",
+   "ts53.c01",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05"
+  ],
+  "output_columns": [
+   "ts53.c02"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "tg6t.c12"
+  ],
+  "output_text": "ts53.c02, SUM(tg6t.c13 / 1000) AS tonnes",
+  "filter_text": "tx7n.c19 = 'completed', tg6t.c12 = 'flown'",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tg6t, ts53\n#output ts53.c02, SUM(tg6t.c13 / 1000) AS tonnes\n#filter tx7n.c19 = 'completed', tg6t.c12 = 'flown'",
+  "eval_count": 65,
+  "error": null,
+  "seconds": 1.465,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H07-BIZ": {
+  "tables": [
+   "ts53",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "ts53.c02",
+   "tu5q.c15",
+   "tu5q.c01",
+   "tu5q.c06",
+   "ts53.c01",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "tu5q.c15"
+  ],
+  "filter_columns": [],
+  "output_text": "ts53.c02, SUM(tu5q.c15) as outbound_tonnage",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tu5q, ts53\n#output ts53.c02, SUM(tu5q.c15) as outbound_tonnage\n#filter none",
+  "eval_count": 42,
+  "error": null,
+  "seconds": 0.964,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.4444444444444444,
+   "columns_in_schema": 0.4444444444444444,
+   "tables_kept": 3
+  }
+ },
+ "H07-VAG": {
+  "tables": [
+   "ts53",
+   "t89v",
+   "t3v5"
+  ],
+  "columns": [
+   "ts53.c02",
+   "t3v5.c01",
+   "t3v5.c05",
+   "ts53.c01",
+   "t3v5.c03",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06"
+  ],
+  "output_columns": [
+   "ts53.c02",
+   "t3v5.c01"
+  ],
+  "filter_columns": [
+   "t3v5.c05",
+   "ts53.c01"
+  ],
+  "output_text": "ts53.c02, COUNT(t3v5.c01)",
+  "filter_text": "t3v5.c05, ts53.c01",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53, t3v5\n#output ts53.c02, COUNT(t3v5.c01)\n#filter t3v5.c05, ts53.c01",
+  "eval_count": 46,
+  "error": null,
+  "seconds": 1.059,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.4444444444444444,
+   "tables_kept": 3
+  }
+ },
+ "H08-CAS": {
+  "tables": [
+   "tumf",
+   "tu5q",
+   "tx7n",
+   "t875"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tx7n.c01",
+   "tx7n.c19",
+   "t875.c09",
+   "t875.c13",
+   "tumf.c01",
+   "tu5q.c01",
+   "tu5q.c04",
+   "t875.c01",
+   "t875.c03",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "tumf.c02",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "t875.c09",
+   "t875.c13"
+  ],
+  "output_text": "tumf.c02, COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19 = 'completed', t875.c09 > t875.c13 * 0.5",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n, t875\n#output tumf.c02, COUNT(tx7n.c01)\n#filter tx7n.c19 = 'completed', t875.c09 > t875.c13 * 0.5",
+  "eval_count": 64,
+  "error": null,
+  "seconds": 1.424,
+  "recall": {
+   "tables_found": 0.6,
+   "all_tables_found": false,
+   "columns_listed": 0.5833333333333334,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 4
+  }
+ },
+ "H08-SCH": {
+  "tables": [
+   "ts53",
+   "tx7n",
+   "tg6t"
+  ],
+  "columns": [
+   "tx7n.c02",
+   "tx7n.c01",
+   "tx7n.c19",
+   "tx7n.c08",
+   "tg6t.c01",
+   "tg6t.c03",
+   "ts53.c01",
+   "tx7n.c06",
+   "tx7n.c05"
+  ],
+  "output_columns": [
+   "tx7n.c02",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "tx7n.c08"
+  ],
+  "output_text": "tx7n.c02, COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19 = 'completed', SUM(tg6t.c14) > 0.5 * tx7n.c08",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tg6t, tx7n, ts53\n#output tx7n.c02, COUNT(tx7n.c01)\n#filter tx7n.c19 = 'completed', SUM(tg6t.c14) > 0.5 * tx7n.c08",
+  "eval_count": 65,
+  "error": null,
+  "seconds": 1.461,
+  "recall": {
+   "tables_found": 0.4,
+   "all_tables_found": false,
+   "columns_listed": 0.25,
+   "columns_in_schema": 0.4166666666666667,
+   "tables_kept": 3
+  }
+ },
+ "H08-BIZ": {
+  "tables": [
+   "tumf",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tx7n.c01",
+   "tx7n.c19",
+   "tx7n.c14",
+   "tx7n.c13",
+   "tumf.c01",
+   "tu5q.c01",
+   "tu5q.c04",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "tumf.c02",
+   "tx7n.c01"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "tx7n.c14",
+   "tx7n.c13"
+  ],
+  "output_text": "tumf.c02, COUNT(tx7n.c01)",
+  "filter_text": "tx7n.c19 = 'completed', (tx7n.c14 * 0.3048 * 0.3048 * 0.3048) / (tx7n.c13 * 0.001) > 0.5",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tu5q, tumf\n#output tumf.c02, COUNT(tx7n.c01)\n#filter tx7n.c19 = 'completed', (tx7n.c14 * 0.3048 * 0.3048 * 0.3048) / (tx7n.c13 * 0.001) > 0.5",
+  "eval_count": 95,
+  "error": null,
+  "seconds": 2.064,
+  "recall": {
+   "tables_found": 0.6,
+   "all_tables_found": false,
+   "columns_listed": 0.5833333333333334,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "H08-VAG": {
+  "tables": [
+   "tumf",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tu5q.c13",
+   "tumf.c07",
+   "tumf.c01",
+   "tu5q.c01",
+   "tu5q.c04",
+   "tx7n.c01",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "tumf.c02",
+   "tu5q.c13",
+   "tumf.c07"
+  ],
+  "filter_columns": [],
+  "output_text": "tumf.c02, AVG(tu5q.c13 / tumf.c07)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tumf, tx7n\n#output tumf.c02, AVG(tu5q.c13 / tumf.c07)\n#filter none",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.921,
+  "recall": {
+   "tables_found": 0.6,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "H09-CAS": {
+  "tables": [
+   "ts53",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tu5q.c03",
+   "tu5q.c10",
+   "tx7n.c19",
+   "ts53.c14",
+   "tu5q.c01",
+   "tu5q.c06",
+   "ts53.c01",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "tu5q.c02",
+   "tu5q.c03"
+  ],
+  "filter_columns": [
+   "tu5q.c10",
+   "tx7n.c19",
+   "ts53.c14"
+  ],
+  "output_text": "tu5q.c02, tu5q.c03",
+  "filter_text": "tu5q.c10, tx7n.c19, ts53.c14",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n, ts53\n#output tu5q.c02, tu5q.c03\n#filter tu5q.c10, tx7n.c19, ts53.c14",
+  "eval_count": 53,
+  "error": null,
+  "seconds": 1.198,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H09-SCH": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "ts53.c02",
+   "tx7n.c06",
+   "ts53.c01",
+   "tx7n.c19",
+   "ts53.c14",
+   "tx7n.c01",
+   "tx7n.c05"
+  ],
+  "output_columns": [
+   "ts53.c02"
+  ],
+  "filter_columns": [
+   "tx7n.c06",
+   "ts53.c01",
+   "tx7n.c19",
+   "ts53.c14"
+  ],
+  "output_text": "ts53.c02",
+  "filter_text": "tx7n.c06 = ts53.c01 AND tx7n.c19 = 'completed' AND ts53.c14 = 1",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53\n#output ts53.c02\n#filter tx7n.c06 = ts53.c01 AND tx7n.c19 = 'completed' AND ts53.c14 = 1",
+  "eval_count": 56,
+  "error": null,
+  "seconds": 1.274,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5714285714285714,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 2
+  }
+ },
+ "H09-BIZ": {
+  "tables": [
+   "ts53",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tu5q.c03",
+   "tx7n.c19",
+   "tu5q.c06",
+   "ts53.c01",
+   "tu5q.c01",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "tu5q.c02",
+   "tu5q.c03"
+  ],
+  "filter_columns": [
+   "tx7n.c19",
+   "tu5q.c06",
+   "ts53.c01"
+  ],
+  "output_text": "tu5q.c02, tu5q.c03",
+  "filter_text": "tx7n.c19, tu5q.c06, ts53.c01",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n, ts53\n#output tu5q.c02, tu5q.c03\n#filter tx7n.c19, tu5q.c06, ts53.c01",
+  "eval_count": 53,
+  "error": null,
+  "seconds": 1.193,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8571428571428571,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H09-VAG": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c05",
+   "tx7n.c06",
+   "tu5q.c01",
+   "tx7n.c01",
+   "tx7n.c04"
+  ],
+  "output_columns": [
+   "tu5q.c02",
+   "tx7n.c05",
+   "tx7n.c06"
+  ],
+  "filter_columns": [],
+  "output_text": "tu5q.c02, COUNT(DISTINCT tx7n.c05), COUNT(DISTINCT tx7n.c06)",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n\n#output tu5q.c02, COUNT(DISTINCT tx7n.c05), COUNT(DISTINCT tx7n.c06)\n#filter none",
+  "eval_count": 45,
+  "error": null,
+  "seconds": 1.043,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5714285714285714,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 2
+  }
+ },
+ "H10-CAS": {
+  "tables": [
+   "ts53",
+   "t89v",
+   "t3v5"
+  ],
+  "columns": [
+   "ts53.c06",
+   "t3v5.c11",
+   "t3v5.c12",
+   "t3v5.c09",
+   "ts53.c01",
+   "t3v5.c01",
+   "t3v5.c03",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06"
+  ],
+  "output_columns": [
+   "ts53.c06"
+  ],
+  "filter_columns": [
+   "t3v5.c11",
+   "t3v5.c12",
+   "t3v5.c09"
+  ],
+  "output_text": "ts53.c06, COUNT(*)",
+  "filter_text": "t3v5.c11 + t3v5.c12 > t3v5.c09 * 0.2",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t3v5, ts53\n#output ts53.c06, COUNT(*)\n#filter t3v5.c11 + t3v5.c12 > t3v5.c09 * 0.2",
+  "eval_count": 54,
+  "error": null,
+  "seconds": 1.239,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H10-SCH": {
+  "tables": [
+   "t3v5"
+  ],
+  "columns": [
+   "t3v5.c01"
+  ],
+  "output_columns": [],
+  "filter_columns": [],
+  "output_text": "",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t3v5\n#output c06, COUNT(*)\n#filter c11 + c12 > 0.2 * c09",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.835,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "H10-BIZ": {
+  "tables": [
+   "t3v5"
+  ],
+  "columns": [
+   "t3v5.c06",
+   "t3v5.c01",
+   "t3v5.c10",
+   "t3v5.c11"
+  ],
+  "output_columns": [
+   "t3v5.c06",
+   "t3v5.c01"
+  ],
+  "filter_columns": [
+   "t3v5.c10",
+   "t3v5.c11"
+  ],
+  "output_text": "t3v5.c06, COUNT(t3v5.c01)",
+  "filter_text": "t3v5.c10, t3v5.c11",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t3v5\n#output t3v5.c06, COUNT(t3v5.c01)\n#filter t3v5.c10, t3v5.c11",
+  "eval_count": 44,
+  "error": null,
+  "seconds": 1.023,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.4,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "H10-VAG": {
+  "tables": [
+   "trhn",
+   "t3v5"
+  ],
+  "columns": [
+   "t3v5.c06",
+   "t3v5.c11",
+   "trhn.c01",
+   "t3v5.c01",
+   "t3v5.c04"
+  ],
+  "output_columns": [
+   "t3v5.c06",
+   "t3v5.c11"
+  ],
+  "filter_columns": [],
+  "output_text": "t3v5.c06, AVG(t3v5.c11) AS avg_duty_rate",
+  "filter_text": "",
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t3v5, trhn\n#output t3v5.c06, AVG(t3v5.c11) AS avg_duty_rate\n#filter none",
+  "eval_count": 39,
+  "error": null,
+  "seconds": 0.897,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.4,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ }
+}

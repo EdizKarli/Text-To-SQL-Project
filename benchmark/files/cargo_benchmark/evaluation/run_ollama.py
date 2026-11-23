@@ -49,12 +49,15 @@ def dictionary_for(variant):
             for t, d in desc.items()}
 
 
-def compact_schema(db_path, ddl_path, dictionary=None):
+def compact_schema(db_path, ddl_path, dictionary=None, tables=None):
     """CREATE TABLE statements with types, keys and allowed values. With a dictionary (dictionary_for()), each table
-    gets a comment line with its meaning and each column a short comment with its meaning."""
+    gets a comment line with its meaning and each column a short comment with its meaning. tables: only these
+    tables, in schema order (used by evaluation/two_pass.py for the pruned schema of pass 2)."""
     con = sqlite3.connect(db_path)
     ddl = open(ddl_path, encoding="utf-8").read()
-    tables = [t for (t,) in con.execute("SELECT name FROM sqlite_master WHERE type='table' ORDER BY rowid")]
+    keep = set(tables) if tables is not None else None
+    tables = [t for (t,) in con.execute("SELECT name FROM sqlite_master WHERE type='table' ORDER BY rowid")
+              if keep is None or t in keep]
     parts = []
     for t in tables:
         body = re.search(rf"CREATE TABLE {t} \((.*?)\n\);", ddl, re.S).group(1)
@@ -100,6 +103,11 @@ def sanitize_sql(raw):
     if len(s) > 1 and s[0] == s[-1] and s[0] in "`\"'":
         s = s[1:-1].strip()
     return re.sub(r";+$", "", s).strip()
+
+
+def model_missing(e):
+    """True when Ollama answered 404: the model is not installed (ollama pull <model>)."""
+    return getattr(e, "code", None) == 404
 
 
 def ask(url, model, prompt, num_ctx, timeout, num_predict=None):
@@ -167,7 +175,8 @@ def main():
                     help="hint: reasoning in the hint format before the SQL (fine-tuning condition B)")
     ap.add_argument("--num-predict", type=int, default=None,
                     help="max tokens to generate (default: Ollama's own; 1024 is used for --reasoning hint)")
-    ap.add_argument("--url", default="http://localhost:11434/api/generate")
+    # 127.0.0.1, not localhost: on Windows "localhost" first tries IPv6, which fails after ~2 s on every call
+    ap.add_argument("--url", default="http://127.0.0.1:11434/api/generate")
     ap.add_argument("--num-ctx", type=int, default=None, help="context window (default 8192, 16384 with --dictionary)")
     ap.add_argument("--timeout", type=int, default=300)
     ap.add_argument("--out")
@@ -223,7 +232,9 @@ def main():
         raw_log = json.load(open(raw_path, encoding="utf-8"))
         print(f"Resuming: {len(preds)} questions already answered (use --restart to start over)")
 
-    todo = [q for q in questions if q["id"] not in preds]
+    # questions without an answer, plus those whose model call failed last time (e.g. model not installed)
+    todo = [q for q in questions if q["id"] not in preds
+            or (not preds[q["id"]] and (raw_log.get(q["id"]) or {}).get("error"))]
     if todo and not a.no_warmup:
         # Load the model before timing starts, with the same num_ctx (a different num_ctx would make Ollama reload it).
         t0 = time.time()
@@ -232,6 +243,8 @@ def main():
             print(f"Warm-up: model ready in {time.time() - t0:.1f}s (load {(w.get('load_duration') or 0) / 1e9:.1f}s); "
                   "not included in the results")
         except Exception as e:
+            if model_missing(e):
+                sys.exit(f"Ollama does not have the model {a.model}. Install it first:  ollama pull {a.model}")
             print(f"Warm-up call failed ({e}); continuing")
     for k, q in enumerate(todo, 1):
         prompt = build_prompt(schema, evidence, q, a.with_spec, a.reasoning)

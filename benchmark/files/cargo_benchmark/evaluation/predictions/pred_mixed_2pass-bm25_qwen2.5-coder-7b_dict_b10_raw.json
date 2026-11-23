@@ -1,0 +1,3115 @@
+{
+  "_run": {
+    "variant": "mixed",
+    "model": "qwen2.5-coder:7b",
+    "schema": "compact-pruned",
+    "evidence": false,
+    "dictionary": true,
+    "with_spec": false,
+    "num_ctx": 16384,
+    "pipeline": "two_pass",
+    "linker": "bm25",
+    "timeout_s": 8,
+    "retries": 1
+  },
+  "E01-CAS": {
+    "raw": "```sql\nSELECT COUNT(*) FROM flghf WHERE hub_kz = 1;\n```",
+    "error": null,
+    "latency_s": 2.874,
+    "pass1_s": 0.011,
+    "pass2_s": 2.863,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM flghf WHERE hub_kz = 1;\n```",
+        "sql": "SELECT COUNT(*) FROM flghf WHERE hub_kz = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.863,
+        "eval_count": 20,
+        "eval_duration_s": 0.389204,
+        "prompt_eval_count": 1088
+      }
+    ],
+    "retried": false,
+    "eval_count": 20,
+    "eval_duration_s": 0.389204,
+    "prompt_eval_count": 1088
+  },
+  "E01-SCH": {
+    "raw": "```sql\nSELECT COUNT(*) FROM flghf WHERE hub_kz = 1;\n```",
+    "error": null,
+    "latency_s": 2.927,
+    "pass1_s": 0.012,
+    "pass2_s": 2.915,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM flghf WHERE hub_kz = 1;\n```",
+        "sql": "SELECT COUNT(*) FROM flghf WHERE hub_kz = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.915,
+        "eval_count": 20,
+        "eval_duration_s": 0.377623,
+        "prompt_eval_count": 1958
+      }
+    ],
+    "retried": false,
+    "eval_count": 20,
+    "eval_duration_s": 0.377623,
+    "prompt_eval_count": 1958
+  },
+  "E01-BIZ": {
+    "raw": "```sql\nSELECT COUNT(*) FROM flghf WHERE hub_kz = 1;\n```",
+    "error": null,
+    "latency_s": 2.831,
+    "pass1_s": 0.017,
+    "pass2_s": 2.814,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM flghf WHERE hub_kz = 1;\n```",
+        "sql": "SELECT COUNT(*) FROM flghf WHERE hub_kz = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.814,
+        "eval_count": 20,
+        "eval_duration_s": 0.375799,
+        "prompt_eval_count": 1094
+      }
+    ],
+    "retried": false,
+    "eval_count": 20,
+    "eval_duration_s": 0.375799,
+    "prompt_eval_count": 1094
+  },
+  "E01-VAG": {
+    "raw": "```sql\nSELECT COUNT(*) FROM flghf WHERE hub_kz = 1;\n```",
+    "error": null,
+    "latency_s": 2.769,
+    "pass1_s": 0.006,
+    "pass2_s": 2.763,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM flghf WHERE hub_kz = 1;\n```",
+        "sql": "SELECT COUNT(*) FROM flghf WHERE hub_kz = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.763,
+        "eval_count": 20,
+        "eval_duration_s": 0.40236,
+        "prompt_eval_count": 1056
+      }
+    ],
+    "retried": false,
+    "eval_count": 20,
+    "eval_duration_s": 0.40236,
+    "prompt_eval_count": 1056
+  },
+  "E02-CAS": {
+    "raw": "```sql\nSELECT iata_cd, icao_cd, bez FROM flghf WHERE nachtflugverb_kz = 1;\n```",
+    "error": null,
+    "latency_s": 3.577,
+    "pass1_s": 0.016,
+    "pass2_s": 3.561,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT iata_cd, icao_cd, bez FROM flghf WHERE nachtflugverb_kz = 1;\n```",
+        "sql": "SELECT iata_cd, icao_cd, bez FROM flghf WHERE nachtflugverb_kz = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.561,
+        "eval_count": 31,
+        "eval_duration_s": 0.60701,
+        "prompt_eval_count": 1887
+      }
+    ],
+    "retried": false,
+    "eval_count": 31,
+    "eval_duration_s": 0.60701,
+    "prompt_eval_count": 1887
+  },
+  "E02-SCH": {
+    "raw": "```sql\nSELECT iata_cd FROM flghf WHERE nachtflugverb_kz = 1 ORDER BY iata_cd;\n```",
+    "error": null,
+    "latency_s": 3.693,
+    "pass1_s": 0.016,
+    "pass2_s": 3.677,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT iata_cd FROM flghf WHERE nachtflugverb_kz = 1 ORDER BY iata_cd;\n```",
+        "sql": "SELECT iata_cd FROM flghf WHERE nachtflugverb_kz = 1 ORDER BY iata_cd",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.677,
+        "eval_count": 30,
+        "eval_duration_s": 0.576945,
+        "prompt_eval_count": 2699
+      }
+    ],
+    "retried": false,
+    "eval_count": 30,
+    "eval_duration_s": 0.576945,
+    "prompt_eval_count": 2699
+  },
+  "E02-BIZ": {
+    "raw": "```sql\nSELECT flghf.iata_cd, flghf.icao_cd FROM flghf JOIN lgr ON flghf.fh_nr = lgr.fh_nr WHERE flghf.nachtflugverb_kz = 1;\n```",
+    "error": null,
+    "latency_s": 3.466,
+    "pass1_s": 0.024,
+    "pass2_s": 3.442,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.iata_cd, flghf.icao_cd FROM flghf JOIN lgr ON flghf.fh_nr = lgr.fh_nr WHERE flghf.nachtflugverb_kz = 1;\n```",
+        "sql": "SELECT flghf.iata_cd, flghf.icao_cd FROM flghf JOIN lgr ON flghf.fh_nr = lgr.fh_nr WHERE flghf.nachtflugverb_kz = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.442,
+        "eval_count": 54,
+        "eval_duration_s": 1.031039,
+        "prompt_eval_count": 823
+      }
+    ],
+    "retried": false,
+    "eval_count": 54,
+    "eval_duration_s": 1.031039,
+    "prompt_eval_count": 823
+  },
+  "E02-VAG": {
+    "raw": "```sql\nSELECT flghf.ort, flghf.land \nFROM flghf \nWHERE flghf.nachtflugverb_kz = 0;\n```",
+    "error": null,
+    "latency_s": 3.489,
+    "pass1_s": 0.008,
+    "pass2_s": 3.481,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.ort, flghf.land \nFROM flghf \nWHERE flghf.nachtflugverb_kz = 0;\n```",
+        "sql": "SELECT flghf.ort, flghf.land FROM flghf WHERE flghf.nachtflugverb_kz = 0",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.481,
+        "eval_count": 37,
+        "eval_duration_s": 0.712927,
+        "prompt_eval_count": 2061
+      }
+    ],
+    "retried": false,
+    "eval_count": 37,
+    "eval_duration_s": 0.712927,
+    "prompt_eval_count": 2061
+  },
+  "E03-CAS": {
+    "raw": "SELECT bez FROM flges WHERE allianz = 'CargoLink'",
+    "error": null,
+    "latency_s": 5.519,
+    "pass1_s": 0.009,
+    "pass2_s": 5.51,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flgesbez FROM flges WHERE allianz = 'CargoLink';\n```",
+        "sql": "SELECT flgesbez FROM flges WHERE allianz = 'CargoLink'",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flgesbez",
+        "latency_s": 2.944,
+        "eval_count": 21,
+        "eval_duration_s": 0.389957,
+        "prompt_eval_count": 749
+      },
+      {
+        "raw": "SELECT bez FROM flges WHERE allianz = 'CargoLink'",
+        "sql": "SELECT bez FROM flges WHERE allianz = 'CargoLink'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.566,
+        "eval_count": 15,
+        "eval_duration_s": 0.369432,
+        "prompt_eval_count": 786
+      }
+    ],
+    "retried": true,
+    "eval_count": 36,
+    "eval_duration_s": 0.759389,
+    "prompt_eval_count": 749
+  },
+  "E03-SCH": {
+    "raw": "```sql\nSELECT bez FROM flges WHERE allianz = 'CargoLink' ORDER BY bez;\n```",
+    "error": null,
+    "latency_s": 2.935,
+    "pass1_s": 0.014,
+    "pass2_s": 2.921,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT bez FROM flges WHERE allianz = 'CargoLink' ORDER BY bez;\n```",
+        "sql": "SELECT bez FROM flges WHERE allianz = 'CargoLink' ORDER BY bez",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.921,
+        "eval_count": 23,
+        "eval_duration_s": 0.481282,
+        "prompt_eval_count": 722
+      }
+    ],
+    "retried": false,
+    "eval_count": 23,
+    "eval_duration_s": 0.481282,
+    "prompt_eval_count": 722
+  },
+  "E03-BIZ": {
+    "raw": "```sql\nSELECT bez, rufz, gruend_jahr, hub_fh_nr, sitz_ort FROM flges WHERE allianz = 'CargoLink';\n```",
+    "error": null,
+    "latency_s": 3.063,
+    "pass1_s": 0.012,
+    "pass2_s": 3.051,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT bez, rufz, gruend_jahr, hub_fh_nr, sitz_ort FROM flges WHERE allianz = 'CargoLink';\n```",
+        "sql": "SELECT bez, rufz, gruend_jahr, hub_fh_nr, sitz_ort FROM flges WHERE allianz = 'CargoLink'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.051,
+        "eval_count": 38,
+        "eval_duration_s": 0.761887,
+        "prompt_eval_count": 411
+      }
+    ],
+    "retried": false,
+    "eval_count": 38,
+    "eval_duration_s": 0.761887,
+    "prompt_eval_count": 411
+  },
+  "E03-VAG": {
+    "raw": "```sql\nSELECT knd_ref FROM sndg WHERE kunnr IN (SELECT kunnr FROM flges WHERE allianz = 'CargoLink')\n```",
+    "error": null,
+    "latency_s": 3.595,
+    "pass1_s": 0.004,
+    "pass2_s": 3.591,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT knd_ref FROM sndg WHERE kunnr IN (SELECT kunnr FROM flges WHERE allianz = 'CargoLink')\n```",
+        "sql": "SELECT knd_ref FROM sndg WHERE kunnr IN (SELECT kunnr FROM flges WHERE allianz = 'CargoLink')",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.591,
+        "eval_count": 34,
+        "eval_duration_s": 0.654663,
+        "prompt_eval_count": 2471
+      }
+    ],
+    "retried": false,
+    "eval_count": 34,
+    "eval_duration_s": 0.654663,
+    "prompt_eval_count": 2471
+  },
+  "E04-CAS": {
+    "raw": "```sql\nSELECT mdl FROM lfz_typ WHERE herst = 'Airbus';\n```",
+    "error": null,
+    "latency_s": 2.995,
+    "pass1_s": 0.01,
+    "pass2_s": 2.985,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT mdl FROM lfz_typ WHERE herst = 'Airbus';\n```",
+        "sql": "SELECT mdl FROM lfz_typ WHERE herst = 'Airbus'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.985,
+        "eval_count": 19,
+        "eval_duration_s": 0.367547,
+        "prompt_eval_count": 788
+      }
+    ],
+    "retried": false,
+    "eval_count": 19,
+    "eval_duration_s": 0.367547,
+    "prompt_eval_count": 788
+  },
+  "E04-SCH": {
+    "raw": "```sql\nSELECT mdl FROM lfz_typ WHERE herst = 'Airbus';\n```",
+    "error": null,
+    "latency_s": 2.681,
+    "pass1_s": 0.011,
+    "pass2_s": 2.67,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT mdl FROM lfz_typ WHERE herst = 'Airbus';\n```",
+        "sql": "SELECT mdl FROM lfz_typ WHERE herst = 'Airbus'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.67,
+        "eval_count": 19,
+        "eval_duration_s": 0.401561,
+        "prompt_eval_count": 457
+      }
+    ],
+    "retried": false,
+    "eval_count": 19,
+    "eval_duration_s": 0.401561,
+    "prompt_eval_count": 457
+  },
+  "E04-BIZ": {
+    "raw": "```sql\nSELECT lfz_typ.mdl, lfz_typ.typ_nr, lfz_typ.anz_trw, lfz_typ.spannw_m, lfz_typ.max_reichw_km, lfz_typ.leergew_kg, lfz.lfz_nr, lfz.baujahr, lfz.flges_nr, lfz.ausl_dat, lfz.ges_flugstd\nFROM lfz_typ\nJOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr\nWHERE lfz_typ.herst = 'Airbus';\n```",
+    "error": null,
+    "latency_s": 4.764,
+    "pass1_s": 0.014,
+    "pass2_s": 4.75,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz_typ.mdl, lfz_typ.typ_nr, lfz_typ.anz_trw, lfz_typ.spannw_m, lfz_typ.max_reichw_km, lfz_typ.leergew_kg, lfz.lfz_nr, lfz.baujahr, lfz.flges_nr, lfz.ausl_dat, lfz.ges_flugstd\nFROM lfz_typ\nJOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr\nWHERE lfz_typ.herst = 'Airbus';\n```",
+        "sql": "SELECT lfz_typ.mdl, lfz_typ.typ_nr, lfz_typ.anz_trw, lfz_typ.spannw_m, lfz_typ.max_reichw_km, lfz_typ.leergew_kg, lfz.lfz_nr, lfz.baujahr, lfz.flges_nr, lfz.ausl_dat, lfz.ges_flugstd FROM lfz_typ JOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr WHERE lfz_typ.herst = 'Airbus'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.75,
+        "eval_count": 116,
+        "eval_duration_s": 2.284964,
+        "prompt_eval_count": 801
+      }
+    ],
+    "retried": false,
+    "eval_count": 116,
+    "eval_duration_s": 2.284964,
+    "prompt_eval_count": 801
+  },
+  "E04-VAG": {
+    "raw": "```sql\nSELECT mdl, trw_mdl, anz_trw, spannw_m FROM lfz_typ WHERE herst = 'Airbus';\n```",
+    "error": null,
+    "latency_s": 2.909,
+    "pass1_s": 0.003,
+    "pass2_s": 2.906,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT mdl, trw_mdl, anz_trw, spannw_m FROM lfz_typ WHERE herst = 'Airbus';\n```",
+        "sql": "SELECT mdl, trw_mdl, anz_trw, spannw_m FROM lfz_typ WHERE herst = 'Airbus'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.906,
+        "eval_count": 32,
+        "eval_duration_s": 0.613432,
+        "prompt_eval_count": 454
+      }
+    ],
+    "retried": false,
+    "eval_count": 32,
+    "eval_duration_s": 0.613432,
+    "prompt_eval_count": 454
+  },
+  "E05-CAS": {
+    "raw": "```sql\nSELECT COUNT(*) FROM lfz WHERE eigt_art = 'leased';\n```",
+    "error": null,
+    "latency_s": 2.858,
+    "pass1_s": 0.011,
+    "pass2_s": 2.847,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM lfz WHERE eigt_art = 'leased';\n```",
+        "sql": "SELECT COUNT(*) FROM lfz WHERE eigt_art = 'leased'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.847,
+        "eval_count": 19,
+        "eval_duration_s": 0.349258,
+        "prompt_eval_count": 476
+      }
+    ],
+    "retried": false,
+    "eval_count": 19,
+    "eval_duration_s": 0.349258,
+    "prompt_eval_count": 476
+  },
+  "E05-SCH": {
+    "raw": "```sql\nSELECT COUNT(*) FROM lfz WHERE eigt_art = 'leased';\n```",
+    "error": null,
+    "latency_s": 2.956,
+    "pass1_s": 0.012,
+    "pass2_s": 2.944,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM lfz WHERE eigt_art = 'leased';\n```",
+        "sql": "SELECT COUNT(*) FROM lfz WHERE eigt_art = 'leased'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.944,
+        "eval_count": 19,
+        "eval_duration_s": 0.396054,
+        "prompt_eval_count": 1233
+      }
+    ],
+    "retried": false,
+    "eval_count": 19,
+    "eval_duration_s": 0.396054,
+    "prompt_eval_count": 1233
+  },
+  "E05-BIZ": {
+    "raw": "```sql\nSELECT COUNT(*) FROM lfz WHERE eigt_art = 'leased';\n```",
+    "error": null,
+    "latency_s": 3.135,
+    "pass1_s": 0.013,
+    "pass2_s": 3.122,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM lfz WHERE eigt_art = 'leased';\n```",
+        "sql": "SELECT COUNT(*) FROM lfz WHERE eigt_art = 'leased'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.122,
+        "eval_count": 19,
+        "eval_duration_s": 0.35275,
+        "prompt_eval_count": 1434
+      }
+    ],
+    "retried": false,
+    "eval_count": 19,
+    "eval_duration_s": 0.35275,
+    "prompt_eval_count": 1434
+  },
+  "E05-VAG": {
+    "raw": "```sql\nSELECT COUNT(*) FROM lfz WHERE eigt_art = 'leased';\n```",
+    "error": null,
+    "latency_s": 2.702,
+    "pass1_s": 0.008,
+    "pass2_s": 2.694,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM lfz WHERE eigt_art = 'leased';\n```",
+        "sql": "SELECT COUNT(*) FROM lfz WHERE eigt_art = 'leased'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.694,
+        "eval_count": 19,
+        "eval_duration_s": 0.41734,
+        "prompt_eval_count": 451
+      }
+    ],
+    "retried": false,
+    "eval_count": 19,
+    "eval_duration_s": 0.41734,
+    "prompt_eval_count": 451
+  },
+  "E06-CAS": {
+    "raw": "```sql\nSELECT lfz.lfz_nr, lfz.stat FROM lfz WHERE lfz.stat != 'active';\n```",
+    "error": null,
+    "latency_s": 3.852,
+    "pass1_s": 0.017,
+    "pass2_s": 3.835,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz.lfz_nr, lfz.stat FROM lfz WHERE lfz.stat != 'active';\n```",
+        "sql": "SELECT lfz.lfz_nr, lfz.stat FROM lfz WHERE lfz.stat != 'active'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.835,
+        "eval_count": 27,
+        "eval_duration_s": 0.515856,
+        "prompt_eval_count": 2499
+      }
+    ],
+    "retried": false,
+    "eval_count": 27,
+    "eval_duration_s": 0.515856,
+    "prompt_eval_count": 2499
+  },
+  "E06-SCH": {
+    "raw": "```sql\nSELECT kennz, stat FROM lfz WHERE stat != 'active';\n```",
+    "error": null,
+    "latency_s": 3.8,
+    "pass1_s": 0.012,
+    "pass2_s": 3.788,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT kennz, stat FROM lfz WHERE stat != 'active';\n```",
+        "sql": "SELECT kennz, stat FROM lfz WHERE stat != 'active'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.788,
+        "eval_count": 19,
+        "eval_duration_s": 0.363344,
+        "prompt_eval_count": 3360
+      }
+    ],
+    "retried": false,
+    "eval_count": 19,
+    "eval_duration_s": 0.363344,
+    "prompt_eval_count": 3360
+  },
+  "E06-BIZ": {
+    "raw": "```sql\nSELECT lfz.lfz_nr, lfz.msn, lfz.stat, lfz.baujahr, lfz.flges_nr, wartg.mro_dienstl, wartg.wartg_id, wartg.auftr_nr, wartg.beginn, wartg.anz_zurueckgest\nFROM lfz\nLEFT JOIN wartg ON lfz.lfz_nr = wartg.lfz_nr\nWHERE lfz.stat IN ('maintenance', 'retired');\n```",
+    "error": null,
+    "latency_s": 4.894,
+    "pass1_s": 0.017,
+    "pass2_s": 4.877,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz.lfz_nr, lfz.msn, lfz.stat, lfz.baujahr, lfz.flges_nr, wartg.mro_dienstl, wartg.wartg_id, wartg.auftr_nr, wartg.beginn, wartg.anz_zurueckgest\nFROM lfz\nLEFT JOIN wartg ON lfz.lfz_nr = wartg.lfz_nr\nWHERE lfz.stat IN ('maintenance', 'retired');\n```",
+        "sql": "SELECT lfz.lfz_nr, lfz.msn, lfz.stat, lfz.baujahr, lfz.flges_nr, wartg.mro_dienstl, wartg.wartg_id, wartg.auftr_nr, wartg.beginn, wartg.anz_zurueckgest FROM lfz LEFT JOIN wartg ON lfz.lfz_nr = wartg.lfz_nr WHERE lfz.stat IN ('maintenance', 'retired')",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.877,
+        "eval_count": 108,
+        "eval_duration_s": 2.117454,
+        "prompt_eval_count": 1398
+      }
+    ],
+    "retried": false,
+    "eval_count": 108,
+    "eval_duration_s": 2.117454,
+    "prompt_eval_count": 1398
+  },
+  "E06-VAG": {
+    "raw": "```sql\nSELECT lfz.lfz_nr, lfz.kennz, lfz.baujahr, lfz.flges_nr, lfz.stat, lfz.ausl_dat, lfz_typ.typ_nr, lfz_typ.anz_trw, lfz_typ.spannw_m, lfz_typ.max_reichw_km, lfz_typ.leergew_kg, lfz_typ.reise_geschw_kmh\nFROM lfz\nJOIN lfz_typ ON lfz.typ_nr = lfz_typ.typ_nr\nWHERE lfz.stat = 'retired';\n```",
+    "error": null,
+    "latency_s": 4.988,
+    "pass1_s": 0.006,
+    "pass2_s": 4.982,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz.lfz_nr, lfz.kennz, lfz.baujahr, lfz.flges_nr, lfz.stat, lfz.ausl_dat, lfz_typ.typ_nr, lfz_typ.anz_trw, lfz_typ.spannw_m, lfz_typ.max_reichw_km, lfz_typ.leergew_kg, lfz_typ.reise_geschw_kmh\nFROM lfz\nJOIN lfz_typ ON lfz.typ_nr = lfz_typ.typ_nr\nWHERE lfz.stat = 'retired';\n```",
+        "sql": "SELECT lfz.lfz_nr, lfz.kennz, lfz.baujahr, lfz.flges_nr, lfz.stat, lfz.ausl_dat, lfz_typ.typ_nr, lfz_typ.anz_trw, lfz_typ.spannw_m, lfz_typ.max_reichw_km, lfz_typ.leergew_kg, lfz_typ.reise_geschw_kmh FROM lfz JOIN lfz_typ ON lfz.typ_nr = lfz_typ.typ_nr WHERE lfz.stat = 'retired'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.982,
+        "eval_count": 122,
+        "eval_duration_s": 2.381055,
+        "prompt_eval_count": 1864
+      }
+    ],
+    "retried": false,
+    "eval_count": 122,
+    "eval_duration_s": 2.381055,
+    "prompt_eval_count": 1864
+  },
+  "E07-CAS": {
+    "raw": "```sql\nSELECT treue_stufe, COUNT(kunnr) AS customer_count FROM knd_stamm GROUP BY treue_stufe;\n```",
+    "error": null,
+    "latency_s": 3.659,
+    "pass1_s": 0.012,
+    "pass2_s": 3.647,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT treue_stufe, COUNT(kunnr) AS customer_count FROM knd_stamm GROUP BY treue_stufe;\n```",
+        "sql": "SELECT treue_stufe, COUNT(kunnr) AS customer_count FROM knd_stamm GROUP BY treue_stufe",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.647,
+        "eval_count": 31,
+        "eval_duration_s": 0.595605,
+        "prompt_eval_count": 1991
+      }
+    ],
+    "retried": false,
+    "eval_count": 31,
+    "eval_duration_s": 0.595605,
+    "prompt_eval_count": 1991
+  },
+  "E07-SCH": {
+    "raw": "```sql\nSELECT treue_stufe, COUNT(*) FROM knd_stamm GROUP BY treue_stufe;\n```",
+    "error": null,
+    "latency_s": 2.871,
+    "pass1_s": 0.014,
+    "pass2_s": 2.857,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT treue_stufe, COUNT(*) FROM knd_stamm GROUP BY treue_stufe;\n```",
+        "sql": "SELECT treue_stufe, COUNT(*) FROM knd_stamm GROUP BY treue_stufe",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.857,
+        "eval_count": 25,
+        "eval_duration_s": 0.502028,
+        "prompt_eval_count": 994
+      }
+    ],
+    "retried": false,
+    "eval_count": 25,
+    "eval_duration_s": 0.502028,
+    "prompt_eval_count": 994
+  },
+  "E07-BIZ": {
+    "raw": "```sql\nSELECT treue_stufe, COUNT(kunnr) AS headcount FROM knd_stamm GROUP BY treue_stufe;\n```",
+    "error": null,
+    "latency_s": 3.252,
+    "pass1_s": 0.02,
+    "pass2_s": 3.232,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT treue_stufe, COUNT(kunnr) AS headcount FROM knd_stamm GROUP BY treue_stufe;\n```",
+        "sql": "SELECT treue_stufe, COUNT(kunnr) AS headcount FROM knd_stamm GROUP BY treue_stufe",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.232,
+        "eval_count": 31,
+        "eval_duration_s": 0.588025,
+        "prompt_eval_count": 1229
+      }
+    ],
+    "retried": false,
+    "eval_count": 31,
+    "eval_duration_s": 0.588025,
+    "prompt_eval_count": 1229
+  },
+  "E07-VAG": {
+    "raw": "```sql\nSELECT knd_stamm.treue_stufe, COUNT(knd_stamm.kunnr) AS customer_count\nFROM knd_stamm\nJOIN zahlg ON knd_stamm.kunnr = zahlg.kunnr\nWHERE knd_stamm.knd_typ = 'customer'\nGROUP BY knd_stamm.treue_stufe;\n```",
+    "error": null,
+    "latency_s": 3.836,
+    "pass1_s": 0.005,
+    "pass2_s": 3.831,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT knd_stamm.treue_stufe, COUNT(knd_stamm.kunnr) AS customer_count\nFROM knd_stamm\nJOIN zahlg ON knd_stamm.kunnr = zahlg.kunnr\nWHERE knd_stamm.knd_typ = 'customer'\nGROUP BY knd_stamm.treue_stufe;\n```",
+        "sql": "SELECT knd_stamm.treue_stufe, COUNT(knd_stamm.kunnr) AS customer_count FROM knd_stamm JOIN zahlg ON knd_stamm.kunnr = zahlg.kunnr WHERE knd_stamm.knd_typ = 'customer' GROUP BY knd_stamm.treue_stufe",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.831,
+        "eval_count": 79,
+        "eval_duration_s": 1.596542,
+        "prompt_eval_count": 1985
+      }
+    ],
+    "retried": false,
+    "eval_count": 79,
+    "eval_duration_s": 1.596542,
+    "prompt_eval_count": 1985
+  },
+  "E08-CAS": {
+    "raw": "```sql\nSELECT kunnr, name1, ort FROM knd_stamm WHERE land = 'Germany';\n```",
+    "error": null,
+    "latency_s": 3.757,
+    "pass1_s": 0.012,
+    "pass2_s": 3.745,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT kunnr, name1, ort FROM knd_stamm WHERE land = 'Germany';\n```",
+        "sql": "SELECT kunnr, name1, ort FROM knd_stamm WHERE land = 'Germany'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.745,
+        "eval_count": 25,
+        "eval_duration_s": 0.479619,
+        "prompt_eval_count": 2970
+      }
+    ],
+    "retried": false,
+    "eval_count": 25,
+    "eval_duration_s": 0.479619,
+    "prompt_eval_count": 2970
+  },
+  "E08-SCH": {
+    "raw": "```sql\nSELECT name1, ort FROM knd_stamm WHERE land = 'Germany';\n```",
+    "error": null,
+    "latency_s": 3.278,
+    "pass1_s": 0.012,
+    "pass2_s": 3.266,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT name1, ort FROM knd_stamm WHERE land = 'Germany';\n```",
+        "sql": "SELECT name1, ort FROM knd_stamm WHERE land = 'Germany'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.266,
+        "eval_count": 21,
+        "eval_duration_s": 0.399055,
+        "prompt_eval_count": 2598
+      }
+    ],
+    "retried": false,
+    "eval_count": 21,
+    "eval_duration_s": 0.399055,
+    "prompt_eval_count": 2598
+  },
+  "E08-BIZ": {
+    "raw": "```sql\nSELECT kunnr, ort FROM knd_stamm WHERE land = 'Germany'\n```",
+    "error": null,
+    "latency_s": 3.521,
+    "pass1_s": 0.012,
+    "pass2_s": 3.509,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT kunnr, ort FROM knd_stamm WHERE land = 'Germany'\n```",
+        "sql": "SELECT kunnr, ort FROM knd_stamm WHERE land = 'Germany'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.509,
+        "eval_count": 22,
+        "eval_duration_s": 0.421712,
+        "prompt_eval_count": 2875
+      }
+    ],
+    "retried": false,
+    "eval_count": 22,
+    "eval_duration_s": 0.421712,
+    "prompt_eval_count": 2875
+  },
+  "E08-VAG": {
+    "raw": "```sql\nSELECT kunnr, kto_cd, name1, land, ort, strasse, plz, ansprechp, ansp_mail, ansp_tel, web_adr, vertr_reg, kredlim_usd, zahlbed_tg, bek_versender_kz, treue_stufe, erdat FROM knd_stamm WHERE land = 'Germany';\n```",
+    "error": null,
+    "latency_s": 4.784,
+    "pass1_s": 0.003,
+    "pass2_s": 4.781,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT kunnr, kto_cd, name1, land, ort, strasse, plz, ansprechp, ansp_mail, ansp_tel, web_adr, vertr_reg, kredlim_usd, zahlbed_tg, bek_versender_kz, treue_stufe, erdat FROM knd_stamm WHERE land = 'Germany';\n```",
+        "sql": "SELECT kunnr, kto_cd, name1, land, ort, strasse, plz, ansprechp, ansp_mail, ansp_tel, web_adr, vertr_reg, kredlim_usd, zahlbed_tg, bek_versender_kz, treue_stufe, erdat FROM knd_stamm WHERE land = 'Germany'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.781,
+        "eval_count": 82,
+        "eval_duration_s": 1.620919,
+        "prompt_eval_count": 2923
+      }
+    ],
+    "retried": false,
+    "eval_count": 82,
+    "eval_duration_s": 1.620919,
+    "prompt_eval_count": 2923
+  },
+  "E09-CAS": {
+    "raw": "```sql\nSELECT lgr_typ, COUNT(*) FROM lgr GROUP BY lgr_typ;\n```",
+    "error": null,
+    "latency_s": 3.648,
+    "pass1_s": 0.009,
+    "pass2_s": 3.639,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lgr_typ, COUNT(*) FROM lgr GROUP BY lgr_typ;\n```",
+        "sql": "SELECT lgr_typ, COUNT(*) FROM lgr GROUP BY lgr_typ",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.639,
+        "eval_count": 21,
+        "eval_duration_s": 0.400022,
+        "prompt_eval_count": 2782
+      }
+    ],
+    "retried": false,
+    "eval_count": 21,
+    "eval_duration_s": 0.400022,
+    "prompt_eval_count": 2782
+  },
+  "E09-SCH": {
+    "raw": "```sql\nSELECT lgr_typ, COUNT(*) FROM lgr GROUP BY lgr_typ;\n```",
+    "error": null,
+    "latency_s": 2.934,
+    "pass1_s": 0.01,
+    "pass2_s": 2.924,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lgr_typ, COUNT(*) FROM lgr GROUP BY lgr_typ;\n```",
+        "sql": "SELECT lgr_typ, COUNT(*) FROM lgr GROUP BY lgr_typ",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.924,
+        "eval_count": 21,
+        "eval_duration_s": 0.396389,
+        "prompt_eval_count": 1785
+      }
+    ],
+    "retried": false,
+    "eval_count": 21,
+    "eval_duration_s": 0.396389,
+    "prompt_eval_count": 1785
+  },
+  "E09-BIZ": {
+    "raw": "```sql\nSELECT lgr_typ, COUNT(*) AS warehouse_count FROM lgr GROUP BY lgr_typ;\n```",
+    "error": null,
+    "latency_s": 3.447,
+    "pass1_s": 0.012,
+    "pass2_s": 3.435,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lgr_typ, COUNT(*) AS warehouse_count FROM lgr GROUP BY lgr_typ;\n```",
+        "sql": "SELECT lgr_typ, COUNT(*) AS warehouse_count FROM lgr GROUP BY lgr_typ",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.435,
+        "eval_count": 24,
+        "eval_duration_s": 0.460033,
+        "prompt_eval_count": 2782
+      }
+    ],
+    "retried": false,
+    "eval_count": 24,
+    "eval_duration_s": 0.460033,
+    "prompt_eval_count": 2782
+  },
+  "E09-VAG": {
+    "raw": "```sql\nSELECT lgr.lgr_typ, COUNT(lgr.lgr_nr) AS warehouse_count FROM lgr GROUP BY lgr.lgr_typ;\n```",
+    "error": null,
+    "latency_s": 2.912,
+    "pass1_s": 0.004,
+    "pass2_s": 2.908,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lgr.lgr_typ, COUNT(lgr.lgr_nr) AS warehouse_count FROM lgr GROUP BY lgr.lgr_typ;\n```",
+        "sql": "SELECT lgr.lgr_typ, COUNT(lgr.lgr_nr) AS warehouse_count FROM lgr GROUP BY lgr.lgr_typ",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.908,
+        "eval_count": 33,
+        "eval_duration_s": 0.722218,
+        "prompt_eval_count": 2777
+      }
+    ],
+    "retried": false,
+    "eval_count": 33,
+    "eval_duration_s": 0.722218,
+    "prompt_eval_count": 2777
+  },
+  "E10-CAS": {
+    "raw": "```sql\nSELECT SUM(flaeche_m2) AS total_floor_space FROM lgr WHERE lgr_typ = 'cold_chain';\n```",
+    "error": null,
+    "latency_s": 3.253,
+    "pass1_s": 0.013,
+    "pass2_s": 3.24,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT SUM(flaeche_m2) AS total_floor_space FROM lgr WHERE lgr_typ = 'cold_chain';\n```",
+        "sql": "SELECT SUM(flaeche_m2) AS total_floor_space FROM lgr WHERE lgr_typ = 'cold_chain'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.24,
+        "eval_count": 30,
+        "eval_duration_s": 0.563764,
+        "prompt_eval_count": 885
+      }
+    ],
+    "retried": false,
+    "eval_count": 30,
+    "eval_duration_s": 0.563764,
+    "prompt_eval_count": 885
+  },
+  "E10-SCH": {
+    "raw": "```sql\nSELECT SUM(flaeche_m2) FROM lgr WHERE lgr_typ = 'cold_chain';\n```",
+    "error": null,
+    "latency_s": 3.031,
+    "pass1_s": 0.014,
+    "pass2_s": 3.017,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT SUM(flaeche_m2) FROM lgr WHERE lgr_typ = 'cold_chain';\n```",
+        "sql": "SELECT SUM(flaeche_m2) FROM lgr WHERE lgr_typ = 'cold_chain'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.017,
+        "eval_count": 26,
+        "eval_duration_s": 0.48782,
+        "prompt_eval_count": 1202
+      }
+    ],
+    "retried": false,
+    "eval_count": 26,
+    "eval_duration_s": 0.48782,
+    "prompt_eval_count": 1202
+  },
+  "E10-BIZ": {
+    "raw": "```sql\nSELECT SUM(lgr.flaeche_m2) AS total_cold_chain_footprint FROM lgr WHERE lgr.lgr_typ = 'cold_chain';\n```",
+    "error": null,
+    "latency_s": 3.089,
+    "pass1_s": 0.014,
+    "pass2_s": 3.075,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT SUM(lgr.flaeche_m2) AS total_cold_chain_footprint FROM lgr WHERE lgr.lgr_typ = 'cold_chain';\n```",
+        "sql": "SELECT SUM(lgr.flaeche_m2) AS total_cold_chain_footprint FROM lgr WHERE lgr.lgr_typ = 'cold_chain'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.075,
+        "eval_count": 37,
+        "eval_duration_s": 0.700297,
+        "prompt_eval_count": 884
+      }
+    ],
+    "retried": false,
+    "eval_count": 37,
+    "eval_duration_s": 0.700297,
+    "prompt_eval_count": 884
+  },
+  "E10-VAG": {
+    "raw": "```sql\nSELECT SUM(lgr.flaeche_m2) AS total_cold_chain_space FROM lgr WHERE lgr.lgr_typ = 'cold_chain';\n```",
+    "error": null,
+    "latency_s": 3.752,
+    "pass1_s": 0.01,
+    "pass2_s": 3.742,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT SUM(lgr.flaeche_m2) AS total_cold_chain_space FROM lgr WHERE lgr.lgr_typ = 'cold_chain';\n```",
+        "sql": "SELECT SUM(lgr.flaeche_m2) AS total_cold_chain_space FROM lgr WHERE lgr.lgr_typ = 'cold_chain'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.742,
+        "eval_count": 36,
+        "eval_duration_s": 0.697845,
+        "prompt_eval_count": 2038
+      }
+    ],
+    "retried": false,
+    "eval_count": 36,
+    "eval_duration_s": 0.697845,
+    "prompt_eval_count": 2038
+  },
+  "M01-CAS": {
+    "raw": "```sql\nSELECT flges.flges_nr, flges.bez, COUNT(lfz.lfz_nr) AS plane_count\nFROM flges\nLEFT JOIN lfz ON flges.flges_nr = lfz.flges_nr\nGROUP BY flges.flges_nr, flges.bez\nORDER BY plane_count DESC;\n```",
+    "error": null,
+    "latency_s": 4.49,
+    "pass1_s": 0.016,
+    "pass2_s": 4.474,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.flges_nr, flges.bez, COUNT(lfz.lfz_nr) AS plane_count\nFROM flges\nLEFT JOIN lfz ON flges.flges_nr = lfz.flges_nr\nGROUP BY flges.flges_nr, flges.bez\nORDER BY plane_count DESC;\n```",
+        "sql": "SELECT flges.flges_nr, flges.bez, COUNT(lfz.lfz_nr) AS plane_count FROM flges LEFT JOIN lfz ON flges.flges_nr = lfz.flges_nr GROUP BY flges.flges_nr, flges.bez ORDER BY plane_count DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.474,
+        "eval_count": 70,
+        "eval_duration_s": 1.366189,
+        "prompt_eval_count": 2429
+      }
+    ],
+    "retried": false,
+    "eval_count": 70,
+    "eval_duration_s": 1.366189,
+    "prompt_eval_count": 2429
+  },
+  "M01-SCH": {
+    "raw": "```sql\nSELECT flges.bez, COUNT(lfz.lfz_nr) AS aircraft_count FROM flges LEFT JOIN lfz ON flges.flges_nr = lfz.flges_nr GROUP BY flges.bez ORDER BY aircraft_count DESC, flges.bez;\n```",
+    "error": null,
+    "latency_s": 3.551,
+    "pass1_s": 0.027,
+    "pass2_s": 3.524,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.bez, COUNT(lfz.lfz_nr) AS aircraft_count FROM flges LEFT JOIN lfz ON flges.flges_nr = lfz.flges_nr GROUP BY flges.bez ORDER BY aircraft_count DESC, flges.bez;\n```",
+        "sql": "SELECT flges.bez, COUNT(lfz.lfz_nr) AS aircraft_count FROM flges LEFT JOIN lfz ON flges.flges_nr = lfz.flges_nr GROUP BY flges.bez ORDER BY aircraft_count DESC, flges.bez",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.524,
+        "eval_count": 59,
+        "eval_duration_s": 1.147998,
+        "prompt_eval_count": 2427
+      }
+    ],
+    "retried": false,
+    "eval_count": 59,
+    "eval_duration_s": 1.147998,
+    "prompt_eval_count": 2427
+  },
+  "M01-BIZ": {
+    "raw": "```sql\nSELECT flges.flges_nr, flges.bez, COUNT(lfz.lfz_nr) AS fleet_size\nFROM flges\nLEFT JOIN lfz ON flges.flges_nr = lfz.flges_nr\nGROUP BY flges.flges_nr, flges.bez\nORDER BY fleet_size DESC;\n```",
+    "error": null,
+    "latency_s": 3.837,
+    "pass1_s": 0.012,
+    "pass2_s": 3.825,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.flges_nr, flges.bez, COUNT(lfz.lfz_nr) AS fleet_size\nFROM flges\nLEFT JOIN lfz ON flges.flges_nr = lfz.flges_nr\nGROUP BY flges.flges_nr, flges.bez\nORDER BY fleet_size DESC;\n```",
+        "sql": "SELECT flges.flges_nr, flges.bez, COUNT(lfz.lfz_nr) AS fleet_size FROM flges LEFT JOIN lfz ON flges.flges_nr = lfz.flges_nr GROUP BY flges.flges_nr, flges.bez ORDER BY fleet_size DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.825,
+        "eval_count": 70,
+        "eval_duration_s": 1.400677,
+        "prompt_eval_count": 2407
+      }
+    ],
+    "retried": false,
+    "eval_count": 70,
+    "eval_duration_s": 1.400677,
+    "prompt_eval_count": 2407
+  },
+  "M01-VAG": {
+    "raw": "```sql\nSELECT flges.flges_nr, flges.bez, COUNT(lfz.lfz_nr) AS aircraft_count, AVG(lfz.ges_flugstd) AS avg_flight_hours, AVG(lfz.baujahr) AS avg_age, AVG(lfz_typ.max_reichw_km) AS avg_range_km, AVG(lfz_typ.spannw_m) AS avg_span_m, AVG(lfz_typ.leergew_kg) AS avg_empty_weight_kg, AVG(lfz_typ.reise_geschw_kmh) AS avg_cruise_speed_kmh, SUM(CASE WHEN wartg.aog_kz = 1 THEN 1 ELSE 0 END) AS aog_count\nFROM flges\nLEFT JOIN lfz ON flges.flges_nr = lfz.flges_nr\nLEFT JOIN lfz_typ ON lfz.typ_nr = lfz_typ.typ_nr\nLEFT JOIN wartg ON lfz.lfz_nr = wartg.lfz_nr\nGROUP BY flges.flges_nr, flges.bez;\n```",
+    "error": null,
+    "latency_s": 7.307,
+    "pass1_s": 0.004,
+    "pass2_s": 7.303,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.flges_nr, flges.bez, COUNT(lfz.lfz_nr) AS aircraft_count, AVG(lfz.ges_flugstd) AS avg_flight_hours, AVG(lfz.baujahr) AS avg_age, AVG(lfz_typ.max_reichw_km) AS avg_range_km, AVG(lfz_typ.spannw_m) AS avg_span_m, AVG(lfz_typ.leergew_kg) AS avg_empty_weight_kg, AVG(lfz_typ.reise_geschw_kmh) AS avg_cruise_speed_kmh, SUM(CASE WHEN wartg.aog_kz = 1 THEN 1 ELSE 0 END) AS aog_count\nFROM flges\nLEFT JOIN lfz ON flges.flges_nr = lfz.flges_nr\nLEFT JOIN lfz_typ ON lfz.typ_nr = lfz_typ.typ_nr\nLEFT JOIN wartg ON lfz.lfz_nr = wartg.lfz_nr\nGROUP BY flges.flges_nr, flges.bez;\n```",
+        "sql": "SELECT flges.flges_nr, flges.bez, COUNT(lfz.lfz_nr) AS aircraft_count, AVG(lfz.ges_flugstd) AS avg_flight_hours, AVG(lfz.baujahr) AS avg_age, AVG(lfz_typ.max_reichw_km) AS avg_range_km, AVG(lfz_typ.spannw_m) AS avg_span_m, AVG(lfz_typ.leergew_kg) AS avg_empty_weight_kg, AVG(lfz_typ.reise_geschw_kmh) AS avg_cruise_speed_kmh, SUM(CASE WHEN wartg.aog_kz = 1 THEN 1 ELSE 0 END) AS aog_count FROM flges LEFT JOIN lfz ON flges.flges_nr = lfz.flges_nr LEFT JOIN lfz_typ ON lfz.typ_nr = lfz_typ.typ_nr LEFT JOIN wartg ON lfz.lfz_nr = wartg.lfz_nr GROUP BY flges.flges_nr, flges.bez",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 7.303,
+        "eval_count": 223,
+        "eval_duration_s": 4.36524,
+        "prompt_eval_count": 1752
+      }
+    ],
+    "retried": false,
+    "eval_count": 223,
+    "eval_duration_s": 4.36524,
+    "prompt_eval_count": 1752
+  },
+  "M02-CAS": {
+    "raw": "```sql\nSELECT lfz_typ.mdl, COUNT(lfz.lfz_nr) AS active_count\nFROM lfz_typ\nJOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr\nWHERE lfz.stat = 'active'\nGROUP BY lfz_typ.mdl;\n```",
+    "error": null,
+    "latency_s": 3.825,
+    "pass1_s": 0.013,
+    "pass2_s": 3.812,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz_typ.mdl, COUNT(lfz.lfz_nr) AS active_count\nFROM lfz_typ\nJOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr\nWHERE lfz.stat = 'active'\nGROUP BY lfz_typ.mdl;\n```",
+        "sql": "SELECT lfz_typ.mdl, COUNT(lfz.lfz_nr) AS active_count FROM lfz_typ JOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr WHERE lfz.stat = 'active' GROUP BY lfz_typ.mdl",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.812,
+        "eval_count": 59,
+        "eval_duration_s": 1.14884,
+        "prompt_eval_count": 1464
+      }
+    ],
+    "retried": false,
+    "eval_count": 59,
+    "eval_duration_s": 1.14884,
+    "prompt_eval_count": 1464
+  },
+  "M02-SCH": {
+    "raw": "```sql\nSELECT lfz_typ.mdl, COUNT(lfz.lfz_nr) AS active_count FROM lfz_typ JOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr WHERE lfz.stat = 'active' GROUP BY lfz_typ.mdl ORDER BY lfz_typ.mdl;\n```",
+    "error": null,
+    "latency_s": 3.761,
+    "pass1_s": 0.018,
+    "pass2_s": 3.743,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz_typ.mdl, COUNT(lfz.lfz_nr) AS active_count FROM lfz_typ JOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr WHERE lfz.stat = 'active' GROUP BY lfz_typ.mdl ORDER BY lfz_typ.mdl;\n```",
+        "sql": "SELECT lfz_typ.mdl, COUNT(lfz.lfz_nr) AS active_count FROM lfz_typ JOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr WHERE lfz.stat = 'active' GROUP BY lfz_typ.mdl ORDER BY lfz_typ.mdl",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.743,
+        "eval_count": 62,
+        "eval_duration_s": 1.216793,
+        "prompt_eval_count": 1146
+      }
+    ],
+    "retried": false,
+    "eval_count": 62,
+    "eval_duration_s": 1.216793,
+    "prompt_eval_count": 1146
+  },
+  "M02-BIZ": {
+    "raw": "```sql\nSELECT lfz_typ.icao_typ, COUNT(lfz.lfz_nr) AS active_count\nFROM lfz\nJOIN lfz_typ ON lfz.typ_nr = lfz_typ.typ_nr\nWHERE lfz.stat = 'active'\nGROUP BY lfz_typ.icao_typ;\n```",
+    "error": null,
+    "latency_s": 4.263,
+    "pass1_s": 0.012,
+    "pass2_s": 4.251,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz_typ.icao_typ, COUNT(lfz.lfz_nr) AS active_count\nFROM lfz\nJOIN lfz_typ ON lfz.typ_nr = lfz_typ.typ_nr\nWHERE lfz.stat = 'active'\nGROUP BY lfz_typ.icao_typ;\n```",
+        "sql": "SELECT lfz_typ.icao_typ, COUNT(lfz.lfz_nr) AS active_count FROM lfz JOIN lfz_typ ON lfz.typ_nr = lfz_typ.typ_nr WHERE lfz.stat = 'active' GROUP BY lfz_typ.icao_typ",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.251,
+        "eval_count": 63,
+        "eval_duration_s": 1.227774,
+        "prompt_eval_count": 1815
+      }
+    ],
+    "retried": false,
+    "eval_count": 63,
+    "eval_duration_s": 1.227774,
+    "prompt_eval_count": 1815
+  },
+  "M02-VAG": {
+    "raw": "```sql\nSELECT lfz_typ.mdl, COUNT(lfz.lfz_nr) AS active_count\nFROM lfz_typ\nJOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr\nWHERE lfz.stat = 'active'\nGROUP BY lfz_typ.mdl;\n```",
+    "error": null,
+    "latency_s": 3.454,
+    "pass1_s": 0.006,
+    "pass2_s": 3.448,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz_typ.mdl, COUNT(lfz.lfz_nr) AS active_count\nFROM lfz_typ\nJOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr\nWHERE lfz.stat = 'active'\nGROUP BY lfz_typ.mdl;\n```",
+        "sql": "SELECT lfz_typ.mdl, COUNT(lfz.lfz_nr) AS active_count FROM lfz_typ JOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr WHERE lfz.stat = 'active' GROUP BY lfz_typ.mdl",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.448,
+        "eval_count": 59,
+        "eval_duration_s": 1.189719,
+        "prompt_eval_count": 1458
+      }
+    ],
+    "retried": false,
+    "eval_count": 59,
+    "eval_duration_s": 1.189719,
+    "prompt_eval_count": 1458
+  },
+  "M03-CAS": {
+    "raw": "```sql\nSELECT COUNT(*) FROM flug WHERE abfl_fh IN (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST') AND stat = 'completed';\n```",
+    "error": null,
+    "latency_s": 3.616,
+    "pass1_s": 0.013,
+    "pass2_s": 3.603,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM flug WHERE abfl_fh IN (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST') AND stat = 'completed';\n```",
+        "sql": "SELECT COUNT(*) FROM flug WHERE abfl_fh IN (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST') AND stat = 'completed'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.603,
+        "eval_count": 38,
+        "eval_duration_s": 0.751205,
+        "prompt_eval_count": 2854
+      }
+    ],
+    "retried": false,
+    "eval_count": 38,
+    "eval_duration_s": 0.751205,
+    "prompt_eval_count": 2854
+  },
+  "M03-SCH": {
+    "raw": "```sql\nSELECT COUNT(*) FROM flug WHERE stat = 'completed' AND abfl_fh = (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST');\n```",
+    "error": null,
+    "latency_s": 3.685,
+    "pass1_s": 0.021,
+    "pass2_s": 3.664,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM flug WHERE stat = 'completed' AND abfl_fh = (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST');\n```",
+        "sql": "SELECT COUNT(*) FROM flug WHERE stat = 'completed' AND abfl_fh = (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST')",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.664,
+        "eval_count": 38,
+        "eval_duration_s": 0.733902,
+        "prompt_eval_count": 2229
+      }
+    ],
+    "retried": false,
+    "eval_count": 38,
+    "eval_duration_s": 0.733902,
+    "prompt_eval_count": 2229
+  },
+  "M03-BIZ": {
+    "raw": "```sql\nSELECT SUM(sndg.ges_vol_m3) AS completed_departure_volume FROM flug JOIN betankg ON flug.flug_id = betankg.flug_id JOIN sndg ON flug.ziel_fh = sndg.urspr_fh WHERE flug.abfl_fh IN (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST') AND flug.stat = 'completed' AND betankg.stat = 'completed' AND sndg.stat = 'in_transit'\n```",
+    "error": null,
+    "latency_s": 10.037,
+    "pass1_s": 0.011,
+    "pass2_s": 10.026,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT SUM(sndg.ges_vol_m3) AS completed_departure_volume\nFROM flug\nJOIN betankg ON flug.flug_id = betankg.flug_id\nJOIN sndg ON flug.ziel_fh = sndg.urspr_fh\nWHERE flug.abfl_fh IN (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST')\nAND flug.stat = 'completed'\nAND betankg.stat = 'completed'\nAND sndg.stat = 'in_transit';\n```",
+        "sql": "SELECT SUM(sndg.ges_vol_m3) AS completed_departure_volume FROM flug JOIN betankg ON flug.flug_id = betankg.flug_id JOIN sndg ON flug.ziel_fh = sndg.urspr_fh WHERE flug.abfl_fh IN (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST') AND flug.stat = 'completed' AND betankg.stat = 'completed' AND sndg.stat = 'in_transit'",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: betankg.stat",
+        "latency_s": 5.529,
+        "eval_count": 111,
+        "eval_duration_s": 2.202858,
+        "prompt_eval_count": 3046
+      },
+      {
+        "raw": "```sql\nSELECT SUM(sndg.ges_vol_m3) AS completed_departure_volume FROM flug JOIN betankg ON flug.flug_id = betankg.flug_id JOIN sndg ON flug.ziel_fh = sndg.urspr_fh WHERE flug.abfl_fh IN (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST') AND flug.stat = 'completed' AND betankg.stat = 'completed' AND sndg.stat = 'in_transit'\n```",
+        "sql": "SELECT SUM(sndg.ges_vol_m3) AS completed_departure_volume FROM flug JOIN betankg ON flug.flug_id = betankg.flug_id JOIN sndg ON flug.ziel_fh = sndg.urspr_fh WHERE flug.abfl_fh IN (SELECT fh_nr FROM flghf WHERE iata_cd = 'IST') AND flug.stat = 'completed' AND betankg.stat = 'completed' AND sndg.stat = 'in_transit'",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: betankg.stat",
+        "latency_s": 4.497,
+        "eval_count": 107,
+        "eval_duration_s": 2.164101,
+        "prompt_eval_count": 3170
+      }
+    ],
+    "retried": true,
+    "eval_count": 218,
+    "eval_duration_s": 4.366959,
+    "prompt_eval_count": 3046
+  },
+  "M03-VAG": {
+    "raw": "```sql\nSELECT COUNT(*) AS busy_level FROM flug JOIN flghf ON flug.ziel_fh = flghf.fh_nr WHERE flghf.iata_cd = 'IST';\n```",
+    "error": null,
+    "latency_s": 3.334,
+    "pass1_s": 0.007,
+    "pass2_s": 3.327,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) AS busy_level FROM flug JOIN flghf ON flug.ziel_fh = flghf.fh_nr WHERE flghf.iata_cd = 'IST';\n```",
+        "sql": "SELECT COUNT(*) AS busy_level FROM flug JOIN flghf ON flug.ziel_fh = flghf.fh_nr WHERE flghf.iata_cd = 'IST'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.327,
+        "eval_count": 42,
+        "eval_duration_s": 0.79436,
+        "prompt_eval_count": 867
+      }
+    ],
+    "retried": false,
+    "eval_count": 42,
+    "eval_duration_s": 0.79436,
+    "prompt_eval_count": 867
+  },
+  "M04-CAS": {
+    "raw": "```sql\nSELECT flghf1.bez AS from_airport, flghf2.bez AS to_airport, COUNT(*) AS flight_count\nFROM flug\nJOIN flghf flghf1 ON flug.abfl_fh = flghf1.fh_nr\nJOIN flghf flghf2 ON flug.ziel_fh = flghf2.fh_nr\nWHERE flug.stat = 'completed'\nGROUP BY flghf1.fh_nr, flghf2.fh_nr\nORDER BY flight_count DESC\nLIMIT 5;\n```",
+    "error": null,
+    "latency_s": 5.431,
+    "pass1_s": 0.018,
+    "pass2_s": 5.413,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf1.bez AS from_airport, flghf2.bez AS to_airport, COUNT(*) AS flight_count\nFROM flug\nJOIN flghf flghf1 ON flug.abfl_fh = flghf1.fh_nr\nJOIN flghf flghf2 ON flug.ziel_fh = flghf2.fh_nr\nWHERE flug.stat = 'completed'\nGROUP BY flghf1.fh_nr, flghf2.fh_nr\nORDER BY flight_count DESC\nLIMIT 5;\n```",
+        "sql": "SELECT flghf1.bez AS from_airport, flghf2.bez AS to_airport, COUNT(*) AS flight_count FROM flug JOIN flghf flghf1 ON flug.abfl_fh = flghf1.fh_nr JOIN flghf flghf2 ON flug.ziel_fh = flghf2.fh_nr WHERE flug.stat = 'completed' GROUP BY flghf1.fh_nr, flghf2.fh_nr ORDER BY flight_count DESC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.413,
+        "eval_count": 120,
+        "eval_duration_s": 2.373729,
+        "prompt_eval_count": 2786
+      }
+    ],
+    "retried": false,
+    "eval_count": 120,
+    "eval_duration_s": 2.373729,
+    "prompt_eval_count": 2786
+  },
+  "M04-SCH": {
+    "raw": "```sql\nSELECT flghf1.iata_cd AS origin_iata, flghf2.iata_cd AS destination_iata, COUNT(flug.flug_id) AS completed_flights\nFROM flug\nJOIN flghf flghf1 ON flug.abfl_fh = flghf1.fh_nr\nJOIN flghf flghf2 ON flug.ziel_fh = flghf2.fh_nr\nWHERE flug.stat = 'completed'\nGROUP BY flghf1.iata_cd, flghf2.iata_cd\nORDER BY completed_flights DESC\nLIMIT 5;\n```",
+    "error": null,
+    "latency_s": 5.369,
+    "pass1_s": 0.023,
+    "pass2_s": 5.346,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf1.iata_cd AS origin_iata, flghf2.iata_cd AS destination_iata, COUNT(flug.flug_id) AS completed_flights\nFROM flug\nJOIN flghf flghf1 ON flug.abfl_fh = flghf1.fh_nr\nJOIN flghf flghf2 ON flug.ziel_fh = flghf2.fh_nr\nWHERE flug.stat = 'completed'\nGROUP BY flghf1.iata_cd, flghf2.iata_cd\nORDER BY completed_flights DESC\nLIMIT 5;\n```",
+        "sql": "SELECT flghf1.iata_cd AS origin_iata, flghf2.iata_cd AS destination_iata, COUNT(flug.flug_id) AS completed_flights FROM flug JOIN flghf flghf1 ON flug.abfl_fh = flghf1.fh_nr JOIN flghf flghf2 ON flug.ziel_fh = flghf2.fh_nr WHERE flug.stat = 'completed' GROUP BY flghf1.iata_cd, flghf2.iata_cd ORDER BY completed_flights DESC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.346,
+        "eval_count": 129,
+        "eval_duration_s": 2.5611,
+        "prompt_eval_count": 3144
+      }
+    ],
+    "retried": false,
+    "eval_count": 129,
+    "eval_duration_s": 2.5611,
+    "prompt_eval_count": 3144
+  },
+  "M04-BIZ": {
+    "raw": "```sql\nSELECT flug_ladg.ladg_id, flug_ladg.uld_nr, COUNT(flug_ladg.flug_id) AS flight_count\nFROM flug_ladg\nJOIN flug ON flug_ladg.flug_id = flug.flug_id\nWHERE flug.stat = 'completed'\nGROUP BY flug_ladg.ladg_id, flug_ladg.uld_nr\nORDER BY flight_count DESC\nLIMIT 5;\n```",
+    "error": null,
+    "latency_s": 4.566,
+    "pass1_s": 0.013,
+    "pass2_s": 4.553,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flug_ladg.ladg_id, flug_ladg.uld_nr, COUNT(flug_ladg.flug_id) AS flight_count\nFROM flug_ladg\nJOIN flug ON flug_ladg.flug_id = flug.flug_id\nWHERE flug.stat = 'completed'\nGROUP BY flug_ladg.ladg_id, flug_ladg.uld_nr\nORDER BY flight_count DESC\nLIMIT 5;\n```",
+        "sql": "SELECT flug_ladg.ladg_id, flug_ladg.uld_nr, COUNT(flug_ladg.flug_id) AS flight_count FROM flug_ladg JOIN flug ON flug_ladg.flug_id = flug.flug_id WHERE flug.stat = 'completed' GROUP BY flug_ladg.ladg_id, flug_ladg.uld_nr ORDER BY flight_count DESC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.553,
+        "eval_count": 104,
+        "eval_duration_s": 2.033605,
+        "prompt_eval_count": 2225
+      }
+    ],
+    "retried": false,
+    "eval_count": 104,
+    "eval_duration_s": 2.033605,
+    "prompt_eval_count": 2225
+  },
+  "M04-VAG": {
+    "raw": "```sql\nSELECT flghf.bez AS airport_name, COUNT(DISTINCT sndg.sndg_nr) AS shipment_count\nFROM flghf\nJOIN sndg ON flghf.fh_nr = sndg.ziel_fh\nGROUP BY flghf.fh_nr\nORDER BY shipment_count DESC\nLIMIT 10;\n```",
+    "error": null,
+    "latency_s": 4.156,
+    "pass1_s": 0.003,
+    "pass2_s": 4.153,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.bez AS airport_name, COUNT(DISTINCT sndg.sndg_nr) AS shipment_count\nFROM flghf\nJOIN sndg ON flghf.fh_nr = sndg.ziel_fh\nGROUP BY flghf.fh_nr\nORDER BY shipment_count DESC\nLIMIT 10;\n```",
+        "sql": "SELECT flghf.bez AS airport_name, COUNT(DISTINCT sndg.sndg_nr) AS shipment_count FROM flghf JOIN sndg ON flghf.fh_nr = sndg.ziel_fh GROUP BY flghf.fh_nr ORDER BY shipment_count DESC LIMIT 10",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.153,
+        "eval_count": 72,
+        "eval_duration_s": 1.395728,
+        "prompt_eval_count": 1595
+      }
+    ],
+    "retried": false,
+    "eval_count": 72,
+    "eval_duration_s": 1.395728,
+    "prompt_eval_count": 1595
+  },
+  "M05-CAS": {
+    "raw": "SELECT AVG(T1.versp_min) FROM vorf AS T1 INNER JOIN flug AS T2 ON T1.ladg_id = T2.flug_id WHERE T2.stat = 'completed'",
+    "error": null,
+    "latency_s": 4.139,
+    "pass1_s": 0.018,
+    "pass2_s": 4.121,
+    "attempts": [
+      {
+        "raw": "SELECT AVG(T1.versp_min) FROM vorf AS T1 INNER JOIN flug AS T2 ON T1.ladg_id = T2.flug_id WHERE T2.stat = 'completed'",
+        "sql": "SELECT AVG(T1.versp_min) FROM vorf AS T1 INNER JOIN flug AS T2 ON T1.ladg_id = T2.flug_id WHERE T2.stat = 'completed'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.121,
+        "eval_count": 44,
+        "eval_duration_s": 0.859024,
+        "prompt_eval_count": 2957
+      }
+    ],
+    "retried": false,
+    "eval_count": 44,
+    "eval_duration_s": 0.859024,
+    "prompt_eval_count": 2957
+  },
+  "M05-SCH": {
+    "raw": "```sql\nSELECT AVG((strftime('%s', T1.ank_ist) - strftime('%s', T1.ank_plan)) / 60) AS avg_delay, T3.bez \nFROM flug AS T1 \nJOIN lfz AS T2 ON T1.lfz_nr = T2.lfz_nr \nJOIN flghf AS T3 ON T1.ziel_fh = T3.fh_nr \nWHERE T1.stat = 'completed' \nGROUP BY T3.bez \nORDER BY avg_delay DESC \nLIMIT 1;\n```",
+    "error": null,
+    "latency_s": 5.433,
+    "pass1_s": 0.03,
+    "pass2_s": 5.403,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT AVG((strftime('%s', T1.ank_ist) - strftime('%s', T1.ank_plan)) / 60) AS avg_delay, T3.bez \nFROM flug AS T1 \nJOIN lfz AS T2 ON T1.lfz_nr = T2.lfz_nr \nJOIN flghf AS T3 ON T1.ziel_fh = T3.fh_nr \nWHERE T1.stat = 'completed' \nGROUP BY T3.bez \nORDER BY avg_delay DESC \nLIMIT 1;\n```",
+        "sql": "SELECT AVG((strftime('%s', T1.ank_ist) - strftime('%s', T1.ank_plan)) / 60) AS avg_delay, T3.bez FROM flug AS T1 JOIN lfz AS T2 ON T1.lfz_nr = T2.lfz_nr JOIN flghf AS T3 ON T1.ziel_fh = T3.fh_nr WHERE T1.stat = 'completed' GROUP BY T3.bez ORDER BY avg_delay DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.403,
+        "eval_count": 118,
+        "eval_duration_s": 2.332535,
+        "prompt_eval_count": 2777
+      }
+    ],
+    "retried": false,
+    "eval_count": 118,
+    "eval_duration_s": 2.332535,
+    "prompt_eval_count": 2777
+  },
+  "M05-BIZ": {
+    "raw": "SELECT AVG(v.versp_min) AS avg_delay, f.flges_nr, f.gruend_jahr, f.rufz FROM vorf v JOIN flug f ON v.ladg_id = f.ladg_id WHERE v.vorf_art = 'delay' GROUP BY f.flges_nr, f.gruend_jahr, f.rufz",
+    "error": null,
+    "latency_s": 8.287,
+    "pass1_s": 0.02,
+    "pass2_s": 8.267,
+    "attempts": [
+      {
+        "raw": "SELECT AVG(v.versp_min) AS avg_delay, f.flges_nr, f.gruend_jahr, f.rufz FROM vorf v JOIN flug f ON v.ladg_id = f.ladg_id WHERE v.vorf_art = 'delay' GROUP BY f.flges_nr, f.gruend_jahr, f.rufz",
+        "sql": "SELECT AVG(v.versp_min) AS avg_delay, f.flges_nr, f.gruend_jahr, f.rufz FROM vorf v JOIN flug f ON v.ladg_id = f.ladg_id WHERE v.vorf_art = 'delay' GROUP BY f.flges_nr, f.gruend_jahr, f.rufz",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.flges_nr",
+        "latency_s": 4.44,
+        "eval_count": 76,
+        "eval_duration_s": 1.475231,
+        "prompt_eval_count": 1886
+      },
+      {
+        "raw": "SELECT AVG(v.versp_min) AS avg_delay, f.flges_nr, f.gruend_jahr, f.rufz FROM vorf v JOIN flug f ON v.ladg_id = f.ladg_id WHERE v.vorf_art = 'delay' GROUP BY f.flges_nr, f.gruend_jahr, f.rufz",
+        "sql": "SELECT AVG(v.versp_min) AS avg_delay, f.flges_nr, f.gruend_jahr, f.rufz FROM vorf v JOIN flug f ON v.ladg_id = f.ladg_id WHERE v.vorf_art = 'delay' GROUP BY f.flges_nr, f.gruend_jahr, f.rufz",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.flges_nr",
+        "latency_s": 3.827,
+        "eval_count": 76,
+        "eval_duration_s": 1.544539,
+        "prompt_eval_count": 1984
+      }
+    ],
+    "retried": true,
+    "eval_count": 152,
+    "eval_duration_s": 3.0197700000000003,
+    "prompt_eval_count": 1886
+  },
+  "M05-VAG": {
+    "raw": "```sql\nSELECT flges.flges_nr, flges.bez, flges.gruend_jahr, flges.hub_fh_nr, flges.land, flges.allianz, flges.icao_cd FROM flges ORDER BY flges.gruend_jahr DESC LIMIT 1;\n```",
+    "error": null,
+    "latency_s": 3.777,
+    "pass1_s": 0.006,
+    "pass2_s": 3.771,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.flges_nr, flges.bez, flges.gruend_jahr, flges.hub_fh_nr, flges.land, flges.allianz, flges.icao_cd FROM flges ORDER BY flges.gruend_jahr DESC LIMIT 1;\n```",
+        "sql": "SELECT flges.flges_nr, flges.bez, flges.gruend_jahr, flges.hub_fh_nr, flges.land, flges.allianz, flges.icao_cd FROM flges ORDER BY flges.gruend_jahr DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.771,
+        "eval_count": 64,
+        "eval_duration_s": 1.238204,
+        "prompt_eval_count": 1445
+      }
+    ],
+    "retried": false,
+    "eval_count": 64,
+    "eval_duration_s": 1.238204,
+    "prompt_eval_count": 1445
+  },
+  "M06-CAS": {
+    "raw": "```sql\nSELECT flges.iata_cd, COUNT(flug.flug_id) AS cancelled_flights FROM flges JOIN flug ON flges.flges_nr = flug.flges_nr WHERE flug.stat = 'cancelled' GROUP BY flges.iata_cd\n```",
+    "error": null,
+    "latency_s": 7.291,
+    "pass1_s": 0.008,
+    "pass2_s": 7.283,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.iata_cd, COUNT(flug.flug_id) AS cancelled_flights\nFROM flges\nJOIN flug ON flges.flges_nr = flug.flges_nr\nWHERE flug.stat = 'cancelled'\nGROUP BY flges.iata_cd;\n```",
+        "sql": "SELECT flges.iata_cd, COUNT(flug.flug_id) AS cancelled_flights FROM flges JOIN flug ON flges.flges_nr = flug.flges_nr WHERE flug.stat = 'cancelled' GROUP BY flges.iata_cd",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flug.flges_nr",
+        "latency_s": 3.903,
+        "eval_count": 60,
+        "eval_duration_s": 1.190864,
+        "prompt_eval_count": 2448
+      },
+      {
+        "raw": "```sql\nSELECT flges.iata_cd, COUNT(flug.flug_id) AS cancelled_flights FROM flges JOIN flug ON flges.flges_nr = flug.flges_nr WHERE flug.stat = 'cancelled' GROUP BY flges.iata_cd\n```",
+        "sql": "SELECT flges.iata_cd, COUNT(flug.flug_id) AS cancelled_flights FROM flges JOIN flug ON flges.flges_nr = flug.flges_nr WHERE flug.stat = 'cancelled' GROUP BY flges.iata_cd",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flug.flges_nr",
+        "latency_s": 3.38,
+        "eval_count": 57,
+        "eval_duration_s": 1.121901,
+        "prompt_eval_count": 2523
+      }
+    ],
+    "retried": true,
+    "eval_count": 117,
+    "eval_duration_s": 2.3127649999999997,
+    "prompt_eval_count": 2448
+  },
+  "M06-SCH": {
+    "raw": "```sql\nSELECT flghf.bez, COUNT(flug.flug_id) AS cancelled_flights\nFROM flug\nJOIN lfz ON flug.lfz_nr = lfz.lfz_nr\nJOIN flghf ON flug.ziel_fh = flghf.fh_nr\nWHERE flug.stat = 'cancelled'\nGROUP BY flghf.bez\nORDER BY cancelled_flights DESC;\n```",
+    "error": null,
+    "latency_s": 4.638,
+    "pass1_s": 0.019,
+    "pass2_s": 4.619,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.bez, COUNT(flug.flug_id) AS cancelled_flights\nFROM flug\nJOIN lfz ON flug.lfz_nr = lfz.lfz_nr\nJOIN flghf ON flug.ziel_fh = flghf.fh_nr\nWHERE flug.stat = 'cancelled'\nGROUP BY flghf.bez\nORDER BY cancelled_flights DESC;\n```",
+        "sql": "SELECT flghf.bez, COUNT(flug.flug_id) AS cancelled_flights FROM flug JOIN lfz ON flug.lfz_nr = lfz.lfz_nr JOIN flghf ON flug.ziel_fh = flghf.fh_nr WHERE flug.stat = 'cancelled' GROUP BY flghf.bez ORDER BY cancelled_flights DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.619,
+        "eval_count": 87,
+        "eval_duration_s": 1.700148,
+        "prompt_eval_count": 2377
+      }
+    ],
+    "retried": false,
+    "eval_count": 87,
+    "eval_duration_s": 1.700148,
+    "prompt_eval_count": 2377
+  },
+  "M06-BIZ": {
+    "raw": "```sql\nSELECT flges.flges_nr, flges.rufz, SUM(sndg.ges_vol_m3) AS cancellation_volume FROM flges JOIN flug ON flges.flges_nr = flug.flges_nr JOIN sndg ON flug.flug_id = sndg.flug_id WHERE flug.stat = 'cancelled' GROUP BY flges.flges_nr, flges.rufz\n```",
+    "error": null,
+    "latency_s": 8.665,
+    "pass1_s": 0.007,
+    "pass2_s": 8.658,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.flges_nr, flges.rufz, SUM(sndg.ges_vol_m3) AS cancellation_volume\nFROM flges\nJOIN flug ON flges.flges_nr = flug.flges_nr\nJOIN sndg ON flug.flug_id = sndg.flug_id\nWHERE flug.stat = 'cancelled'\nGROUP BY flges.flges_nr, flges.rufz;\n```",
+        "sql": "SELECT flges.flges_nr, flges.rufz, SUM(sndg.ges_vol_m3) AS cancellation_volume FROM flges JOIN flug ON flges.flges_nr = flug.flges_nr JOIN sndg ON flug.flug_id = sndg.flug_id WHERE flug.stat = 'cancelled' GROUP BY flges.flges_nr, flges.rufz",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flug.flges_nr",
+        "latency_s": 4.671,
+        "eval_count": 90,
+        "eval_duration_s": 1.760637,
+        "prompt_eval_count": 2246
+      },
+      {
+        "raw": "```sql\nSELECT flges.flges_nr, flges.rufz, SUM(sndg.ges_vol_m3) AS cancellation_volume FROM flges JOIN flug ON flges.flges_nr = flug.flges_nr JOIN sndg ON flug.flug_id = sndg.flug_id WHERE flug.stat = 'cancelled' GROUP BY flges.flges_nr, flges.rufz\n```",
+        "sql": "SELECT flges.flges_nr, flges.rufz, SUM(sndg.ges_vol_m3) AS cancellation_volume FROM flges JOIN flug ON flges.flges_nr = flug.flges_nr JOIN sndg ON flug.flug_id = sndg.flug_id WHERE flug.stat = 'cancelled' GROUP BY flges.flges_nr, flges.rufz",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flug.flges_nr",
+        "latency_s": 3.987,
+        "eval_count": 86,
+        "eval_duration_s": 1.740246,
+        "prompt_eval_count": 2350
+      }
+    ],
+    "retried": true,
+    "eval_count": 176,
+    "eval_duration_s": 3.500883,
+    "prompt_eval_count": 2246
+  },
+  "M06-VAG": {
+    "raw": "```sql\nSELECT flges.flges_nr, flges.bez, COUNT(flug.flug_id) AS cancellations FROM flges LEFT JOIN flug ON flges.flges_nr = flug.flges_nr AND flug.storno_grund IS NOT NULL GROUP BY flges.flges_nr, flges.bez\n```",
+    "error": null,
+    "latency_s": 7.408,
+    "pass1_s": 0.004,
+    "pass2_s": 7.404,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.flges_nr, flges.bez, COUNT(flug.flug_id) AS cancellations\nFROM flges\nLEFT JOIN flug ON flges.flges_nr = flug.flges_nr AND flug.storno_grund IS NOT NULL\nGROUP BY flges.flges_nr, flges.bez;\n```",
+        "sql": "SELECT flges.flges_nr, flges.bez, COUNT(flug.flug_id) AS cancellations FROM flges LEFT JOIN flug ON flges.flges_nr = flug.flges_nr AND flug.storno_grund IS NOT NULL GROUP BY flges.flges_nr, flges.bez",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flug.flges_nr",
+        "latency_s": 3.73,
+        "eval_count": 72,
+        "eval_duration_s": 1.438716,
+        "prompt_eval_count": 1452
+      },
+      {
+        "raw": "```sql\nSELECT flges.flges_nr, flges.bez, COUNT(flug.flug_id) AS cancellations FROM flges LEFT JOIN flug ON flges.flges_nr = flug.flges_nr AND flug.storno_grund IS NOT NULL GROUP BY flges.flges_nr, flges.bez\n```",
+        "sql": "SELECT flges.flges_nr, flges.bez, COUNT(flug.flug_id) AS cancellations FROM flges LEFT JOIN flug ON flges.flges_nr = flug.flges_nr AND flug.storno_grund IS NOT NULL GROUP BY flges.flges_nr, flges.bez",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flug.flges_nr",
+        "latency_s": 3.674,
+        "eval_count": 69,
+        "eval_duration_s": 1.394296,
+        "prompt_eval_count": 1539
+      }
+    ],
+    "retried": true,
+    "eval_count": 141,
+    "eval_duration_s": 2.833012,
+    "prompt_eval_count": 1452
+  },
+  "M07-CAS": {
+    "raw": "```sql\nSELECT flges.iata_cd, SUM(betankg.co2_kg) AS total_co2\nFROM flges\nJOIN flug ON flges.flges_nr = flug.flugnr\nJOIN betankg ON flug.flug_id = betankg.flug_id\nGROUP BY flges.iata_cd;\n```",
+    "error": null,
+    "latency_s": 4.496,
+    "pass1_s": 0.015,
+    "pass2_s": 4.481,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.iata_cd, SUM(betankg.co2_kg) AS total_co2\nFROM flges\nJOIN flug ON flges.flges_nr = flug.flugnr\nJOIN betankg ON flug.flug_id = betankg.flug_id\nGROUP BY flges.iata_cd;\n```",
+        "sql": "SELECT flges.iata_cd, SUM(betankg.co2_kg) AS total_co2 FROM flges JOIN flug ON flges.flges_nr = flug.flugnr JOIN betankg ON flug.flug_id = betankg.flug_id GROUP BY flges.iata_cd",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.481,
+        "eval_count": 73,
+        "eval_duration_s": 1.42804,
+        "prompt_eval_count": 2453
+      }
+    ],
+    "retried": false,
+    "eval_count": 73,
+    "eval_duration_s": 1.42804,
+    "prompt_eval_count": 2453
+  },
+  "M07-SCH": {
+    "raw": "```sql\nSELECT flges.bez, ROUND(SUM(betankg.co2_kg / 1000), 1) AS avg_co2_kg FROM betankg JOIN flug ON betankg.flug_id = flug.flug_id JOIN lfz ON flug.lfz_nr = lfz.lfz_nr JOIN flges ON lfz.flges_nr = flges.flges_nr GROUP BY flges.bez;\n```",
+    "error": null,
+    "latency_s": 5.331,
+    "pass1_s": 0.02,
+    "pass2_s": 5.311,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.bez, ROUND(SUM(betankg.co2_kg / 1000), 1) AS avg_co2_kg FROM betankg JOIN flug ON betankg.flug_id = flug.flug_id JOIN lfz ON flug.lfz_nr = lfz.lfz_nr JOIN flges ON lfz.flges_nr = flges.flges_nr GROUP BY flges.bez;\n```",
+        "sql": "SELECT flges.bez, ROUND(SUM(betankg.co2_kg / 1000), 1) AS avg_co2_kg FROM betankg JOIN flug ON betankg.flug_id = flug.flug_id JOIN lfz ON flug.lfz_nr = lfz.lfz_nr JOIN flges ON lfz.flges_nr = flges.flges_nr GROUP BY flges.bez",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.311,
+        "eval_count": 97,
+        "eval_duration_s": 1.933315,
+        "prompt_eval_count": 3610
+      }
+    ],
+    "retried": false,
+    "eval_count": 97,
+    "eval_duration_s": 1.933315,
+    "prompt_eval_count": 3610
+  },
+  "M07-BIZ": {
+    "raw": "```sql\nSELECT flges.rufz AS Carrier, SUM(betankg.co2_kg) AS CarbonFootprint FROM flges JOIN betankg ON flges.flges_nr = betankg.flug_id GROUP BY flges.rufz;\n```",
+    "error": null,
+    "latency_s": 3.949,
+    "pass1_s": 0.018,
+    "pass2_s": 3.931,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.rufz AS Carrier, SUM(betankg.co2_kg) AS CarbonFootprint FROM flges JOIN betankg ON flges.flges_nr = betankg.flug_id GROUP BY flges.rufz;\n```",
+        "sql": "SELECT flges.rufz AS Carrier, SUM(betankg.co2_kg) AS CarbonFootprint FROM flges JOIN betankg ON flges.flges_nr = betankg.flug_id GROUP BY flges.rufz",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.931,
+        "eval_count": 56,
+        "eval_duration_s": 1.088587,
+        "prompt_eval_count": 2459
+      }
+    ],
+    "retried": false,
+    "eval_count": 56,
+    "eval_duration_s": 1.088587,
+    "prompt_eval_count": 2459
+  },
+  "M07-VAG": {
+    "raw": "```sql\nSELECT flges.flges_nr, flges.bez, SUM(lfz.ges_flugstd) AS total_flight_hours\nFROM flges\nJOIN lfz ON flges.flges_nr = lfz.flges_nr\nGROUP BY flges.flges_nr, flges.bez;\n```",
+    "error": null,
+    "latency_s": 3.605,
+    "pass1_s": 0.005,
+    "pass2_s": 3.6,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.flges_nr, flges.bez, SUM(lfz.ges_flugstd) AS total_flight_hours\nFROM flges\nJOIN lfz ON flges.flges_nr = lfz.flges_nr\nGROUP BY flges.flges_nr, flges.bez;\n```",
+        "sql": "SELECT flges.flges_nr, flges.bez, SUM(lfz.ges_flugstd) AS total_flight_hours FROM flges JOIN lfz ON flges.flges_nr = lfz.flges_nr GROUP BY flges.flges_nr, flges.bez",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.6,
+        "eval_count": 65,
+        "eval_duration_s": 1.304898,
+        "prompt_eval_count": 1444
+      }
+    ],
+    "retried": false,
+    "eval_count": 65,
+    "eval_duration_s": 1.304898,
+    "prompt_eval_count": 1444
+  },
+  "M08-CAS": {
+    "raw": "```sql\nSELECT AVG(betankg.preis_usd_l) AS avg_fuel_price_per_liter, flghf.reg\nFROM betankg\nJOIN flghf ON betankg.fh_nr = flghf.fh_nr\nGROUP BY flghf.reg;\n```",
+    "error": null,
+    "latency_s": 3.785,
+    "pass1_s": 0.015,
+    "pass2_s": 3.77,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT AVG(betankg.preis_usd_l) AS avg_fuel_price_per_liter, flghf.reg\nFROM betankg\nJOIN flghf ON betankg.fh_nr = flghf.fh_nr\nGROUP BY flghf.reg;\n```",
+        "sql": "SELECT AVG(betankg.preis_usd_l) AS avg_fuel_price_per_liter, flghf.reg FROM betankg JOIN flghf ON betankg.fh_nr = flghf.fh_nr GROUP BY flghf.reg",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.77,
+        "eval_count": 62,
+        "eval_duration_s": 1.192504,
+        "prompt_eval_count": 1638
+      }
+    ],
+    "retried": false,
+    "eval_count": 62,
+    "eval_duration_s": 1.192504,
+    "prompt_eval_count": 1638
+  },
+  "M08-SCH": {
+    "raw": "```sql\nSELECT flghf.reg, ROUND(AVG(betankg.preis_usd_l), 4) AS avg_preis_usd_l\nFROM flghf\nJOIN betankg ON flghf.fh_nr = betankg.fh_nr\nGROUP BY flghf.reg;\n```",
+    "error": null,
+    "latency_s": 4.276,
+    "pass1_s": 0.019,
+    "pass2_s": 4.257,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.reg, ROUND(AVG(betankg.preis_usd_l), 4) AS avg_preis_usd_l\nFROM flghf\nJOIN betankg ON flghf.fh_nr = betankg.fh_nr\nGROUP BY flghf.reg;\n```",
+        "sql": "SELECT flghf.reg, ROUND(AVG(betankg.preis_usd_l), 4) AS avg_preis_usd_l FROM flghf JOIN betankg ON flghf.fh_nr = betankg.fh_nr GROUP BY flghf.reg",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.257,
+        "eval_count": 66,
+        "eval_duration_s": 1.286281,
+        "prompt_eval_count": 2266
+      }
+    ],
+    "retried": false,
+    "eval_count": 66,
+    "eval_duration_s": 1.286281,
+    "prompt_eval_count": 2266
+  },
+  "M08-BIZ": {
+    "raw": "```sql\nSELECT flghf.reg, AVG(betankg.preis_usd_l) AS avg_fuel_price_per_liter\nFROM flghf\nJOIN betankg ON flghf.fh_nr = betankg.fh_nr\nGROUP BY flghf.reg;\n```",
+    "error": null,
+    "latency_s": 3.653,
+    "pass1_s": 0.013,
+    "pass2_s": 3.64,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.reg, AVG(betankg.preis_usd_l) AS avg_fuel_price_per_liter\nFROM flghf\nJOIN betankg ON flghf.fh_nr = betankg.fh_nr\nGROUP BY flghf.reg;\n```",
+        "sql": "SELECT flghf.reg, AVG(betankg.preis_usd_l) AS avg_fuel_price_per_liter FROM flghf JOIN betankg ON flghf.fh_nr = betankg.fh_nr GROUP BY flghf.reg",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.64,
+        "eval_count": 62,
+        "eval_duration_s": 1.240206,
+        "prompt_eval_count": 1658
+      }
+    ],
+    "retried": false,
+    "eval_count": 62,
+    "eval_duration_s": 1.240206,
+    "prompt_eval_count": 1658
+  },
+  "M08-VAG": {
+    "raw": "```sql\nSELECT fh_nr, AVG(preis_usd_l) AS avg_price_per_liter\nFROM betankg\nGROUP BY fh_nr\nORDER BY avg_price_per_liter DESC\nLIMIT 1;\n```",
+    "error": null,
+    "latency_s": 3.317,
+    "pass1_s": 0.007,
+    "pass2_s": 3.31,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT fh_nr, AVG(preis_usd_l) AS avg_price_per_liter\nFROM betankg\nGROUP BY fh_nr\nORDER BY avg_price_per_liter DESC\nLIMIT 1;\n```",
+        "sql": "SELECT fh_nr, AVG(preis_usd_l) AS avg_price_per_liter FROM betankg GROUP BY fh_nr ORDER BY avg_price_per_liter DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.31,
+        "eval_count": 46,
+        "eval_duration_s": 0.868321,
+        "prompt_eval_count": 443
+      }
+    ],
+    "retried": false,
+    "eval_count": 46,
+    "eval_duration_s": 0.868321,
+    "prompt_eval_count": 443
+  },
+  "M09-CAS": {
+    "raw": "```sql\nSELECT flghf.bez, COUNT(lgr.lgr_nr) AS warehouse_count\nFROM flghf\nJOIN lgr ON flghf.fh_nr = lgr.fh_nr\nGROUP BY flghf.fh_nr\nHAVING COUNT(lgr.lgr_nr) >= 4;\n```",
+    "error": null,
+    "latency_s": 3.681,
+    "pass1_s": 0.01,
+    "pass2_s": 3.671,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.bez, COUNT(lgr.lgr_nr) AS warehouse_count\nFROM flghf\nJOIN lgr ON flghf.fh_nr = lgr.fh_nr\nGROUP BY flghf.fh_nr\nHAVING COUNT(lgr.lgr_nr) >= 4;\n```",
+        "sql": "SELECT flghf.bez, COUNT(lgr.lgr_nr) AS warehouse_count FROM flghf JOIN lgr ON flghf.fh_nr = lgr.fh_nr GROUP BY flghf.fh_nr HAVING COUNT(lgr.lgr_nr) >= 4",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.671,
+        "eval_count": 67,
+        "eval_duration_s": 1.294131,
+        "prompt_eval_count": 816
+      }
+    ],
+    "retried": false,
+    "eval_count": 67,
+    "eval_duration_s": 1.294131,
+    "prompt_eval_count": 816
+  },
+  "M09-SCH": {
+    "raw": "```sql\nSELECT flghf.iata_cd, COUNT(lgr.lgr_nr) AS lgr_count\nFROM flghf\nJOIN lgr ON flghf.fh_nr = lgr.fh_nr\nGROUP BY flghf.iata_cd\nHAVING lgr_count >= 4;\n```",
+    "error": null,
+    "latency_s": 4.27,
+    "pass1_s": 0.017,
+    "pass2_s": 4.253,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.iata_cd, COUNT(lgr.lgr_nr) AS lgr_count\nFROM flghf\nJOIN lgr ON flghf.fh_nr = lgr.fh_nr\nGROUP BY flghf.iata_cd\nHAVING lgr_count >= 4;\n```",
+        "sql": "SELECT flghf.iata_cd, COUNT(lgr.lgr_nr) AS lgr_count FROM flghf JOIN lgr ON flghf.fh_nr = lgr.fh_nr GROUP BY flghf.iata_cd HAVING lgr_count >= 4",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.253,
+        "eval_count": 65,
+        "eval_duration_s": 1.261788,
+        "prompt_eval_count": 2161
+      }
+    ],
+    "retried": false,
+    "eval_count": 65,
+    "eval_duration_s": 1.261788,
+    "prompt_eval_count": 2161
+  },
+  "M09-BIZ": {
+    "raw": "```sql\nSELECT flghf.bez, COUNT(lgr.lgr_nr) AS warehouse_count\nFROM flghf\nJOIN lgr ON flghf.fh_nr = lgr.fh_nr\nGROUP BY flghf.fh_nr\nHAVING warehouse_count >= 4;\n```",
+    "error": null,
+    "latency_s": 3.744,
+    "pass1_s": 0.015,
+    "pass2_s": 3.729,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.bez, COUNT(lgr.lgr_nr) AS warehouse_count\nFROM flghf\nJOIN lgr ON flghf.fh_nr = lgr.fh_nr\nGROUP BY flghf.fh_nr\nHAVING warehouse_count >= 4;\n```",
+        "sql": "SELECT flghf.bez, COUNT(lgr.lgr_nr) AS warehouse_count FROM flghf JOIN lgr ON flghf.fh_nr = lgr.fh_nr GROUP BY flghf.fh_nr HAVING warehouse_count >= 4",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.729,
+        "eval_count": 62,
+        "eval_duration_s": 1.194075,
+        "prompt_eval_count": 1665
+      }
+    ],
+    "retried": false,
+    "eval_count": 62,
+    "eval_duration_s": 1.194075,
+    "prompt_eval_count": 1665
+  },
+  "M09-VAG": {
+    "raw": "```sql\nSELECT flghf.bez, flghf.fh_nr, COUNT(lgr.lgr_nr) AS warehouse_count\nFROM flghf\nLEFT JOIN lgr ON flghf.fh_nr = lgr.fh_nr\nGROUP BY flghf.fh_nr\nORDER BY warehouse_count DESC\nLIMIT 10;\n```",
+    "error": null,
+    "latency_s": 3.686,
+    "pass1_s": 0.007,
+    "pass2_s": 3.679,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.bez, flghf.fh_nr, COUNT(lgr.lgr_nr) AS warehouse_count\nFROM flghf\nLEFT JOIN lgr ON flghf.fh_nr = lgr.fh_nr\nGROUP BY flghf.fh_nr\nORDER BY warehouse_count DESC\nLIMIT 10;\n```",
+        "sql": "SELECT flghf.bez, flghf.fh_nr, COUNT(lgr.lgr_nr) AS warehouse_count FROM flghf LEFT JOIN lgr ON flghf.fh_nr = lgr.fh_nr GROUP BY flghf.fh_nr ORDER BY warehouse_count DESC LIMIT 10",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.679,
+        "eval_count": 73,
+        "eval_duration_s": 1.457561,
+        "prompt_eval_count": 810
+      }
+    ],
+    "retried": false,
+    "eval_count": 73,
+    "eval_duration_s": 1.457561,
+    "prompt_eval_count": 810
+  },
+  "M10-CAS": {
+    "raw": "```sql\nSELECT flghf.bez, flghf.fh_nr \nFROM flghf \nJOIN lgr ON flghf.fh_nr = lgr.fh_nr \nWHERE lgr.zolllager_kz = 1 \nGROUP BY flghf.fh_nr \nHAVING COUNT(lgr.lgr_nr) > 1;\n```",
+    "error": null,
+    "latency_s": 3.945,
+    "pass1_s": 0.01,
+    "pass2_s": 3.935,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.bez, flghf.fh_nr \nFROM flghf \nJOIN lgr ON flghf.fh_nr = lgr.fh_nr \nWHERE lgr.zolllager_kz = 1 \nGROUP BY flghf.fh_nr \nHAVING COUNT(lgr.lgr_nr) > 1;\n```",
+        "sql": "SELECT flghf.bez, flghf.fh_nr FROM flghf JOIN lgr ON flghf.fh_nr = lgr.fh_nr WHERE lgr.zolllager_kz = 1 GROUP BY flghf.fh_nr HAVING COUNT(lgr.lgr_nr) > 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.935,
+        "eval_count": 76,
+        "eval_duration_s": 1.507219,
+        "prompt_eval_count": 1129
+      }
+    ],
+    "retried": false,
+    "eval_count": 76,
+    "eval_duration_s": 1.507219,
+    "prompt_eval_count": 1129
+  },
+  "M10-SCH": {
+    "raw": "```sql\nSELECT flges.iata_cd, COUNT(lgr.lgr_nr) AS zoll_warehouse_count\nFROM lgr\nJOIN flghf ON lgr.fh_nr = flghf.fh_nr\nJOIN flges ON flges.flges_nr = flghf.hub_kz\nWHERE lgr.zolllager_kz = 1\nGROUP BY flges.iata_cd\nHAVING zoll_warehouse_count > 1;\n```",
+    "error": null,
+    "latency_s": 4.455,
+    "pass1_s": 0.018,
+    "pass2_s": 4.437,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.iata_cd, COUNT(lgr.lgr_nr) AS zoll_warehouse_count\nFROM lgr\nJOIN flghf ON lgr.fh_nr = flghf.fh_nr\nJOIN flges ON flges.flges_nr = flghf.hub_kz\nWHERE lgr.zolllager_kz = 1\nGROUP BY flges.iata_cd\nHAVING zoll_warehouse_count > 1;\n```",
+        "sql": "SELECT flges.iata_cd, COUNT(lgr.lgr_nr) AS zoll_warehouse_count FROM lgr JOIN flghf ON lgr.fh_nr = flghf.fh_nr JOIN flges ON flges.flges_nr = flghf.hub_kz WHERE lgr.zolllager_kz = 1 GROUP BY flges.iata_cd HAVING zoll_warehouse_count > 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.437,
+        "eval_count": 98,
+        "eval_duration_s": 1.901934,
+        "prompt_eval_count": 1529
+      }
+    ],
+    "retried": false,
+    "eval_count": 98,
+    "eval_duration_s": 1.901934,
+    "prompt_eval_count": 1529
+  },
+  "M10-BIZ": {
+    "raw": "```sql\nSELECT flghf.bez, COUNT(lgr.lgr_nr) AS num_customs_bonded_facilities\nFROM flghf\nJOIN lgr ON flghf.fh_nr = lgr.fh_nr\nWHERE lgr.zolllager_kz = 1\nGROUP BY flghf.fh_nr, flghf.bez\nHAVING COUNT(lgr.lgr_nr) > 1;\n```",
+    "error": null,
+    "latency_s": 4.296,
+    "pass1_s": 0.015,
+    "pass2_s": 4.281,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.bez, COUNT(lgr.lgr_nr) AS num_customs_bonded_facilities\nFROM flghf\nJOIN lgr ON flghf.fh_nr = lgr.fh_nr\nWHERE lgr.zolllager_kz = 1\nGROUP BY flghf.fh_nr, flghf.bez\nHAVING COUNT(lgr.lgr_nr) > 1;\n```",
+        "sql": "SELECT flghf.bez, COUNT(lgr.lgr_nr) AS num_customs_bonded_facilities FROM flghf JOIN lgr ON flghf.fh_nr = lgr.fh_nr WHERE lgr.zolllager_kz = 1 GROUP BY flghf.fh_nr, flghf.bez HAVING COUNT(lgr.lgr_nr) > 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.281,
+        "eval_count": 92,
+        "eval_duration_s": 1.795483,
+        "prompt_eval_count": 2038
+      }
+    ],
+    "retried": false,
+    "eval_count": 92,
+    "eval_duration_s": 1.795483,
+    "prompt_eval_count": 2038
+  },
+  "M10-VAG": {
+    "raw": "```sql\nSELECT flghf.bez, flghf.fh_nr, COUNT(lgr.lgr_nr) AS num_bonded_warehouses\nFROM flghf\nJOIN lgr ON flghf.fh_nr = lgr.fh_nr\nWHERE lgr.zolllager_kz = 1\nGROUP BY flghf.fh_nr\nHAVING COUNT(lgr.lgr_nr) > 1;\n```",
+    "error": null,
+    "latency_s": 4.143,
+    "pass1_s": 0.007,
+    "pass2_s": 4.136,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.bez, flghf.fh_nr, COUNT(lgr.lgr_nr) AS num_bonded_warehouses\nFROM flghf\nJOIN lgr ON flghf.fh_nr = lgr.fh_nr\nWHERE lgr.zolllager_kz = 1\nGROUP BY flghf.fh_nr\nHAVING COUNT(lgr.lgr_nr) > 1;\n```",
+        "sql": "SELECT flghf.bez, flghf.fh_nr, COUNT(lgr.lgr_nr) AS num_bonded_warehouses FROM flghf JOIN lgr ON flghf.fh_nr = lgr.fh_nr WHERE lgr.zolllager_kz = 1 GROUP BY flghf.fh_nr HAVING COUNT(lgr.lgr_nr) > 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.136,
+        "eval_count": 92,
+        "eval_duration_s": 1.88514,
+        "prompt_eval_count": 1127
+      }
+    ],
+    "retried": false,
+    "eval_count": 92,
+    "eval_duration_s": 1.88514,
+    "prompt_eval_count": 1127
+  },
+  "H01-CAS": {
+    "raw": "```sql\nSELECT flges.iata_cd, flges.bez, lfz.kennz, COUNT(flug.flug_id) AS completed_flights\nFROM flges\nJOIN lfz ON flges.flges_nr = lfz.flges_nr\nJOIN flug ON lfz.lfz_nr = flug.lfz_nr\nWHERE flug.stat = 'completed'\nGROUP BY flges.iata_cd, flges.bez, lfz.kennz\nORDER BY completed_flights DESC\nLIMIT 1;\n```",
+    "error": null,
+    "latency_s": 5.192,
+    "pass1_s": 0.015,
+    "pass2_s": 5.177,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.iata_cd, flges.bez, lfz.kennz, COUNT(flug.flug_id) AS completed_flights\nFROM flges\nJOIN lfz ON flges.flges_nr = lfz.flges_nr\nJOIN flug ON lfz.lfz_nr = flug.lfz_nr\nWHERE flug.stat = 'completed'\nGROUP BY flges.iata_cd, flges.bez, lfz.kennz\nORDER BY completed_flights DESC\nLIMIT 1;\n```",
+        "sql": "SELECT flges.iata_cd, flges.bez, lfz.kennz, COUNT(flug.flug_id) AS completed_flights FROM flges JOIN lfz ON flges.flges_nr = lfz.flges_nr JOIN flug ON lfz.lfz_nr = flug.lfz_nr WHERE flug.stat = 'completed' GROUP BY flges.iata_cd, flges.bez, lfz.kennz ORDER BY completed_flights DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.177,
+        "eval_count": 111,
+        "eval_duration_s": 2.175511,
+        "prompt_eval_count": 2207
+      }
+    ],
+    "retried": false,
+    "eval_count": 111,
+    "eval_duration_s": 2.175511,
+    "prompt_eval_count": 2207
+  },
+  "H01-SCH": {
+    "raw": "```sql\nSELECT lfz.kennz, COUNT(flug.flug_id) AS flug_count\nFROM lfz\nJOIN flug ON lfz.lfz_nr = flug.lfz_nr\nWHERE flug.stat = 'completed'\nGROUP BY lfz.kennz\nORDER BY flug_count DESC, lfz.kennz ASC\nLIMIT 1;\n```",
+    "error": null,
+    "latency_s": 4.541,
+    "pass1_s": 0.023,
+    "pass2_s": 4.518,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz.kennz, COUNT(flug.flug_id) AS flug_count\nFROM lfz\nJOIN flug ON lfz.lfz_nr = flug.lfz_nr\nWHERE flug.stat = 'completed'\nGROUP BY lfz.kennz\nORDER BY flug_count DESC, lfz.kennz ASC\nLIMIT 1;\n```",
+        "sql": "SELECT lfz.kennz, COUNT(flug.flug_id) AS flug_count FROM lfz JOIN flug ON lfz.lfz_nr = flug.lfz_nr WHERE flug.stat = 'completed' GROUP BY lfz.kennz ORDER BY flug_count DESC, lfz.kennz ASC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.518,
+        "eval_count": 80,
+        "eval_duration_s": 1.561376,
+        "prompt_eval_count": 2202
+      }
+    ],
+    "retried": false,
+    "eval_count": 80,
+    "eval_duration_s": 1.561376,
+    "prompt_eval_count": 2202
+  },
+  "H01-BIZ": {
+    "raw": "```sql\nSELECT flges.flges_nr, flges.bez, lfz.lfz_nr, lfz.kennz, COUNT(flug.flug_id) AS completed_flights\nFROM flges\nJOIN lfz ON flges.flges_nr = lfz.flges_nr\nJOIN flug ON lfz.lfz_nr = flug.lfz_nr\nJOIN bes_eins ON flug.flug_id = bes_eins.flug_id\nJOIN wartg ON lfz.lfz_nr = wartg.lfz_nr\nWHERE flug.stat = 'completed' AND bes_eins.eins_stat = 'completed' AND wartg.stat = 'completed'\nGROUP BY flges.flges_nr, lfz.lfz_nr\nORDER BY completed_flights DESC\nLIMIT 1;\n```",
+    "error": null,
+    "latency_s": 5.94,
+    "pass1_s": 0.014,
+    "pass2_s": 5.926,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.flges_nr, flges.bez, lfz.lfz_nr, lfz.kennz, COUNT(flug.flug_id) AS completed_flights\nFROM flges\nJOIN lfz ON flges.flges_nr = lfz.flges_nr\nJOIN flug ON lfz.lfz_nr = flug.lfz_nr\nJOIN bes_eins ON flug.flug_id = bes_eins.flug_id\nJOIN wartg ON lfz.lfz_nr = wartg.lfz_nr\nWHERE flug.stat = 'completed' AND bes_eins.eins_stat = 'completed' AND wartg.stat = 'completed'\nGROUP BY flges.flges_nr, lfz.lfz_nr\nORDER BY completed_flights DESC\nLIMIT 1;\n```",
+        "sql": "SELECT flges.flges_nr, flges.bez, lfz.lfz_nr, lfz.kennz, COUNT(flug.flug_id) AS completed_flights FROM flges JOIN lfz ON flges.flges_nr = lfz.flges_nr JOIN flug ON lfz.lfz_nr = flug.lfz_nr JOIN bes_eins ON flug.flug_id = bes_eins.flug_id JOIN wartg ON lfz.lfz_nr = wartg.lfz_nr WHERE flug.stat = 'completed' AND bes_eins.eins_stat = 'completed' AND wartg.stat = 'completed' GROUP BY flges.flges_nr, lfz.lfz_nr ORDER BY completed_flights DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.926,
+        "eval_count": 169,
+        "eval_duration_s": 3.336531,
+        "prompt_eval_count": 2516
+      }
+    ],
+    "retried": false,
+    "eval_count": 169,
+    "eval_duration_s": 3.336531,
+    "prompt_eval_count": 2516
+  },
+  "H01-VAG": {
+    "raw": "```sql\nSELECT flges.flges_nr, flges.bez, lfz.kennz, lfz.typ_nr, lfz.baujahr, lfz.stat, SUM(betankg.menge_kg) AS total_fuel_loaded \nFROM flges \nJOIN lfz ON flges.flges_nr = lfz.flges_nr \nJOIN betankg ON lfz.lfz_nr = betankg.lfz_nr \nGROUP BY flges.flges_nr, lfz.lfz_nr \nORDER BY total_fuel_loaded DESC \nLIMIT 1\n```",
+    "error": null,
+    "latency_s": 10.039,
+    "pass1_s": 0.008,
+    "pass2_s": 10.031,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flges.flges_nr, flges.bez, lfz.kennz, lfz.typ_nr, lfz.baujahr, lfz.stat, SUM(betankg.menge_kg) AS total_fuel_loaded\nFROM flges\nJOIN lfz ON flges.flges_nr = lfz.flges_nr\nJOIN betankg ON lfz.lfz_nr = betankg.lfz_nr\nGROUP BY flges.flges_nr, lfz.lfz_nr\nORDER BY total_fuel_loaded DESC\nLIMIT 1;\n```",
+        "sql": "SELECT flges.flges_nr, flges.bez, lfz.kennz, lfz.typ_nr, lfz.baujahr, lfz.stat, SUM(betankg.menge_kg) AS total_fuel_loaded FROM flges JOIN lfz ON flges.flges_nr = lfz.flges_nr JOIN betankg ON lfz.lfz_nr = betankg.lfz_nr GROUP BY flges.flges_nr, lfz.lfz_nr ORDER BY total_fuel_loaded DESC LIMIT 1",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: betankg.lfz_nr",
+        "latency_s": 5.211,
+        "eval_count": 122,
+        "eval_duration_s": 2.416508,
+        "prompt_eval_count": 2408
+      },
+      {
+        "raw": "```sql\nSELECT flges.flges_nr, flges.bez, lfz.kennz, lfz.typ_nr, lfz.baujahr, lfz.stat, SUM(betankg.menge_kg) AS total_fuel_loaded \nFROM flges \nJOIN lfz ON flges.flges_nr = lfz.flges_nr \nJOIN betankg ON lfz.lfz_nr = betankg.lfz_nr \nGROUP BY flges.flges_nr, lfz.lfz_nr \nORDER BY total_fuel_loaded DESC \nLIMIT 1\n```",
+        "sql": "SELECT flges.flges_nr, flges.bez, lfz.kennz, lfz.typ_nr, lfz.baujahr, lfz.stat, SUM(betankg.menge_kg) AS total_fuel_loaded FROM flges JOIN lfz ON flges.flges_nr = lfz.flges_nr JOIN betankg ON lfz.lfz_nr = betankg.lfz_nr GROUP BY flges.flges_nr, lfz.lfz_nr ORDER BY total_fuel_loaded DESC LIMIT 1",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: betankg.lfz_nr",
+        "latency_s": 4.82,
+        "eval_count": 122,
+        "eval_duration_s": 2.475609,
+        "prompt_eval_count": 2544
+      }
+    ],
+    "retried": true,
+    "eval_count": 244,
+    "eval_duration_s": 4.892117,
+    "prompt_eval_count": 2408
+  },
+  "H02-CAS": {
+    "raw": "```sql\nSELECT flghf.bez AS airport_name, flges.iata_cd AS airline_code, COUNT(*) AS landing_count \nFROM flug \nJOIN flghf ON flug.ank_ist IS NOT NULL AND flug.ziel_fh = flghf.fh_nr \nJOIN flges ON flges.flges_nr = flug.flges_nr \nWHERE flug.stat = 'completed' \nGROUP BY flghf.bez, flges.iata_cd \nORDER BY airport_name, landing_count DESC;\n```",
+    "error": null,
+    "latency_s": 9.532,
+    "pass1_s": 0.015,
+    "pass2_s": 9.517,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.bez AS airport_name, flges.iata_cd AS airline_code, COUNT(*) AS landing_count\nFROM flug\nJOIN flghf ON flug.ank_ist IS NOT NULL AND flug.ziel_fh = flghf.fh_nr\nJOIN flges ON flges.flges_nr = flug.flges_nr\nWHERE flug.stat = 'completed'\nGROUP BY flghf.bez, flges.iata_cd\nORDER BY airport_name, landing_count DESC;\n```",
+        "sql": "SELECT flghf.bez AS airport_name, flges.iata_cd AS airline_code, COUNT(*) AS landing_count FROM flug JOIN flghf ON flug.ank_ist IS NOT NULL AND flug.ziel_fh = flghf.fh_nr JOIN flges ON flges.flges_nr = flug.flges_nr WHERE flug.stat = 'completed' GROUP BY flghf.bez, flges.iata_cd ORDER BY airport_name, landing_count DESC",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flug.flges_nr",
+        "latency_s": 4.984,
+        "eval_count": 109,
+        "eval_duration_s": 2.150802,
+        "prompt_eval_count": 2575
+      },
+      {
+        "raw": "```sql\nSELECT flghf.bez AS airport_name, flges.iata_cd AS airline_code, COUNT(*) AS landing_count \nFROM flug \nJOIN flghf ON flug.ank_ist IS NOT NULL AND flug.ziel_fh = flghf.fh_nr \nJOIN flges ON flges.flges_nr = flug.flges_nr \nWHERE flug.stat = 'completed' \nGROUP BY flghf.bez, flges.iata_cd \nORDER BY airport_name, landing_count DESC;\n```",
+        "sql": "SELECT flghf.bez AS airport_name, flges.iata_cd AS airline_code, COUNT(*) AS landing_count FROM flug JOIN flghf ON flug.ank_ist IS NOT NULL AND flug.ziel_fh = flghf.fh_nr JOIN flges ON flges.flges_nr = flug.flges_nr WHERE flug.stat = 'completed' GROUP BY flghf.bez, flges.iata_cd ORDER BY airport_name, landing_count DESC",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flug.flges_nr",
+        "latency_s": 4.533,
+        "eval_count": 110,
+        "eval_duration_s": 2.206198,
+        "prompt_eval_count": 2697
+      }
+    ],
+    "retried": true,
+    "eval_count": 219,
+    "eval_duration_s": 4.357,
+    "prompt_eval_count": 2575
+  },
+  "H02-SCH": {
+    "raw": "```sql\nSELECT flghf.iata_cd, flghf.bez, COUNT(flug.flug_id) AS count, flges.bez AS airline_name \nFROM flug \nJOIN flghf ON flug.ziel_fh = flghf.fh_nr \nJOIN flges ON flug.flges_nr = flges.flges_nr \nWHERE flug.stat = 'completed' \nGROUP BY flghf.iata_cd, flghf.bez, flges.bez \nORDER BY count DESC, airline_name \nLIMIT 1\n```",
+    "error": null,
+    "latency_s": 9.045,
+    "pass1_s": 0.025,
+    "pass2_s": 9.02,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.iata_cd, flghf.bez, COUNT(flug.flug_id) AS count\nFROM flug\nJOIN flghf ON flug.ziel_fh = flghf.fh_nr\nWHERE flug.stat = 'completed'\nGROUP BY flghf.iata_cd, flghf.bez\nORDER BY count DESC, flges.bez\nLIMIT 1;\n```",
+        "sql": "SELECT flghf.iata_cd, flghf.bez, COUNT(flug.flug_id) AS count FROM flug JOIN flghf ON flug.ziel_fh = flghf.fh_nr WHERE flug.stat = 'completed' GROUP BY flghf.iata_cd, flghf.bez ORDER BY count DESC, flges.bez LIMIT 1",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flges.bez",
+        "latency_s": 4.428,
+        "eval_count": 88,
+        "eval_duration_s": 1.737311,
+        "prompt_eval_count": 3055
+      },
+      {
+        "raw": "```sql\nSELECT flghf.iata_cd, flghf.bez, COUNT(flug.flug_id) AS count, flges.bez AS airline_name \nFROM flug \nJOIN flghf ON flug.ziel_fh = flghf.fh_nr \nJOIN flges ON flug.flges_nr = flges.flges_nr \nWHERE flug.stat = 'completed' \nGROUP BY flghf.iata_cd, flghf.bez, flges.bez \nORDER BY count DESC, airline_name \nLIMIT 1\n```",
+        "sql": "SELECT flghf.iata_cd, flghf.bez, COUNT(flug.flug_id) AS count, flges.bez AS airline_name FROM flug JOIN flghf ON flug.ziel_fh = flghf.fh_nr JOIN flges ON flug.flges_nr = flges.flges_nr WHERE flug.stat = 'completed' GROUP BY flghf.iata_cd, flghf.bez, flges.bez ORDER BY count DESC, airline_name LIMIT 1",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flug.flges_nr",
+        "latency_s": 4.592,
+        "eval_count": 116,
+        "eval_duration_s": 2.327552,
+        "prompt_eval_count": 3155
+      }
+    ],
+    "retried": true,
+    "eval_count": 204,
+    "eval_duration_s": 4.064863,
+    "prompt_eval_count": 3055
+  },
+  "H02-BIZ": {
+    "raw": "```sql\nSELECT flgesbez, flgesnr, COUNT(*) as completed_arrivals FROM ( SELECT flgesbez, flgesnr, flug_id FROM flges JOIN flug ON flges.flges_nr = flug.abfl_fh WHERE flug.stat = 'completed' GROUP BY flgesbez, flgesnr, flug_id HAVING COUNT(*) = 1 ) AS completed_flights JOIN flges ON completed_flights.flgesnr = flges.flges_nr GROUP BY flgesbez, flgesnr ORDER BY completed_arrivals DESC\n```",
+    "error": null,
+    "latency_s": 10.672,
+    "pass1_s": 0.015,
+    "pass2_s": 10.657,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flgesbez, flgesnr, COUNT(*) as completed_arrivals\nFROM (\n    SELECT flgesbez, flgesnr, flug_id\n    FROM flges\n    JOIN flug ON flges.flges_nr = flug.abfl_fh\n    WHERE flug.stat = 'completed'\n    GROUP BY flgesbez, flgesnr, flug_id\n    HAVING COUNT(*) = 1\n) AS completed_flights\nJOIN flges ON completed_flights.flgesnr = flges.flges_nr\nGROUP BY flgesbez, flgesnr\nORDER BY completed_arrivals DESC;\n```",
+        "sql": "SELECT flgesbez, flgesnr, COUNT(*) as completed_arrivals FROM ( SELECT flgesbez, flgesnr, flug_id FROM flges JOIN flug ON flges.flges_nr = flug.abfl_fh WHERE flug.stat = 'completed' GROUP BY flgesbez, flgesnr, flug_id HAVING COUNT(*) = 1 ) AS completed_flights JOIN flges ON completed_flights.flgesnr = flges.flges_nr GROUP BY flgesbez, flgesnr ORDER BY completed_arrivals DESC",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flgesbez",
+        "latency_s": 5.924,
+        "eval_count": 132,
+        "eval_duration_s": 2.62966,
+        "prompt_eval_count": 3385
+      },
+      {
+        "raw": "```sql\nSELECT flgesbez, flgesnr, COUNT(*) as completed_arrivals FROM ( SELECT flgesbez, flgesnr, flug_id FROM flges JOIN flug ON flges.flges_nr = flug.abfl_fh WHERE flug.stat = 'completed' GROUP BY flgesbez, flgesnr, flug_id HAVING COUNT(*) = 1 ) AS completed_flights JOIN flges ON completed_flights.flgesnr = flges.flges_nr GROUP BY flgesbez, flgesnr ORDER BY completed_arrivals DESC\n```",
+        "sql": "SELECT flgesbez, flgesnr, COUNT(*) as completed_arrivals FROM ( SELECT flgesbez, flgesnr, flug_id FROM flges JOIN flug ON flges.flges_nr = flug.abfl_fh WHERE flug.stat = 'completed' GROUP BY flgesbez, flgesnr, flug_id HAVING COUNT(*) = 1 ) AS completed_flights JOIN flges ON completed_flights.flgesnr = flges.flges_nr GROUP BY flgesbez, flgesnr ORDER BY completed_arrivals DESC",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flgesbez",
+        "latency_s": 4.733,
+        "eval_count": 117,
+        "eval_duration_s": 2.379328,
+        "prompt_eval_count": 3518
+      }
+    ],
+    "retried": true,
+    "eval_count": 249,
+    "eval_duration_s": 5.008988,
+    "prompt_eval_count": 3385
+  },
+  "H02-VAG": {
+    "raw": "```sql\nSELECT flghf.bez AS airport_name, flges.bez AS airline_name, flges.gruend_jahr AS founding_year, flges.land AS country, flges.allianz AS alliance, flges.icao_cd AS icao_code, bes_mitgl.dienstalter_nr AS seniority_rank, bes_mitgl.pers_nr AS crew_member_id, bes_mitgl.eintr_dat AS hire_date, bes_mitgl.lizenz_ablauf AS license_expiry_date\nFROM flghf\nJOIN flges ON flges.hub_fh_nr = flghf.fh_nr\nJOIN bes_mitgl ON bes_mitgl.flges_nr = flges.flges_nr\nORDER BY flghf.fh_nr, bes_mitgl.dienstalter_nr DESC;\n```",
+    "error": null,
+    "latency_s": 5.968,
+    "pass1_s": 0.008,
+    "pass2_s": 5.96,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.bez AS airport_name, flges.bez AS airline_name, flges.gruend_jahr AS founding_year, flges.land AS country, flges.allianz AS alliance, flges.icao_cd AS icao_code, bes_mitgl.dienstalter_nr AS seniority_rank, bes_mitgl.pers_nr AS crew_member_id, bes_mitgl.eintr_dat AS hire_date, bes_mitgl.lizenz_ablauf AS license_expiry_date\nFROM flghf\nJOIN flges ON flges.hub_fh_nr = flghf.fh_nr\nJOIN bes_mitgl ON bes_mitgl.flges_nr = flges.flges_nr\nORDER BY flghf.fh_nr, bes_mitgl.dienstalter_nr DESC;\n```",
+        "sql": "SELECT flghf.bez AS airport_name, flges.bez AS airline_name, flges.gruend_jahr AS founding_year, flges.land AS country, flges.allianz AS alliance, flges.icao_cd AS icao_code, bes_mitgl.dienstalter_nr AS seniority_rank, bes_mitgl.pers_nr AS crew_member_id, bes_mitgl.eintr_dat AS hire_date, bes_mitgl.lizenz_ablauf AS license_expiry_date FROM flghf JOIN flges ON flges.hub_fh_nr = flghf.fh_nr JOIN bes_mitgl ON bes_mitgl.flges_nr = flges.flges_nr ORDER BY flghf.fh_nr, bes_mitgl.dienstalter_nr DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.96,
+        "eval_count": 172,
+        "eval_duration_s": 3.345049,
+        "prompt_eval_count": 1421
+      }
+    ],
+    "retried": false,
+    "eval_count": 172,
+    "eval_duration_s": 3.345049,
+    "prompt_eval_count": 1421
+  },
+  "H03-CAS": {
+    "raw": "```sql\nSELECT \n  strftime('%Y-%m', rech_kopf.ausst_dat) AS month, \n  SUM(rech_kopf.brutto_usd) AS total_invoiced, \n  SUM(SUM(rech_kopf.brutto_usd)) OVER (ORDER BY strftime('%Y-%m', rech_kopf.ausst_dat)) AS running_total\nFROM \n  rech_kopf\nWHERE \n  strftime('%Y', rech_kopf.ausst_dat) = '2025'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+    "error": null,
+    "latency_s": 5.566,
+    "pass1_s": 0.024,
+    "pass2_s": 5.542,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT \n  strftime('%Y-%m', rech_kopf.ausst_dat) AS month, \n  SUM(rech_kopf.brutto_usd) AS total_invoiced, \n  SUM(SUM(rech_kopf.brutto_usd)) OVER (ORDER BY strftime('%Y-%m', rech_kopf.ausst_dat)) AS running_total\nFROM \n  rech_kopf\nWHERE \n  strftime('%Y', rech_kopf.ausst_dat) = '2025'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+        "sql": "SELECT strftime('%Y-%m', rech_kopf.ausst_dat) AS month, SUM(rech_kopf.brutto_usd) AS total_invoiced, SUM(SUM(rech_kopf.brutto_usd)) OVER (ORDER BY strftime('%Y-%m', rech_kopf.ausst_dat)) AS running_total FROM rech_kopf WHERE strftime('%Y', rech_kopf.ausst_dat) = '2025' GROUP BY month ORDER BY month",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.542,
+        "eval_count": 130,
+        "eval_duration_s": 2.564696,
+        "prompt_eval_count": 2450
+      }
+    ],
+    "retried": false,
+    "eval_count": 130,
+    "eval_duration_s": 2.564696,
+    "prompt_eval_count": 2450
+  },
+  "H03-SCH": {
+    "raw": "```sql\nSELECT \n  STRFTIME('%Y-%m', rech_kopf.ausst_dat) AS month, \n  SUM(rech_kopf.brutto_usd) AS total_brutto_usd, \n  SUM(SUM(rech_kopf.brutto_usd)) OVER (ORDER BY STRFTIME('%Y-%m', rech_kopf.ausst_dat)) AS running_total_brutto_usd\nFROM \n  rech_kopf\nWHERE \n  STRFTIME('%Y', rech_kopf.ausst_dat) = '2025'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+    "error": null,
+    "latency_s": 5.305,
+    "pass1_s": 0.027,
+    "pass2_s": 5.278,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT \n  STRFTIME('%Y-%m', rech_kopf.ausst_dat) AS month, \n  SUM(rech_kopf.brutto_usd) AS total_brutto_usd, \n  SUM(SUM(rech_kopf.brutto_usd)) OVER (ORDER BY STRFTIME('%Y-%m', rech_kopf.ausst_dat)) AS running_total_brutto_usd\nFROM \n  rech_kopf\nWHERE \n  STRFTIME('%Y', rech_kopf.ausst_dat) = '2025'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+        "sql": "SELECT STRFTIME('%Y-%m', rech_kopf.ausst_dat) AS month, SUM(rech_kopf.brutto_usd) AS total_brutto_usd, SUM(SUM(rech_kopf.brutto_usd)) OVER (ORDER BY STRFTIME('%Y-%m', rech_kopf.ausst_dat)) AS running_total_brutto_usd FROM rech_kopf WHERE STRFTIME('%Y', rech_kopf.ausst_dat) = '2025' GROUP BY month ORDER BY month",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.278,
+        "eval_count": 141,
+        "eval_duration_s": 2.716566,
+        "prompt_eval_count": 781
+      }
+    ],
+    "retried": false,
+    "eval_count": 141,
+    "eval_duration_s": 2.716566,
+    "prompt_eval_count": 781
+  },
+  "H03-BIZ": {
+    "raw": "```sql\nSELECT \n  strftime('%Y-%m', zahlg.zahl_dat) AS month,\n  SUM(rech_kopf.brutto_usd) AS billed_revenue,\n  SUM(COALESCE(vers_schad.ford_usd, 0)) AS insurance_claims,\n  SUM(COALESCE(vorf.ford_betr_usd, 0)) AS incident_claims,\n  SUM(COALESCE(wartg.teile_kost_usd, 0) + COALESCE(wartg.lohn_kost_usd, 0)) AS maintenance_costs,\n  SUM(COALESCE(wartg.teile_kost_usd, 0) + COALESCE(wartg.lohn_kost_usd, 0) + COALESCE(vers_schad.ford_usd, 0) + COALESCE(vorf.ford_betr_usd, 0)) AS total_expenses\nFROM \n  zahlg\nJOIN \n  rech_kopf ON zahlg.rech_id = rech_kopf.rech_id\nLEFT JOIN \n  vers_schad ON zahlg.rech_id = vers_schad.rech_id\nLEFT JOIN \n  vorf ON zahlg.rech_id = vorf.rech_id\nLEFT JOIN \n  wartg ON zahlg.rech_id = wartg.rech_id\nWHERE \n  strftime",
+    "error": "timeout",
+    "latency_s": 17.491,
+    "pass1_s": 0.023,
+    "pass2_s": 17.468,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT \n  strftime('%Y-%m', rech_kopf.ausst_dat) AS month,\n  SUM(rech_kopf.brutto_usd) AS billed_revenue,\n  SUM(COALESCE(vers_schad.ford_usd, 0)) AS insurance_claims,\n  SUM(COALESCE(vorf.ford_betr_usd, 0)) AS incident_claims,\n  SUM(COALESCE(wartg.teile_kost_usd, 0) + COALESCE(wartg.lohn_kost_usd, 0)) AS maintenance_costs,\n  SUM(COALESCE(wartg.teile_kost_usd, 0) + COALESCE(wartg.lohn_kost_usd, 0) + COALESCE(vers_schad.ford_usd, 0) + COALESCE(vorf.ford_betr_usd, 0)) AS total_expenses\nFROM \n  rech_kopf\nLEFT JOIN \n  vers_schad ON rech_kopf.rech_id = vers_schad.rech_id\nLEFT JOIN \n  vorf ON rech_kopf.sndg_nr = vorf.sndg_id\nLEFT JOIN \n  wartg ON rech_kopf.sndg_nr = wartg.sndg_nr\nWHERE \n  strftime('%Y', rech_kopf.aus",
+        "sql": "",
+        "model_error": "timeout",
+        "exec": "error",
+        "exec_error": "timeout",
+        "latency_s": 9.201,
+        "eval_count": 300,
+        "eval_duration_s": 5.947271,
+        "prompt_eval_count": 2638
+      },
+      {
+        "raw": "```sql\nSELECT \n  strftime('%Y-%m', zahlg.zahl_dat) AS month,\n  SUM(rech_kopf.brutto_usd) AS billed_revenue,\n  SUM(COALESCE(vers_schad.ford_usd, 0)) AS insurance_claims,\n  SUM(COALESCE(vorf.ford_betr_usd, 0)) AS incident_claims,\n  SUM(COALESCE(wartg.teile_kost_usd, 0) + COALESCE(wartg.lohn_kost_usd, 0)) AS maintenance_costs,\n  SUM(COALESCE(wartg.teile_kost_usd, 0) + COALESCE(wartg.lohn_kost_usd, 0) + COALESCE(vers_schad.ford_usd, 0) + COALESCE(vorf.ford_betr_usd, 0)) AS total_expenses\nFROM \n  zahlg\nJOIN \n  rech_kopf ON zahlg.rech_id = rech_kopf.rech_id\nLEFT JOIN \n  vers_schad ON zahlg.rech_id = vers_schad.rech_id\nLEFT JOIN \n  vorf ON zahlg.rech_id = vorf.rech_id\nLEFT JOIN \n  wartg ON zahlg.rech_id = wartg.rech_id\nWHERE \n  strftime",
+        "sql": "",
+        "model_error": "timeout",
+        "exec": "error",
+        "exec_error": "timeout",
+        "latency_s": 8.267,
+        "eval_count": 300,
+        "eval_duration_s": 6.094799,
+        "prompt_eval_count": 2662
+      }
+    ],
+    "retried": true,
+    "eval_count": 600,
+    "eval_duration_s": 12.042069999999999,
+    "prompt_eval_count": 2638
+  },
+  "H03-VAG": {
+    "raw": "```sql\nSELECT SUM(rech_kopf.brutto_usd) AS total_revenue FROM rech_kopf WHERE strftime('%Y', rech_kopf.ausst_dat) = '2023';\n```",
+    "error": null,
+    "latency_s": 3.672,
+    "pass1_s": 0.005,
+    "pass2_s": 3.667,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT SUM(rech_kopf.brutto_usd) AS total_revenue FROM rech_kopf WHERE strftime('%Y', rech_kopf.ausst_dat) = '2023';\n```",
+        "sql": "SELECT SUM(rech_kopf.brutto_usd) AS total_revenue FROM rech_kopf WHERE strftime('%Y', rech_kopf.ausst_dat) = '2023'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.667,
+        "eval_count": 49,
+        "eval_duration_s": 0.95892,
+        "prompt_eval_count": 3137
+      }
+    ],
+    "retried": false,
+    "eval_count": 49,
+    "eval_duration_s": 0.95892,
+    "prompt_eval_count": 3137
+  },
+  "H04-CAS": {
+    "raw": "```sql\nSELECT \n  strftime('%Y-%m', flug.abfl_ist) AS month, \n  COUNT(flug.flug_id) AS completed_flights, \n  SUM(wartg.arb_std) AS total_hours_maintenance, \n  SUM(betankg.verbr_kg) AS total_fuel_consumed, \n  SUM(betankg.co2_kg) AS total_co2_emitted\nFROM \n  flug\nJOIN \n  bes_eins ON flug.flug_id = bes_eins.flug_id\nJOIN \n  wartg ON flug.flug_id = wartg.flug_id\nJOIN \n  betankg ON flug.flug_id = betankg.flug_id\nWHERE \n  flug.stat = 'completed' AND bes_eins.eins_stat = 'completed' AND wartg.stat = 'completed'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+    "error": null,
+    "latency_s": 14.497,
+    "pass1_s": 0.022,
+    "pass2_s": 14.475,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT \n  strftime('%Y-%m', flug.abfl_ist) AS month, \n  COUNT(flug.flug_id) AS completed_flights, \n  SUM(wartg.arb_std) AS total_hours, \n  SUM(wartg.teile_kost_usd + wartg.lohn_kost_usd) AS total_cost, \n  LAG(COUNT(flug.flug_id)) OVER (ORDER BY strftime('%Y-%m', flug.abfl_ist)) - \n  COUNT(flug.flug_id) AS change_in_flights, \n  LAG(SUM(wartg.arb_std)) OVER (ORDER BY strftime('%Y-%m', flug.abfl_ist)) - \n  SUM(wartg.arb_std) AS change_in_hours, \n  LAG(SUM(wartg.teile_kost_usd + wartg.lohn_kost_usd)) OVER (ORDER BY strftime('%Y-%m', flug.abfl_ist)) - \n  SUM(wartg.teile_kost_usd + wartg.lohn_kost_usd) AS change_in_cost \nFROM \n  flug \nJOIN \n  bes_eins ON flug.flug_id = bes_eins.flug_id \nJOIN \n  wartg ON flug.flug_id = wartg.flug_id \nWHERE \n  flug.stat = 'completed' AND bes_eins.eins_stat = '",
+        "sql": "",
+        "model_error": "timeout",
+        "exec": "error",
+        "exec_error": "timeout",
+        "latency_s": 8.378,
+        "eval_count": 300,
+        "eval_duration_s": 5.8792,
+        "prompt_eval_count": 1917
+      },
+      {
+        "raw": "```sql\nSELECT \n  strftime('%Y-%m', flug.abfl_ist) AS month, \n  COUNT(flug.flug_id) AS completed_flights, \n  SUM(wartg.arb_std) AS total_hours_maintenance, \n  SUM(betankg.verbr_kg) AS total_fuel_consumed, \n  SUM(betankg.co2_kg) AS total_co2_emitted\nFROM \n  flug\nJOIN \n  bes_eins ON flug.flug_id = bes_eins.flug_id\nJOIN \n  wartg ON flug.flug_id = wartg.flug_id\nJOIN \n  betankg ON flug.flug_id = betankg.flug_id\nWHERE \n  flug.stat = 'completed' AND bes_eins.eins_stat = 'completed' AND wartg.stat = 'completed'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+        "sql": "SELECT strftime('%Y-%m', flug.abfl_ist) AS month, COUNT(flug.flug_id) AS completed_flights, SUM(wartg.arb_std) AS total_hours_maintenance, SUM(betankg.verbr_kg) AS total_fuel_consumed, SUM(betankg.co2_kg) AS total_co2_emitted FROM flug JOIN bes_eins ON flug.flug_id = bes_eins.flug_id JOIN wartg ON flug.flug_id = wartg.flug_id JOIN betankg ON flug.flug_id = betankg.flug_id WHERE flug.stat = 'completed' AND bes_eins.eins_stat = 'completed' AND wartg.stat = 'completed' GROUP BY month ORDER BY month",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: wartg.flug_id",
+        "latency_s": 6.097,
+        "eval_count": 197,
+        "eval_duration_s": 3.899469,
+        "prompt_eval_count": 1941
+      }
+    ],
+    "retried": true,
+    "eval_count": 497,
+    "eval_duration_s": 9.778669,
+    "prompt_eval_count": 1917
+  },
+  "H04-SCH": {
+    "raw": "```sql\nSELECT \n  strftime('%Y-%m', flug.abfl_ist) AS month, \n  COUNT(flug.flug_id) AS completed_flights, \n  LAG(COUNT(flug.flug_id)) OVER (ORDER BY strftime('%Y-%m', flug.abfl_ist)) - COUNT(flug.flug_id) AS difference\nFROM \n  flug\nWHERE \n  flug.stat = 'completed'\nGROUP BY \n  strftime('%Y-%m', flug.abfl_ist)\nORDER BY \n  month;\n```",
+    "error": null,
+    "latency_s": 4.875,
+    "pass1_s": 0.023,
+    "pass2_s": 4.852,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT \n  strftime('%Y-%m', flug.abfl_ist) AS month, \n  COUNT(flug.flug_id) AS completed_flights, \n  LAG(COUNT(flug.flug_id)) OVER (ORDER BY strftime('%Y-%m', flug.abfl_ist)) - COUNT(flug.flug_id) AS difference\nFROM \n  flug\nWHERE \n  flug.stat = 'completed'\nGROUP BY \n  strftime('%Y-%m', flug.abfl_ist)\nORDER BY \n  month;\n```",
+        "sql": "SELECT strftime('%Y-%m', flug.abfl_ist) AS month, COUNT(flug.flug_id) AS completed_flights, LAG(COUNT(flug.flug_id)) OVER (ORDER BY strftime('%Y-%m', flug.abfl_ist)) - COUNT(flug.flug_id) AS difference FROM flug WHERE flug.stat = 'completed' GROUP BY strftime('%Y-%m', flug.abfl_ist) ORDER BY month",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.852,
+        "eval_count": 117,
+        "eval_duration_s": 2.304045,
+        "prompt_eval_count": 2209
+      }
+    ],
+    "retried": false,
+    "eval_count": 117,
+    "eval_duration_s": 2.304045,
+    "prompt_eval_count": 2209
+  },
+  "H04-BIZ": {
+    "raw": "```sql\nSELECT \n  strftime('%Y-%m', flug.abfl_ist) AS month,\n  SUM(sndg.ges_vol_m3) AS total_volume,\n  SUM(sndg.ges_vol_m3) - LAG(SUM(sndg.ges_vol_m3)) OVER (ORDER BY strftime('%Y-%m', flug.abfl_ist)) AS month_over_month_change\nFROM \n  flug\nJOIN \n  flug_ladg ON flug.flug_id = flug_ladg.flug_id\nJOIN \n  sndg ON flug_ladg.sndg_nr = sndg.sndg_nr\nWHERE \n  flug.stat = 'completed'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+    "error": null,
+    "latency_s": 6.733,
+    "pass1_s": 0.014,
+    "pass2_s": 6.719,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT \n  strftime('%Y-%m', flug.abfl_ist) AS month,\n  SUM(sndg.ges_vol_m3) AS total_volume,\n  SUM(sndg.ges_vol_m3) - LAG(SUM(sndg.ges_vol_m3)) OVER (ORDER BY strftime('%Y-%m', flug.abfl_ist)) AS month_over_month_change\nFROM \n  flug\nJOIN \n  flug_ladg ON flug.flug_id = flug_ladg.flug_id\nJOIN \n  sndg ON flug_ladg.sndg_nr = sndg.sndg_nr\nWHERE \n  flug.stat = 'completed'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+        "sql": "SELECT strftime('%Y-%m', flug.abfl_ist) AS month, SUM(sndg.ges_vol_m3) AS total_volume, SUM(sndg.ges_vol_m3) - LAG(SUM(sndg.ges_vol_m3)) OVER (ORDER BY strftime('%Y-%m', flug.abfl_ist)) AS month_over_month_change FROM flug JOIN flug_ladg ON flug.flug_id = flug_ladg.flug_id JOIN sndg ON flug_ladg.sndg_nr = sndg.sndg_nr WHERE flug.stat = 'completed' GROUP BY month ORDER BY month",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 6.719,
+        "eval_count": 162,
+        "eval_duration_s": 3.229675,
+        "prompt_eval_count": 3367
+      }
+    ],
+    "retried": false,
+    "eval_count": 162,
+    "eval_duration_s": 3.229675,
+    "prompt_eval_count": 3367
+  },
+  "H04-VAG": {
+    "raw": "```sql\nSELECT \n  strftime('%Y-%m', flug.abfl_ist) AS month, \n  COUNT(flug.flug_id) AS flight_count, \n  SUM(betankg.verbr_kg) AS total_fuel_consumed, \n  SUM(betankg.co2_kg) AS total_co2_emitted \nFROM \n  flug \nJOIN \n  betankg ON flug.flug_id = betankg.flug_id \nWHERE \n  flug.stat = 'completed' \nGROUP BY \n  month \nORDER BY \n  month;\n```",
+    "error": null,
+    "latency_s": 5.203,
+    "pass1_s": 0.01,
+    "pass2_s": 5.193,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT \n  strftime('%Y-%m', flug.abfl_ist) AS month, \n  COUNT(flug.flug_id) AS flight_count, \n  SUM(betankg.verbr_kg) AS total_fuel_consumed, \n  SUM(betankg.co2_kg) AS total_co2_emitted \nFROM \n  flug \nJOIN \n  betankg ON flug.flug_id = betankg.flug_id \nWHERE \n  flug.stat = 'completed' \nGROUP BY \n  month \nORDER BY \n  month;\n```",
+        "sql": "SELECT strftime('%Y-%m', flug.abfl_ist) AS month, COUNT(flug.flug_id) AS flight_count, SUM(betankg.verbr_kg) AS total_fuel_consumed, SUM(betankg.co2_kg) AS total_co2_emitted FROM flug JOIN betankg ON flug.flug_id = betankg.flug_id WHERE flug.stat = 'completed' GROUP BY month ORDER BY month",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.193,
+        "eval_count": 124,
+        "eval_duration_s": 2.426235,
+        "prompt_eval_count": 2142
+      }
+    ],
+    "retried": false,
+    "eval_count": 124,
+    "eval_duration_s": 2.426235,
+    "prompt_eval_count": 2142
+  },
+  "H05-CAS": {
+    "raw": "```sql\nSELECT lfz.lfz_nr, lfz.kennz, AVG(julianday(flug.ank_ist) - julianday(flug.abfl_ist)) AS avg_ground_time\nFROM lfz\nJOIN flug ON lfz.lfz_nr = flug.lfz_nr\nWHERE flug.stat = 'completed'\nGROUP BY lfz.lfz_nr\nORDER BY avg_ground_time ASC\nLIMIT 5;\n```",
+    "error": null,
+    "latency_s": 4.724,
+    "pass1_s": 0.017,
+    "pass2_s": 4.707,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz.lfz_nr, lfz.kennz, AVG(julianday(flug.ank_ist) - julianday(flug.abfl_ist)) AS avg_ground_time\nFROM lfz\nJOIN flug ON lfz.lfz_nr = flug.lfz_nr\nWHERE flug.stat = 'completed'\nGROUP BY lfz.lfz_nr\nORDER BY avg_ground_time ASC\nLIMIT 5;\n```",
+        "sql": "SELECT lfz.lfz_nr, lfz.kennz, AVG(julianday(flug.ank_ist) - julianday(flug.abfl_ist)) AS avg_ground_time FROM lfz JOIN flug ON lfz.lfz_nr = flug.lfz_nr WHERE flug.stat = 'completed' GROUP BY lfz.lfz_nr ORDER BY avg_ground_time ASC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.707,
+        "eval_count": 98,
+        "eval_duration_s": 1.916995,
+        "prompt_eval_count": 2272
+      }
+    ],
+    "retried": false,
+    "eval_count": 98,
+    "eval_duration_s": 1.916995,
+    "prompt_eval_count": 2272
+  },
+  "H05-SCH": {
+    "raw": "```sql\nSELECT lfz.kennz, AVG((julianday(flg.abfl_ist) - julianday(flg.ank_ist)) * 24) AS avg_time_diff \nFROM lfz \nJOIN flug ON lfz.lfz_nr = flg.lfz_nr \nWHERE flg.stat = 'completed' \nGROUP BY lfz.kennz \nORDER BY avg_time_diff ASC \nLIMIT 5\n```",
+    "error": null,
+    "latency_s": 9.53,
+    "pass1_s": 0.036,
+    "pass2_s": 9.494,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz.kennz, AVG((julianday(flg.abfl_ist) - julianday(flg.ank_ist)) * 24) AS avg_time_diff\nFROM lfz\nJOIN flug ON lfz.lfz_nr = flg.lfz_nr\nWHERE flg.stat = 'completed'\nGROUP BY lfz.kennz\nORDER BY avg_time_diff ASC\nLIMIT 5;\n```",
+        "sql": "SELECT lfz.kennz, AVG((julianday(flg.abfl_ist) - julianday(flg.ank_ist)) * 24) AS avg_time_diff FROM lfz JOIN flug ON lfz.lfz_nr = flg.lfz_nr WHERE flg.stat = 'completed' GROUP BY lfz.kennz ORDER BY avg_time_diff ASC LIMIT 5",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flg.ank_ist",
+        "latency_s": 5.214,
+        "eval_count": 96,
+        "eval_duration_s": 1.902747,
+        "prompt_eval_count": 3287
+      },
+      {
+        "raw": "```sql\nSELECT lfz.kennz, AVG((julianday(flg.abfl_ist) - julianday(flg.ank_ist)) * 24) AS avg_time_diff \nFROM lfz \nJOIN flug ON lfz.lfz_nr = flg.lfz_nr \nWHERE flg.stat = 'completed' \nGROUP BY lfz.kennz \nORDER BY avg_time_diff ASC \nLIMIT 5\n```",
+        "sql": "SELECT lfz.kennz, AVG((julianday(flg.abfl_ist) - julianday(flg.ank_ist)) * 24) AS avg_time_diff FROM lfz JOIN flug ON lfz.lfz_nr = flg.lfz_nr WHERE flg.stat = 'completed' GROUP BY lfz.kennz ORDER BY avg_time_diff ASC LIMIT 5",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flg.ank_ist",
+        "latency_s": 4.28,
+        "eval_count": 97,
+        "eval_duration_s": 1.966213,
+        "prompt_eval_count": 3397
+      }
+    ],
+    "retried": true,
+    "eval_count": 193,
+    "eval_duration_s": 3.86896,
+    "prompt_eval_count": 3287
+  },
+  "H05-BIZ": {
+    "raw": "```sql\nSELECT lfz.lfz_nr, lfz.kennz, AVG(julianday(flug.ank_ist) - julianday(flug.abfl_ist)) AS avg_turnaround\nFROM lfz\nJOIN flug ON lfz.lfz_nr = flug.lfz_nr\nWHERE flug.stat = 'completed'\nGROUP BY lfz.lfz_nr\nORDER BY avg_turnaround ASC\nLIMIT 5;\n```",
+    "error": null,
+    "latency_s": 4.42,
+    "pass1_s": 0.013,
+    "pass2_s": 4.407,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz.lfz_nr, lfz.kennz, AVG(julianday(flug.ank_ist) - julianday(flug.abfl_ist)) AS avg_turnaround\nFROM lfz\nJOIN flug ON lfz.lfz_nr = flug.lfz_nr\nWHERE flug.stat = 'completed'\nGROUP BY lfz.lfz_nr\nORDER BY avg_turnaround ASC\nLIMIT 5;\n```",
+        "sql": "SELECT lfz.lfz_nr, lfz.kennz, AVG(julianday(flug.ank_ist) - julianday(flug.abfl_ist)) AS avg_turnaround FROM lfz JOIN flug ON lfz.lfz_nr = flug.lfz_nr WHERE flug.stat = 'completed' GROUP BY lfz.lfz_nr ORDER BY avg_turnaround ASC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.407,
+        "eval_count": 98,
+        "eval_duration_s": 1.967553,
+        "prompt_eval_count": 2238
+      }
+    ],
+    "retried": false,
+    "eval_count": 98,
+    "eval_duration_s": 1.967553,
+    "prompt_eval_count": 2238
+  },
+  "H05-VAG": {
+    "raw": "```sql\nSELECT param_wert FROM bm_param WHERE param_schl = 'as_of_timestamp';\n```",
+    "error": null,
+    "latency_s": 2.735,
+    "pass1_s": 0.003,
+    "pass2_s": 2.732,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT param_wert FROM bm_param WHERE param_schl = 'as_of_timestamp';\n```",
+        "sql": "SELECT param_wert FROM bm_param WHERE param_schl = 'as_of_timestamp'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.732,
+        "eval_count": 22,
+        "eval_duration_s": 0.403105,
+        "prompt_eval_count": 206
+      }
+    ],
+    "retried": false,
+    "eval_count": 22,
+    "eval_duration_s": 0.403105,
+    "prompt_eval_count": 206
+  },
+  "H06-CAS": {
+    "raw": "```sql\nSELECT knd_stamm.name1, knd_stamm.kunnr, SUM(rech_kopf.brutto_usd) AS total_invoiced, (SUM(rech_kopf.brutto_usd) / (SELECT SUM(brutto_usd) FROM rech_kopf)) * 100 AS share \nFROM knd_stamm \nJOIN sndg ON knd_stamm.kunnr = sndg.kunnr \nJOIN rech_kopf ON sndg.sndg_nr = rech_kopf.sndg_nr \nWHERE knd_stamm.kunnr IN ( \n    SELECT kunnr \n    FROM vorf \n    WHERE gemeldet_von = 'customer' \n    GROUP BY kunnr \n    HAVING COUNT(*) > 4 \n) \nGROUP BY knd_stamm.name1, knd_stamm.kunnr \nORDER BY share DESC;\n```",
+    "error": null,
+    "latency_s": 13.295,
+    "pass1_s": 0.02,
+    "pass2_s": 13.275,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT knd_stamm.name1, knd_stamm.kunnr, SUM(rech_kopf.brutto_usd) AS total_invoiced, (SUM(rech_kopf.brutto_usd) / (SELECT SUM(brutto_usd) FROM rech_kopf)) * 100 AS share\nFROM knd_stamm\nJOIN sndg ON knd_stamm.kunnr = sndg.kunnr\nJOIN rech_kopf ON sndg.sndg_nr = rech_kopf.sndg_nr\nWHERE knd_stamm.kto_cd IN (\n    SELECT kunnr\n    FROM vorf\n    WHERE gemeldet_von = 'customer'\n    GROUP BY kunnr\n    HAVING COUNT(*) > 4\n)\nGROUP BY knd_stamm.name1, knd_stamm.kunnr\nORDER BY share DESC;\n```",
+        "sql": "SELECT knd_stamm.name1, knd_stamm.kunnr, SUM(rech_kopf.brutto_usd) AS total_invoiced, (SUM(rech_kopf.brutto_usd) / (SELECT SUM(brutto_usd) FROM rech_kopf)) * 100 AS share FROM knd_stamm JOIN sndg ON knd_stamm.kunnr = sndg.kunnr JOIN rech_kopf ON sndg.sndg_nr = rech_kopf.sndg_nr WHERE knd_stamm.kto_cd IN ( SELECT kunnr FROM vorf WHERE gemeldet_von = 'customer' GROUP BY kunnr HAVING COUNT(*) > 4 ) GROUP BY knd_stamm.name1, knd_stamm.kunnr ORDER BY share DESC",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "ambiguous column name: kunnr",
+        "latency_s": 7.019,
+        "eval_count": 193,
+        "eval_duration_s": 3.826947,
+        "prompt_eval_count": 2941
+      },
+      {
+        "raw": "```sql\nSELECT knd_stamm.name1, knd_stamm.kunnr, SUM(rech_kopf.brutto_usd) AS total_invoiced, (SUM(rech_kopf.brutto_usd) / (SELECT SUM(brutto_usd) FROM rech_kopf)) * 100 AS share \nFROM knd_stamm \nJOIN sndg ON knd_stamm.kunnr = sndg.kunnr \nJOIN rech_kopf ON sndg.sndg_nr = rech_kopf.sndg_nr \nWHERE knd_stamm.kunnr IN ( \n    SELECT kunnr \n    FROM vorf \n    WHERE gemeldet_von = 'customer' \n    GROUP BY kunnr \n    HAVING COUNT(*) > 4 \n) \nGROUP BY knd_stamm.name1, knd_stamm.kunnr \nORDER BY share DESC;\n```",
+        "sql": "SELECT knd_stamm.name1, knd_stamm.kunnr, SUM(rech_kopf.brutto_usd) AS total_invoiced, (SUM(rech_kopf.brutto_usd) / (SELECT SUM(brutto_usd) FROM rech_kopf)) * 100 AS share FROM knd_stamm JOIN sndg ON knd_stamm.kunnr = sndg.kunnr JOIN rech_kopf ON sndg.sndg_nr = rech_kopf.sndg_nr WHERE knd_stamm.kunnr IN ( SELECT kunnr FROM vorf WHERE gemeldet_von = 'customer' GROUP BY kunnr HAVING COUNT(*) > 4 ) GROUP BY knd_stamm.name1, knd_stamm.kunnr ORDER BY share DESC",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "ambiguous column name: kunnr",
+        "latency_s": 6.256,
+        "eval_count": 196,
+        "eval_duration_s": 3.898081,
+        "prompt_eval_count": 3136
+      }
+    ],
+    "retried": true,
+    "eval_count": 389,
+    "eval_duration_s": 7.725028,
+    "prompt_eval_count": 2941
+  },
+  "H06-SCH": {
+    "raw": "```sql\nSELECT knd_stamm.name1, SUM(rech_kopf.brutto_usd) / ( SELECT SUM(brutto_usd) FROM rech_kopf ) AS avg_brutto_per_customer\nFROM zahlg\nJOIN rech_kopf ON zahlg.rech_id = rech_kopf.rech_id\nJOIN sndg ON rech_kopf.sndg_nr = sndg.sndg_nr\nJOIN knd_stamm ON zahlg.kunnr = knd_stamm.kunnr\nWHERE zahlg.orig_waehr = 'USD'\nGROUP BY knd_stamm.name1\nHAVING COUNT(rech_kopf.rech_id) * 100 / ( SELECT COUNT(rech_kopf.rech_id) FROM rech_kopf ) > 4;\n```",
+    "error": null,
+    "latency_s": 6.547,
+    "pass1_s": 0.025,
+    "pass2_s": 6.522,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT knd_stamm.name1, SUM(rech_kopf.brutto_usd) / ( SELECT SUM(brutto_usd) FROM rech_kopf ) AS avg_brutto_per_customer\nFROM zahlg\nJOIN rech_kopf ON zahlg.rech_id = rech_kopf.rech_id\nJOIN sndg ON rech_kopf.sndg_nr = sndg.sndg_nr\nJOIN knd_stamm ON zahlg.kunnr = knd_stamm.kunnr\nWHERE zahlg.orig_waehr = 'USD'\nGROUP BY knd_stamm.name1\nHAVING COUNT(rech_kopf.rech_id) * 100 / ( SELECT COUNT(rech_kopf.rech_id) FROM rech_kopf ) > 4;\n```",
+        "sql": "SELECT knd_stamm.name1, SUM(rech_kopf.brutto_usd) / ( SELECT SUM(brutto_usd) FROM rech_kopf ) AS avg_brutto_per_customer FROM zahlg JOIN rech_kopf ON zahlg.rech_id = rech_kopf.rech_id JOIN sndg ON rech_kopf.sndg_nr = sndg.sndg_nr JOIN knd_stamm ON zahlg.kunnr = knd_stamm.kunnr WHERE zahlg.orig_waehr = 'USD' GROUP BY knd_stamm.name1 HAVING COUNT(rech_kopf.rech_id) * 100 / ( SELECT COUNT(rech_kopf.rech_id) FROM rech_kopf ) > 4",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 6.522,
+        "eval_count": 179,
+        "eval_duration_s": 3.519177,
+        "prompt_eval_count": 2403
+      }
+    ],
+    "retried": false,
+    "eval_count": 179,
+    "eval_duration_s": 3.519177,
+    "prompt_eval_count": 2403
+  },
+  "H06-BIZ": {
+    "raw": "```sql\nSELECT knd_stamm.kto_cd, SUM(rech_kopf.brutto_usd) AS revenue, SUM(rech_kopf.brutto_usd) * 100 / (SELECT SUM(brutto_usd) FROM rech_kopf) AS share FROM knd_stamm JOIN rech_kopf ON knd_stamm.kunnr = rech_kopf.kunnr GROUP BY knd_stamm.kto_cd HAVING SUM(rech_kopf.brutto_usd) > (SELECT SUM(brutto_usd) FROM rech_kopf) * 0.04\n```",
+    "error": null,
+    "latency_s": 10.228,
+    "pass1_s": 0.017,
+    "pass2_s": 10.211,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT knd_stamm.kto_cd, SUM(rech_kopf.brutto_usd) AS revenue, SUM(rech_kopf.brutto_usd) * 100 / (SELECT SUM(brutto_usd) FROM rech_kopf) AS share\nFROM knd_stamm\nJOIN rech_kopf ON knd_stamm.kunnr = rech_kopf.kunnr\nGROUP BY knd_stamm.kto_cd\nHAVING SUM(rech_kopf.brutto_usd) > (SELECT SUM(brutto_usd) FROM rech_kopf) * 0.04;\n```",
+        "sql": "SELECT knd_stamm.kto_cd, SUM(rech_kopf.brutto_usd) AS revenue, SUM(rech_kopf.brutto_usd) * 100 / (SELECT SUM(brutto_usd) FROM rech_kopf) AS share FROM knd_stamm JOIN rech_kopf ON knd_stamm.kunnr = rech_kopf.kunnr GROUP BY knd_stamm.kto_cd HAVING SUM(rech_kopf.brutto_usd) > (SELECT SUM(brutto_usd) FROM rech_kopf) * 0.04",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: rech_kopf.kunnr",
+        "latency_s": 5.175,
+        "eval_count": 139,
+        "eval_duration_s": 2.779027,
+        "prompt_eval_count": 2323
+      },
+      {
+        "raw": "```sql\nSELECT knd_stamm.kto_cd, SUM(rech_kopf.brutto_usd) AS revenue, SUM(rech_kopf.brutto_usd) * 100 / (SELECT SUM(brutto_usd) FROM rech_kopf) AS share FROM knd_stamm JOIN rech_kopf ON knd_stamm.kunnr = rech_kopf.kunnr GROUP BY knd_stamm.kto_cd HAVING SUM(rech_kopf.brutto_usd) > (SELECT SUM(brutto_usd) FROM rech_kopf) * 0.04\n```",
+        "sql": "SELECT knd_stamm.kto_cd, SUM(rech_kopf.brutto_usd) AS revenue, SUM(rech_kopf.brutto_usd) * 100 / (SELECT SUM(brutto_usd) FROM rech_kopf) AS share FROM knd_stamm JOIN rech_kopf ON knd_stamm.kunnr = rech_kopf.kunnr GROUP BY knd_stamm.kto_cd HAVING SUM(rech_kopf.brutto_usd) > (SELECT SUM(brutto_usd) FROM rech_kopf) * 0.04",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: rech_kopf.kunnr",
+        "latency_s": 5.036,
+        "eval_count": 135,
+        "eval_duration_s": 2.696598,
+        "prompt_eval_count": 2479
+      }
+    ],
+    "retried": true,
+    "eval_count": 274,
+    "eval_duration_s": 5.475625,
+    "prompt_eval_count": 2323
+  },
+  "H06-VAG": {
+    "raw": "```sql\nSELECT knd_stamm.kunnr, knd_stamm.name1, SUM(rech_kopf.brutto_usd) AS total_revenue, SUM(zahlg.betr_usd) AS total_paid, SUM(zahlg.betr_usd) / SUM(rech_kopf.brutto_usd) AS revenue_share\nFROM knd_stamm\nJOIN rech_kopf ON knd_stamm.kunnr = rech_kopf.sndg_nr\nJOIN zahlg ON rech_kopf.rech_id = zahlg.rech_id\nGROUP BY knd_stamm.kunnr, knd_stamm.name1\nORDER BY revenue_share DESC;\n```",
+    "error": null,
+    "latency_s": 6.001,
+    "pass1_s": 0.011,
+    "pass2_s": 5.99,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT knd_stamm.kunnr, knd_stamm.name1, SUM(rech_kopf.brutto_usd) AS total_revenue, SUM(zahlg.betr_usd) AS total_paid, SUM(zahlg.betr_usd) / SUM(rech_kopf.brutto_usd) AS revenue_share\nFROM knd_stamm\nJOIN rech_kopf ON knd_stamm.kunnr = rech_kopf.sndg_nr\nJOIN zahlg ON rech_kopf.rech_id = zahlg.rech_id\nGROUP BY knd_stamm.kunnr, knd_stamm.name1\nORDER BY revenue_share DESC;\n```",
+        "sql": "SELECT knd_stamm.kunnr, knd_stamm.name1, SUM(rech_kopf.brutto_usd) AS total_revenue, SUM(zahlg.betr_usd) AS total_paid, SUM(zahlg.betr_usd) / SUM(rech_kopf.brutto_usd) AS revenue_share FROM knd_stamm JOIN rech_kopf ON knd_stamm.kunnr = rech_kopf.sndg_nr JOIN zahlg ON rech_kopf.rech_id = zahlg.rech_id GROUP BY knd_stamm.kunnr, knd_stamm.name1 ORDER BY revenue_share DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.99,
+        "eval_count": 150,
+        "eval_duration_s": 2.922029,
+        "prompt_eval_count": 1896
+      }
+    ],
+    "retried": false,
+    "eval_count": 150,
+    "eval_duration_s": 2.922029,
+    "prompt_eval_count": 1896
+  },
+  "H07-CAS": {
+    "raw": "```sql\nSELECT flghf.fh_nr, flghf.bez, SUM(sndg.fracht_gew_kg) AS total_cargo FROM flghf JOIN flug_ladg ON flghf.fh_nr = flug_ladg.urspr_fh JOIN sndg ON flug_ladg.sndg_nr = sndg.sndg_nr GROUP BY flghf.fh_nr, flghf.bez ORDER BY total_cargo DESC LIMIT 5\n```",
+    "error": null,
+    "latency_s": 9.433,
+    "pass1_s": 0.022,
+    "pass2_s": 9.411,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.fh_nr, flghf.bez, SUM(sndg.fracht_gew_kg) AS total_cargo\nFROM flghf\nJOIN flug_ladg ON flghf.fh_nr = flug_ladg.urspr_fh\nJOIN sndg ON flug_ladg.sndg_nr = sndg.sndg_nr\nGROUP BY flghf.fh_nr, flghf.bez\nORDER BY total_cargo DESC\nLIMIT 5;\n```",
+        "sql": "SELECT flghf.fh_nr, flghf.bez, SUM(sndg.fracht_gew_kg) AS total_cargo FROM flghf JOIN flug_ladg ON flghf.fh_nr = flug_ladg.urspr_fh JOIN sndg ON flug_ladg.sndg_nr = sndg.sndg_nr GROUP BY flghf.fh_nr, flghf.bez ORDER BY total_cargo DESC LIMIT 5",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flug_ladg.urspr_fh",
+        "latency_s": 4.977,
+        "eval_count": 111,
+        "eval_duration_s": 2.172161,
+        "prompt_eval_count": 2267
+      },
+      {
+        "raw": "```sql\nSELECT flghf.fh_nr, flghf.bez, SUM(sndg.fracht_gew_kg) AS total_cargo FROM flghf JOIN flug_ladg ON flghf.fh_nr = flug_ladg.urspr_fh JOIN sndg ON flug_ladg.sndg_nr = sndg.sndg_nr GROUP BY flghf.fh_nr, flghf.bez ORDER BY total_cargo DESC LIMIT 5\n```",
+        "sql": "SELECT flghf.fh_nr, flghf.bez, SUM(sndg.fracht_gew_kg) AS total_cargo FROM flghf JOIN flug_ladg ON flghf.fh_nr = flug_ladg.urspr_fh JOIN sndg ON flug_ladg.sndg_nr = sndg.sndg_nr GROUP BY flghf.fh_nr, flghf.bez ORDER BY total_cargo DESC LIMIT 5",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flug_ladg.urspr_fh",
+        "latency_s": 4.434,
+        "eval_count": 105,
+        "eval_duration_s": 2.115197,
+        "prompt_eval_count": 2394
+      }
+    ],
+    "retried": true,
+    "eval_count": 216,
+    "eval_duration_s": 4.287358,
+    "prompt_eval_count": 2267
+  },
+  "H07-SCH": {
+    "raw": "```sql\nSELECT flghf.bez, SUM(sndg.ges_gew_kg / 1000) AS tonnage, DENSE_RANK() OVER (ORDER BY SUM(sndg.ges_gew_kg / 1000) DESC) AS rank FROM flug_ladg JOIN flug ON flug_ladg.flug_id = flug.flug_id JOIN sndg ON flug_ladg.sndg_nr = sndg.sndg_nr JOIN flghf ON flug.urspr_fh = flghf.fh_nr WHERE flug_ladg.abschn_stat = 'flown' GROUP BY flghf.bez ORDER BY tonnage DESC LIMIT 5\n```",
+    "error": null,
+    "latency_s": 12.24,
+    "pass1_s": 0.033,
+    "pass2_s": 12.207,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.bez, SUM(sndg.ges_gew_kg / 1000) AS tonnage, DENSE_RANK() OVER (ORDER BY SUM(sndg.ges_gew_kg / 1000) DESC) AS rank\nFROM flug_ladg\nJOIN flug ON flug_ladg.flug_id = flug.flug_id\nJOIN sndg ON flug_ladg.sndg_nr = sndg.sndg_nr\nJOIN flghf ON flug.urspr_fh = flghf.fh_nr\nWHERE flug_ladg.abschn_stat = 'flown'\nGROUP BY flghf.bez\nORDER BY tonnage DESC\nLIMIT 5;\n```",
+        "sql": "SELECT flghf.bez, SUM(sndg.ges_gew_kg / 1000) AS tonnage, DENSE_RANK() OVER (ORDER BY SUM(sndg.ges_gew_kg / 1000) DESC) AS rank FROM flug_ladg JOIN flug ON flug_ladg.flug_id = flug.flug_id JOIN sndg ON flug_ladg.sndg_nr = sndg.sndg_nr JOIN flghf ON flug.urspr_fh = flghf.fh_nr WHERE flug_ladg.abschn_stat = 'flown' GROUP BY flghf.bez ORDER BY tonnage DESC LIMIT 5",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flug.urspr_fh",
+        "latency_s": 6.726,
+        "eval_count": 161,
+        "eval_duration_s": 3.203384,
+        "prompt_eval_count": 3221
+      },
+      {
+        "raw": "```sql\nSELECT flghf.bez, SUM(sndg.ges_gew_kg / 1000) AS tonnage, DENSE_RANK() OVER (ORDER BY SUM(sndg.ges_gew_kg / 1000) DESC) AS rank FROM flug_ladg JOIN flug ON flug_ladg.flug_id = flug.flug_id JOIN sndg ON flug_ladg.sndg_nr = sndg.sndg_nr JOIN flghf ON flug.urspr_fh = flghf.fh_nr WHERE flug_ladg.abschn_stat = 'flown' GROUP BY flghf.bez ORDER BY tonnage DESC LIMIT 5\n```",
+        "sql": "SELECT flghf.bez, SUM(sndg.ges_gew_kg / 1000) AS tonnage, DENSE_RANK() OVER (ORDER BY SUM(sndg.ges_gew_kg / 1000) DESC) AS rank FROM flug_ladg JOIN flug ON flug_ladg.flug_id = flug.flug_id JOIN sndg ON flug_ladg.sndg_nr = sndg.sndg_nr JOIN flghf ON flug.urspr_fh = flghf.fh_nr WHERE flug_ladg.abschn_stat = 'flown' GROUP BY flghf.bez ORDER BY tonnage DESC LIMIT 5",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flug.urspr_fh",
+        "latency_s": 5.481,
+        "eval_count": 154,
+        "eval_duration_s": 3.135166,
+        "prompt_eval_count": 3394
+      }
+    ],
+    "retried": true,
+    "eval_count": 315,
+    "eval_duration_s": 6.33855,
+    "prompt_eval_count": 3221
+  },
+  "H07-BIZ": {
+    "raw": "```sql\nSELECT flghf.bez AS airport, SUM(CASE WHEN sdg_verfolg.ereig_cd = 'DLV' THEN 1 ELSE 0 END) AS outbound_tonnage\nFROM flghf\nJOIN sdg_verfolg ON flghf.fh_nr = sdg_verfolg.fh_nr\nWHERE flghf.hub_kz = 1 AND flghf.nachtflugverb_kz = 0\nGROUP BY flghf.fh_nr\nORDER BY outbound_tonnage DESC\nLIMIT 5;\n```",
+    "error": null,
+    "latency_s": 5.502,
+    "pass1_s": 0.015,
+    "pass2_s": 5.487,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.bez AS airport, SUM(CASE WHEN sdg_verfolg.ereig_cd = 'DLV' THEN 1 ELSE 0 END) AS outbound_tonnage\nFROM flghf\nJOIN sdg_verfolg ON flghf.fh_nr = sdg_verfolg.fh_nr\nWHERE flghf.hub_kz = 1 AND flghf.nachtflugverb_kz = 0\nGROUP BY flghf.fh_nr\nORDER BY outbound_tonnage DESC\nLIMIT 5;\n```",
+        "sql": "SELECT flghf.bez AS airport, SUM(CASE WHEN sdg_verfolg.ereig_cd = 'DLV' THEN 1 ELSE 0 END) AS outbound_tonnage FROM flghf JOIN sdg_verfolg ON flghf.fh_nr = sdg_verfolg.fh_nr WHERE flghf.hub_kz = 1 AND flghf.nachtflugverb_kz = 0 GROUP BY flghf.fh_nr ORDER BY outbound_tonnage DESC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.487,
+        "eval_count": 121,
+        "eval_duration_s": 2.368612,
+        "prompt_eval_count": 1991
+      }
+    ],
+    "retried": false,
+    "eval_count": 121,
+    "eval_duration_s": 2.368612,
+    "prompt_eval_count": 1991
+  },
+  "H07-VAG": {
+    "raw": "```sql\nSELECT flghf.bez, flghf.fh_nr, flghf.hub_kz, flghf.nachtflugverb_kz, flghf.reg, flghf.anz_slb, COUNT(zoll_anm.anm_id) AS export_count FROM flghf JOIN zoll_anm ON flghf.fh_nr = zoll_anm.sndg_nr WHERE zoll_anm.anm_art = 'export' GROUP BY flghf.fh_nr ORDER BY export_count DESC LIMIT 10\n```",
+    "error": null,
+    "latency_s": 9.72,
+    "pass1_s": 0.006,
+    "pass2_s": 9.714,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT flghf.bez, flghf.fh_nr, flghf.hub_kz, flghf.nachtflugverb_kz, flghf.reg, flghf.anz_slb, COUNT(zoll_anm.anm_id) AS export_count\nFROM flghf\nJOIN zoll_anm ON flghf.fh_nr = zoll_anm.fh_nr\nWHERE zoll_anm.anm_art = 'export'\nGROUP BY flghf.fh_nr\nORDER BY export_count DESC\nLIMIT 10;\n```",
+        "sql": "SELECT flghf.bez, flghf.fh_nr, flghf.hub_kz, flghf.nachtflugverb_kz, flghf.reg, flghf.anz_slb, COUNT(zoll_anm.anm_id) AS export_count FROM flghf JOIN zoll_anm ON flghf.fh_nr = zoll_anm.fh_nr WHERE zoll_anm.anm_art = 'export' GROUP BY flghf.fh_nr ORDER BY export_count DESC LIMIT 10",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: zoll_anm.fh_nr",
+        "latency_s": 5.062,
+        "eval_count": 122,
+        "eval_duration_s": 2.357474,
+        "prompt_eval_count": 1182
+      },
+      {
+        "raw": "```sql\nSELECT flghf.bez, flghf.fh_nr, flghf.hub_kz, flghf.nachtflugverb_kz, flghf.reg, flghf.anz_slb, COUNT(zoll_anm.anm_id) AS export_count FROM flghf JOIN zoll_anm ON flghf.fh_nr = zoll_anm.sndg_nr WHERE zoll_anm.anm_art = 'export' GROUP BY flghf.fh_nr ORDER BY export_count DESC LIMIT 10\n```",
+        "sql": "SELECT flghf.bez, flghf.fh_nr, flghf.hub_kz, flghf.nachtflugverb_kz, flghf.reg, flghf.anz_slb, COUNT(zoll_anm.anm_id) AS export_count FROM flghf JOIN zoll_anm ON flghf.fh_nr = zoll_anm.sndg_nr WHERE zoll_anm.anm_art = 'export' GROUP BY flghf.fh_nr ORDER BY export_count DESC LIMIT 10",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.652,
+        "eval_count": 118,
+        "eval_duration_s": 2.313973,
+        "prompt_eval_count": 1319
+      }
+    ],
+    "retried": true,
+    "eval_count": 240,
+    "eval_duration_s": 4.671447,
+    "prompt_eval_count": 1182
+  },
+  "H08-CAS": {
+    "raw": "```sql\nSELECT lfz_typ.mdl, COUNT(*) AS completed_flights_more_than_half_full\nFROM lfz_typ\nJOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr\nJOIN flug ON flug.lfz_nr = lfz.lfz_nr\nJOIN betankg ON betankg.flug_id = flug.flug_id\nWHERE flug.stat = 'completed' AND betankg.verbr_kg > lfz_typ.max_vol_m3 * 0.5\nGROUP BY lfz_typ.mdl;\n```",
+    "error": null,
+    "latency_s": 5.341,
+    "pass1_s": 0.018,
+    "pass2_s": 5.323,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz_typ.mdl, COUNT(*) AS completed_flights_more_than_half_full\nFROM lfz_typ\nJOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr\nJOIN flug ON flug.lfz_nr = lfz.lfz_nr\nJOIN betankg ON betankg.flug_id = flug.flug_id\nWHERE flug.stat = 'completed' AND betankg.verbr_kg > lfz_typ.max_vol_m3 * 0.5\nGROUP BY lfz_typ.mdl;\n```",
+        "sql": "SELECT lfz_typ.mdl, COUNT(*) AS completed_flights_more_than_half_full FROM lfz_typ JOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr JOIN flug ON flug.lfz_nr = lfz.lfz_nr JOIN betankg ON betankg.flug_id = flug.flug_id WHERE flug.stat = 'completed' AND betankg.verbr_kg > lfz_typ.max_vol_m3 * 0.5 GROUP BY lfz_typ.mdl",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.323,
+        "eval_count": 115,
+        "eval_duration_s": 2.250282,
+        "prompt_eval_count": 2258
+      }
+    ],
+    "retried": false,
+    "eval_count": 115,
+    "eval_duration_s": 2.250282,
+    "prompt_eval_count": 2258
+  },
+  "H08-SCH": {
+    "raw": "```sql\nSELECT mdl, COUNT(*) FROM lfz_typ JOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr JOIN flug ON flug.lfz_nr = lfz.lfz_nr JOIN flug_ladg ON flug_ladg.flug_id = flug.flug_id WHERE flug.stat = 'completed' AND bes_eins.eins_stat = 'completed' AND wartg.stat = 'completed' GROUP BY mdl HAVING SUM(ges_vol_m3) > 0.5 * MAX(max_vol_m3)\n```",
+    "error": null,
+    "latency_s": 10.572,
+    "pass1_s": 0.028,
+    "pass2_s": 10.544,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT mdl, COUNT(*) \nFROM lfz_typ \nJOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr \nJOIN flug ON flug.lfz_nr = lfz.lfz_nr \nJOIN flug_ladg ON flug_ladg.flug_id = flug.flug_id \nWHERE flug.stat = 'completed' AND bes_eins.eins_stat = 'completed' AND wartg.stat = 'completed' \nGROUP BY mdl \nHAVING SUM(ges_vol_m3) > 0.5 * MAX(max_vol_m3);\n```",
+        "sql": "SELECT mdl, COUNT(*) FROM lfz_typ JOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr JOIN flug ON flug.lfz_nr = lfz.lfz_nr JOIN flug_ladg ON flug_ladg.flug_id = flug.flug_id WHERE flug.stat = 'completed' AND bes_eins.eins_stat = 'completed' AND wartg.stat = 'completed' GROUP BY mdl HAVING SUM(ges_vol_m3) > 0.5 * MAX(max_vol_m3)",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: ges_vol_m3",
+        "latency_s": 5.865,
+        "eval_count": 124,
+        "eval_duration_s": 2.465033,
+        "prompt_eval_count": 3444
+      },
+      {
+        "raw": "```sql\nSELECT mdl, COUNT(*) FROM lfz_typ JOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr JOIN flug ON flug.lfz_nr = lfz.lfz_nr JOIN flug_ladg ON flug_ladg.flug_id = flug.flug_id WHERE flug.stat = 'completed' AND bes_eins.eins_stat = 'completed' AND wartg.stat = 'completed' GROUP BY mdl HAVING SUM(ges_vol_m3) > 0.5 * MAX(max_vol_m3)\n```",
+        "sql": "SELECT mdl, COUNT(*) FROM lfz_typ JOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr JOIN flug ON flug.lfz_nr = lfz.lfz_nr JOIN flug_ladg ON flug_ladg.flug_id = flug.flug_id WHERE flug.stat = 'completed' AND bes_eins.eins_stat = 'completed' AND wartg.stat = 'completed' GROUP BY mdl HAVING SUM(ges_vol_m3) > 0.5 * MAX(max_vol_m3)",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: ges_vol_m3",
+        "latency_s": 4.679,
+        "eval_count": 117,
+        "eval_duration_s": 2.353929,
+        "prompt_eval_count": 3578
+      }
+    ],
+    "retried": true,
+    "eval_count": 241,
+    "eval_duration_s": 4.818962,
+    "prompt_eval_count": 3444
+  },
+  "H08-BIZ": {
+    "raw": "```sql\nSELECT lt.typ_nr, lt.mdl, COUNT(*) AS completed_flights \nFROM lfz_typ lt \nJOIN lfz l ON lt.typ_nr = l.typ_nr \nJOIN flug f ON l.lfz_nr = f.lfz_nr \nJOIN flug_ladg fl ON f.flug_id = fl.flug_id \nWHERE f.stat = 'completed' AND fl.abschn_stat = 'flown' \nGROUP BY lt.typ_nr, lt.mdl \nHAVING SUM(fl.verbr_kg / (lt.max_vol_m3 * 1000)) / COUNT(*) > 0.5\n```",
+    "error": null,
+    "latency_s": 10.27,
+    "pass1_s": 0.016,
+    "pass2_s": 10.254,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lt.typ_nr, lt.mdl, COUNT(*) AS completed_flights\nFROM lfz_typ lt\nJOIN lfz l ON lt.typ_nr = l.typ_nr\nJOIN flug f ON l.lfz_nr = f.lfz_nr\nJOIN flug_ladg fl ON f.flug_id = fl.flug_id\nWHERE f.stat = 'completed' AND fl.abschn_stat = 'flown'\nGROUP BY lt.typ_nr, lt.mdl\nHAVING SUM(fl.verbr_kg / (lt.max_vol_m3 * 1000)) / COUNT(*) > 0.5;\n```",
+        "sql": "SELECT lt.typ_nr, lt.mdl, COUNT(*) AS completed_flights FROM lfz_typ lt JOIN lfz l ON lt.typ_nr = l.typ_nr JOIN flug f ON l.lfz_nr = f.lfz_nr JOIN flug_ladg fl ON f.flug_id = fl.flug_id WHERE f.stat = 'completed' AND fl.abschn_stat = 'flown' GROUP BY lt.typ_nr, lt.mdl HAVING SUM(fl.verbr_kg / (lt.max_vol_m3 * 1000)) / COUNT(*) > 0.5",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: fl.verbr_kg",
+        "latency_s": 5.254,
+        "eval_count": 131,
+        "eval_duration_s": 2.578022,
+        "prompt_eval_count": 2566
+      },
+      {
+        "raw": "```sql\nSELECT lt.typ_nr, lt.mdl, COUNT(*) AS completed_flights \nFROM lfz_typ lt \nJOIN lfz l ON lt.typ_nr = l.typ_nr \nJOIN flug f ON l.lfz_nr = f.lfz_nr \nJOIN flug_ladg fl ON f.flug_id = fl.flug_id \nWHERE f.stat = 'completed' AND fl.abschn_stat = 'flown' \nGROUP BY lt.typ_nr, lt.mdl \nHAVING SUM(fl.verbr_kg / (lt.max_vol_m3 * 1000)) / COUNT(*) > 0.5\n```",
+        "sql": "SELECT lt.typ_nr, lt.mdl, COUNT(*) AS completed_flights FROM lfz_typ lt JOIN lfz l ON lt.typ_nr = l.typ_nr JOIN flug f ON l.lfz_nr = f.lfz_nr JOIN flug_ladg fl ON f.flug_id = fl.flug_id WHERE f.stat = 'completed' AND fl.abschn_stat = 'flown' GROUP BY lt.typ_nr, lt.mdl HAVING SUM(fl.verbr_kg / (lt.max_vol_m3 * 1000)) / COUNT(*) > 0.5",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: fl.verbr_kg",
+        "latency_s": 5.0,
+        "eval_count": 132,
+        "eval_duration_s": 2.597993,
+        "prompt_eval_count": 2709
+      }
+    ],
+    "retried": true,
+    "eval_count": 263,
+    "eval_duration_s": 5.176015,
+    "prompt_eval_count": 2566
+  },
+  "H08-VAG": {
+    "raw": "```sql\nSELECT lfz_typ.mdl \nFROM lfz_typ \nJOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr \nWHERE lfz.stat = 'active' AND lfz.ges_flugstd BETWEEN lfz_typ.max_nutzl_kg / 2 AND lfz_typ.max_nutzl_kg;\n```",
+    "error": null,
+    "latency_s": 4.087,
+    "pass1_s": 0.007,
+    "pass2_s": 4.08,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz_typ.mdl \nFROM lfz_typ \nJOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr \nWHERE lfz.stat = 'active' AND lfz.ges_flugstd BETWEEN lfz_typ.max_nutzl_kg / 2 AND lfz_typ.max_nutzl_kg;\n```",
+        "sql": "SELECT lfz_typ.mdl FROM lfz_typ JOIN lfz ON lfz.typ_nr = lfz_typ.typ_nr WHERE lfz.stat = 'active' AND lfz.ges_flugstd BETWEEN lfz_typ.max_nutzl_kg / 2 AND lfz_typ.max_nutzl_kg",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.08,
+        "eval_count": 71,
+        "eval_duration_s": 1.38976,
+        "prompt_eval_count": 2016
+      }
+    ],
+    "retried": false,
+    "eval_count": 71,
+    "eval_duration_s": 1.38976,
+    "prompt_eval_count": 2016
+  },
+  "H09-CAS": {
+    "raw": "```sql\nSELECT lfz.lfz_nr, lfz.kennz, lfz.msn, lfz.baujahr, lfz.stat\nFROM lfz\nJOIN flghf ON lfz.heimat_fh_nr = flghf.fh_nr\nWHERE flghf.hub_kz = 1\nGROUP BY lfz.lfz_nr, lfz.kennz, lfz.msn, lfz.baujahr, lfz.stat\nHAVING COUNT(DISTINCT flghf.fh_nr) = (SELECT COUNT(*) FROM flghf WHERE hub_kz = 1);\n```",
+    "error": null,
+    "latency_s": 5.097,
+    "pass1_s": 0.013,
+    "pass2_s": 5.084,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT lfz.lfz_nr, lfz.kennz, lfz.msn, lfz.baujahr, lfz.stat\nFROM lfz\nJOIN flghf ON lfz.heimat_fh_nr = flghf.fh_nr\nWHERE flghf.hub_kz = 1\nGROUP BY lfz.lfz_nr, lfz.kennz, lfz.msn, lfz.baujahr, lfz.stat\nHAVING COUNT(DISTINCT flghf.fh_nr) = (SELECT COUNT(*) FROM flghf WHERE hub_kz = 1);\n```",
+        "sql": "SELECT lfz.lfz_nr, lfz.kennz, lfz.msn, lfz.baujahr, lfz.stat FROM lfz JOIN flghf ON lfz.heimat_fh_nr = flghf.fh_nr WHERE flghf.hub_kz = 1 GROUP BY lfz.lfz_nr, lfz.kennz, lfz.msn, lfz.baujahr, lfz.stat HAVING COUNT(DISTINCT flghf.fh_nr) = (SELECT COUNT(*) FROM flghf WHERE hub_kz = 1)",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.084,
+        "eval_count": 132,
+        "eval_duration_s": 2.574346,
+        "prompt_eval_count": 1930
+      }
+    ],
+    "retried": false,
+    "eval_count": 132,
+    "eval_duration_s": 2.574346,
+    "prompt_eval_count": 1930
+  },
+  "H09-SCH": {
+    "raw": "```sql\nSELECT DISTINCT flges.flges_nr AS kennz\nFROM flges\nJOIN flug ON flges.flges_nr = flug.flugnr\nWHERE flug.stat = 'completed' AND flug.ziel_fh IN (\n    SELECT fh_nr FROM flghf WHERE hub_kz = 1\n)\n```",
+    "error": null,
+    "latency_s": 4.728,
+    "pass1_s": 0.018,
+    "pass2_s": 4.71,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT DISTINCT flges.flges_nr AS kennz\nFROM flges\nJOIN flug ON flges.flges_nr = flug.flugnr\nWHERE flug.stat = 'completed' AND flug.ziel_fh IN (\n    SELECT fh_nr FROM flghf WHERE hub_kz = 1\n)\n```",
+        "sql": "SELECT DISTINCT flges.flges_nr AS kennz FROM flges JOIN flug ON flges.flges_nr = flug.flugnr WHERE flug.stat = 'completed' AND flug.ziel_fh IN ( SELECT fh_nr FROM flghf WHERE hub_kz = 1 )",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.71,
+        "eval_count": 69,
+        "eval_duration_s": 1.358424,
+        "prompt_eval_count": 3144
+      }
+    ],
+    "retried": false,
+    "eval_count": 69,
+    "eval_duration_s": 1.358424,
+    "prompt_eval_count": 3144
+  },
+  "H09-BIZ": {
+    "raw": "```sql\nSELECT DISTINCT lfz.lfz_nr, lfz.msn, lfz.baujahr\nFROM lfz\nJOIN flug ON lfz.lfz_nr = flug.lfz_nr\nJOIN bes_eins ON flug.flug_id = bes_eins.flug_id\nJOIN wartg ON lfz.lfz_nr = wartg.lfz_nr\nWHERE flug.stat = 'completed' AND bes_eins.eins_stat = 'completed' AND wartg.stat = 'completed'\nGROUP BY lfz.lfz_nr, lfz.msn, lfz.baujahr\nHAVING COUNT(DISTINCT flug.abfl_fh) = (SELECT COUNT(*) FROM flghf WHERE hub_kz = 1)\n```",
+    "error": null,
+    "latency_s": 6.246,
+    "pass1_s": 0.013,
+    "pass2_s": 6.233,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT DISTINCT lfz.lfz_nr, lfz.msn, lfz.baujahr\nFROM lfz\nJOIN flug ON lfz.lfz_nr = flug.lfz_nr\nJOIN bes_eins ON flug.flug_id = bes_eins.flug_id\nJOIN wartg ON lfz.lfz_nr = wartg.lfz_nr\nWHERE flug.stat = 'completed' AND bes_eins.eins_stat = 'completed' AND wartg.stat = 'completed'\nGROUP BY lfz.lfz_nr, lfz.msn, lfz.baujahr\nHAVING COUNT(DISTINCT flug.abfl_fh) = (SELECT COUNT(*) FROM flghf WHERE hub_kz = 1)\n```",
+        "sql": "SELECT DISTINCT lfz.lfz_nr, lfz.msn, lfz.baujahr FROM lfz JOIN flug ON lfz.lfz_nr = flug.lfz_nr JOIN bes_eins ON flug.flug_id = bes_eins.flug_id JOIN wartg ON lfz.lfz_nr = wartg.lfz_nr WHERE flug.stat = 'completed' AND bes_eins.eins_stat = 'completed' AND wartg.stat = 'completed' GROUP BY lfz.lfz_nr, lfz.msn, lfz.baujahr HAVING COUNT(DISTINCT flug.abfl_fh) = (SELECT COUNT(*) FROM flghf WHERE hub_kz = 1)",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 6.233,
+        "eval_count": 161,
+        "eval_duration_s": 3.175755,
+        "prompt_eval_count": 2556
+      }
+    ],
+    "retried": false,
+    "eval_count": 161,
+    "eval_duration_s": 3.175755,
+    "prompt_eval_count": 2556
+  },
+  "H09-VAG": {
+    "raw": "SELECT lfz.lfz_nr, lfz.kennz, lfz.baujahr, lfz.flges_nr, lfz.stat, lfz.ausl_dat, lfz_typ.typ_nr, lfz_typ.anz_trw, lfz_typ.spannw_m, lfz_typ.max_reichw_km, lfz_typ.leergew_kg, lfz_typ.reise_geschw_kmh FROM lfz JOIN lfz_typ ON lfz.typ_nr = lfz_typ.typ_nr WHERE lfz.stat = 'active' AND lfz.lfz_nr IN (SELECT lfz_nr FROM flug GROUP BY lfz_nr HAVING COUNT(DISTINCT abfl_fh) > 1)",
+    "error": null,
+    "latency_s": 5.296,
+    "pass1_s": 0.006,
+    "pass2_s": 5.29,
+    "attempts": [
+      {
+        "raw": "SELECT lfz.lfz_nr, lfz.kennz, lfz.baujahr, lfz.flges_nr, lfz.stat, lfz.ausl_dat, lfz_typ.typ_nr, lfz_typ.anz_trw, lfz_typ.spannw_m, lfz_typ.max_reichw_km, lfz_typ.leergew_kg, lfz_typ.reise_geschw_kmh FROM lfz JOIN lfz_typ ON lfz.typ_nr = lfz_typ.typ_nr WHERE lfz.stat = 'active' AND lfz.lfz_nr IN (SELECT lfz_nr FROM flug GROUP BY lfz_nr HAVING COUNT(DISTINCT abfl_fh) > 1)",
+        "sql": "SELECT lfz.lfz_nr, lfz.kennz, lfz.baujahr, lfz.flges_nr, lfz.stat, lfz.ausl_dat, lfz_typ.typ_nr, lfz_typ.anz_trw, lfz_typ.spannw_m, lfz_typ.max_reichw_km, lfz_typ.leergew_kg, lfz_typ.reise_geschw_kmh FROM lfz JOIN lfz_typ ON lfz.typ_nr = lfz_typ.typ_nr WHERE lfz.stat = 'active' AND lfz.lfz_nr IN (SELECT lfz_nr FROM flug GROUP BY lfz_nr HAVING COUNT(DISTINCT abfl_fh) > 1)",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.29,
+        "eval_count": 149,
+        "eval_duration_s": 2.981345,
+        "prompt_eval_count": 1866
+      }
+    ],
+    "retried": false,
+    "eval_count": 149,
+    "eval_duration_s": 2.981345,
+    "prompt_eval_count": 1866
+  },
+  "H10-CAS": {
+    "raw": "```sql\nSELECT zoll_anm.zoll_land, COUNT(zoll_anm.anm_id) AS tax_count\nFROM zoll_anm\nJOIN sndg ON zoll_anm.sndg_nr = sndg.sndg_nr\nWHERE zoll_anm.anm_art = 'import' AND (zoll_anm.zoll_betr_usd + zoll_anm.eust_usd) / sndg.dekl_wert_usd > 0.2\nGROUP BY zoll_anm.zoll_land;\n```",
+    "error": null,
+    "latency_s": 5.275,
+    "pass1_s": 0.026,
+    "pass2_s": 5.249,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT zoll_anm.zoll_land, COUNT(zoll_anm.anm_id) AS tax_count\nFROM zoll_anm\nJOIN sndg ON zoll_anm.sndg_nr = sndg.sndg_nr\nWHERE zoll_anm.anm_art = 'import' AND (zoll_anm.zoll_betr_usd + zoll_anm.eust_usd) / sndg.dekl_wert_usd > 0.2\nGROUP BY zoll_anm.zoll_land;\n```",
+        "sql": "SELECT zoll_anm.zoll_land, COUNT(zoll_anm.anm_id) AS tax_count FROM zoll_anm JOIN sndg ON zoll_anm.sndg_nr = sndg.sndg_nr WHERE zoll_anm.anm_art = 'import' AND (zoll_anm.zoll_betr_usd + zoll_anm.eust_usd) / sndg.dekl_wert_usd > 0.2 GROUP BY zoll_anm.zoll_land",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.249,
+        "eval_count": 112,
+        "eval_duration_s": 2.202524,
+        "prompt_eval_count": 2590
+      }
+    ],
+    "retried": false,
+    "eval_count": 112,
+    "eval_duration_s": 2.202524,
+    "prompt_eval_count": 2590
+  },
+  "H10-SCH": {
+    "raw": "```sql\nSELECT zoll_land, COUNT(*) \nFROM zoll_anm \nWHERE anm_art = 'import' AND (zoll_betr_usd + eust_usd) > 0.2 * zollwert_usd \nGROUP BY zoll_land;\n```",
+    "error": null,
+    "latency_s": 3.707,
+    "pass1_s": 0.029,
+    "pass2_s": 3.678,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT zoll_land, COUNT(*) \nFROM zoll_anm \nWHERE anm_art = 'import' AND (zoll_betr_usd + eust_usd) > 0.2 * zollwert_usd \nGROUP BY zoll_land;\n```",
+        "sql": "SELECT zoll_land, COUNT(*) FROM zoll_anm WHERE anm_art = 'import' AND (zoll_betr_usd + eust_usd) > 0.2 * zollwert_usd GROUP BY zoll_land",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.678,
+        "eval_count": 59,
+        "eval_duration_s": 1.134452,
+        "prompt_eval_count": 1643
+      }
+    ],
+    "retried": false,
+    "eval_count": 59,
+    "eval_duration_s": 1.134452,
+    "prompt_eval_count": 1643
+  },
+  "H10-BIZ": {
+    "raw": "```sql\nSELECT zoll_anm.zollagent, COUNT(zoll_anm.anm_id) AS entry_count\nFROM zoll_anm\nJOIN vorf ON zoll_anm.anm_id = vorf.ladg_id\nWHERE zoll_anm.anm_art = 'import' AND zoll_anm.zollsatz_pct > 20\nGROUP BY zoll_anm.zollagent;\n```",
+    "error": null,
+    "latency_s": 4.143,
+    "pass1_s": 0.023,
+    "pass2_s": 4.12,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT zoll_anm.zollagent, COUNT(zoll_anm.anm_id) AS entry_count\nFROM zoll_anm\nJOIN vorf ON zoll_anm.anm_id = vorf.ladg_id\nWHERE zoll_anm.anm_art = 'import' AND zoll_anm.zollsatz_pct > 20\nGROUP BY zoll_anm.zollagent;\n```",
+        "sql": "SELECT zoll_anm.zollagent, COUNT(zoll_anm.anm_id) AS entry_count FROM zoll_anm JOIN vorf ON zoll_anm.anm_id = vorf.ladg_id WHERE zoll_anm.anm_art = 'import' AND zoll_anm.zollsatz_pct > 20 GROUP BY zoll_anm.zollagent",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.12,
+        "eval_count": 88,
+        "eval_duration_s": 1.689974,
+        "prompt_eval_count": 1222
+      }
+    ],
+    "retried": false,
+    "eval_count": 88,
+    "eval_duration_s": 1.689974,
+    "prompt_eval_count": 1222
+  },
+  "H10-VAG": {
+    "raw": "```sql\nSELECT zoll_anm.zoll_land, zoll_anm.zollwert_usd, zoll_anm.zollsatz_pct, zoll_anm.zoll_betr_usd, zoll_anm.eust_usd \nFROM zoll_anm \nJOIN lgr ON zoll_anm.lgr_nr = lgr.lgr_nr \nWHERE zoll_anm.anm_art = 'import' AND lgr.sich_stufe = 'high';\n```",
+    "error": null,
+    "latency_s": 5.043,
+    "pass1_s": 0.007,
+    "pass2_s": 5.036,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT zoll_anm.zoll_land, zoll_anm.zollwert_usd, zoll_anm.zollsatz_pct, zoll_anm.zoll_betr_usd, zoll_anm.eust_usd \nFROM zoll_anm \nJOIN lgr ON zoll_anm.lgr_nr = lgr.lgr_nr \nWHERE zoll_anm.anm_art = 'import' AND lgr.sich_stufe = 'high';\n```",
+        "sql": "SELECT zoll_anm.zoll_land, zoll_anm.zollwert_usd, zoll_anm.zollsatz_pct, zoll_anm.zoll_betr_usd, zoll_anm.eust_usd FROM zoll_anm JOIN lgr ON zoll_anm.lgr_nr = lgr.lgr_nr WHERE zoll_anm.anm_art = 'import' AND lgr.sich_stufe = 'high'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.036,
+        "eval_count": 100,
+        "eval_duration_s": 1.966386,
+        "prompt_eval_count": 2663
+      }
+    ],
+    "retried": false,
+    "eval_count": 100,
+    "eval_duration_s": 1.966386,
+    "prompt_eval_count": 2663
+  }
+}
