@@ -1,0 +1,3226 @@
+{
+ "E01-CAS": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c14",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53\n#columns ts53.c14",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 2.775,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-SCH": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c14",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53\n#columns ts53.c14",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.381,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-BIZ": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c14",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53\n#columns ts53.c14",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.377,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-VAG": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c14",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53\n#columns ts53.c14",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.392,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E02-CAS": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c17",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53\n#columns ts53.c17",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.402,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E02-SCH": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c02",
+   "ts53.c17",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53\n#columns ts53.c02, ts53.c17",
+  "eval_count": 22,
+  "error": null,
+  "seconds": 0.536,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E02-BIZ": {
+  "tables": [
+   "ts53",
+   "tumf",
+   "t6sc"
+  ],
+  "columns": [
+   "ts53.c03",
+   "ts53.c01",
+   "tumf.c01",
+   "t6sc.c01",
+   "t6sc.c09",
+   "t6sc.c07"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables ts53, tumf\n#columns ts53.c03, tumf.c17",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.569,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E02-VAG": {
+  "tables": [
+   "ts53",
+   "tu5q"
+  ],
+  "columns": [
+   "ts53.c17",
+   "ts53.c01",
+   "tu5q.c01",
+   "tu5q.c06"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, ts53\n#columns tu5q.c17, ts53.c17",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.611,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E03-CAS": {
+  "tables": [
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c10",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv\n#columns twxv.c10",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.384,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-SCH": {
+  "tables": [
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c04",
+   "twxv.c08",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv\n#columns twxv.c04, twxv.c04, twxv.c08",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.687,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-BIZ": {
+  "tables": [
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c10",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv\n#columns twxv.c10",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.376,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-VAG": {
+  "tables": [
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c10",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv\n#columns twxv.c10",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.379,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-CAS": {
+  "tables": [
+   "tumf"
+  ],
+  "columns": [
+   "tumf.c04",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tumf\n#columns tumf.c04",
+  "eval_count": 13,
+  "error": null,
+  "seconds": 0.336,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-SCH": {
+  "tables": [
+   "tumf"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tumf\n#columns tumf.c02",
+  "eval_count": 13,
+  "error": null,
+  "seconds": 0.341,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-BIZ": {
+  "tables": [
+   "twxv",
+   "tumf",
+   "t6sc"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tumf.c04",
+   "twxv.c02",
+   "twxv.c01",
+   "t6sc.c01",
+   "t6sc.c09",
+   "t6sc.c06",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tumf, twxv\n#columns tumf.c02, tumf.c04, twxv.c02",
+  "eval_count": 30,
+  "error": null,
+  "seconds": 0.708,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E04-VAG": {
+  "tables": [
+   "tumf"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tumf.c04",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tumf\n#columns tumf.c02, tumf.c04",
+  "eval_count": 19,
+  "error": null,
+  "seconds": 0.48,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-CAS": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c10",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q\n#columns tu5q.c10",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.392,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-SCH": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c10",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q\n#columns tu5q.c10",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.409,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-BIZ": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c10",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q\n#columns tu5q.c10",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.385,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-VAG": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c10",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q\n#columns tu5q.c10",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.403,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E06-CAS": {
+  "tables": [
+   "ts4p",
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c16",
+   "ts4p.c01",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, ts4p\n#columns tu5q.c16, ts4p.c01",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.627,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E06-SCH": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c16",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q\n#columns tu5q.c16, tu5q.c16",
+  "eval_count": 22,
+  "error": null,
+  "seconds": 0.54,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E06-BIZ": {
+  "tables": [
+   "tu5q",
+   "tcse"
+  ],
+  "columns": [
+   "tu5q.c16",
+   "tcse.c16",
+   "tcse.c01",
+   "tcse.c03",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tcse\n#columns tu5q.c16, tcse.c16",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.566,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E06-VAG": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c16",
+   "tx7n.c19",
+   "tx7n.c01",
+   "tx7n.c04",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n\n#columns tu5q.c16, tx7n.c19",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.623,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E07-CAS": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c17",
+   "th77.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77\n#columns th77.c17",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.379,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-SCH": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c17",
+   "th77.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77\n#columns th77.c17",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.396,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-BIZ": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77\n#columns th77.ch17",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.381,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-VAG": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c17",
+   "th77.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77\n#columns th77.c17",
+  "eval_count": 15,
+  "error": null,
+  "seconds": 0.392,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E08-CAS": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c05",
+   "th77.c06",
+   "th77.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77\n#columns th77.c05, th77.c06",
+  "eval_count": 22,
+  "error": null,
+  "seconds": 0.526,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E08-SCH": {
+  "tables": [
+   "ts53",
+   "th77",
+   "t89v"
+  ],
+  "columns": [
+   "th77.c03",
+   "ts53.c04",
+   "ts53.c01",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06",
+   "t89v.c03",
+   "th77.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77, ts53\n#columns th77.c03, ts53.c04",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.633,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E08-BIZ": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c05",
+   "th77.c06",
+   "th77.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77\n#columns th77.c05, th77.c06",
+  "eval_count": 22,
+  "error": null,
+  "seconds": 0.526,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E08-VAG": {
+  "tables": [
+   "th77",
+   "trhn",
+   "t89v",
+   "t3v5"
+  ],
+  "columns": [
+   "th77.c05",
+   "th77.c06",
+   "trhn.c03",
+   "t89v.c01",
+   "t89v.c03",
+   "th77.c01",
+   "t3v5.c01",
+   "t3v5.c04",
+   "t3v5.c03",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77, trhn\n#columns th77.c05, th77.c06, trhn.c03",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.705,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "E09-CAS": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c05",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#columns trhn.c05, trhn.c05",
+  "eval_count": 19,
+  "error": null,
+  "seconds": 0.464,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-SCH": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c05",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#columns trhn.c05",
+  "eval_count": 13,
+  "error": null,
+  "seconds": 0.357,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-BIZ": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c05",
+   "trhn.c07",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#columns trhn.c05, trhn.c05, trhn.c07\nExplanation: To answer the question about how the warehouse footprint is split across facility types, we need to look at the `trhn` table, which contains information about cargo warehouses. The relevant columns are `c03` (the airport where the warehouse is), `c05` (the kind of warehouse), and `c07` (the floor area in square metres).",
+  "eval_count": 104,
+  "error": null,
+  "seconds": 2.25,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-VAG": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c05",
+   "trhn.c04",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#columns trhn.c05, trhn.c04, trhn.c05",
+  "eval_count": 25,
+  "error": null,
+  "seconds": 0.604,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-CAS": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c06",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#columns trhn.c06",
+  "eval_count": 13,
+  "error": null,
+  "seconds": 0.358,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-SCH": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c06",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#columns trhn.c06",
+  "eval_count": 13,
+  "error": null,
+  "seconds": 0.339,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-BIZ": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c06",
+   "trhn.c05",
+   "trhn.c08",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#columns trhn.c06, trhn.c05, trhn.c08",
+  "eval_count": 25,
+  "error": null,
+  "seconds": 0.606,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-VAG": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c07",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#columns trhn.c07",
+  "eval_count": 13,
+  "error": null,
+  "seconds": 0.337,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "M01-CAS": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c05",
+   "twxv.c01",
+   "ts53.c02",
+   "twxv.c09",
+   "ts53.c01",
+   "tu5q.c01",
+   "tu5q.c06"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, twxv, ts53\n#columns tu5q.c05, twxv.c01, ts53.c02",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.856,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M01-SCH": {
+  "tables": [
+   "twxv",
+   "tu5q"
+  ],
+  "columns": [
+   "twxv.c04",
+   "twxv.c01",
+   "tu5q.c01",
+   "tu5q.c05"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv, tu5q\n#columns twxv.c04, twxv.c04",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.612,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M01-BIZ": {
+  "tables": [
+   "twxv",
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c05",
+   "twxv.c01",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, twxv\n#columns tu5q.c05, twxv.c01",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.608,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M01-VAG": {
+  "tables": [
+   "twxv",
+   "tu5q"
+  ],
+  "columns": [
+   "twxv.c04",
+   "tu5q.c05",
+   "twxv.c01",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, twxv\n#columns twxv.c04, tu5q.c05",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.605,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-CAS": {
+  "tables": [
+   "tumf",
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c04",
+   "tumf.c02",
+   "tu5q.c16",
+   "tumf.c01",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tumf\n#columns tu5q.c04, tumf.c02, tu5q.c16",
+  "eval_count": 31,
+  "error": null,
+  "seconds": 0.732,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-SCH": {
+  "tables": [
+   "twxv",
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tu5q.c16",
+   "twxv.c01",
+   "tu5q.c01",
+   "tu5q.c05"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, twxv\n#columns tu5q.c02, tu5q.c16",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.632,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.25,
+   "columns_in_schema": 0.5,
+   "tables_kept": 2
+  }
+ },
+ "M02-BIZ": {
+  "tables": [
+   "tumf",
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c04",
+   "tumf.c02",
+   "tumf.c01",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tumf\n#columns tu5q.c04, tumf.c02",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.563,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-VAG": {
+  "tables": [
+   "tumf",
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c04",
+   "tumf.c02",
+   "tumf.c01",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tumf\n#columns tu5q.c04, tumf.c02",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.563,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-CAS": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c19",
+   "tx7n.c05",
+   "ts53.c02",
+   "tx7n.c01",
+   "tx7n.c06",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53\n#columns tx7n.c19, tx7n.c05, ts53.c02",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.776,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-SCH": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c19",
+   "ts53.c02",
+   "tx7n.c05",
+   "tx7n.c01",
+   "tx7n.c06",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53\n#columns tx7n.c19, ts53.c02, tx7n.c05",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.777,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-BIZ": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c19",
+   "ts53.c02",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53\n#columns tx7n.c19, ts53.c02",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.628,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-VAG": {
+  "tables": [
+   "ts53",
+   "tx7n",
+   "tg6t"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "ts53.c02",
+   "tg6t.c12",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tg6t.c01",
+   "tg6t.c03",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53, tg6t\n#columns tx7n.c05, ts53.c02, tg6t.c12",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.843,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M04-CAS": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "tx7n.c06",
+   "tx7n.c19",
+   "ts53.c04",
+   "tx7n.c01",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53, ts53\n#columns tx7n.c05, tx7n.c06, tx7n.c19, ts53.c04, ts53.c04",
+  "eval_count": 51,
+  "error": null,
+  "seconds": 1.127,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-SCH": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "ts53.c02",
+   "tx7n.c06",
+   "tx7n.c01",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53, ts53\n#columns tx7n.c05, ts53.c02, tx7n.c06, ts53.c02",
+  "eval_count": 44,
+  "error": null,
+  "seconds": 0.99,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-BIZ": {
+  "tables": [
+   "ts53",
+   "trhn",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "trhn.c03",
+   "ts53.c02",
+   "tx7n.c19",
+   "tx7n.c09",
+   "tx7n.c01",
+   "tx7n.c06",
+   "ts53.c01",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, trhn, ts53\n#columns tx7n.c05, trhn.c03, ts53.c02, tx7n.c19, tx7n.c09\n#columns tx7n.c05, trhn.c03, ts53.c02, tx7n.c19, tx7n.c09, tx7n.c06",
+  "eval_count": 92,
+  "error": null,
+  "seconds": 1.981,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M04-VAG": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "tx7n.c06",
+   "ts53.c02",
+   "tx7n.c01",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53, ts53\n#columns tx7n.c05, tx7n.c06, ts53.c02, ts53.c02",
+  "eval_count": 44,
+  "error": null,
+  "seconds": 0.979,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M05-CAS": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c17",
+   "twxv.c01",
+   "twxv.c09",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, twxv\n#columns tx7n.c17, twxv.c01",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.63,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.125,
+   "columns_in_schema": 0.75,
+   "tables_kept": 3
+  }
+ },
+ "M05-SCH": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c10",
+   "tx7n.c08",
+   "tx7n.c04",
+   "tu5q.c01",
+   "tx7n.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tu5q\n#columns tx7n.c10, tx7n.c08, tx7n.c04, tu5q.c01",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.914,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.75,
+   "tables_kept": 2
+  }
+ },
+ "M05-BIZ": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c17",
+   "twxv.c01",
+   "twxv.c09",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, twxv\n#columns tx7n.c17, twxv.c01",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.625,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.125,
+   "columns_in_schema": 0.75,
+   "tables_kept": 3
+  }
+ },
+ "M05-VAG": {
+  "tables": [
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c13",
+   "twxv.c14",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv\n#columns twxv.c13, twxv.c14, twxv.c15",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.672,
+  "recall": {
+   "tables_found": 0.3333333333333333,
+   "all_tables_found": false,
+   "columns_listed": 0.125,
+   "columns_in_schema": 0.25,
+   "tables_kept": 1
+  }
+ },
+ "M06-CAS": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c19",
+   "twxv.c04",
+   "twxv.c01",
+   "twxv.c09",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, twxv\n#columns tx7n.c19, twxv.c04",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.627,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "M06-SCH": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c04",
+   "tx7n.c19",
+   "tx7n.c01",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tu5q\n#columns tx7n.c04, tx7n.c19",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.638,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 2
+  }
+ },
+ "M06-BIZ": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "twxv.c02",
+   "tx7n.c18",
+   "twxv.c01",
+   "twxv.c09",
+   "tx7n.c01",
+   "tx7n.c06",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, twxv\n#columns tx7n.c05, twxv.c02, tx7n.c18",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.753,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.16666666666666666,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "M06-VAG": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "twxv.c01",
+   "twxv.c09",
+   "tx7n.c01",
+   "tx7n.c06",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, twxv\n#columns tx7n.c05, twxv.c01",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.608,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.16666666666666666,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "M07-CAS": {
+  "tables": [
+   "tx7n",
+   "t875"
+  ],
+  "columns": [
+   "tx7n.c16",
+   "t875.c16",
+   "t875.c15",
+   "tx7n.c01",
+   "t875.c01",
+   "t875.c03"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, t875\n#columns tx7n.c16, t875.c16, t875.c15",
+  "eval_count": 36,
+  "error": null,
+  "seconds": 0.818,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.375,
+   "columns_in_schema": 0.5,
+   "tables_kept": 2
+  }
+ },
+ "M07-SCH": {
+  "tables": [
+   "twxv",
+   "tu5q",
+   "tx7n",
+   "t875"
+  ],
+  "columns": [
+   "t875.c16",
+   "tx7n.c04",
+   "tu5q.c04",
+   "twxv.c13",
+   "twxv.c01",
+   "tx7n.c01",
+   "t875.c01",
+   "t875.c03",
+   "tu5q.c01",
+   "tu5q.c05"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t875, tx7n, tu5q, twxv\n#columns t875.c16, tx7n.c04, tu5q.c04, twxv.c13",
+  "eval_count": 50,
+  "error": null,
+  "seconds": 1.124,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.875,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "M07-BIZ": {
+  "tables": [
+   "ts53",
+   "tu5q",
+   "trhn",
+   "tx7n",
+   "t875",
+   "t3z7"
+  ],
+  "columns": [
+   "tu5q.c16",
+   "tx7n.c16",
+   "t875.c16",
+   "trhn.c14",
+   "t3z7.c10",
+   "ts53.c01",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "tx7n.c04",
+   "t3z7.c01",
+   "t3z7.c05",
+   "t3z7.c04",
+   "t3z7.c03",
+   "trhn.c01",
+   "trhn.c03",
+   "t875.c01",
+   "t875.c04",
+   "t875.c03",
+   "tu5q.c01",
+   "tu5q.c06"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n, t875, trhn, t3z7\n#columns tu5q.c16, tx7n.c16, t875.c16, trhn.c14, t3z7.c10",
+  "eval_count": 61,
+  "error": null,
+  "seconds": 1.345,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.625,
+   "columns_in_schema": 0.75,
+   "tables_kept": 6
+  }
+ },
+ "M07-VAG": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n",
+   "t875"
+  ],
+  "columns": [
+   "tx7n.c06",
+   "twxv.c02",
+   "ts53.c08",
+   "ts53.c09",
+   "ts53.c10",
+   "ts53.c11",
+   "ts53.c12",
+   "ts53.c13",
+   "ts53.c14",
+   "ts53.c15",
+   "ts53.c16",
+   "twxv.c01",
+   "twxv.c09",
+   "tx7n.c01",
+   "tx7n.c05",
+   "ts53.c01",
+   "t875.c01",
+   "t875.c04",
+   "t875.c03"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t875, tx7n, twxv, ts53\n#columns t875.fuel_burned_on_the_flight_in_kg, tx7n.c06, twxv.c02, ts53.c08, ts53.c09, ts53.c10, ts53.c11, ts53.c12, ts53.c13, ts53.c14, ts53.c15, ts53.c16",
+  "eval_count": 114,
+  "error": null,
+  "seconds": 2.461,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.375,
+   "columns_in_schema": 0.75,
+   "tables_kept": 4
+  }
+ },
+ "M08-CAS": {
+  "tables": [
+   "ts53",
+   "t875"
+  ],
+  "columns": [
+   "t875.c06",
+   "ts53.c07",
+   "t875.c12",
+   "ts53.c01",
+   "t875.c01",
+   "t875.c04"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t875, ts53\n#columns t875.c06, ts53.c07, t875.c12",
+  "eval_count": 36,
+  "error": null,
+  "seconds": 0.822,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-SCH": {
+  "tables": [
+   "ts53",
+   "t875"
+  ],
+  "columns": [
+   "t875.c04",
+   "t875.c12",
+   "ts53.c01",
+   "t875.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t875, ts53\n#columns t875.c04, t875.c12",
+  "eval_count": 29,
+  "error": null,
+  "seconds": 0.68,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-BIZ": {
+  "tables": [
+   "ts53",
+   "t875"
+  ],
+  "columns": [
+   "t875.c04",
+   "ts53.c07",
+   "t875.c12",
+   "ts53.c01",
+   "t875.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t875, ts53\n#columns t875.c04, ts53.c07, t875.c12",
+  "eval_count": 36,
+  "error": null,
+  "seconds": 0.844,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-VAG": {
+  "tables": [
+   "ts53",
+   "trhn",
+   "t875"
+  ],
+  "columns": [
+   "t875.c16",
+   "trhn.c16",
+   "trhn.c08",
+   "ts53.c01",
+   "t875.c01",
+   "t875.c04",
+   "trhn.c01",
+   "trhn.c03"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t875, trhn\n#columns t875.c16, trhn.c16, trhn.c08",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.736,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M09-CAS": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c03",
+   "ts53.c01",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, ts53\n#columns trhn.c03, ts53.c01",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.592,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-SCH": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c02",
+   "ts53.c02",
+   "ts53.c01",
+   "trhn.c01",
+   "trhn.c03"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, ts53\n#columns trhn.c02, ts53.c02",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.596,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-BIZ": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c03",
+   "ts53.c01",
+   "trhn.c06",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, ts53\n#columns trhn.c03, ts53.c01, trhn.c06",
+  "eval_count": 30,
+  "error": null,
+  "seconds": 0.709,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-VAG": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c03",
+   "ts53.c01",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, ts53\n#columns trhn.c03, ts53.c01",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.574,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-CAS": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c03",
+   "ts53.c01",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, ts53\n#columns trhn.c03, ts53.c01",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.568,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-SCH": {
+  "tables": [
+   "th77",
+   "trhn",
+   "t89v",
+   "t3v5"
+  ],
+  "columns": [
+   "trhn.c12",
+   "th77.c13",
+   "t89v.c01",
+   "t89v.c03",
+   "th77.c01",
+   "t3v5.c01",
+   "t3v5.c04",
+   "t3v5.c03",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, th77\n#columns trhn.c12, th77.c13",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.573,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.25,
+   "columns_in_schema": 0.5,
+   "tables_kept": 4
+  }
+ },
+ "M10-BIZ": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c13",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn\n#columns trhn.c13",
+  "eval_count": 13,
+  "error": null,
+  "seconds": 0.34,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.0,
+   "columns_in_schema": 0.5,
+   "tables_kept": 1
+  }
+ },
+ "M10-VAG": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c03",
+   "ts53.c01",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, ts53\n#columns trhn.c03, ts53.c01",
+  "eval_count": 24,
+  "error": null,
+  "seconds": 0.582,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H01-CAS": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c04",
+   "tx7n.c19",
+   "tx7n.c01",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n\n#columns tu5q.c02, tx7n.c04, tx7n.c19",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.761,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5714285714285714,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 2
+  }
+ },
+ "H01-SCH": {
+  "tables": [
+   "twxv",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c02",
+   "tu5q.c02",
+   "twxv.c02",
+   "twxv.c01",
+   "tx7n.c01",
+   "tx7n.c04",
+   "tu5q.c01",
+   "tu5q.c05"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tu5q, twxv\n#columns tx7n.c02, tu5q.c02, twxv.c02",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.845,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.7142857142857143,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H01-BIZ": {
+  "tables": [
+   "twxv",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c04",
+   "twxv.c04",
+   "twxv.c01",
+   "tx7n.c01",
+   "tu5q.c01",
+   "tu5q.c05"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n, twxv\n#columns tu5q.c02, tx7n.c04, twxv.c04",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.856,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8571428571428571,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H01-VAG": {
+  "tables": [
+   "twxv",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c02",
+   "twxv.c04",
+   "twxv.c01",
+   "tx7n.c01",
+   "tx7n.c04",
+   "tu5q.c01",
+   "tu5q.c05"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n, twxv\n#columns tu5q.c02, tx7n.c02, twxv.c04",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.836,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8571428571428571,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H02-CAS": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c06",
+   "ts53.c02",
+   "twxv.c04",
+   "twxv.c01",
+   "twxv.c09",
+   "tx7n.c01",
+   "tx7n.c05",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53, twxv\n#columns tx7n.c06, ts53.c02, twxv.c04",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.861,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.5555555555555556,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H02-SCH": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c06",
+   "ts53.c02",
+   "tx7n.c19",
+   "twxv.c04",
+   "twxv.c01",
+   "twxv.c09",
+   "tx7n.c01",
+   "tx7n.c05",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53, twxv\n#columns tx7n.c06, ts53.c02, tx7n.c19, twxv.c04",
+  "eval_count": 44,
+  "error": null,
+  "seconds": 0.988,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H02-BIZ": {
+  "tables": [
+   "ts53",
+   "th77",
+   "tx7n",
+   "t89v"
+  ],
+  "columns": [
+   "tx7n.c06",
+   "th77.c04",
+   "ts53.c02",
+   "tx7n.c01",
+   "tx7n.c05",
+   "ts53.c01",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06",
+   "t89v.c03",
+   "th77.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, th77, ts53\n#columns tx7n.c06, th77.c04, ts53.c02",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.841,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.5555555555555556,
+   "tables_kept": 4
+  }
+ },
+ "H02-VAG": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "twxv.c04",
+   "tx7n.c05",
+   "ts53.c02",
+   "twxv.c01",
+   "twxv.c09",
+   "tx7n.c01",
+   "tx7n.c06",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables twxv, tx7n, ts53\n#columns twxv.c04, tx7n.c05, ts53.c02",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.836,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.5555555555555556,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H03-CAS": {
+  "tables": [
+   "ts4p",
+   "tajj"
+  ],
+  "columns": [
+   "tajj.c04",
+   "ts4p.c02",
+   "tajj.c13",
+   "ts4p.c01",
+   "tajj.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tajj, ts4p\n#columns tajj.c04, ts4p.c02, tajj.c13",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.761,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H03-SCH": {
+  "tables": [
+   "ts4p",
+   "tajj"
+  ],
+  "columns": [
+   "tajj.c04",
+   "ts4p.c02",
+   "ts4p.c01",
+   "tajj.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tajj, ts4p\n#columns tajj.c04, ts4p.c02",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.616,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H03-BIZ": {
+  "tables": [
+   "ts4p",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "t89v.c18",
+   "tajj.c13",
+   "ts4p.c01",
+   "t89v.c01",
+   "tajj.c01",
+   "tajj.c03"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t89v, tajj, ts4p\n#columns t89v.c18, tajj.c13, ts4p.c01",
+  "eval_count": 39,
+  "error": null,
+  "seconds": 0.896,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H03-VAG": {
+  "tables": [
+   "t89v",
+   "tajj",
+   "t3v5"
+  ],
+  "columns": [
+   "t89v.c13",
+   "tajj.c13",
+   "t3v5.c11",
+   "t3v5.c01",
+   "t3v5.c03",
+   "t89v.c01",
+   "tajj.c01",
+   "tajj.c03"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t89v, tajj, t3v5\n#columns t89v.c13, tajj.c13, t3v5.c11",
+  "eval_count": 41,
+  "error": null,
+  "seconds": 0.916,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H04-CAS": {
+  "tables": [
+   "ts4p",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c19",
+   "ts4p.c01",
+   "tx7n.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts4p\n#columns tx7n.c19, ts4p.c01",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.625,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-SCH": {
+  "tables": [
+   "ts4p",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c19",
+   "ts4p.c01",
+   "tx7n.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts4p\n#columns tx7n.c19, ts4p.c01",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.635,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-BIZ": {
+  "tables": [
+   "ts4p",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c07",
+   "ts4p.c02",
+   "tx7n.c01",
+   "ts4p.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts4p\n#columns tx7n.c07, ts4p.c02",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.631,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-VAG": {
+  "tables": [
+   "ts4p",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c07",
+   "tx7n.c10",
+   "ts4p.c02",
+   "tx7n.c01",
+   "ts4p.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts4p\n#columns tx7n.c07, tx7n.c10, ts4p.c02",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.755,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H05-CAS": {
+  "tables": [
+   "tumf",
+   "tu5q",
+   "tx7n",
+   "tpsn"
+  ],
+  "columns": [
+   "tx7n.c10",
+   "tpsn.c02",
+   "tu5q.c01",
+   "tumf.c02",
+   "tx7n.c01",
+   "tx7n.c04",
+   "tpsn.c01",
+   "tumf.c01",
+   "tu5q.c04"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tpsn, tu5q, tumf\n#columns tx7n.c10, tpsn.c02, tu5q.c01, tumf.c02",
+  "eval_count": 46,
+  "error": null,
+  "seconds": 1.027,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H05-SCH": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c02",
+   "tx7n.c09",
+   "tx7n.c10",
+   "tx7n.c01",
+   "tx7n.c04",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n\n#columns tx7n.c02, tx7n.c09, tx7n.c10",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.774,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H05-BIZ": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c04",
+   "tu5q.c02",
+   "tx7n.c10",
+   "tx7n.c09",
+   "tx7n.c01",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tu5q\n#columns tx7n.c04, tu5q.c02, tx7n.c10, tx7n.c09\n#columns tx7n.c10, tx7n.c09 - These are the actual and planned arrival times for completed flights, needed to calculate the turnaround time.",
+  "eval_count": 76,
+  "error": null,
+  "seconds": 1.653,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H05-VAG": {
+  "tables": [
+   "ts53",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c07",
+   "tx7n.c10",
+   "tu5q.c02",
+   "ts53.c02",
+   "ts53.c04",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "tx7n.c04",
+   "ts53.c01",
+   "tu5q.c01",
+   "tu5q.c06"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tu5q, ts53\n#columns tx7n.c07, tx7n.c10, tu5q.c02, ts53.c02, ts53.c04",
+  "eval_count": 51,
+  "error": null,
+  "seconds": 1.135,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-CAS": {
+  "tables": [
+   "th77",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "tajj.c03",
+   "th77.c02",
+   "tajj.c13",
+   "t89v.c01",
+   "t89v.c03",
+   "th77.c01",
+   "tajj.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tajj, th77\n#columns tajj.c03, th77.c02, tajj.c13",
+  "eval_count": 33,
+  "error": null,
+  "seconds": 0.769,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-SCH": {
+  "tables": [
+   "th77",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "t89v.c03",
+   "tajj.c13",
+   "th77.c01",
+   "th77.c17",
+   "t89v.c01",
+   "tajj.c01",
+   "tajj.c03"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t89v, tajj, th77\n#columns t89v.c03, tajj.c13, th77.c01, th77.c17",
+  "eval_count": 46,
+  "error": null,
+  "seconds": 1.053,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-BIZ": {
+  "tables": [
+   "th77",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "tajj.c07",
+   "th77.c01",
+   "tajj.c13",
+   "th77.c14",
+   "t89v.c01",
+   "t89v.c03",
+   "tajj.c01",
+   "tajj.c03"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tajj, th77\n#columns tajj.c07, th77.c01, tajj.c13, th77.c14",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.903,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-VAG": {
+  "tables": [
+   "th77",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "th77.c02",
+   "t89v.c16",
+   "tajj.c13",
+   "t89v.c01",
+   "t89v.c03",
+   "th77.c01",
+   "tajj.c01",
+   "tajj.c03"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables th77, t89v, tajj\n#columns th77.c02, t89v.c16, tajj.c13",
+  "eval_count": 39,
+  "error": null,
+  "seconds": 0.881,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H07-CAS": {
+  "tables": [
+   "trhn",
+   "tx7n",
+   "t89v",
+   "t3z7"
+  ],
+  "columns": [
+   "tx7n.c06",
+   "t89v.c06",
+   "t89v.c13",
+   "trhn.c01",
+   "trhn.c07",
+   "tx7n.c01",
+   "t89v.c01",
+   "t3z7.c01",
+   "t3z7.c05",
+   "t3z7.c03",
+   "t3z7.c02"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, t89v, trhn\n#columns tx7n.c06, t89v.c06, t89v.c13, trhn.c01, trhn.c07",
+  "eval_count": 51,
+  "error": null,
+  "seconds": 1.138,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.4444444444444444,
+   "tables_kept": 4
+  }
+ },
+ "H07-SCH": {
+  "tables": [
+   "ts53",
+   "tx7n",
+   "t89v",
+   "tg6t"
+  ],
+  "columns": [
+   "tg6t.c06",
+   "tx7n.c06",
+   "ts53.c01",
+   "tx7n.c01",
+   "tx7n.c05",
+   "tg6t.c01",
+   "tg6t.c03",
+   "tg6t.c02",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tg6t, tx7n, ts53, t89v\n#columns tg6t.c06, tx7n.c06, ts53.c01, tg6t.c13 / 1000",
+  "eval_count": 55,
+  "error": null,
+  "seconds": 1.227,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H07-BIZ": {
+  "tables": [
+   "ts53",
+   "trhn",
+   "t89v"
+  ],
+  "columns": [
+   "t89v.c06",
+   "ts53.c02",
+   "t89v.c13",
+   "trhn.c02",
+   "ts53.c01",
+   "t89v.c01",
+   "t89v.c07",
+   "trhn.c01",
+   "trhn.c03"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t89v, ts53, trhn\n#columns t89v.c06, ts53.c02, t89v.c13, trhn.c02",
+  "eval_count": 45,
+  "error": null,
+  "seconds": 1.008,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.4444444444444444,
+   "columns_in_schema": 0.4444444444444444,
+   "tables_kept": 3
+  }
+ },
+ "H07-VAG": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c03",
+   "ts53.c02",
+   "trhn.c05",
+   "ts53.c01",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables trhn, ts53\n#columns trhn.c03, ts53.c02, trhn.c05",
+  "eval_count": 30,
+  "error": null,
+  "seconds": 0.69,
+  "recall": {
+   "tables_found": 0.25,
+   "all_tables_found": false,
+   "columns_listed": 0.2222222222222222,
+   "columns_in_schema": 0.2222222222222222,
+   "tables_kept": 2
+  }
+ },
+ "H08-CAS": {
+  "tables": [
+   "ts53",
+   "tu5q",
+   "trhn",
+   "tx7n",
+   "t89v"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c14",
+   "t89v.c14",
+   "trhn.c08",
+   "trhn.c09",
+   "ts53.c01",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "tx7n.c04",
+   "trhn.c01",
+   "trhn.c03",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06",
+   "tu5q.c01",
+   "tu5q.c06"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n, t89v, trhn\n#columns tu5q.c02, tx7n.c14, t89v.c14, trhn.c08, trhn.c09",
+  "eval_count": 54,
+  "error": null,
+  "seconds": 1.218,
+  "recall": {
+   "tables_found": 0.6,
+   "all_tables_found": false,
+   "columns_listed": 0.4166666666666667,
+   "columns_in_schema": 0.5833333333333334,
+   "tables_kept": 5
+  }
+ },
+ "H08-SCH": {
+  "tables": [
+   "tx7n",
+   "t89v",
+   "tg6t",
+   "t3z7"
+  ],
+  "columns": [
+   "tg6t.c02",
+   "tx7n.c02",
+   "tx7n.c08",
+   "tx7n.c19",
+   "tx7n.c01",
+   "tg6t.c01",
+   "tg6t.c03",
+   "t89v.c01",
+   "t3z7.c01",
+   "t3z7.c03",
+   "t3z7.c02"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tg6t, tx7n, t89v\n#columns tg6t.c02, tx7n.c02, tg6t.c14, tx7n.c08, tx7n.c19",
+  "eval_count": 52,
+  "error": null,
+  "seconds": 1.16,
+  "recall": {
+   "tables_found": 0.6,
+   "all_tables_found": false,
+   "columns_listed": 0.4166666666666667,
+   "columns_in_schema": 0.5833333333333334,
+   "tables_kept": 4
+  }
+ },
+ "H08-BIZ": {
+  "tables": [
+   "ts53",
+   "tumf",
+   "tu5q",
+   "tx7n",
+   "t89v"
+  ],
+  "columns": [
+   "tx7n.c14",
+   "tumf.c02",
+   "t89v.c14",
+   "ts53.c01",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "tx7n.c04",
+   "tumf.c01",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06",
+   "tu5q.c01",
+   "tu5q.c06",
+   "tu5q.c04"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tumf, t89v\n#columns tx7n.c14, tumf.c02, t89v.c14",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.846,
+  "recall": {
+   "tables_found": 0.8,
+   "all_tables_found": false,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 0.8333333333333334,
+   "tables_kept": 5
+  }
+ },
+ "H08-VAG": {
+  "tables": [
+   "tumf",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c04",
+   "tx7n.c15",
+   "tumf.c07",
+   "tx7n.c01",
+   "tx7n.c04",
+   "tumf.c01",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n, tumf\n#columns tu5q.c04, tx7n.c15, tumf.c07",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.801,
+  "recall": {
+   "tables_found": 0.6,
+   "all_tables_found": false,
+   "columns_listed": 0.4166666666666667,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "H09-CAS": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c06",
+   "ts53.c01",
+   "twxv.c14",
+   "twxv.c01",
+   "twxv.c09",
+   "tx7n.c01",
+   "tx7n.c05"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53, twxv\n#columns tx7n.c06, ts53.c01, twxv.c14",
+  "eval_count": 37,
+  "error": null,
+  "seconds": 0.84,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.2857142857142857,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 3
+  }
+ },
+ "H09-SCH": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c06",
+   "ts53.c01",
+   "tx7n.c01",
+   "tx7n.c05"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, ts53\n#columns tx7n.c06, ts53.c01",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.616,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.2857142857142857,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 2
+  }
+ },
+ "H09-BIZ": {
+  "tables": [
+   "ts53",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "tu5q.c02",
+   "ts53.c01",
+   "ts53.c07",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c04",
+   "tu5q.c01",
+   "tu5q.c06"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tx7n, tu5q, ts53\n#columns tx7n.c05, tu5q.c02, ts53.c01, ts53.c07",
+  "eval_count": 44,
+  "error": null,
+  "seconds": 0.986,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.7142857142857143,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H09-VAG": {
+  "tables": [
+   "ts53",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c05",
+   "tx7n.c06",
+   "ts53.c02",
+   "ts53.c03",
+   "tx7n.c01",
+   "tx7n.c04",
+   "ts53.c01",
+   "tu5q.c01",
+   "tu5q.c06"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables tu5q, tx7n, ts53\n#columns tu5q.c02, tx7n.c05, tx7n.c06, ts53.c02, ts53.c03",
+  "eval_count": 51,
+  "error": null,
+  "seconds": 1.131,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.7142857142857143,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H10-CAS": {
+  "tables": [
+   "trhn",
+   "t89v",
+   "t3v5"
+  ],
+  "columns": [
+   "t3v5.c08",
+   "t3v5.c09",
+   "t3v5.c10",
+   "t3v5.c11",
+   "t3v5.c06",
+   "t89v.c06",
+   "trhn.c03",
+   "trhn.c13",
+   "t3v5.c01",
+   "t3v5.c04",
+   "t3v5.c03",
+   "t89v.c01",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t3v5, t89v, trhn\n#columns t3v5.c08, t3v5.c09, t3v5.c10, t3v5.c11, t3v5.c06, t89v.c06, trhn.c03, trhn.c13",
+  "eval_count": 77,
+  "error": null,
+  "seconds": 1.68,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H10-SCH": {
+  "tables": [
+   "ts53",
+   "trhn",
+   "t3v5"
+  ],
+  "columns": [
+   "t3v5.c06",
+   "t3v5.c11",
+   "t3v5.c12",
+   "t3v5.c09",
+   "trhn.c06",
+   "ts53.c01",
+   "t3v5.c01",
+   "t3v5.c04",
+   "trhn.c01",
+   "trhn.c03"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t3v5, trhn, ts53\n#columns t3v5.c06, t3v5.c11, t3v5.c12, t3v5.c09, trhn.c06",
+  "eval_count": 54,
+  "error": null,
+  "seconds": 1.205,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H10-BIZ": {
+  "tables": [
+   "t3v5"
+  ],
+  "columns": [
+   "t3v5.c08",
+   "t3v5.c09",
+   "t3v5.c10",
+   "t3v5.c05",
+   "t3v5.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t3v5\n#columns t3v5.c08, t3v5.c09, t3v5.c10, t3v5.c05",
+  "eval_count": 41,
+  "error": null,
+  "seconds": 0.932,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.4,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "H10-VAG": {
+  "tables": [
+   "ts4p",
+   "t3v5"
+  ],
+  "columns": [
+   "ts4p.c02",
+   "t3v5.c01",
+   "ts4p.c01"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t3v5, ts4p\n#columns t3v5.duty_rate, ts4p.c02",
+  "eval_count": 28,
+  "error": null,
+  "seconds": 0.674,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ }
+}

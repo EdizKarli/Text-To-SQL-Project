@@ -1,0 +1,2972 @@
+{
+  "_run": {
+    "variant": "cryptic",
+    "model": "qwen2.5-coder:1.5b",
+    "schema": "compact-pruned",
+    "evidence": false,
+    "dictionary": true,
+    "with_spec": false,
+    "num_ctx": 16384,
+    "pipeline": "two_pass",
+    "linker": "llm-qwen2.5-coder-7b-v2",
+    "timeout_s": 8,
+    "retries": 1
+  },
+  "E01-CAS": {
+    "raw": "Tables: ts53\nOutput: count(*) \nPlan: SELECT count(*) FROM ts53 WHERE c14 = 1\nSQL: SELECT count(*) FROM ts53 WHERE c14 = 1",
+    "error": null,
+    "latency_s": 4.653,
+    "pass1_s": 4.305,
+    "pass2_s": 0.348,
+    "attempts": [
+      {
+        "raw": "Tables: ts53\nOutput: count(*) \nPlan: SELECT count(*) FROM ts53 WHERE c14 = 1\nSQL: SELECT count(*) FROM ts53 WHERE c14 = 1",
+        "sql": "SELECT count(*) FROM ts53 WHERE c14 = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.348,
+        "eval_count": 45,
+        "eval_duration_s": 0.282328,
+        "prompt_eval_count": 485
+      }
+    ],
+    "retried": false,
+    "eval_count": 45,
+    "eval_duration_s": 0.282328,
+    "prompt_eval_count": 485
+  },
+  "E01-SCH": {
+    "raw": "Tables: ts53\nOutput: count(*)\nPlan: SELECT count(*) FROM ts53 WHERE c14 = 1\nSQL: SELECT count(*) FROM ts53 WHERE c14 = 1",
+    "error": null,
+    "latency_s": 0.81,
+    "pass1_s": 0.526,
+    "pass2_s": 0.284,
+    "attempts": [
+      {
+        "raw": "Tables: ts53\nOutput: count(*)\nPlan: SELECT count(*) FROM ts53 WHERE c14 = 1\nSQL: SELECT count(*) FROM ts53 WHERE c14 = 1",
+        "sql": "SELECT count(*) FROM ts53 WHERE c14 = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.284,
+        "eval_count": 45,
+        "eval_duration_s": 0.251294,
+        "prompt_eval_count": 491
+      }
+    ],
+    "retried": false,
+    "eval_count": 45,
+    "eval_duration_s": 0.251294,
+    "prompt_eval_count": 491
+  },
+  "E01-BIZ": {
+    "raw": "Tables: ts53\nOutput: count(*) \nPlan: SELECT count(*) FROM ts53 WHERE c14 = 1\nSQL: SELECT count(*) FROM ts53 WHERE c14 = 1",
+    "error": null,
+    "latency_s": 0.844,
+    "pass1_s": 0.531,
+    "pass2_s": 0.313,
+    "attempts": [
+      {
+        "raw": "Tables: ts53\nOutput: count(*) \nPlan: SELECT count(*) FROM ts53 WHERE c14 = 1\nSQL: SELECT count(*) FROM ts53 WHERE c14 = 1",
+        "sql": "SELECT count(*) FROM ts53 WHERE c14 = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.313,
+        "eval_count": 45,
+        "eval_duration_s": 0.255187,
+        "prompt_eval_count": 491
+      }
+    ],
+    "retried": false,
+    "eval_count": 45,
+    "eval_duration_s": 0.255187,
+    "prompt_eval_count": 491
+  },
+  "E01-VAG": {
+    "raw": "Tables: ts53\nOutput: count(*) \nPlan: SELECT count(*) FROM ts53 WHERE c14 = 1\nSQL: SELECT count(*) FROM ts53 WHERE c14 = 1",
+    "error": null,
+    "latency_s": 0.906,
+    "pass1_s": 0.615,
+    "pass2_s": 0.291,
+    "attempts": [
+      {
+        "raw": "Tables: ts53\nOutput: count(*) \nPlan: SELECT count(*) FROM ts53 WHERE c14 = 1\nSQL: SELECT count(*) FROM ts53 WHERE c14 = 1",
+        "sql": "SELECT count(*) FROM ts53 WHERE c14 = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.291,
+        "eval_count": 45,
+        "eval_duration_s": 0.257439,
+        "prompt_eval_count": 482
+      }
+    ],
+    "retried": false,
+    "eval_count": 45,
+    "eval_duration_s": 0.257439,
+    "prompt_eval_count": 482
+  },
+  "E02-CAS": {
+    "raw": "Tables: ts53\nOutput: ts53.c02\nPlan: SELECT ts53.c02 FROM ts53 WHERE ts53.c17 = 1\nSQL: SELECT ts53.c02 FROM ts53 WHERE ts53.c17 = 1",
+    "error": null,
+    "latency_s": 1.07,
+    "pass1_s": 0.679,
+    "pass2_s": 0.391,
+    "attempts": [
+      {
+        "raw": "Tables: ts53\nOutput: ts53.c02\nPlan: SELECT ts53.c02 FROM ts53 WHERE ts53.c17 = 1\nSQL: SELECT ts53.c02 FROM ts53 WHERE ts53.c17 = 1",
+        "sql": "SELECT ts53.c02 FROM ts53 WHERE ts53.c17 = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.391,
+        "eval_count": 63,
+        "eval_duration_s": 0.353842,
+        "prompt_eval_count": 510
+      }
+    ],
+    "retried": false,
+    "eval_count": 63,
+    "eval_duration_s": 0.353842,
+    "prompt_eval_count": 510
+  },
+  "E02-SCH": {
+    "raw": "Tables: ts53\nOutput: ts53.c02\nPlan: SELECT ts53.c02 FROM ts53 WHERE ts53.c17 = 1 ORDER BY ts53.c02\nSQL: SELECT ts53.c02 FROM ts53 WHERE ts53.c17 = 1 ORDER BY ts53.c02",
+    "error": null,
+    "latency_s": 1.222,
+    "pass1_s": 0.73,
+    "pass2_s": 0.492,
+    "attempts": [
+      {
+        "raw": "Tables: ts53\nOutput: ts53.c02\nPlan: SELECT ts53.c02 FROM ts53 WHERE ts53.c17 = 1 ORDER BY ts53.c02\nSQL: SELECT ts53.c02 FROM ts53 WHERE ts53.c17 = 1 ORDER BY ts53.c02",
+        "sql": "SELECT ts53.c02 FROM ts53 WHERE ts53.c17 = 1 ORDER BY ts53.c02",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.492,
+        "eval_count": 79,
+        "eval_duration_s": 0.434261,
+        "prompt_eval_count": 515
+      }
+    ],
+    "retried": false,
+    "eval_count": 79,
+    "eval_duration_s": 0.434261,
+    "prompt_eval_count": 515
+  },
+  "E02-BIZ": {
+    "raw": "Tables: ts53\nOutput: ts53.c02\nPlan: ts53 JOIN ts53 ON ts53.c01 = ts53.c01\nSQL: SELECT ts53.c02 FROM ts53 WHERE ts53.c17 = 1",
+    "error": null,
+    "latency_s": 1.078,
+    "pass1_s": 0.682,
+    "pass2_s": 0.396,
+    "attempts": [
+      {
+        "raw": "Tables: ts53\nOutput: ts53.c02\nPlan: ts53 JOIN ts53 ON ts53.c01 = ts53.c01\nSQL: SELECT ts53.c02 FROM ts53 WHERE ts53.c17 = 1",
+        "sql": "SELECT ts53.c02 FROM ts53 WHERE ts53.c17 = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.396,
+        "eval_count": 63,
+        "eval_duration_s": 0.344341,
+        "prompt_eval_count": 517
+      }
+    ],
+    "retried": false,
+    "eval_count": 63,
+    "eval_duration_s": 0.344341,
+    "prompt_eval_count": 517
+  },
+  "E02-VAG": {
+    "raw": "Tables: ts53\nOutput: ts53.c04, ts53.c06\nPlan: ts53 INNER JOIN ts53 ON ts53.c01 = ts53.c01 WHERE ts53.c17 = 0\nSQL: SELECT ts53.c04, ts53.c06 FROM ts53 WHERE ts53.c17 = 0",
+    "error": null,
+    "latency_s": 1.357,
+    "pass1_s": 0.817,
+    "pass2_s": 0.54,
+    "attempts": [
+      {
+        "raw": "Tables: ts53\nOutput: ts53.c04, ts53.c06\nPlan: ts53 INNER JOIN ts53 ON ts53.c01 = ts53.c01 WHERE ts53.c17 = 0\nSQL: SELECT ts53.c04, ts53.c06 FROM ts53 WHERE ts53.c17 = 0",
+        "sql": "SELECT ts53.c04, ts53.c06 FROM ts53 WHERE ts53.c17 = 0",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.54,
+        "eval_count": 88,
+        "eval_duration_s": 0.485786,
+        "prompt_eval_count": 510
+      }
+    ],
+    "retried": false,
+    "eval_count": 88,
+    "eval_duration_s": 0.485786,
+    "prompt_eval_count": 510
+  },
+  "E03-CAS": {
+    "raw": "Tables: twxv, ts53\nOutput: twxv.c04\nPlan: SELECT twxv.c04 FROM twxv INNER JOIN ts53 ON twxv.c09 = ts53.c01 WHERE twxv.c10 = 'CargoLink'\nSQL: SELECT twxv.c04 FROM twxv INNER JOIN ts53 ON twxv.c09 = ts53.c01 WHERE twxv.c10 = 'CargoLink'",
+    "error": null,
+    "latency_s": 1.362,
+    "pass1_s": 0.715,
+    "pass2_s": 0.647,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, ts53\nOutput: twxv.c04\nPlan: SELECT twxv.c04 FROM twxv INNER JOIN ts53 ON twxv.c09 = ts53.c01 WHERE twxv.c10 = 'CargoLink'\nSQL: SELECT twxv.c04 FROM twxv INNER JOIN ts53 ON twxv.c09 = ts53.c01 WHERE twxv.c10 = 'CargoLink'",
+        "sql": "SELECT twxv.c04 FROM twxv INNER JOIN ts53 ON twxv.c09 = ts53.c01 WHERE twxv.c10 = 'CargoLink'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.647,
+        "eval_count": 108,
+        "eval_duration_s": 0.591943,
+        "prompt_eval_count": 436
+      }
+    ],
+    "retried": false,
+    "eval_count": 108,
+    "eval_duration_s": 0.591943,
+    "prompt_eval_count": 436
+  },
+  "E03-SCH": {
+    "raw": "Tables: twxv\nOutput: twxv.c04\nPlan: SELECT twxv.c04 FROM twxv WHERE twxv.c10 = 'CargoLink' ORDER BY twxv.c04\nSQL: SELECT twxv.c04 FROM twxv WHERE twxv.c10 = 'CargoLink' ORDER BY twxv.c04",
+    "error": null,
+    "latency_s": 1.212,
+    "pass1_s": 0.72,
+    "pass2_s": 0.492,
+    "attempts": [
+      {
+        "raw": "Tables: twxv\nOutput: twxv.c04\nPlan: SELECT twxv.c04 FROM twxv WHERE twxv.c10 = 'CargoLink' ORDER BY twxv.c04\nSQL: SELECT twxv.c04 FROM twxv WHERE twxv.c10 = 'CargoLink' ORDER BY twxv.c04",
+        "sql": "SELECT twxv.c04 FROM twxv WHERE twxv.c10 = 'CargoLink' ORDER BY twxv.c04",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.492,
+        "eval_count": 83,
+        "eval_duration_s": 0.459695,
+        "prompt_eval_count": 448
+      }
+    ],
+    "retried": false,
+    "eval_count": 83,
+    "eval_duration_s": 0.459695,
+    "prompt_eval_count": 448
+  },
+  "E03-BIZ": {
+    "raw": "Tables: twxv, ts53\nOutput: twxv.c04\nPlan: SELECT twxv.c04 FROM twxv INNER JOIN ts53 ON twxv.c09 = ts53.c01 WHERE twxv.c10 = 'CargoLink'",
+    "error": null,
+    "latency_s": 1.111,
+    "pass1_s": 0.718,
+    "pass2_s": 0.393,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, ts53\nOutput: twxv.c04\nPlan: SELECT twxv.c04 FROM twxv INNER JOIN ts53 ON twxv.c09 = ts53.c01 WHERE twxv.c10 = 'CargoLink'",
+        "sql": "SELECT twxv.c04 FROM twxv INNER JOIN ts53 ON twxv.c09 = ts53.c01 WHERE twxv.c10 = 'CargoLink'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.393,
+        "eval_count": 64,
+        "eval_duration_s": 0.348829,
+        "prompt_eval_count": 437
+      }
+    ],
+    "retried": false,
+    "eval_count": 64,
+    "eval_duration_s": 0.348829,
+    "prompt_eval_count": 437
+  },
+  "E03-VAG": {
+    "raw": "Tables: twxv, ts53\nOutput: twxv.c04, twxv.c02\nPlan: SELECT twxv.c04, twxv.c02 FROM twxv INNER JOIN ts53 ON twxv.c09 = ts53.c01 WHERE twxv.c10 = 'CargoLink'\nSQL: SELECT twxv.c04, twxv.c02 FROM twxv INNER JOIN ts53 ON twxv.c09 = ts53.c01 WHERE twxv.c10 = 'CargoLink'",
+    "error": null,
+    "latency_s": 1.6,
+    "pass1_s": 0.836,
+    "pass2_s": 0.764,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, ts53\nOutput: twxv.c04, twxv.c02\nPlan: SELECT twxv.c04, twxv.c02 FROM twxv INNER JOIN ts53 ON twxv.c09 = ts53.c01 WHERE twxv.c10 = 'CargoLink'\nSQL: SELECT twxv.c04, twxv.c02 FROM twxv INNER JOIN ts53 ON twxv.c09 = ts53.c01 WHERE twxv.c10 = 'CargoLink'",
+        "sql": "SELECT twxv.c04, twxv.c02 FROM twxv INNER JOIN ts53 ON twxv.c09 = ts53.c01 WHERE twxv.c10 = 'CargoLink'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.764,
+        "eval_count": 129,
+        "eval_duration_s": 0.707387,
+        "prompt_eval_count": 440
+      }
+    ],
+    "retried": false,
+    "eval_count": 129,
+    "eval_duration_s": 0.707387,
+    "prompt_eval_count": 440
+  },
+  "E04-CAS": {
+    "raw": "Tables: tumf\nOutput: tumf.c02\nPlan: JOIN tumf ON tumf.c04 = 'Airbus'\nSQL: SELECT tumf.c02 FROM tumf WHERE tumf.c04 = 'Airbus'",
+    "error": null,
+    "latency_s": 1.03,
+    "pass1_s": 0.662,
+    "pass2_s": 0.368,
+    "attempts": [
+      {
+        "raw": "Tables: tumf\nOutput: tumf.c02\nPlan: JOIN tumf ON tumf.c04 = 'Airbus'\nSQL: SELECT tumf.c02 FROM tumf WHERE tumf.c04 = 'Airbus'",
+        "sql": "SELECT tumf.c02 FROM tumf WHERE tumf.c04 = 'Airbus'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.368,
+        "eval_count": 52,
+        "eval_duration_s": 0.285569,
+        "prompt_eval_count": 464
+      }
+    ],
+    "retried": false,
+    "eval_count": 52,
+    "eval_duration_s": 0.285569,
+    "prompt_eval_count": 464
+  },
+  "E04-SCH": {
+    "raw": "Tables: tumf\nOutput: tumf.c02\nPlan: JOIN tumf ON tumf.c04 = 'Airbus'\nSQL: SELECT tumf.c02 FROM tumf WHERE tumf.c04 = 'Airbus'",
+    "error": null,
+    "latency_s": 0.982,
+    "pass1_s": 0.643,
+    "pass2_s": 0.339,
+    "attempts": [
+      {
+        "raw": "Tables: tumf\nOutput: tumf.c02\nPlan: JOIN tumf ON tumf.c04 = 'Airbus'\nSQL: SELECT tumf.c02 FROM tumf WHERE tumf.c04 = 'Airbus'",
+        "sql": "SELECT tumf.c02 FROM tumf WHERE tumf.c04 = 'Airbus'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.339,
+        "eval_count": 52,
+        "eval_duration_s": 0.285431,
+        "prompt_eval_count": 472
+      }
+    ],
+    "retried": false,
+    "eval_count": 52,
+    "eval_duration_s": 0.285431,
+    "prompt_eval_count": 472
+  },
+  "E04-BIZ": {
+    "raw": "Tables: tumf\nOutput: tumf.c02\nPlan: JOIN tumf ON tumf.c04 = 'Airbus'\nSQL: SELECT tumf.c02 FROM tumf WHERE tumf.c04 = 'Airbus'",
+    "error": null,
+    "latency_s": 0.982,
+    "pass1_s": 0.656,
+    "pass2_s": 0.326,
+    "attempts": [
+      {
+        "raw": "Tables: tumf\nOutput: tumf.c02\nPlan: JOIN tumf ON tumf.c04 = 'Airbus'\nSQL: SELECT tumf.c02 FROM tumf WHERE tumf.c04 = 'Airbus'",
+        "sql": "SELECT tumf.c02 FROM tumf WHERE tumf.c04 = 'Airbus'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.326,
+        "eval_count": 52,
+        "eval_duration_s": 0.290546,
+        "prompt_eval_count": 469
+      }
+    ],
+    "retried": false,
+    "eval_count": 52,
+    "eval_duration_s": 0.290546,
+    "prompt_eval_count": 469
+  },
+  "E04-VAG": {
+    "raw": "Tables: tumf\nOutput: tumf.c02\nPlan: JOIN tumf ON tumf.c04 = 'Airbus'\nSQL: SELECT tumf.c02 FROM tumf WHERE tumf.c04 = 'Airbus'",
+    "error": null,
+    "latency_s": 0.984,
+    "pass1_s": 0.651,
+    "pass2_s": 0.333,
+    "attempts": [
+      {
+        "raw": "Tables: tumf\nOutput: tumf.c02\nPlan: JOIN tumf ON tumf.c04 = 'Airbus'\nSQL: SELECT tumf.c02 FROM tumf WHERE tumf.c04 = 'Airbus'",
+        "sql": "SELECT tumf.c02 FROM tumf WHERE tumf.c04 = 'Airbus'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.333,
+        "eval_count": 52,
+        "eval_duration_s": 0.284565,
+        "prompt_eval_count": 459
+      }
+    ],
+    "retried": false,
+    "eval_count": 52,
+    "eval_duration_s": 0.284565,
+    "prompt_eval_count": 459
+  },
+  "E05-CAS": {
+    "raw": "Tables: tu5q, tumf\n\nOutput: tu5q.c10\n\nPlan: SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'\n\nSQL: SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'",
+    "error": null,
+    "latency_s": 1.341,
+    "pass1_s": 0.708,
+    "pass2_s": 0.633,
+    "attempts": [
+      {
+        "raw": "Tables: tu5q, tumf\n\nOutput: tu5q.c10\n\nPlan: SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'\n\nSQL: SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'",
+        "sql": "SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.633,
+        "eval_count": 101,
+        "eval_duration_s": 0.554481,
+        "prompt_eval_count": 491
+      }
+    ],
+    "retried": false,
+    "eval_count": 101,
+    "eval_duration_s": 0.554481,
+    "prompt_eval_count": 491
+  },
+  "E05-SCH": {
+    "raw": "Tables: tu5q\nOutput: count(*)\nPlan: SELECT count(*) FROM tu5q WHERE c10 = 'leased'\nSQL: SELECT count(*) FROM tu5q WHERE c10 = 'leased'",
+    "error": null,
+    "latency_s": 0.908,
+    "pass1_s": 0.616,
+    "pass2_s": 0.292,
+    "attempts": [
+      {
+        "raw": "Tables: tu5q\nOutput: count(*)\nPlan: SELECT count(*) FROM tu5q WHERE c10 = 'leased'\nSQL: SELECT count(*) FROM tu5q WHERE c10 = 'leased'",
+        "sql": "SELECT count(*) FROM tu5q WHERE c10 = 'leased'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.292,
+        "eval_count": 46,
+        "eval_duration_s": 0.255408,
+        "prompt_eval_count": 484
+      }
+    ],
+    "retried": false,
+    "eval_count": 46,
+    "eval_duration_s": 0.255408,
+    "prompt_eval_count": 484
+  },
+  "E05-BIZ": {
+    "raw": "Tables: tu5q, tumf\nOutput: tu5q.c10\nPlan: SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'\nSQL: SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'",
+    "error": null,
+    "latency_s": 1.291,
+    "pass1_s": 0.685,
+    "pass2_s": 0.606,
+    "attempts": [
+      {
+        "raw": "Tables: tu5q, tumf\nOutput: tu5q.c10\nPlan: SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'\nSQL: SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'",
+        "sql": "SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.606,
+        "eval_count": 101,
+        "eval_duration_s": 0.556138,
+        "prompt_eval_count": 493
+      }
+    ],
+    "retried": false,
+    "eval_count": 101,
+    "eval_duration_s": 0.556138,
+    "prompt_eval_count": 493
+  },
+  "E05-VAG": {
+    "raw": "Tables: tu5q, tumf\n\nOutput: tu5q.c10\n\nPlan: SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'\n\nSQL: SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'",
+    "error": null,
+    "latency_s": 1.277,
+    "pass1_s": 0.687,
+    "pass2_s": 0.59,
+    "attempts": [
+      {
+        "raw": "Tables: tu5q, tumf\n\nOutput: tu5q.c10\n\nPlan: SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'\n\nSQL: SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'",
+        "sql": "SELECT tu5q.c10 FROM tu5q INNER JOIN tumf ON tu5q.c01 = tumf.c01 WHERE tu5q.c10 = 'leased'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.59,
+        "eval_count": 101,
+        "eval_duration_s": 0.557365,
+        "prompt_eval_count": 488
+      }
+    ],
+    "retried": false,
+    "eval_count": 101,
+    "eval_duration_s": 0.557365,
+    "prompt_eval_count": 488
+  },
+  "E06-CAS": {
+    "raw": "Tables: tu5q\n\nOutput: tu5q.c02, tu5q.c16\n\nPlan: SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 != 'active'\n\nSQL: SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 != 'active'",
+    "error": null,
+    "latency_s": 1.357,
+    "pass1_s": 0.833,
+    "pass2_s": 0.524,
+    "attempts": [
+      {
+        "raw": "Tables: tu5q\n\nOutput: tu5q.c02, tu5q.c16\n\nPlan: SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 != 'active'\n\nSQL: SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 != 'active'",
+        "sql": "SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 != 'active'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.524,
+        "eval_count": 85,
+        "eval_duration_s": 0.471253,
+        "prompt_eval_count": 503
+      }
+    ],
+    "retried": false,
+    "eval_count": 85,
+    "eval_duration_s": 0.471253,
+    "prompt_eval_count": 503
+  },
+  "E06-SCH": {
+    "raw": "Tables: tu5q\nOutput: tu5q.c02, tu5q.c16\nPlan: SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 != 'active'\nSQL: SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 != 'active'",
+    "error": null,
+    "latency_s": 1.337,
+    "pass1_s": 0.831,
+    "pass2_s": 0.506,
+    "attempts": [
+      {
+        "raw": "Tables: tu5q\nOutput: tu5q.c02, tu5q.c16\nPlan: SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 != 'active'\nSQL: SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 != 'active'",
+        "sql": "SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 != 'active'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.506,
+        "eval_count": 85,
+        "eval_duration_s": 0.472261,
+        "prompt_eval_count": 508
+      }
+    ],
+    "retried": false,
+    "eval_count": 85,
+    "eval_duration_s": 0.472261,
+    "prompt_eval_count": 508
+  },
+  "E06-BIZ": {
+    "raw": "Tables: tu5q\n\nOutput: tu5q.c02, tu5q.c16\n\nPlan: SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 = 'retired' OR tu5q.c16 = 'maintenance'\n\nSQL: SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 IN ('retired', 'maintenance')",
+    "error": null,
+    "latency_s": 1.524,
+    "pass1_s": 0.933,
+    "pass2_s": 0.591,
+    "attempts": [
+      {
+        "raw": "Tables: tu5q\n\nOutput: tu5q.c02, tu5q.c16\n\nPlan: SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 = 'retired' OR tu5q.c16 = 'maintenance'\n\nSQL: SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 IN ('retired', 'maintenance')",
+        "sql": "SELECT tu5q.c02, tu5q.c16 FROM tu5q WHERE tu5q.c16 IN ('retired', 'maintenance')",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.591,
+        "eval_count": 101,
+        "eval_duration_s": 0.558197,
+        "prompt_eval_count": 504
+      }
+    ],
+    "retried": false,
+    "eval_count": 101,
+    "eval_duration_s": 0.558197,
+    "prompt_eval_count": 504
+  },
+  "E06-VAG": {
+    "raw": "Tables: tu5q\n\nOutput: tu5q.c02, tu5q.c08, tu5q.c13\n\nPlan: SELECT tu5q.c02, tu5q.c08, tu5q.c13 FROM tu5q WHERE tu5q.c16 = 'retired'\n\nSQL: SELECT tu5q.c02, tu5q.c08, tu5q.c13 FROM tu5q WHERE tu5q.c16 = 'retired'",
+    "error": null,
+    "latency_s": 1.714,
+    "pass1_s": 1.059,
+    "pass2_s": 0.655,
+    "attempts": [
+      {
+        "raw": "Tables: tu5q\n\nOutput: tu5q.c02, tu5q.c08, tu5q.c13\n\nPlan: SELECT tu5q.c02, tu5q.c08, tu5q.c13 FROM tu5q WHERE tu5q.c16 = 'retired'\n\nSQL: SELECT tu5q.c02, tu5q.c08, tu5q.c13 FROM tu5q WHERE tu5q.c16 = 'retired'",
+        "sql": "SELECT tu5q.c02, tu5q.c08, tu5q.c13 FROM tu5q WHERE tu5q.c16 = 'retired'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.655,
+        "eval_count": 108,
+        "eval_duration_s": 0.595967,
+        "prompt_eval_count": 499
+      }
+    ],
+    "retried": false,
+    "eval_count": 108,
+    "eval_duration_s": 0.595967,
+    "prompt_eval_count": 499
+  },
+  "E07-CAS": {
+    "raw": "Tables: th77\nOutput: c17, count(*) as num_customers\nPlan: SELECT T1.c17, COUNT(*) as num_customers FROM th77 AS T1 GROUP BY T1.c17",
+    "error": null,
+    "latency_s": 1.064,
+    "pass1_s": 0.712,
+    "pass2_s": 0.352,
+    "attempts": [
+      {
+        "raw": "Tables: th77\nOutput: c17, count(*) as num_customers\nPlan: SELECT T1.c17, COUNT(*) as num_customers FROM th77 AS T1 GROUP BY T1.c17",
+        "sql": "SELECT T1.c17, COUNT(*) as num_customers FROM th77 AS T1 GROUP BY T1.c17",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.352,
+        "eval_count": 49,
+        "eval_duration_s": 0.268358999,
+        "prompt_eval_count": 512
+      }
+    ],
+    "retried": false,
+    "eval_count": 49,
+    "eval_duration_s": 0.268358999,
+    "prompt_eval_count": 512
+  },
+  "E07-SCH": {
+    "raw": "Tables: th77\nOutput: th77.c17, th77.c01\nPlan: SELECT th77.c17, th77.c01 FROM th77 GROUP BY th77.c17",
+    "error": null,
+    "latency_s": 0.98,
+    "pass1_s": 0.666,
+    "pass2_s": 0.314,
+    "attempts": [
+      {
+        "raw": "Tables: th77\nOutput: th77.c17, th77.c01\nPlan: SELECT th77.c17, th77.c01 FROM th77 GROUP BY th77.c17",
+        "sql": "SELECT th77.c17, th77.c01 FROM th77 GROUP BY th77.c17",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.314,
+        "eval_count": 51,
+        "eval_duration_s": 0.282145,
+        "prompt_eval_count": 520
+      }
+    ],
+    "retried": false,
+    "eval_count": 51,
+    "eval_duration_s": 0.282145,
+    "prompt_eval_count": 520
+  },
+  "E07-BIZ": {
+    "raw": "Tables: th77\nOutput: th77.c17, th77.c01\nPlan: SELECT th77.c17, th77.c01 FROM th77 GROUP BY th77.c17",
+    "error": null,
+    "latency_s": 0.977,
+    "pass1_s": 0.658,
+    "pass2_s": 0.319,
+    "attempts": [
+      {
+        "raw": "Tables: th77\nOutput: th77.c17, th77.c01\nPlan: SELECT th77.c17, th77.c01 FROM th77 GROUP BY th77.c17",
+        "sql": "SELECT th77.c17, th77.c01 FROM th77 GROUP BY th77.c17",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.319,
+        "eval_count": 51,
+        "eval_duration_s": 0.283315,
+        "prompt_eval_count": 527
+      }
+    ],
+    "retried": false,
+    "eval_count": 51,
+    "eval_duration_s": 0.283315,
+    "prompt_eval_count": 527
+  },
+  "E07-VAG": {
+    "raw": "Tables: th77\nOutput: th77.c17, th77.c01\nPlan: SELECT th77.c17, th77.c01 FROM th77",
+    "error": null,
+    "latency_s": 0.944,
+    "pass1_s": 0.675,
+    "pass2_s": 0.269,
+    "attempts": [
+      {
+        "raw": "Tables: th77\nOutput: th77.c17, th77.c01\nPlan: SELECT th77.c17, th77.c01 FROM th77",
+        "sql": "SELECT th77.c17, th77.c01 FROM th77",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.269,
+        "eval_count": 43,
+        "eval_duration_s": 0.238218,
+        "prompt_eval_count": 512
+      }
+    ],
+    "retried": false,
+    "eval_count": 43,
+    "eval_duration_s": 0.238218,
+    "prompt_eval_count": 512
+  },
+  "E08-CAS": {
+    "raw": "Tables: th77\nOutput: th77.c03, th77.c06\nPlan: SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'Germany'\nSQL: SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'Germany'",
+    "error": null,
+    "latency_s": 1.425,
+    "pass1_s": 0.92,
+    "pass2_s": 0.505,
+    "attempts": [
+      {
+        "raw": "Tables: th77\nOutput: th77.c03, th77.c06\nPlan: SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'Germany'\nSQL: SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'Germany'",
+        "sql": "SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'Germany'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.505,
+        "eval_count": 85,
+        "eval_duration_s": 0.467393,
+        "prompt_eval_count": 547
+      }
+    ],
+    "retried": false,
+    "eval_count": 85,
+    "eval_duration_s": 0.467393,
+    "prompt_eval_count": 547
+  },
+  "E08-SCH": {
+    "raw": "Tables: th77\nOutput: th77.c03, th77.c06\nPlan: SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'Germany'\nSQL: SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'Germany'",
+    "error": null,
+    "latency_s": 1.328,
+    "pass1_s": 0.828,
+    "pass2_s": 0.5,
+    "attempts": [
+      {
+        "raw": "Tables: th77\nOutput: th77.c03, th77.c06\nPlan: SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'Germany'\nSQL: SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'Germany'",
+        "sql": "SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'Germany'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.5,
+        "eval_count": 85,
+        "eval_duration_s": 0.466354,
+        "prompt_eval_count": 548
+      }
+    ],
+    "retried": false,
+    "eval_count": 85,
+    "eval_duration_s": 0.466354,
+    "prompt_eval_count": 548
+  },
+  "E08-BIZ": {
+    "raw": "Tables: th77\nOutput: th77.c03, th77.c06\nPlan: SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'germany'\nSQL: SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'germany'",
+    "error": null,
+    "latency_s": 1.358,
+    "pass1_s": 0.833,
+    "pass2_s": 0.525,
+    "attempts": [
+      {
+        "raw": "Tables: th77\nOutput: th77.c03, th77.c06\nPlan: SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'germany'\nSQL: SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'germany'",
+        "sql": "SELECT th77.c03, th77.c06 FROM th77 WHERE th77.c05 = 'germany'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.525,
+        "eval_count": 87,
+        "eval_duration_s": 0.478283,
+        "prompt_eval_count": 538
+      }
+    ],
+    "retried": false,
+    "eval_count": 87,
+    "eval_duration_s": 0.478283,
+    "prompt_eval_count": 538
+  },
+  "E08-VAG": {
+    "raw": "Tables: th77\nOutput: th77.c03, th77.c05\nPlan: SELECT th77.c03, th77.c05 FROM th77 WHERE th77.c04 = 'germany'\nSQL: SELECT th77.c03, th77.c05 FROM th77 WHERE th77.c04 = 'germany'",
+    "error": null,
+    "latency_s": 1.42,
+    "pass1_s": 0.879,
+    "pass2_s": 0.541,
+    "attempts": [
+      {
+        "raw": "Tables: th77\nOutput: th77.c03, th77.c05\nPlan: SELECT th77.c03, th77.c05 FROM th77 WHERE th77.c04 = 'germany'\nSQL: SELECT th77.c03, th77.c05 FROM th77 WHERE th77.c04 = 'germany'",
+        "sql": "SELECT th77.c03, th77.c05 FROM th77 WHERE th77.c04 = 'germany'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.541,
+        "eval_count": 87,
+        "eval_duration_s": 0.478158,
+        "prompt_eval_count": 538
+      }
+    ],
+    "retried": false,
+    "eval_count": 87,
+    "eval_duration_s": 0.478158,
+    "prompt_eval_count": 538
+  },
+  "E09-CAS": {
+    "raw": "Tables: trhn\nOutput: trhn.c05, trhn.c01\nPlan: SELECT trhn.c05, trhn.c01 FROM trhn GROUP BY trhn.c05",
+    "error": null,
+    "latency_s": 0.926,
+    "pass1_s": 0.604,
+    "pass2_s": 0.322,
+    "attempts": [
+      {
+        "raw": "Tables: trhn\nOutput: trhn.c05, trhn.c01\nPlan: SELECT trhn.c05, trhn.c01 FROM trhn GROUP BY trhn.c05",
+        "sql": "SELECT trhn.c05, trhn.c01 FROM trhn GROUP BY trhn.c05",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.322,
+        "eval_count": 44,
+        "eval_duration_s": 0.238724,
+        "prompt_eval_count": 469
+      }
+    ],
+    "retried": false,
+    "eval_count": 44,
+    "eval_duration_s": 0.238724,
+    "prompt_eval_count": 469
+  },
+  "E09-SCH": {
+    "raw": "Tables: trhn\nOutput: trhn.c05, trhn.c01\nPlan: SELECT trhn.c05, trhn.c01 FROM trhn GROUP BY trhn.c05",
+    "error": null,
+    "latency_s": 0.899,
+    "pass1_s": 0.603,
+    "pass2_s": 0.296,
+    "attempts": [
+      {
+        "raw": "Tables: trhn\nOutput: trhn.c05, trhn.c01\nPlan: SELECT trhn.c05, trhn.c01 FROM trhn GROUP BY trhn.c05",
+        "sql": "SELECT trhn.c05, trhn.c01 FROM trhn GROUP BY trhn.c05",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.296,
+        "eval_count": 44,
+        "eval_duration_s": 0.242693,
+        "prompt_eval_count": 470
+      }
+    ],
+    "retried": false,
+    "eval_count": 44,
+    "eval_duration_s": 0.242693,
+    "prompt_eval_count": 470
+  },
+  "E09-BIZ": {
+    "raw": "Tables: trhn, ts53\n\nOutput: trhn.c05, trhn.c05, trhn.c01\n\nPlan: SELECT trhn.c05, trhn.c05, trhn.c01 FROM trhn INNER JOIN ts53 ON trhn.c03 = ts53.c01",
+    "error": null,
+    "latency_s": 1.176,
+    "pass1_s": 0.748,
+    "pass2_s": 0.428,
+    "attempts": [
+      {
+        "raw": "Tables: trhn, ts53\n\nOutput: trhn.c05, trhn.c05, trhn.c01\n\nPlan: SELECT trhn.c05, trhn.c05, trhn.c01 FROM trhn INNER JOIN ts53 ON trhn.c03 = ts53.c01",
+        "sql": "SELECT trhn.c05, trhn.c05, trhn.c01 FROM trhn INNER JOIN ts53 ON trhn.c03 = ts53.c01",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.428,
+        "eval_count": 71,
+        "eval_duration_s": 0.395371,
+        "prompt_eval_count": 475
+      }
+    ],
+    "retried": false,
+    "eval_count": 71,
+    "eval_duration_s": 0.395371,
+    "prompt_eval_count": 475
+  },
+  "E09-VAG": {
+    "raw": "Tables: trhn\nOutput: trhn.c05, trhn.c05, trhn.c01\nPlan: SELECT trhn.c05, trhn.c05, trhn.c01 FROM trhn\nSQL: SELECT trhn.c05, trhn.c05, trhn.c01 FROM trhn",
+    "error": null,
+    "latency_s": 1.16,
+    "pass1_s": 0.708,
+    "pass2_s": 0.452,
+    "attempts": [
+      {
+        "raw": "Tables: trhn\nOutput: trhn.c05, trhn.c05, trhn.c01\nPlan: SELECT trhn.c05, trhn.c05, trhn.c01 FROM trhn\nSQL: SELECT trhn.c05, trhn.c05, trhn.c01 FROM trhn",
+        "sql": "SELECT trhn.c05, trhn.c05, trhn.c01 FROM trhn",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.452,
+        "eval_count": 73,
+        "eval_duration_s": 0.401048,
+        "prompt_eval_count": 470
+      }
+    ],
+    "retried": false,
+    "eval_count": 73,
+    "eval_duration_s": 0.401048,
+    "prompt_eval_count": 470
+  },
+  "E10-CAS": {
+    "raw": "Tables: trhn\nOutput: trhn.c06\nPlan: SELECT SUM(trhn.c06) FROM trhn WHERE trhn.c05 = 'cold_chain'\nSQL: SELECT SUM(trhn.c06) FROM trhn WHERE trhn.c05 = 'cold_chain'",
+    "error": null,
+    "latency_s": 1.027,
+    "pass1_s": 0.645,
+    "pass2_s": 0.382,
+    "attempts": [
+      {
+        "raw": "Tables: trhn\nOutput: trhn.c06\nPlan: SELECT SUM(trhn.c06) FROM trhn WHERE trhn.c05 = 'cold_chain'\nSQL: SELECT SUM(trhn.c06) FROM trhn WHERE trhn.c05 = 'cold_chain'",
+        "sql": "SELECT SUM(trhn.c06) FROM trhn WHERE trhn.c05 = 'cold_chain'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.382,
+        "eval_count": 62,
+        "eval_duration_s": 0.344552,
+        "prompt_eval_count": 485
+      }
+    ],
+    "retried": false,
+    "eval_count": 62,
+    "eval_duration_s": 0.344552,
+    "prompt_eval_count": 485
+  },
+  "E10-SCH": {
+    "raw": "Tables: trhn\nOutput: trhn.c06\nPlan: SELECT trhn.c06 FROM trhn WHERE trhn.c05 = 'cold_chain'\nSQL: SELECT trhn.c06 FROM trhn WHERE trhn.c05 = 'cold_chain'",
+    "error": null,
+    "latency_s": 1.014,
+    "pass1_s": 0.661,
+    "pass2_s": 0.353,
+    "attempts": [
+      {
+        "raw": "Tables: trhn\nOutput: trhn.c06\nPlan: SELECT trhn.c06 FROM trhn WHERE trhn.c05 = 'cold_chain'\nSQL: SELECT trhn.c06 FROM trhn WHERE trhn.c05 = 'cold_chain'",
+        "sql": "SELECT trhn.c06 FROM trhn WHERE trhn.c05 = 'cold_chain'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.353,
+        "eval_count": 58,
+        "eval_duration_s": 0.322071,
+        "prompt_eval_count": 488
+      }
+    ],
+    "retried": false,
+    "eval_count": 58,
+    "eval_duration_s": 0.322071,
+    "prompt_eval_count": 488
+  },
+  "E10-BIZ": {
+    "raw": "Tables: trhn\nOutput: trhn.c06\nPlan: SELECT trhn.c06 FROM trhn WHERE trhn.c05 = 'cold_chain'\nSQL: SELECT trhn.c06 FROM trhn WHERE trhn.c05 = 'cold_chain'",
+    "error": null,
+    "latency_s": 1.015,
+    "pass1_s": 0.646,
+    "pass2_s": 0.369,
+    "attempts": [
+      {
+        "raw": "Tables: trhn\nOutput: trhn.c06\nPlan: SELECT trhn.c06 FROM trhn WHERE trhn.c05 = 'cold_chain'\nSQL: SELECT trhn.c06 FROM trhn WHERE trhn.c05 = 'cold_chain'",
+        "sql": "SELECT trhn.c06 FROM trhn WHERE trhn.c05 = 'cold_chain'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.369,
+        "eval_count": 58,
+        "eval_duration_s": 0.322407,
+        "prompt_eval_count": 484
+      }
+    ],
+    "retried": false,
+    "eval_count": 58,
+    "eval_duration_s": 0.322407,
+    "prompt_eval_count": 484
+  },
+  "E10-VAG": {
+    "raw": "Tables: trhn\nOutput: trhn.c06, trhn.c07\nPlan: SELECT trhn.c06, trhn.c07 FROM trhn WHERE trhn.c05 = 'cold_chain'\nSQL: SELECT trhn.c06, trhn.c07 FROM trhn WHERE trhn.c05 = 'cold_chain'",
+    "error": null,
+    "latency_s": 1.266,
+    "pass1_s": 0.785,
+    "pass2_s": 0.481,
+    "attempts": [
+      {
+        "raw": "Tables: trhn\nOutput: trhn.c06, trhn.c07\nPlan: SELECT trhn.c06, trhn.c07 FROM trhn WHERE trhn.c05 = 'cold_chain'\nSQL: SELECT trhn.c06, trhn.c07 FROM trhn WHERE trhn.c05 = 'cold_chain'",
+        "sql": "SELECT trhn.c06, trhn.c07 FROM trhn WHERE trhn.c05 = 'cold_chain'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.481,
+        "eval_count": 76,
+        "eval_duration_s": 0.418956,
+        "prompt_eval_count": 486
+      }
+    ],
+    "retried": false,
+    "eval_count": 76,
+    "eval_duration_s": 0.418956,
+    "prompt_eval_count": 486
+  },
+  "M01-CAS": {
+    "raw": "Tables: twxv, tu5q\n\nOutput: twxv.c04, tu5q.c01\n\nPlan: SELECT twxv.c04, tu5q.c01 FROM twxv INNER JOIN tu5q ON twxv.c01 = tu5q.c05 ORDER BY tu5q.c15 DESC",
+    "error": null,
+    "latency_s": 1.28,
+    "pass1_s": 0.78,
+    "pass2_s": 0.5,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, tu5q\n\nOutput: twxv.c04, tu5q.c01\n\nPlan: SELECT twxv.c04, tu5q.c01 FROM twxv INNER JOIN tu5q ON twxv.c01 = tu5q.c05 ORDER BY tu5q.c15 DESC",
+        "sql": "SELECT twxv.c04, tu5q.c01 FROM twxv INNER JOIN tu5q ON twxv.c01 = tu5q.c05 ORDER BY tu5q.c15 DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.5,
+        "eval_count": 75,
+        "eval_duration_s": 0.41647,
+        "prompt_eval_count": 722
+      }
+    ],
+    "retried": false,
+    "eval_count": 75,
+    "eval_duration_s": 0.41647,
+    "prompt_eval_count": 722
+  },
+  "M01-SCH": {
+    "raw": "Tables: twxv, tu5q\nOutput: twxv.c04, tu5q.c01\nPlan: SELECT twxv.c04, tu5q.c01 FROM twxv JOIN tu5q ON twxv.c05 = tu5q.c05 GROUP BY twxv.c04 ORDER BY COUNT(tu5q.c01) DESC",
+    "error": null,
+    "latency_s": 1.301,
+    "pass1_s": 0.77,
+    "pass2_s": 0.531,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, tu5q\nOutput: twxv.c04, tu5q.c01\nPlan: SELECT twxv.c04, tu5q.c01 FROM twxv JOIN tu5q ON twxv.c05 = tu5q.c05 GROUP BY twxv.c04 ORDER BY COUNT(tu5q.c01) DESC",
+        "sql": "SELECT twxv.c04, tu5q.c01 FROM twxv JOIN tu5q ON twxv.c05 = tu5q.c05 GROUP BY twxv.c04 ORDER BY COUNT(tu5q.c01) DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.531,
+        "eval_count": 85,
+        "eval_duration_s": 0.47351,
+        "prompt_eval_count": 739
+      }
+    ],
+    "retried": false,
+    "eval_count": 85,
+    "eval_duration_s": 0.47351,
+    "prompt_eval_count": 739
+  },
+  "M01-BIZ": {
+    "raw": "Tables: twxv, tu5q\nOutput: twxv.c02, tu5q.c01\nPlan: SELECT twxv.c02, tu5q.c01 FROM twxv JOIN tu5q ON twxv.c01 = tu5q.c05 ORDER BY tu5q.c15 DESC LIMIT 1",
+    "error": null,
+    "latency_s": 1.257,
+    "pass1_s": 0.77,
+    "pass2_s": 0.487,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, tu5q\nOutput: twxv.c02, tu5q.c01\nPlan: SELECT twxv.c02, tu5q.c01 FROM twxv JOIN tu5q ON twxv.c01 = tu5q.c05 ORDER BY tu5q.c15 DESC LIMIT 1",
+        "sql": "SELECT twxv.c02, tu5q.c01 FROM twxv JOIN tu5q ON twxv.c01 = tu5q.c05 ORDER BY tu5q.c15 DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.487,
+        "eval_count": 77,
+        "eval_duration_s": 0.42796,
+        "prompt_eval_count": 717
+      }
+    ],
+    "retried": false,
+    "eval_count": 77,
+    "eval_duration_s": 0.42796,
+    "prompt_eval_count": 717
+  },
+  "M01-VAG": {
+    "raw": "Tables: twxv, tu5q\nOutput: twxv.c04, tu5q.c01\nPlan: SELECT twxv.c04, tu5q.c01 FROM twxv INNER JOIN tu5q ON twxv.c01 = tu5q.c05\nSQL: SELECT twxv.c04, tu5q.c01 FROM twxv INNER JOIN tu5q ON twxv.c01 = tu5q.c05",
+    "error": null,
+    "latency_s": 1.418,
+    "pass1_s": 0.773,
+    "pass2_s": 0.645,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, tu5q\nOutput: twxv.c04, tu5q.c01\nPlan: SELECT twxv.c04, tu5q.c01 FROM twxv INNER JOIN tu5q ON twxv.c01 = tu5q.c05\nSQL: SELECT twxv.c04, tu5q.c01 FROM twxv INNER JOIN tu5q ON twxv.c01 = tu5q.c05",
+        "sql": "SELECT twxv.c04, tu5q.c01 FROM twxv INNER JOIN tu5q ON twxv.c01 = tu5q.c05",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.645,
+        "eval_count": 106,
+        "eval_duration_s": 0.588675,
+        "prompt_eval_count": 710
+      }
+    ],
+    "retried": false,
+    "eval_count": 106,
+    "eval_duration_s": 0.588675,
+    "prompt_eval_count": 710
+  },
+  "M02-CAS": {
+    "raw": "Tables: tumf, tu5q\nOutput: tumf.c02, tu5q.c01\nPlan: JOIN tumf ON tu5q.c04 = tumf.c01 JOIN tu5q ON tu5q.c04 = tumf.c01 GROUP BY tumf.c02, tu5q.c01 HAVING SUM(CASE WHEN tu5q.c16 = 'active' THEN 1 ELSE 0 END) > 0",
+    "error": null,
+    "latency_s": 1.599,
+    "pass1_s": 0.955,
+    "pass2_s": 0.644,
+    "attempts": [
+      {
+        "raw": "Tables: tumf, tu5q\nOutput: tumf.c02, tu5q.c01\nPlan: JOIN tumf ON tu5q.c04 = tumf.c01 JOIN tu5q ON tu5q.c04 = tumf.c01 GROUP BY tumf.c02, tu5q.c01 HAVING SUM(CASE WHEN tu5q.c16 = 'active' THEN 1 ELSE 0 END) > 0",
+        "sql": "",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.644,
+        "eval_count": 101,
+        "eval_duration_s": 0.559301,
+        "prompt_eval_count": 773
+      }
+    ],
+    "retried": false,
+    "eval_count": 101,
+    "eval_duration_s": 0.559301,
+    "prompt_eval_count": 773
+  },
+  "M02-SCH": {
+    "raw": "Tables: tumf, tu5q\nOutput: tumf.c02, tu5q.c01\nPlan: JOIN tumf ON tu5q.c04 = tumf.c01 WHERE tu5q.c16 = 'active' GROUP BY tumf.c02 ORDER BY tumf.c02",
+    "error": null,
+    "latency_s": 1.37,
+    "pass1_s": 0.957,
+    "pass2_s": 0.413,
+    "attempts": [
+      {
+        "raw": "Tables: tumf, tu5q\nOutput: tumf.c02, tu5q.c01\nPlan: JOIN tumf ON tu5q.c04 = tumf.c01 WHERE tu5q.c16 = 'active' GROUP BY tumf.c02 ORDER BY tumf.c02",
+        "sql": "",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.413,
+        "eval_count": 68,
+        "eval_duration_s": 0.379486,
+        "prompt_eval_count": 789
+      }
+    ],
+    "retried": false,
+    "eval_count": 68,
+    "eval_duration_s": 0.379486,
+    "prompt_eval_count": 789
+  },
+  "M02-BIZ": {
+    "raw": "Tables: tumf, tu5q\nOutput: tumf.c02, tu5q.c01\nPlan: INNER JOIN tu5q ON tumf.c01 = tu5q.c04 WHERE tu5q.c16 = 'active'\nSQL: SELECT tumf.c02, tu5q.c01 FROM tumf INNER JOIN tu5q ON tumf.c01 = tu5q.c04 WHERE tu5q.c16 = 'active'",
+    "error": null,
+    "latency_s": 1.582,
+    "pass1_s": 0.954,
+    "pass2_s": 0.628,
+    "attempts": [
+      {
+        "raw": "Tables: tumf, tu5q\nOutput: tumf.c02, tu5q.c01\nPlan: INNER JOIN tu5q ON tumf.c01 = tu5q.c04 WHERE tu5q.c16 = 'active'\nSQL: SELECT tumf.c02, tu5q.c01 FROM tumf INNER JOIN tu5q ON tumf.c01 = tu5q.c04 WHERE tu5q.c16 = 'active'",
+        "sql": "SELECT tumf.c02, tu5q.c01 FROM tumf INNER JOIN tu5q ON tumf.c01 = tu5q.c04 WHERE tu5q.c16 = 'active'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.628,
+        "eval_count": 103,
+        "eval_duration_s": 0.573295,
+        "prompt_eval_count": 772
+      }
+    ],
+    "retried": false,
+    "eval_count": 103,
+    "eval_duration_s": 0.573295,
+    "prompt_eval_count": 772
+  },
+  "M02-VAG": {
+    "raw": "Tables: tumf, tu5q\nOutput: tumf.c02, tu5q.c01\nPlan: INNER JOIN tu5q ON tumf.c01 = tu5q.c04 WHERE tu5q.c16 = 'active'\nSQL: SELECT tumf.c02, tu5q.c01 FROM tumf INNER JOIN tu5q ON tumf.c01 = tu5q.c04 WHERE tu5q.c16 = 'active'",
+    "error": null,
+    "latency_s": 1.569,
+    "pass1_s": 0.939,
+    "pass2_s": 0.63,
+    "attempts": [
+      {
+        "raw": "Tables: tumf, tu5q\nOutput: tumf.c02, tu5q.c01\nPlan: INNER JOIN tu5q ON tumf.c01 = tu5q.c04 WHERE tu5q.c16 = 'active'\nSQL: SELECT tumf.c02, tu5q.c01 FROM tumf INNER JOIN tu5q ON tumf.c01 = tu5q.c04 WHERE tu5q.c16 = 'active'",
+        "sql": "SELECT tumf.c02, tu5q.c01 FROM tumf INNER JOIN tu5q ON tumf.c01 = tu5q.c04 WHERE tu5q.c16 = 'active'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.63,
+        "eval_count": 103,
+        "eval_duration_s": 0.572177,
+        "prompt_eval_count": 767
+      }
+    ],
+    "retried": false,
+    "eval_count": 103,
+    "eval_duration_s": 0.572177,
+    "prompt_eval_count": 767
+  },
+  "M03-CAS": {
+    "raw": "Tables: tx7n, ts53\n\nOutput: tx7n.c01\n\nPlan: SELECT tx7n.c01 FROM tx7n INNER JOIN ts53 ON tx7n.c05 = ts53.c01 WHERE ts53.c04 = 'IST' AND tx7n.c19 = 'completed'\n\nSQL: SELECT tx7n.c01 FROM tx7n INNER JOIN ts53 ON tx7n.c05 = ts53.c01 WHERE ts53.c04 = 'IST' AND tx7n.c19 = 'completed'",
+    "error": null,
+    "latency_s": 2.108,
+    "pass1_s": 1.301,
+    "pass2_s": 0.807,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, ts53\n\nOutput: tx7n.c01\n\nPlan: SELECT tx7n.c01 FROM tx7n INNER JOIN ts53 ON tx7n.c05 = ts53.c01 WHERE ts53.c04 = 'IST' AND tx7n.c19 = 'completed'\n\nSQL: SELECT tx7n.c01 FROM tx7n INNER JOIN ts53 ON tx7n.c05 = ts53.c01 WHERE ts53.c04 = 'IST' AND tx7n.c19 = 'completed'",
+        "sql": "SELECT tx7n.c01 FROM tx7n INNER JOIN ts53 ON tx7n.c05 = ts53.c01 WHERE ts53.c04 = 'IST' AND tx7n.c19 = 'completed'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.807,
+        "eval_count": 128,
+        "eval_duration_s": 0.709806,
+        "prompt_eval_count": 898
+      }
+    ],
+    "retried": false,
+    "eval_count": 128,
+    "eval_duration_s": 0.709806,
+    "prompt_eval_count": 898
+  },
+  "M03-SCH": {
+    "raw": "Tables: tx7n, ts53\n\nOutput: tx7n.c01\n\nPlan: SELECT tx7n.c01 FROM tx7n INNER JOIN ts53 ON tx7n.c05 = ts53.c01 WHERE tx7n.c19 = 'completed' AND ts53.c02 = 'IST'\n\nSQL: SELECT tx7n.c01 FROM tx7n INNER JOIN ts53 ON tx7n.c05 = ts53.c01 WHERE tx7n.c19 = 'completed' AND ts53.c02 = 'IST'",
+    "error": null,
+    "latency_s": 2.055,
+    "pass1_s": 1.292,
+    "pass2_s": 0.763,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, ts53\n\nOutput: tx7n.c01\n\nPlan: SELECT tx7n.c01 FROM tx7n INNER JOIN ts53 ON tx7n.c05 = ts53.c01 WHERE tx7n.c19 = 'completed' AND ts53.c02 = 'IST'\n\nSQL: SELECT tx7n.c01 FROM tx7n INNER JOIN ts53 ON tx7n.c05 = ts53.c01 WHERE tx7n.c19 = 'completed' AND ts53.c02 = 'IST'",
+        "sql": "SELECT tx7n.c01 FROM tx7n INNER JOIN ts53 ON tx7n.c05 = ts53.c01 WHERE tx7n.c19 = 'completed' AND ts53.c02 = 'IST'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.763,
+        "eval_count": 128,
+        "eval_duration_s": 0.71398,
+        "prompt_eval_count": 931
+      }
+    ],
+    "retried": false,
+    "eval_count": 128,
+    "eval_duration_s": 0.71398,
+    "prompt_eval_count": 931
+  },
+  "M03-BIZ": {
+    "raw": "Tables: tx7n, ts53\n\nOutput: tx7n.c13\n\nPlan: SELECT tx7n.c13 FROM tx7n INNER JOIN ts53 ON tx7n.c06 = ts53.c01 WHERE tx7n.c19 = 'completed' AND ts53.c07 = 'IST'\n\nSQL: SELECT tx7n.c13 FROM tx7n INNER JOIN ts53 ON tx7n.c06 = ts53.c01 WHERE tx7n.c19 = 'completed' AND ts53.c07 = 'IST'",
+    "error": null,
+    "latency_s": 1.598,
+    "pass1_s": 0.83,
+    "pass2_s": 0.768,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, ts53\n\nOutput: tx7n.c13\n\nPlan: SELECT tx7n.c13 FROM tx7n INNER JOIN ts53 ON tx7n.c06 = ts53.c01 WHERE tx7n.c19 = 'completed' AND ts53.c07 = 'IST'\n\nSQL: SELECT tx7n.c13 FROM tx7n INNER JOIN ts53 ON tx7n.c06 = ts53.c01 WHERE tx7n.c19 = 'completed' AND ts53.c07 = 'IST'",
+        "sql": "SELECT tx7n.c13 FROM tx7n INNER JOIN ts53 ON tx7n.c06 = ts53.c01 WHERE tx7n.c19 = 'completed' AND ts53.c07 = 'IST'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.768,
+        "eval_count": 128,
+        "eval_duration_s": 0.708945,
+        "prompt_eval_count": 897
+      }
+    ],
+    "retried": false,
+    "eval_count": 128,
+    "eval_duration_s": 0.708945,
+    "prompt_eval_count": 897
+  },
+  "M03-VAG": {
+    "raw": "Tables: ts53, tx7n\nOutput: tx7n.c01, tx7n.c01\nPlan: INNER JOIN ts53 ON ts53.c01 = tx7n.c6 WHERE ts53.c02 = 'IST'\nSQL: SELECT tx7n.c01, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c6 WHERE ts53.c02 = 'IST'",
+    "error": null,
+    "latency_s": 2.327,
+    "pass1_s": 0.917,
+    "pass2_s": 1.41,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, tx7n\nOutput: tx7n.c01, tx7n.c01\nPlan: SELECT tx7n.c01, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c06 WHERE ts53.c02 = 'IST'\nSQL: SELECT tx7n.c01, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c6 WHERE ts53.c02 = 'IST'",
+        "sql": "SELECT tx7n.c01, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c6 WHERE ts53.c02 = 'IST'",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: tx7n.c6",
+        "latency_s": 0.76,
+        "eval_count": 126,
+        "eval_duration_s": 0.696801,
+        "prompt_eval_count": 892
+      },
+      {
+        "raw": "Tables: ts53, tx7n\nOutput: tx7n.c01, tx7n.c01\nPlan: INNER JOIN ts53 ON ts53.c01 = tx7n.c6 WHERE ts53.c02 = 'IST'\nSQL: SELECT tx7n.c01, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c6 WHERE ts53.c02 = 'IST'",
+        "sql": "SELECT tx7n.c01, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c6 WHERE ts53.c02 = 'IST'",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: tx7n.c6",
+        "latency_s": 0.65,
+        "eval_count": 107,
+        "eval_duration_s": 0.60328,
+        "prompt_eval_count": 962
+      }
+    ],
+    "retried": true,
+    "eval_count": 233,
+    "eval_duration_s": 1.300081,
+    "prompt_eval_count": 892
+  },
+  "M04-CAS": {
+    "raw": "Tables: tx7n, ts53\n\nOutput: ts53.c04, ts53.c06, tx7n.c01\n\nPlan: SELECT ts53.c04, ts53.c06, tx7n.c01 FROM tx7n JOIN ts53 ON tx7n.c05 = ts53.c01 GROUP BY tx7n.c01 ORDER BY COUNT(tx7n.c01) DESC LIMIT 5",
+    "error": null,
+    "latency_s": 1.941,
+    "pass1_s": 1.313,
+    "pass2_s": 0.628,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, ts53\n\nOutput: ts53.c04, ts53.c06, tx7n.c01\n\nPlan: SELECT ts53.c04, ts53.c06, tx7n.c01 FROM tx7n JOIN ts53 ON tx7n.c05 = ts53.c01 GROUP BY tx7n.c01 ORDER BY COUNT(tx7n.c01) DESC LIMIT 5",
+        "sql": "SELECT ts53.c04, ts53.c06, tx7n.c01 FROM tx7n JOIN ts53 ON tx7n.c05 = ts53.c01 GROUP BY tx7n.c01 ORDER BY COUNT(tx7n.c01) DESC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.628,
+        "eval_count": 101,
+        "eval_duration_s": 0.564674,
+        "prompt_eval_count": 928
+      }
+    ],
+    "retried": false,
+    "eval_count": 101,
+    "eval_duration_s": 0.564674,
+    "prompt_eval_count": 928
+  },
+  "M04-SCH": {
+    "raw": "Tables: tx7n, ts53\nOutput: ts53.c02, tx7n.c01\nPlan: SELECT ts53.c02, tx7n.c01 FROM tx7n JOIN ts53 ON tx7n.c05 = ts53.c01 JOIN ts53 AS ts53_2 ON tx7n.c06 = ts53_2.c01 WHERE tx7n.c19 = 'completed' GROUP BY ts53.c02, ts53_2.c02 ORDER BY COUNT(*) DESC LIMIT 5",
+    "error": null,
+    "latency_s": 1.764,
+    "pass1_s": 1.021,
+    "pass2_s": 0.743,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, ts53\nOutput: ts53.c02, tx7n.c01\nPlan: SELECT ts53.c02, tx7n.c01 FROM tx7n JOIN ts53 ON tx7n.c05 = ts53.c01 JOIN ts53 AS ts53_2 ON tx7n.c06 = ts53_2.c01 WHERE tx7n.c19 = 'completed' GROUP BY ts53.c02, ts53_2.c02 ORDER BY COUNT(*) DESC LIMIT 5",
+        "sql": "SELECT ts53.c02, tx7n.c01 FROM tx7n JOIN ts53 ON tx7n.c05 = ts53.c01 JOIN ts53 AS ts53_2 ON tx7n.c06 = ts53_2.c01 WHERE tx7n.c19 = 'completed' GROUP BY ts53.c02, ts53_2.c02 ORDER BY COUNT(*) DESC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.743,
+        "eval_count": 127,
+        "eval_duration_s": 0.708493,
+        "prompt_eval_count": 926
+      }
+    ],
+    "retried": false,
+    "eval_count": 127,
+    "eval_duration_s": 0.708493,
+    "prompt_eval_count": 926
+  },
+  "M04-BIZ": {
+    "raw": "Tables: tx7n, tg6t\n\nOutput: tg6t.c07, tx7n.c01\n\nPlan: SELECT tg6t.c07, tx7n.c01 FROM tx7n JOIN tg6t ON tx7n.c01 = tg6t.c03 WHERE tx7n.c19 = 'completed' GROUP BY tg6t.c07 ORDER BY COUNT(*) DESC LIMIT 5",
+    "error": null,
+    "latency_s": 1.654,
+    "pass1_s": 1.02,
+    "pass2_s": 0.634,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, tg6t\n\nOutput: tg6t.c07, tx7n.c01\n\nPlan: SELECT tg6t.c07, tx7n.c01 FROM tx7n JOIN tg6t ON tx7n.c01 = tg6t.c03 WHERE tx7n.c19 = 'completed' GROUP BY tg6t.c07 ORDER BY COUNT(*) DESC LIMIT 5",
+        "sql": "SELECT tg6t.c07, tx7n.c01 FROM tx7n JOIN tg6t ON tx7n.c01 = tg6t.c03 WHERE tx7n.c19 = 'completed' GROUP BY tg6t.c07 ORDER BY COUNT(*) DESC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.634,
+        "eval_count": 92,
+        "eval_duration_s": 0.510675,
+        "prompt_eval_count": 856
+      }
+    ],
+    "retried": false,
+    "eval_count": 92,
+    "eval_duration_s": 0.510675,
+    "prompt_eval_count": 856
+  },
+  "M04-VAG": {
+    "raw": "Tables: ts53, tx7n\nOutput: ts53.c02, ts53.c04, tx7n.c01\nPlan: SELECT ts53.c02, ts53.c04, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c05 ORDER BY tx7n.c10 DESC LIMIT 10",
+    "error": null,
+    "latency_s": 1.467,
+    "pass1_s": 0.902,
+    "pass2_s": 0.565,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, tx7n\nOutput: ts53.c02, ts53.c04, tx7n.c01\nPlan: SELECT ts53.c02, ts53.c04, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c05 ORDER BY tx7n.c10 DESC LIMIT 10",
+        "sql": "SELECT ts53.c02, ts53.c04, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c05 ORDER BY tx7n.c10 DESC LIMIT 10",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.565,
+        "eval_count": 93,
+        "eval_duration_s": 0.51715,
+        "prompt_eval_count": 877
+      }
+    ],
+    "retried": false,
+    "eval_count": 93,
+    "eval_duration_s": 0.51715,
+    "prompt_eval_count": 877
+  },
+  "M05-CAS": {
+    "raw": "Tables: twxv, tx7n\nOutput: twxv.c04, AVG(tx7n.c07)\nPlan: JOIN twxv ON twxv.c01 = tx7n.c01 WHERE twxv.c19 = 'completed' GROUP BY twxv.c04",
+    "error": null,
+    "latency_s": 2.764,
+    "pass1_s": 1.473,
+    "pass2_s": 1.291,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, tx7n\nOutput: twxv.c04, tx7n.c10, tx7n.c07\nPlan: Join twxv and tx7n on twxv.c01 = tx7n.c01, filter for completed flights, group by twxv.c04, calculate average delay time\nSQL: SELECT twxv.c04, AVG(tx7n.c07) FROM twxv JOIN tx7n ON twxv.c01 = tx7n.c01 WHERE twxv.c19 = 'completed' GROUP BY twxv.c04",
+        "sql": "SELECT twxv.c04, AVG(tx7n.c07) FROM twxv JOIN tx7n ON twxv.c01 = tx7n.c01 WHERE twxv.c19 = 'completed' GROUP BY twxv.c04",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: twxv.c19",
+        "latency_s": 0.865,
+        "eval_count": 137,
+        "eval_duration_s": 0.763478,
+        "prompt_eval_count": 1148
+      },
+      {
+        "raw": "Tables: twxv, tx7n\nOutput: twxv.c04, AVG(tx7n.c07)\nPlan: JOIN twxv ON twxv.c01 = tx7n.c01 WHERE twxv.c19 = 'completed' GROUP BY twxv.c04",
+        "sql": "",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.426,
+        "eval_count": 67,
+        "eval_duration_s": 0.374639,
+        "prompt_eval_count": 1230
+      }
+    ],
+    "retried": true,
+    "eval_count": 204,
+    "eval_duration_s": 1.138117,
+    "prompt_eval_count": 1148
+  },
+  "M05-SCH": {
+    "raw": "Tables: tx7n, tu5q\n\nOutput: tx7n.c10, tx7n.c08\n\nPlan: SELECT tx7n.c10, tx7n.c08 FROM tx7n INNER JOIN tu5q ON tx7n.c04 = tu5q.c01 WHERE tx7n.c19 = 'completed' GROUP BY tx7n.c04 ORDER BY AVG(tx7n.c10 - tx7n.c08) DESC",
+    "error": null,
+    "latency_s": 1.865,
+    "pass1_s": 1.185,
+    "pass2_s": 0.68,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, tu5q\n\nOutput: tx7n.c10, tx7n.c08\n\nPlan: SELECT tx7n.c10, tx7n.c08 FROM tx7n INNER JOIN tu5q ON tx7n.c04 = tu5q.c01 WHERE tx7n.c19 = 'completed' GROUP BY tx7n.c04 ORDER BY AVG(tx7n.c10 - tx7n.c08) DESC",
+        "sql": "SELECT tx7n.c10, tx7n.c08 FROM tx7n INNER JOIN tu5q ON tx7n.c04 = tu5q.c01 WHERE tx7n.c19 = 'completed' GROUP BY tx7n.c04 ORDER BY AVG(tx7n.c10 - tx7n.c08) DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.68,
+        "eval_count": 103,
+        "eval_duration_s": 0.571599,
+        "prompt_eval_count": 922
+      }
+    ],
+    "retried": false,
+    "eval_count": 103,
+    "eval_duration_s": 0.571599,
+    "prompt_eval_count": 922
+  },
+  "M05-BIZ": {
+    "raw": "Tables: twxv, tx7n, ts53\nOutput: avg(tx7n.c17), twxv.c01\nPlan: joins twxv and tx7n on twxv.c01 = tx7n.c05, then joins the result with ts53 on ts53.c01 = tx7n.c06, then groups by twxv.c01, and finally calculates the average of tx7n.c17.\nSQL: SELECT avg(tx7n.c17) ,  twxv.c01 FROM twxv JOIN tx7n ON twxv.c01 = tx7n.c05 JOIN ts53 ON ts53.c01 = tx7n.c06 GROUP BY twxv.c01",
+    "error": null,
+    "latency_s": 2.18,
+    "pass1_s": 1.15,
+    "pass2_s": 1.03,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, tx7n, ts53\nOutput: avg(tx7n.c17), twxv.c01\nPlan: joins twxv and tx7n on twxv.c01 = tx7n.c05, then joins the result with ts53 on ts53.c01 = tx7n.c06, then groups by twxv.c01, and finally calculates the average of tx7n.c17.\nSQL: SELECT avg(tx7n.c17) ,  twxv.c01 FROM twxv JOIN tx7n ON twxv.c01 = tx7n.c05 JOIN ts53 ON ts53.c01 = tx7n.c06 GROUP BY twxv.c01",
+        "sql": "SELECT avg(tx7n.c17) , twxv.c01 FROM twxv JOIN tx7n ON twxv.c01 = tx7n.c05 JOIN ts53 ON ts53.c01 = tx7n.c06 GROUP BY twxv.c01",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.03,
+        "eval_count": 170,
+        "eval_duration_s": 0.958694,
+        "prompt_eval_count": 1159
+      }
+    ],
+    "retried": false,
+    "eval_count": 170,
+    "eval_duration_s": 0.958694,
+    "prompt_eval_count": 1159
+  },
+  "M05-VAG": {
+    "raw": "Tables: twxv\nOutput: twxv.c04, twxv.c08\nPlan: SELECT twxv.c04, twxv.c08 FROM twxv ORDER BY twxv.c08 DESC LIMIT 1",
+    "error": null,
+    "latency_s": 0.969,
+    "pass1_s": 0.626,
+    "pass2_s": 0.343,
+    "attempts": [
+      {
+        "raw": "Tables: twxv\nOutput: twxv.c04, twxv.c08\nPlan: SELECT twxv.c04, twxv.c08 FROM twxv ORDER BY twxv.c08 DESC LIMIT 1",
+        "sql": "SELECT twxv.c04, twxv.c08 FROM twxv ORDER BY twxv.c08 DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.343,
+        "eval_count": 55,
+        "eval_duration_s": 0.300047,
+        "prompt_eval_count": 420
+      }
+    ],
+    "retried": false,
+    "eval_count": 55,
+    "eval_duration_s": 0.300047,
+    "prompt_eval_count": 420
+  },
+  "M06-CAS": {
+    "raw": "Tables: twxv, tx7n\nOutput: twxv.c02, tx7n.c01\nPlan: INNER JOIN tx7n ON twxv.c01 = tx7n.c01 WHERE twxv.c19 = 'cancelled'\nSQL: SELECT twxv.c02, tx7n.c01 FROM twxv INNER JOIN tx7n ON twxv.c01 = tx7n.c01 WHERE twxv.c19 = 'cancelled'",
+    "error": null,
+    "latency_s": 2.26,
+    "pass1_s": 0.936,
+    "pass2_s": 1.324,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, tx7n\nOutput: twxv.c02, tx7n.c01\nPlan: INNER JOIN tx7n ON twxv.c01 = tx7n.c01 WHERE twxv.c19 = 'cancelled'\nSQL: SELECT twxv.c02, tx7n.c01 FROM twxv INNER JOIN tx7n ON twxv.c01 = tx7n.c01 WHERE twxv.c19 = 'cancelled'",
+        "sql": "SELECT twxv.c02, tx7n.c01 FROM twxv INNER JOIN tx7n ON twxv.c01 = tx7n.c01 WHERE twxv.c19 = 'cancelled'",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: twxv.c19",
+        "latency_s": 0.671,
+        "eval_count": 109,
+        "eval_duration_s": 0.607244,
+        "prompt_eval_count": 1134
+      },
+      {
+        "raw": "Tables: twxv, tx7n\nOutput: twxv.c02, tx7n.c01\nPlan: INNER JOIN tx7n ON twxv.c01 = tx7n.c01 WHERE twxv.c19 = 'cancelled'\nSQL: SELECT twxv.c02, tx7n.c01 FROM twxv INNER JOIN tx7n ON twxv.c01 = tx7n.c01 WHERE twxv.c19 = 'cancelled'",
+        "sql": "SELECT twxv.c02, tx7n.c01 FROM twxv INNER JOIN tx7n ON twxv.c01 = tx7n.c01 WHERE twxv.c19 = 'cancelled'",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: twxv.c19",
+        "latency_s": 0.653,
+        "eval_count": 109,
+        "eval_duration_s": 0.605387,
+        "prompt_eval_count": 1206
+      }
+    ],
+    "retried": true,
+    "eval_count": 218,
+    "eval_duration_s": 1.212631,
+    "prompt_eval_count": 1134
+  },
+  "M06-SCH": {
+    "raw": "Tables: tx7n, tu5q\nOutput: tx7n.c01, COUNT(tx7n.c01)\nPlan: JOIN tu5q ON tx7n.c04 = tu5q.c01 WHERE tx7n.c19 = 'cancelled' GROUP BY tx7n.c01 ORDER BY COUNT(tx7n.c01) DESC",
+    "error": null,
+    "latency_s": 1.486,
+    "pass1_s": 1.0,
+    "pass2_s": 0.486,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, tu5q\nOutput: tx7n.c01, COUNT(tx7n.c01)\nPlan: JOIN tu5q ON tx7n.c04 = tu5q.c01 WHERE tx7n.c19 = 'cancelled' GROUP BY tx7n.c01 ORDER BY COUNT(tx7n.c01) DESC",
+        "sql": "",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.486,
+        "eval_count": 78,
+        "eval_duration_s": 0.435518,
+        "prompt_eval_count": 907
+      }
+    ],
+    "retried": false,
+    "eval_count": 78,
+    "eval_duration_s": 0.435518,
+    "prompt_eval_count": 907
+  },
+  "M06-BIZ": {
+    "raw": "Tables: twxv, tx7n\nOutput: twxv.c02, tx7n.c01\nPlan: INNER JOIN twxv ON tx7n.c10 = twxv.c01 INNER JOIN tx7n ON tx7n.c10 = twxv.c01 GROUP BY twxv.c02 ORDER BY COUNT(twxv.c02) DESC",
+    "error": null,
+    "latency_s": 1.457,
+    "pass1_s": 0.93,
+    "pass2_s": 0.527,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, tx7n\nOutput: twxv.c02, tx7n.c01\nPlan: INNER JOIN twxv ON tx7n.c10 = twxv.c01 INNER JOIN tx7n ON tx7n.c10 = twxv.c01 GROUP BY twxv.c02 ORDER BY COUNT(twxv.c02) DESC",
+        "sql": "",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.527,
+        "eval_count": 86,
+        "eval_duration_s": 0.479896,
+        "prompt_eval_count": 1132
+      }
+    ],
+    "retried": false,
+    "eval_count": 86,
+    "eval_duration_s": 0.479896,
+    "prompt_eval_count": 1132
+  },
+  "M06-VAG": {
+    "raw": "Tables: twxv, tx7n\nOutput: twxv.c04, tx7n.c01\nPlan: INNER JOIN tx7n ON twxv.c01 = tx7n.c04 INNER JOIN twxv ON twxv.c01 = tx7n.c04 GROUP BY twxv.c04 ORDER BY COUNT(twxv.c01) DESC",
+    "error": null,
+    "latency_s": 1.522,
+    "pass1_s": 1.003,
+    "pass2_s": 0.519,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, tx7n\nOutput: twxv.c04, tx7n.c01\nPlan: INNER JOIN tx7n ON twxv.c01 = tx7n.c04 INNER JOIN twxv ON twxv.c01 = tx7n.c04 GROUP BY twxv.c04 ORDER BY COUNT(twxv.c01) DESC",
+        "sql": "",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.519,
+        "eval_count": 86,
+        "eval_duration_s": 0.479373,
+        "prompt_eval_count": 1139
+      }
+    ],
+    "retried": false,
+    "eval_count": 86,
+    "eval_duration_s": 0.479373,
+    "prompt_eval_count": 1139
+  },
+  "M07-CAS": {
+    "raw": "Tables: twxv, t875\nOutput: twxv.c02, t875.c16\nPlan: SELECT twxv.c02, t875.c16 FROM twxv JOIN t875 ON twxv.c01 = t875.c03 GROUP BY twxv.c02\nSQL: SELECT twxv.c02, SUM(t875.c16) FROM twxv JOIN t875 ON twxv.c01 = t875.c03 GROUP BY twxv.c02",
+    "error": null,
+    "latency_s": 1.601,
+    "pass1_s": 0.793,
+    "pass2_s": 0.808,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, t875\nOutput: twxv.c02, t875.c16\nPlan: SELECT twxv.c02, t875.c16 FROM twxv JOIN t875 ON twxv.c01 = t875.c03 GROUP BY twxv.c02\nSQL: SELECT twxv.c02, SUM(t875.c16) FROM twxv JOIN t875 ON twxv.c01 = t875.c03 GROUP BY twxv.c02",
+        "sql": "SELECT twxv.c02, SUM(t875.c16) FROM twxv JOIN t875 ON twxv.c01 = t875.c03 GROUP BY twxv.c02",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.808,
+        "eval_count": 130,
+        "eval_duration_s": 0.723793,
+        "prompt_eval_count": 1018
+      }
+    ],
+    "retried": false,
+    "eval_count": 130,
+    "eval_duration_s": 0.723793,
+    "prompt_eval_count": 1018
+  },
+  "M07-SCH": {
+    "raw": "Tables: twxv, t875, tx7n, tu5q\n\nOutput: twxv.c04, t875.c16\n\nPlan: SELECT twxv.c04, t875.c16 FROM twxv INNER JOIN t875 ON twxv.c01 = t875.c03 INNER JOIN tx7n ON t875.c01 = tx7n.c03 INNER JOIN tu5q ON tx7n.c04 = tu5q.c01 GROUP BY twxv.c04 ORDER BY t875.c16 / 1000",
+    "error": null,
+    "latency_s": 2.305,
+    "pass1_s": 1.367,
+    "pass2_s": 0.938,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, t875, tx7n, tu5q\n\nOutput: twxv.c04, t875.c16\n\nPlan: SELECT twxv.c04, t875.c16 FROM twxv INNER JOIN t875 ON twxv.c01 = t875.c03 INNER JOIN tx7n ON t875.c01 = tx7n.c03 INNER JOIN tu5q ON tx7n.c04 = tu5q.c01 GROUP BY twxv.c04 ORDER BY t875.c16 / 1000",
+        "sql": "SELECT twxv.c04, t875.c16 FROM twxv INNER JOIN t875 ON twxv.c01 = t875.c03 INNER JOIN tx7n ON t875.c01 = tx7n.c03 INNER JOIN tu5q ON tx7n.c04 = tu5q.c01 GROUP BY twxv.c04 ORDER BY t875.c16 / 1000",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.938,
+        "eval_count": 141,
+        "eval_duration_s": 0.797277,
+        "prompt_eval_count": 1414
+      }
+    ],
+    "retried": false,
+    "eval_count": 141,
+    "eval_duration_s": 0.797277,
+    "prompt_eval_count": 1414
+  },
+  "M07-BIZ": {
+    "raw": "Tables: tu5q, tcse, ts53\nOutput: tu5q.c02, tcse.c15\nPlan: SELECT tu5q.c02, tcse.c15 FROM tu5q INNER JOIN tcse ON tu5q.c01 = tcse.c03 INNER JOIN ts53 ON tcse.c04 = ts53.c01 WHERE tcse.c16 = 'completed'",
+    "error": null,
+    "latency_s": 1.476,
+    "pass1_s": 0.811,
+    "pass2_s": 0.665,
+    "attempts": [
+      {
+        "raw": "Tables: tu5q, tcse, ts53\nOutput: tu5q.c02, tcse.c15\nPlan: SELECT tu5q.c02, tcse.c15 FROM tu5q INNER JOIN tcse ON tu5q.c01 = tcse.c03 INNER JOIN ts53 ON tcse.c04 = ts53.c01 WHERE tcse.c16 = 'completed'",
+        "sql": "SELECT tu5q.c02, tcse.c15 FROM tu5q INNER JOIN tcse ON tu5q.c01 = tcse.c03 INNER JOIN ts53 ON tcse.c04 = ts53.c01 WHERE tcse.c16 = 'completed'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.665,
+        "eval_count": 93,
+        "eval_duration_s": 0.519035999,
+        "prompt_eval_count": 1385
+      }
+    ],
+    "retried": false,
+    "eval_count": 93,
+    "eval_duration_s": 0.519035999,
+    "prompt_eval_count": 1385
+  },
+  "M07-VAG": {
+    "raw": "Tables: tcse, ts53\nOutput: tcse.c03, tcse.c15\nPlan: SELECT tcse.c03, tcse.c15 FROM tcse JOIN ts53 ON tcse.c03 = ts53.c01\nSQL: SELECT tcse.c03, tcse.c15 FROM tcse JOIN ts53 ON tcse.c03 = ts53.c01",
+    "error": null,
+    "latency_s": 1.344,
+    "pass1_s": 0.701,
+    "pass2_s": 0.643,
+    "attempts": [
+      {
+        "raw": "Tables: tcse, ts53\nOutput: tcse.c03, tcse.c15\nPlan: SELECT tcse.c03, tcse.c15 FROM tcse JOIN ts53 ON tcse.c03 = ts53.c01\nSQL: SELECT tcse.c03, tcse.c15 FROM tcse JOIN ts53 ON tcse.c03 = ts53.c01",
+        "sql": "SELECT tcse.c03, tcse.c15 FROM tcse JOIN ts53 ON tcse.c03 = ts53.c01",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.643,
+        "eval_count": 93,
+        "eval_duration_s": 0.515616,
+        "prompt_eval_count": 1080
+      }
+    ],
+    "retried": false,
+    "eval_count": 93,
+    "eval_duration_s": 0.515616,
+    "prompt_eval_count": 1080
+  },
+  "M08-CAS": {
+    "raw": "Tables: ts53, t875\nOutput: ts53.c07, t875.c12\nPlan: SELECT ts53.c07, AVG(t875.c12) FROM ts53 INNER JOIN t875 ON ts53.c01 = t875.c04 GROUP BY ts53.c07",
+    "error": null,
+    "latency_s": 1.334,
+    "pass1_s": 0.815,
+    "pass2_s": 0.519,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, t875\nOutput: ts53.c07, t875.c12\nPlan: SELECT ts53.c07, AVG(t875.c12) FROM ts53 INNER JOIN t875 ON ts53.c01 = t875.c04 GROUP BY ts53.c07",
+        "sql": "SELECT ts53.c07, AVG(t875.c12) FROM ts53 INNER JOIN t875 ON ts53.c01 = t875.c04 GROUP BY ts53.c07",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.519,
+        "eval_count": 81,
+        "eval_duration_s": 0.452302,
+        "prompt_eval_count": 778
+      }
+    ],
+    "retried": false,
+    "eval_count": 81,
+    "eval_duration_s": 0.452302,
+    "prompt_eval_count": 778
+  },
+  "M08-SCH": {
+    "raw": "Tables: ts53, t875\nOutput: t875.c12\nPlan: SELECT t875.c12 FROM ts53 JOIN t875 ON ts53.c01 = t875.c04 GROUP BY t875.c07 ORDER BY AVG(t875.c12) LIMIT 1",
+    "error": null,
+    "latency_s": 1.303,
+    "pass1_s": 0.812,
+    "pass2_s": 0.491,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, t875\nOutput: t875.c12\nPlan: SELECT t875.c12 FROM ts53 JOIN t875 ON ts53.c01 = t875.c04 GROUP BY t875.c07 ORDER BY AVG(t875.c12) LIMIT 1",
+        "sql": "SELECT t875.c12 FROM ts53 JOIN t875 ON ts53.c01 = t875.c04 GROUP BY t875.c07 ORDER BY AVG(t875.c12) LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.491,
+        "eval_count": 79,
+        "eval_duration_s": 0.437903,
+        "prompt_eval_count": 785
+      }
+    ],
+    "retried": false,
+    "eval_count": 79,
+    "eval_duration_s": 0.437903,
+    "prompt_eval_count": 785
+  },
+  "M08-BIZ": {
+    "raw": "Tables: ts53, t875\nOutput: ts53.c07, t875.c11\nPlan: SELECT ts53.c07, t875.c11 FROM ts53 INNER JOIN t875 ON ts53.c01 = t875.c04 WHERE ts53.c07 = 'north_america' OR ts53.c07 = 'europe' OR ts53.c07 = 'middle_east' OR ts53.c07 = 'asia_pacific'",
+    "error": null,
+    "latency_s": 1.521,
+    "pass1_s": 0.788,
+    "pass2_s": 0.733,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, t875\nOutput: ts53.c07, t875.c11\nPlan: SELECT ts53.c07, t875.c11 FROM ts53 INNER JOIN t875 ON ts53.c01 = t875.c04 WHERE ts53.c07 = 'north_america' OR ts53.c07 = 'europe' OR ts53.c07 = 'middle_east' OR ts53.c07 = 'asia_pacific'",
+        "sql": "SELECT ts53.c07, t875.c11 FROM ts53 INNER JOIN t875 ON ts53.c01 = t875.c04 WHERE ts53.c07 = 'north_america' OR ts53.c07 = 'europe' OR ts53.c07 = 'middle_east' OR ts53.c07 = 'asia_pacific'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.733,
+        "eval_count": 123,
+        "eval_duration_s": 0.684061,
+        "prompt_eval_count": 777
+      }
+    ],
+    "retried": false,
+    "eval_count": 123,
+    "eval_duration_s": 0.684061,
+    "prompt_eval_count": 777
+  },
+  "M08-VAG": {
+    "raw": "Tables: t875, ts53\nOutput: t875.c06, t875.c09, t875.c13, t875.c14, t875.c15, t875.c16\nPlan: SELECT t875.c06, t875.c09, t875.c13, t875.c14, t875.c15, t875.c16 FROM t875 INNER JOIN ts53 ON t875.c04 = ts53.c01 ORDER BY t875.c13 ASC",
+    "error": null,
+    "latency_s": 7.189,
+    "pass1_s": 6.315,
+    "pass2_s": 0.874,
+    "attempts": [
+      {
+        "raw": "Tables: t875, ts53\nOutput: t875.c06, t875.c09, t875.c13, t875.c14, t875.c15, t875.c16\nPlan: SELECT t875.c06, t875.c09, t875.c13, t875.c14, t875.c15, t875.c16 FROM t875 INNER JOIN ts53 ON t875.c04 = ts53.c01 ORDER BY t875.c13 ASC",
+        "sql": "SELECT t875.c06, t875.c09, t875.c13, t875.c14, t875.c15, t875.c16 FROM t875 INNER JOIN ts53 ON t875.c04 = ts53.c01 ORDER BY t875.c13 ASC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.874,
+        "eval_count": 147,
+        "eval_duration_s": 0.822057,
+        "prompt_eval_count": 804
+      }
+    ],
+    "retried": false,
+    "eval_count": 147,
+    "eval_duration_s": 0.822057,
+    "prompt_eval_count": 804
+  },
+  "M09-CAS": {
+    "raw": "Tables: trhn, ts53\nOutput: trhn.c01, ts53.c02\nPlan: SELECT trhn.c01, ts53.c02 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 GROUP BY trhn.c01 HAVING COUNT(trhn.c01) >= 4",
+    "error": null,
+    "latency_s": 1.494,
+    "pass1_s": 0.973,
+    "pass2_s": 0.521,
+    "attempts": [
+      {
+        "raw": "Tables: trhn, ts53\nOutput: trhn.c01, ts53.c02\nPlan: SELECT trhn.c01, ts53.c02 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 GROUP BY trhn.c01 HAVING COUNT(trhn.c01) >= 4",
+        "sql": "SELECT trhn.c01, ts53.c02 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 GROUP BY trhn.c01 HAVING COUNT(trhn.c01) >= 4",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.521,
+        "eval_count": 79,
+        "eval_duration_s": 0.43777,
+        "prompt_eval_count": 806
+      }
+    ],
+    "retried": false,
+    "eval_count": 79,
+    "eval_duration_s": 0.43777,
+    "prompt_eval_count": 806
+  },
+  "M09-SCH": {
+    "raw": "Tables: ts53, trhn\nOutput: trhn.c01, ts53.c02\nPlan: SELECT trhn.c01, ts53.c02 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 GROUP BY trhn.c01 HAVING COUNT(*) >= 4",
+    "error": null,
+    "latency_s": 1.163,
+    "pass1_s": 0.713,
+    "pass2_s": 0.45,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, trhn\nOutput: trhn.c01, ts53.c02\nPlan: SELECT trhn.c01, ts53.c02 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 GROUP BY trhn.c01 HAVING COUNT(*) >= 4",
+        "sql": "SELECT trhn.c01, ts53.c02 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 GROUP BY trhn.c01 HAVING COUNT(*) >= 4",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.45,
+        "eval_count": 74,
+        "eval_duration_s": 0.413547,
+        "prompt_eval_count": 790
+      }
+    ],
+    "retried": false,
+    "eval_count": 74,
+    "eval_duration_s": 0.413547,
+    "prompt_eval_count": 790
+  },
+  "M09-BIZ": {
+    "raw": "Tables: trhn, ts53\nOutput: trhn.c01, ts53.c04\nPlan: SELECT trhn.c01, ts53.c04 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 WHERE trhn.c06 >= 4 GROUP BY trhn.c01 ORDER BY trhn.c01",
+    "error": null,
+    "latency_s": 1.431,
+    "pass1_s": 0.935,
+    "pass2_s": 0.496,
+    "attempts": [
+      {
+        "raw": "Tables: trhn, ts53\nOutput: trhn.c01, ts53.c04\nPlan: SELECT trhn.c01, ts53.c04 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 WHERE trhn.c06 >= 4 GROUP BY trhn.c01 ORDER BY trhn.c01",
+        "sql": "SELECT trhn.c01, ts53.c04 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 WHERE trhn.c06 >= 4 GROUP BY trhn.c01 ORDER BY trhn.c01",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.496,
+        "eval_count": 83,
+        "eval_duration_s": 0.461939,
+        "prompt_eval_count": 806
+      }
+    ],
+    "retried": false,
+    "eval_count": 83,
+    "eval_duration_s": 0.461939,
+    "prompt_eval_count": 806
+  },
+  "M09-VAG": {
+    "raw": "Tables: ts53, trhn\n\nOutput: ts53.c02, trhn.c01\n\nPlan: SELECT ts53.c02, trhn.c01 FROM ts53 INNER JOIN trhn ON ts53.c01 = trhn.c03 GROUP BY ts53.c02 ORDER BY COUNT(trhn.c01) DESC LIMIT 10",
+    "error": null,
+    "latency_s": 1.231,
+    "pass1_s": 0.707,
+    "pass2_s": 0.524,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, trhn\n\nOutput: ts53.c02, trhn.c01\n\nPlan: SELECT ts53.c02, trhn.c01 FROM ts53 INNER JOIN trhn ON ts53.c01 = trhn.c03 GROUP BY ts53.c02 ORDER BY COUNT(trhn.c01) DESC LIMIT 10",
+        "sql": "SELECT ts53.c02, trhn.c01 FROM ts53 INNER JOIN trhn ON ts53.c01 = trhn.c03 GROUP BY ts53.c02 ORDER BY COUNT(trhn.c01) DESC LIMIT 10",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.524,
+        "eval_count": 83,
+        "eval_duration_s": 0.461575,
+        "prompt_eval_count": 774
+      }
+    ],
+    "retried": false,
+    "eval_count": 83,
+    "eval_duration_s": 0.461575,
+    "prompt_eval_count": 774
+  },
+  "M10-CAS": {
+    "raw": "Tables: trhn, ts53\nOutput: trhn.c01, ts53.c02\nPlan: SELECT trhn.c01, ts53.c02 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 GROUP BY trhn.c01 HAVING COUNT(trhn.c01) > 1",
+    "error": null,
+    "latency_s": 1.39,
+    "pass1_s": 0.914,
+    "pass2_s": 0.476,
+    "attempts": [
+      {
+        "raw": "Tables: trhn, ts53\nOutput: trhn.c01, ts53.c02\nPlan: SELECT trhn.c01, ts53.c02 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 GROUP BY trhn.c01 HAVING COUNT(trhn.c01) > 1",
+        "sql": "SELECT trhn.c01, ts53.c02 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 GROUP BY trhn.c01 HAVING COUNT(trhn.c01) > 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.476,
+        "eval_count": 79,
+        "eval_duration_s": 0.438174,
+        "prompt_eval_count": 801
+      }
+    ],
+    "retried": false,
+    "eval_count": 79,
+    "eval_duration_s": 0.438174,
+    "prompt_eval_count": 801
+  },
+  "M10-SCH": {
+    "raw": "Tables: trhn\n\nOutput: trhn.c02, trhn.c02\n\nPlan: SELECT trhn.c02, trhn.c02 FROM trhn WHERE trhn.c12 = 1 GROUP BY trhn.c02 HAVING COUNT(*) > 1",
+    "error": null,
+    "latency_s": 1.211,
+    "pass1_s": 0.821,
+    "pass2_s": 0.39,
+    "attempts": [
+      {
+        "raw": "Tables: trhn\n\nOutput: trhn.c02, trhn.c02\n\nPlan: SELECT trhn.c02, trhn.c02 FROM trhn WHERE trhn.c12 = 1 GROUP BY trhn.c02 HAVING COUNT(*) > 1",
+        "sql": "SELECT trhn.c02, trhn.c02 FROM trhn WHERE trhn.c12 = 1 GROUP BY trhn.c02 HAVING COUNT(*) > 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.39,
+        "eval_count": 60,
+        "eval_duration_s": 0.333949,
+        "prompt_eval_count": 505
+      }
+    ],
+    "retried": false,
+    "eval_count": 60,
+    "eval_duration_s": 0.333949,
+    "prompt_eval_count": 505
+  },
+  "M10-BIZ": {
+    "raw": "Tables: trhn, ts53\n\nOutput: trhn.c04, trhn.c01\n\nPlan: SELECT trhn.c04, trhn.c01 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 WHERE trhn.c12 = 1 GROUP BY trhn.c04, trhn.c01 HAVING COUNT(*) > 1",
+    "error": null,
+    "latency_s": 1.328,
+    "pass1_s": 0.811,
+    "pass2_s": 0.517,
+    "attempts": [
+      {
+        "raw": "Tables: trhn, ts53\n\nOutput: trhn.c04, trhn.c01\n\nPlan: SELECT trhn.c04, trhn.c01 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 WHERE trhn.c12 = 1 GROUP BY trhn.c04, trhn.c01 HAVING COUNT(*) > 1",
+        "sql": "SELECT trhn.c04, trhn.c01 FROM trhn JOIN ts53 ON trhn.c03 = ts53.c01 WHERE trhn.c12 = 1 GROUP BY trhn.c04, trhn.c01 HAVING COUNT(*) > 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.517,
+        "eval_count": 87,
+        "eval_duration_s": 0.482967,
+        "prompt_eval_count": 499
+      }
+    ],
+    "retried": false,
+    "eval_count": 87,
+    "eval_duration_s": 0.482967,
+    "prompt_eval_count": 499
+  },
+  "M10-VAG": {
+    "raw": "Tables: ts53, trhn\n\nOutput: ts53.c02, trhn.c01\n\nPlan: SELECT ts53.c02, trhn.c01 FROM ts53 INNER JOIN trhn ON ts53.c01 = trhn.c03 WHERE trhn.c12 = 1 GROUP BY ts53.c02, trhn.c01",
+    "error": null,
+    "latency_s": 1.234,
+    "pass1_s": 0.705,
+    "pass2_s": 0.529,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, trhn\n\nOutput: ts53.c02, trhn.c01\n\nPlan: SELECT ts53.c02, trhn.c01 FROM ts53 INNER JOIN trhn ON ts53.c01 = trhn.c03 WHERE trhn.c12 = 1 GROUP BY ts53.c02, trhn.c01",
+        "sql": "SELECT ts53.c02, trhn.c01 FROM ts53 INNER JOIN trhn ON ts53.c01 = trhn.c03 WHERE trhn.c12 = 1 GROUP BY ts53.c02, trhn.c01",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.529,
+        "eval_count": 84,
+        "eval_duration_s": 0.467379,
+        "prompt_eval_count": 774
+      }
+    ],
+    "retried": false,
+    "eval_count": 84,
+    "eval_duration_s": 0.467379,
+    "prompt_eval_count": 774
+  },
+  "H01-CAS": {
+    "raw": "Tables: twxv, tu5q, tx7n\n\nOutput: twxv.c04, tu5q.c02, tx7n.c01\n\nPlan: Join twxv with tu5q on twxv.c01 = tu5q.c05, then join the result with tx7n on tx7n.c05 = tu5q.c01. Group by twxv.c04 and count(tx7n.c01) to get the number of completed flights for each airline. Order by count(tx7n.c01) in descending order to get the airline with the most completed flights at the top.\n\nSQL: SELECT twxv.c04, tu5q.c02, tx7n.c01 FROM twxv JOIN tu5q ON twxv.c01 = tu5q.c05 JOIN tx7n ON tx7n.c05 = tu5q.c01 GROUP BY twxv.c04 ORDER BY count(tx7n.c01) DESC",
+    "error": null,
+    "latency_s": 2.689,
+    "pass1_s": 1.375,
+    "pass2_s": 1.314,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, tu5q, tx7n\n\nOutput: twxv.c04, tu5q.c02, tx7n.c01\n\nPlan: Join twxv with tu5q on twxv.c01 = tu5q.c05, then join the result with tx7n on tx7n.c05 = tu5q.c01. Group by twxv.c04 and count(tx7n.c01) to get the number of completed flights for each airline. Order by count(tx7n.c01) in descending order to get the airline with the most completed flights at the top.\n\nSQL: SELECT twxv.c04, tu5q.c02, tx7n.c01 FROM twxv JOIN tu5q ON twxv.c01 = tu5q.c05 JOIN tx7n ON tx7n.c05 = tu5q.c01 GROUP BY twxv.c04 ORDER BY count(tx7n.c01) DESC",
+        "sql": "SELECT twxv.c04, tu5q.c02, tx7n.c01 FROM twxv JOIN tu5q ON twxv.c01 = tu5q.c05 JOIN tx7n ON tx7n.c05 = tu5q.c01 GROUP BY twxv.c04 ORDER BY count(tx7n.c01) DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.314,
+        "eval_count": 222,
+        "eval_duration_s": 1.240848,
+        "prompt_eval_count": 1148
+      }
+    ],
+    "retried": false,
+    "eval_count": 222,
+    "eval_duration_s": 1.240848,
+    "prompt_eval_count": 1148
+  },
+  "H01-SCH": {
+    "raw": "Tables: tx7n, tu5q\nOutput: tu5q.c02, tx7n.c01\nPlan: SELECT tu5q.c02, tx7n.c01 FROM tx7n JOIN tu5q ON tx7n.c04 = tu5q.c01 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c02 ORDER BY COUNT(tx7n.c01) ASC LIMIT 1",
+    "error": null,
+    "latency_s": 1.539,
+    "pass1_s": 0.939,
+    "pass2_s": 0.6,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, tu5q\nOutput: tu5q.c02, tx7n.c01\nPlan: SELECT tu5q.c02, tx7n.c01 FROM tx7n JOIN tu5q ON tx7n.c04 = tu5q.c01 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c02 ORDER BY COUNT(tx7n.c01) ASC LIMIT 1",
+        "sql": "SELECT tu5q.c02, tx7n.c01 FROM tx7n JOIN tu5q ON tx7n.c04 = tu5q.c01 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c02 ORDER BY COUNT(tx7n.c01) ASC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.6,
+        "eval_count": 98,
+        "eval_duration_s": 0.547562,
+        "prompt_eval_count": 907
+      }
+    ],
+    "retried": false,
+    "eval_count": 98,
+    "eval_duration_s": 0.547562,
+    "prompt_eval_count": 907
+  },
+  "H01-BIZ": {
+    "raw": "Tables: tu5q, tx7n, tcse\n\nOutput: tu5q.c02, tx7n.c01\n\nPlan: SELECT tu5q.c02, tx7n.c01 FROM tu5q INNER JOIN tx7n ON tu5q.c01 = tx7n.c04 INNER JOIN tcse ON tu5q.c01 = tcse.c03 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c02",
+    "error": null,
+    "latency_s": 1.838,
+    "pass1_s": 1.181,
+    "pass2_s": 0.657,
+    "attempts": [
+      {
+        "raw": "Tables: tu5q, tx7n, tcse\n\nOutput: tu5q.c02, tx7n.c01\n\nPlan: SELECT tu5q.c02, tx7n.c01 FROM tu5q INNER JOIN tx7n ON tu5q.c01 = tx7n.c04 INNER JOIN tcse ON tu5q.c01 = tcse.c03 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c02",
+        "sql": "SELECT tu5q.c02, tx7n.c01 FROM tu5q INNER JOIN tx7n ON tu5q.c01 = tx7n.c04 INNER JOIN tcse ON tu5q.c01 = tcse.c03 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c02",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.657,
+        "eval_count": 105,
+        "eval_duration_s": 0.593135,
+        "prompt_eval_count": 1212
+      }
+    ],
+    "retried": false,
+    "eval_count": 105,
+    "eval_duration_s": 0.593135,
+    "prompt_eval_count": 1212
+  },
+  "H01-VAG": {
+    "raw": "Tables: twxv, tu5q, tx7n\n\nOutput: twxv.c02, tu5q.c02, tx7n.c01\n\nPlan: Join twxv with tu5q on twxv.c01 = tu5q.c05. Join the result with tx7n on tu5q.c01 = tx7n.c04. Group by twxv.c02 to aggregate the data by airline. Order by the sum of tx7n.c13 (flight distance in km) in descending order to get the busiest plane. Limit the result to the top 1 row.\n\nSQL: SELECT twxv.c02, tu5q.c02, tx7n.c01 FROM twxv JOIN tu5q ON twxv.c01 = tu5q.c05 JOIN tx7n ON tu5q.c01 = tx7n.c04 GROUP BY twxv.c02 ORDER BY SUM(tx7n.c13) DESC LIMIT 1",
+    "error": null,
+    "latency_s": 2.269,
+    "pass1_s": 0.958,
+    "pass2_s": 1.311,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, tu5q, tx7n\n\nOutput: twxv.c02, tu5q.c02, tx7n.c01\n\nPlan: Join twxv with tu5q on twxv.c01 = tu5q.c05. Join the result with tx7n on tu5q.c01 = tx7n.c04. Group by twxv.c02 to aggregate the data by airline. Order by the sum of tx7n.c13 (flight distance in km) in descending order to get the busiest plane. Limit the result to the top 1 row.\n\nSQL: SELECT twxv.c02, tu5q.c02, tx7n.c01 FROM twxv JOIN tu5q ON twxv.c01 = tu5q.c05 JOIN tx7n ON tu5q.c01 = tx7n.c04 GROUP BY twxv.c02 ORDER BY SUM(tx7n.c13) DESC LIMIT 1",
+        "sql": "SELECT twxv.c02, tu5q.c02, tx7n.c01 FROM twxv JOIN tu5q ON twxv.c01 = tu5q.c05 JOIN tx7n ON tu5q.c01 = tx7n.c04 GROUP BY twxv.c02 ORDER BY SUM(tx7n.c13) DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.311,
+        "eval_count": 221,
+        "eval_duration_s": 1.23232,
+        "prompt_eval_count": 1104
+      }
+    ],
+    "retried": false,
+    "eval_count": 221,
+    "eval_duration_s": 1.23232,
+    "prompt_eval_count": 1104
+  },
+  "H02-CAS": {
+    "raw": "Tables: ts53, twxv, tx7n\n\nOutput: ts53.c02, twxv.c04, tx7n.c01\n\nPlan: Join ts53 with tx7n on ts53.c01 = tx7n.c05 and ts53.c01 = tx7n.c06. Join the result with twxv on twxv.c01 = tx7n.c02. Filter the result to only include completed flights (tx7n.c19 = 'completed'). Group the result by ts53.c02 and twxv.c04. Order the result by the count of tx7n.c01 in descending order. Limit the result to the top 1 row.\n\nSQL: SELECT ts53.c02, twxv.c04, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c05 INNER JOIN twxv ON twxv.c01 = tx7n.c02 WHERE tx7n.c19 = 'completed' GROUP BY ts53.c02, twxv.c04 ORDER BY COUNT(tx7n.c01) DESC LIMIT 1",
+    "error": null,
+    "latency_s": 3.079,
+    "pass1_s": 1.523,
+    "pass2_s": 1.556,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, twxv, tx7n\n\nOutput: ts53.c02, twxv.c04, tx7n.c01\n\nPlan: Join ts53 with tx7n on ts53.c01 = tx7n.c05 and ts53.c01 = tx7n.c06. Join the result with twxv on twxv.c01 = tx7n.c02. Filter the result to only include completed flights (tx7n.c19 = 'completed'). Group the result by ts53.c02 and twxv.c04. Order the result by the count of tx7n.c01 in descending order. Limit the result to the top 1 row.\n\nSQL: SELECT ts53.c02, twxv.c04, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c05 INNER JOIN twxv ON twxv.c01 = tx7n.c02 WHERE tx7n.c19 = 'completed' GROUP BY ts53.c02, twxv.c04 ORDER BY COUNT(tx7n.c01) DESC LIMIT 1",
+        "sql": "SELECT ts53.c02, twxv.c04, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c05 INNER JOIN twxv ON twxv.c01 = tx7n.c02 WHERE tx7n.c19 = 'completed' GROUP BY ts53.c02, twxv.c04 ORDER BY COUNT(tx7n.c01) DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.556,
+        "eval_count": 268,
+        "eval_duration_s": 1.499485,
+        "prompt_eval_count": 1168
+      }
+    ],
+    "retried": false,
+    "eval_count": 268,
+    "eval_duration_s": 1.499485,
+    "prompt_eval_count": 1168
+  },
+  "H02-SCH": {
+    "raw": "Tables: ts53, twxv, tx7n\n\nOutput: twxv.c04, tx7n.c01\n\nPlan: SELECT twxv.c04, tx7n.c01 FROM ts53 INNER JOIN twxv ON ts53.c01 = twxv.c10 INNER JOIN tx7n ON twxv.c01 = tx7n.c06 WHERE tx7n.c19 = 'completed' GROUP BY twxv.c04 ORDER BY COUNT(tx7n.c01) DESC LIMIT 1",
+    "error": null,
+    "latency_s": 2.118,
+    "pass1_s": 1.394,
+    "pass2_s": 0.724,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, twxv, tx7n\n\nOutput: twxv.c04, tx7n.c01\n\nPlan: SELECT twxv.c04, tx7n.c01 FROM ts53 INNER JOIN twxv ON ts53.c01 = twxv.c10 INNER JOIN tx7n ON twxv.c01 = tx7n.c06 WHERE tx7n.c19 = 'completed' GROUP BY twxv.c04 ORDER BY COUNT(tx7n.c01) DESC LIMIT 1",
+        "sql": "SELECT twxv.c04, tx7n.c01 FROM ts53 INNER JOIN twxv ON ts53.c01 = twxv.c10 INNER JOIN tx7n ON twxv.c01 = tx7n.c06 WHERE tx7n.c19 = 'completed' GROUP BY twxv.c04 ORDER BY COUNT(tx7n.c01) DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.724,
+        "eval_count": 122,
+        "eval_duration_s": 0.684794,
+        "prompt_eval_count": 1178
+      }
+    ],
+    "retried": false,
+    "eval_count": 122,
+    "eval_duration_s": 0.684794,
+    "prompt_eval_count": 1178
+  },
+  "H02-BIZ": {
+    "raw": "Tables: twxv, tx7n, tu5q\nOutput: twxv.c03, tx7n.c01\nPlan: SELECT twxv.c03, tx7n.c01 FROM twxv JOIN tx7n ON twxv.c01 = tx7n.c04 JOIN tu5q ON tx7n.c04 = tu5q.c01 GROUP BY twxv.c03 ORDER BY COUNT(tx7n.c01) DESC",
+    "error": null,
+    "latency_s": 2.355,
+    "pass1_s": 1.683,
+    "pass2_s": 0.672,
+    "attempts": [
+      {
+        "raw": "Tables: twxv, tx7n, tu5q\nOutput: twxv.c03, tx7n.c01\nPlan: SELECT twxv.c03, tx7n.c01 FROM twxv JOIN tx7n ON twxv.c01 = tx7n.c04 JOIN tu5q ON tx7n.c04 = tu5q.c01 GROUP BY twxv.c03 ORDER BY COUNT(tx7n.c01) DESC",
+        "sql": "SELECT twxv.c03, tx7n.c01 FROM twxv JOIN tx7n ON twxv.c01 = tx7n.c04 JOIN tu5q ON tx7n.c04 = tu5q.c01 GROUP BY twxv.c03 ORDER BY COUNT(tx7n.c01) DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.672,
+        "eval_count": 106,
+        "eval_duration_s": 0.59687,
+        "prompt_eval_count": 1151
+      }
+    ],
+    "retried": false,
+    "eval_count": 106,
+    "eval_duration_s": 0.59687,
+    "prompt_eval_count": 1151
+  },
+  "H02-VAG": {
+    "raw": "Tables: ts53, twxv, tx7n\n\nOutput: twxv.c02, tx7n.c01\n\nPlan: SELECT twxv.c02, tx7n.c01 FROM ts53 INNER JOIN twxv ON ts53.c01 = twxv.c09 INNER JOIN tx7n ON twxv.c01 = tx7n.c05 GROUP BY twxv.c02 ORDER BY COUNT(tx7n.c01) DESC LIMIT 1",
+    "error": null,
+    "latency_s": 1.644,
+    "pass1_s": 0.912,
+    "pass2_s": 0.732,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, twxv, tx7n\n\nOutput: twxv.c02, tx7n.c01\n\nPlan: SELECT twxv.c02, tx7n.c01 FROM ts53 INNER JOIN twxv ON ts53.c01 = twxv.c09 INNER JOIN tx7n ON twxv.c01 = tx7n.c05 GROUP BY twxv.c02 ORDER BY COUNT(tx7n.c01) DESC LIMIT 1",
+        "sql": "SELECT twxv.c02, tx7n.c01 FROM ts53 INNER JOIN twxv ON ts53.c01 = twxv.c09 INNER JOIN tx7n ON twxv.c01 = tx7n.c05 GROUP BY twxv.c02 ORDER BY COUNT(tx7n.c01) DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.732,
+        "eval_count": 111,
+        "eval_duration_s": 0.617343,
+        "prompt_eval_count": 1403
+      }
+    ],
+    "retried": false,
+    "eval_count": 111,
+    "eval_duration_s": 0.617343,
+    "prompt_eval_count": 1403
+  },
+  "H03-CAS": {
+    "raw": "Tables: tajj, ts4p\n\nOutput: tajj.c04, tajj.c13, tajj.c13, tajj.c04\n\nPlan: Join tajj with ts4p on c03 (shipment id) and filter by c04 (invoice date) to get the invoices for 2025. Group by tajj.c04 to get the total amount due for each month. Use the SUM function to calculate the running total over the year.\n\nSQL: SELECT tajj.c04, SUM(tajj.c13) AS total_amount_due, SUM(tajj.c13) OVER (ORDER BY tajj.c04) AS running_total FROM tajj INNER JOIN ts4p ON tajj.c03 = ts4p.c01 WHERE strftime('%Y', tajj.c04) = '2025' GROUP BY tajj.c04",
+    "error": null,
+    "latency_s": 2.901,
+    "pass1_s": 1.663,
+    "pass2_s": 1.238,
+    "attempts": [
+      {
+        "raw": "Tables: tajj, ts4p\n\nOutput: tajj.c04, tajj.c13, tajj.c13, tajj.c04\n\nPlan: Join tajj with ts4p on c03 (shipment id) and filter by c04 (invoice date) to get the invoices for 2025. Group by tajj.c04 to get the total amount due for each month. Use the SUM function to calculate the running total over the year.\n\nSQL: SELECT tajj.c04, SUM(tajj.c13) AS total_amount_due, SUM(tajj.c13) OVER (ORDER BY tajj.c04) AS running_total FROM tajj INNER JOIN ts4p ON tajj.c03 = ts4p.c01 WHERE strftime('%Y', tajj.c04) = '2025' GROUP BY tajj.c04",
+        "sql": "SELECT tajj.c04, SUM(tajj.c13) AS total_amount_due, SUM(tajj.c13) OVER (ORDER BY tajj.c04) AS running_total FROM tajj INNER JOIN ts4p ON tajj.c03 = ts4p.c01 WHERE strftime('%Y', tajj.c04) = '2025' GROUP BY tajj.c04",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.238,
+        "eval_count": 206,
+        "eval_duration_s": 1.13632,
+        "prompt_eval_count": 591
+      }
+    ],
+    "retried": false,
+    "eval_count": 206,
+    "eval_duration_s": 1.13632,
+    "prompt_eval_count": 591
+  },
+  "H03-SCH": {
+    "raw": "Tables: tajj, ts4p\nOutput: tajj.c04, tajj.c13, tajj.c13, tajj.c04\nPlan: SELECT tajj.c04, SUM(tajj.c13) OVER (ORDER BY strftime('%Y-%m', tajj.c04)) AS running_sum FROM tajj INNER JOIN ts4p ON tajj.c01 = ts4p.c01 WHERE strftime('%Y', tajj.c04) = '2025' GROUP BY strftime('%Y-%m', tajj.c04)",
+    "error": null,
+    "latency_s": 2.357,
+    "pass1_s": 1.561,
+    "pass2_s": 0.796,
+    "attempts": [
+      {
+        "raw": "Tables: tajj, ts4p\nOutput: tajj.c04, tajj.c13, tajj.c13, tajj.c04\nPlan: SELECT tajj.c04, SUM(tajj.c13) OVER (ORDER BY strftime('%Y-%m', tajj.c04)) AS running_sum FROM tajj INNER JOIN ts4p ON tajj.c01 = ts4p.c01 WHERE strftime('%Y', tajj.c04) = '2025' GROUP BY strftime('%Y-%m', tajj.c04)",
+        "sql": "SELECT tajj.c04, SUM(tajj.c13) OVER (ORDER BY strftime('%Y-%m', tajj.c04)) AS running_sum FROM tajj INNER JOIN ts4p ON tajj.c01 = ts4p.c01 WHERE strftime('%Y', tajj.c04) = '2025' GROUP BY strftime('%Y-%m', tajj.c04)",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.796,
+        "eval_count": 136,
+        "eval_duration_s": 0.746663,
+        "prompt_eval_count": 604
+      }
+    ],
+    "retried": false,
+    "eval_count": 136,
+    "eval_duration_s": 0.746663,
+    "prompt_eval_count": 604
+  },
+  "H03-BIZ": {
+    "raw": "Tables: tajj, ts4p\nOutput: tajj.c04, tajj.c13\nPlan: SELECT tajj.c04, tajj.c13 FROM tajj JOIN ts4p ON tajj.c01 = ts4p.c01 WHERE ts4p.c01 = 'as_of_timestamp' AND strftime('%Y', tajj.c04) = '2025' GROUP BY strftime('%Y-%m', tajj.c04) ORDER BY strftime('%Y-%m', tajj.c04)",
+    "error": null,
+    "latency_s": 2.095,
+    "pass1_s": 1.347,
+    "pass2_s": 0.748,
+    "attempts": [
+      {
+        "raw": "Tables: tajj, ts4p\nOutput: tajj.c04, tajj.c13\nPlan: SELECT tajj.c04, tajj.c13 FROM tajj JOIN ts4p ON tajj.c01 = ts4p.c01 WHERE ts4p.c01 = 'as_of_timestamp' AND strftime('%Y', tajj.c04) = '2025' GROUP BY strftime('%Y-%m', tajj.c04) ORDER BY strftime('%Y-%m', tajj.c04)",
+        "sql": "SELECT tajj.c04, tajj.c13 FROM tajj JOIN ts4p ON tajj.c01 = ts4p.c01 WHERE ts4p.c01 = 'as_of_timestamp' AND strftime('%Y', tajj.c04) = '2025' GROUP BY strftime('%Y-%m', tajj.c04) ORDER BY strftime('%Y-%m', tajj.c04)",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.748,
+        "eval_count": 127,
+        "eval_duration_s": 0.697243,
+        "prompt_eval_count": 578
+      }
+    ],
+    "retried": false,
+    "eval_count": 127,
+    "eval_duration_s": 0.697243,
+    "prompt_eval_count": 578
+  },
+  "H03-VAG": {
+    "raw": "Tables: t89v, tajj\nOutput: tajj.c03, tajj.c13\nPlan: SELECT t89v.c03, tajj.c13 FROM t89v INNER JOIN tajj ON t89v.c01 = tajj.c03 WHERE strftime('%Y', tajj.c04) = strftime('%Y', 'now')",
+    "error": null,
+    "latency_s": 1.488,
+    "pass1_s": 0.852,
+    "pass2_s": 0.636,
+    "attempts": [
+      {
+        "raw": "Tables: t89v, tajj\nOutput: tajj.c03, tajj.c13\nPlan: SELECT t89v.c03, tajj.c13 FROM t89v INNER JOIN tajj ON t89v.c01 = tajj.c03 WHERE strftime('%Y', tajj.c04) = strftime('%Y', 'now')",
+        "sql": "SELECT t89v.c03, tajj.c13 FROM t89v INNER JOIN tajj ON t89v.c01 = tajj.c03 WHERE strftime('%Y', tajj.c04) = strftime('%Y', 'now')",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.636,
+        "eval_count": 90,
+        "eval_duration_s": 0.502946,
+        "prompt_eval_count": 1250
+      }
+    ],
+    "retried": false,
+    "eval_count": 90,
+    "eval_duration_s": 0.502946,
+    "prompt_eval_count": 1250
+  },
+  "H04-CAS": {
+    "raw": "Tables: tx7n, ts4p\n\nOutput: tx7n.c07, tx7n.c01, tx7n.c07\n\nPlan: SELECT tx7n.c07, tx7n.c01, tx7n.c07 FROM tx7n INNER JOIN ts4p ON tx7n.c01 = ts4p.c01 WHERE tx7n.c19 = 'completed' GROUP BY strftime('%Y-%m', tx7n.c07) ORDER BY strftime('%Y-%m', tx7n.c07)",
+    "error": null,
+    "latency_s": 2.372,
+    "pass1_s": 1.58,
+    "pass2_s": 0.792,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, ts4p\n\nOutput: tx7n.c07, tx7n.c01, tx7n.c07\n\nPlan: SELECT tx7n.c07, tx7n.c01, tx7n.c07 FROM tx7n INNER JOIN ts4p ON tx7n.c01 = ts4p.c01 WHERE tx7n.c19 = 'completed' GROUP BY strftime('%Y-%m', tx7n.c07) ORDER BY strftime('%Y-%m', tx7n.c07)",
+        "sql": "SELECT tx7n.c07, tx7n.c01, tx7n.c07 FROM tx7n INNER JOIN ts4p ON tx7n.c01 = ts4p.c01 WHERE tx7n.c19 = 'completed' GROUP BY strftime('%Y-%m', tx7n.c07) ORDER BY strftime('%Y-%m', tx7n.c07)",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.792,
+        "eval_count": 121,
+        "eval_duration_s": 0.679449,
+        "prompt_eval_count": 704
+      }
+    ],
+    "retried": false,
+    "eval_count": 121,
+    "eval_duration_s": 0.679449,
+    "prompt_eval_count": 704
+  },
+  "H04-SCH": {
+    "raw": "Tables: tx7n, ts53\n\nOutput: tx7n.c09, tx7n.c01, tx7n.c01, tx7n.c09\n\nPlan: SELECT tx7n.c09, tx7n.c01, tx7n.c01, tx7n.c09 FROM tx7n INNER JOIN ts53 ON tx7n.c06 = ts53.c01 WHERE tx7n.c19 = 'completed' GROUP BY strftime('%Y-%m', tx7n.c09) ORDER BY strftime('%Y-%m', tx7n.c09)\n\nSQL: SELECT strftime('%Y-%m', tx7n.c09), tx7n.c01, tx7n.c01, tx7n.c09 FROM tx7n INNER JOIN ts53 ON tx7n.c06 = ts53.c01 WHERE tx7n.c19 = 'completed' GROUP BY strftime('%Y-%m', tx7n.c09) ORDER BY strftime('%Y-%m', tx7n.c09)",
+    "error": null,
+    "latency_s": 2.978,
+    "pass1_s": 1.616,
+    "pass2_s": 1.362,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, ts53\n\nOutput: tx7n.c09, tx7n.c01, tx7n.c01, tx7n.c09\n\nPlan: SELECT tx7n.c09, tx7n.c01, tx7n.c01, tx7n.c09 FROM tx7n INNER JOIN ts53 ON tx7n.c06 = ts53.c01 WHERE tx7n.c19 = 'completed' GROUP BY strftime('%Y-%m', tx7n.c09) ORDER BY strftime('%Y-%m', tx7n.c09)\n\nSQL: SELECT strftime('%Y-%m', tx7n.c09), tx7n.c01, tx7n.c01, tx7n.c09 FROM tx7n INNER JOIN ts53 ON tx7n.c06 = ts53.c01 WHERE tx7n.c19 = 'completed' GROUP BY strftime('%Y-%m', tx7n.c09) ORDER BY strftime('%Y-%m', tx7n.c09)",
+        "sql": "SELECT strftime('%Y-%m', tx7n.c09), tx7n.c01, tx7n.c01, tx7n.c09 FROM tx7n INNER JOIN ts53 ON tx7n.c06 = ts53.c01 WHERE tx7n.c19 = 'completed' GROUP BY strftime('%Y-%m', tx7n.c09) ORDER BY strftime('%Y-%m', tx7n.c09)",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.362,
+        "eval_count": 235,
+        "eval_duration_s": 1.299523,
+        "prompt_eval_count": 624
+      }
+    ],
+    "retried": false,
+    "eval_count": 235,
+    "eval_duration_s": 1.299523,
+    "prompt_eval_count": 624
+  },
+  "H04-BIZ": {
+    "raw": "Tables: tx7n, ts53\n\nOutput: tx7n.c08, tx7n.c01, tx7n.c01, tx7n.c08\n\nPlan: Join tx7n and ts53 on c01. Filter tx7n.c19 = 'completed'. Group by strftime('%Y-%m', tx7n.c07). Sum tx7n.c14 for each group. Calculate the difference between the sum for the current month and the sum for the previous month.\n\nSQL: SELECT strftime('%Y-%m', tx7n.c07) AS month, SUM(tx7n.c14) AS completed_volume, SUM(tx7n.c14) - LAG(SUM(tx7n.c14)) OVER (ORDER BY strftime('%Y-%m', tx7n.c07)) AS month_over_month_change FROM tx7n INNER JOIN ts53 ON tx7n.c01 = ts53.c01 WHERE tx7n.c19 = 'completed' GROUP BY strftime('%Y-%m', tx7n.c07)",
+    "error": null,
+    "latency_s": 3.243,
+    "pass1_s": 1.83,
+    "pass2_s": 1.413,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, ts53\n\nOutput: tx7n.c08, tx7n.c01, tx7n.c01, tx7n.c08\n\nPlan: Join tx7n and ts53 on c01. Filter tx7n.c19 = 'completed'. Group by strftime('%Y-%m', tx7n.c07). Sum tx7n.c14 for each group. Calculate the difference between the sum for the current month and the sum for the previous month.\n\nSQL: SELECT strftime('%Y-%m', tx7n.c07) AS month, SUM(tx7n.c14) AS completed_volume, SUM(tx7n.c14) - LAG(SUM(tx7n.c14)) OVER (ORDER BY strftime('%Y-%m', tx7n.c07)) AS month_over_month_change FROM tx7n INNER JOIN ts53 ON tx7n.c01 = ts53.c01 WHERE tx7n.c19 = 'completed' GROUP BY strftime('%Y-%m', tx7n.c07)",
+        "sql": "SELECT strftime('%Y-%m', tx7n.c07) AS month, SUM(tx7n.c14) AS completed_volume, SUM(tx7n.c14) - LAG(SUM(tx7n.c14)) OVER (ORDER BY strftime('%Y-%m', tx7n.c07)) AS month_over_month_change FROM tx7n INNER JOIN ts53 ON tx7n.c01 = ts53.c01 WHERE tx7n.c19 = 'completed' GROUP BY strftime('%Y-%m', tx7n.c07)",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.413,
+        "eval_count": 233,
+        "eval_duration_s": 1.296923,
+        "prompt_eval_count": 922
+      }
+    ],
+    "retried": false,
+    "eval_count": 233,
+    "eval_duration_s": 1.296923,
+    "prompt_eval_count": 922
+  },
+  "H04-VAG": {
+    "raw": "Tables: ts4p, tx7n\nOutput: tx7n.c07, tx7n.c01\nPlan: SELECT tx7n.c07, tx7n.c01 FROM ts4p INNER JOIN tx7n ON ts4p.c01 = tx7n.c04 GROUP BY tx7n.c07, tx7n.c01 ORDER BY tx7n.c07, tx7n.c01",
+    "error": null,
+    "latency_s": 1.568,
+    "pass1_s": 0.976,
+    "pass2_s": 0.592,
+    "attempts": [
+      {
+        "raw": "Tables: ts4p, tx7n\nOutput: tx7n.c07, tx7n.c01\nPlan: SELECT tx7n.c07, tx7n.c01 FROM ts4p INNER JOIN tx7n ON ts4p.c01 = tx7n.c04 GROUP BY tx7n.c07, tx7n.c01 ORDER BY tx7n.c07, tx7n.c01",
+        "sql": "SELECT tx7n.c07, tx7n.c01 FROM ts4p INNER JOIN tx7n ON ts4p.c01 = tx7n.c04 GROUP BY tx7n.c07, tx7n.c01 ORDER BY tx7n.c07, tx7n.c01",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.592,
+        "eval_count": 96,
+        "eval_duration_s": 0.529609,
+        "prompt_eval_count": 676
+      }
+    ],
+    "retried": false,
+    "eval_count": 96,
+    "eval_duration_s": 0.529609,
+    "prompt_eval_count": 676
+  },
+  "H05-CAS": {
+    "raw": "Tables: tu5q, tx7n, tpsn\n\nOutput: tu5q.c02, tpsn.c07, tpsn.c06\n\nPlan: Join tu5q with tx7n on tu5q.c01 = tx7n.c04, then join the result with tpsn on tx7n.c01 = tpsn.c02. Group the result by tu5q.c02 and calculate the average time on the ground between completed flights using AVG(tpsn.c07 - tpsn.c06). Order the result by the average time on the ground in ascending order and limit the result to the top 5 planes.\n\nSQL: SELECT tu5q.c02, tpsn.c07, tpsn.c06 FROM tu5q INNER JOIN tx7n ON tu5q.c01 = tx7n.c04 INNER JOIN tpsn ON tx7n.c01 = tpsn.c02 GROUP BY tu5q.c02 ORDER BY AVG(tpsn.c07 - tpsn.c06) ASC LIMIT 5",
+    "error": null,
+    "latency_s": 3.009,
+    "pass1_s": 1.559,
+    "pass2_s": 1.45,
+    "attempts": [
+      {
+        "raw": "Tables: tu5q, tx7n, tpsn\n\nOutput: tu5q.c02, tpsn.c07, tpsn.c06\n\nPlan: Join tu5q with tx7n on tu5q.c01 = tx7n.c04, then join the result with tpsn on tx7n.c01 = tpsn.c02. Group the result by tu5q.c02 and calculate the average time on the ground between completed flights using AVG(tpsn.c07 - tpsn.c06). Order the result by the average time on the ground in ascending order and limit the result to the top 5 planes.\n\nSQL: SELECT tu5q.c02, tpsn.c07, tpsn.c06 FROM tu5q INNER JOIN tx7n ON tu5q.c01 = tx7n.c04 INNER JOIN tpsn ON tx7n.c01 = tpsn.c02 GROUP BY tu5q.c02 ORDER BY AVG(tpsn.c07 - tpsn.c06) ASC LIMIT 5",
+        "sql": "SELECT tu5q.c02, tpsn.c07, tpsn.c06 FROM tu5q INNER JOIN tx7n ON tu5q.c01 = tx7n.c04 INNER JOIN tpsn ON tx7n.c01 = tpsn.c02 GROUP BY tu5q.c02 ORDER BY AVG(tpsn.c07 - tpsn.c06) ASC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.45,
+        "eval_count": 241,
+        "eval_duration_s": 1.352393,
+        "prompt_eval_count": 1171
+      }
+    ],
+    "retried": false,
+    "eval_count": 241,
+    "eval_duration_s": 1.352393,
+    "prompt_eval_count": 1171
+  },
+  "H05-SCH": {
+    "raw": "Tables: tx7n, tu5q\nOutput: tu5q.c02, tx7n.c09, tx7n.c10\nPlan: JOIN tx7n ON tx7n.c01 = tu5q.c01 WHERE tx7n.c19 = 'completed' ORDER BY tx7n.c10, tx7n.c09 GROUP BY tu5q.c02, tx7n.c09, tx7n.c10 LIMIT 5\nSQL: SELECT tu5q.c02, tx7n.c09, tx7n.c10 FROM tx7n JOIN tu5q ON tx7n.c01 = tu5q.c01 WHERE tx7n.c19 = 'completed' ORDER BY tx7n.c10, tx7n.c09 GROUP BY tu5q.c02, tx7n.c09, tx7n.c10 LIMIT 5",
+    "error": null,
+    "latency_s": 3.558,
+    "pass1_s": 1.585,
+    "pass2_s": 1.973,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, tu5q\nOutput: tu5q.c02, tx7n.c09, tx7n.c10\nPlan: SELECT tu5q.c02, tx7n.c09, tx7n.c10 FROM tx7n JOIN tu5q ON tx7n.c01 = tu5q.c01 WHERE tx7n.c19 = 'completed' ORDER BY tx7n.c10, tx7n.c09 GROUP BY tu5q.c02, tx7n.c09, tx7n.c10 LIMIT 5",
+        "sql": "SELECT tu5q.c02, tx7n.c09, tx7n.c10 FROM tx7n JOIN tu5q ON tx7n.c01 = tu5q.c01 WHERE tx7n.c19 = 'completed' ORDER BY tx7n.c10, tx7n.c09 GROUP BY tu5q.c02, tx7n.c09, tx7n.c10 LIMIT 5",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "near \"GROUP\": syntax error",
+        "latency_s": 0.788,
+        "eval_count": 130,
+        "eval_duration_s": 0.728418,
+        "prompt_eval_count": 924
+      },
+      {
+        "raw": "Tables: tx7n, tu5q\nOutput: tu5q.c02, tx7n.c09, tx7n.c10\nPlan: JOIN tx7n ON tx7n.c01 = tu5q.c01 WHERE tx7n.c19 = 'completed' ORDER BY tx7n.c10, tx7n.c09 GROUP BY tu5q.c02, tx7n.c09, tx7n.c10 LIMIT 5\nSQL: SELECT tu5q.c02, tx7n.c09, tx7n.c10 FROM tx7n JOIN tu5q ON tx7n.c01 = tu5q.c01 WHERE tx7n.c19 = 'completed' ORDER BY tx7n.c10, tx7n.c09 GROUP BY tu5q.c02, tx7n.c09, tx7n.c10 LIMIT 5",
+        "sql": "SELECT tu5q.c02, tx7n.c09, tx7n.c10 FROM tx7n JOIN tu5q ON tx7n.c01 = tu5q.c01 WHERE tx7n.c19 = 'completed' ORDER BY tx7n.c10, tx7n.c09 GROUP BY tu5q.c02, tx7n.c09, tx7n.c10 LIMIT 5",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "near \"GROUP\": syntax error",
+        "latency_s": 1.185,
+        "eval_count": 202,
+        "eval_duration_s": 1.121443,
+        "prompt_eval_count": 1039
+      }
+    ],
+    "retried": true,
+    "eval_count": 332,
+    "eval_duration_s": 1.849861,
+    "prompt_eval_count": 924
+  },
+  "H05-BIZ": {
+    "raw": "Tables: tx7n, tu5q\nOutput: tu5q.c02, tx7n.c10, tx7n.c09\nPlan: SELECT tu5q.c02, tx7n.c10, tx7n.c09 FROM tx7n JOIN tu5q ON tx7n.c04 = tu5q.c01 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c02 ORDER BY AVG(tx7n.c09) ASC LIMIT 5",
+    "error": null,
+    "latency_s": 2.031,
+    "pass1_s": 1.373,
+    "pass2_s": 0.658,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, tu5q\nOutput: tu5q.c02, tx7n.c10, tx7n.c09\nPlan: SELECT tu5q.c02, tx7n.c10, tx7n.c09 FROM tx7n JOIN tu5q ON tx7n.c04 = tu5q.c01 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c02 ORDER BY AVG(tx7n.c09) ASC LIMIT 5",
+        "sql": "SELECT tu5q.c02, tx7n.c10, tx7n.c09 FROM tx7n JOIN tu5q ON tx7n.c04 = tu5q.c01 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c02 ORDER BY AVG(tx7n.c09) ASC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.658,
+        "eval_count": 112,
+        "eval_duration_s": 0.62197,
+        "prompt_eval_count": 892
+      }
+    ],
+    "retried": false,
+    "eval_count": 112,
+    "eval_duration_s": 0.62197,
+    "prompt_eval_count": 892
+  },
+  "H05-VAG": {
+    "raw": "Tables: tx7n, tpsn\n\nOutput: tx7n.c01, tx7n.c07, tx7n.c10, tpsn.c06, tpsn.c07\n\nPlan: Join tx7n and tpsn on tx7n.c01 = tpsn.c02. Filter for completed flights by tx7n.c19 = 'completed'. Group by tx7n.c01. Order by the difference between tx7n.c07 and tpsn.c06 in ascending order.\n\nSQL: SELECT tx7n.c01, tx7n.c07, tx7n.c10, tpsn.c06, tpsn.c07 FROM tx7n INNER JOIN tpsn ON tx7n.c01 = tpsn.c02 WHERE tx7n.c19 = 'completed' GROUP BY tx7n.c01 ORDER BY tx7n.c07 - tpsn.c06 ASC",
+    "error": null,
+    "latency_s": 2.41,
+    "pass1_s": 1.146,
+    "pass2_s": 1.264,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, tpsn\n\nOutput: tx7n.c01, tx7n.c07, tx7n.c10, tpsn.c06, tpsn.c07\n\nPlan: Join tx7n and tpsn on tx7n.c01 = tpsn.c02. Filter for completed flights by tx7n.c19 = 'completed'. Group by tx7n.c01. Order by the difference between tx7n.c07 and tpsn.c06 in ascending order.\n\nSQL: SELECT tx7n.c01, tx7n.c07, tx7n.c10, tpsn.c06, tpsn.c07 FROM tx7n INNER JOIN tpsn ON tx7n.c01 = tpsn.c02 WHERE tx7n.c19 = 'completed' GROUP BY tx7n.c01 ORDER BY tx7n.c07 - tpsn.c06 ASC",
+        "sql": "SELECT tx7n.c01, tx7n.c07, tx7n.c10, tpsn.c06, tpsn.c07 FROM tx7n INNER JOIN tpsn ON tx7n.c01 = tpsn.c02 WHERE tx7n.c19 = 'completed' GROUP BY tx7n.c01 ORDER BY tx7n.c07 - tpsn.c06 ASC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.264,
+        "eval_count": 214,
+        "eval_duration_s": 1.195139,
+        "prompt_eval_count": 856
+      }
+    ],
+    "retried": false,
+    "eval_count": 214,
+    "eval_duration_s": 1.195139,
+    "prompt_eval_count": 856
+  },
+  "H06-CAS": {
+    "raw": "Tables: th77, tajj\n\nOutput: th77.c03, tajj.c01, tajj.c13\n\nPlan: SELECT T1.c03, T2.c01, T2.c13 FROM th77 AS T1 INNER JOIN tajj AS T2 ON T1.c01 = T2.c03 GROUP BY T1.c03 HAVING COUNT(T2.c01) / (SELECT COUNT(*) FROM tajj) * 100 > 4",
+    "error": null,
+    "latency_s": 1.845,
+    "pass1_s": 1.126,
+    "pass2_s": 0.719,
+    "attempts": [
+      {
+        "raw": "Tables: th77, tajj\n\nOutput: th77.c03, tajj.c01, tajj.c13\n\nPlan: SELECT T1.c03, T2.c01, T2.c13 FROM th77 AS T1 INNER JOIN tajj AS T2 ON T1.c01 = T2.c03 GROUP BY T1.c03 HAVING COUNT(T2.c01) / (SELECT COUNT(*) FROM tajj) * 100 > 4",
+        "sql": "SELECT T1.c03, T2.c01, T2.c13 FROM th77 AS T1 INNER JOIN tajj AS T2 ON T1.c01 = T2.c03 GROUP BY T1.c03 HAVING COUNT(T2.c01) / (SELECT COUNT(*) FROM tajj) * 100 > 4",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.719,
+        "eval_count": 115,
+        "eval_duration_s": 0.644716,
+        "prompt_eval_count": 1273
+      }
+    ],
+    "retried": false,
+    "eval_count": 115,
+    "eval_duration_s": 0.644716,
+    "prompt_eval_count": 1273
+  },
+  "H06-SCH": {
+    "raw": "Tables: th77, t89v, tajj\n\nOutput: th77.c03, t89v.c13, tajj.c13\n\nPlan: SELECT th77.c03, t89v.c13, tajj.c13 FROM th77 INNER JOIN t89v ON th77.c01 = t89v.c03 INNER JOIN tajj ON t89v.c01 = tajj.c03 WHERE t89v.c22 = 'delivered' AND tajj.c15 = 'paid' GROUP BY th77.c03 HAVING COUNT(*) / (SELECT COUNT(*) FROM tajj WHERE t89v.c01 = tajj.c03 AND t89v.c22 = 'delivered' AND tajj.c15 = 'paid') > 0.04",
+    "error": null,
+    "latency_s": 2.298,
+    "pass1_s": 1.124,
+    "pass2_s": 1.174,
+    "attempts": [
+      {
+        "raw": "Tables: th77, t89v, tajj\n\nOutput: th77.c03, t89v.c13, tajj.c13\n\nPlan: SELECT th77.c03, t89v.c13, tajj.c13 FROM th77 INNER JOIN t89v ON th77.c01 = t89v.c03 INNER JOIN tajj ON t89v.c01 = tajj.c03 WHERE t89v.c22 = 'delivered' AND tajj.c15 = 'paid' GROUP BY th77.c03 HAVING COUNT(*) / (SELECT COUNT(*) FROM tajj WHERE t89v.c01 = tajj.c03 AND t89v.c22 = 'delivered' AND tajj.c15 = 'paid') > 0.04",
+        "sql": "SELECT th77.c03, t89v.c13, tajj.c13 FROM th77 INNER JOIN t89v ON th77.c01 = t89v.c03 INNER JOIN tajj ON t89v.c01 = tajj.c03 WHERE t89v.c22 = 'delivered' AND tajj.c15 = 'paid' GROUP BY th77.c03 HAVING COUNT(*) / (SELECT COUNT(*) FROM tajj WHERE t89v.c01 = tajj.c03 AND t89v.c22 = 'delivered' AND tajj.c15 = 'paid') > 0.04",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.174,
+        "eval_count": 199,
+        "eval_duration_s": 1.121632,
+        "prompt_eval_count": 1283
+      }
+    ],
+    "retried": false,
+    "eval_count": 199,
+    "eval_duration_s": 1.121632,
+    "prompt_eval_count": 1283
+  },
+  "H06-BIZ": {
+    "raw": "Tables: th77, tajj\n\nOutput: th77.c02, tajj.c13, tajj.c13\n\nPlan: SELECT T1.c02, T2.c13, T2.c13 * 100 / SUM(T2.c13) FROM th77 AS T1 INNER JOIN tajj AS T2 ON T1.c01 = T2.c03 GROUP BY T1.c02 ORDER BY T2.c13 DESC LIMIT 10",
+    "error": null,
+    "latency_s": 2.113,
+    "pass1_s": 1.441,
+    "pass2_s": 0.672,
+    "attempts": [
+      {
+        "raw": "Tables: th77, tajj\n\nOutput: th77.c02, tajj.c13, tajj.c13\n\nPlan: SELECT T1.c02, T2.c13, T2.c13 * 100 / SUM(T2.c13) FROM th77 AS T1 INNER JOIN tajj AS T2 ON T1.c01 = T2.c03 GROUP BY T1.c02 ORDER BY T2.c13 DESC LIMIT 10",
+        "sql": "SELECT T1.c02, T2.c13, T2.c13 * 100 / SUM(T2.c13) FROM th77 AS T1 INNER JOIN tajj AS T2 ON T1.c01 = T2.c03 GROUP BY T1.c02 ORDER BY T2.c13 DESC LIMIT 10",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.672,
+        "eval_count": 113,
+        "eval_duration_s": 0.633795,
+        "prompt_eval_count": 1271
+      }
+    ],
+    "retried": false,
+    "eval_count": 113,
+    "eval_duration_s": 0.633795,
+    "prompt_eval_count": 1271
+  },
+  "H06-VAG": {
+    "raw": "Tables: th77, tajj\n\nOutput: th77.c03, tajj.c13\n\nPlan: SELECT th77.c03, tajj.c13 FROM th77 INNER JOIN tajj ON th77.c01 = tajj.c03 GROUP BY th77.c03 ORDER BY SUM(tajj.c13) DESC",
+    "error": null,
+    "latency_s": 1.366,
+    "pass1_s": 0.828,
+    "pass2_s": 0.538,
+    "attempts": [
+      {
+        "raw": "Tables: th77, tajj\n\nOutput: th77.c03, tajj.c13\n\nPlan: SELECT th77.c03, tajj.c13 FROM th77 INNER JOIN tajj ON th77.c01 = tajj.c03 GROUP BY th77.c03 ORDER BY SUM(tajj.c13) DESC",
+        "sql": "SELECT th77.c03, tajj.c13 FROM th77 INNER JOIN tajj ON th77.c01 = tajj.c03 GROUP BY th77.c03 ORDER BY SUM(tajj.c13) DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.538,
+        "eval_count": 85,
+        "eval_duration_s": 0.483058,
+        "prompt_eval_count": 1254
+      }
+    ],
+    "retried": false,
+    "eval_count": 85,
+    "eval_duration_s": 0.483058,
+    "prompt_eval_count": 1254
+  },
+  "H07-CAS": {
+    "raw": "Tables: ts53, twxv, tu5q, tx7n\nOutput: ts53.c02, tu5q.c15\nPlan: INNER JOIN twxv ON ts53.c01 = twxv.c09 INNER JOIN tu5q ON twxv.c01 = tu5q.c06 INNER JOIN tx7n ON tu5q.c01 = tx7n.c04 WHERE tx7n.c19 = 'completed' GROUP BY ts53.c01 ORDER BY SUM(twxv.c15) DESC LIMIT 5\nSQL: SELECT ts53.c02, tu5q.c15 FROM ts53 INNER JOIN twxv ON ts53.c01 = twxv.c09 INNER JOIN tu5q ON twxv.c01 = tu5q.c06 INNER JOIN tx7n ON tu5q.c01 = tx7n.c04 WHERE tx7n.c19 = 'completed' GROUP BY ts53.c01 ORDER BY SUM(twxv.c15) DESC LIMIT 5",
+    "error": null,
+    "latency_s": 3.326,
+    "pass1_s": 1.038,
+    "pass2_s": 2.288,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, twxv, tu5q, tx7n\n\nOutput: ts53.c02, tu5q.c15\n\nPlan: SELECT ts53.c02, tu5q.c15 FROM ts53 INNER JOIN twxv ON ts53.c01 = twxv.c09 INNER JOIN tu5q ON twxv.c01 = tu5q.c06 INNER JOIN tx7n ON tu5q.c01 = tx7n.c04 WHERE tx7n.c19 = 'completed' GROUP BY ts53.c01 ORDER BY SUM(twxv.c15) DESC LIMIT 5",
+        "sql": "SELECT ts53.c02, tu5q.c15 FROM ts53 INNER JOIN twxv ON ts53.c01 = twxv.c09 INNER JOIN tu5q ON twxv.c01 = tu5q.c06 INNER JOIN tx7n ON tu5q.c01 = tx7n.c04 WHERE tx7n.c19 = 'completed' GROUP BY ts53.c01 ORDER BY SUM(twxv.c15) DESC LIMIT 5",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: twxv.c15",
+        "latency_s": 0.874,
+        "eval_count": 146,
+        "eval_duration_s": 0.820855,
+        "prompt_eval_count": 1420
+      },
+      {
+        "raw": "Tables: ts53, twxv, tu5q, tx7n\nOutput: ts53.c02, tu5q.c15\nPlan: INNER JOIN twxv ON ts53.c01 = twxv.c09 INNER JOIN tu5q ON twxv.c01 = tu5q.c06 INNER JOIN tx7n ON tu5q.c01 = tx7n.c04 WHERE tx7n.c19 = 'completed' GROUP BY ts53.c01 ORDER BY SUM(twxv.c15) DESC LIMIT 5\nSQL: SELECT ts53.c02, tu5q.c15 FROM ts53 INNER JOIN twxv ON ts53.c01 = twxv.c09 INNER JOIN tu5q ON twxv.c01 = tu5q.c06 INNER JOIN tx7n ON tu5q.c01 = tx7n.c04 WHERE tx7n.c19 = 'completed' GROUP BY ts53.c01 ORDER BY SUM(twxv.c15) DESC LIMIT 5",
+        "sql": "SELECT ts53.c02, tu5q.c15 FROM ts53 INNER JOIN twxv ON ts53.c01 = twxv.c09 INNER JOIN tu5q ON twxv.c01 = tu5q.c06 INNER JOIN tx7n ON tu5q.c01 = tx7n.c04 WHERE tx7n.c19 = 'completed' GROUP BY ts53.c01 ORDER BY SUM(twxv.c15) DESC LIMIT 5",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: twxv.c15",
+        "latency_s": 1.414,
+        "eval_count": 238,
+        "eval_duration_s": 1.348628,
+        "prompt_eval_count": 1553
+      }
+    ],
+    "retried": true,
+    "eval_count": 384,
+    "eval_duration_s": 2.169483,
+    "prompt_eval_count": 1420
+  },
+  "H07-SCH": {
+    "raw": "Tables: ts53, tx7n, tg6t\nOutput: ts53.c02, SUM(tx7n.c13 / 1000), DENSE_RANK() OVER (PARTITION BY ts53.c02 ORDER BY SUM(tx7n.c13 / 1000) DESC) AS rank\nPlan: Join ts53 with tx7n on ts53.c01 = tx7n.c06. Join the result with tg6t on tx7n.c01 = tg6t.c03. Group the result by ts53.c02. Order the result by the sum of tx7n.c13 / 1000 in descending order. Use DENSE_RANK() to assign a rank to each group based on the sum of tx7n.c13 / 1000. Keep only the top 5 ranks.\nSQL: SELECT ts53.c02, SUM(tx7n.c13 / 1000), DENSE_RANK() OVER (PARTITION BY ts53.c02 ORDER BY SUM(tx7n.c13 / 1000) DESC) AS rank FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c06 INNER JOIN tg6t ON tx7n.c01 = tg6t.c03 GROUP BY ts53.c02 ORDER BY SUM(tx7n.c13 / 1000) DESC LIMIT 5",
+    "error": null,
+    "latency_s": 4.532,
+    "pass1_s": 1.468,
+    "pass2_s": 3.064,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, tx7n, tg6t\n\nOutput: ts53.c02, SUM(tx7n.c13 / 1000), DENSE_RANK() OVER (PARTITION BY ts53.c02 ORDER BY SUM(tx7n.c13 / 1000) DESC)\n\nPlan: Join tx7n and tg6t on tx7n.c01 = tg6t.c03. Join the result with ts53 on ts53.c01 = tx7n.c06. Group the result by ts53.c02. Order the result by the sum of tx7n.c13 / 1000 in descending order. Use DENSE_RANK() to assign a rank to each group based on the sum of tx7n.c13 / 1000. Keep only the top 5 ranks.",
+        "sql": "with ts53 on ts53.c01 = tx7n.c06. Group the result by ts53.c02. Order the result by the sum of tx7n.c13 / 1000 in descending order. Use DENSE_RANK() to assign a rank to each group based on the sum of tx7n.c13 / 1000. Keep only the top 5 ranks.",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "near \"on\": syntax error",
+        "latency_s": 1.149,
+        "eval_count": 190,
+        "eval_duration_s": 1.070512,
+        "prompt_eval_count": 1187
+      },
+      {
+        "raw": "Tables: ts53, tx7n, tg6t\nOutput: ts53.c02, SUM(tx7n.c13 / 1000), DENSE_RANK() OVER (PARTITION BY ts53.c02 ORDER BY SUM(tx7n.c13 / 1000) DESC) AS rank\nPlan: Join ts53 with tx7n on ts53.c01 = tx7n.c06. Join the result with tg6t on tx7n.c01 = tg6t.c03. Group the result by ts53.c02. Order the result by the sum of tx7n.c13 / 1000 in descending order. Use DENSE_RANK() to assign a rank to each group based on the sum of tx7n.c13 / 1000. Keep only the top 5 ranks.\nSQL: SELECT ts53.c02, SUM(tx7n.c13 / 1000), DENSE_RANK() OVER (PARTITION BY ts53.c02 ORDER BY SUM(tx7n.c13 / 1000) DESC) AS rank FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c06 INNER JOIN tg6t ON tx7n.c01 = tg6t.c03 GROUP BY ts53.c02 ORDER BY SUM(tx7n.c13 / 1000) DESC LIMIT 5",
+        "sql": "SELECT ts53.c02, SUM(tx7n.c13 / 1000), DENSE_RANK() OVER (PARTITION BY ts53.c02 ORDER BY SUM(tx7n.c13 / 1000) DESC) AS rank FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c06 INNER JOIN tg6t ON tx7n.c01 = tg6t.c03 GROUP BY ts53.c02 ORDER BY SUM(tx7n.c13 / 1000) DESC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.915,
+        "eval_count": 322,
+        "eval_duration_s": 1.864831,
+        "prompt_eval_count": 1298
+      }
+    ],
+    "retried": true,
+    "eval_count": 512,
+    "eval_duration_s": 2.9353429999999996,
+    "prompt_eval_count": 1187
+  },
+  "H07-BIZ": {
+    "raw": "Tables: ts53, tu5q\n\nOutput: ts53.c02, tu5q.c15\n\nPlan: SELECT ts53.c02, tu5q.c15 FROM ts53 INNER JOIN tu5q ON ts53.c01 = tu5q.c06 ORDER BY tu5q.c15 DESC LIMIT 5",
+    "error": null,
+    "latency_s": 1.514,
+    "pass1_s": 0.977,
+    "pass2_s": 0.537,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, tu5q\n\nOutput: ts53.c02, tu5q.c15\n\nPlan: SELECT ts53.c02, tu5q.c15 FROM ts53 INNER JOIN tu5q ON ts53.c01 = tu5q.c06 ORDER BY tu5q.c15 DESC LIMIT 5",
+        "sql": "SELECT ts53.c02, tu5q.c15 FROM ts53 INNER JOIN tu5q ON ts53.c01 = tu5q.c06 ORDER BY tu5q.c15 DESC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.537,
+        "eval_count": 78,
+        "eval_duration_s": 0.446327,
+        "prompt_eval_count": 1174
+      }
+    ],
+    "retried": false,
+    "eval_count": 78,
+    "eval_duration_s": 0.446327,
+    "prompt_eval_count": 1174
+  },
+  "H07-VAG": {
+    "raw": "Tables: t3v5, ts53\nOutput: t3v5.c01, ts53.c02\nPlan: SELECT t3v5.c01, ts53.c02 FROM t3v5 INNER JOIN ts53 ON t3v5.c03 = ts53.c01 WHERE t3v5.c05 = 'export' ORDER BY t3v5.c11 DESC LIMIT 1",
+    "error": null,
+    "latency_s": 1.726,
+    "pass1_s": 1.044,
+    "pass2_s": 0.682,
+    "attempts": [
+      {
+        "raw": "Tables: t3v5, ts53\nOutput: t3v5.c01, ts53.c02\nPlan: SELECT t3v5.c01, ts53.c02 FROM t3v5 INNER JOIN ts53 ON t3v5.c03 = ts53.c01 WHERE t3v5.c05 = 'export' ORDER BY t3v5.c11 DESC LIMIT 1",
+        "sql": "SELECT t3v5.c01, ts53.c02 FROM t3v5 INNER JOIN ts53 ON t3v5.c03 = ts53.c01 WHERE t3v5.c05 = 'export' ORDER BY t3v5.c11 DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.682,
+        "eval_count": 96,
+        "eval_duration_s": 0.546321,
+        "prompt_eval_count": 1275
+      }
+    ],
+    "retried": false,
+    "eval_count": 96,
+    "eval_duration_s": 0.546321,
+    "prompt_eval_count": 1275
+  },
+  "H08-CAS": {
+    "raw": "Tables: tumf, tx7n, tg6t\n\nOutput: tumf.c02, tx7n.c01\n\nPlan: Join tumf with tx7n on tumf.c01 = tx7n.c04. Join the result with tg6t on tx7n.c01 = tg6t.c03. Filter the result to only include completed flights (tx7n.c19 = 'completed'). Group the result by tumf.c02. Count the number of completed flights for each plane model. Filter the result to only include models with more than half full by volume (count(*) > (max(tg6t.c10) / 2)). Sort the result by the count of completed flights in descending order.\n\nSQL: SELECT tumf.c02, tx7n.c01 FROM tumf JOIN tx7n ON tumf.c01 = tx7n.c04 JOIN tg6t ON tx7n.c01 = tg6t.c03 WHERE tx7n.c19 = 'completed' GROUP BY tumf.c02 HAVING count(*) > (max(tg6t.c10) / 2) ORDER BY count(*) DESC",
+    "error": null,
+    "latency_s": 2.928,
+    "pass1_s": 1.355,
+    "pass2_s": 1.573,
+    "attempts": [
+      {
+        "raw": "Tables: tumf, tx7n, tg6t\n\nOutput: tumf.c02, tx7n.c01\n\nPlan: Join tumf with tx7n on tumf.c01 = tx7n.c04. Join the result with tg6t on tx7n.c01 = tg6t.c03. Filter the result to only include completed flights (tx7n.c19 = 'completed'). Group the result by tumf.c02. Count the number of completed flights for each plane model. Filter the result to only include models with more than half full by volume (count(*) > (max(tg6t.c10) / 2)). Sort the result by the count of completed flights in descending order.\n\nSQL: SELECT tumf.c02, tx7n.c01 FROM tumf JOIN tx7n ON tumf.c01 = tx7n.c04 JOIN tg6t ON tx7n.c01 = tg6t.c03 WHERE tx7n.c19 = 'completed' GROUP BY tumf.c02 HAVING count(*) > (max(tg6t.c10) / 2) ORDER BY count(*) DESC",
+        "sql": "SELECT tumf.c02, tx7n.c01 FROM tumf JOIN tx7n ON tumf.c01 = tx7n.c04 JOIN tg6t ON tx7n.c01 = tg6t.c03 WHERE tx7n.c19 = 'completed' GROUP BY tumf.c02 HAVING count(*) > (max(tg6t.c10) / 2) ORDER BY count(*) DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.573,
+        "eval_count": 254,
+        "eval_duration_s": 1.450892,
+        "prompt_eval_count": 1438
+      }
+    ],
+    "retried": false,
+    "eval_count": 254,
+    "eval_duration_s": 1.450892,
+    "prompt_eval_count": 1438
+  },
+  "H08-SCH": {
+    "raw": "Tables: tx7n, tg6t\nOutput: tx7n.c02, tx7n.c01\nPlan: JOIN tg6t ON tx7n.c01 = tg6t.c03 GROUP BY tx7n.c02, tx7n.c01 HAVING SUM(tg6t.c14) > 0.5 * tx7n.c08",
+    "error": null,
+    "latency_s": 2.604,
+    "pass1_s": 1.381,
+    "pass2_s": 1.223,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, tg6t\n\nOutput: tx7n.c02, tx7n.c01\n\nPlan: SELECT tx7n.c02, tx7n.c01 FROM tx7n JOIN tg6t ON tx7n.c01 = tg6t.c03 GROUP BY tx7n.c02, tx7n.c01 HAVING SUM(tg6t.c14) > 0.5 * tx7n.c08",
+        "sql": "SELECT tx7n.c02, tx7n.c01 FROM tx7n JOIN tg6t ON tx7n.c01 = tg6t.c03 GROUP BY tx7n.c02, tx7n.c01 HAVING SUM(tg6t.c14) > 0.5 * tx7n.c08",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: tg6t.c14",
+        "latency_s": 0.686,
+        "eval_count": 103,
+        "eval_duration_s": 0.592617,
+        "prompt_eval_count": 880
+      },
+      {
+        "raw": "Tables: tx7n, tg6t\nOutput: tx7n.c02, tx7n.c01\nPlan: JOIN tg6t ON tx7n.c01 = tg6t.c03 GROUP BY tx7n.c02, tx7n.c01 HAVING SUM(tg6t.c14) > 0.5 * tx7n.c08",
+        "sql": "",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.537,
+        "eval_count": 85,
+        "eval_duration_s": 0.487807,
+        "prompt_eval_count": 979
+      }
+    ],
+    "retried": true,
+    "eval_count": 188,
+    "eval_duration_s": 1.0804239999999998,
+    "prompt_eval_count": 880
+  },
+  "H08-BIZ": {
+    "raw": "Tables: tumf, tx7n, tu5q\n\nOutput: tumf.c02, tx7n.c01\n\nPlan: Join tumf with tx7n on tumf.c01 = tx7n.c04, then join the result with tu5q on tu5q.c01 = tx7n.c04. Filter the result to only include completed flights (tx7n.c19 = 'completed'). Group the result by tumf.c02 and tx7n.c01. Calculate the volumetric load factor for each group by dividing the maximum cargo volume by the maximum payload. Filter the result to only include groups where the volumetric load factor is greater than 0.5. Group the result by tumf.c02 and tx7n.c01 again. Count the number of completed flights for each group.\n\nSQL: SELECT tumf.c02, tx7n.c01 FROM tumf JOIN tx7n ON tumf.c01 = tx7n.c04 JOIN tu5q ON tu5q.c01 = tx7n.c04 WHERE tx7n.c19 = 'completed' GROUP BY tumf.c02, tx7n.c01 HAVING SUM(tx7n.c13) / SUM(tumf.c08) > 0.5",
+    "error": null,
+    "latency_s": 3.157,
+    "pass1_s": 1.433,
+    "pass2_s": 1.724,
+    "attempts": [
+      {
+        "raw": "Tables: tumf, tx7n, tu5q\n\nOutput: tumf.c02, tx7n.c01\n\nPlan: Join tumf with tx7n on tumf.c01 = tx7n.c04, then join the result with tu5q on tu5q.c01 = tx7n.c04. Filter the result to only include completed flights (tx7n.c19 = 'completed'). Group the result by tumf.c02 and tx7n.c01. Calculate the volumetric load factor for each group by dividing the maximum cargo volume by the maximum payload. Filter the result to only include groups where the volumetric load factor is greater than 0.5. Group the result by tumf.c02 and tx7n.c01 again. Count the number of completed flights for each group.\n\nSQL: SELECT tumf.c02, tx7n.c01 FROM tumf JOIN tx7n ON tumf.c01 = tx7n.c04 JOIN tu5q ON tu5q.c01 = tx7n.c04 WHERE tx7n.c19 = 'completed' GROUP BY tumf.c02, tx7n.c01 HAVING SUM(tx7n.c13) / SUM(tumf.c08) > 0.5",
+        "sql": "SELECT tumf.c02, tx7n.c01 FROM tumf JOIN tx7n ON tumf.c01 = tx7n.c04 JOIN tu5q ON tu5q.c01 = tx7n.c04 WHERE tx7n.c19 = 'completed' GROUP BY tumf.c02, tx7n.c01 HAVING SUM(tx7n.c13) / SUM(tumf.c08) > 0.5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.724,
+        "eval_count": 282,
+        "eval_duration_s": 1.655939,
+        "prompt_eval_count": 1184
+      }
+    ],
+    "retried": false,
+    "eval_count": 282,
+    "eval_duration_s": 1.655939,
+    "prompt_eval_count": 1184
+  },
+  "H08-VAG": {
+    "raw": "Tables: tumf, tu5q\n\nOutput: tumf.c02, tu5q.c13, tumf.c07\n\nPlan: SELECT T1.c02, T2.c13, T1.c07 FROM tumf AS T1 INNER JOIN tu5q AS T2 ON T1.c01 = T2.c04 WHERE T2.c13 > T1.c07 / 2",
+    "error": null,
+    "latency_s": 1.543,
+    "pass1_s": 0.959,
+    "pass2_s": 0.584,
+    "attempts": [
+      {
+        "raw": "Tables: tumf, tu5q\n\nOutput: tumf.c02, tu5q.c13, tumf.c07\n\nPlan: SELECT T1.c02, T2.c13, T1.c07 FROM tumf AS T1 INNER JOIN tu5q AS T2 ON T1.c01 = T2.c04 WHERE T2.c13 > T1.c07 / 2",
+        "sql": "SELECT T1.c02, T2.c13, T1.c07 FROM tumf AS T1 INNER JOIN tu5q AS T2 ON T1.c01 = T2.c04 WHERE T2.c13 > T1.c07 / 2",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.584,
+        "eval_count": 92,
+        "eval_duration_s": 0.523515,
+        "prompt_eval_count": 748
+      }
+    ],
+    "retried": false,
+    "eval_count": 92,
+    "eval_duration_s": 0.523515,
+    "prompt_eval_count": 748
+  },
+  "H09-CAS": {
+    "raw": "Tables: tu5q, ts53, tx7n\n\nOutput: tu5q.c02, tu5q.c03\n\nPlan: Join tu5q with ts53 on c06 (home base airport), then join the result with tx7n on c06 (arrival airport). Filter the result to only include rows where tx7n.c19 is 'completed'. Group the result by tu5q.c02 and tu5q.c03. Sort the result by the count of tx7n.c19 for each group in descending order.\n\nSQL: SELECT tu5q.c02, tu5q.c03 FROM tu5q INNER JOIN ts53 ON tu5q.c06 = ts53.c01 INNER JOIN tx7n ON tu5q.c06 = tx7n.c06 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c02, tu5q.c03 ORDER BY COUNT(tx7n.c19) DESC",
+    "error": null,
+    "latency_s": 2.533,
+    "pass1_s": 1.237,
+    "pass2_s": 1.296,
+    "attempts": [
+      {
+        "raw": "Tables: tu5q, ts53, tx7n\n\nOutput: tu5q.c02, tu5q.c03\n\nPlan: Join tu5q with ts53 on c06 (home base airport), then join the result with tx7n on c06 (arrival airport). Filter the result to only include rows where tx7n.c19 is 'completed'. Group the result by tu5q.c02 and tu5q.c03. Sort the result by the count of tx7n.c19 for each group in descending order.\n\nSQL: SELECT tu5q.c02, tu5q.c03 FROM tu5q INNER JOIN ts53 ON tu5q.c06 = ts53.c01 INNER JOIN tx7n ON tu5q.c06 = tx7n.c06 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c02, tu5q.c03 ORDER BY COUNT(tx7n.c19) DESC",
+        "sql": "SELECT tu5q.c02, tu5q.c03 FROM tu5q INNER JOIN ts53 ON tu5q.c06 = ts53.c01 INNER JOIN tx7n ON tu5q.c06 = tx7n.c06 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c02, tu5q.c03 ORDER BY COUNT(tx7n.c19) DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.296,
+        "eval_count": 217,
+        "eval_duration_s": 1.232358,
+        "prompt_eval_count": 1204
+      }
+    ],
+    "retried": false,
+    "eval_count": 217,
+    "eval_duration_s": 1.232358,
+    "prompt_eval_count": 1204
+  },
+  "H09-SCH": {
+    "raw": "Tables: ts53, tx7n\n\nOutput: ts53.c02\n\nPlan: SELECT ts53.c02 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c06 WHERE tx7n.c19 = 'completed' AND tx7n.c14 = 1 GROUP BY ts53.c02",
+    "error": null,
+    "latency_s": 1.832,
+    "pass1_s": 1.295,
+    "pass2_s": 0.537,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, tx7n\n\nOutput: ts53.c02\n\nPlan: SELECT ts53.c02 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c06 WHERE tx7n.c19 = 'completed' AND tx7n.c14 = 1 GROUP BY ts53.c02",
+        "sql": "SELECT ts53.c02 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c06 WHERE tx7n.c19 = 'completed' AND tx7n.c14 = 1 GROUP BY ts53.c02",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.537,
+        "eval_count": 81,
+        "eval_duration_s": 0.464171,
+        "prompt_eval_count": 928
+      }
+    ],
+    "retried": false,
+    "eval_count": 81,
+    "eval_duration_s": 0.464171,
+    "prompt_eval_count": 928
+  },
+  "H09-BIZ": {
+    "raw": "Tables: tx7n, tu5q, ts53\nOutput: tu5q.c02, tu5q.c03\nPlan: Join tx7n with tu5q on tu5q.c01 = tx7n.c04 and tx7n.c02 = tu5q.c01. Join the result with ts53 on ts53.c01 = tx7n.c06. Filter the result to only include completed flights (tx7n.c19 = 'completed'). Group the result by tu5q.c01. Sort the result by the count of completed flights in descending order.\nSQL: SELECT tu5q.c02, tu5q.c03 FROM tx7n JOIN tu5q ON tu5q.c01 = tx7n.c04 AND tx7n.c02 = tu5q.c01 JOIN ts53 ON ts53.c01 = tx7n.c06 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c01 ORDER BY COUNT(*) DESC",
+    "error": null,
+    "latency_s": 2.558,
+    "pass1_s": 1.205,
+    "pass2_s": 1.353,
+    "attempts": [
+      {
+        "raw": "Tables: tx7n, tu5q, ts53\nOutput: tu5q.c02, tu5q.c03\nPlan: Join tx7n with tu5q on tu5q.c01 = tx7n.c04 and tx7n.c02 = tu5q.c01. Join the result with ts53 on ts53.c01 = tx7n.c06. Filter the result to only include completed flights (tx7n.c19 = 'completed'). Group the result by tu5q.c01. Sort the result by the count of completed flights in descending order.\nSQL: SELECT tu5q.c02, tu5q.c03 FROM tx7n JOIN tu5q ON tu5q.c01 = tx7n.c04 AND tx7n.c02 = tu5q.c01 JOIN ts53 ON ts53.c01 = tx7n.c06 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c01 ORDER BY COUNT(*) DESC",
+        "sql": "SELECT tu5q.c02, tu5q.c03 FROM tx7n JOIN tu5q ON tu5q.c01 = tx7n.c04 AND tx7n.c02 = tu5q.c01 JOIN ts53 ON ts53.c01 = tx7n.c06 WHERE tx7n.c19 = 'completed' GROUP BY tu5q.c01 ORDER BY COUNT(*) DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 1.353,
+        "eval_count": 229,
+        "eval_duration_s": 1.300003,
+        "prompt_eval_count": 1205
+      }
+    ],
+    "retried": false,
+    "eval_count": 229,
+    "eval_duration_s": 1.300003,
+    "prompt_eval_count": 1205
+  },
+  "H09-VAG": {
+    "raw": "Tables: ts53, tx7n\nOutput: ts53.c02, tx7n.c01\nPlan: SELECT ts53.c02, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c05 WHERE tx7n.c19 = 'completed'",
+    "error": null,
+    "latency_s": 1.242,
+    "pass1_s": 0.746,
+    "pass2_s": 0.496,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, tx7n\nOutput: ts53.c02, tx7n.c01\nPlan: SELECT ts53.c02, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c05 WHERE tx7n.c19 = 'completed'",
+        "sql": "SELECT ts53.c02, tx7n.c01 FROM ts53 INNER JOIN tx7n ON ts53.c01 = tx7n.c05 WHERE tx7n.c19 = 'completed'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.496,
+        "eval_count": 77,
+        "eval_duration_s": 0.431041,
+        "prompt_eval_count": 874
+      }
+    ],
+    "retried": false,
+    "eval_count": 77,
+    "eval_duration_s": 0.431041,
+    "prompt_eval_count": 874
+  },
+  "H10-CAS": {
+    "raw": "Tables: ts53, t3v5\n\nOutput: ts53.c06, t3v5.c11, t3v5.c12, t3v5.c09\n\nPlan: SELECT ts53.c06, t3v5.c11, t3v5.c12, t3v5.c09 FROM ts53 INNER JOIN t3v5 ON ts53.c01 = t3v5.c03 WHERE t3v5.c11 + t3v5.c12 > 0.2 * t3v5.c09 GROUP BY ts53.c06",
+    "error": null,
+    "latency_s": 2.101,
+    "pass1_s": 1.25,
+    "pass2_s": 0.851,
+    "attempts": [
+      {
+        "raw": "Tables: ts53, t3v5\n\nOutput: ts53.c06, t3v5.c11, t3v5.c12, t3v5.c09\n\nPlan: SELECT ts53.c06, t3v5.c11, t3v5.c12, t3v5.c09 FROM ts53 INNER JOIN t3v5 ON ts53.c01 = t3v5.c03 WHERE t3v5.c11 + t3v5.c12 > 0.2 * t3v5.c09 GROUP BY ts53.c06",
+        "sql": "SELECT ts53.c06, t3v5.c11, t3v5.c12, t3v5.c09 FROM ts53 INNER JOIN t3v5 ON ts53.c01 = t3v5.c03 WHERE t3v5.c11 + t3v5.c12 > 0.2 * t3v5.c09 GROUP BY ts53.c06",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.851,
+        "eval_count": 140,
+        "eval_duration_s": 0.7876,
+        "prompt_eval_count": 1299
+      }
+    ],
+    "retried": false,
+    "eval_count": 140,
+    "eval_duration_s": 0.7876,
+    "prompt_eval_count": 1299
+  },
+  "H10-SCH": {
+    "raw": "Tables: t3v5, t89v\n\nOutput: c06, COUNT(c01)\n\nPlan: SELECT t3v5.c06, COUNT(t3v5.c01) FROM t3v5 INNER JOIN t89v ON t3v5.c03 = t89v.c01 WHERE t3v5.c11 + t3v5.c12 > 0.2 * t89v.c09 GROUP BY t3v5.c06",
+    "error": null,
+    "latency_s": 1.511,
+    "pass1_s": 0.837,
+    "pass2_s": 0.674,
+    "attempts": [
+      {
+        "raw": "Tables: t3v5, t89v\n\nOutput: c06, COUNT(c01)\n\nPlan: SELECT t3v5.c06, COUNT(t3v5.c01) FROM t3v5 INNER JOIN t89v ON t3v5.c03 = t89v.c01 WHERE t3v5.c11 + t3v5.c12 > 0.2 * t89v.c09 GROUP BY t3v5.c06",
+        "sql": "SELECT t3v5.c06, COUNT(t3v5.c01) FROM t3v5 INNER JOIN t89v ON t3v5.c03 = t89v.c01 WHERE t3v5.c11 + t3v5.c12 > 0.2 * t89v.c09 GROUP BY t3v5.c06",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.674,
+        "eval_count": 109,
+        "eval_duration_s": 0.605425,
+        "prompt_eval_count": 494
+      }
+    ],
+    "retried": false,
+    "eval_count": 109,
+    "eval_duration_s": 0.605425,
+    "prompt_eval_count": 494
+  },
+  "H10-BIZ": {
+    "raw": "Tables: t3v5, t89v\n\nOutput: t3v5.c06, t3v5.c01\n\nPlan: SELECT t3v5.c06, t3v5.c01 FROM t3v5 INNER JOIN t89v ON t3v5.c03 = t89v.c01 WHERE t3v5.c10 > 0.20 * t3v5.c09 GROUP BY t3v5.c06, t3v5.c01",
+    "error": null,
+    "latency_s": 1.815,
+    "pass1_s": 1.123,
+    "pass2_s": 0.692,
+    "attempts": [
+      {
+        "raw": "Tables: t3v5, t89v\n\nOutput: t3v5.c06, t3v5.c01\n\nPlan: SELECT t3v5.c06, t3v5.c01 FROM t3v5 INNER JOIN t89v ON t3v5.c03 = t89v.c01 WHERE t3v5.c10 > 0.20 * t3v5.c09 GROUP BY t3v5.c06, t3v5.c01",
+        "sql": "SELECT t3v5.c06, t3v5.c01 FROM t3v5 INNER JOIN t89v ON t3v5.c03 = t89v.c01 WHERE t3v5.c10 > 0.20 * t3v5.c09 GROUP BY t3v5.c06, t3v5.c01",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.692,
+        "eval_count": 115,
+        "eval_duration_s": 0.635789,
+        "prompt_eval_count": 522
+      }
+    ],
+    "retried": false,
+    "eval_count": 115,
+    "eval_duration_s": 0.635789,
+    "prompt_eval_count": 522
+  },
+  "H10-VAG": {
+    "raw": "Tables: t3v5, t89v\n\nOutput: c11, c12\n\nPlan: SELECT t3v5.c11, t3v5.c12 FROM t3v5 INNER JOIN t89v ON t3v5.c01 = t89v.c01 WHERE t3v5.c05 = 'import' GROUP BY t3v5.c11, t3v5.c12 ORDER BY AVG(t3v5.c11) DESC",
+    "error": null,
+    "latency_s": 1.355,
+    "pass1_s": 0.691,
+    "pass2_s": 0.664,
+    "attempts": [
+      {
+        "raw": "Tables: t3v5, t89v\n\nOutput: c11, c12\n\nPlan: SELECT t3v5.c11, t3v5.c12 FROM t3v5 INNER JOIN t89v ON t3v5.c01 = t89v.c01 WHERE t3v5.c05 = 'import' GROUP BY t3v5.c11, t3v5.c12 ORDER BY AVG(t3v5.c11) DESC",
+        "sql": "SELECT t3v5.c11, t3v5.c12 FROM t3v5 INNER JOIN t89v ON t3v5.c01 = t89v.c01 WHERE t3v5.c05 = 'import' GROUP BY t3v5.c11, t3v5.c12 ORDER BY AVG(t3v5.c11) DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 0.664,
+        "eval_count": 109,
+        "eval_duration_s": 0.605905,
+        "prompt_eval_count": 469
+      }
+    ],
+    "retried": false,
+    "eval_count": 109,
+    "eval_duration_s": 0.605905,
+    "prompt_eval_count": 469
+  }
+}

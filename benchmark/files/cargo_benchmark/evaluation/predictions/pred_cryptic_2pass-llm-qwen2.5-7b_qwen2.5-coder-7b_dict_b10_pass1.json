@@ -1,0 +1,3349 @@
+{
+ "E01-CAS": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c14",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Check for airports marked as cargo hubs in the c14 column.",
+  "raw": "#tables ts53\n#columns ts53.c14\n#hint Check for airports marked as cargo hubs in the c14 column.",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.808,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-SCH": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c14",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Filter where c14 = 1",
+  "raw": "#tables ts53\n#columns ts53.c14\n#hint Filter where c14 = 1",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.616,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-BIZ": {
+  "tables": [
+   "ts53",
+   "twxv"
+  ],
+  "columns": [
+   "ts53.c14",
+   "twxv.c09",
+   "ts53.c01",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": "Join ts53 with twxv on ts53.c01 = twxv.c09, filter for cargo hubs, group by ts53.c14 and count.",
+  "raw": "#tables ts53, twxv\n#columns ts53.c14, twxv.c09\n#hint Join ts53 with twxv on ts53.c01 = twxv.c09, filter for cargo hubs, group by ts53.c14 and count.",
+  "eval_count": 68,
+  "error": null,
+  "seconds": 1.498,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E01-VAG": {
+  "tables": [
+   "ts53",
+   "twxv"
+  ],
+  "columns": [
+   "ts53.c07",
+   "twxv.c09",
+   "ts53.c01",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": "Identify hub airports by checking for non-null values in the 'home hub airport' column of airlines, then count distinct airports.",
+  "raw": "#tables ts53, twxv\n#columns ts53.c07, twxv.c09\n#hint Identify hub airports by checking for non-null values in the 'home hub airport' column of airlines, then count distinct airports.",
+  "eval_count": 54,
+  "error": null,
+  "seconds": 1.206,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E02-CAS": {
+  "tables": [
+   "ts53",
+   "tumf",
+   "t6sc"
+  ],
+  "columns": [
+   "ts53.c02",
+   "ts53.c01",
+   "t6sc.c01",
+   "t6sc.c09",
+   "t6sc.c07",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": "Join on airport ID, filter for night curfew, and select airport codes.",
+  "raw": "#tables ts53, tumf\n#columns ts53.c02, tumf.c17\n#hint Join on airport ID, filter for night curfew, and select airport codes.",
+  "eval_count": 43,
+  "error": null,
+  "seconds": 0.973,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E02-SCH": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c02",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Select c02 from ts53 where c17 = 1 and sort by c02",
+  "raw": "#tables ts53\n#columns ts53.c02\n#hint Select c02 from ts53 where c17 = 1 and sort by c02",
+  "eval_count": 39,
+  "error": null,
+  "seconds": 0.905,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E02-BIZ": {
+  "tables": [
+   "ts53",
+   "tumf",
+   "t6sc"
+  ],
+  "columns": [
+   "ts53.c03",
+   "ts53.c01",
+   "t6sc.c01",
+   "t6sc.c09",
+   "t6sc.c07",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": "Join on airport codes, filter for night curfew, and select relevant columns.",
+  "raw": "#tables ts53, tumf\n#columns ts53.c03, tumf.c17\n#hint Join on airport codes, filter for night curfew, and select relevant columns.",
+  "eval_count": 43,
+  "error": null,
+  "seconds": 0.988,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E02-VAG": {
+  "tables": [
+   "ts53",
+   "tu5q",
+   "trhn",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c18",
+   "trhn.c14",
+   "trhn.c01",
+   "trhn.c03",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "tx7n.c04",
+   "ts53.c01",
+   "tu5q.c01",
+   "tu5q.c06"
+  ],
+  "matches": [],
+  "hint": "Check the aircraft's night curfew status and the flight's delay status, filter out flights that left more than 15 minutes late.",
+  "raw": "#tables tu5q, tx7n, trhn\n#columns tu5q.c17, tx7n.c18, trhn.c14\n#hint Check the aircraft's night curfew status and the flight's delay status, filter out flights that left more than 15 minutes late.",
+  "eval_count": 66,
+  "error": null,
+  "seconds": 1.454,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "E03-CAS": {
+  "tables": [
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c10",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": "Select airlines from twxv where the alliance is 'CargoLink'.",
+  "raw": "#tables twxv\n#columns twxv.c10\n#hint Select airlines from twxv where the alliance is 'CargoLink'.",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.739,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-SCH": {
+  "tables": [
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c04",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": "Filter by twxv.c10 = 'CargoLink' and sort by twxv.c04",
+  "raw": "#tables twxv\n#columns twxv.c04\n#hint Filter by twxv.c10 = 'CargoLink' and sort by twxv.c04",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.912,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-BIZ": {
+  "tables": [
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c10",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": "Check the 'c10' column in twxv for entries that contain 'CargoLink'.",
+  "raw": "#tables twxv\n#columns twxv.c10\n#hint Check the 'c10' column in twxv for entries that contain 'CargoLink'.",
+  "eval_count": 38,
+  "error": null,
+  "seconds": 0.871,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-VAG": {
+  "tables": [
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c10",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": "Check the 'twxv' table for the 't10' column which indicates the airline's alliance. Filter for 'CargoLink'.",
+  "raw": "#tables twxv\n#columns twxv.c10\n#hint Check the 'twxv' table for the 't10' column which indicates the airline's alliance. Filter for 'CargoLink'.",
+  "eval_count": 47,
+  "error": null,
+  "seconds": 1.054,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-CAS": {
+  "tables": [
+   "twxv",
+   "tumf",
+   "t6sc"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tumf.c04",
+   "twxv.c02",
+   "t6sc.c01",
+   "t6sc.c09",
+   "t6sc.c06",
+   "twxv.c01",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": "Join tumf with twxv on model manufacturer, filter for Airbus, group by model name.",
+  "raw": "#tables tumf, twxv\n#columns tumf.c02, tumf.c04, twxv.c02\n#hint Join tumf with twxv on model manufacturer, filter for Airbus, group by model name.",
+  "eval_count": 53,
+  "error": null,
+  "seconds": 1.186,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E04-SCH": {
+  "tables": [
+   "tumf"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": "Select the model name where the manufacturer is Airbus.",
+  "raw": "#tables tumf\n#columns tumf.c02\n#hint Select the model name where the manufacturer is Airbus.",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.62,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-BIZ": {
+  "tables": [
+   "twxv",
+   "tumf",
+   "t6sc"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tumf.c04",
+   "twxv.c04",
+   "t6sc.c01",
+   "t6sc.c09",
+   "t6sc.c06",
+   "twxv.c01",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": "Join tumf with twxv on aircraft model, filter for Airbus, and select the model names.",
+  "raw": "#tables tumf, twxv\n#columns tumf.c02, tumf.c04, twxv.c04\n#hint Join tumf with twxv on aircraft model, filter for Airbus, and select the model names.",
+  "eval_count": 54,
+  "error": null,
+  "seconds": 1.201,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E04-VAG": {
+  "tables": [
+   "tumf"
+  ],
+  "columns": [
+   "tumf.c02",
+   "tumf.c04",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": "Join with no additional conditions needed, as Airbus models will be directly in the tumf table.",
+  "raw": "#tables tumf\n#columns tumf.c02, tumf.c04\n#hint Join with no additional conditions needed, as Airbus models will be directly in the tumf table.",
+  "eval_count": 41,
+  "error": null,
+  "seconds": 0.933,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-CAS": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c10",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": "Check the 'c10' column in tu5q to find the lease status.",
+  "raw": "#tables tu5q\n#columns tu5q.c10\n#hint Check the 'c10' column in tu5q to find the lease status.",
+  "eval_count": 36,
+  "error": null,
+  "seconds": 0.823,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-SCH": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c10",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": "Check the c10 column for 'leased' value.",
+  "raw": "#tables tu5q\n#columns tu5q.c10\n#hint Check the c10 column for 'leased' value.",
+  "eval_count": 30,
+  "error": null,
+  "seconds": 0.701,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-BIZ": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c10",
+   "tu5q.c13",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": "Check the 'c10' column for leased aircraft and use 'c13' to filter for active aircraft.",
+  "raw": "#tables tu5q\n#columns tu5q.c10, tu5q.c13\n#hint Check the 'c10' column for leased aircraft and use 'c13' to filter for active aircraft.",
+  "eval_count": 49,
+  "error": null,
+  "seconds": 1.096,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-VAG": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c10",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": "Check for leased aircraft by filtering on tu5q.c10 and count the results.",
+  "raw": "#tables tu5q\n#columns tu5q.c10\n#hint Check for leased aircraft by filtering on tu5q.c10 and count the results.",
+  "eval_count": 36,
+  "error": null,
+  "seconds": 0.824,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E06-CAS": {
+  "tables": [
+   "ts53",
+   "tu5q",
+   "th77",
+   "tx7n",
+   "tpsn",
+   "t89v"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tu5q.c16",
+   "th77.c03",
+   "tpsn.c12",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "tx7n.c04",
+   "th77.c01",
+   "tpsn.c01",
+   "tpsn.c02",
+   "ts53.c01",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06",
+   "t89v.c03",
+   "tu5q.c01",
+   "tu5q.c06"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tpsn on aircraft id, filter for inactive duties, group by aircraft, and check status.",
+  "raw": "#tables tu5q, th77, tpsn\n#columns tu5q.c02, tu5q.c16, th77.c03, tpsn.c12\n#hint Join tu5q with tpsn on aircraft id, filter for inactive duties, group by aircraft, and check status.",
+  "eval_count": 72,
+  "error": null,
+  "seconds": 1.582,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "E06-SCH": {
+  "tables": [
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tu5q.c16",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": "Filter where tu5q.c16 is not 'active'.",
+  "raw": "#tables tu5q\n#columns tu5q.c02, tu5q.c16\n#hint Filter where tu5q.c16 is not 'active'.",
+  "eval_count": 38,
+  "error": null,
+  "seconds": 0.892,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E06-BIZ": {
+  "tables": [
+   "tu5q",
+   "tcse"
+  ],
+  "columns": [
+   "tu5q.c16",
+   "tu5q.c12",
+   "tcse.c16",
+   "tcse.c01",
+   "tcse.c03",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tcse on aircraft id, filter for inactive status and completed or in_progress maintenance, group by aircraft id and status.",
+  "raw": "#tables tu5q, tcse\n#columns tu5q.c16, tu5q.c12, tcse.c16\n#hint Join tu5q with tcse on aircraft id, filter for inactive status and completed or in_progress maintenance, group by aircraft id and status.",
+  "eval_count": 63,
+  "error": null,
+  "seconds": 1.398,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E06-VAG": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c02",
+   "tx7n.c19",
+   "tx7n.c01",
+   "tx7n.c04",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tx7n on aircraft id, filter for active aircraft and flights that have completed status.",
+  "raw": "#tables tu5q, tx7n\n#columns tu5q.c02, tx7n.c02, tx7n.c19\n#hint Join tu5q with tx7n on aircraft id, filter for active aircraft and flights that have completed status.",
+  "eval_count": 59,
+  "error": null,
+  "seconds": 1.313,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E07-CAS": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c17",
+   "th77.c03",
+   "th77.c01"
+  ],
+  "matches": [],
+  "hint": "Use GROUP BY to group by loyalty tier and COUNT to count the number of customers per tier.",
+  "raw": "#tables th77\n#columns th77.c17, th77.c03\n#hint Use GROUP BY to group by loyalty tier and COUNT to count the number of customers per tier.",
+  "eval_count": 44,
+  "error": null,
+  "seconds": 0.989,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-SCH": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c17",
+   "th77.c01"
+  ],
+  "matches": [],
+  "hint": "Group by th77.c17",
+  "raw": "#tables th77\n#columns th77.c17\n#hint Group by th77.c17",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 0.619,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-BIZ": {
+  "tables": [
+   "th77"
+  ],
+  "columns": [
+   "th77.c17",
+   "th77.c03",
+   "th77.c01"
+  ],
+  "matches": [],
+  "hint": "Use GROUP BY to group by loyalty tier and COUNT to get headcount.",
+  "raw": "#tables th77\n#columns th77.c17, th77.c03\n#hint Use GROUP BY to group by loyalty tier and COUNT to get headcount.",
+  "eval_count": 40,
+  "error": null,
+  "seconds": 0.911,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E07-VAG": {
+  "tables": [
+   "ts4p",
+   "th77"
+  ],
+  "columns": [
+   "th77.c17",
+   "ts4p.c02",
+   "th77.c01",
+   "ts4p.c01"
+  ],
+  "matches": [],
+  "hint": "Use ts4p.c02 to filter by the 'as_of_timestamp' and group by th77.c17 (loyalty tier).",
+  "raw": "#tables th77, ts4p\n#columns th77.c17, ts4p.c02\n#hint Use ts4p.c02 to filter by the 'as_of_timestamp' and group by th77.c17 (loyalty tier).",
+  "eval_count": 59,
+  "error": null,
+  "seconds": 1.318,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E08-CAS": {
+  "tables": [
+   "ts53",
+   "th77",
+   "t89v"
+  ],
+  "columns": [
+   "th77.c05",
+   "th77.c06",
+   "ts53.c01",
+   "th77.c01",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06",
+   "t89v.c03"
+  ],
+  "matches": [],
+  "hint": "Join th77 on ts53, filter by country, group by city.",
+  "raw": "#tables th77, ts53\n#columns th77.c05, th77.c06\n#hint Join th77 on ts53, filter by country, group by city.",
+  "eval_count": 46,
+  "error": null,
+  "seconds": 1.044,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E08-SCH": {
+  "tables": [
+   "ts53",
+   "th77",
+   "t89v"
+  ],
+  "columns": [
+   "th77.c03",
+   "th77.c06",
+   "ts53.c01",
+   "th77.c01",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06",
+   "t89v.c03"
+  ],
+  "matches": [],
+  "hint": "Join th77 with ts53 on th77.c06 = ts53.c01 and filter for c05 = 'Germany'",
+  "raw": "#tables th77, ts53\n#columns th77.c03, th77.c06\n#hint Join th77 with ts53 on th77.c06 = ts53.c01 and filter for c05 = 'Germany'",
+  "eval_count": 61,
+  "error": null,
+  "seconds": 1.349,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E08-BIZ": {
+  "tables": [
+   "ts53",
+   "th77",
+   "t89v"
+  ],
+  "columns": [
+   "th77.c03",
+   "th77.c06",
+   "th77.c05",
+   "ts53.c01",
+   "th77.c01",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06",
+   "t89v.c03"
+  ],
+  "matches": [],
+  "hint": "Join th77 with ts53 on city filter by country Germany and sort by home city",
+  "raw": "#tables th77, ts53\n#columns th77.c03, th77.c06, th77.c05\n#hint Join th77 with ts53 on city filter by country Germany and sort by home city",
+  "eval_count": 55,
+  "error": null,
+  "seconds": 1.247,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E08-VAG": {
+  "tables": [
+   "ts4p",
+   "th77"
+  ],
+  "columns": [
+   "th77.c03",
+   "th77.c13",
+   "ts4p.c02",
+   "th77.c01",
+   "ts4p.c01"
+  ],
+  "matches": [],
+  "hint": "Join th77 with ts4p on th77.c05 equals ts4p.c01 where ts4p.c01 equals the German airport ID, filter for 'germany' in th77.c06, and sort by th77.c03.",
+  "raw": "#tables th77, ts4p\n#columns th77.c03, th77.c13, ts4p.c02\n#hint Join th77 with ts4p on th77.c05 equals ts4p.c01 where ts4p.c01 equals the German airport ID, filter for 'germany' in th77.c06, and sort by th77.c03.",
+  "eval_count": 95,
+  "error": null,
+  "seconds": 2.058,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E09-CAS": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c05",
+   "trhn.c06",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": "Count the number of warehouses per kind and type.",
+  "raw": "#tables trhn\n#columns trhn.c05, trhn.c06\n#hint Count the number of warehouses per kind and type.",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 0.744,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-SCH": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c05",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": "Group by trhn.c05",
+  "raw": "#tables trhn\n#columns trhn.c05\n#hint Group by trhn.c05",
+  "eval_count": 23,
+  "error": null,
+  "seconds": 0.555,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E09-BIZ": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c05",
+   "trhn.c08",
+   "trhn.c03",
+   "ts53.c07",
+   "trhn.c01",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join trhn and ts53 on trhn.c03 = ts53.c01, filter by trhn.c12 = 'active', group by trhn.c05, ts53.c07, and sort by the count in descending order.",
+  "raw": "#tables trhn, ts53\n#columns trhn.c05, trhn.c05, trhn.c08, trhn.c03, ts53.c07\n#hint Join trhn and ts53 on trhn.c03 = ts53.c01, filter by trhn.c12 = 'active', group by trhn.c05, ts53.c07, and sort by the count in descending order.",
+  "eval_count": 101,
+  "error": null,
+  "seconds": 2.191,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E09-VAG": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c05",
+   "trhn.c04",
+   "trhn.c03",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": "Join on trhn.c03 with ts53.c01, filter by trhn.c05 for different types, group by trhn.c05 and trhn.c04, count trhn.c01 for each group.",
+  "raw": "#tables trhn\n#columns trhn.c05, trhn.c04, trhn.c03\n#hint Join on trhn.c03 with ts53.c01, filter by trhn.c05 for different types, group by trhn.c05 and trhn.c04, count trhn.c01 for each group.",
+  "eval_count": 78,
+  "error": null,
+  "seconds": 1.695,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-CAS": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c06",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": "Select the floor area from trhn where the kind of warehouse is 'cold_chain' and sum it up.",
+  "raw": "#tables trhn\n#columns trhn.c06\n#hint Select the floor area from trhn where the kind of warehouse is 'cold_chain' and sum it up.",
+  "eval_count": 38,
+  "error": null,
+  "seconds": 0.882,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-SCH": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c06",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": "Filter by c05 = 'cold_chain' in trhn.",
+  "raw": "#tables trhn\n#columns trhn.c06\n#hint Filter by c05 = 'cold_chain' in trhn.",
+  "eval_count": 30,
+  "error": null,
+  "seconds": 0.7,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-BIZ": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c06",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": "Select the floor area where the kind of warehouse is 'cold_chain'.",
+  "raw": "#tables trhn\n#columns trhn.c06\n#hint Select the floor area where the kind of warehouse is 'cold_chain'.",
+  "eval_count": 30,
+  "error": null,
+  "seconds": 0.694,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E10-VAG": {
+  "tables": [
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c07",
+   "trhn.c08",
+   "trhn.c01"
+  ],
+  "matches": [],
+  "hint": "Select the warehouse kind and sum the storage capacity where the kind is 'cold_chain'.",
+  "raw": "#tables trhn\n#columns trhn.c07, trhn.c08\n#hint Select the warehouse kind and sum the storage capacity where the kind is 'cold_chain'.",
+  "eval_count": 39,
+  "error": null,
+  "seconds": 0.878,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "M01-CAS": {
+  "tables": [
+   "twxv",
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c05",
+   "twxv.c01",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": "Join tu5q and twxv on airline id, count aircraft per airline, order by count descending",
+  "raw": "#tables tu5q, twxv\n#columns tu5q.c05, twxv.c01\n#hint Join tu5q and twxv on airline id, count aircraft per airline, order by count descending",
+  "eval_count": 50,
+  "error": null,
+  "seconds": 1.127,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M01-SCH": {
+  "tables": [
+   "twxv",
+   "tumf",
+   "tu5q",
+   "t6sc"
+  ],
+  "columns": [
+   "twxv.c04",
+   "tu5q.c04",
+   "tu5q.c02",
+   "tumf.c02",
+   "tu5q.c01",
+   "tu5q.c05",
+   "t6sc.c01",
+   "t6sc.c09",
+   "t6sc.c06",
+   "twxv.c01",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": "Join twxv and tu5q on airline id, group by aircraft model, count per model, include models without aircraft, order by count and name.",
+  "raw": "#tables twxv, tu5q, tumf\n#columns twxv.c04, tu5q.c04, tu5q.c02, tumf.c02\n#hint Join twxv and tu5q on airline id, group by aircraft model, count per model, include models without aircraft, order by count and name.",
+  "eval_count": 77,
+  "error": null,
+  "seconds": 1.688,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "M01-BIZ": {
+  "tables": [
+   "twxv",
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c05",
+   "twxv.c01",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with twxv on airline id, group by carrier, count aircraft, order by count descending",
+  "raw": "#tables tu5q, twxv\n#columns tu5q.c05, twxv.c01\n#hint Join tu5q with twxv on airline id, group by carrier, count aircraft, order by count descending",
+  "eval_count": 52,
+  "error": null,
+  "seconds": 1.152,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M01-VAG": {
+  "tables": [
+   "twxv",
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c05",
+   "twxv.c04",
+   "tu5q.c01",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with twxv on tu5q.c05 = twxv.c01, group by twxv.c04, count tu5q.c05, sort by count in descending order",
+  "raw": "#tables tu5q, twxv\n#columns tu5q.c05, twxv.c04\n#hint Join tu5q with twxv on tu5q.c05 = twxv.c01, group by twxv.c04, count tu5q.c05, sort by count in descending order",
+  "eval_count": 75,
+  "error": null,
+  "seconds": 1.643,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-CAS": {
+  "tables": [
+   "tumf",
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c04",
+   "tumf.c02",
+   "tu5q.c16",
+   "tu5q.c01",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tumf on model, filter for active aircraft, group by model, count aircraft.",
+  "raw": "#tables tu5q, tumf\n#columns tu5q.c04, tumf.c02, tu5q.c16\n#hint Join tu5q with tumf on model, filter for active aircraft, group by model, count aircraft.",
+  "eval_count": 56,
+  "error": null,
+  "seconds": 1.241,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-SCH": {
+  "tables": [
+   "twxv",
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tu5q.c16",
+   "twxv.c02",
+   "tu5q.c01",
+   "tu5q.c05",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with twxv on tu5q.c04 = twxv.c01, filter where tu5q.c16 = 'active', group by twxv.c02, and order by twxv.c02.",
+  "raw": "#tables tu5q, twxv\n#columns tu5q.c02, tu5q.c16, twxv.c02\n#hint Join tu5q with twxv on tu5q.c04 = twxv.c01, filter where tu5q.c16 = 'active', group by twxv.c02, and order by twxv.c02.",
+  "eval_count": 90,
+  "error": null,
+  "seconds": 1.954,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.25,
+   "columns_in_schema": 0.5,
+   "tables_kept": 2
+  }
+ },
+ "M02-BIZ": {
+  "tables": [
+   "tumf",
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c04",
+   "tumf.c02",
+   "tu5q.c16",
+   "tu5q.c01",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tumf on model id, filter for active aircraft, group by model and count, sort by count.",
+  "raw": "#tables tu5q, tumf\n#columns tu5q.c04, tumf.c02, tu5q.c16\n#hint Join tu5q with tumf on model id, filter for active aircraft, group by model and count, sort by count.",
+  "eval_count": 60,
+  "error": null,
+  "seconds": 1.323,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M02-VAG": {
+  "tables": [
+   "tumf",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c04",
+   "tumf.c02",
+   "tx7n.c19",
+   "tx7n.c01",
+   "tx7n.c04",
+   "tu5q.c01",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tumf on model, filter for active flights, group by model, count aircraft.",
+  "raw": "#tables tu5q, tumf, tx7n\n#columns tu5q.c04, tumf.c02, tx7n.c19\n#hint Join tu5q with tumf on model, filter for active flights, group by model, count aircraft.",
+  "eval_count": 60,
+  "error": null,
+  "seconds": 1.354,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M03-CAS": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c09",
+   "tx7n.c05",
+   "ts53.c02",
+   "tx7n.c01",
+   "tx7n.c06",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with ts53 on tx7n.c05 = ts53.c01, filter for completed flights and departure airport IST, group by flight id, count distinct flight id.",
+  "raw": "#tables tx7n, ts53\n#columns tx7n.c09, tx7n.c05, ts53.c02\n#hint Join tx7n with ts53 on tx7n.c05 = ts53.c01, filter for completed flights and departure airport IST, group by flight id, count distinct flight id.",
+  "eval_count": 78,
+  "error": null,
+  "seconds": 1.715,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-SCH": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "ts53.c02",
+   "tx7n.c01",
+   "tx7n.c06",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with ts53 on c05 and c02, filter for c19 = 'completed', and match IATA codes.",
+  "raw": "#tables tx7n, ts53\n#columns tx7n.c05, ts53.c02\n#hint Join tx7n with ts53 on c05 and c02, filter for c19 = 'completed', and match IATA codes.",
+  "eval_count": 61,
+  "error": null,
+  "seconds": 1.366,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-BIZ": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c19",
+   "tx7n.c07",
+   "ts53.c02",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with ts53 on tx7n.c05 = ts53.c01, filter for completed flights and departure from IST, group by departure airport and count flights.",
+  "raw": "#tables tx7n, ts53\n#columns tx7n.c19, tx7n.c07, ts53.c02\n#hint Join tx7n with ts53 on tx7n.c05 = ts53.c01, filter for completed flights and departure from IST, group by departure airport and count flights.",
+  "eval_count": 76,
+  "error": null,
+  "seconds": 1.672,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M03-VAG": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "ts53.c02",
+   "tx7n.c01",
+   "tx7n.c06",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with ts53 on tx7n.c05 = ts53.c01, filter for c04 = 'IST', group by c05, count tx7n.c01, sort by count desc",
+  "raw": "#tables tx7n, ts53\n#columns tx7n.c05, ts53.c02\n#hint Join tx7n with ts53 on tx7n.c05 = ts53.c01, filter for c04 = 'IST', group by c05, count tx7n.c01, sort by count desc",
+  "eval_count": 79,
+  "error": null,
+  "seconds": 1.729,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-CAS": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "tx7n.c06",
+   "tx7n.c19",
+   "tx7n.c10",
+   "ts53.c04",
+   "ts53.c02",
+   "tx7n.c01",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with ts53 on departure and arrival airports, filter for completed flights, group by from and to, count flights, sort by count.",
+  "raw": "#tables tx7n, ts53, ts53\n#columns tx7n.c05, tx7n.c06, tx7n.c19, tx7n.c10, ts53.c04, ts53.c02\n#hint Join tx7n with ts53 on departure and arrival airports, filter for completed flights, group by from and to, count flights, sort by count.",
+  "eval_count": 93,
+  "error": null,
+  "seconds": 2.02,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-SCH": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "ts53.c02",
+   "tx7n.c06",
+   "tx7n.c01",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with ts53 twice, once for origin and once for destination, filter for completed flights, group by origin and destination, and sort by count in descending order.",
+  "raw": "#tables tx7n, ts53, ts53\n#columns tx7n.c05, ts53.c02, tx7n.c06, ts53.c02\n#hint Join tx7n with ts53 twice, once for origin and once for destination, filter for completed flights, group by origin and destination, and sort by count in descending order.",
+  "eval_count": 84,
+  "error": null,
+  "seconds": 1.845,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-BIZ": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "tx7n.c06",
+   "ts53.c02",
+   "tx7n.c01",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with ts53 on departure and arrival airports, filter for completed flights, group by lane, and sort by count of flights.",
+  "raw": "#tables tx7n, ts53, ts53\n#columns tx7n.c05, tx7n.c06, ts53.c02, ts53.c02\n#hint Join tx7n with ts53 on departure and arrival airports, filter for completed flights, group by lane, and sort by count of flights.",
+  "eval_count": 77,
+  "error": null,
+  "seconds": 1.684,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-VAG": {
+  "tables": [
+   "ts53",
+   "tx7n",
+   "t89v"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "tx7n.c06",
+   "t89v.c06",
+   "t89v.c07",
+   "tx7n.c13",
+   "tx7n.c01",
+   "ts53.c01",
+   "t89v.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with t89v on flight and shipment IDs, group by departure and arrival airports, sort by total distance.",
+  "raw": "#tables tx7n, t89v, ts53\n#columns tx7n.c05, tx7n.c06, t89v.c06, t89v.c07, tx7n.c13\n#hint Join tx7n with t89v on flight and shipment IDs, group by departure and arrival airports, sort by total distance.",
+  "eval_count": 84,
+  "error": null,
+  "seconds": 1.839,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M05-CAS": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c17",
+   "twxv.c04",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "ts53.c01",
+   "twxv.c01",
+   "twxv.c09"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with twxv on airline id, filter completed flights, group by airline, and calculate average delay.",
+  "raw": "#tables tx7n, twxv\n#columns tx7n.c17, twxv.c04\n#hint Join tx7n with twxv on airline id, filter completed flights, group by airline, and calculate average delay.",
+  "eval_count": 54,
+  "error": null,
+  "seconds": 1.212,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.25,
+   "columns_in_schema": 0.75,
+   "tables_kept": 3
+  }
+ },
+ "M05-SCH": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c10",
+   "tx7n.c08",
+   "tx7n.c04",
+   "tu5q.c01",
+   "tx7n.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with tu5q on c04, filter where c19='completed', calculate the difference in minutes, group by c04, order by average time descending.",
+  "raw": "#tables tx7n, tu5q\n#columns tx7n.c10, tx7n.c08, tx7n.c04, tu5q.c01\n#hint Join tx7n with tu5q on c04, filter where c19='completed', calculate the difference in minutes, group by c04, order by average time descending.",
+  "eval_count": 82,
+  "error": null,
+  "seconds": 1.805,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.75,
+   "tables_kept": 2
+  }
+ },
+ "M05-BIZ": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c17",
+   "twxv.c01",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "ts53.c01",
+   "twxv.c09"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with twxv on airline id, filter for completed flights, group by airline, calculate average delay",
+  "raw": "#tables tx7n, twxv\n#columns tx7n.c17, twxv.c01\n#hint Join tx7n with twxv on airline id, filter for completed flights, group by airline, calculate average delay",
+  "eval_count": 53,
+  "error": null,
+  "seconds": 1.196,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.125,
+   "columns_in_schema": 0.75,
+   "tables_kept": 3
+  }
+ },
+ "M05-VAG": {
+  "tables": [
+   "twxv"
+  ],
+  "columns": [
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": "Find the maximum year of aircraft delivery and filter airlines that were founded before that year.",
+  "raw": "#tables twxv\n#columns twxv.c16\n#hint Find the maximum year of aircraft delivery and filter airlines that were founded before that year.",
+  "eval_count": 35,
+  "error": null,
+  "seconds": 0.805,
+  "recall": {
+   "tables_found": 0.3333333333333333,
+   "all_tables_found": false,
+   "columns_listed": 0.125,
+   "columns_in_schema": 0.25,
+   "tables_kept": 1
+  }
+ },
+ "M06-CAS": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "twxv.c04",
+   "tx7n.c18",
+   "tx7n.c01",
+   "tx7n.c06",
+   "ts53.c01",
+   "twxv.c01",
+   "twxv.c09"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with twxv on tx7n.c05 = twxv.c09, filter for cancelled flights, group by airline, count flights.",
+  "raw": "#tables tx7n, twxv\n#columns tx7n.c05, twxv.c04, tx7n.c18\n#hint Join tx7n with twxv on tx7n.c05 = twxv.c09, filter for cancelled flights, group by airline, count flights.",
+  "eval_count": 71,
+  "error": null,
+  "seconds": 1.565,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "M06-SCH": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c04",
+   "tx7n.c19",
+   "tu5q.c01",
+   "tx7n.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with tu5q on aircraft id, filter for cancelled flights, group by aircraft, and order by count descending.",
+  "raw": "#tables tx7n, tu5q\n#columns tx7n.c04, tx7n.c19, tu5q.c01\n#hint Join tx7n with tu5q on aircraft id, filter for cancelled flights, group by aircraft, and order by count descending.",
+  "eval_count": 63,
+  "error": null,
+  "seconds": 1.425,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 2
+  }
+ },
+ "M06-BIZ": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "twxv.c04",
+   "tx7n.c18",
+   "tx7n.c01",
+   "tx7n.c06",
+   "ts53.c01",
+   "twxv.c01",
+   "twxv.c09"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with twxv on aircraft id, filter for cancelled flights, group by airline, sum the flights, sort by volume.",
+  "raw": "#tables tx7n, twxv\n#columns tx7n.c05, twxv.c04, tx7n.c18\n#hint Join tx7n with twxv on aircraft id, filter for cancelled flights, group by airline, sum the flights, sort by volume.",
+  "eval_count": 65,
+  "error": null,
+  "seconds": 1.438,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "M06-VAG": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c18",
+   "twxv.c04",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "ts53.c01",
+   "twxv.c01",
+   "twxv.c09"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with twxv on airline id, filter for cancelled flights, group by airline, count cancellations, sort by count.",
+  "raw": "#tables tx7n, twxv\n#columns tx7n.c18, twxv.c04\n#hint Join tx7n with twxv on airline id, filter for cancelled flights, group by airline, count cancellations, sort by count.",
+  "eval_count": 58,
+  "error": null,
+  "seconds": 1.312,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "M07-CAS": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n",
+   "t875"
+  ],
+  "columns": [
+   "t875.c16",
+   "twxv.c04",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "ts53.c01",
+   "t875.c01",
+   "t875.c04",
+   "t875.c03",
+   "twxv.c01",
+   "twxv.c09"
+  ],
+  "matches": [],
+  "hint": "Join t875 with tx7n to get flight information, then join with twxv to get airline information. Group by airline and sum CO2 emissions.",
+  "raw": "#tables t875, tx7n, twxv\n#columns t875.c16, twxv.c04\n#hint Join t875 with tx7n to get flight information, then join with twxv to get airline information. Group by airline and sum CO2 emissions.",
+  "eval_count": 69,
+  "error": null,
+  "seconds": 1.546,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.625,
+   "columns_in_schema": 0.75,
+   "tables_kept": 4
+  }
+ },
+ "M07-SCH": {
+  "tables": [
+   "twxv",
+   "tu5q",
+   "tx7n",
+   "t875"
+  ],
+  "columns": [
+   "t875.c16",
+   "tx7n.c02",
+   "tu5q.c04",
+   "twxv.c02",
+   "tx7n.c01",
+   "tx7n.c04",
+   "tu5q.c01",
+   "tu5q.c05",
+   "t875.c01",
+   "t875.c03",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": "Join t875 with tx7n on flight id, then join tx7n with tu5q on aircraft id, and finally join tu5q with twxv on airline id. Group by c02 (airline IATA code) and sum c16 / 1000, rounding to 1 decimal.",
+  "raw": "#tables t875, tx7n, tu5q, twxv\n#columns t875.c16, tx7n.c02, tu5q.c04, twxv.c02\n#hint Join t875 with tx7n on flight id, then join tx7n with tu5q on aircraft id, and finally join tu5q with twxv on airline id. Group by c02 (airline IATA code) and sum c16 / 1000, rounding to 1 decimal.",
+  "eval_count": 123,
+  "error": null,
+  "seconds": 2.675,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.875,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "M07-BIZ": {
+  "tables": [
+   "ts53",
+   "tu5q",
+   "trhn",
+   "tx7n",
+   "t875"
+  ],
+  "columns": [
+   "tu5q.c16",
+   "tx7n.c13",
+   "t875.c16",
+   "trhn.c16",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "tx7n.c04",
+   "trhn.c01",
+   "trhn.c03",
+   "ts53.c01",
+   "tu5q.c01",
+   "tu5q.c06",
+   "t875.c01",
+   "t875.c04",
+   "t875.c03"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tx7n on aircraft, sum CO2 from t875, group by airline, convert kg to tonnes",
+  "raw": "#tables tu5q, tx7n, t875, trhn\n#columns tu5q.c16, tx7n.c13, t875.c16, trhn.c16\n#hint Join tu5q with tx7n on aircraft, sum CO2 from t875, group by airline, convert kg to tonnes",
+  "eval_count": 79,
+  "error": null,
+  "seconds": 1.748,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.625,
+   "columns_in_schema": 0.75,
+   "tables_kept": 5
+  }
+ },
+ "M07-VAG": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n",
+   "t875"
+  ],
+  "columns": [
+   "t875.c03",
+   "twxv.c04",
+   "ts53.c07",
+   "t875.c16",
+   "t875.c15",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "ts53.c01",
+   "t875.c01",
+   "t875.c04",
+   "twxv.c01",
+   "twxv.c09"
+  ],
+  "matches": [],
+  "hint": "Join t875 with tx7n and tu5q to get the airline information. Then join with ts53 to get the region. Sum the CO2 emissions and sort by airline.",
+  "raw": "#tables t875, tx7n, twxv, ts53\n#columns t875.c03, twxv.c04, ts53.c07, t875.c16, t875.c15\n#hint Join t875 with tx7n and tu5q to get the airline information. Then join with ts53 to get the region. Sum the CO2 emissions and sort by airline.",
+  "eval_count": 102,
+  "error": null,
+  "seconds": 2.221,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.625,
+   "columns_in_schema": 0.75,
+   "tables_kept": 4
+  }
+ },
+ "M08-CAS": {
+  "tables": [
+   "ts53",
+   "t875"
+  ],
+  "columns": [
+   "t875.c06",
+   "ts53.c07",
+   "ts53.c01",
+   "t875.c01",
+   "t875.c04"
+  ],
+  "matches": [],
+  "hint": "Join t875 with ts53 on t875.c04 = ts53.c01, group by ts53.c07, average t875.c12",
+  "raw": "#tables t875, ts53\n#columns t875.c06, ts53.c07\n#hint Join t875 with ts53 on t875.c04 = ts53.c01, group by ts53.c07, average t875.c12",
+  "eval_count": 73,
+  "error": null,
+  "seconds": 1.611,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-SCH": {
+  "tables": [
+   "ts53",
+   "t875"
+  ],
+  "columns": [
+   "t875.c04",
+   "t875.c12",
+   "ts53.c01",
+   "t875.c01"
+  ],
+  "matches": [],
+  "hint": "Join t875 with ts53 on t875.c04 = ts53.c01, group by ts53.c02, and average t875.c12.",
+  "raw": "#tables t875, ts53\n#columns t875.c04, t875.c12\n#hint Join t875 with ts53 on t875.c04 = ts53.c01, group by ts53.c02, and average t875.c12.",
+  "eval_count": 76,
+  "error": null,
+  "seconds": 1.675,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-BIZ": {
+  "tables": [
+   "ts53",
+   "t875"
+  ],
+  "columns": [
+   "t875.c04",
+   "t875.c12",
+   "ts53.c07",
+   "ts53.c01",
+   "t875.c01"
+  ],
+  "matches": [],
+  "hint": "Join t875 with ts53 on t875.c04 = ts53.c01, filter for completed flights, group by ts53.c07, and sort by t875.c12.",
+  "raw": "#tables t875, ts53\n#columns t875.c04, t875.c12, ts53.c07\n#hint Join t875 with ts53 on t875.c04 = ts53.c01, filter for completed flights, group by ts53.c07, and sort by t875.c12.",
+  "eval_count": 89,
+  "error": null,
+  "seconds": 1.935,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M08-VAG": {
+  "tables": [
+   "ts53",
+   "tumf",
+   "t6sc",
+   "tx7n",
+   "t875"
+  ],
+  "columns": [
+   "t875.c09",
+   "t875.c13",
+   "t875.c16",
+   "t875.c15",
+   "tx7n.c07",
+   "tx7n.c13",
+   "ts53.c08",
+   "tumf.c07",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "t875.c01",
+   "t875.c04",
+   "t875.c03",
+   "ts53.c01",
+   "t6sc.c01",
+   "t6sc.c09",
+   "t6sc.c07",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": "Join t875 with tx7n on flight id, filter by completed flights, join with ts53 for departure airport time zone, join with tumf for aircraft model, calculate cost per kg of fuel, sort by cost per kg in descending order.",
+  "raw": "#tables t875, tx7n, ts53, tumf\n#columns t875.c09, t875.c13, t875.c16, t875.c15, tx7n.c07, tx7n.c13, ts53.c08, tumf.c07\n#hint Join t875 with tx7n on flight id, filter by completed flights, join with ts53 for departure airport time zone, join with tumf for aircraft model, calculate cost per kg of fuel, sort by cost per kg in descending order.",
+  "eval_count": 135,
+  "error": null,
+  "seconds": 2.916,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 5
+  }
+ },
+ "M09-CAS": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c03",
+   "trhn.c01",
+   "ts53.c02",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Count warehouses per airport and filter airports with 4 or more warehouses, then sort.",
+  "raw": "#tables trhn, ts53\n#columns trhn.c03, trhn.c01, ts53.c02\n#hint Count warehouses per airport and filter airports with 4 or more warehouses, then sort.",
+  "eval_count": 50,
+  "error": null,
+  "seconds": 1.128,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-SCH": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c02",
+   "trhn.c03",
+   "trhn.c01",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join trhn on ts53.c01 = trhn.c03, filter COUNT >= 4, group by trhn.c02",
+  "raw": "#tables trhn, ts53\n#columns trhn.c02, trhn.c03\n#hint Join trhn on ts53.c01 = trhn.c03, filter COUNT >= 4, group by trhn.c02",
+  "eval_count": 56,
+  "error": null,
+  "seconds": 1.26,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-BIZ": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c03",
+   "trhn.c06",
+   "trhn.c08",
+   "trhn.c14",
+   "trhn.c01",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join trhn on ts53 to match airports with warehouses, filter by floor area, group by airport, and sort by total area.",
+  "raw": "#tables trhn, ts53\n#columns trhn.c03, trhn.c06, trhn.c08, trhn.c14\n#hint Join trhn on ts53 to match airports with warehouses, filter by floor area, group by airport, and sort by total area.",
+  "eval_count": 66,
+  "error": null,
+  "seconds": 1.464,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-VAG": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c03",
+   "trhn.c05",
+   "ts53.c02",
+   "trhn.c01",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join trhn and ts53 on trhn.c03 = ts53.c01, count warehouses per airport, sort by count in descending order",
+  "raw": "#tables trhn, ts53\n#columns trhn.c03, trhn.c05, ts53.c02\n#hint Join trhn and ts53 on trhn.c03 = ts53.c01, count warehouses per airport, sort by count in descending order",
+  "eval_count": 65,
+  "error": null,
+  "seconds": 1.441,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-CAS": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c03",
+   "trhn.c12",
+   "ts53.c02",
+   "trhn.c01",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join trhn on ts53 to match airports with their warehouses, filter for bonded warehouses, group by airport and count, filter for more than one.",
+  "raw": "#tables trhn, ts53\n#columns trhn.c03, trhn.c12, ts53.c02\n#hint Join trhn on ts53 to match airports with their warehouses, filter for bonded warehouses, group by airport and count, filter for more than one.",
+  "eval_count": 64,
+  "error": null,
+  "seconds": 1.42,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-SCH": {
+  "tables": [
+   "th77",
+   "trhn",
+   "t89v",
+   "t3v5"
+  ],
+  "columns": [
+   "trhn.c02",
+   "trhn.c12",
+   "th77.c17",
+   "trhn.c01",
+   "t3v5.c01",
+   "t3v5.c04",
+   "t3v5.c03",
+   "th77.c01",
+   "t89v.c01",
+   "t89v.c03"
+  ],
+  "matches": [],
+  "hint": "Join trhn with th77 on customer account code, filter for c12 = 1 in trhn, group by c02, and count where c17 is 'gold' or 'platinum'.",
+  "raw": "#tables trhn, th77\n#columns trhn.c02, trhn.c12, th77.c17\n#hint Join trhn with th77 on customer account code, filter for c12 = 1 in trhn, group by c02, and count where c17 is 'gold' or 'platinum'.",
+  "eval_count": 78,
+  "error": null,
+  "seconds": 1.723,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.25,
+   "columns_in_schema": 0.5,
+   "tables_kept": 4
+  }
+ },
+ "M10-BIZ": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c03",
+   "ts53.c04",
+   "trhn.c12",
+   "trhn.c01",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join trhn and ts53 on trhn.c03 = ts53.c01, filter for trhn.c12 = 1, group by ts53.c04, and count trhn.c03.",
+  "raw": "#tables trhn, ts53\n#columns trhn.c03, ts53.c04, trhn.c12\n#hint Join trhn and ts53 on trhn.c03 = ts53.c01, filter for trhn.c12 = 1, group by ts53.c04, and count trhn.c03.",
+  "eval_count": 82,
+  "error": null,
+  "seconds": 1.798,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-VAG": {
+  "tables": [
+   "ts53",
+   "trhn"
+  ],
+  "columns": [
+   "trhn.c03",
+   "ts53.c02",
+   "trhn.c12",
+   "trhn.c01",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join trhn and ts53 on trhn.c03 = ts53.c01, filter for trhn.c12 = 1, group by ts53.c02, and sort by the count of trhn.c03.",
+  "raw": "#tables trhn, ts53\n#columns trhn.c03, ts53.c02, trhn.c12\n#hint Join trhn and ts53 on trhn.c03 = ts53.c01, filter for trhn.c12 = 1, group by ts53.c02, and sort by the count of trhn.c03.",
+  "eval_count": 86,
+  "error": null,
+  "seconds": 1.873,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H01-CAS": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c04",
+   "tx7n.c19",
+   "tx7n.c01",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tx7n on aircraft id, filter for completed flights, group by aircraft, and sort to find the max.",
+  "raw": "#tables tu5q, tx7n\n#columns tu5q.c02, tx7n.c04, tx7n.c19\n#hint Join tu5q with tx7n on aircraft id, filter for completed flights, group by aircraft, and sort to find the max.",
+  "eval_count": 64,
+  "error": null,
+  "seconds": 1.423,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5714285714285714,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 2
+  }
+ },
+ "H01-SCH": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c01",
+   "tx7n.c19",
+   "tx7n.c04",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tx7n on aircraft id, filter for completed flights, group by tail number, count, and sort.",
+  "raw": "#tables tu5q, tx7n\n#columns tu5q.c02, tx7n.c01, tx7n.c19\n#hint Join tu5q with tx7n on aircraft id, filter for completed flights, group by tail number, count, and sort.",
+  "eval_count": 63,
+  "error": null,
+  "seconds": 1.41,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5714285714285714,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 2
+  }
+ },
+ "H01-BIZ": {
+  "tables": [
+   "twxv",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c02",
+   "twxv.c04",
+   "tx7n.c01",
+   "tx7n.c04",
+   "tu5q.c01",
+   "tu5q.c05",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tx7n on aircraft id, filter for completed flights, group by airline and aircraft, and sort by flight count.",
+  "raw": "#tables tu5q, tx7n, twxv\n#columns tu5q.c02, tx7n.c02, twxv.c04\n#hint Join tu5q with tx7n on aircraft id, filter for completed flights, group by airline and aircraft, and sort by flight count.",
+  "eval_count": 69,
+  "error": null,
+  "seconds": 1.527,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8571428571428571,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H01-VAG": {
+  "tables": [
+   "twxv",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c02",
+   "twxv.c04",
+   "tx7n.c01",
+   "tx7n.c04",
+   "tu5q.c01",
+   "tu5q.c05",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tx7n on aircraft id, filter completed flights, group by aircraft and airline, and sort by total flight hours.",
+  "raw": "#tables tu5q, tx7n, twxv\n#columns tu5q.c02, tx7n.c02, twxv.c04\n#hint Join tu5q with tx7n on aircraft id, filter completed flights, group by aircraft and airline, and sort by total flight hours.",
+  "eval_count": 69,
+  "error": null,
+  "seconds": 1.519,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8571428571428571,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H02-CAS": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c06",
+   "twxv.c04",
+   "tx7n.c19",
+   "tx7n.c10",
+   "tx7n.c01",
+   "tx7n.c05",
+   "ts53.c01",
+   "twxv.c01",
+   "twxv.c09"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with ts53 and twxv on flight and airport IDs, filter for completed flights, group by airport and airline, and sort by flight count in descending order.",
+  "raw": "#tables tx7n, ts53, twxv\n#columns tx7n.c06, twxv.c04, tx7n.c19, tx7n.c10\n#hint Join tx7n with ts53 and twxv on flight and airport IDs, filter for completed flights, group by airport and airline, and sort by flight count in descending order.",
+  "eval_count": 85,
+  "error": null,
+  "seconds": 1.858,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.5555555555555556,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H02-SCH": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c06",
+   "tx7n.c02",
+   "tx7n.c19",
+   "tx7n.c01",
+   "tx7n.c05",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with ts53 on tx7n.c06, filter for completed flights, group by destination and airline, sort by count in descending order and destination.",
+  "raw": "#tables tx7n, ts53\n#columns tx7n.c06, tx7n.c02, tx7n.c19\n#hint Join tx7n with ts53 on tx7n.c06, filter for completed flights, group by destination and airline, sort by count in descending order and destination.",
+  "eval_count": 72,
+  "error": null,
+  "seconds": 1.589,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.5555555555555556,
+   "tables_kept": 2
+  }
+ },
+ "H02-BIZ": {
+  "tables": [
+   "ts53",
+   "th77",
+   "tx7n",
+   "t89v"
+  ],
+  "columns": [
+   "tx7n.c05",
+   "th77.c04",
+   "tx7n.c19",
+   "ts53.c02",
+   "tx7n.c01",
+   "tx7n.c06",
+   "ts53.c01",
+   "th77.c01",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06",
+   "t89v.c03"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with th77 and ts53, filter for completed flights, group by airport and carrier, sort by count of completed flights.",
+  "raw": "#tables tx7n, th77, ts53\n#columns tx7n.c05, th77.c04, tx7n.c19, ts53.c02\n#hint Join tx7n with th77 and ts53, filter for completed flights, group by airport and carrier, sort by count of completed flights.",
+  "eval_count": 78,
+  "error": null,
+  "seconds": 1.704,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.4444444444444444,
+   "columns_in_schema": 0.5555555555555556,
+   "tables_kept": 4
+  }
+ },
+ "H02-VAG": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c05",
+   "twxv.c04",
+   "tx7n.c05",
+   "ts53.c02",
+   "tu5q.c01",
+   "tu5q.c06",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c04",
+   "ts53.c01",
+   "twxv.c01",
+   "twxv.c09"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with twxv and tx7n on airline id, filter by completed flights, group by airport, sum flights, sort by sum in descending order",
+  "raw": "#tables tu5q, twxv, tx7n, ts53\n#columns tu5q.c05, twxv.c04, tx7n.c05, ts53.c02\n#hint Join tu5q with twxv and tx7n on airline id, filter by completed flights, group by airport, sum flights, sort by sum in descending order",
+  "eval_count": 85,
+  "error": null,
+  "seconds": 1.85,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8888888888888888,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H03-CAS": {
+  "tables": [
+   "ts4p",
+   "tajj",
+   "t8tg"
+  ],
+  "columns": [
+   "tajj.c04",
+   "tajj.c13",
+   "t8tg.c05",
+   "t8tg.c06",
+   "ts4p.c02",
+   "tajj.c01",
+   "t8tg.c01",
+   "t8tg.c03",
+   "ts4p.c01"
+  ],
+  "matches": [],
+  "hint": "Join tajj with t8tg on invoice id, filter by the year 2025 in the invoice date, group by month and invoice date, sum the total amount due, and order by the invoice date.",
+  "raw": "#tables tajj, t8tg, ts4p\n#columns tajj.c04, tajj.c13, t8tg.c05, t8tg.c06, ts4p.c02\n#hint Join tajj with t8tg on invoice id, filter by the year 2025 in the invoice date, group by month and invoice date, sum the total amount due, and order by the invoice date.",
+  "eval_count": 100,
+  "error": null,
+  "seconds": 2.19,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H03-SCH": {
+  "tables": [
+   "ts4p",
+   "tajj"
+  ],
+  "columns": [
+   "tajj.c04",
+   "tajj.c13",
+   "ts4p.c02",
+   "tajj.c01",
+   "ts4p.c01"
+  ],
+  "matches": [],
+  "hint": "Join tajj with ts4p on ts4p.c01=tajj.c04 and filter for ts4p.c01='as_of_timestamp' in 2025, group by tajj.c04, and use window function to calculate running SUM.",
+  "raw": "#tables tajj, ts4p\n#columns tajj.c04, tajj.c13, ts4p.c02\n#hint Join tajj with ts4p on ts4p.c01=tajj.c04 and filter for ts4p.c01='as_of_timestamp' in 2025, group by tajj.c04, and use window function to calculate running SUM.",
+  "eval_count": 96,
+  "error": null,
+  "seconds": 2.097,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H03-BIZ": {
+  "tables": [
+   "ts4p",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "t89v.c18",
+   "tajj.c13",
+   "ts4p.c02",
+   "tajj.c01",
+   "tajj.c03",
+   "ts4p.c01",
+   "t89v.c01"
+  ],
+  "matches": [],
+  "hint": "Join t89v with tajj on shipment id, filter for 2025, group by month, sum revenue, and order by month.",
+  "raw": "#tables t89v, tajj, ts4p\n#columns t89v.c18, tajj.c13, ts4p.c02\n#hint Join t89v with tajj on shipment id, filter for 2025, group by month, sum revenue, and order by month.",
+  "eval_count": 75,
+  "error": null,
+  "seconds": 1.658,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H03-VAG": {
+  "tables": [
+   "ts53",
+   "tx7n",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "t89v.c13",
+   "tajj.c13",
+   "tx7n.c13",
+   "ts53.c08",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "ts53.c01",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06",
+   "tajj.c01",
+   "tajj.c03"
+  ],
+  "matches": [],
+  "hint": "Join t89v with tajj on shipment id, then with tx7n on flight id, and with ts53 on airport id to get shipment weight and date. Group by date and sum revenue.",
+  "raw": "#tables t89v, tajj, tx7n, ts53\n#columns t89v.c13, tajj.c13, tx7n.c13, ts53.c08\n#hint Join t89v with tajj on shipment id, then with tx7n on flight id, and with ts53 on airport id to get shipment weight and date. Group by date and sum revenue.",
+  "eval_count": 97,
+  "error": null,
+  "seconds": 2.103,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H04-CAS": {
+  "tables": [
+   "ts4p",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c19",
+   "tx7n.c10",
+   "ts4p.c02",
+   "tx7n.c01",
+   "ts4p.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n on its status to ts4p's as_of_timestamp to get the month, then group by month and count flights, and sort by month.",
+  "raw": "#tables tx7n, ts4p\n#columns tx7n.c19, tx7n.c10, ts4p.c02\n#hint Join tx7n on its status to ts4p's as_of_timestamp to get the month, then group by month and count flights, and sort by month.",
+  "eval_count": 69,
+  "error": null,
+  "seconds": 1.528,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-SCH": {
+  "tables": [
+   "ts4p",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c09",
+   "ts4p.c02",
+   "tx7n.c19",
+   "tx7n.c01",
+   "ts4p.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with ts4p on ts4p.c01=tx7n.c01, filter for completed flights, group by month and year of c09, use LAG to compute difference.",
+  "raw": "#tables tx7n, ts4p\n#columns tx7n.c09, ts4p.c02, tx7n.c19, tx7n.c01\n#hint Join tx7n with ts4p on ts4p.c01=tx7n.c01, filter for completed flights, group by month and year of c09, use LAG to compute difference.",
+  "eval_count": 88,
+  "error": null,
+  "seconds": 1.922,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-BIZ": {
+  "tables": [
+   "ts4p",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c07",
+   "tx7n.c10",
+   "ts4p.c02",
+   "tx7n.c01",
+   "ts4p.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n on its planned and actual times, filter for completed flights, extract month from actual arrival time, group by month and calculate total volume, sort by month.",
+  "raw": "#tables tx7n, ts4p\n#columns tx7n.c07, tx7n.c10, ts4p.c02\n#hint Join tx7n on its planned and actual times, filter for completed flights, extract month from actual arrival time, group by month and calculate total volume, sort by month.",
+  "eval_count": 71,
+  "error": null,
+  "seconds": 1.587,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H04-VAG": {
+  "tables": [
+   "ts4p",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c07",
+   "tx7n.c10",
+   "ts4p.c02",
+   "tx7n.c01",
+   "ts4p.c01"
+  ],
+  "matches": [],
+  "hint": "Extract the month from the departure and arrival times, group by month and time period, and sort by month and time period.",
+  "raw": "#tables tx7n, ts4p\n#columns tx7n.c07, tx7n.c10, ts4p.c02\n#hint Extract the month from the departure and arrival times, group by month and time period, and sort by month and time period.",
+  "eval_count": 61,
+  "error": null,
+  "seconds": 1.353,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H05-CAS": {
+  "tables": [
+   "tu5q",
+   "tx7n",
+   "tpsn"
+  ],
+  "columns": [
+   "tu5q.c01",
+   "tx7n.c07",
+   "tx7n.c10",
+   "tpsn.c06",
+   "tpsn.c07",
+   "tpsn.c01",
+   "tpsn.c02",
+   "tx7n.c01",
+   "tx7n.c04"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tx7n and tpsn to get flight and aircraft information. Filter for completed flights and calculate the time difference between consecutive duties. Group by aircraft and calculate the average ground time. Sort by average ground time.",
+  "raw": "#tables tu5q, tx7n, tpsn\n#columns tu5q.c01, tx7n.c07, tx7n.c10, tpsn.c06, tpsn.c07\n#hint Join tu5q with tx7n and tpsn to get flight and aircraft information. Filter for completed flights and calculate the time difference between consecutive duties. Group by aircraft and calculate the average ground time. Sort by average ground time.",
+  "eval_count": 102,
+  "error": null,
+  "seconds": 2.211,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H05-SCH": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c02",
+   "tx7n.c09",
+   "tx7n.c10",
+   "tx7n.c01",
+   "tx7n.c04",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": "Join on aircraft id, filter for completed flights, calculate time difference, group by flight number, average the differences, order and limit.",
+  "raw": "#tables tu5q, tx7n\n#columns tx7n.c02, tx7n.c09, tx7n.c10\n#hint Join on aircraft id, filter for completed flights, calculate time difference, group by flight number, average the differences, order and limit.",
+  "eval_count": 63,
+  "error": null,
+  "seconds": 1.407,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H05-BIZ": {
+  "tables": [
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c04",
+   "tu5q.c02",
+   "tx7n.c10",
+   "tx7n.c09",
+   "tx7n.c01",
+   "tu5q.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with tu5q on aircraft id, filter for completed flights, group by aircraft, calculate average turnaround, sort by average turnaround in descending order.",
+  "raw": "#tables tx7n, tu5q\n#columns tx7n.c04, tu5q.c02, tx7n.c10, tx7n.c09\n#hint Join tx7n with tu5q on aircraft id, filter for completed flights, group by aircraft, calculate average turnaround, sort by average turnaround in descending order.",
+  "eval_count": 76,
+  "error": null,
+  "seconds": 1.665,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H05-VAG": {
+  "tables": [
+   "tumf",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c07",
+   "tx7n.c08",
+   "tu5q.c02",
+   "tumf.c02",
+   "tx7n.c13",
+   "tx7n.c01",
+   "tx7n.c04",
+   "tu5q.c01",
+   "tu5q.c04",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with tu5q on aircraft, then with tumf on model. Filter for completed flights. Group by flight and calculate total distance. Sort by total distance.",
+  "raw": "#tables tx7n, tu5q, tumf\n#columns tx7n.c07, tx7n.c08, tu5q.c02, tumf.c02, tx7n.c13\n#hint Join tx7n with tu5q on aircraft, then with tumf on model. Filter for completed flights. Group by flight and calculate total distance. Sort by total distance.",
+  "eval_count": 88,
+  "error": null,
+  "seconds": 1.913,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-CAS": {
+  "tables": [
+   "th77",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "tajj.c07",
+   "tajj.c13",
+   "th77.c03",
+   "th77.c14",
+   "th77.c16",
+   "th77.c01",
+   "t89v.c01",
+   "t89v.c03",
+   "tajj.c01",
+   "tajj.c03"
+  ],
+  "matches": [],
+  "hint": "Join tajj with th77 on customer, group by customer, sum invoice amounts and weights, and filter for customers making up more than 4% of total.",
+  "raw": "#tables tajj, th77\n#columns tajj.c07, tajj.c13, th77.c03, th77.c14, th77.c16\n#hint Join tajj with th77 on customer, group by customer, sum invoice amounts and weights, and filter for customers making up more than 4% of total.",
+  "eval_count": 85,
+  "error": null,
+  "seconds": 1.863,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-SCH": {
+  "tables": [
+   "th77",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "t89v.c03",
+   "tajj.c13",
+   "th77.c01",
+   "th77.c17",
+   "t89v.c01",
+   "tajj.c01",
+   "tajj.c03"
+  ],
+  "matches": [],
+  "hint": "Join t89v with tajj on shipment id, then join with th77 on customer id. Group by customer and sum c13, divide by total of all invoices, and filter for customers above 4%.",
+  "raw": "#tables t89v, tajj, th77\n#columns t89v.c03, tajj.c13, th77.c01, th77.c17\n#hint Join t89v with tajj on shipment id, then join with th77 on customer id. Group by customer and sum c13, divide by total of all invoices, and filter for customers above 4%.",
+  "eval_count": 96,
+  "error": null,
+  "seconds": 2.095,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-BIZ": {
+  "tables": [
+   "th77",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "t89v.c03",
+   "tajj.c13",
+   "th77.c01",
+   "t89v.c01",
+   "tajj.c01",
+   "tajj.c03"
+  ],
+  "matches": [],
+  "hint": null,
+  "raw": "#tables t89v, tajj, th77\n#columns t89v.c03, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, tajj.c13, taj",
+  "eval_count": 300,
+  "error": null,
+  "seconds": 6.364,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H06-VAG": {
+  "tables": [
+   "th77",
+   "t89v",
+   "tajj"
+  ],
+  "columns": [
+   "th77.c02",
+   "t89v.c16",
+   "tajj.c13",
+   "tajj.c14",
+   "th77.c01",
+   "t89v.c01",
+   "t89v.c03",
+   "tajj.c01",
+   "tajj.c03"
+  ],
+  "matches": [],
+  "hint": "Join th77 with t89v on customer, then join with tajj on shipment. Group by customer and sum revenue, order by total revenue descending.",
+  "raw": "#tables th77, t89v, tajj\n#columns th77.c02, t89v.c16, tajj.c13, tajj.c14\n#hint Join th77 with t89v on customer, then join with tajj on shipment. Group by customer and sum revenue, order by total revenue descending.",
+  "eval_count": 83,
+  "error": null,
+  "seconds": 1.814,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H07-CAS": {
+  "tables": [
+   "ts53",
+   "trhn",
+   "tx7n",
+   "t89v"
+  ],
+  "columns": [
+   "tx7n.c06",
+   "t89v.c13",
+   "trhn.c01",
+   "ts53.c01",
+   "ts53.c06",
+   "trhn.c03",
+   "tx7n.c01",
+   "tx7n.c05",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with t89v on flight and shipment IDs, then join with trhn and ts53 to get the airport and warehouse information. Group by the airport, sum the cargo weight, and sort by the sum in descending order.",
+  "raw": "#tables tx7n, t89v, trhn, ts53\n#columns tx7n.c06, t89v.c13, trhn.c01, ts53.c01, ts53.c06\n#hint Join tx7n with t89v on flight and shipment IDs, then join with trhn and ts53 to get the airport and warehouse information. Group by the airport, sum the cargo weight, and sort by the sum in descending order.",
+  "eval_count": 109,
+  "error": null,
+  "seconds": 2.363,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.5555555555555556,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 4
+  }
+ },
+ "H07-SCH": {
+  "tables": [
+   "ts53",
+   "tx7n",
+   "tg6t"
+  ],
+  "columns": [
+   "tg6t.c06",
+   "tx7n.c06",
+   "tx7n.c01",
+   "tx7n.c05",
+   "ts53.c01",
+   "tg6t.c01",
+   "tg6t.c03"
+  ],
+  "matches": [],
+  "hint": "Join tg6t with tx7n on flight, group by origin airport, sum tonnes, rank, keep top 5",
+  "raw": "#tables tg6t, tx7n, ts53\n#columns tg6t.c06, tx7n.c06, tg6t.c13\n#hint Join tg6t with tx7n on flight, group by origin airport, sum tonnes, rank, keep top 5",
+  "eval_count": 65,
+  "error": null,
+  "seconds": 1.454,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.4444444444444444,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 3
+  }
+ },
+ "H07-BIZ": {
+  "tables": [
+   "ts53",
+   "tx7n",
+   "t89v"
+  ],
+  "columns": [
+   "tx7n.c06",
+   "t89v.c13",
+   "ts53.c02",
+   "tx7n.c01",
+   "tx7n.c05",
+   "ts53.c01",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with t89v on flight and shipment IDs, filter for outbound flights, group by station, sum tonnage, sort by total tonnage.",
+  "raw": "#tables tx7n, t89v, ts53\n#columns tx7n.c06, t89v.c13, ts53.c02\n#hint Join tx7n with t89v on flight and shipment IDs, filter for outbound flights, group by station, sum tonnage, sort by total tonnage.",
+  "eval_count": 76,
+  "error": null,
+  "seconds": 1.693,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 3
+  }
+ },
+ "H07-VAG": {
+  "tables": [
+   "trhn",
+   "t3v5"
+  ],
+  "columns": [
+   "trhn.c03",
+   "t3v5.c05",
+   "t3v5.c01",
+   "trhn.c01",
+   "t3v5.c04"
+  ],
+  "matches": [],
+  "hint": "Join trhn with t3v5 on trhn.c01 = t3v5.c03, filter for 'export', group by trhn.c03, count shipments, sort by shipment_count descending",
+  "raw": "#tables trhn, t3v5\n#columns trhn.c03, t3v5.c05, COUNT(t3v5.c01) as shipment_count\n#hint Join trhn with t3v5 on trhn.c01 = t3v5.c03, filter for 'export', group by trhn.c03, count shipments, sort by shipment_count descending",
+  "eval_count": 86,
+  "error": null,
+  "seconds": 1.874,
+  "recall": {
+   "tables_found": 0.0,
+   "all_tables_found": false,
+   "columns_listed": 0.0,
+   "columns_in_schema": 0.0,
+   "tables_kept": 2
+  }
+ },
+ "H08-CAS": {
+  "tables": [
+   "ts53",
+   "tu5q",
+   "trhn",
+   "tx7n",
+   "t89v"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c14",
+   "t89v.c14",
+   "trhn.c08",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "tx7n.c04",
+   "trhn.c01",
+   "trhn.c03",
+   "ts53.c01",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06",
+   "tu5q.c01",
+   "tu5q.c06"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tx7n on aircraft, filter completed flights, join with t89v and trhn to get volume and airport data, group by aircraft model, calculate volume percentage, filter where percentage > 50.",
+  "raw": "#tables tu5q, tx7n, t89v, trhn\n#columns tu5q.c02, tx7n.c14, t89v.c14, trhn.c08\n#hint Join tu5q with tx7n on aircraft, filter completed flights, join with t89v and trhn to get volume and airport data, group by aircraft model, calculate volume percentage, filter where percentage > 50.",
+  "eval_count": 99,
+  "error": null,
+  "seconds": 2.169,
+  "recall": {
+   "tables_found": 0.6,
+   "all_tables_found": false,
+   "columns_listed": 0.4166666666666667,
+   "columns_in_schema": 0.5833333333333334,
+   "tables_kept": 5
+  }
+ },
+ "H08-SCH": {
+  "tables": [
+   "tx7n",
+   "t89v",
+   "tg6t",
+   "t3z7"
+  ],
+  "columns": [
+   "tg6t.c02",
+   "tx7n.c08",
+   "tx7n.c01",
+   "tg6t.c01",
+   "tg6t.c03",
+   "t89v.c01",
+   "t3z7.c01",
+   "t3z7.c03",
+   "t3z7.c02"
+  ],
+  "matches": [],
+  "hint": "Join tg6t with tx7n on flight id, filter for completed flights, group by flight number, sum c14, compare to 0.5 * c08, count such flights.",
+  "raw": "#tables tg6t, tx7n, t89v\n#columns tg6t.c02, tx7n.c08, tg6t.c14\n#hint Join tg6t with tx7n on flight id, filter for completed flights, group by flight number, sum c14, compare to 0.5 * c08, count such flights.",
+  "eval_count": 83,
+  "error": null,
+  "seconds": 1.828,
+  "recall": {
+   "tables_found": 0.6,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.5833333333333334,
+   "tables_kept": 4
+  }
+ },
+ "H08-BIZ": {
+  "tables": [
+   "ts53",
+   "tumf",
+   "tu5q",
+   "tx7n",
+   "t89v"
+  ],
+  "columns": [
+   "tx7n.c04",
+   "tumf.c02",
+   "t89v.c14",
+   "t89v.c13",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c05",
+   "ts53.c01",
+   "t89v.c01",
+   "t89v.c07",
+   "t89v.c06",
+   "tu5q.c01",
+   "tu5q.c06",
+   "tu5q.c04",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with tumf on aircraft id, filter completed flights, calculate volumetric load factor, group by aircraft type, filter where volumetric load factor > 50%.",
+  "raw": "#tables tx7n, tumf, t89v\n#columns tx7n.c04, tumf.c02, t89v.c14, t89v.c13\n#hint Join tx7n with tumf on aircraft id, filter completed flights, calculate volumetric load factor, group by aircraft type, filter where volumetric load factor > 50%.",
+  "eval_count": 85,
+  "error": null,
+  "seconds": 1.873,
+  "recall": {
+   "tables_found": 0.8,
+   "all_tables_found": false,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 0.8333333333333334,
+   "tables_kept": 5
+  }
+ },
+ "H08-VAG": {
+  "tables": [
+   "tumf",
+   "tu5q",
+   "tx7n",
+   "t875"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tumf.c02",
+   "t875.c13",
+   "t875.c14",
+   "t875.c15",
+   "tx7n.c02",
+   "tx7n.c01",
+   "tx7n.c04",
+   "t875.c01",
+   "t875.c03",
+   "tu5q.c01",
+   "tu5q.c04",
+   "tumf.c01"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tx7n and t875 on the aircraft, filter for completed flights, calculate the ratio of actual weight to maximum payload, sort by this ratio.",
+  "raw": "#tables tu5q, tx7n, t875, tumf\n#columns tu5q.c02, tumf.c02, t875.c13, t875.c14, t875.c15, tx7n.c02\n#hint Join tu5q with tx7n and t875 on the aircraft, filter for completed flights, calculate the ratio of actual weight to maximum payload, sort by this ratio.",
+  "eval_count": 104,
+  "error": null,
+  "seconds": 2.247,
+  "recall": {
+   "tables_found": 0.6,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 4
+  }
+ },
+ "H09-CAS": {
+  "tables": [
+   "ts53",
+   "tu5q"
+  ],
+  "columns": [
+   "tu5q.c01",
+   "tu5q.c06",
+   "ts53.c01",
+   "ts53.c14"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with ts53 on the home base airport, filter for cargo hubs, group by aircraft and count distinct airports, filter for counts equal to the number of cargo hub airports.",
+  "raw": "#tables tu5q, ts53\n#columns tu5q.c01, tu5q.c06, ts53.c01, ts53.c14\n#hint Join tu5q with ts53 on the home base airport, filter for cargo hubs, group by aircraft and count distinct airports, filter for counts equal to the number of cargo hub airports.",
+  "eval_count": 82,
+  "error": null,
+  "seconds": 1.8,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.42857142857142855,
+   "columns_in_schema": 0.5714285714285714,
+   "tables_kept": 2
+  }
+ },
+ "H09-SCH": {
+  "tables": [
+   "ts53",
+   "tx7n"
+  ],
+  "columns": [
+   "tx7n.c06",
+   "ts53.c01",
+   "tx7n.c01",
+   "tx7n.c05"
+  ],
+  "matches": [],
+  "hint": "Join tx7n with ts53 on tx7n.c06 = ts53.c01, filter for tx7n.c19 = 'completed' and ts53.c14 = 1, group by ts53.c01, and check the count of distinct destinations.",
+  "raw": "#tables tx7n, ts53\n#columns tx7n.c06, ts53.c01\n#hint Join tx7n with ts53 on tx7n.c06 = ts53.c01, filter for tx7n.c19 = 'completed' and ts53.c14 = 1, group by ts53.c01, and check the count of distinct destinations.",
+  "eval_count": 92,
+  "error": null,
+  "seconds": 2.007,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.2857142857142857,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 2
+  }
+ },
+ "H09-BIZ": {
+  "tables": [
+   "ts53",
+   "twxv",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tu5q.c04",
+   "tx7n.c05",
+   "tx7n.c19",
+   "twxv.c04",
+   "ts53.c02",
+   "tu5q.c01",
+   "tu5q.c06",
+   "tu5q.c05",
+   "tx7n.c01",
+   "tx7n.c06",
+   "tx7n.c04",
+   "ts53.c01",
+   "twxv.c01",
+   "twxv.c09"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tx7n on aircraft id, filter for completed flights, group by aircraft and model, and check if all hub airports are covered.",
+  "raw": "#tables tu5q, tx7n, twxv, ts53\n#columns tu5q.c02, tu5q.c04, tx7n.c05, tx7n.c19, twxv.c04, ts53.c02\n#hint Join tu5q with tx7n on aircraft id, filter for completed flights, group by aircraft and model, and check if all hub airports are covered.",
+  "eval_count": 97,
+  "error": null,
+  "seconds": 2.109,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8571428571428571,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H09-VAG": {
+  "tables": [
+   "ts53",
+   "tu5q",
+   "tx7n"
+  ],
+  "columns": [
+   "tu5q.c02",
+   "tx7n.c05",
+   "tx7n.c06",
+   "ts53.c02",
+   "tx7n.c01",
+   "tx7n.c04",
+   "ts53.c01",
+   "tu5q.c01",
+   "tu5q.c06"
+  ],
+  "matches": [],
+  "hint": "Join tu5q with tx7n on aircraft id, filter for completed flights, group by aircraft and airport, sort by number of unique airports visited.",
+  "raw": "#tables tu5q, tx7n, ts53\n#columns tu5q.c02, tx7n.c05, tx7n.c06, ts53.c02\n#hint Join tu5q with tx7n on aircraft id, filter for completed flights, group by aircraft and airport, sort by number of unique airports visited.",
+  "eval_count": 78,
+  "error": null,
+  "seconds": 1.724,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.7142857142857143,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H10-CAS": {
+  "tables": [
+   "trhn",
+   "t89v",
+   "t3v5"
+  ],
+  "columns": [
+   "t3v5.c08",
+   "t3v5.c09",
+   "t3v5.c10",
+   "t3v5.c11",
+   "t3v5.c06",
+   "t89v.c13",
+   "trhn.c07",
+   "trhn.c01",
+   "t3v5.c01",
+   "t3v5.c04",
+   "t3v5.c03",
+   "t89v.c01"
+  ],
+  "matches": [],
+  "hint": "Join t3v5 with t89v and trhn, filter for duty plus VAT over 20% of goods value, group by t3v5.c06, and count occurrences.",
+  "raw": "#tables t3v5, t89v, trhn\n#columns t3v5.c08, t3v5.c09, t3v5.c10, t3v5.c11, t3v5.c06, t89v.c13, trhn.c07\n#hint Join t3v5 with t89v and trhn, filter for duty plus VAT over 20% of goods value, group by t3v5.c06, and count occurrences.",
+  "eval_count": 116,
+  "error": null,
+  "seconds": 2.531,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H10-SCH": {
+  "tables": [
+   "ts53",
+   "trhn",
+   "t3v5"
+  ],
+  "columns": [
+   "t3v5.c11",
+   "t3v5.c12",
+   "t3v5.c09",
+   "t3v5.c06",
+   "trhn.c06",
+   "trhn.c01",
+   "trhn.c03",
+   "t3v5.c01",
+   "t3v5.c04",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Join t3v5 with trhn on c06, filter where c11 + c12 > 0.2 * c09, group by c06, and count rows.",
+  "raw": "#tables t3v5, trhn, ts53\n#columns t3v5.c11, t3v5.c12, t3v5.c09, t3v5.c06, trhn.c06\n#hint Join t3v5 with trhn on c06, filter where c11 + c12 > 0.2 * c09, group by c06, and count rows.",
+  "eval_count": 99,
+  "error": null,
+  "seconds": 2.158,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H10-BIZ": {
+  "tables": [
+   "trhn",
+   "t89v",
+   "t3v5"
+  ],
+  "columns": [
+   "t3v5.c09",
+   "t3v5.c10",
+   "t3v5.c11",
+   "t3v5.c02",
+   "t89v.c06",
+   "trhn.c03",
+   "trhn.c01",
+   "t3v5.c01",
+   "t3v5.c04",
+   "t3v5.c03",
+   "t89v.c01"
+  ],
+  "matches": [],
+  "hint": "Join t3v5 with t89v on declaration id, then with trhn on warehouse id. Filter for duty rate > 20 and group by t89v.c06, t3v5.c03.",
+  "raw": "#tables t3v5, t89v, trhn\n#columns t3v5.c09, t3v5.c10, t3v5.c11, t3v5.c02, t89v.c06, trhn.c03\n#hint Join t3v5 with t89v on declaration id, then with trhn on warehouse id. Filter for duty rate > 20 and group by t89v.c06, t3v5.c03.",
+  "eval_count": 115,
+  "error": null,
+  "seconds": 2.494,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.4,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H10-VAG": {
+  "tables": [
+   "ts4p",
+   "t3v5"
+  ],
+  "columns": [
+   "ts4p.c02",
+   "t3v5.c01",
+   "ts4p.c01"
+  ],
+  "matches": [],
+  "hint": "Join t3v5 with ts4p on t3v5.c10 = ts4p.c01, filter for high duty_to_pay, group by ts4p.c02, sort by duty_to_pay in descending order",
+  "raw": "#tables t3v5, ts4p\n#columns t3v5.duty_to_pay, ts4p.c02\n#hint Join t3v5 with ts4p on t3v5.c10 = ts4p.c01, filter for high duty_to_pay, group by ts4p.c02, sort by duty_to_pay in descending order",
+  "eval_count": 81,
+  "error": null,
+  "seconds": 1.771,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ }
+}

@@ -1,0 +1,6685 @@
+{
+ "E01-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lgr"
+  ],
+  "columns": [
+   "flghf.hub_kz",
+   "flghf.kap_jahr_t",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "flges.hub_fh_nr",
+   "flges.bez",
+   "flges.nur_fracht_kz",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.rufz",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "lgr.anz_tore",
+   "lgr.eroeff_jahr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.011,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E01-SCH": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lgr",
+   "betankg",
+   "sndg"
+  ],
+  "columns": [
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.zoll_24h_kz",
+   "flghf.fh_nr",
+   "flghf.anz_slb",
+   "flghf.breite",
+   "flges.hub_fh_nr",
+   "flges.nur_fracht_kz",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.rufz",
+   "flges.sitz_ort",
+   "sndg.urspr_fh",
+   "sndg.ziel_fh",
+   "sndg.gefgut_kz",
+   "sndg.temp_kz",
+   "sndg.anz_stk",
+   "sndg.sndg_nr",
+   "lgr.fh_nr",
+   "lgr.zolllager_kz",
+   "lgr.gefgut_ber_kz",
+   "lgr.betr_24h_kz",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "betankg.fh_nr",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.flug_id",
+   "betankg.menge_kg"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.012,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 5
+  }
+ },
+ "E01-BIZ": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lgr"
+  ],
+  "columns": [
+   "flghf.hub_kz",
+   "flghf.kap_jahr_t",
+   "flghf.fh_nr",
+   "flghf.anz_slb",
+   "flghf.breite",
+   "flghf.laenge",
+   "flges.hub_fh_nr",
+   "flges.bez",
+   "flges.nur_fracht_kz",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.rufz",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "lgr.anz_tore",
+   "lgr.eroeff_jahr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.017,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E01-VAG": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lgr"
+  ],
+  "columns": [
+   "flghf.hub_kz",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "flghf.anz_slb",
+   "flges.hub_fh_nr",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "lgr.anz_tore",
+   "lgr.eroeff_jahr",
+   "flges.flges_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.006,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E02-CAS": {
+  "tables": [
+   "flghf",
+   "lgr",
+   "flug",
+   "bes_eins",
+   "betankg"
+  ],
+  "columns": [
+   "flghf.nachtflugverb_kz",
+   "flghf.iata_cd",
+   "flghf.icao_cd",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "bes_eins.hotel_kz",
+   "bes_eins.flug_id",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "bes_eins.pers_nr",
+   "flug.flugnr",
+   "flug.versp_cd",
+   "flug.abfl_fh",
+   "flug.ziel_fh",
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "lgr.lgr_cd",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "lgr.anz_tore",
+   "betankg.fh_nr",
+   "betankg.flug_id",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.016,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 5
+  }
+ },
+ "E02-SCH": {
+  "tables": [
+   "flghf",
+   "flges",
+   "knd_stamm",
+   "lgr",
+   "flug",
+   "sndg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "flghf.iata_cd",
+   "flghf.nachtflugverb_kz",
+   "flghf.icao_cd",
+   "flghf.hub_kz",
+   "flghf.zoll_24h_kz",
+   "flges.iata_cd",
+   "flges.icao_cd",
+   "flges.nur_fracht_kz",
+   "flug.versp_cd",
+   "flug.flugnr",
+   "flug_ladg.deck_cd",
+   "flug_ladg.pos_cd",
+   "knd_stamm.kto_cd",
+   "knd_stamm.plz",
+   "knd_stamm.bek_versender_kz",
+   "lgr.fh_nr",
+   "lgr.lgr_cd",
+   "lgr.zolllager_kz",
+   "lgr.gefgut_ber_kz",
+   "lgr.betr_24h_kz",
+   "lgr.lgr_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.flug_id",
+   "flug_ladg.sndg_nr",
+   "knd_stamm.kunnr",
+   "flghf.fh_nr",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "sndg.kunnr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.016,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 7
+  }
+ },
+ "E02-BIZ": {
+  "tables": [
+   "flghf",
+   "lgr"
+  ],
+  "columns": [
+   "flghf.nachtflugverb_kz",
+   "flghf.iata_cd",
+   "flghf.icao_cd",
+   "flghf.fh_nr",
+   "flghf.anz_slb",
+   "flghf.breite",
+   "lgr.lgr_cd",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "lgr.anz_tore"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.024,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E02-VAG": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lgr",
+   "bes_mitgl",
+   "flug",
+   "bes_eins"
+  ],
+  "columns": [
+   "flghf.nachtflugverb_kz",
+   "flghf.kap_jahr_t",
+   "bes_eins.hotel_kz",
+   "bes_eins.pf_kz",
+   "flug.lfz_nr",
+   "flges.nur_fracht_kz",
+   "bes_mitgl.musterber_typ",
+   "lgr.fh_nr",
+   "lgr.kap_t",
+   "lgr.lgr_nr",
+   "flghf.fh_nr",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "bes_eins.eins_id",
+   "bes_eins.pers_nr",
+   "bes_eins.flug_id",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.flges_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.008,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "E03-CAS": {
+  "tables": [
+   "flges",
+   "bes_mitgl"
+  ],
+  "columns": [
+   "flges.allianz",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.hub_fh_nr",
+   "flges.land",
+   "flges.icao_cd",
+   "bes_mitgl.flges_nr",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.eintr_dat",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.lizenz_ablauf"
+  ],
+  "matches": [
+   [
+    "flges",
+    "allianz",
+    "CargoLink"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.009,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E03-SCH": {
+  "tables": [
+   "flghf",
+   "flges"
+  ],
+  "columns": [
+   "flges.allianz",
+   "flges.bez",
+   "flges.flges_nr",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flges.hub_fh_nr"
+  ],
+  "matches": [
+   [
+    "flges",
+    "allianz",
+    "CargoLink"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.014,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E03-BIZ": {
+  "tables": [
+   "flges"
+  ],
+  "columns": [
+   "flges.allianz",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.rufz",
+   "flges.hub_fh_nr",
+   "flges.sitz_ort"
+  ],
+  "matches": [
+   [
+    "flges",
+    "allianz",
+    "CargoLink"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.012,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E03-VAG": {
+  "tables": [
+   "flghf",
+   "flges",
+   "knd_stamm",
+   "betankg",
+   "sndg",
+   "rech_kopf",
+   "vers_schad"
+  ],
+  "columns": [
+   "flges.allianz",
+   "flges.hub_fh_nr",
+   "sndg.knd_ref",
+   "vers_schad.kunnr",
+   "rech_kopf.sndg_nr",
+   "betankg.fh_nr",
+   "knd_stamm.ort",
+   "knd_stamm.land",
+   "vers_schad.schad_id",
+   "rech_kopf.rech_id",
+   "knd_stamm.kunnr",
+   "flghf.fh_nr",
+   "flges.flges_nr",
+   "betankg.betank_id",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "sndg.kunnr"
+  ],
+  "matches": [
+   [
+    "flges",
+    "allianz",
+    "CargoLink"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.004,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 7
+  }
+ },
+ "E04-CAS": {
+  "tables": [
+   "lfz_typ",
+   "lfz"
+  ],
+  "columns": [
+   "lfz_typ.herst",
+   "lfz_typ.typ_nr",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.mdl",
+   "lfz.typ_nr",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "lfz.stat",
+   "lfz.ausl_dat"
+  ],
+  "matches": [
+   [
+    "lfz_typ",
+    "herst",
+    "Airbus"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.01,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E04-SCH": {
+  "tables": [
+   "lfz_typ"
+  ],
+  "columns": [
+   "lfz_typ.herst",
+   "lfz_typ.mdl",
+   "lfz_typ.trw_mdl",
+   "lfz_typ.typ_nr",
+   "lfz_typ.icao_typ"
+  ],
+  "matches": [
+   [
+    "lfz_typ",
+    "herst",
+    "Airbus"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.011,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E04-BIZ": {
+  "tables": [
+   "lfz_typ",
+   "lfz"
+  ],
+  "columns": [
+   "lfz_typ.herst",
+   "lfz_typ.typ_nr",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.leergew_kg",
+   "lfz.typ_nr",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "lfz.ausl_dat",
+   "lfz.ges_flugstd"
+  ],
+  "matches": [
+   [
+    "lfz_typ",
+    "herst",
+    "Airbus"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.014,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E04-VAG": {
+  "tables": [
+   "lfz_typ"
+  ],
+  "columns": [
+   "lfz_typ.herst",
+   "lfz_typ.typ_nr",
+   "lfz_typ.mdl",
+   "lfz_typ.trw_mdl",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m"
+  ],
+  "matches": [
+   [
+    "lfz_typ",
+    "herst",
+    "Airbus"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.003,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-CAS": {
+  "tables": [
+   "lfz"
+  ],
+  "columns": [
+   "lfz.eigt_art",
+   "lfz.leas_ende_dat",
+   "lfz.leasgeb",
+   "lfz.typ_nr",
+   "lfz.lfz_nr",
+   "lfz.baujahr"
+  ],
+  "matches": [
+   [
+    "lfz",
+    "eigt_art",
+    "leased"
+   ],
+   [
+    "lfz",
+    "eigt_art",
+    "owned"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.011,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E05-SCH": {
+  "tables": [
+   "lfz_typ",
+   "lfz",
+   "flug"
+  ],
+  "columns": [
+   "lfz.eigt_art",
+   "lfz.leas_ende_dat",
+   "lfz.leasgeb",
+   "lfz.lfz_nr",
+   "lfz.msn",
+   "lfz.baujahr",
+   "flug.lfz_nr",
+   "flug.flug_art",
+   "flug.flug_id",
+   "flug.abfl_fh",
+   "flug.ziel_fh",
+   "flug.abfl_plan",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.typ_nr",
+   "lfz_typ.leergew_kg",
+   "lfz_typ.reise_geschw_kmh",
+   "lfz.typ_nr"
+  ],
+  "matches": [
+   [
+    "lfz",
+    "eigt_art",
+    "leased"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.012,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E05-BIZ": {
+  "tables": [
+   "flghf",
+   "lfz",
+   "lgr",
+   "zoll_anm"
+  ],
+  "columns": [
+   "lfz.leas_ende_dat",
+   "lfz.eigt_art",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "lfz.typ_nr",
+   "zoll_anm.stat",
+   "zoll_anm.anm_id",
+   "zoll_anm.lgr_nr",
+   "flghf.fh_nr",
+   "lfz.heimat_fh_nr",
+   "lgr.lgr_nr",
+   "lgr.fh_nr"
+  ],
+  "matches": [
+   [
+    "lfz",
+    "eigt_art",
+    "leased"
+   ],
+   [
+    "zoll_anm",
+    "stat",
+    "held"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.013,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "E05-VAG": {
+  "tables": [
+   "lfz"
+  ],
+  "columns": [
+   "lfz.eigt_art",
+   "lfz.leas_ende_dat",
+   "lfz.leasgeb",
+   "lfz.lfz_nr"
+  ],
+  "matches": [
+   [
+    "lfz",
+    "eigt_art",
+    "leased"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.008,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E06-CAS": {
+  "tables": [
+   "flghf",
+   "lfz_typ",
+   "lfz",
+   "bes_mitgl",
+   "wartg",
+   "betankg",
+   "sdg_verfolg"
+  ],
+  "columns": [
+   "lfz.stat",
+   "lfz.typ_nr",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "lfz.ausl_dat",
+   "sdg_verfolg.ereig_id",
+   "sdg_verfolg.sndg_nr",
+   "sdg_verfolg.fh_nr",
+   "sdg_verfolg.ereig_zeit",
+   "sdg_verfolg.anz_stk",
+   "sdg_verfolg.flug_id",
+   "betankg.fh_nr",
+   "betankg.lieferant",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.flug_id",
+   "wartg.mro_dienstl",
+   "wartg.lfz_nr",
+   "wartg.aog_kz",
+   "wartg.ata_kap",
+   "wartg.auftr_nr",
+   "wartg.beginn",
+   "bes_mitgl.aktiv_kz",
+   "bes_mitgl.musterber_typ",
+   "lfz_typ.typ_nr",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.leergew_kg",
+   "lfz_typ.reise_geschw_kmh",
+   "lfz.heimat_fh_nr",
+   "wartg.wartg_id",
+   "wartg.fh_nr",
+   "flghf.fh_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.basis_fh"
+  ],
+  "matches": [
+   [
+    "lfz",
+    "stat",
+    "active"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.017,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 7
+  }
+ },
+ "E06-SCH": {
+  "tables": [
+   "flghf",
+   "lfz",
+   "flug",
+   "wartg",
+   "sndg",
+   "rech_kopf",
+   "vorf",
+   "vers_schad",
+   "zoll_anm"
+  ],
+  "columns": [
+   "lfz.stat",
+   "lfz.kennz",
+   "lfz.lfz_nr",
+   "flug.stat",
+   "flug.lfz_nr",
+   "rech_kopf.stat",
+   "wartg.stat",
+   "wartg.fh_nr",
+   "wartg.lfz_nr",
+   "zoll_anm.stat",
+   "zoll_anm.lgr_nr",
+   "vers_schad.stat",
+   "vers_schad.genehm_usd",
+   "vers_schad.schad_id",
+   "vers_schad.vorf_id",
+   "lfz.heimat_fh_nr",
+   "wartg.wartg_id",
+   "zoll_anm.anm_id",
+   "zoll_anm.sndg_nr",
+   "rech_kopf.rech_id",
+   "rech_kopf.sndg_nr",
+   "flghf.fh_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "vorf.vorf_id",
+   "vorf.fh_nr"
+  ],
+  "matches": [
+   [
+    "lfz",
+    "stat",
+    "active"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.012,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 9
+  }
+ },
+ "E06-BIZ": {
+  "tables": [
+   "flges",
+   "lfz",
+   "bes_mitgl",
+   "wartg"
+  ],
+  "columns": [
+   "lfz.stat",
+   "lfz.letzt_c_chk_dat",
+   "lfz.lfz_nr",
+   "lfz.msn",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "wartg.mro_dienstl",
+   "wartg.wartg_id",
+   "wartg.auftr_nr",
+   "wartg.lfz_nr",
+   "wartg.beginn",
+   "wartg.anz_zurueckgest",
+   "bes_mitgl.aktiv_kz",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.flges_nr",
+   "flges.flges_nr"
+  ],
+  "matches": [
+   [
+    "lfz",
+    "stat",
+    "maintenance"
+   ],
+   [
+    "lfz",
+    "stat",
+    "retired"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.017,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "E06-VAG": {
+  "tables": [
+   "lfz_typ",
+   "lfz",
+   "flug",
+   "wartg",
+   "betankg"
+  ],
+  "columns": [
+   "lfz.typ_nr",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "lfz.stat",
+   "lfz.ausl_dat",
+   "lfz_typ.typ_nr",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.leergew_kg",
+   "lfz_typ.reise_geschw_kmh",
+   "wartg.lfz_nr",
+   "wartg.aog_kz",
+   "wartg.ata_kap",
+   "wartg.auftr_nr",
+   "wartg.beginn",
+   "wartg.wartg_id",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.flug_id",
+   "betankg.menge_kg",
+   "betankg.menge_l",
+   "flug.lfz_nr",
+   "flug.flug_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.006,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 5
+  }
+ },
+ "E07-CAS": {
+  "tables": [
+   "knd_stamm",
+   "sndg",
+   "zahlg",
+   "vorf",
+   "vers_schad"
+  ],
+  "columns": [
+   "knd_stamm.treue_stufe",
+   "knd_stamm.kunnr",
+   "knd_stamm.erdat",
+   "knd_stamm.bek_versender_kz",
+   "knd_stamm.vertr_reg",
+   "knd_stamm.knd_typ",
+   "zahlg.kunnr",
+   "zahlg.orig_waehr",
+   "zahlg.zahlg_id",
+   "zahlg.zahl_ref",
+   "zahlg.rech_id",
+   "zahlg.zahl_dat",
+   "sndg.kunnr",
+   "sndg.knd_ref",
+   "sndg.wunsch_lief_dat",
+   "sndg.anz_stk",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "vorf.gemeldet_von",
+   "vorf.ford_betr_usd",
+   "vers_schad.schad_id",
+   "vers_schad.kunnr",
+   "vers_schad.vorf_id",
+   "vorf.vorf_id"
+  ],
+  "matches": [
+   [
+    "vorf",
+    "gemeldet_von",
+    "customer"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.012,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 5
+  }
+ },
+ "E07-SCH": {
+  "tables": [
+   "knd_stamm",
+   "sndg"
+  ],
+  "columns": [
+   "knd_stamm.treue_stufe",
+   "knd_stamm.knd_typ",
+   "sndg.knd_ref",
+   "sndg.anz_stk",
+   "sndg.sndg_nr",
+   "sndg.kunnr",
+   "sndg.ziel_fh",
+   "sndg.buch_dat",
+   "knd_stamm.kunnr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.014,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E07-BIZ": {
+  "tables": [
+   "knd_stamm",
+   "vorf",
+   "vers_schad"
+  ],
+  "columns": [
+   "knd_stamm.treue_stufe",
+   "knd_stamm.kunnr",
+   "knd_stamm.erdat",
+   "knd_stamm.bek_versender_kz",
+   "knd_stamm.vertr_reg",
+   "knd_stamm.knd_typ",
+   "vorf.gemeldet_von",
+   "vorf.ford_betr_usd",
+   "vers_schad.schad_id",
+   "vers_schad.kunnr",
+   "vers_schad.vorf_id",
+   "vorf.vorf_id"
+  ],
+  "matches": [
+   [
+    "vorf",
+    "gemeldet_von",
+    "customer"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.02,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E07-VAG": {
+  "tables": [
+   "knd_stamm",
+   "sndg",
+   "zahlg",
+   "vorf",
+   "vers_schad"
+  ],
+  "columns": [
+   "knd_stamm.treue_stufe",
+   "knd_stamm.kunnr",
+   "knd_stamm.erdat",
+   "knd_stamm.bek_versender_kz",
+   "knd_stamm.vertr_reg",
+   "knd_stamm.knd_typ",
+   "zahlg.kunnr",
+   "zahlg.orig_waehr",
+   "zahlg.zahlg_id",
+   "zahlg.zahl_ref",
+   "zahlg.rech_id",
+   "zahlg.zahl_dat",
+   "sndg.kunnr",
+   "sndg.knd_ref",
+   "sndg.wunsch_lief_dat",
+   "sndg.anz_stk",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "vorf.gemeldet_von",
+   "vorf.ford_betr_usd",
+   "vers_schad.schad_id",
+   "vers_schad.kunnr",
+   "vers_schad.vorf_id",
+   "vorf.vorf_id"
+  ],
+  "matches": [
+   [
+    "vorf",
+    "gemeldet_von",
+    "customer"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.005,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 5
+  }
+ },
+ "E08-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz",
+   "knd_stamm",
+   "sndg",
+   "zahlg",
+   "vorf",
+   "zoll_anm"
+  ],
+  "columns": [
+   "knd_stamm.ort",
+   "knd_stamm.land",
+   "knd_stamm.kunnr",
+   "knd_stamm.erdat",
+   "knd_stamm.bek_versender_kz",
+   "knd_stamm.vertr_reg",
+   "zahlg.kunnr",
+   "zahlg.orig_waehr",
+   "zahlg.zahlg_id",
+   "zahlg.zahl_ref",
+   "zahlg.rech_id",
+   "zahlg.zahl_dat",
+   "sndg.kunnr",
+   "sndg.knd_ref",
+   "sndg.wunsch_lief_dat",
+   "sndg.anz_stk",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "flges.sitz_ort",
+   "flges.land",
+   "flghf.ort",
+   "flghf.land",
+   "lfz.zul_land",
+   "vorf.gemeldet_von",
+   "vorf.ford_betr_usd",
+   "zoll_anm.zoll_land",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.flges_nr",
+   "zoll_anm.anm_id",
+   "zoll_anm.sndg_nr",
+   "flghf.fh_nr",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "sndg.urspr_fh",
+   "vorf.vorf_id",
+   "vorf.fh_nr"
+  ],
+  "matches": [
+   [
+    "flghf",
+    "land",
+    "Germany"
+   ],
+   [
+    "flges",
+    "land",
+    "Germany"
+   ],
+   [
+    "lfz",
+    "zul_land",
+    "Germany"
+   ],
+   [
+    "knd_stamm",
+    "land",
+    "Germany"
+   ],
+   [
+    "vorf",
+    "gemeldet_von",
+    "customer"
+   ],
+   [
+    "zoll_anm",
+    "zoll_land",
+    "Germany"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.012,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 8
+  }
+ },
+ "E08-SCH": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz",
+   "knd_stamm",
+   "lgr",
+   "sndg",
+   "zoll_anm"
+  ],
+  "columns": [
+   "knd_stamm.land",
+   "knd_stamm.ort",
+   "knd_stamm.name1",
+   "knd_stamm.knd_typ",
+   "flges.land",
+   "flges.sitz_ort",
+   "flghf.land",
+   "flghf.ort",
+   "lfz.zul_land",
+   "zoll_anm.zoll_land",
+   "zoll_anm.lgr_nr",
+   "lgr.fh_nr",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.flges_nr",
+   "lgr.lgr_nr",
+   "zoll_anm.anm_id",
+   "zoll_anm.sndg_nr",
+   "knd_stamm.kunnr",
+   "flghf.fh_nr",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "sndg.kunnr"
+  ],
+  "matches": [
+   [
+    "flghf",
+    "land",
+    "Germany"
+   ],
+   [
+    "flges",
+    "land",
+    "Germany"
+   ],
+   [
+    "lfz",
+    "zul_land",
+    "Germany"
+   ],
+   [
+    "knd_stamm",
+    "land",
+    "Germany"
+   ],
+   [
+    "zoll_anm",
+    "zoll_land",
+    "Germany"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.012,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 7
+  }
+ },
+ "E08-BIZ": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz",
+   "knd_stamm",
+   "bes_mitgl",
+   "sndg",
+   "zahlg",
+   "zoll_anm"
+  ],
+  "columns": [
+   "knd_stamm.erdat",
+   "knd_stamm.kto_cd",
+   "knd_stamm.ort",
+   "knd_stamm.land",
+   "knd_stamm.kunnr",
+   "knd_stamm.bek_versender_kz",
+   "zahlg.kunnr",
+   "zahlg.orig_waehr",
+   "zahlg.zahlg_id",
+   "zahlg.zahl_ref",
+   "zahlg.rech_id",
+   "zahlg.zahl_dat",
+   "sndg.kunnr",
+   "sndg.knd_ref",
+   "sndg.wunsch_lief_dat",
+   "sndg.anz_stk",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "lfz.heimat_fh_nr",
+   "lfz.zul_land",
+   "flges.hub_fh_nr",
+   "flges.sitz_ort",
+   "flges.land",
+   "bes_mitgl.basis_fh",
+   "flghf.ort",
+   "flghf.land",
+   "zoll_anm.zoll_land",
+   "lfz.lfz_nr",
+   "lfz.flges_nr",
+   "zoll_anm.anm_id",
+   "zoll_anm.sndg_nr",
+   "flghf.fh_nr",
+   "flges.flges_nr",
+   "sndg.urspr_fh",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.flges_nr"
+  ],
+  "matches": [
+   [
+    "flghf",
+    "land",
+    "Germany"
+   ],
+   [
+    "flges",
+    "land",
+    "Germany"
+   ],
+   [
+    "lfz",
+    "zul_land",
+    "Germany"
+   ],
+   [
+    "knd_stamm",
+    "land",
+    "Germany"
+   ],
+   [
+    "zoll_anm",
+    "zoll_land",
+    "Germany"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.012,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 8
+  }
+ },
+ "E08-VAG": {
+  "tables": [
+   "flghf",
+   "flges",
+   "knd_stamm",
+   "sndg",
+   "rech_kopf",
+   "zahlg",
+   "vorf",
+   "vers_schad"
+  ],
+  "columns": [
+   "knd_stamm.land",
+   "knd_stamm.kunnr",
+   "knd_stamm.erdat",
+   "knd_stamm.bek_versender_kz",
+   "knd_stamm.vertr_reg",
+   "knd_stamm.knd_typ",
+   "zahlg.kunnr",
+   "zahlg.orig_waehr",
+   "zahlg.zahlg_id",
+   "zahlg.zahl_ref",
+   "zahlg.rech_id",
+   "zahlg.zahl_dat",
+   "sndg.kunnr",
+   "sndg.knd_ref",
+   "sndg.wunsch_lief_dat",
+   "sndg.anz_stk",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "vorf.gemeldet_von",
+   "vorf.ford_betr_usd",
+   "rech_kopf.sndg_nr",
+   "vers_schad.kunnr",
+   "flghf.land",
+   "flges.land",
+   "vers_schad.schad_id",
+   "vers_schad.vorf_id",
+   "rech_kopf.rech_id",
+   "flghf.fh_nr",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "sndg.urspr_fh",
+   "vorf.vorf_id",
+   "vorf.fh_nr"
+  ],
+  "matches": [
+   [
+    "flghf",
+    "land",
+    "Germany"
+   ],
+   [
+    "flges",
+    "land",
+    "Germany"
+   ],
+   [
+    "lfz",
+    "zul_land",
+    "Germany"
+   ],
+   [
+    "knd_stamm",
+    "land",
+    "Germany"
+   ],
+   [
+    "vorf",
+    "gemeldet_von",
+    "customer"
+   ],
+   [
+    "zoll_anm",
+    "zoll_land",
+    "Germany"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.003,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 1.0,
+   "tables_kept": 8
+  }
+ },
+ "E09-CAS": {
+  "tables": [
+   "flghf",
+   "lfz_typ",
+   "lgr",
+   "bes_mitgl",
+   "flug",
+   "betankg",
+   "flug_ladg",
+   "vorf"
+  ],
+  "columns": [
+   "lgr.lgr_nr",
+   "lgr.fh_nr",
+   "lgr.eroeff_jahr",
+   "lgr.zolllager_kz",
+   "lgr.betreiber",
+   "lgr.lgr_typ",
+   "lfz_typ.typ_nr",
+   "lfz_typ.icao_typ",
+   "betankg.krst_art",
+   "bes_mitgl.musterber_typ",
+   "flug_ladg.uld_typ",
+   "vorf.lgr_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.flug_id",
+   "flghf.fh_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "betankg.betank_id",
+   "betankg.fh_nr",
+   "betankg.flug_id",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.basis_fh",
+   "vorf.vorf_id",
+   "vorf.fh_nr",
+   "vorf.ladg_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.009,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 8
+  }
+ },
+ "E09-SCH": {
+  "tables": [
+   "flghf",
+   "lfz_typ",
+   "lgr",
+   "bes_mitgl",
+   "vorf"
+  ],
+  "columns": [
+   "lgr.lgr_typ",
+   "lgr.lgr_nr",
+   "lgr.lgr_cd",
+   "lfz_typ.typ_nr",
+   "lfz_typ.icao_typ",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.leergew_kg",
+   "vorf.lgr_nr",
+   "lgr.fh_nr",
+   "flghf.fh_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.basis_fh",
+   "vorf.vorf_id",
+   "vorf.fh_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.01,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 5
+  }
+ },
+ "E09-BIZ": {
+  "tables": [
+   "flghf",
+   "lfz_typ",
+   "lgr",
+   "bes_mitgl",
+   "flug",
+   "betankg",
+   "flug_ladg",
+   "vorf"
+  ],
+  "columns": [
+   "lgr.lgr_nr",
+   "lgr.fh_nr",
+   "lgr.eroeff_jahr",
+   "lgr.zolllager_kz",
+   "lgr.betreiber",
+   "lgr.lgr_typ",
+   "lfz_typ.typ_nr",
+   "lfz_typ.icao_typ",
+   "betankg.krst_art",
+   "bes_mitgl.musterber_typ",
+   "flug_ladg.uld_typ",
+   "vorf.lgr_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.flug_id",
+   "flghf.fh_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "betankg.betank_id",
+   "betankg.fh_nr",
+   "betankg.flug_id",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.basis_fh",
+   "vorf.vorf_id",
+   "vorf.fh_nr",
+   "vorf.ladg_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.012,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 8
+  }
+ },
+ "E09-VAG": {
+  "tables": [
+   "flghf",
+   "lfz_typ",
+   "lgr",
+   "bes_mitgl",
+   "flug",
+   "betankg",
+   "flug_ladg",
+   "vorf"
+  ],
+  "columns": [
+   "lgr.lgr_nr",
+   "lgr.fh_nr",
+   "lgr.eroeff_jahr",
+   "lgr.zolllager_kz",
+   "lgr.betreiber",
+   "lgr.lgr_typ",
+   "lfz_typ.typ_nr",
+   "lfz_typ.icao_typ",
+   "betankg.krst_art",
+   "bes_mitgl.musterber_typ",
+   "flug_ladg.uld_typ",
+   "vorf.lgr_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.flug_id",
+   "flghf.fh_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "betankg.betank_id",
+   "betankg.fh_nr",
+   "betankg.flug_id",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.basis_fh",
+   "vorf.vorf_id",
+   "vorf.fh_nr",
+   "vorf.ladg_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.004,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 8
+  }
+ },
+ "E10-CAS": {
+  "tables": [
+   "lgr",
+   "vorf"
+  ],
+  "columns": [
+   "lgr.lgr_typ",
+   "lgr.min_temp_c",
+   "lgr.flaeche_m2",
+   "lgr.anz_kuehlr",
+   "lgr.lgr_nr",
+   "lgr.fh_nr",
+   "vorf.lgr_nr",
+   "vorf.vorf_id",
+   "vorf.meld_zeit",
+   "vorf.betr_stk",
+   "vorf.erledigt_am",
+   "vorf.erledigt_kz"
+  ],
+  "matches": [
+   [
+    "lgr",
+    "lgr_typ",
+    "cold_chain"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.013,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E10-SCH": {
+  "tables": [
+   "lgr",
+   "vorf",
+   "zoll_anm"
+  ],
+  "columns": [
+   "lgr.lgr_typ",
+   "lgr.flaeche_m2",
+   "lgr.lgr_nr",
+   "lgr.fh_nr",
+   "lgr.min_temp_c",
+   "lgr.lgr_cd",
+   "zoll_anm.lgr_nr",
+   "vorf.lgr_nr",
+   "vorf.ladg_id",
+   "vorf.fh_nr",
+   "vorf.vorf_id",
+   "vorf.meld_zeit",
+   "vorf.betr_stk",
+   "zoll_anm.anm_id"
+  ],
+  "matches": [
+   [
+    "lgr",
+    "lgr_typ",
+    "cold_chain"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.014,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "E10-BIZ": {
+  "tables": [
+   "lgr",
+   "vorf"
+  ],
+  "columns": [
+   "lgr.flaeche_m2",
+   "lgr.lgr_typ",
+   "lgr.min_temp_c",
+   "lgr.anz_kuehlr",
+   "lgr.lgr_nr",
+   "lgr.fh_nr",
+   "vorf.lgr_nr",
+   "vorf.vorf_id",
+   "vorf.meld_zeit",
+   "vorf.betr_stk",
+   "vorf.erledigt_am",
+   "vorf.erledigt_kz"
+  ],
+  "matches": [
+   [
+    "lgr",
+    "lgr_typ",
+    "cold_chain"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.014,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E10-VAG": {
+  "tables": [
+   "flghf",
+   "lgr",
+   "sndg",
+   "vorf",
+   "sdg_verfolg"
+  ],
+  "columns": [
+   "lgr.lgr_typ",
+   "lgr.min_temp_c",
+   "lgr.anz_kuehlr",
+   "vorf.vorf_id",
+   "vorf.meld_zeit",
+   "vorf.betr_stk",
+   "vorf.erledigt_am",
+   "vorf.lgr_nr",
+   "vorf.erledigt_kz",
+   "sdg_verfolg.temp_c",
+   "sndg.temp_min_c",
+   "sndg.temp_max_c",
+   "sndg.temp_kz",
+   "lgr.lgr_nr",
+   "lgr.fh_nr",
+   "flghf.fh_nr",
+   "sdg_verfolg.ereig_id",
+   "sdg_verfolg.lgr_nr",
+   "sdg_verfolg.fh_nr",
+   "sdg_verfolg.sndg_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "vorf.fh_nr"
+  ],
+  "matches": [
+   [
+    "lgr",
+    "lgr_typ",
+    "cold_chain"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.01,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 5
+  }
+ },
+ "M01-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz_typ",
+   "lfz",
+   "bes_mitgl",
+   "wartg",
+   "betankg"
+  ],
+  "columns": [
+   "lfz.flges_nr",
+   "lfz.ausl_dat",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.typ_nr",
+   "lfz.ges_flugstd",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.hub_fh_nr",
+   "flges.land",
+   "flges.allianz",
+   "flges.icao_cd",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.flges_nr",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.eintr_dat",
+   "bes_mitgl.basis_fh",
+   "lfz_typ.typ_nr",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.leergew_kg",
+   "lfz_typ.reise_geschw_kmh",
+   "wartg.lfz_nr",
+   "wartg.aog_kz",
+   "wartg.ata_kap",
+   "wartg.auftr_nr",
+   "wartg.beginn",
+   "wartg.wartg_id",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.flug_id",
+   "betankg.menge_kg",
+   "betankg.menge_l",
+   "lfz.heimat_fh_nr",
+   "wartg.fh_nr",
+   "flghf.fh_nr",
+   "betankg.fh_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.016,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 7
+  }
+ },
+ "M01-SCH": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz_typ",
+   "lfz",
+   "bes_mitgl",
+   "wartg",
+   "betankg"
+  ],
+  "columns": [
+   "lfz.flges_nr",
+   "lfz.lfz_nr",
+   "lfz.ausl_dat",
+   "lfz.typ_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.baujahr",
+   "flges.flges_nr",
+   "flges.bez",
+   "flges.hub_fh_nr",
+   "flges.aoc_nr",
+   "flges.gruend_jahr",
+   "flges.land",
+   "wartg.lfz_nr",
+   "wartg.auftr_nr",
+   "wartg.fh_nr",
+   "wartg.aog_kz",
+   "wartg.ata_kap",
+   "wartg.beginn",
+   "lfz_typ.mdl",
+   "lfz_typ.trw_mdl",
+   "lfz_typ.typ_nr",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "bes_mitgl.flges_nr",
+   "bes_mitgl.vorname",
+   "bes_mitgl.nachname",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.pers_nr",
+   "betankg.beleg_nr",
+   "betankg.fh_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.flug_id",
+   "betankg.menge_kg",
+   "wartg.wartg_id",
+   "flghf.fh_nr",
+   "bes_mitgl.basis_fh"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.027,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 7
+  }
+ },
+ "M01-BIZ": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz_typ",
+   "lfz",
+   "bes_mitgl",
+   "wartg",
+   "betankg"
+  ],
+  "columns": [
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "lfz.typ_nr",
+   "lfz.ausl_dat",
+   "lfz.ges_flugstd",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.rufz",
+   "flges.hub_fh_nr",
+   "flges.sitz_ort",
+   "flges.land",
+   "lfz_typ.typ_nr",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.leergew_kg",
+   "lfz_typ.reise_geschw_kmh",
+   "wartg.lfz_nr",
+   "wartg.aog_kz",
+   "wartg.ata_kap",
+   "wartg.auftr_nr",
+   "wartg.beginn",
+   "wartg.wartg_id",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.flug_id",
+   "betankg.menge_kg",
+   "betankg.menge_l",
+   "lfz.heimat_fh_nr",
+   "wartg.fh_nr",
+   "flghf.fh_nr",
+   "betankg.fh_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.flges_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.012,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 7
+  }
+ },
+ "M01-VAG": {
+  "tables": [
+   "flges",
+   "lfz_typ",
+   "lfz",
+   "bes_mitgl",
+   "wartg"
+  ],
+  "columns": [
+   "lfz.flges_nr",
+   "lfz.ausl_dat",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.typ_nr",
+   "lfz.ges_flugstd",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.hub_fh_nr",
+   "flges.land",
+   "flges.allianz",
+   "flges.icao_cd",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.flges_nr",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.eintr_dat",
+   "bes_mitgl.basis_fh",
+   "lfz_typ.typ_nr",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.leergew_kg",
+   "lfz_typ.reise_geschw_kmh",
+   "wartg.lfz_nr",
+   "wartg.aog_kz",
+   "wartg.ata_kap",
+   "wartg.auftr_nr",
+   "wartg.beginn",
+   "wartg.wartg_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.004,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 5
+  }
+ },
+ "M02-CAS": {
+  "tables": [
+   "lfz_typ",
+   "lfz",
+   "bes_mitgl",
+   "wartg"
+  ],
+  "columns": [
+   "lfz_typ.typ_nr",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.mdl",
+   "lfz_typ.trw_mdl",
+   "lfz.stat",
+   "lfz.typ_nr",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "lfz.ausl_dat",
+   "bes_mitgl.aktiv_kz",
+   "bes_mitgl.musterber_typ",
+   "wartg.lfz_nr",
+   "wartg.aog_kz",
+   "wartg.ata_kap",
+   "wartg.auftr_nr",
+   "wartg.beginn",
+   "wartg.wartg_id",
+   "bes_mitgl.pers_nr"
+  ],
+  "matches": [
+   [
+    "lfz",
+    "stat",
+    "active"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.013,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "M02-SCH": {
+  "tables": [
+   "lfz_typ",
+   "lfz",
+   "wartg"
+  ],
+  "columns": [
+   "lfz_typ.mdl",
+   "lfz_typ.typ_nr",
+   "lfz_typ.trw_mdl",
+   "lfz_typ.icao_typ",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz.stat",
+   "lfz.typ_nr",
+   "lfz.lfz_nr",
+   "lfz.flges_nr",
+   "lfz.heimat_fh_nr",
+   "wartg.lfz_nr",
+   "wartg.stat",
+   "wartg.auftr_nr",
+   "wartg.fh_nr",
+   "wartg.beginn",
+   "wartg.wartg_id"
+  ],
+  "matches": [
+   [
+    "lfz",
+    "stat",
+    "active"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.018,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M02-BIZ": {
+  "tables": [
+   "flghf",
+   "lfz_typ",
+   "lfz",
+   "wartg",
+   "betankg"
+  ],
+  "columns": [
+   "lfz.stat",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.typ_nr",
+   "lfz.flges_nr",
+   "lfz.ausl_dat",
+   "lfz_typ.typ_nr",
+   "lfz_typ.icao_typ",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.leergew_kg",
+   "betankg.krst_art",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.flug_id",
+   "betankg.menge_kg",
+   "wartg.lfz_nr",
+   "wartg.aog_kz",
+   "wartg.ata_kap",
+   "wartg.auftr_nr",
+   "wartg.beginn",
+   "wartg.wartg_id",
+   "lfz.heimat_fh_nr",
+   "wartg.fh_nr",
+   "flghf.fh_nr",
+   "betankg.fh_nr"
+  ],
+  "matches": [
+   [
+    "lfz",
+    "stat",
+    "active"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.012,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 5
+  }
+ },
+ "M02-VAG": {
+  "tables": [
+   "lfz_typ",
+   "lfz",
+   "bes_mitgl",
+   "wartg"
+  ],
+  "columns": [
+   "lfz_typ.typ_nr",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.mdl",
+   "lfz_typ.trw_mdl",
+   "lfz.stat",
+   "lfz.typ_nr",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "lfz.ausl_dat",
+   "bes_mitgl.aktiv_kz",
+   "bes_mitgl.musterber_typ",
+   "wartg.lfz_nr",
+   "wartg.aog_kz",
+   "wartg.ata_kap",
+   "wartg.auftr_nr",
+   "wartg.beginn",
+   "wartg.wartg_id",
+   "bes_mitgl.pers_nr"
+  ],
+  "matches": [
+   [
+    "lfz",
+    "stat",
+    "active"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.006,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "M03-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz_typ",
+   "lfz",
+   "bes_mitgl",
+   "flug",
+   "bes_eins",
+   "betankg"
+  ],
+  "columns": [
+   "flug.tow_kg",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.stat",
+   "flug.versp_cd",
+   "flug.flug_id",
+   "betankg.flug_id",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "bes_eins.flug_id",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "lfz.ges_zyklen",
+   "lfz.ges_flugstd",
+   "lfz_typ.mtow_kg",
+   "flges.sitz_ort",
+   "flges.iata_cd",
+   "flghf.ort",
+   "flghf.iata_cd",
+   "flghf.zeitz",
+   "flghf.bez",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.flges_nr",
+   "lfz.typ_nr",
+   "flghf.fh_nr",
+   "lfz_typ.typ_nr",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flug.lfz_nr",
+   "bes_eins.pers_nr",
+   "betankg.fh_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.flges_nr"
+  ],
+  "matches": [
+   [
+    "flghf",
+    "iata_cd",
+    "IST"
+   ],
+   [
+    "flghf",
+    "ort",
+    "Istanbul"
+   ],
+   [
+    "flges",
+    "sitz_ort",
+    "Istanbul"
+   ],
+   [
+    "knd_stamm",
+    "ort",
+    "Istanbul"
+   ],
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.013,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 8
+  }
+ },
+ "M03-SCH": {
+  "tables": [
+   "flghf",
+   "flges",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg"
+  ],
+  "columns": [
+   "flghf.iata_cd",
+   "flghf.fh_nr",
+   "flghf.icao_cd",
+   "flghf.anz_slb",
+   "flghf.breite",
+   "flghf.laenge",
+   "flug.abfl_ist",
+   "flug.stat",
+   "flug.ank_ist",
+   "flug.versp_cd",
+   "flug.abfl_fh",
+   "flug.flug_id",
+   "betankg.flug_id",
+   "betankg.fh_nr",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.menge_kg",
+   "bes_eins.eins_stat",
+   "bes_eins.flug_id",
+   "bes_eins.block_min",
+   "bes_eins.eins_id",
+   "bes_eins.pers_nr",
+   "bes_eins.meld_zeit",
+   "flges.iata_cd",
+   "flges.hub_fh_nr",
+   "flges.icao_cd",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.rufz",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.fh_nr",
+   "wartg.wartg_id",
+   "flug.ziel_fh"
+  ],
+  "matches": [
+   [
+    "flghf",
+    "iata_cd",
+    "IST"
+   ],
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.021,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "M03-BIZ": {
+  "tables": [
+   "flghf",
+   "lfz_typ",
+   "bes_mitgl",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "sndg"
+  ],
+  "columns": [
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.abfl_fh",
+   "flug.abfl_plan",
+   "flug.abfl_pos",
+   "flug.wetter_abfl",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.flug_id",
+   "betankg.menge_kg",
+   "betankg.menge_l",
+   "sndg.ges_vol_m3",
+   "sndg.fracht_gew_kg",
+   "lfz_typ.max_vol_m3",
+   "flghf.iata_cd",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "flug.stat",
+   "wartg.wartg_id",
+   "wartg.fh_nr",
+   "flghf.fh_nr",
+   "lfz_typ.typ_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "bes_eins.eins_id",
+   "bes_eins.pers_nr",
+   "bes_eins.flug_id",
+   "betankg.fh_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.basis_fh"
+  ],
+  "matches": [
+   [
+    "flghf",
+    "iata_cd",
+    "IST"
+   ],
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.011,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 8
+  }
+ },
+ "M03-VAG": {
+  "tables": [
+   "flghf",
+   "flug"
+  ],
+  "columns": [
+   "flghf.iata_cd",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flghf.fh_nr"
+  ],
+  "matches": [
+   [
+    "flghf",
+    "iata_cd",
+    "IST"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.007,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M04-CAS": {
+  "tables": [
+   "flghf",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "sndg",
+   "vorf"
+  ],
+  "columns": [
+   "betankg.fh_nr",
+   "betankg.flug_id",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "flug.versp_cd",
+   "flug.flug_id",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "bes_eins.flug_id",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "sndg.ziel_fh",
+   "vorf.fh_nr",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.wartg_id",
+   "wartg.fh_nr",
+   "flghf.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "betankg.betank_id",
+   "sndg.sndg_nr",
+   "sndg.urspr_fh",
+   "vorf.vorf_id"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.018,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8,
+   "columns_in_schema": 1.0,
+   "tables_kept": 7
+  }
+ },
+ "M04-SCH": {
+  "tables": [
+   "flghf",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "sndg",
+   "flug_ladg",
+   "vorf"
+  ],
+  "columns": [
+   "betankg.fh_nr",
+   "betankg.flug_id",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "flug.versp_cd",
+   "flug.stat",
+   "flug.flug_id",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.flug_art",
+   "sndg.ziel_fh",
+   "vorf.fh_nr",
+   "flug_ladg.flug_id",
+   "flug_ladg.deck_cd",
+   "flug_ladg.pos_cd",
+   "flug_ladg.abschn_nr",
+   "flug_ladg.lade_folge",
+   "flug_ladg.sndg_nr",
+   "flghf.iata_cd",
+   "flghf.icao_cd",
+   "bes_eins.eins_stat",
+   "bes_eins.flug_id",
+   "bes_eins.block_min",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.wartg_id",
+   "wartg.fh_nr",
+   "flug_ladg.ladg_id",
+   "flghf.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "betankg.betank_id",
+   "sndg.sndg_nr",
+   "sndg.urspr_fh",
+   "vorf.vorf_id",
+   "vorf.ladg_id"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.023,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 8
+  }
+ },
+ "M04-BIZ": {
+  "tables": [
+   "flghf",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "flug_ladg.sndg_nr",
+   "flug_ladg.flug_id",
+   "flug_ladg.abschn_nr",
+   "flug_ladg.lade_folge",
+   "flug_ladg.ladg_id",
+   "flug_ladg.uld_nr",
+   "betankg.flug_id",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "flug.versp_cd",
+   "flug.flug_id",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "bes_eins.flug_id",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.wartg_id",
+   "wartg.fh_nr",
+   "flghf.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "betankg.fh_nr"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.013,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "M04-VAG": {
+  "tables": [
+   "flghf",
+   "betankg",
+   "sndg",
+   "vorf"
+  ],
+  "columns": [
+   "betankg.fh_nr",
+   "sndg.ziel_fh",
+   "vorf.fh_nr",
+   "betankg.betank_id",
+   "sndg.sndg_nr",
+   "sndg.urspr_fh",
+   "flghf.fh_nr",
+   "vorf.vorf_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.003,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.2,
+   "columns_in_schema": 0.4,
+   "tables_kept": 4
+  }
+ },
+ "M05-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "bes_mitgl",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "vorf"
+  ],
+  "columns": [
+   "flug.versp_cd",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "flug.flugnr",
+   "vorf.versp_min",
+   "vorf.vorf_art",
+   "vorf.vorf_id",
+   "vorf.meld_zeit",
+   "vorf.betr_stk",
+   "vorf.erledigt_am",
+   "betankg.flug_id",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "bes_eins.block_min",
+   "bes_eins.ruhe_min_vor",
+   "bes_eins.eins_stat",
+   "bes_eins.flug_id",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "flges.iata_cd",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.hub_fh_nr",
+   "flges.land",
+   "flges.allianz",
+   "bes_mitgl.ges_flugstd",
+   "bes_mitgl.flges_nr",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.eintr_dat",
+   "bes_mitgl.basis_fh",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.wartg_id",
+   "wartg.fh_nr",
+   "flghf.fh_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "bes_eins.eins_id",
+   "bes_eins.pers_nr",
+   "betankg.fh_nr",
+   "vorf.fh_nr"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.018,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.375,
+   "columns_in_schema": 0.75,
+   "tables_kept": 8
+  }
+ },
+ "M05-SCH": {
+  "tables": [
+   "flghf",
+   "lfz",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "sndg"
+  ],
+  "columns": [
+   "flug.ank_ist",
+   "flug.ank_plan",
+   "flug.versp_cd",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.lfz_nr",
+   "betankg.flug_id",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.menge_kg",
+   "betankg.menge_l",
+   "lfz.lfz_nr",
+   "lfz.stat",
+   "wartg.stat",
+   "wartg.lfz_nr",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "bes_eins.block_min",
+   "bes_eins.eins_stat",
+   "bes_eins.ruhe_min_vor",
+   "bes_eins.flug_id",
+   "sndg.temp_max_c",
+   "sndg.stat",
+   "flghf.bez",
+   "flghf.iata_cd",
+   "lfz.heimat_fh_nr",
+   "wartg.wartg_id",
+   "wartg.fh_nr",
+   "flghf.fh_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "bes_eins.eins_id",
+   "betankg.fh_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh"
+  ],
+  "matches": [
+   [
+    "flghf",
+    "iata_cd",
+    "IST"
+   ],
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.03,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.625,
+   "columns_in_schema": 0.75,
+   "tables_kept": 7
+  }
+ },
+ "M05-BIZ": {
+  "tables": [
+   "flghf",
+   "flges",
+   "flug",
+   "bes_eins",
+   "vorf"
+  ],
+  "columns": [
+   "vorf.versp_min",
+   "vorf.meld_zeit",
+   "vorf.erledigt_am",
+   "vorf.vorf_art",
+   "vorf.vorf_id",
+   "vorf.betr_stk",
+   "flug.ank_plan",
+   "flug.ank_ist",
+   "flug.versp_cd",
+   "flug.ziel_fh",
+   "flug.ank_pos",
+   "flug.abfl_plan",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.rufz",
+   "flges.hub_fh_nr",
+   "flges.sitz_ort",
+   "flges.land",
+   "bes_eins.block_min",
+   "bes_eins.ruhe_min_vor",
+   "bes_eins.meld_zeit",
+   "bes_eins.ende_zeit",
+   "flghf.fh_nr",
+   "flug.flug_id",
+   "flug.abfl_fh",
+   "bes_eins.eins_id",
+   "bes_eins.flug_id",
+   "vorf.fh_nr"
+  ],
+  "matches": [
+   [
+    "vorf",
+    "vorf_art",
+    "delay"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.02,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.375,
+   "columns_in_schema": 0.75,
+   "tables_kept": 5
+  }
+ },
+ "M05-VAG": {
+  "tables": [
+   "flges",
+   "lfz",
+   "bes_mitgl",
+   "flug"
+  ],
+  "columns": [
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.hub_fh_nr",
+   "flges.land",
+   "flges.allianz",
+   "flges.icao_cd",
+   "bes_mitgl.flges_nr",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.eintr_dat",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.lizenz_ablauf",
+   "lfz.flges_nr",
+   "lfz.ausl_dat",
+   "flug.flugnr",
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "lfz.lfz_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.006,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "M06-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "bes_mitgl",
+   "flug",
+   "bes_eins",
+   "betankg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "flges.iata_cd",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.hub_fh_nr",
+   "flges.land",
+   "flges.allianz",
+   "flug.flugnr",
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "flug.entf_km",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "bes_mitgl.ges_flugstd",
+   "bes_mitgl.flges_nr",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.eintr_dat",
+   "bes_mitgl.basis_fh",
+   "betankg.flug_id",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.fh_nr",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "bes_eins.flug_id",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "bes_eins.pers_nr",
+   "bes_eins.eins_stat",
+   "flug_ladg.abschn_nr",
+   "flug_ladg.flug_id",
+   "flug_ladg.lade_folge",
+   "flug_ladg.sndg_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.uld_nr",
+   "flghf.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "betankg.betank_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.008,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 7
+  }
+ },
+ "M06-SCH": {
+  "tables": [
+   "flghf",
+   "lfz",
+   "flug",
+   "wartg",
+   "sndg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "flug.stat",
+   "flug.storno_grund",
+   "flug.lfz_nr",
+   "flug.flug_id",
+   "flug.flug_art",
+   "wartg.lfz_nr",
+   "wartg.stat",
+   "wartg.auftr_nr",
+   "wartg.beginn",
+   "wartg.wartg_id",
+   "wartg.anz_zurueckgest",
+   "sndg.stat",
+   "lfz.lfz_nr",
+   "lfz.stat",
+   "flug_ladg.lade_folge",
+   "flug_ladg.flug_id",
+   "flug_ladg.abschn_stat",
+   "lfz.heimat_fh_nr",
+   "wartg.fh_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.sndg_nr",
+   "flghf.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "cancelled"
+   ],
+   [
+    "sndg",
+    "stat",
+    "cancelled"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.019,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 6
+  }
+ },
+ "M06-BIZ": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz_typ",
+   "bes_mitgl",
+   "flug",
+   "sndg"
+  ],
+  "columns": [
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.rufz",
+   "flges.hub_fh_nr",
+   "flges.sitz_ort",
+   "flges.land",
+   "flug.storno_grund",
+   "sndg.ges_vol_m3",
+   "sndg.fracht_gew_kg",
+   "lfz_typ.max_vol_m3",
+   "flghf.fh_nr",
+   "lfz_typ.typ_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.flges_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.007,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.16666666666666666,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 6
+  }
+ },
+ "M06-VAG": {
+  "tables": [
+   "flges",
+   "lfz",
+   "bes_mitgl",
+   "flug"
+  ],
+  "columns": [
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.hub_fh_nr",
+   "flges.land",
+   "flges.allianz",
+   "flges.icao_cd",
+   "bes_mitgl.flges_nr",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.eintr_dat",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.lizenz_ablauf",
+   "flug.storno_grund",
+   "flug.flugnr",
+   "lfz.flges_nr",
+   "lfz.ausl_dat",
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "lfz.lfz_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.004,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "M07-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lgr",
+   "bes_mitgl",
+   "flug",
+   "bes_eins",
+   "betankg"
+  ],
+  "columns": [
+   "flges.hub_fh_nr",
+   "flges.iata_cd",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.land",
+   "flges.allianz",
+   "betankg.co2_kg",
+   "betankg.fh_nr",
+   "betankg.flug_id",
+   "betankg.verbr_kg",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "flug.flugnr",
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "flug.entf_km",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "bes_eins.ruhe_min_vor",
+   "bes_eins.flug_id",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "bes_eins.pers_nr",
+   "bes_mitgl.ges_flugstd",
+   "bes_mitgl.flges_nr",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.eintr_dat",
+   "bes_mitgl.basis_fh",
+   "lgr.kap_t",
+   "lgr.lgr_nr",
+   "lgr.fh_nr",
+   "flghf.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "betankg.betank_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.015,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.625,
+   "columns_in_schema": 0.75,
+   "tables_kept": 7
+  }
+ },
+ "M07-SCH": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz_typ",
+   "lfz",
+   "knd_stamm",
+   "bes_mitgl",
+   "flug",
+   "betankg",
+   "sndg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "betankg.co2_kg",
+   "betankg.flug_id",
+   "betankg.menge_kg",
+   "betankg.verbr_kg",
+   "betankg.dichte",
+   "flges.bez",
+   "flges.flges_nr",
+   "flug.lfz_nr",
+   "flug.flug_id",
+   "flug.flug_art",
+   "flug.tow_kg",
+   "lfz.lfz_nr",
+   "lfz.flges_nr",
+   "flug_ladg.flug_id",
+   "lfz_typ.leergew_kg",
+   "lfz_typ.tank_kap_kg",
+   "lfz_typ.max_nutzl_kg",
+   "lfz_typ.verbr_kg_h",
+   "lfz_typ.mtow_kg",
+   "knd_stamm.plz",
+   "lfz.heimat_fh_nr",
+   "lfz.typ_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.sndg_nr",
+   "flghf.fh_nr",
+   "knd_stamm.kunnr",
+   "lfz_typ.typ_nr",
+   "flges.hub_fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "betankg.betank_id",
+   "betankg.fh_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "sndg.kunnr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.flges_nr"
+  ],
+  "matches": [
+   [
+    "knd_stamm",
+    "plz",
+    "16000"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.02,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 10
+  }
+ },
+ "M07-BIZ": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lgr",
+   "bes_mitgl",
+   "bes_eins",
+   "betankg",
+   "sndg"
+  ],
+  "columns": [
+   "flges.hub_fh_nr",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.rufz",
+   "flges.sitz_ort",
+   "flges.land",
+   "betankg.co2_kg",
+   "betankg.fh_nr",
+   "bes_eins.meld_zeit",
+   "bes_eins.ruhe_min_vor",
+   "lgr.kap_t",
+   "flghf.kap_jahr_t",
+   "sndg.knd_ref",
+   "lgr.lgr_nr",
+   "lgr.fh_nr",
+   "flghf.fh_nr",
+   "bes_eins.eins_id",
+   "bes_eins.pers_nr",
+   "betankg.betank_id",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.flges_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.018,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.25,
+   "columns_in_schema": 0.5,
+   "tables_kept": 7
+  }
+ },
+ "M07-VAG": {
+  "tables": [
+   "flges",
+   "lfz",
+   "bes_mitgl",
+   "flug"
+  ],
+  "columns": [
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.hub_fh_nr",
+   "flges.land",
+   "flges.allianz",
+   "flges.icao_cd",
+   "bes_mitgl.flges_nr",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.eintr_dat",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.lizenz_ablauf",
+   "lfz.flges_nr",
+   "lfz.ausl_dat",
+   "flug.flugnr",
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "lfz.lfz_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.005,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.625,
+   "columns_in_schema": 0.75,
+   "tables_kept": 4
+  }
+ },
+ "M08-CAS": {
+  "tables": [
+   "flghf",
+   "betankg",
+   "sndg",
+   "rech_kopf"
+  ],
+  "columns": [
+   "betankg.preis_usd_l",
+   "betankg.menge_l",
+   "betankg.dichte",
+   "betankg.fh_nr",
+   "betankg.ges_kost_usd",
+   "betankg.lieferant",
+   "rech_kopf.treibst_zuschl_usd",
+   "rech_kopf.sndg_nr",
+   "rech_kopf.rabatt_usd",
+   "rech_kopf.fracht_usd",
+   "rech_kopf.sich_geb_usd",
+   "rech_kopf.abfert_geb_usd",
+   "betankg.betank_id",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "flghf.fh_nr",
+   "rech_kopf.rech_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.015,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "M08-SCH": {
+  "tables": [
+   "flghf",
+   "knd_stamm",
+   "lgr",
+   "betankg",
+   "sndg",
+   "zahlg"
+  ],
+  "columns": [
+   "flghf.reg",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.anz_slb",
+   "lgr.miete_mon_usd",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "lgr.anz_tore",
+   "betankg.preis_usd_l",
+   "betankg.betank_id",
+   "betankg.fh_nr",
+   "betankg.menge_l",
+   "betankg.ges_kost_usd",
+   "zahlg.orig_waehr",
+   "zahlg.betr_usd",
+   "zahlg.bankgeb_usd",
+   "zahlg.wkurs_usd",
+   "knd_stamm.kunnr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "sndg.kunnr",
+   "zahlg.zahlg_id",
+   "zahlg.kunnr"
+  ],
+  "matches": [
+   [
+    "zahlg",
+    "orig_waehr",
+    "USD"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.019,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "M08-BIZ": {
+  "tables": [
+   "flghf",
+   "betankg",
+   "sndg",
+   "rech_kopf"
+  ],
+  "columns": [
+   "betankg.preis_usd_l",
+   "betankg.menge_l",
+   "betankg.dichte",
+   "betankg.ges_kost_usd",
+   "betankg.lieferant",
+   "betankg.beleg_nr",
+   "rech_kopf.treibst_zuschl_usd",
+   "rech_kopf.rabatt_usd",
+   "rech_kopf.fracht_usd",
+   "rech_kopf.sich_geb_usd",
+   "rech_kopf.abfert_geb_usd",
+   "rech_kopf.gefgut_zuschl_usd",
+   "betankg.betank_id",
+   "betankg.fh_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "flghf.fh_nr",
+   "rech_kopf.rech_id",
+   "rech_kopf.sndg_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.013,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "M08-VAG": {
+  "tables": [
+   "betankg"
+  ],
+  "columns": [
+   "betankg.fh_nr",
+   "betankg.lieferant",
+   "betankg.beleg_nr",
+   "betankg.betank_id",
+   "betankg.flug_id",
+   "betankg.menge_kg"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.007,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.25,
+   "columns_in_schema": 0.5,
+   "tables_kept": 1
+  }
+ },
+ "M09-CAS": {
+  "tables": [
+   "flghf",
+   "lgr"
+  ],
+  "columns": [
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.eroeff_jahr",
+   "lgr.zolllager_kz",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "flghf.anz_slb"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.01,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M09-SCH": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lgr",
+   "wartg",
+   "vorf",
+   "sdg_verfolg"
+  ],
+  "columns": [
+   "lgr.lgr_nr",
+   "lgr.fh_nr",
+   "lgr.lgr_cd",
+   "lgr.lgr_typ",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "flghf.iata_cd",
+   "flghf.fh_nr",
+   "flghf.icao_cd",
+   "flghf.bez",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "sdg_verfolg.fh_nr",
+   "sdg_verfolg.lgr_nr",
+   "sdg_verfolg.sndg_nr",
+   "sdg_verfolg.scanner_nr",
+   "sdg_verfolg.ereig_cd",
+   "wartg.fh_nr",
+   "wartg.auftr_nr",
+   "wartg.lfz_nr",
+   "vorf.fh_nr",
+   "vorf.lgr_nr",
+   "flges.iata_cd",
+   "flges.hub_fh_nr",
+   "flges.icao_cd",
+   "flges.flges_nr",
+   "flges.aoc_nr",
+   "wartg.wartg_id",
+   "sdg_verfolg.ereig_id",
+   "vorf.vorf_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.017,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "M09-BIZ": {
+  "tables": [
+   "flghf",
+   "knd_stamm",
+   "lgr",
+   "sndg"
+  ],
+  "columns": [
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.eroeff_jahr",
+   "lgr.zolllager_kz",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "flghf.anz_slb",
+   "knd_stamm.strasse",
+   "knd_stamm.kunnr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "sndg.kunnr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.015,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "M09-VAG": {
+  "tables": [
+   "flghf",
+   "lgr"
+  ],
+  "columns": [
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.eroeff_jahr",
+   "lgr.zolllager_kz",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "flghf.anz_slb"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.007,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "M10-CAS": {
+  "tables": [
+   "flghf",
+   "lgr",
+   "zoll_anm"
+  ],
+  "columns": [
+   "lgr.zolllager_kz",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.eroeff_jahr",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "zoll_anm.lgr_nr",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "flghf.anz_slb",
+   "zoll_anm.anm_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.01,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "M10-SCH": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lgr",
+   "flug"
+  ],
+  "columns": [
+   "lgr.zolllager_kz",
+   "lgr.lgr_nr",
+   "lgr.lgr_cd",
+   "lgr.lgr_typ",
+   "lgr.gefgut_ber_kz",
+   "lgr.betr_24h_kz",
+   "flges.iata_cd",
+   "flges.icao_cd",
+   "flges.nur_fracht_kz",
+   "flghf.iata_cd",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.zoll_24h_kz",
+   "flghf.icao_cd",
+   "flug.versp_cd",
+   "flug.flugnr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flghf.fh_nr",
+   "lgr.fh_nr",
+   "flges.flges_nr",
+   "flges.hub_fh_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.018,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "M10-BIZ": {
+  "tables": [
+   "flghf",
+   "knd_stamm",
+   "lgr",
+   "sndg",
+   "zoll_anm"
+  ],
+  "columns": [
+   "lgr.zolllager_kz",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "lgr.anz_tore",
+   "zoll_anm.lgr_nr",
+   "zoll_anm.zollagent",
+   "zoll_anm.freigabe",
+   "zoll_anm.zollwert_usd",
+   "zoll_anm.zoll_land",
+   "zoll_anm.anm_nr",
+   "flghf.zoll_24h_kz",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "knd_stamm.strasse",
+   "zoll_anm.anm_id",
+   "zoll_anm.sndg_nr",
+   "knd_stamm.kunnr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "sndg.kunnr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.015,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 5
+  }
+ },
+ "M10-VAG": {
+  "tables": [
+   "flghf",
+   "lgr",
+   "zoll_anm"
+  ],
+  "columns": [
+   "lgr.zolllager_kz",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.eroeff_jahr",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "zoll_anm.lgr_nr",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "flghf.anz_slb",
+   "zoll_anm.anm_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.007,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.75,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H01-CAS": {
+  "tables": [
+   "flges",
+   "lfz",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg"
+  ],
+  "columns": [
+   "betankg.flug_id",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.betank_id",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "flug.flugnr",
+   "flug.versp_cd",
+   "flges.iata_cd",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.hub_fh_nr",
+   "flges.land",
+   "flges.allianz",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "bes_eins.pf_kz",
+   "bes_eins.flug_id",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.lfz_nr",
+   "wartg.aog_kz",
+   "lfz.flges_nr",
+   "lfz.ausl_dat",
+   "lfz.ges_flugstd",
+   "lfz.ges_zyklen",
+   "lfz.typ_nr",
+   "lfz.lfz_nr",
+   "wartg.wartg_id",
+   "flug.flug_id",
+   "flug.lfz_nr"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.015,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.7142857142857143,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "H01-SCH": {
+  "tables": [
+   "lfz",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "lfz.kennz",
+   "lfz.zul_land",
+   "lfz.stat",
+   "flug.stat",
+   "flug.flug_id",
+   "flug.flug_art",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "betankg.fh_nr",
+   "betankg.flug_id",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.menge_kg",
+   "wartg.stat",
+   "wartg.fh_nr",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "flug_ladg.deck_cd",
+   "flug_ladg.flug_id",
+   "flug_ladg.abschn_stat",
+   "bes_eins.eins_stat",
+   "bes_eins.flug_id",
+   "bes_eins.block_min",
+   "lfz.lfz_nr",
+   "wartg.wartg_id",
+   "wartg.lfz_nr",
+   "flug_ladg.ladg_id",
+   "flug.lfz_nr",
+   "bes_eins.eins_id"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.023,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5714285714285714,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 6
+  }
+ },
+ "H01-BIZ": {
+  "tables": [
+   "flges",
+   "lfz",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "betankg.flug_id",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "lfz.ges_flugstd",
+   "lfz.ges_zyklen",
+   "lfz.lfz_nr",
+   "lfz.msn",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "flug.versp_cd",
+   "flug.flug_id",
+   "flges.iata_cd",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.rufz",
+   "flges.hub_fh_nr",
+   "flges.sitz_ort",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "bes_eins.flug_id",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "flug_ladg.abschn_nr",
+   "flug_ladg.flug_id",
+   "flug_ladg.lade_folge",
+   "flug_ladg.sndg_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.uld_nr",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.wartg_id",
+   "wartg.lfz_nr",
+   "flug.lfz_nr"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.014,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.7142857142857143,
+   "columns_in_schema": 1.0,
+   "tables_kept": 7
+  }
+ },
+ "H01-VAG": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz_typ",
+   "lfz",
+   "bes_mitgl",
+   "wartg",
+   "betankg"
+  ],
+  "columns": [
+   "flges.hub_fh_nr",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.land",
+   "flges.allianz",
+   "flges.icao_cd",
+   "lfz.flges_nr",
+   "lfz.ausl_dat",
+   "lfz.typ_nr",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.stat",
+   "betankg.fh_nr",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.flug_id",
+   "betankg.menge_kg",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.flges_nr",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.eintr_dat",
+   "bes_mitgl.basis_fh",
+   "lfz_typ.typ_nr",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.leergew_kg",
+   "lfz_typ.reise_geschw_kmh",
+   "wartg.lfz_nr",
+   "wartg.aog_kz",
+   "wartg.ata_kap",
+   "wartg.auftr_nr",
+   "wartg.beginn",
+   "wartg.wartg_id",
+   "lfz.heimat_fh_nr",
+   "wartg.fh_nr",
+   "flghf.fh_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.008,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.42857142857142855,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 7
+  }
+ },
+ "H02-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "bes_mitgl",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg"
+  ],
+  "columns": [
+   "betankg.fh_nr",
+   "betankg.flug_id",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "flges.hub_fh_nr",
+   "flges.iata_cd",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.land",
+   "flges.allianz",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "flug.flugnr",
+   "flug.versp_cd",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "bes_eins.flug_id",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.ges_flugstd",
+   "bes_mitgl.flges_nr",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.eintr_dat",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "flghf.anz_slb",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.fh_nr",
+   "wartg.wartg_id",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "bes_eins.pers_nr",
+   "betankg.betank_id"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.015,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.4444444444444444,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 7
+  }
+ },
+ "H02-SCH": {
+  "tables": [
+   "flghf",
+   "flges",
+   "bes_mitgl",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "sndg"
+  ],
+  "columns": [
+   "flges.bez",
+   "flges.iata_cd",
+   "flges.icao_cd",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.hub_fh_nr",
+   "flug.versp_cd",
+   "flug.flugnr",
+   "flug.stat",
+   "flug.flug_id",
+   "flug.flug_art",
+   "flug.abfl_ist",
+   "betankg.flug_id",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.menge_kg",
+   "betankg.menge_l",
+   "bes_mitgl.vorname",
+   "bes_mitgl.nachname",
+   "bes_mitgl.flges_nr",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.eintr_dat",
+   "flghf.bez",
+   "flghf.iata_cd",
+   "flghf.icao_cd",
+   "sndg.ziel_fh",
+   "sndg.empf_name",
+   "bes_eins.eins_stat",
+   "bes_eins.flug_id",
+   "bes_eins.block_min",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.wartg_id",
+   "wartg.fh_nr",
+   "flghf.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "bes_eins.eins_id",
+   "bes_eins.pers_nr",
+   "betankg.fh_nr",
+   "sndg.sndg_nr",
+   "sndg.urspr_fh",
+   "bes_mitgl.basis_fh"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.025,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 8
+  }
+ },
+ "H02-BIZ": {
+  "tables": [
+   "flghf",
+   "flges",
+   "knd_stamm",
+   "lgr",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "sndg"
+  ],
+  "columns": [
+   "flges.hub_fh_nr",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.rufz",
+   "flges.sitz_ort",
+   "flges.land",
+   "betankg.fh_nr",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.flug_id",
+   "betankg.menge_kg",
+   "flug.ank_ist",
+   "flug.ziel_fh",
+   "flug.ank_plan",
+   "flug.ank_pos",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "flghf.anz_slb",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "lgr.anz_tore",
+   "lgr.eroeff_jahr",
+   "knd_stamm.strasse",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.fh_nr",
+   "wartg.wartg_id",
+   "knd_stamm.kunnr",
+   "flug.flug_id",
+   "flug.abfl_fh",
+   "bes_eins.eins_id",
+   "bes_eins.flug_id",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "sndg.kunnr"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.015,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.4444444444444444,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 9
+  }
+ },
+ "H02-VAG": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lgr",
+   "bes_mitgl"
+  ],
+  "columns": [
+   "flges.hub_fh_nr",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.land",
+   "flges.allianz",
+   "flges.icao_cd",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.flges_nr",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.eintr_dat",
+   "bes_mitgl.lizenz_ablauf",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "flghf.anz_slb",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "lgr.anz_tore",
+   "lgr.eroeff_jahr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.008,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.2222222222222222,
+   "columns_in_schema": 0.4444444444444444,
+   "tables_kept": 4
+  }
+ },
+ "H03-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz",
+   "lgr",
+   "sndg",
+   "rech_kopf",
+   "zahlg"
+  ],
+  "columns": [
+   "rech_kopf.sndg_nr",
+   "rech_kopf.belnr",
+   "rech_kopf.rech_id",
+   "rech_kopf.ausst_dat",
+   "rech_kopf.versand_weg",
+   "rech_kopf.rabatt_usd",
+   "zahlg.rech_id",
+   "zahlg.kunnr",
+   "zahlg.zahlg_id",
+   "zahlg.zahl_ref",
+   "zahlg.zahl_dat",
+   "zahlg.betr_usd",
+   "lgr.eroeff_jahr",
+   "flges.gruend_jahr",
+   "flges.hub_fh_nr",
+   "lfz.baujahr",
+   "sndg.knd_ref",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.flges_nr",
+   "lgr.lgr_nr",
+   "lgr.fh_nr",
+   "flghf.fh_nr",
+   "flges.flges_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.024,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 7
+  }
+ },
+ "H03-SCH": {
+  "tables": [
+   "rech_kopf",
+   "zahlg"
+  ],
+  "columns": [
+   "rech_kopf.ausst_dat",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.rech_id",
+   "rech_kopf.rabatt_usd",
+   "rech_kopf.fracht_usd",
+   "rech_kopf.treibst_zuschl_usd",
+   "zahlg.orig_waehr",
+   "zahlg.rech_id",
+   "zahlg.betr_usd",
+   "zahlg.bankgeb_usd",
+   "zahlg.wkurs_usd",
+   "zahlg.zahl_dat",
+   "zahlg.zahlg_id"
+  ],
+  "matches": [
+   [
+    "zahlg",
+    "orig_waehr",
+    "USD"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.027,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "H03-BIZ": {
+  "tables": [
+   "flghf",
+   "wartg",
+   "sndg",
+   "rech_kopf",
+   "zahlg",
+   "vorf",
+   "vers_schad"
+  ],
+  "columns": [
+   "zahlg.betr_usd",
+   "zahlg.orig_betr",
+   "zahlg.zahl_dat",
+   "zahlg.rech_id",
+   "zahlg.kunnr",
+   "zahlg.zahlg_id",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.ausst_dat",
+   "rech_kopf.faell_dat",
+   "rech_kopf.belnr",
+   "rech_kopf.rech_id",
+   "rech_kopf.versand_weg",
+   "vers_schad.ford_usd",
+   "vers_schad.genehm_usd",
+   "vers_schad.entsch_dat",
+   "vers_schad.meld_dat",
+   "vers_schad.reg_dat",
+   "vorf.ford_betr_usd",
+   "wartg.chk_art",
+   "wartg.naechst_faell",
+   "vers_schad.schad_id",
+   "vers_schad.vorf_id",
+   "wartg.wartg_id",
+   "wartg.fh_nr",
+   "rech_kopf.sndg_nr",
+   "flghf.fh_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "vorf.vorf_id",
+   "vorf.fh_nr"
+  ],
+  "matches": [
+   [
+    "wartg",
+    "chk_art",
+    "line"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.023,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 7
+  }
+ },
+ "H03-VAG": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz",
+   "lgr",
+   "sndg",
+   "rech_kopf",
+   "zahlg",
+   "vorf",
+   "vers_schad"
+  ],
+  "columns": [
+   "zahlg.betr_usd",
+   "zahlg.orig_betr",
+   "zahlg.rech_id",
+   "zahlg.kunnr",
+   "zahlg.zahlg_id",
+   "zahlg.zahl_ref",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.belnr",
+   "rech_kopf.rech_id",
+   "rech_kopf.ausst_dat",
+   "rech_kopf.versand_weg",
+   "rech_kopf.rabatt_usd",
+   "lgr.eroeff_jahr",
+   "flges.gruend_jahr",
+   "lfz.baujahr",
+   "vers_schad.ford_usd",
+   "vers_schad.genehm_usd",
+   "vers_schad.schad_id",
+   "vers_schad.vorf_id",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.flges_nr",
+   "lgr.lgr_nr",
+   "lgr.fh_nr",
+   "rech_kopf.sndg_nr",
+   "flghf.fh_nr",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "vorf.vorf_id",
+   "vorf.lgr_nr",
+   "vorf.fh_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.005,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 9
+  }
+ },
+ "H04-CAS": {
+  "tables": [
+   "flghf",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg"
+  ],
+  "columns": [
+   "betankg.flug_id",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.betank_id",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "flug.versp_cd",
+   "flug.flug_id",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "bes_eins.flug_id",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.wartg_id",
+   "wartg.fh_nr",
+   "flghf.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "betankg.fh_nr"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.022,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 5
+  }
+ },
+ "H04-SCH": {
+  "tables": [
+   "flghf",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.stat",
+   "flug.flug_id",
+   "flug.flug_art",
+   "flug.tow_kg",
+   "betankg.flug_id",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.menge_kg",
+   "betankg.menge_l",
+   "flug_ladg.flug_id",
+   "bes_eins.ruhe_min_vor",
+   "bes_eins.eins_stat",
+   "bes_eins.flug_id",
+   "bes_eins.block_min",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "flghf.iata_cd",
+   "wartg.wartg_id",
+   "wartg.fh_nr",
+   "flug_ladg.ladg_id",
+   "flghf.fh_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "bes_eins.eins_id",
+   "betankg.fh_nr"
+  ],
+  "matches": [
+   [
+    "flghf",
+    "iata_cd",
+    "IST"
+   ],
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.023,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "H04-BIZ": {
+  "tables": [
+   "flghf",
+   "lfz_typ",
+   "lfz",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "sndg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "betankg.flug_id",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "flug.versp_cd",
+   "flug.flug_id",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "bes_eins.flug_id",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "sndg.ges_vol_m3",
+   "sndg.fracht_gew_kg",
+   "lfz_typ.max_vol_m3",
+   "flug_ladg.abschn_nr",
+   "flug_ladg.flug_id",
+   "flug_ladg.lade_folge",
+   "flug_ladg.sndg_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.uld_nr",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.typ_nr",
+   "wartg.wartg_id",
+   "wartg.fh_nr",
+   "wartg.lfz_nr",
+   "flghf.fh_nr",
+   "lfz_typ.typ_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flug.lfz_nr",
+   "betankg.fh_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.014,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 9
+  }
+ },
+ "H04-VAG": {
+  "tables": [
+   "lfz",
+   "flug",
+   "bes_eins",
+   "betankg",
+   "flug_ladg",
+   "sdg_verfolg"
+  ],
+  "columns": [
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "flug.entf_km",
+   "flug.flugnr",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "betankg.flug_id",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.fh_nr",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "bes_eins.flug_id",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "bes_eins.pers_nr",
+   "bes_eins.eins_stat",
+   "flug_ladg.abschn_nr",
+   "flug_ladg.flug_id",
+   "flug_ladg.lade_folge",
+   "flug_ladg.sndg_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.uld_nr",
+   "sdg_verfolg.flug_id",
+   "sdg_verfolg.ereig_cd",
+   "lfz.ges_flugstd",
+   "lfz.ges_zyklen",
+   "lfz.lfz_nr",
+   "sdg_verfolg.ereig_id",
+   "betankg.betank_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.01,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "H05-CAS": {
+  "tables": [
+   "lfz",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "betankg.betank_zeit",
+   "betankg.flug_id",
+   "betankg.beleg_nr",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.betank_id",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.stat",
+   "flug.abfl_plan",
+   "flug.ank_plan",
+   "flug.tow_kg",
+   "wartg.aog_kz",
+   "wartg.stat",
+   "wartg.beginn",
+   "wartg.ende",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "bes_eins.eins_stat",
+   "bes_eins.meld_zeit",
+   "bes_eins.ende_zeit",
+   "bes_eins.block_min",
+   "bes_eins.pf_kz",
+   "bes_eins.flug_id",
+   "flug_ladg.geladen_um",
+   "flug_ladg.pos_cd",
+   "flug_ladg.abschn_nr",
+   "flug_ladg.flug_id",
+   "flug_ladg.lade_folge",
+   "flug_ladg.sndg_nr",
+   "lfz.ges_flugstd",
+   "lfz.ges_zyklen",
+   "lfz.typ_nr",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "wartg.wartg_id",
+   "wartg.lfz_nr",
+   "flug_ladg.ladg_id",
+   "flug.flug_id",
+   "flug.lfz_nr",
+   "bes_eins.eins_id"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.017,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "H05-SCH": {
+  "tables": [
+   "flghf",
+   "lfz_typ",
+   "lfz",
+   "bes_mitgl",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "wartg.arb_std",
+   "wartg.stat",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.auftr_nr",
+   "wartg.lfz_nr",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "flug.abfl_fh",
+   "flug.abfl_plan",
+   "flug.abfl_pos",
+   "betankg.flug_id",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.menge_kg",
+   "betankg.menge_l",
+   "lfz.ges_zyklen",
+   "lfz.ges_flugstd",
+   "lfz.kennz",
+   "lfz.typ_nr",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz_typ.mtow_kg",
+   "lfz_typ.verbr_kg_h",
+   "lfz_typ.typ_nr",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "flug_ladg.lade_folge",
+   "flug_ladg.flug_id",
+   "flug_ladg.pos_cd",
+   "flghf.zoll_24h_kz",
+   "flghf.iata_cd",
+   "bes_eins.ruhe_min_vor",
+   "bes_eins.eins_stat",
+   "bes_eins.flug_id",
+   "bes_eins.block_min",
+   "bes_eins.pf_kz",
+   "flug.stat",
+   "lfz.heimat_fh_nr",
+   "wartg.wartg_id",
+   "wartg.fh_nr",
+   "flug_ladg.ladg_id",
+   "flghf.fh_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.lfz_nr",
+   "bes_eins.eins_id",
+   "bes_eins.pers_nr",
+   "betankg.fh_nr",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.musterber_typ",
+   "bes_mitgl.basis_fh"
+  ],
+  "matches": [
+   [
+    "flghf",
+    "iata_cd",
+    "IST"
+   ],
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.036,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 9
+  }
+ },
+ "H05-BIZ": {
+  "tables": [
+   "lfz",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "betankg.flug_id",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "lfz.ges_flugstd",
+   "lfz.ges_zyklen",
+   "lfz.lfz_nr",
+   "lfz.msn",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "flug.versp_cd",
+   "flug.flug_id",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "bes_eins.flug_id",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "flug_ladg.abschn_nr",
+   "flug_ladg.flug_id",
+   "flug_ladg.lade_folge",
+   "flug_ladg.sndg_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.uld_nr",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.wartg_id",
+   "wartg.lfz_nr",
+   "flug.lfz_nr"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.013,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "H05-VAG": {
+  "tables": [
+   "bm_param"
+  ],
+  "columns": [
+   "bm_param.param_schl"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.003,
+  "recall": {
+   "tables_found": 0.0,
+   "all_tables_found": false,
+   "columns_listed": 0.0,
+   "columns_in_schema": 0.0,
+   "tables_kept": 1
+  }
+ },
+ "H06-CAS": {
+  "tables": [
+   "flghf",
+   "knd_stamm",
+   "betankg",
+   "sndg",
+   "rech_kopf",
+   "zahlg",
+   "vorf",
+   "vers_schad"
+  ],
+  "columns": [
+   "rech_kopf.sndg_nr",
+   "sndg.knd_ref",
+   "sndg.kunnr",
+   "sndg.wunsch_lief_dat",
+   "sndg.anz_stk",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "knd_stamm.ort",
+   "knd_stamm.land",
+   "knd_stamm.kunnr",
+   "knd_stamm.erdat",
+   "knd_stamm.bek_versender_kz",
+   "knd_stamm.vertr_reg",
+   "vers_schad.kunnr",
+   "betankg.saf_ant_pct",
+   "betankg.fh_nr",
+   "zahlg.kunnr",
+   "zahlg.orig_waehr",
+   "zahlg.zahlg_id",
+   "zahlg.zahl_ref",
+   "zahlg.rech_id",
+   "zahlg.zahl_dat",
+   "vorf.gemeldet_von",
+   "vorf.ford_betr_usd",
+   "vers_schad.schad_id",
+   "vers_schad.vorf_id",
+   "rech_kopf.rech_id",
+   "flghf.fh_nr",
+   "betankg.betank_id",
+   "sndg.urspr_fh",
+   "vorf.vorf_id",
+   "vorf.fh_nr"
+  ],
+  "matches": [
+   [
+    "vorf",
+    "gemeldet_von",
+    "customer"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.02,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 1.0,
+   "tables_kept": 8
+  }
+ },
+ "H06-SCH": {
+  "tables": [
+   "knd_stamm",
+   "sndg",
+   "rech_kopf",
+   "zahlg",
+   "vorf",
+   "vers_schad"
+  ],
+  "columns": [
+   "zahlg.orig_waehr",
+   "zahlg.betr_usd",
+   "zahlg.bankgeb_usd",
+   "zahlg.wkurs_usd",
+   "zahlg.rech_id",
+   "zahlg.kunnr",
+   "sndg.sndg_nr",
+   "sndg.dekl_wert_usd",
+   "sndg.kunnr",
+   "sndg.knd_ref",
+   "sndg.wunsch_lief_dat",
+   "sndg.anz_stk",
+   "rech_kopf.sndg_nr",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.rabatt_usd",
+   "rech_kopf.fracht_usd",
+   "rech_kopf.treibst_zuschl_usd",
+   "rech_kopf.sich_geb_usd",
+   "knd_stamm.name1",
+   "knd_stamm.zahlbed_tg",
+   "knd_stamm.kredlim_usd",
+   "knd_stamm.kunnr",
+   "knd_stamm.erdat",
+   "knd_stamm.bek_versender_kz",
+   "vorf.ford_betr_usd",
+   "vorf.gemeldet_von",
+   "vers_schad.schad_id",
+   "vers_schad.kunnr",
+   "vers_schad.vorf_id",
+   "rech_kopf.rech_id",
+   "zahlg.zahlg_id",
+   "vorf.vorf_id"
+  ],
+  "matches": [
+   [
+    "zahlg",
+    "orig_waehr",
+    "USD"
+   ],
+   [
+    "vorf",
+    "gemeldet_von",
+    "customer"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.025,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "H06-BIZ": {
+  "tables": [
+   "knd_stamm",
+   "sndg",
+   "rech_kopf",
+   "zahlg",
+   "vorf",
+   "vers_schad"
+  ],
+  "columns": [
+   "zahlg.betr_usd",
+   "zahlg.orig_betr",
+   "zahlg.rech_id",
+   "zahlg.kunnr",
+   "zahlg.zahlg_id",
+   "zahlg.zahl_ref",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.sndg_nr",
+   "rech_kopf.belnr",
+   "rech_kopf.rech_id",
+   "rech_kopf.ausst_dat",
+   "rech_kopf.versand_weg",
+   "knd_stamm.erdat",
+   "knd_stamm.kto_cd",
+   "knd_stamm.zahlbed_tg",
+   "knd_stamm.kunnr",
+   "knd_stamm.bek_versender_kz",
+   "knd_stamm.vertr_reg",
+   "vorf.ford_betr_usd",
+   "vorf.gemeldet_von",
+   "vers_schad.ford_usd",
+   "vers_schad.genehm_usd",
+   "vers_schad.kunnr",
+   "vers_schad.schad_id",
+   "vers_schad.vorf_id",
+   "sndg.sndg_nr",
+   "sndg.kunnr",
+   "vorf.vorf_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.017,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8333333333333334,
+   "columns_in_schema": 1.0,
+   "tables_kept": 6
+  }
+ },
+ "H06-VAG": {
+  "tables": [
+   "bm_param",
+   "knd_stamm",
+   "betankg",
+   "rech_kopf",
+   "zahlg",
+   "vorf"
+  ],
+  "columns": [
+   "zahlg.betr_usd",
+   "zahlg.orig_betr",
+   "zahlg.rech_id",
+   "zahlg.kunnr",
+   "zahlg.zahlg_id",
+   "zahlg.zahl_ref",
+   "knd_stamm.erdat",
+   "knd_stamm.kto_cd",
+   "knd_stamm.zahlbed_tg",
+   "knd_stamm.kunnr",
+   "knd_stamm.bek_versender_kz",
+   "knd_stamm.vertr_reg",
+   "rech_kopf.brutto_usd",
+   "rech_kopf.sndg_nr",
+   "rech_kopf.belnr",
+   "rech_kopf.rech_id",
+   "rech_kopf.ausst_dat",
+   "rech_kopf.versand_weg",
+   "bm_param.param_wert",
+   "bm_param.param_schl",
+   "vorf.ford_betr_usd",
+   "vorf.gemeldet_von",
+   "betankg.saf_ant_pct",
+   "betankg.betank_id",
+   "vorf.vorf_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.011,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 6
+  }
+ },
+ "H07-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lgr",
+   "bes_mitgl",
+   "sndg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "lgr.kap_t",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "lgr.anz_tore",
+   "lgr.eroeff_jahr",
+   "flghf.kap_jahr_t",
+   "flghf.hub_kz",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.dienstgrad",
+   "bes_mitgl.basis_fh",
+   "flges.hub_fh_nr",
+   "flges.bez",
+   "flges.nur_fracht_kz",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.rufz",
+   "flug_ladg.uld_nr",
+   "flug_ladg.sndg_nr",
+   "flug_ladg.ladg_id",
+   "flug_ladg.flug_id",
+   "flug_ladg.lade_folge",
+   "flug_ladg.abschn_nr",
+   "sndg.urspr_fh",
+   "sndg.ziel_fh",
+   "sndg.sndg_nr",
+   "sndg.kunnr",
+   "sndg.buch_dat",
+   "sndg.temp_kz",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.flges_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.022,
+  "recall": {
+   "tables_found": 0.75,
+   "all_tables_found": false,
+   "columns_listed": 0.4444444444444444,
+   "columns_in_schema": 0.7777777777777778,
+   "tables_kept": 6
+  }
+ },
+ "H07-SCH": {
+  "tables": [
+   "flghf",
+   "knd_stamm",
+   "lgr",
+   "bes_mitgl",
+   "flug",
+   "sndg",
+   "flug_ladg",
+   "vorf"
+  ],
+  "columns": [
+   "flug_ladg.abschn_stat",
+   "flug_ladg.geladen_um",
+   "flug_ladg.flug_id",
+   "flug_ladg.ladg_id",
+   "flug_ladg.abschn_nr",
+   "flug_ladg.sndg_nr",
+   "flghf.kap_jahr_t",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "lgr.kap_t",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "lgr.anz_tore",
+   "lgr.eroeff_jahr",
+   "flug.flug_id",
+   "flug.stat",
+   "flug.flug_art",
+   "flug.abfl_fh",
+   "flug.ziel_fh",
+   "flug.tow_kg",
+   "vorf.fh_nr",
+   "vorf.ladg_id",
+   "vorf.vorf_id",
+   "vorf.meld_zeit",
+   "vorf.betr_stk",
+   "vorf.erledigt_am",
+   "bes_mitgl.dienstalter_nr",
+   "bes_mitgl.dienstgrad",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.ges_flugstd",
+   "knd_stamm.strasse",
+   "knd_stamm.plz",
+   "knd_stamm.kunnr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "sndg.kunnr",
+   "bes_mitgl.pers_nr",
+   "vorf.lgr_nr"
+  ],
+  "matches": [
+   [
+    "knd_stamm",
+    "plz",
+    "16000"
+   ],
+   [
+    "flug_ladg",
+    "abschn_stat",
+    "flown"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.033,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.7777777777777778,
+   "columns_in_schema": 1.0,
+   "tables_kept": 8
+  }
+ },
+ "H07-BIZ": {
+  "tables": [
+   "bm_param",
+   "flghf",
+   "knd_stamm",
+   "lgr",
+   "flug",
+   "sdg_verfolg"
+  ],
+  "columns": [
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "flghf.anz_slb",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "lgr.anz_tore",
+   "lgr.eroeff_jahr",
+   "knd_stamm.strasse",
+   "bm_param.param_wert",
+   "flug.abfl_fh",
+   "flug.ziel_fh",
+   "sdg_verfolg.fh_nr",
+   "knd_stamm.kunnr",
+   "bm_param.param_schl",
+   "sdg_verfolg.ereig_id",
+   "sdg_verfolg.lgr_nr",
+   "sdg_verfolg.flug_id",
+   "flug.flug_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.015,
+  "recall": {
+   "tables_found": 0.5,
+   "all_tables_found": false,
+   "columns_listed": 0.3333333333333333,
+   "columns_in_schema": 0.4444444444444444,
+   "tables_kept": 6
+  }
+ },
+ "H07-VAG": {
+  "tables": [
+   "flghf",
+   "lgr",
+   "zoll_anm"
+  ],
+  "columns": [
+   "zoll_anm.anm_art",
+   "zoll_anm.anm_nr",
+   "zoll_anm.anm_id",
+   "zoll_anm.sndg_nr",
+   "zoll_anm.eingereicht",
+   "zoll_anm.freigabe",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "flghf.anz_slb",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "lgr.anz_tore",
+   "lgr.eroeff_jahr",
+   "zoll_anm.lgr_nr"
+  ],
+  "matches": [
+   [
+    "zoll_anm",
+    "anm_art",
+    "export"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.006,
+  "recall": {
+   "tables_found": 0.25,
+   "all_tables_found": false,
+   "columns_listed": 0.1111111111111111,
+   "columns_in_schema": 0.2222222222222222,
+   "tables_kept": 3
+  }
+ },
+ "H08-CAS": {
+  "tables": [
+   "lfz_typ",
+   "lfz",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg"
+  ],
+  "columns": [
+   "lfz_typ.max_vol_m3",
+   "lfz_typ.typ_nr",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.mdl",
+   "betankg.flug_id",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.betank_id",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "flug.versp_cd",
+   "flug.lfz_nr",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "bes_eins.pf_kz",
+   "bes_eins.flug_id",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "lfz.typ_nr",
+   "lfz.ges_flugstd",
+   "lfz.ges_zyklen",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.lfz_nr",
+   "wartg.aog_kz",
+   "wartg.wartg_id",
+   "flug.flug_id"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.018,
+  "recall": {
+   "tables_found": 0.6,
+   "all_tables_found": false,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 6
+  }
+ },
+ "H08-SCH": {
+  "tables": [
+   "flghf",
+   "lfz_typ",
+   "lfz",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "sndg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "flug.flug_id",
+   "flug.flug_art",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "betankg.flug_id",
+   "betankg.ges_kost_usd",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "flug_ladg.flug_id",
+   "flug_ladg.ladg_id",
+   "flug_ladg.abschn_nr",
+   "flug_ladg.lade_folge",
+   "flug_ladg.sndg_nr",
+   "flug_ladg.uld_nr",
+   "sndg.ges_vol_m3",
+   "sndg.fracht_gew_kg",
+   "sndg.ges_gew_kg",
+   "sndg.temp_max_c",
+   "lfz_typ.max_vol_m3",
+   "lfz_typ.mdl",
+   "lfz_typ.trw_mdl",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.max_nutzl_kg",
+   "bes_eins.flug_id",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.typ_nr",
+   "wartg.wartg_id",
+   "wartg.fh_nr",
+   "wartg.lfz_nr",
+   "flghf.fh_nr",
+   "lfz_typ.typ_nr",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "flug.lfz_nr",
+   "betankg.betank_id",
+   "betankg.fh_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.028,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 9
+  }
+ },
+ "H08-BIZ": {
+  "tables": [
+   "lfz_typ",
+   "lfz",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "flug_ladg"
+  ],
+  "columns": [
+   "betankg.krst_art",
+   "betankg.flug_id",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "flug_ladg.uld_typ",
+   "flug_ladg.pos_cd",
+   "flug_ladg.abschn_nr",
+   "flug_ladg.flug_id",
+   "flug_ladg.lade_folge",
+   "flug_ladg.sndg_nr",
+   "lfz_typ.typ_nr",
+   "lfz_typ.icao_typ",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.leergew_kg",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "flug.versp_cd",
+   "flug.lfz_nr",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "bes_eins.pf_kz",
+   "bes_eins.flug_id",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.lfz_nr",
+   "wartg.aog_kz",
+   "lfz.lfz_nr",
+   "lfz.typ_nr",
+   "wartg.wartg_id",
+   "flug_ladg.ladg_id",
+   "flug.flug_id",
+   "betankg.betank_id"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.016,
+  "recall": {
+   "tables_found": 0.8,
+   "all_tables_found": false,
+   "columns_listed": 0.6666666666666666,
+   "columns_in_schema": 0.8333333333333334,
+   "tables_kept": 7
+  }
+ },
+ "H08-VAG": {
+  "tables": [
+   "flges",
+   "lfz_typ",
+   "lfz",
+   "bes_mitgl",
+   "flug",
+   "bes_eins"
+  ],
+  "columns": [
+   "lfz_typ.typ_nr",
+   "lfz_typ.mdl",
+   "lfz_typ.trw_mdl",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "bes_mitgl.musterber_typ",
+   "flug.lfz_nr",
+   "flges.nur_fracht_kz",
+   "lfz.stat",
+   "lfz.typ_nr",
+   "bes_eins.pf_kz",
+   "lfz.lfz_nr",
+   "lfz.flges_nr",
+   "flges.flges_nr",
+   "flug.flug_id",
+   "bes_eins.eins_id",
+   "bes_eins.pers_nr",
+   "bes_eins.flug_id",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.flges_nr"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.007,
+  "recall": {
+   "tables_found": 0.6,
+   "all_tables_found": false,
+   "columns_listed": 0.5,
+   "columns_in_schema": 0.6666666666666666,
+   "tables_kept": 6
+  }
+ },
+ "H09-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz",
+   "lgr",
+   "sndg"
+  ],
+  "columns": [
+   "flghf.hub_kz",
+   "flghf.kap_jahr_t",
+   "flghf.bez",
+   "flghf.fh_nr",
+   "flghf.nachtflugverb_kz",
+   "flghf.reg",
+   "flges.hub_fh_nr",
+   "flges.bez",
+   "flges.nur_fracht_kz",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.rufz",
+   "lgr.fh_nr",
+   "lgr.lgr_nr",
+   "lgr.anz_kuehlr",
+   "lgr.kap_t",
+   "lgr.anz_tore",
+   "lgr.eroeff_jahr",
+   "lfz.heimat_fh_nr",
+   "lfz.typ_nr",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "lfz.stat",
+   "sndg.stat",
+   "sndg.urspr_fh",
+   "sndg.ziel_fh",
+   "sndg.sndg_nr",
+   "sndg.kunnr",
+   "sndg.buch_dat"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.013,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.42857142857142855,
+   "columns_in_schema": 0.5714285714285714,
+   "tables_kept": 5
+  }
+ },
+ "H09-SCH": {
+  "tables": [
+   "flghf",
+   "flges",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg",
+   "sndg",
+   "vorf"
+  ],
+  "columns": [
+   "flghf.hub_kz",
+   "flghf.nachtflugverb_kz",
+   "flghf.zoll_24h_kz",
+   "flghf.fh_nr",
+   "flghf.anz_slb",
+   "flghf.breite",
+   "betankg.flug_id",
+   "betankg.fh_nr",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.menge_kg",
+   "flug.stat",
+   "flug.flug_id",
+   "flug.flug_art",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "flges.hub_fh_nr",
+   "flges.nur_fracht_kz",
+   "flges.flges_nr",
+   "flges.gruend_jahr",
+   "flges.rufz",
+   "flges.sitz_ort",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "sndg.gefgut_kz",
+   "sndg.temp_kz",
+   "sndg.anz_stk",
+   "sndg.sndg_nr",
+   "vorf.fh_nr",
+   "vorf.erledigt_kz",
+   "bes_eins.eins_stat",
+   "bes_eins.flug_id",
+   "bes_eins.block_min",
+   "bes_eins.hotel_kz",
+   "bes_eins.pf_kz",
+   "bes_eins.eins_id",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.fh_nr",
+   "wartg.aog_kz",
+   "wartg.wartg_id",
+   "flug.ziel_fh",
+   "flug.abfl_fh",
+   "vorf.vorf_id"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.018,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.5714285714285714,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 8
+  }
+ },
+ "H09-BIZ": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz",
+   "flug",
+   "bes_eins",
+   "wartg",
+   "betankg"
+  ],
+  "columns": [
+   "flghf.hub_kz",
+   "flghf.fh_nr",
+   "flghf.anz_slb",
+   "flghf.breite",
+   "flghf.laenge",
+   "flghf.hoehe_m",
+   "betankg.fh_nr",
+   "betankg.flug_id",
+   "betankg.verbr_kg",
+   "betankg.co2_kg",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "flges.hub_fh_nr",
+   "flges.iata_cd",
+   "lfz.heimat_fh_nr",
+   "lfz.ges_flugstd",
+   "lfz.ges_zyklen",
+   "lfz.lfz_nr",
+   "lfz.msn",
+   "lfz.baujahr",
+   "flug.stat",
+   "flug.abfl_ist",
+   "flug.ank_ist",
+   "flug.tow_kg",
+   "flug.versp_cd",
+   "flug.abfl_fh",
+   "bes_eins.eins_stat",
+   "bes_eins.block_min",
+   "bes_eins.flug_id",
+   "bes_eins.pf_kz",
+   "bes_eins.funktion",
+   "bes_eins.eins_id",
+   "wartg.stat",
+   "wartg.arb_std",
+   "wartg.teile_kost_usd",
+   "wartg.lohn_kost_usd",
+   "wartg.fh_nr",
+   "lfz.flges_nr",
+   "wartg.wartg_id",
+   "wartg.lfz_nr",
+   "flges.flges_nr",
+   "flug.flug_id",
+   "flug.ziel_fh",
+   "flug.lfz_nr",
+   "betankg.betank_id"
+  ],
+  "matches": [
+   [
+    "flug",
+    "stat",
+    "completed"
+   ],
+   [
+    "bes_eins",
+    "eins_stat",
+    "completed"
+   ],
+   [
+    "wartg",
+    "stat",
+    "completed"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.013,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.8571428571428571,
+   "columns_in_schema": 1.0,
+   "tables_kept": 7
+  }
+ },
+ "H09-VAG": {
+  "tables": [
+   "lfz_typ",
+   "lfz",
+   "flug",
+   "wartg",
+   "betankg"
+  ],
+  "columns": [
+   "lfz.typ_nr",
+   "lfz.lfz_nr",
+   "lfz.baujahr",
+   "lfz.flges_nr",
+   "lfz.stat",
+   "lfz.ausl_dat",
+   "lfz_typ.typ_nr",
+   "lfz_typ.anz_trw",
+   "lfz_typ.spannw_m",
+   "lfz_typ.max_reichw_km",
+   "lfz_typ.leergew_kg",
+   "lfz_typ.reise_geschw_kmh",
+   "wartg.lfz_nr",
+   "wartg.aog_kz",
+   "wartg.ata_kap",
+   "wartg.auftr_nr",
+   "wartg.beginn",
+   "wartg.wartg_id",
+   "betankg.beleg_nr",
+   "betankg.betank_zeit",
+   "betankg.betank_id",
+   "betankg.flug_id",
+   "betankg.menge_kg",
+   "betankg.menge_l",
+   "flug.lfz_nr",
+   "flug.flug_id"
+  ],
+  "matches": [],
+  "hint": null,
+  "error": null,
+  "seconds": 0.006,
+  "recall": {
+   "tables_found": 0.6666666666666666,
+   "all_tables_found": false,
+   "columns_listed": 0.2857142857142857,
+   "columns_in_schema": 0.7142857142857143,
+   "tables_kept": 5
+  }
+ },
+ "H10-CAS": {
+  "tables": [
+   "flghf",
+   "flges",
+   "lfz",
+   "bes_mitgl",
+   "bes_eins",
+   "sndg",
+   "zoll_anm"
+  ],
+  "columns": [
+   "zoll_anm.eust_usd",
+   "zoll_anm.zollwert_usd",
+   "zoll_anm.zollsatz_pct",
+   "zoll_anm.zoll_betr_usd",
+   "zoll_anm.zoll_land",
+   "zoll_anm.waren_bez",
+   "bes_eins.block_min",
+   "bes_eins.ruhe_min_vor",
+   "bes_eins.flug_id",
+   "bes_eins.pers_nr",
+   "bes_eins.meld_zeit",
+   "bes_eins.ende_zeit",
+   "sndg.empf_name",
+   "sndg.gefgut_kl",
+   "sndg.dekl_wert_usd",
+   "sndg.gefgut_kz",
+   "sndg.waren_kat",
+   "flges.land",
+   "lfz.zul_land",
+   "flghf.land",
+   "zoll_anm.anm_art",
+   "lfz.lfz_nr",
+   "lfz.heimat_fh_nr",
+   "lfz.flges_nr",
+   "zoll_anm.anm_id",
+   "zoll_anm.sndg_nr",
+   "flghf.fh_nr",
+   "flges.flges_nr",
+   "flges.hub_fh_nr",
+   "bes_eins.eins_id",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "sndg.urspr_fh",
+   "bes_mitgl.pers_nr",
+   "bes_mitgl.basis_fh",
+   "bes_mitgl.flges_nr"
+  ],
+  "matches": [
+   [
+    "zoll_anm",
+    "anm_art",
+    "import"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.026,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 7
+  }
+ },
+ "H10-SCH": {
+  "tables": [
+   "knd_stamm",
+   "sndg",
+   "zahlg",
+   "zoll_anm"
+  ],
+  "columns": [
+   "zoll_anm.zoll_betr_usd",
+   "zoll_anm.eust_usd",
+   "zoll_anm.zollwert_usd",
+   "zoll_anm.zoll_land",
+   "zoll_anm.lgr_nr",
+   "zoll_anm.anm_art",
+   "zahlg.betr_usd",
+   "zahlg.orig_waehr",
+   "zahlg.bankgeb_usd",
+   "zahlg.wkurs_usd",
+   "zahlg.orig_betr",
+   "zoll_anm.anm_id",
+   "zoll_anm.sndg_nr",
+   "sndg.sndg_nr",
+   "sndg.kunnr",
+   "zahlg.zahlg_id",
+   "zahlg.kunnr",
+   "knd_stamm.kunnr"
+  ],
+  "matches": [
+   [
+    "zahlg",
+    "orig_waehr",
+    "USD"
+   ],
+   [
+    "zoll_anm",
+    "anm_art",
+    "import"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.029,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 4
+  }
+ },
+ "H10-BIZ": {
+  "tables": [
+   "lgr",
+   "vorf",
+   "zoll_anm"
+  ],
+  "columns": [
+   "zoll_anm.anm_art",
+   "zoll_anm.freigabe",
+   "zoll_anm.eust_usd",
+   "zoll_anm.zollwert_usd",
+   "zoll_anm.zollagent",
+   "zoll_anm.anm_nr",
+   "vorf.gemeldet_von",
+   "zoll_anm.anm_id",
+   "zoll_anm.lgr_nr",
+   "lgr.lgr_nr",
+   "vorf.vorf_id",
+   "vorf.lgr_nr"
+  ],
+  "matches": [
+   [
+    "vorf",
+    "gemeldet_von",
+    "customs"
+   ],
+   [
+    "zoll_anm",
+    "anm_art",
+    "import"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.023,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.6,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ },
+ "H10-VAG": {
+  "tables": [
+   "flghf",
+   "lgr",
+   "wartg",
+   "sndg",
+   "flug_ladg",
+   "vorf",
+   "zoll_anm"
+  ],
+  "columns": [
+   "zoll_anm.lgr_nr",
+   "zoll_anm.anm_art",
+   "zoll_anm.eust_usd",
+   "zoll_anm.anm_nr",
+   "zoll_anm.anm_id",
+   "zoll_anm.sndg_nr",
+   "lgr.sich_stufe",
+   "lgr.fh_nr",
+   "vorf.schwere",
+   "vorf.ladg_id",
+   "vorf.fh_nr",
+   "flug_ladg.plomben_nr",
+   "flug_ladg.deck_cd",
+   "wartg.fh_nr",
+   "sndg.urspr_fh",
+   "sndg.empf_name",
+   "lgr.lgr_nr",
+   "wartg.wartg_id",
+   "flug_ladg.ladg_id",
+   "flug_ladg.sndg_nr",
+   "flghf.fh_nr",
+   "sndg.sndg_nr",
+   "sndg.ziel_fh",
+   "vorf.vorf_id",
+   "vorf.lgr_nr"
+  ],
+  "matches": [
+   [
+    "lgr",
+    "sich_stufe",
+    "high"
+   ],
+   [
+    "vorf",
+    "schwere",
+    "high"
+   ],
+   [
+    "zoll_anm",
+    "anm_art",
+    "import"
+   ]
+  ],
+  "hint": null,
+  "error": null,
+  "seconds": 0.007,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.4,
+   "columns_in_schema": 1.0,
+   "tables_kept": 7
+  }
+ }
+}

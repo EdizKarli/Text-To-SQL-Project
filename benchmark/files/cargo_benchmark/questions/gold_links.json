@@ -1,0 +1,2353 @@
+{
+ "E01": {
+  "airports": [
+   "is_cargo_hub"
+  ]
+ },
+ "E02": {
+  "airports": [
+   "iata_code",
+   "night_curfew"
+  ]
+ },
+ "E03": {
+  "airlines": [
+   "alliance",
+   "name"
+  ]
+ },
+ "E04": {
+  "aircraft_types": [
+   "manufacturer",
+   "model"
+  ]
+ },
+ "E05": {
+  "aircraft": [
+   "ownership"
+  ]
+ },
+ "E06": {
+  "aircraft": [
+   "status",
+   "tail_number"
+  ]
+ },
+ "E07": {
+  "customers": [
+   "loyalty_tier"
+  ]
+ },
+ "E08": {
+  "customers": [
+   "city",
+   "country",
+   "name"
+  ]
+ },
+ "E09": {
+  "warehouses": [
+   "warehouse_type"
+  ]
+ },
+ "E10": {
+  "warehouses": [
+   "floor_area_m2",
+   "warehouse_type"
+  ]
+ },
+ "E11": {
+  "crew_members": [
+   "crew_rank",
+   "is_active"
+  ]
+ },
+ "E12": {
+  "crew_members": [
+   "crew_rank",
+   "total_flight_hours"
+  ]
+ },
+ "E13": {
+  "flights": [
+   "flight_type"
+  ]
+ },
+ "E14": {
+  "flights": [
+   "distance_km"
+  ]
+ },
+ "E15": {
+  "flights": [
+   "cancellation_reason",
+   "status"
+  ]
+ },
+ "E16": {
+  "flights": [
+   "weather_at_departure"
+  ]
+ },
+ "E17": {
+  "crew_assignments": [
+   "hotel_required"
+  ]
+ },
+ "E18": {
+  "maintenance_records": [
+   "is_aog"
+  ]
+ },
+ "E19": {
+  "maintenance_records": [
+   "check_type",
+   "parts_cost_usd",
+   "status"
+  ]
+ },
+ "E20": {
+  "fuel_uplifts": [
+   "delivery_method"
+  ]
+ },
+ "E21": {
+  "fuel_uplifts": [
+   "density_kg_per_l"
+  ]
+ },
+ "E22": {
+  "fuel_uplifts": [
+   "fuel_type",
+   "quantity_litres"
+  ]
+ },
+ "E23": {
+  "shipments": [
+   "service_level"
+  ]
+ },
+ "E24": {
+  "shipments": [
+   "total_weight_kg"
+  ]
+ },
+ "E25": {
+  "shipments": [
+   "is_temperature_controlled"
+  ]
+ },
+ "E26": {
+  "shipments": [
+   "commodity_category",
+   "declared_value_usd"
+  ]
+ },
+ "E27": {
+  "flight_cargo": [
+   "deck"
+  ]
+ },
+ "E28": {
+  "flight_cargo": [
+   "uld_type"
+  ]
+ },
+ "E29": {
+  "invoices": [
+   "sent_via"
+  ]
+ },
+ "E30": {
+  "invoices": [
+   "discount_usd"
+  ]
+ },
+ "E31": {
+  "payments": [
+   "method"
+  ]
+ },
+ "E32": {
+  "payments": [
+   "original_amount",
+   "original_currency"
+  ]
+ },
+ "E33": {
+  "incidents": [
+   "severity"
+  ]
+ },
+ "E34": {
+  "incidents": [
+   "resolved"
+  ]
+ },
+ "E35": {
+  "insurance_claims": [
+   "claim_number",
+   "status"
+  ]
+ },
+ "E36": {
+  "insurance_claims": [
+   "claimed_amount_usd"
+  ]
+ },
+ "E37": {
+  "customs_declarations": [
+   "declaration_type",
+   "status"
+  ]
+ },
+ "E38": {
+  "customs_declarations": [
+   "inspection_required"
+  ]
+ },
+ "E39": {
+  "tracking_events": [
+   "event_code"
+  ]
+ },
+ "E40": {
+  "tracking_events": [
+   "temperature_c"
+  ]
+ },
+ "E41": {
+  "airports": [
+   "has_24h_customs",
+   "iata_code"
+  ]
+ },
+ "E42": {
+  "airports": [
+   "iata_code",
+   "runway_count"
+  ]
+ },
+ "E43": {
+  "tracking_events": [
+   "recorded_by"
+  ]
+ },
+ "E44": {
+  "airlines": [
+   "founded_year",
+   "name"
+  ]
+ },
+ "E45": {
+  "airlines": [
+   "is_cargo_only",
+   "name"
+  ]
+ },
+ "E46": {
+  "aircraft_types": [
+   "max_payload_kg",
+   "model"
+  ]
+ },
+ "E47": {
+  "aircraft_types": [
+   "max_range_km",
+   "model"
+  ]
+ },
+ "E48": {
+  "aircraft": [
+   "year_manufactured"
+  ]
+ },
+ "E49": {
+  "aircraft": [
+   "lease_end_date",
+   "lessor_name",
+   "ownership",
+   "tail_number"
+  ]
+ },
+ "E50": {
+  "aircraft": [
+   "tail_number",
+   "total_flight_hours"
+  ]
+ },
+ "E51": {
+  "customers": [
+   "is_known_shipper"
+  ]
+ },
+ "E52": {
+  "customers": [
+   "credit_limit_usd",
+   "name"
+  ]
+ },
+ "E53": {
+  "customers": [
+   "created_date"
+  ]
+ },
+ "E54": {
+  "customers": [
+   "credit_limit_usd",
+   "loyalty_tier"
+  ]
+ },
+ "E55": {
+  "warehouses": [
+   "operates_24h",
+   "warehouse_code"
+  ]
+ },
+ "E56": {
+  "warehouses": [
+   "monthly_rent_usd",
+   "warehouse_code"
+  ]
+ },
+ "E57": {
+  "customs_declarations": [
+   "customs_country",
+   "declaration_type",
+   "duty_rate_pct"
+  ]
+ },
+ "E58": {
+  "warehouses": [
+   "is_bonded",
+   "security_level"
+  ]
+ },
+ "E59": {
+  "crew_members": [
+   "license_expiry_date"
+  ]
+ },
+ "E60": {
+  "crew_members": [
+   "employee_number",
+   "first_name",
+   "hire_date",
+   "last_name"
+  ]
+ },
+ "E61": {
+  "incidents": [
+   "incident_type",
+   "root_cause"
+  ]
+ },
+ "E62": {
+  "flights": [
+   "status"
+  ]
+ },
+ "E63": {
+  "flights": [
+   "distance_km",
+   "status"
+  ]
+ },
+ "E64": {
+  "flights": [
+   "delay_code"
+  ]
+ },
+ "E65": {
+  "insurance_claims": [
+   "claim_number",
+   "claimed_amount_usd",
+   "status"
+  ]
+ },
+ "E66": {
+  "crew_assignments": [
+   "duty_role",
+   "per_diem_usd"
+  ]
+ },
+ "E67": {
+  "crew_assignments": [
+   "assignment_status"
+  ]
+ },
+ "E68": {
+  "crew_assignments": [
+   "assignment_status",
+   "block_minutes_credited"
+  ]
+ },
+ "E69": {
+  "maintenance_records": [
+   "mro_provider"
+  ]
+ },
+ "E70": {
+  "maintenance_records": [
+   "check_type",
+   "labor_hours",
+   "status"
+  ]
+ },
+ "E71": {
+  "maintenance_records": [
+   "status",
+   "work_order_number"
+  ]
+ },
+ "E72": {
+  "fuel_uplifts": [
+   "saf_blend_pct"
+  ]
+ },
+ "E73": {
+  "fuel_uplifts": [
+   "total_cost_usd"
+  ]
+ },
+ "E74": {
+  "fuel_uplifts": [
+   "supplier_name",
+   "total_cost_usd"
+  ]
+ },
+ "E75": {
+  "shipments": [
+   "status"
+  ]
+ },
+ "E76": {
+  "shipments": [
+   "dg_class"
+  ]
+ },
+ "E77": {
+  "shipments": [
+   "commodity_category",
+   "pieces"
+  ]
+ },
+ "E78": {
+  "flight_cargo": [
+   "leg_number"
+  ]
+ },
+ "E79": {
+  "invoices": [
+   "dg_surcharge_usd"
+  ]
+ },
+ "E80": {
+  "payments": [
+   "is_reconciled"
+  ]
+ },
+ "M01": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ]
+ },
+ "M02": {
+  "aircraft": [
+   "status",
+   "type_id"
+  ],
+  "aircraft_types": [
+   "model",
+   "type_id"
+  ]
+ },
+ "M03": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "flights": [
+   "origin_airport_id",
+   "status"
+  ]
+ },
+ "M04": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "flights": [
+   "destination_airport_id",
+   "origin_airport_id",
+   "status"
+  ]
+ },
+ "M05": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flights": [
+   "actual_arrival",
+   "aircraft_id",
+   "scheduled_arrival",
+   "status"
+  ]
+ },
+ "M06": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flights": [
+   "aircraft_id",
+   "status"
+  ]
+ },
+ "M07": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flights": [
+   "aircraft_id",
+   "flight_id"
+  ],
+  "fuel_uplifts": [
+   "co2_emissions_kg",
+   "flight_id"
+  ]
+ },
+ "M08": {
+  "airports": [
+   "airport_id",
+   "region"
+  ],
+  "fuel_uplifts": [
+   "airport_id",
+   "price_usd_per_litre"
+  ]
+ },
+ "M09": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "warehouses": [
+   "airport_id"
+  ]
+ },
+ "M10": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "warehouses": [
+   "airport_id",
+   "is_bonded"
+  ]
+ },
+ "M11": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "crew_members": [
+   "base_airport_id",
+   "is_active"
+  ]
+ },
+ "M12": {
+  "crew_assignments": [
+   "duty_role",
+   "per_diem_usd"
+  ]
+ },
+ "M13": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flights": [
+   "actual_arrival",
+   "actual_departure",
+   "aircraft_id",
+   "status"
+  ]
+ },
+ "M14": {
+  "maintenance_records": [
+   "check_type",
+   "labor_cost_usd",
+   "parts_cost_usd",
+   "status"
+  ]
+ },
+ "M15": {
+  "aircraft": [
+   "aircraft_id",
+   "tail_number"
+  ],
+  "maintenance_records": [
+   "aircraft_id"
+  ]
+ },
+ "M16": {
+  "customers": [
+   "country",
+   "customer_id",
+   "name"
+  ],
+  "shipments": [
+   "customer_id",
+   "status"
+  ]
+ },
+ "M17": {
+  "shipments": [
+   "chargeable_weight_kg",
+   "commodity_category",
+   "status"
+  ]
+ },
+ "M18": {
+  "customers": [
+   "customer_id",
+   "sales_region"
+  ],
+  "invoices": [
+   "amount_usd",
+   "shipment_id"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "M19": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "shipments": [
+   "is_dangerous_goods",
+   "origin_airport_id"
+  ]
+ },
+ "M20": {
+  "payments": [
+   "amount_usd",
+   "method"
+  ]
+ },
+ "M21": {
+  "invoices": [
+   "sent_via",
+   "status"
+  ]
+ },
+ "M22": {
+  "invoices": [
+   "invoice_id",
+   "issued_date"
+  ],
+  "payments": [
+   "invoice_id",
+   "method",
+   "payment_date"
+  ]
+ },
+ "M23": {
+  "customers": [
+   "customer_id",
+   "name"
+  ],
+  "invoices": [
+   "shipment_id",
+   "status"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "M24": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "incidents": [
+   "airport_id"
+  ]
+ },
+ "M25": {
+  "flight_cargo": [
+   "flight_cargo_id",
+   "shipment_id"
+  ],
+  "incidents": [
+   "flight_cargo_id"
+  ],
+  "shipments": [
+   "commodity_category",
+   "shipment_id"
+  ]
+ },
+ "M26": {
+  "insurance_claims": [
+   "approved_amount_usd",
+   "insurer_name",
+   "status"
+  ]
+ },
+ "M27": {
+  "insurance_claims": [
+   "coverage_type",
+   "status"
+  ]
+ },
+ "M28": {
+  "customs_declarations": [
+   "declaration_type",
+   "duty_amount_usd",
+   "shipment_id"
+  ],
+  "shipments": [
+   "commodity_category",
+   "shipment_id"
+  ]
+ },
+ "M29": {
+  "customs_declarations": [
+   "broker_name",
+   "declaration_type",
+   "status"
+  ]
+ },
+ "M30": {
+  "customs_declarations": [
+   "cleared_at",
+   "customs_country",
+   "declaration_type",
+   "status",
+   "submitted_at"
+  ]
+ },
+ "M31": {
+  "tracking_events": [
+   "event_code",
+   "warehouse_id"
+  ],
+  "warehouses": [
+   "warehouse_id",
+   "warehouse_type"
+  ]
+ },
+ "M32": {
+  "shipments": [
+   "pieces",
+   "service_level"
+  ]
+ },
+ "M33": {
+  "aircraft": [
+   "aircraft_id",
+   "tail_number"
+  ],
+  "flights": [
+   "aircraft_id",
+   "scheduled_departure"
+  ]
+ },
+ "M34": {
+  "aircraft": [
+   "aircraft_id",
+   "type_id"
+  ],
+  "aircraft_types": [
+   "model",
+   "type_id"
+  ],
+  "flight_cargo": [
+   "flight_id"
+  ],
+  "flights": [
+   "aircraft_id",
+   "flight_id"
+  ]
+ },
+ "M35": {
+  "flight_cargo": [
+   "deck",
+   "leg_status",
+   "shipment_id"
+  ],
+  "shipments": [
+   "shipment_id",
+   "total_weight_kg"
+  ]
+ },
+ "M36": {
+  "flights": [
+   "actual_departure",
+   "delay_code",
+   "scheduled_departure"
+  ]
+ },
+ "M37": {
+  "customers": [
+   "credit_limit_usd",
+   "sales_region"
+  ]
+ },
+ "M38": {
+  "aircraft_types": [
+   "model",
+   "type_id"
+  ],
+  "crew_members": [
+   "crew_rank",
+   "is_active",
+   "type_rating_id"
+  ]
+ },
+ "M39": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "warehouses": [
+   "airport_id",
+   "warehouse_type"
+  ]
+ },
+ "M40": {
+  "fuel_uplifts": [
+   "quantity_litres",
+   "supplier_name"
+  ]
+ },
+ "M41": {
+  "airlines": [
+   "home_hub_airport_id",
+   "name"
+  ],
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ]
+ },
+ "M42": {
+  "aircraft": [
+   "type_id"
+  ],
+  "aircraft_types": [
+   "manufacturer",
+   "type_id"
+  ]
+ },
+ "M43": {
+  "customers": [
+   "country"
+  ]
+ },
+ "M44": {
+  "airports": [
+   "airport_id",
+   "iata_code",
+   "region"
+  ],
+  "flights": [
+   "origin_airport_id",
+   "status"
+  ]
+ },
+ "M45": {
+  "flights": [
+   "flight_type",
+   "status"
+  ]
+ },
+ "M46": {
+  "aircraft": [
+   "aircraft_id",
+   "tail_number"
+  ],
+  "flights": [
+   "aircraft_id"
+  ]
+ },
+ "M47": {
+  "customers": [
+   "customer_id",
+   "name"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "M48": {
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "crew_members": [
+   "airline_id",
+   "crew_rank",
+   "is_active"
+  ]
+ },
+ "M49": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "fuel_uplifts": [
+   "airport_id",
+   "quantity_litres"
+  ]
+ },
+ "M50": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flights": [
+   "aircraft_id",
+   "flight_id"
+  ],
+  "fuel_uplifts": [
+   "flight_id",
+   "saf_blend_pct"
+  ]
+ },
+ "M51": {
+  "maintenance_records": [
+   "is_aog",
+   "mro_provider"
+  ]
+ },
+ "M52": {
+  "aircraft": [
+   "aircraft_id",
+   "tail_number"
+  ],
+  "maintenance_records": [
+   "aircraft_id",
+   "labor_cost_usd",
+   "parts_cost_usd",
+   "status"
+  ]
+ },
+ "M53": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "maintenance_records": [
+   "airport_id"
+  ]
+ },
+ "M54": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "shipments": [
+   "destination_airport_id",
+   "status"
+  ]
+ },
+ "M55": {
+  "customers": [
+   "customer_id",
+   "customer_type"
+  ],
+  "shipments": [
+   "customer_id",
+   "declared_value_usd"
+  ]
+ },
+ "M56": {
+  "shipments": [
+   "booking_date",
+   "is_temperature_controlled"
+  ]
+ },
+ "M57": {
+  "flight_cargo": [
+   "shipment_id",
+   "uld_type"
+  ],
+  "shipments": [
+   "shipment_id",
+   "total_weight_kg"
+  ]
+ },
+ "M58": {
+  "customers": [
+   "customer_id",
+   "sales_region"
+  ],
+  "invoices": [
+   "due_date",
+   "shipment_id",
+   "status"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "M59": {
+  "invoices": [
+   "amount_usd",
+   "shipment_id"
+  ],
+  "shipments": [
+   "service_level",
+   "shipment_id"
+  ]
+ },
+ "M60": {
+  "payments": [
+   "amount_usd",
+   "original_currency"
+  ]
+ },
+ "M61": {
+  "customers": [
+   "customer_id",
+   "name"
+  ],
+  "payments": [
+   "bank_charges_usd",
+   "customer_id"
+  ]
+ },
+ "M62": {
+  "incidents": [
+   "resolved",
+   "root_cause"
+  ]
+ },
+ "M63": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flight_cargo": [
+   "flight_cargo_id",
+   "flight_id"
+  ],
+  "flights": [
+   "aircraft_id",
+   "flight_id"
+  ],
+  "incidents": [
+   "flight_cargo_id"
+  ]
+ },
+ "M64": {
+  "customers": [
+   "customer_id",
+   "name"
+  ],
+  "insurance_claims": [
+   "claimed_amount_usd",
+   "customer_id"
+  ]
+ },
+ "M65": {
+  "customs_declarations": [
+   "customs_country",
+   "status"
+  ]
+ },
+ "M66": {
+  "customs_declarations": [
+   "customs_value_usd",
+   "declaration_type",
+   "goods_description"
+  ]
+ },
+ "M67": {
+  "customs_declarations": [
+   "warehouse_id"
+  ],
+  "warehouses": [
+   "warehouse_code",
+   "warehouse_id"
+  ]
+ },
+ "M68": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "tracking_events": [
+   "airport_id",
+   "event_code"
+  ]
+ },
+ "M69": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "shipments": [
+   "destination_airport_id",
+   "shipment_id",
+   "status"
+  ],
+  "tracking_events": [
+   "event_code",
+   "shipment_id"
+  ]
+ },
+ "M70": {
+  "crew_assignments": [
+   "assignment_status",
+   "crew_member_id",
+   "is_pilot_flying"
+  ],
+  "crew_members": [
+   "crew_member_id",
+   "employee_number"
+  ]
+ },
+ "M71": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "crew_members": [
+   "base_airport_id",
+   "crew_rank",
+   "is_active",
+   "total_flight_hours"
+  ]
+ },
+ "M72": {
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "crew_assignments": [
+   "assignment_status",
+   "crew_member_id",
+   "per_diem_usd"
+  ],
+  "crew_members": [
+   "airline_id",
+   "crew_member_id"
+  ]
+ },
+ "M73": {
+  "flights": [
+   "actual_departure",
+   "scheduled_departure",
+   "status",
+   "weather_at_departure"
+  ]
+ },
+ "M74": {
+  "flights": [
+   "scheduled_departure",
+   "status"
+  ]
+ },
+ "M75": {
+  "aircraft": [
+   "airline_id",
+   "ownership"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ]
+ },
+ "M76": {
+  "airports": [
+   "airport_id",
+   "iata_code",
+   "region"
+  ],
+  "warehouses": [
+   "airport_id",
+   "floor_area_m2"
+  ]
+ },
+ "M77": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "shipments": [
+   "booking_date",
+   "origin_airport_id",
+   "requested_delivery_date",
+   "service_level"
+  ]
+ },
+ "M78": {
+  "invoices": [
+   "amount_usd",
+   "payment_terms_days"
+  ]
+ },
+ "M79": {
+  "customers": [
+   "customer_id",
+   "name"
+  ],
+  "shipments": [
+   "customer_id",
+   "is_dangerous_goods"
+  ]
+ },
+ "M80": {
+  "aircraft": [
+   "aircraft_id",
+   "type_id"
+  ],
+  "aircraft_types": [
+   "model",
+   "type_id"
+  ],
+  "flights": [
+   "aircraft_id",
+   "flight_id"
+  ],
+  "fuel_uplifts": [
+   "flight_id",
+   "fuel_burned_kg"
+  ]
+ },
+ "H01": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id",
+   "tail_number"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flights": [
+   "aircraft_id",
+   "status"
+  ]
+ },
+ "H02": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "flights": [
+   "aircraft_id",
+   "destination_airport_id",
+   "status"
+  ]
+ },
+ "H03": {
+  "invoices": [
+   "amount_usd",
+   "issued_date"
+  ]
+ },
+ "H04": {
+  "flights": [
+   "actual_departure",
+   "status"
+  ]
+ },
+ "H05": {
+  "aircraft": [
+   "aircraft_id",
+   "tail_number"
+  ],
+  "flights": [
+   "actual_arrival",
+   "actual_departure",
+   "aircraft_id",
+   "status"
+  ]
+ },
+ "H06": {
+  "customers": [
+   "customer_id",
+   "name"
+  ],
+  "invoices": [
+   "amount_usd",
+   "shipment_id"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "H07": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "flight_cargo": [
+   "flight_id",
+   "leg_status",
+   "shipment_id"
+  ],
+  "flights": [
+   "flight_id",
+   "origin_airport_id"
+  ],
+  "shipments": [
+   "shipment_id",
+   "total_weight_kg"
+  ]
+ },
+ "H08": {
+  "aircraft": [
+   "aircraft_id",
+   "type_id"
+  ],
+  "aircraft_types": [
+   "max_volume_m3",
+   "model",
+   "type_id"
+  ],
+  "flight_cargo": [
+   "flight_id",
+   "shipment_id"
+  ],
+  "flights": [
+   "aircraft_id",
+   "flight_id",
+   "status"
+  ],
+  "shipments": [
+   "shipment_id",
+   "total_volume_m3"
+  ]
+ },
+ "H09": {
+  "aircraft": [
+   "aircraft_id",
+   "tail_number"
+  ],
+  "airports": [
+   "airport_id",
+   "is_cargo_hub"
+  ],
+  "flights": [
+   "aircraft_id",
+   "destination_airport_id",
+   "status"
+  ]
+ },
+ "H10": {
+  "customs_declarations": [
+   "customs_country",
+   "customs_value_usd",
+   "declaration_type",
+   "duty_amount_usd",
+   "vat_amount_usd"
+  ]
+ },
+ "H11": {
+  "tracking_events": [
+   "event_code",
+   "event_time",
+   "shipment_id",
+   "warehouse_id"
+  ],
+  "warehouses": [
+   "warehouse_code",
+   "warehouse_id"
+  ]
+ },
+ "H12": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "shipments": [
+   "origin_airport_id",
+   "shipment_id"
+  ],
+  "tracking_events": [
+   "event_code",
+   "event_time",
+   "shipment_id"
+  ]
+ },
+ "H13": {
+  "aircraft": [
+   "aircraft_id",
+   "type_id"
+  ],
+  "aircraft_types": [
+   "model",
+   "type_id"
+  ],
+  "maintenance_records": [
+   "aircraft_id",
+   "labor_cost_usd",
+   "parts_cost_usd",
+   "status",
+   "work_order_number"
+  ]
+ },
+ "H14": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flights": [
+   "actual_departure",
+   "aircraft_id",
+   "scheduled_departure",
+   "status"
+  ]
+ },
+ "H15": {
+  "customers": [
+   "customer_id",
+   "loyalty_tier"
+  ],
+  "invoices": [
+   "amount_usd",
+   "discount_usd",
+   "shipment_id"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "H16": {
+  "aircraft": [
+   "aircraft_id",
+   "tail_number",
+   "type_id"
+  ],
+  "aircraft_types": [
+   "max_takeoff_weight_kg",
+   "type_id"
+  ],
+  "flights": [
+   "aircraft_id",
+   "takeoff_weight_kg"
+  ]
+ },
+ "H17": {
+  "payments": [
+   "exchange_rate_to_usd",
+   "original_currency",
+   "payment_date"
+  ]
+ },
+ "H18": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "flight_cargo": [
+   "flight_id",
+   "leg_number",
+   "shipment_id"
+  ],
+  "flights": [
+   "actual_arrival",
+   "actual_departure",
+   "destination_airport_id",
+   "flight_id",
+   "status"
+  ]
+ },
+ "H19": {
+  "insurance_claims": [
+   "filed_date",
+   "insurer_name",
+   "settlement_date",
+   "status"
+  ]
+ },
+ "H20": {
+  "crew_assignments": [
+   "assignment_status",
+   "crew_member_id",
+   "duty_role",
+   "flight_id"
+  ],
+  "crew_members": [
+   "crew_member_id",
+   "employee_number"
+  ]
+ },
+ "H21": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "flights": [
+   "actual_departure",
+   "origin_airport_id",
+   "status"
+  ]
+ },
+ "H22": {
+  "customers": [
+   "customer_id",
+   "name"
+  ],
+  "invoices": [
+   "shipment_id",
+   "status"
+  ],
+  "payments": [
+   "customer_id",
+   "payment_date"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "H23": {
+  "aircraft": [
+   "aircraft_id",
+   "type_id"
+  ],
+  "aircraft_types": [
+   "model",
+   "type_id"
+  ],
+  "flight_cargo": [
+   "flight_id",
+   "shipment_id"
+  ],
+  "flights": [
+   "aircraft_id",
+   "flight_id"
+  ],
+  "shipments": [
+   "is_dangerous_goods",
+   "is_temperature_controlled",
+   "shipment_id"
+  ]
+ },
+ "H24": {
+  "shipments": [
+   "commodity_category",
+   "shipment_id",
+   "total_weight_kg"
+  ]
+ },
+ "H25": {
+  "customers": [
+   "customer_id",
+   "name"
+  ],
+  "shipments": [
+   "booking_date",
+   "customer_id",
+   "status"
+  ]
+ },
+ "H26": {
+  "crew_assignments": [
+   "assignment_status",
+   "block_minutes_credited",
+   "crew_member_id",
+   "report_time"
+  ],
+  "crew_members": [
+   "crew_member_id",
+   "employee_number"
+  ]
+ },
+ "H27": {
+  "customers": [
+   "customer_id",
+   "loyalty_tier"
+  ],
+  "shipments": [
+   "customer_id",
+   "requested_delivery_date",
+   "shipment_id"
+  ],
+  "tracking_events": [
+   "event_code",
+   "event_time",
+   "shipment_id"
+  ]
+ },
+ "H28": {
+  "shipments": [
+   "booking_date",
+   "service_level"
+  ]
+ },
+ "H29": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id",
+   "tail_number"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flights": [
+   "actual_arrival",
+   "actual_departure",
+   "aircraft_id",
+   "status"
+  ]
+ },
+ "H30": {
+  "aircraft": [
+   "aircraft_id",
+   "type_id"
+  ],
+  "aircraft_types": [
+   "max_payload_kg",
+   "type_id"
+  ],
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "flight_cargo": [
+   "flight_id",
+   "shipment_id"
+  ],
+  "flights": [
+   "aircraft_id",
+   "destination_airport_id",
+   "flight_id",
+   "origin_airport_id",
+   "status"
+  ],
+  "shipments": [
+   "shipment_id",
+   "total_weight_kg"
+  ]
+ },
+ "H31": {
+  "customers": [
+   "customer_id",
+   "name"
+  ],
+  "flight_cargo": [
+   "flight_cargo_id",
+   "shipment_id"
+  ],
+  "incidents": [
+   "flight_cargo_id",
+   "incident_id"
+  ],
+  "insurance_claims": [
+   "approved_amount_usd",
+   "incident_id",
+   "status"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "H32": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flights": [
+   "actual_arrival",
+   "actual_departure",
+   "aircraft_id",
+   "scheduled_arrival",
+   "scheduled_departure",
+   "status"
+  ]
+ },
+ "H33": {
+  "airports": [
+   "airport_id",
+   "is_cargo_hub"
+  ],
+  "customers": [
+   "customer_id",
+   "name"
+  ],
+  "shipments": [
+   "customer_id",
+   "destination_airport_id",
+   "status"
+  ]
+ },
+ "H34": {
+  "aircraft": [
+   "aircraft_id",
+   "status",
+   "tail_number"
+  ],
+  "maintenance_records": [
+   "aircraft_id",
+   "end_time",
+   "status"
+  ]
+ },
+ "H35": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "fuel_uplifts": [
+   "airport_id",
+   "price_usd_per_litre"
+  ]
+ },
+ "H36": {
+  "crew_assignments": [
+   "crew_member_id",
+   "rest_minutes_before"
+  ],
+  "crew_members": [
+   "crew_member_id",
+   "crew_rank",
+   "employee_number"
+  ]
+ },
+ "H37": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "customs_declarations": [
+   "cleared_at",
+   "declaration_type",
+   "shipment_id",
+   "status"
+  ],
+  "flight_cargo": [
+   "flight_id",
+   "leg_number",
+   "shipment_id"
+  ],
+  "flights": [
+   "actual_departure",
+   "flight_id",
+   "origin_airport_id",
+   "status"
+  ]
+ },
+ "H38": {
+  "shipments": [
+   "commodity_category",
+   "declared_value_usd",
+   "status"
+  ]
+ },
+ "H39": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "customers": [
+   "customer_id",
+   "name"
+  ],
+  "shipments": [
+   "customer_id",
+   "destination_airport_id",
+   "status"
+  ]
+ },
+ "H40": {
+  "customers": [
+   "customer_id",
+   "customer_type"
+  ],
+  "invoices": [
+   "invoice_id",
+   "shipment_id"
+  ],
+  "payments": [
+   "invoice_id",
+   "payment_date"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "H41": {
+  "customers": [
+   "customer_id",
+   "name",
+   "sales_region"
+  ],
+  "invoices": [
+   "amount_usd",
+   "shipment_id"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "H42": {
+  "fuel_uplifts": [
+   "total_cost_usd",
+   "uplift_time"
+  ]
+ },
+ "H43": {
+  "aircraft": [
+   "aircraft_id",
+   "tail_number"
+  ],
+  "maintenance_records": [
+   "aircraft_id",
+   "start_time",
+   "status"
+  ]
+ },
+ "H44": {
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "crew_assignments": [
+   "assignment_status",
+   "block_minutes_credited",
+   "crew_member_id",
+   "duty_role"
+  ],
+  "crew_members": [
+   "airline_id",
+   "crew_member_id",
+   "employee_number"
+  ]
+ },
+ "H45": {
+  "customers": [
+   "customer_id",
+   "name"
+  ],
+  "invoices": [
+   "amount_usd",
+   "issued_date",
+   "shipment_id"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "H46": {
+  "customers": [
+   "customer_id",
+   "name"
+  ],
+  "invoices": [
+   "amount_usd",
+   "invoice_id",
+   "shipment_id",
+   "status"
+  ],
+  "payments": [
+   "amount_usd",
+   "invoice_id"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "H47": {
+  "aircraft": [
+   "aircraft_id",
+   "type_id"
+  ],
+  "aircraft_types": [
+   "model",
+   "type_id"
+  ],
+  "flight_cargo": [
+   "flight_id"
+  ],
+  "flights": [
+   "aircraft_id",
+   "flight_id",
+   "status"
+  ]
+ },
+ "H48": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "incidents": [
+   "airport_id"
+  ],
+  "shipments": [
+   "origin_airport_id"
+  ]
+ },
+ "H49": {
+  "airports": [
+   "airport_id",
+   "region"
+  ],
+  "warehouses": [
+   "airport_id",
+   "operator_name"
+  ]
+ },
+ "H50": {
+  "shipments": [
+   "awb_number",
+   "commodity_category",
+   "declared_value_usd"
+  ]
+ },
+ "H51": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id",
+   "type_id"
+  ],
+  "aircraft_types": [
+   "model",
+   "type_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flights": [
+   "aircraft_id",
+   "status"
+  ]
+ },
+ "H52": {
+  "shipments": [
+   "chargeable_weight_kg",
+   "service_level",
+   "status"
+  ]
+ },
+ "H53": {
+  "shipments": [
+   "booking_date",
+   "customer_id",
+   "service_level",
+   "shipment_id"
+  ]
+ },
+ "H54": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flights": [
+   "actual_departure",
+   "aircraft_id",
+   "status"
+  ],
+  "maintenance_records": [
+   "aircraft_id",
+   "end_time",
+   "is_aog",
+   "status"
+  ]
+ },
+ "H55": {
+  "customers": [
+   "created_date"
+  ]
+ },
+ "H56": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "flights": [
+   "aircraft_id",
+   "destination_airport_id",
+   "origin_airport_id",
+   "status"
+  ]
+ },
+ "H57": {
+  "crew_assignments": [
+   "assignment_status",
+   "crew_member_id",
+   "duty_role",
+   "is_pilot_flying"
+  ],
+  "crew_members": [
+   "crew_member_id",
+   "employee_number"
+  ]
+ },
+ "H58": {
+  "invoices": [
+   "amount_usd",
+   "due_date",
+   "status"
+  ]
+ },
+ "H59": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flights": [
+   "actual_departure",
+   "aircraft_id",
+   "status"
+  ]
+ },
+ "H60": {
+  "aircraft": [
+   "aircraft_id",
+   "type_id"
+  ],
+  "aircraft_types": [
+   "model",
+   "type_id"
+  ],
+  "crew_assignments": [
+   "flight_id"
+  ],
+  "flights": [
+   "aircraft_id",
+   "flight_id",
+   "status"
+  ]
+ },
+ "H61": {
+  "aircraft": [
+   "aircraft_id",
+   "type_id"
+  ],
+  "aircraft_types": [
+   "model",
+   "type_id"
+  ],
+  "flights": [
+   "aircraft_id",
+   "distance_km",
+   "flight_id",
+   "status"
+  ],
+  "fuel_uplifts": [
+   "flight_id",
+   "fuel_burned_kg"
+  ]
+ },
+ "H62": {
+  "customers": [
+   "customer_id",
+   "name"
+  ],
+  "invoices": [
+   "due_date",
+   "invoice_id"
+  ],
+  "payments": [
+   "customer_id",
+   "invoice_id",
+   "payment_date"
+  ]
+ },
+ "H63": {
+  "crew_assignments": [
+   "assignment_status",
+   "crew_member_id",
+   "duty_role",
+   "flight_id"
+  ],
+  "crew_members": [
+   "crew_member_id",
+   "employee_number"
+  ]
+ },
+ "H64": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "flights": [
+   "actual_arrival",
+   "destination_airport_id",
+   "scheduled_arrival",
+   "status"
+  ]
+ },
+ "H65": {
+  "aircraft": [
+   "aircraft_id",
+   "tail_number"
+  ],
+  "flights": [
+   "actual_arrival",
+   "actual_departure",
+   "aircraft_id",
+   "status"
+  ]
+ },
+ "H66": {
+  "customs_declarations": [
+   "cleared_at",
+   "customs_country",
+   "declaration_type",
+   "shipment_id",
+   "status"
+  ]
+ },
+ "H67": {
+  "shipments": [
+   "booking_date",
+   "service_level",
+   "shipment_id"
+  ],
+  "tracking_events": [
+   "event_code",
+   "event_time",
+   "shipment_id"
+  ]
+ },
+ "H68": {
+  "incidents": [
+   "incident_id",
+   "reported_at"
+  ],
+  "insurance_claims": [
+   "filed_date",
+   "incident_id",
+   "insurer_name",
+   "status"
+  ]
+ },
+ "H69": {
+  "customers": [
+   "customer_id",
+   "name",
+   "sales_region"
+  ],
+  "shipments": [
+   "customer_id",
+   "status"
+  ]
+ },
+ "H70": {
+  "flights": [
+   "actual_departure",
+   "scheduled_departure",
+   "status"
+  ]
+ },
+ "H71": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flight_cargo": [
+   "flight_id",
+   "shipment_id"
+  ],
+  "flights": [
+   "aircraft_id",
+   "flight_id",
+   "status"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "H72": {
+  "invoices": [
+   "amount_usd",
+   "shipment_id"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "H73": {
+  "airports": [
+   "airport_id",
+   "iata_code"
+  ],
+  "shipments": [
+   "is_temperature_controlled",
+   "origin_airport_id"
+  ],
+  "warehouses": [
+   "airport_id",
+   "warehouse_type"
+  ]
+ },
+ "H74": {
+  "flights": [
+   "cancellation_reason",
+   "flight_id",
+   "scheduled_departure"
+  ]
+ },
+ "H75": {
+  "aircraft": [
+   "aircraft_id",
+   "tail_number"
+  ],
+  "flights": [
+   "actual_departure",
+   "aircraft_id",
+   "status"
+  ]
+ },
+ "H76": {
+  "customers": [
+   "customer_id",
+   "customer_type",
+   "name"
+  ],
+  "invoices": [
+   "amount_usd",
+   "shipment_id"
+  ],
+  "shipments": [
+   "customer_id",
+   "shipment_id"
+  ]
+ },
+ "H77": {
+  "incidents": [
+   "reported_at",
+   "resolved",
+   "resolved_at",
+   "severity"
+  ]
+ },
+ "H78": {
+  "invoices": [
+   "amount_usd",
+   "shipment_id"
+  ],
+  "shipments": [
+   "awb_number",
+   "chargeable_weight_kg",
+   "commodity_category",
+   "shipment_id"
+  ]
+ },
+ "H79": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flights": [
+   "actual_departure",
+   "aircraft_id",
+   "status"
+  ]
+ },
+ "H80": {
+  "aircraft": [
+   "aircraft_id",
+   "airline_id"
+  ],
+  "airlines": [
+   "airline_id",
+   "name"
+  ],
+  "flight_cargo": [
+   "flight_id",
+   "leg_number",
+   "shipment_id"
+  ],
+  "flights": [
+   "aircraft_id",
+   "flight_id"
+  ]
+ }
+}

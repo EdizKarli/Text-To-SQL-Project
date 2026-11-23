@@ -70,8 +70,10 @@ scripts/build_db.py, build_variants.py, naming.py, sql_translate.py, make_docs.p
 validation/                      validation_checks.sql, run_validation.py, test_gold.py, test_checks_catch_errors.py,
                                  test_variants.py, validation_report.txt
 evaluation/run_ollama.py         asks a local Ollama model the questions for one variant -> evaluation/predictions/
-evaluation/evaluate.py           EX, strict EX, valid execution rate, latency, tokens, ms/token, tokens/s by difficulty x style
+evaluation/evaluate.py           EX, strict EX, valid execution rate, latency, tokens, tokens/s by difficulty x style
 evaluation/compare_runs.py       side-by-side table of several *_results.json (variants, models)
+evaluation/two_pass.py           two-pass pipeline: schema linking (llm or bm25), then SQL with timeout and retry
+questions/gold_links.json        tables and columns used by each Gold query (scripts/make_gold_links.py)
 evaluation/example_predictions.json   normal-schema example with a few deliberate mistakes
 hints/                           reasoning hints for every question and variant (see hints/README.md)
 splits/split_80_20.json          train / dev / test split by base question (make_split.py, check_split.py)
@@ -112,6 +114,16 @@ Add `--difficulty easy|moderate|hard`, `--style casual|schema_aware|business_exe
 
 Prompt = schema of the variant + (optional) evidence + question. The answer specification is **not** shown by default (it is the same for all four styles and would erase their differences); `--with-spec` adds it. `--schema compact` (default) lists columns, types, keys and allowed coded values in about 3.0k (normal), 3.2k (cryptic) and 3.3k (mixed) prompt tokens as measured by Ollama for Qwen2.5-Coder, so it fits the 8k context used for small models (the short German abbreviations split into more tokens than English words); `--schema full` sends the whole DDL, which is too close to 8k for normal, so use `--num-ctx 16384`. Outputs in `evaluation/predictions/`: `pred_<tag>.json` (SQL), `pred_<tag>_raw.json` (raw text + Ollama counters per question) and `pred_<tag>_results.json` (scores).
 
+## Two-pass pipeline (schema linking, then SQL)
+`evaluation/two_pass.py` splits the work in two. **Pass 1** finds the tables and columns the question needs: `--linker llm` asks a model (option 1; tables and columns only, no hint), `--linker bm25` uses no model, only BM25 search over the data dictionary plus fuzzy matching of the question's words against values stored in the database (option 2). Tables needed to join the chosen ones are added through the foreign keys. **Pass 2** gives another model (by default the 1.5B coder after option 1, the 7B coder after option 2) the question and the schema of those tables only (with the dictionary), and it writes the SQL. Each attempt has an 8 s timeout (`--timeout`); invalid SQL or a timeout gets one more attempt with the error message (`--retries`).
+```bash
+ollama pull qwen2.5-coder:7b && ollama pull qwen2.5-coder:1.5b   # option 1: 7B coder finds the tables, 1.5B coder writes the SQL
+python evaluation/two_pass.py --variant cryptic --linker bm25 --bases-per-difficulty 40 --evaluate   # option 2: BM25, then 7B writes the SQL
+python evaluation/two_pass.py --variant cryptic --linker llm --bases-per-difficulty 40 --evaluate    # option 1: 7B finds the tables, 1.5B writes the SQL
+python evaluation/two_pass.py --variant cryptic --linker bm25 --link-only   # score pass 1 alone (no model needed)
+```
+Pass 1 runs for all questions, then pass 2 for all, so only one model is loaded at a time. Pass 1 is scored against the tables and columns of the Gold query (`questions/gold_links.json`, made by `scripts/make_gold_links.py`). On the 684 cryptic train questions the BM25 linker keeps all needed tables for 78% of questions with about 5 of the 20 tables. The latency in the results is end-to-end (pass 1 + all pass-2 attempts); the script also prints pass-2 time per attempt, first-try validity and how often the retry was used.
+
 ## Evaluation protocol and metrics
 The model gets the question and the schema of one variant (permitted context only; optionally the naming map as evidence). Its SQL runs read-only with a timeout on that variant's database. `evaluate.py` reports, overall, by difficulty, by style and as a difficulty × style grid:
 
@@ -122,7 +134,6 @@ The model gets the question and the schema of one variant (permitted context onl
 | **Valid execution rate (VER)** | share of questions whose SQL ran without error or timeout, right or wrong |
 | **Latency** | wall-clock seconds per question for the model call: mean, median, p95, total. Model calls that fail or time out (`run_ollama.py --timeout`, default 300 s; `evaluate.py --timeout`, default 30 s, is the separate limit for running each SQL query) are scored as `missing` and left out of all speed metrics; `evaluate.py` lists them. An untimed warm-up call loads the model before the first question |
 | **Tokens created** | tokens generated by the model (Ollama `eval_count`): mean and total; prompt tokens are reported too |
-| **Latency per token** | total latency / total tokens created, in ms/token (includes prompt processing and loading) |
 | **Tokens per second** | total tokens created / total generation time (Ollama `eval_duration`): pure decoding speed |
 
 **Read EX and VER together.** A high VER with a low EX means the SQL runs but answers the wrong thing. With Qwen2.5-Coder 7B (measured on the original 480 questions), cryptic has the *highest* VER (92.1%) but the *lowest* EX (16.5%; normal 39.0%, mixed 34.2%): the model writes valid SQL over `c01…c22`, but picks the wrong tables and columns because the names carry no meaning.

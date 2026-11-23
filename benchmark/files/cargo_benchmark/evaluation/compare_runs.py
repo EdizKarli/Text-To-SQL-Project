@@ -7,7 +7,7 @@ Reads the *_results.json files written by evaluate.py --out (run_ollama.py --eva
 import argparse, csv, glob, json, os
 
 METRICS = [("EX_pct", "EX %"), ("EX_strict_pct", "EX strict %"), ("VER_pct", "VER %"), ("latency_mean_s", "latency s"),
-           ("latency_p95_s", "p95 s"), ("tokens_mean", "tokens"), ("ms_per_token", "ms/token"), ("tokens_per_s", "tokens/s")]
+           ("latency_p95_s", "p95 s"), ("tokens_mean", "tokens"), ("tokens_per_s", "tokens/s")]
 STYLES = ("casual", "schema_aware", "business_executive", "vague")
 DIFFS = ("easy", "moderate", "hard")
 

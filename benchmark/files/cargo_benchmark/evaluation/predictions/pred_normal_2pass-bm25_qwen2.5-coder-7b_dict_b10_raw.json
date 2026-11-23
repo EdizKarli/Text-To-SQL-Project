@@ -1,0 +1,3236 @@
+{
+  "_run": {
+    "variant": "normal",
+    "model": "qwen2.5-coder:7b",
+    "schema": "compact-pruned",
+    "evidence": false,
+    "dictionary": true,
+    "with_spec": false,
+    "num_ctx": 16384,
+    "pipeline": "two_pass",
+    "linker": "bm25",
+    "timeout_s": 8,
+    "retries": 1
+  },
+  "E01-CAS": {
+    "raw": "```sql\nSELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1;\n```",
+    "error": null,
+    "latency_s": 3.083,
+    "pass1_s": 0.01,
+    "pass2_s": 3.073,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1;\n```",
+        "sql": "SELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.073,
+        "eval_count": 19,
+        "eval_duration_s": 0.386296,
+        "prompt_eval_count": 1010
+      }
+    ],
+    "retried": false,
+    "eval_count": 19,
+    "eval_duration_s": 0.386296,
+    "prompt_eval_count": 1010
+  },
+  "E01-SCH": {
+    "raw": "```sql\nSELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1;\n```",
+    "error": null,
+    "latency_s": 3.197,
+    "pass1_s": 0.012,
+    "pass2_s": 3.185,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1;\n```",
+        "sql": "SELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.185,
+        "eval_count": 19,
+        "eval_duration_s": 0.381635,
+        "prompt_eval_count": 2225
+      }
+    ],
+    "retried": false,
+    "eval_count": 19,
+    "eval_duration_s": 0.381635,
+    "prompt_eval_count": 2225
+  },
+  "E01-BIZ": {
+    "raw": "```sql\nSELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1;\n```",
+    "error": null,
+    "latency_s": 2.714,
+    "pass1_s": 0.018,
+    "pass2_s": 2.696,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1;\n```",
+        "sql": "SELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.696,
+        "eval_count": 19,
+        "eval_duration_s": 0.356928,
+        "prompt_eval_count": 1018
+      }
+    ],
+    "retried": false,
+    "eval_count": 19,
+    "eval_duration_s": 0.356928,
+    "prompt_eval_count": 1018
+  },
+  "E01-VAG": {
+    "raw": "```sql\nSELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1;\n```",
+    "error": null,
+    "latency_s": 2.748,
+    "pass1_s": 0.006,
+    "pass2_s": 2.742,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1;\n```",
+        "sql": "SELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.742,
+        "eval_count": 19,
+        "eval_duration_s": 0.444686,
+        "prompt_eval_count": 986
+      }
+    ],
+    "retried": false,
+    "eval_count": 19,
+    "eval_duration_s": 0.444686,
+    "prompt_eval_count": 986
+  },
+  "E02-CAS": {
+    "raw": "```sql\nSELECT iata_code, icao_code FROM airports WHERE night_curfew = 1;\n```",
+    "error": null,
+    "latency_s": 3.508,
+    "pass1_s": 0.014,
+    "pass2_s": 3.494,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT iata_code, icao_code FROM airports WHERE night_curfew = 1;\n```",
+        "sql": "SELECT iata_code, icao_code FROM airports WHERE night_curfew = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.494,
+        "eval_count": 23,
+        "eval_duration_s": 0.438963,
+        "prompt_eval_count": 2112
+      }
+    ],
+    "retried": false,
+    "eval_count": 23,
+    "eval_duration_s": 0.438963,
+    "prompt_eval_count": 2112
+  },
+  "E02-SCH": {
+    "raw": "```sql\nSELECT iata_code FROM airports WHERE night_curfew = 1 ORDER BY iata_code;\n```",
+    "error": null,
+    "latency_s": 3.308,
+    "pass1_s": 0.016,
+    "pass2_s": 3.292,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT iata_code FROM airports WHERE night_curfew = 1 ORDER BY iata_code;\n```",
+        "sql": "SELECT iata_code FROM airports WHERE night_curfew = 1 ORDER BY iata_code",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.292,
+        "eval_count": 24,
+        "eval_duration_s": 0.453406,
+        "prompt_eval_count": 2194
+      }
+    ],
+    "retried": false,
+    "eval_count": 24,
+    "eval_duration_s": 0.453406,
+    "prompt_eval_count": 2194
+  },
+  "E02-BIZ": {
+    "raw": "```sql\nSELECT DISTINCT airports.iata_code, airports.icao_code FROM airports JOIN warehouses ON airports.airport_id = warehouses.airport_id WHERE airports.night_curfew = 1;\n```",
+    "error": null,
+    "latency_s": 3.19,
+    "pass1_s": 0.025,
+    "pass2_s": 3.165,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT DISTINCT airports.iata_code, airports.icao_code FROM airports JOIN warehouses ON airports.airport_id = warehouses.airport_id WHERE airports.night_curfew = 1;\n```",
+        "sql": "SELECT DISTINCT airports.iata_code, airports.icao_code FROM airports JOIN warehouses ON airports.airport_id = warehouses.airport_id WHERE airports.night_curfew = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.165,
+        "eval_count": 40,
+        "eval_duration_s": 0.776628,
+        "prompt_eval_count": 770
+      }
+    ],
+    "retried": false,
+    "eval_count": 40,
+    "eval_duration_s": 0.776628,
+    "prompt_eval_count": 770
+  },
+  "E02-VAG": {
+    "raw": "```sql\nSELECT DISTINCT a.name AS airport_name\nFROM airports a\nJOIN flights f ON a.airport_id = f.origin_airport_id\nJOIN crew_assignments ca ON f.flight_id = ca.flight_id\nWHERE a.night_curfew = 1 AND ca.is_pilot_flying = 1;\n```",
+    "error": null,
+    "latency_s": 4.002,
+    "pass1_s": 0.009,
+    "pass2_s": 3.993,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT DISTINCT a.name AS airport_name\nFROM airports a\nJOIN flights f ON a.airport_id = f.origin_airport_id\nJOIN crew_assignments ca ON f.flight_id = ca.flight_id\nWHERE a.night_curfew = 1 AND ca.is_pilot_flying = 1;\n```",
+        "sql": "SELECT DISTINCT a.name AS airport_name FROM airports a JOIN flights f ON a.airport_id = f.origin_airport_id JOIN crew_assignments ca ON f.flight_id = ca.flight_id WHERE a.night_curfew = 1 AND ca.is_pilot_flying = 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.993,
+        "eval_count": 68,
+        "eval_duration_s": 1.313423,
+        "prompt_eval_count": 1960
+      }
+    ],
+    "retried": false,
+    "eval_count": 68,
+    "eval_duration_s": 1.313423,
+    "prompt_eval_count": 1960
+  },
+  "E03-CAS": {
+    "raw": "```sql\nSELECT name FROM airlines WHERE alliance = 'CargoLink';\n```",
+    "error": null,
+    "latency_s": 2.806,
+    "pass1_s": 0.009,
+    "pass2_s": 2.797,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT name FROM airlines WHERE alliance = 'CargoLink';\n```",
+        "sql": "SELECT name FROM airlines WHERE alliance = 'CargoLink'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.797,
+        "eval_count": 16,
+        "eval_duration_s": 0.29155,
+        "prompt_eval_count": 699
+      }
+    ],
+    "retried": false,
+    "eval_count": 16,
+    "eval_duration_s": 0.29155,
+    "prompt_eval_count": 699
+  },
+  "E03-SCH": {
+    "raw": "```sql\nSELECT name FROM airlines WHERE alliance = 'CargoLink' ORDER BY name;\n```",
+    "error": null,
+    "latency_s": 3.047,
+    "pass1_s": 0.014,
+    "pass2_s": 3.033,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT name FROM airlines WHERE alliance = 'CargoLink' ORDER BY name;\n```",
+        "sql": "SELECT name FROM airlines WHERE alliance = 'CargoLink' ORDER BY name",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.033,
+        "eval_count": 20,
+        "eval_duration_s": 0.398256,
+        "prompt_eval_count": 1288
+      }
+    ],
+    "retried": false,
+    "eval_count": 20,
+    "eval_duration_s": 0.398256,
+    "prompt_eval_count": 1288
+  },
+  "E03-BIZ": {
+    "raw": "```sql\nSELECT name FROM airlines WHERE alliance = 'CargoLink';\n```",
+    "error": null,
+    "latency_s": 2.644,
+    "pass1_s": 0.012,
+    "pass2_s": 2.632,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT name FROM airlines WHERE alliance = 'CargoLink';\n```",
+        "sql": "SELECT name FROM airlines WHERE alliance = 'CargoLink'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.632,
+        "eval_count": 16,
+        "eval_duration_s": 0.34105,
+        "prompt_eval_count": 386
+      }
+    ],
+    "retried": false,
+    "eval_count": 16,
+    "eval_duration_s": 0.34105,
+    "prompt_eval_count": 386
+  },
+  "E03-VAG": {
+    "raw": "```sql\nSELECT DISTINCT c.customer_id, c.name, c.country, c.city FROM customers c JOIN shipments s ON c.customer_id = s.customer_id JOIN insurance_claims i ON s.shipment_id = i.shipment_id JOIN airlines a ON a.home_hub_airport_id = s.origin_airport_id WHERE a.alliance = 'CargoLink'\n```",
+    "error": null,
+    "latency_s": 8.228,
+    "pass1_s": 0.004,
+    "pass2_s": 8.224,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT DISTINCT c.customer_id, c.name, c.country, c.city \nFROM customers c \nJOIN shipments s ON c.customer_id = s.customer_id \nJOIN insurance_claims i ON s.shipment_id = i.shipment_id \nJOIN airlines a ON a.home_hub_airport_id = s.origin_airport_id \nWHERE a.alliance = 'CargoLink';\n```",
+        "sql": "SELECT DISTINCT c.customer_id, c.name, c.country, c.city FROM customers c JOIN shipments s ON c.customer_id = s.customer_id JOIN insurance_claims i ON s.shipment_id = i.shipment_id JOIN airlines a ON a.home_hub_airport_id = s.origin_airport_id WHERE a.alliance = 'CargoLink'",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: i.shipment_id",
+        "latency_s": 4.521,
+        "eval_count": 78,
+        "eval_duration_s": 1.516417,
+        "prompt_eval_count": 2325
+      },
+      {
+        "raw": "```sql\nSELECT DISTINCT c.customer_id, c.name, c.country, c.city FROM customers c JOIN shipments s ON c.customer_id = s.customer_id JOIN insurance_claims i ON s.shipment_id = i.shipment_id JOIN airlines a ON a.home_hub_airport_id = s.origin_airport_id WHERE a.alliance = 'CargoLink'\n```",
+        "sql": "SELECT DISTINCT c.customer_id, c.name, c.country, c.city FROM customers c JOIN shipments s ON c.customer_id = s.customer_id JOIN insurance_claims i ON s.shipment_id = i.shipment_id JOIN airlines a ON a.home_hub_airport_id = s.origin_airport_id WHERE a.alliance = 'CargoLink'",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: i.shipment_id",
+        "latency_s": 3.703,
+        "eval_count": 73,
+        "eval_duration_s": 1.420071,
+        "prompt_eval_count": 2415
+      }
+    ],
+    "retried": true,
+    "eval_count": 151,
+    "eval_duration_s": 2.9364879999999998,
+    "prompt_eval_count": 2325
+  },
+  "E04-CAS": {
+    "raw": "```sql\nSELECT model FROM aircraft_types WHERE manufacturer = 'Airbus';\n```",
+    "error": null,
+    "latency_s": 2.908,
+    "pass1_s": 0.01,
+    "pass2_s": 2.898,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT model FROM aircraft_types WHERE manufacturer = 'Airbus';\n```",
+        "sql": "SELECT model FROM aircraft_types WHERE manufacturer = 'Airbus'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.898,
+        "eval_count": 17,
+        "eval_duration_s": 0.331993,
+        "prompt_eval_count": 744
+      }
+    ],
+    "retried": false,
+    "eval_count": 17,
+    "eval_duration_s": 0.331993,
+    "prompt_eval_count": 744
+  },
+  "E04-SCH": {
+    "raw": "```sql\nSELECT model FROM aircraft_types WHERE manufacturer = 'Airbus';\n```",
+    "error": null,
+    "latency_s": 3.272,
+    "pass1_s": 0.011,
+    "pass2_s": 3.261,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT model FROM aircraft_types WHERE manufacturer = 'Airbus';\n```",
+        "sql": "SELECT model FROM aircraft_types WHERE manufacturer = 'Airbus'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.261,
+        "eval_count": 17,
+        "eval_duration_s": 0.314565,
+        "prompt_eval_count": 1840
+      }
+    ],
+    "retried": false,
+    "eval_count": 17,
+    "eval_duration_s": 0.314565,
+    "prompt_eval_count": 1840
+  },
+  "E04-BIZ": {
+    "raw": "```sql\nSELECT aircraft_types.model, aircraft_types.engine_count, aircraft_types.wingspan_m, aircraft_types.max_range_km, aircraft_types.cruise_speed_kmh\nFROM aircraft_types\nJOIN aircraft ON aircraft.type_id = aircraft_types.type_id\nWHERE aircraft_types.manufacturer = 'Airbus';\n```",
+    "error": null,
+    "latency_s": 3.611,
+    "pass1_s": 0.014,
+    "pass2_s": 3.597,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT aircraft_types.model, aircraft_types.engine_count, aircraft_types.wingspan_m, aircraft_types.max_range_km, aircraft_types.cruise_speed_kmh\nFROM aircraft_types\nJOIN aircraft ON aircraft.type_id = aircraft_types.type_id\nWHERE aircraft_types.manufacturer = 'Airbus';\n```",
+        "sql": "SELECT aircraft_types.model, aircraft_types.engine_count, aircraft_types.wingspan_m, aircraft_types.max_range_km, aircraft_types.cruise_speed_kmh FROM aircraft_types JOIN aircraft ON aircraft.type_id = aircraft_types.type_id WHERE aircraft_types.manufacturer = 'Airbus'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.597,
+        "eval_count": 62,
+        "eval_duration_s": 1.288722,
+        "prompt_eval_count": 756
+      }
+    ],
+    "retried": false,
+    "eval_count": 62,
+    "eval_duration_s": 1.288722,
+    "prompt_eval_count": 756
+  },
+  "E04-VAG": {
+    "raw": "```sql\nSELECT model, engine_model, engine_count, wingspan_m FROM aircraft_types WHERE manufacturer = 'Airbus';\n```",
+    "error": null,
+    "latency_s": 2.829,
+    "pass1_s": 0.004,
+    "pass2_s": 2.825,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT model, engine_model, engine_count, wingspan_m FROM aircraft_types WHERE manufacturer = 'Airbus';\n```",
+        "sql": "SELECT model, engine_model, engine_count, wingspan_m FROM aircraft_types WHERE manufacturer = 'Airbus'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.825,
+        "eval_count": 27,
+        "eval_duration_s": 0.557132,
+        "prompt_eval_count": 436
+      }
+    ],
+    "retried": false,
+    "eval_count": 27,
+    "eval_duration_s": 0.557132,
+    "prompt_eval_count": 436
+  },
+  "E05-CAS": {
+    "raw": "```sql\nSELECT COUNT(*) FROM aircraft WHERE ownership = 'leased';\n```",
+    "error": null,
+    "latency_s": 2.791,
+    "pass1_s": 0.013,
+    "pass2_s": 2.778,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM aircraft WHERE ownership = 'leased';\n```",
+        "sql": "SELECT COUNT(*) FROM aircraft WHERE ownership = 'leased'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.778,
+        "eval_count": 16,
+        "eval_duration_s": 0.325304,
+        "prompt_eval_count": 446
+      }
+    ],
+    "retried": false,
+    "eval_count": 16,
+    "eval_duration_s": 0.325304,
+    "prompt_eval_count": 446
+  },
+  "E05-SCH": {
+    "raw": "```sql\nSELECT COUNT(*) FROM aircraft WHERE ownership = 'leased';\n```",
+    "error": null,
+    "latency_s": 2.882,
+    "pass1_s": 0.012,
+    "pass2_s": 2.87,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM aircraft WHERE ownership = 'leased';\n```",
+        "sql": "SELECT COUNT(*) FROM aircraft WHERE ownership = 'leased'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.87,
+        "eval_count": 16,
+        "eval_duration_s": 0.33056,
+        "prompt_eval_count": 1415
+      }
+    ],
+    "retried": false,
+    "eval_count": 16,
+    "eval_duration_s": 0.33056,
+    "prompt_eval_count": 1415
+  },
+  "E05-BIZ": {
+    "raw": "```sql\nSELECT COUNT(*) FROM aircraft WHERE ownership = 'leased';\n```",
+    "error": null,
+    "latency_s": 3.051,
+    "pass1_s": 0.013,
+    "pass2_s": 3.038,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM aircraft WHERE ownership = 'leased';\n```",
+        "sql": "SELECT COUNT(*) FROM aircraft WHERE ownership = 'leased'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.038,
+        "eval_count": 16,
+        "eval_duration_s": 0.312923,
+        "prompt_eval_count": 1520
+      }
+    ],
+    "retried": false,
+    "eval_count": 16,
+    "eval_duration_s": 0.312923,
+    "prompt_eval_count": 1520
+  },
+  "E05-VAG": {
+    "raw": "```sql\nSELECT COUNT(*) FROM aircraft WHERE ownership = 'leased';\n```",
+    "error": null,
+    "latency_s": 2.678,
+    "pass1_s": 0.008,
+    "pass2_s": 2.67,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM aircraft WHERE ownership = 'leased';\n```",
+        "sql": "SELECT COUNT(*) FROM aircraft WHERE ownership = 'leased'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.67,
+        "eval_count": 16,
+        "eval_duration_s": 0.38913,
+        "prompt_eval_count": 426
+      }
+    ],
+    "retried": false,
+    "eval_count": 16,
+    "eval_duration_s": 0.38913,
+    "prompt_eval_count": 426
+  },
+  "E06-CAS": {
+    "raw": "```sql\nSELECT aircraft_id, status FROM aircraft WHERE status != 'active';\n```",
+    "error": null,
+    "latency_s": 3.251,
+    "pass1_s": 0.016,
+    "pass2_s": 3.235,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT aircraft_id, status FROM aircraft WHERE status != 'active';\n```",
+        "sql": "SELECT aircraft_id, status FROM aircraft WHERE status != 'active'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.235,
+        "eval_count": 18,
+        "eval_duration_s": 0.352168,
+        "prompt_eval_count": 2355
+      }
+    ],
+    "retried": false,
+    "eval_count": 18,
+    "eval_duration_s": 0.352168,
+    "prompt_eval_count": 2355
+  },
+  "E06-SCH": {
+    "raw": "```sql\nSELECT tail_number, status FROM aircraft WHERE status != 'active';\n```",
+    "error": null,
+    "latency_s": 3.347,
+    "pass1_s": 0.016,
+    "pass2_s": 3.331,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT tail_number, status FROM aircraft WHERE status != 'active';\n```",
+        "sql": "SELECT tail_number, status FROM aircraft WHERE status != 'active'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.331,
+        "eval_count": 18,
+        "eval_duration_s": 0.335497,
+        "prompt_eval_count": 2088
+      }
+    ],
+    "retried": false,
+    "eval_count": 18,
+    "eval_duration_s": 0.335497,
+    "prompt_eval_count": 2088
+  },
+  "E06-BIZ": {
+    "raw": "```sql\nSELECT aircraft.serial_number, aircraft.status \nFROM aircraft \nWHERE aircraft.status IN ('maintenance', 'retired');\n```",
+    "error": null,
+    "latency_s": 3.169,
+    "pass1_s": 0.018,
+    "pass2_s": 3.151,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT aircraft.serial_number, aircraft.status \nFROM aircraft \nWHERE aircraft.status IN ('maintenance', 'retired');\n```",
+        "sql": "SELECT aircraft.serial_number, aircraft.status FROM aircraft WHERE aircraft.status IN ('maintenance', 'retired')",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.151,
+        "eval_count": 27,
+        "eval_duration_s": 0.524294,
+        "prompt_eval_count": 1368
+      }
+    ],
+    "retried": false,
+    "eval_count": 27,
+    "eval_duration_s": 0.524294,
+    "prompt_eval_count": 1368
+  },
+  "E06-VAG": {
+    "raw": "SELECT aircraft_id, tail_number, airline_id, year_manufactured, status, delivery_date, engine_count, wingspan_m, max_range_km, cruise_speed_kmh, fuel_capacity_kg FROM aircraft JOIN aircraft_types ON aircraft.type_id = aircraft_types.type_id WHERE status = 'out'",
+    "error": null,
+    "latency_s": 7.385,
+    "pass1_s": 0.008,
+    "pass2_s": 7.377,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT aircraft_id, tail_number, airline_id, year_manufactured, status, delivery_date, engine_count, wingspan_m, max_range_km, cruise_speed_kmh, fuel_capacity_kg \nFROM aircraft \nWHERE status = 'out';\n```",
+        "sql": "SELECT aircraft_id, tail_number, airline_id, year_manufactured, status, delivery_date, engine_count, wingspan_m, max_range_km, cruise_speed_kmh, fuel_capacity_kg FROM aircraft WHERE status = 'out'",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: engine_count",
+        "latency_s": 3.869,
+        "eval_count": 55,
+        "eval_duration_s": 1.056791999,
+        "prompt_eval_count": 1800
+      },
+      {
+        "raw": "SELECT aircraft_id, tail_number, airline_id, year_manufactured, status, delivery_date, engine_count, wingspan_m, max_range_km, cruise_speed_kmh, fuel_capacity_kg FROM aircraft JOIN aircraft_types ON aircraft.type_id = aircraft_types.type_id WHERE status = 'out'",
+        "sql": "SELECT aircraft_id, tail_number, airline_id, year_manufactured, status, delivery_date, engine_count, wingspan_m, max_range_km, cruise_speed_kmh, fuel_capacity_kg FROM aircraft JOIN aircraft_types ON aircraft.type_id = aircraft_types.type_id WHERE status = 'out'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.508,
+        "eval_count": 61,
+        "eval_duration_s": 1.286476,
+        "prompt_eval_count": 1868
+      }
+    ],
+    "retried": true,
+    "eval_count": 116,
+    "eval_duration_s": 2.343267999,
+    "prompt_eval_count": 1800
+  },
+  "E07-CAS": {
+    "raw": "```sql\nSELECT loyalty_tier, COUNT(customer_id) AS customer_count FROM customers GROUP BY loyalty_tier;\n```",
+    "error": null,
+    "latency_s": 3.515,
+    "pass1_s": 0.011,
+    "pass2_s": 3.504,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT loyalty_tier, COUNT(customer_id) AS customer_count FROM customers GROUP BY loyalty_tier;\n```",
+        "sql": "SELECT loyalty_tier, COUNT(customer_id) AS customer_count FROM customers GROUP BY loyalty_tier",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.504,
+        "eval_count": 25,
+        "eval_duration_s": 0.470995,
+        "prompt_eval_count": 1819
+      }
+    ],
+    "retried": false,
+    "eval_count": 25,
+    "eval_duration_s": 0.470995,
+    "prompt_eval_count": 1819
+  },
+  "E07-SCH": {
+    "raw": "```sql\nSELECT loyalty_tier, COUNT(*) FROM customers GROUP BY loyalty_tier;\n```",
+    "error": null,
+    "latency_s": 2.809,
+    "pass1_s": 0.013,
+    "pass2_s": 2.796,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT loyalty_tier, COUNT(*) FROM customers GROUP BY loyalty_tier;\n```",
+        "sql": "SELECT loyalty_tier, COUNT(*) FROM customers GROUP BY loyalty_tier",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.796,
+        "eval_count": 20,
+        "eval_duration_s": 0.427314,
+        "prompt_eval_count": 1819
+      }
+    ],
+    "retried": false,
+    "eval_count": 20,
+    "eval_duration_s": 0.427314,
+    "prompt_eval_count": 1819
+  },
+  "E07-BIZ": {
+    "raw": "```sql\nSELECT loyalty_tier, COUNT(customer_id) AS headcount FROM customers GROUP BY loyalty_tier;\n```",
+    "error": null,
+    "latency_s": 3.085,
+    "pass1_s": 0.022,
+    "pass2_s": 3.063,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT loyalty_tier, COUNT(customer_id) AS headcount FROM customers GROUP BY loyalty_tier;\n```",
+        "sql": "SELECT loyalty_tier, COUNT(customer_id) AS headcount FROM customers GROUP BY loyalty_tier",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.063,
+        "eval_count": 25,
+        "eval_duration_s": 0.49384,
+        "prompt_eval_count": 1131
+      }
+    ],
+    "retried": false,
+    "eval_count": 25,
+    "eval_duration_s": 0.49384,
+    "prompt_eval_count": 1131
+  },
+  "E07-VAG": {
+    "raw": "```sql\nSELECT loyalty_tier, COUNT(*) AS customer_count FROM customers GROUP BY loyalty_tier;\n```",
+    "error": null,
+    "latency_s": 2.83,
+    "pass1_s": 0.005,
+    "pass2_s": 2.825,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT loyalty_tier, COUNT(*) AS customer_count FROM customers GROUP BY loyalty_tier;\n```",
+        "sql": "SELECT loyalty_tier, COUNT(*) AS customer_count FROM customers GROUP BY loyalty_tier",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.825,
+        "eval_count": 23,
+        "eval_duration_s": 0.473439,
+        "prompt_eval_count": 1813
+      }
+    ],
+    "retried": false,
+    "eval_count": 23,
+    "eval_duration_s": 0.473439,
+    "prompt_eval_count": 1813
+  },
+  "E08-CAS": {
+    "raw": "```sql\nSELECT name, city FROM customers WHERE country = 'Germany';\n```",
+    "error": null,
+    "latency_s": 3.551,
+    "pass1_s": 0.013,
+    "pass2_s": 3.538,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT name, city FROM customers WHERE country = 'Germany';\n```",
+        "sql": "SELECT name, city FROM customers WHERE country = 'Germany'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.538,
+        "eval_count": 17,
+        "eval_duration_s": 0.322326,
+        "prompt_eval_count": 2725
+      }
+    ],
+    "retried": false,
+    "eval_count": 17,
+    "eval_duration_s": 0.322326,
+    "prompt_eval_count": 2725
+  },
+  "E08-SCH": {
+    "raw": "```sql\nSELECT name, city FROM customers WHERE country = 'Germany';\n```",
+    "error": null,
+    "latency_s": 2.963,
+    "pass1_s": 0.015,
+    "pass2_s": 2.948,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT name, city FROM customers WHERE country = 'Germany';\n```",
+        "sql": "SELECT name, city FROM customers WHERE country = 'Germany'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.948,
+        "eval_count": 17,
+        "eval_duration_s": 0.324635,
+        "prompt_eval_count": 2540
+      }
+    ],
+    "retried": false,
+    "eval_count": 17,
+    "eval_duration_s": 0.324635,
+    "prompt_eval_count": 2540
+  },
+  "E08-BIZ": {
+    "raw": "```sql\nSELECT c.account_code, c.city FROM customers c WHERE c.country = 'Germany';\n```",
+    "error": null,
+    "latency_s": 3.001,
+    "pass1_s": 0.011,
+    "pass2_s": 2.99,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT c.account_code, c.city FROM customers c WHERE c.country = 'Germany';\n```",
+        "sql": "SELECT c.account_code, c.city FROM customers c WHERE c.country = 'Germany'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.99,
+        "eval_count": 22,
+        "eval_duration_s": 0.41969,
+        "prompt_eval_count": 2348
+      }
+    ],
+    "retried": false,
+    "eval_count": 22,
+    "eval_duration_s": 0.41969,
+    "prompt_eval_count": 2348
+  },
+  "E08-VAG": {
+    "raw": "```sql\nSELECT DISTINCT c.customer_id, c.name, c.country, c.customer_type, c.is_known_shipper, c.sales_region, c.created_date\nFROM customers c\nWHERE c.country = 'Germany';\n```",
+    "error": null,
+    "latency_s": 3.933,
+    "pass1_s": 0.005,
+    "pass2_s": 3.928,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT DISTINCT c.customer_id, c.name, c.country, c.customer_type, c.is_known_shipper, c.sales_region, c.created_date\nFROM customers c\nWHERE c.country = 'Germany';\n```",
+        "sql": "SELECT DISTINCT c.customer_id, c.name, c.country, c.customer_type, c.is_known_shipper, c.sales_region, c.created_date FROM customers c WHERE c.country = 'Germany'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.928,
+        "eval_count": 46,
+        "eval_duration_s": 0.909274,
+        "prompt_eval_count": 2388
+      }
+    ],
+    "retried": false,
+    "eval_count": 46,
+    "eval_duration_s": 0.909274,
+    "prompt_eval_count": 2388
+  },
+  "E09-CAS": {
+    "raw": "```sql\nSELECT warehouse_type, COUNT(*) AS warehouse_count FROM warehouses GROUP BY warehouse_type;\n```",
+    "error": null,
+    "latency_s": 3.143,
+    "pass1_s": 0.009,
+    "pass2_s": 3.134,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT warehouse_type, COUNT(*) AS warehouse_count FROM warehouses GROUP BY warehouse_type;\n```",
+        "sql": "SELECT warehouse_type, COUNT(*) AS warehouse_count FROM warehouses GROUP BY warehouse_type",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.134,
+        "eval_count": 21,
+        "eval_duration_s": 0.398384,
+        "prompt_eval_count": 1918
+      }
+    ],
+    "retried": false,
+    "eval_count": 21,
+    "eval_duration_s": 0.398384,
+    "prompt_eval_count": 1918
+  },
+  "E09-SCH": {
+    "raw": "```sql\nSELECT warehouse_type, COUNT(*) FROM warehouses GROUP BY warehouse_type;\n```",
+    "error": null,
+    "latency_s": 2.921,
+    "pass1_s": 0.01,
+    "pass2_s": 2.911,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT warehouse_type, COUNT(*) FROM warehouses GROUP BY warehouse_type;\n```",
+        "sql": "SELECT warehouse_type, COUNT(*) FROM warehouses GROUP BY warehouse_type",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.911,
+        "eval_count": 18,
+        "eval_duration_s": 0.334262,
+        "prompt_eval_count": 1698
+      }
+    ],
+    "retried": false,
+    "eval_count": 18,
+    "eval_duration_s": 0.334262,
+    "prompt_eval_count": 1698
+  },
+  "E09-BIZ": {
+    "raw": "```sql\nSELECT warehouse_type, COUNT(*) AS warehouse_count FROM warehouses GROUP BY warehouse_type;\n```",
+    "error": null,
+    "latency_s": 3.041,
+    "pass1_s": 0.01,
+    "pass2_s": 3.031,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT warehouse_type, COUNT(*) AS warehouse_count FROM warehouses GROUP BY warehouse_type;\n```",
+        "sql": "SELECT warehouse_type, COUNT(*) AS warehouse_count FROM warehouses GROUP BY warehouse_type",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.031,
+        "eval_count": 21,
+        "eval_duration_s": 0.438166,
+        "prompt_eval_count": 1918
+      }
+    ],
+    "retried": false,
+    "eval_count": 21,
+    "eval_duration_s": 0.438166,
+    "prompt_eval_count": 1918
+  },
+  "E09-VAG": {
+    "raw": "```sql\nSELECT warehouse_type, COUNT(*) AS warehouse_count FROM warehouses GROUP BY warehouse_type;\n```",
+    "error": null,
+    "latency_s": 2.69,
+    "pass1_s": 0.005,
+    "pass2_s": 2.685,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT warehouse_type, COUNT(*) AS warehouse_count FROM warehouses GROUP BY warehouse_type;\n```",
+        "sql": "SELECT warehouse_type, COUNT(*) AS warehouse_count FROM warehouses GROUP BY warehouse_type",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.685,
+        "eval_count": 21,
+        "eval_duration_s": 0.483058,
+        "prompt_eval_count": 1913
+      }
+    ],
+    "retried": false,
+    "eval_count": 21,
+    "eval_duration_s": 0.483058,
+    "prompt_eval_count": 1913
+  },
+  "E10-CAS": {
+    "raw": "```sql\nSELECT SUM(floor_area_m2) AS total_floor_space_m2 FROM warehouses WHERE warehouse_type = 'cold_chain';\n```",
+    "error": null,
+    "latency_s": 3.153,
+    "pass1_s": 0.014,
+    "pass2_s": 3.139,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT SUM(floor_area_m2) AS total_floor_space_m2 FROM warehouses WHERE warehouse_type = 'cold_chain';\n```",
+        "sql": "SELECT SUM(floor_area_m2) AS total_floor_space_m2 FROM warehouses WHERE warehouse_type = 'cold_chain'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.139,
+        "eval_count": 28,
+        "eval_duration_s": 0.535034,
+        "prompt_eval_count": 823
+      }
+    ],
+    "retried": false,
+    "eval_count": 28,
+    "eval_duration_s": 0.535034,
+    "prompt_eval_count": 823
+  },
+  "E10-SCH": {
+    "raw": "```sql\nSELECT SUM(floor_area_m2) FROM warehouses WHERE warehouse_type = 'cold_chain';\n```",
+    "error": null,
+    "latency_s": 2.935,
+    "pass1_s": 0.015,
+    "pass2_s": 2.92,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT SUM(floor_area_m2) FROM warehouses WHERE warehouse_type = 'cold_chain';\n```",
+        "sql": "SELECT SUM(floor_area_m2) FROM warehouses WHERE warehouse_type = 'cold_chain'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.92,
+        "eval_count": 22,
+        "eval_duration_s": 0.4187,
+        "prompt_eval_count": 1134
+      }
+    ],
+    "retried": false,
+    "eval_count": 22,
+    "eval_duration_s": 0.4187,
+    "prompt_eval_count": 1134
+  },
+  "E10-BIZ": {
+    "raw": "```sql\nSELECT SUM(floor_area_m2) AS total_cold_chain_footprint FROM warehouses WHERE warehouse_type = 'cold_chain';\n```",
+    "error": null,
+    "latency_s": 2.938,
+    "pass1_s": 0.013,
+    "pass2_s": 2.925,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT SUM(floor_area_m2) AS total_cold_chain_footprint FROM warehouses WHERE warehouse_type = 'cold_chain';\n```",
+        "sql": "SELECT SUM(floor_area_m2) AS total_cold_chain_footprint FROM warehouses WHERE warehouse_type = 'cold_chain'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.925,
+        "eval_count": 29,
+        "eval_duration_s": 0.613659,
+        "prompt_eval_count": 822
+      }
+    ],
+    "retried": false,
+    "eval_count": 29,
+    "eval_duration_s": 0.613659,
+    "prompt_eval_count": 822
+  },
+  "E10-VAG": {
+    "raw": "```sql\nSELECT SUM(floor_area_m2) AS total_cold_chain_space FROM warehouses WHERE warehouse_type = 'cold_chain';\n```",
+    "error": null,
+    "latency_s": 3.559,
+    "pass1_s": 0.012,
+    "pass2_s": 3.547,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT SUM(floor_area_m2) AS total_cold_chain_space FROM warehouses WHERE warehouse_type = 'cold_chain';\n```",
+        "sql": "SELECT SUM(floor_area_m2) AS total_cold_chain_space FROM warehouses WHERE warehouse_type = 'cold_chain'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.547,
+        "eval_count": 28,
+        "eval_duration_s": 0.538334,
+        "prompt_eval_count": 1897
+      }
+    ],
+    "retried": false,
+    "eval_count": 28,
+    "eval_duration_s": 0.538334,
+    "prompt_eval_count": 1897
+  },
+  "M01-CAS": {
+    "raw": "```sql\nSELECT a.name, COUNT(ac.aircraft_id) AS plane_count\nFROM airlines a\nLEFT JOIN aircraft ac ON a.airline_id = ac.airline_id\nGROUP BY a.name\nORDER BY plane_count DESC;\n```",
+    "error": null,
+    "latency_s": 4.085,
+    "pass1_s": 0.017,
+    "pass2_s": 4.068,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name, COUNT(ac.aircraft_id) AS plane_count\nFROM airlines a\nLEFT JOIN aircraft ac ON a.airline_id = ac.airline_id\nGROUP BY a.name\nORDER BY plane_count DESC;\n```",
+        "sql": "SELECT a.name, COUNT(ac.aircraft_id) AS plane_count FROM airlines a LEFT JOIN aircraft ac ON a.airline_id = ac.airline_id GROUP BY a.name ORDER BY plane_count DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.068,
+        "eval_count": 49,
+        "eval_duration_s": 0.958188,
+        "prompt_eval_count": 2322
+      }
+    ],
+    "retried": false,
+    "eval_count": 49,
+    "eval_duration_s": 0.958188,
+    "prompt_eval_count": 2322
+  },
+  "M01-SCH": {
+    "raw": "```sql\nSELECT a.name, COUNT(ac.aircraft_id) AS aircraft_count\nFROM airlines a\nLEFT JOIN aircraft ac ON a.airline_id = ac.airline_id\nGROUP BY a.name\nORDER BY aircraft_count DESC, a.name;\n```",
+    "error": null,
+    "latency_s": 3.471,
+    "pass1_s": 0.027,
+    "pass2_s": 3.444,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name, COUNT(ac.aircraft_id) AS aircraft_count\nFROM airlines a\nLEFT JOIN aircraft ac ON a.airline_id = ac.airline_id\nGROUP BY a.name\nORDER BY aircraft_count DESC, a.name;\n```",
+        "sql": "SELECT a.name, COUNT(ac.aircraft_id) AS aircraft_count FROM airlines a LEFT JOIN aircraft ac ON a.airline_id = ac.airline_id GROUP BY a.name ORDER BY aircraft_count DESC, a.name",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.444,
+        "eval_count": 52,
+        "eval_duration_s": 1.054999,
+        "prompt_eval_count": 2293
+      }
+    ],
+    "retried": false,
+    "eval_count": 52,
+    "eval_duration_s": 1.054999,
+    "prompt_eval_count": 2293
+  },
+  "M01-BIZ": {
+    "raw": "```sql\nSELECT a.name AS carrier, COUNT(ac.aircraft_id) AS fleet_size\nFROM airlines a\nJOIN aircraft ac ON a.airline_id = ac.airline_id\nGROUP BY a.name\nORDER BY fleet_size DESC;\n```",
+    "error": null,
+    "latency_s": 3.599,
+    "pass1_s": 0.013,
+    "pass2_s": 3.586,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name AS carrier, COUNT(ac.aircraft_id) AS fleet_size\nFROM airlines a\nJOIN aircraft ac ON a.airline_id = ac.airline_id\nGROUP BY a.name\nORDER BY fleet_size DESC;\n```",
+        "sql": "SELECT a.name AS carrier, COUNT(ac.aircraft_id) AS fleet_size FROM airlines a JOIN aircraft ac ON a.airline_id = ac.airline_id GROUP BY a.name ORDER BY fleet_size DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.586,
+        "eval_count": 50,
+        "eval_duration_s": 1.014499,
+        "prompt_eval_count": 1331
+      }
+    ],
+    "retried": false,
+    "eval_count": 50,
+    "eval_duration_s": 1.014499,
+    "prompt_eval_count": 1331
+  },
+  "M01-VAG": {
+    "raw": "```sql\nSELECT a.name AS airline_name, COUNT(ac.aircraft_id) AS aircraft_count, AVG(ac.year_manufactured) AS avg_year_manufactured, AVG(ac.total_flight_hours) AS avg_total_flight_hours\nFROM airlines a\nLEFT JOIN aircraft ac ON a.airline_id = ac.airline_id\nGROUP BY a.name;\n```",
+    "error": null,
+    "latency_s": 3.819,
+    "pass1_s": 0.005,
+    "pass2_s": 3.814,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name AS airline_name, COUNT(ac.aircraft_id) AS aircraft_count, AVG(ac.year_manufactured) AS avg_year_manufactured, AVG(ac.total_flight_hours) AS avg_total_flight_hours\nFROM airlines a\nLEFT JOIN aircraft ac ON a.airline_id = ac.airline_id\nGROUP BY a.name;\n```",
+        "sql": "SELECT a.name AS airline_name, COUNT(ac.aircraft_id) AS aircraft_count, AVG(ac.year_manufactured) AS avg_year_manufactured, AVG(ac.total_flight_hours) AS avg_total_flight_hours FROM airlines a LEFT JOIN aircraft ac ON a.airline_id = ac.airline_id GROUP BY a.name",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.814,
+        "eval_count": 72,
+        "eval_duration_s": 1.388267,
+        "prompt_eval_count": 1300
+      }
+    ],
+    "retried": false,
+    "eval_count": 72,
+    "eval_duration_s": 1.388267,
+    "prompt_eval_count": 1300
+  },
+  "M02-CAS": {
+    "raw": "SELECT a.type_id, at.model, COUNT(*) AS active_count FROM aircraft a JOIN aircraft_types at ON a.type_id = at.type_id WHERE a.status = 'active' GROUP BY a.type_id, at.model",
+    "error": null,
+    "latency_s": 6.424,
+    "pass1_s": 0.014,
+    "pass2_s": 6.41,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.type_id, a.model, COUNT(*) AS active_count\nFROM aircraft a\nJOIN aircraft_types at ON a.type_id = at.type_id\nWHERE a.status = 'active'\nGROUP BY a.type_id, a.model;\n```",
+        "sql": "SELECT a.type_id, a.model, COUNT(*) AS active_count FROM aircraft a JOIN aircraft_types at ON a.type_id = at.type_id WHERE a.status = 'active' GROUP BY a.type_id, a.model",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: a.model",
+        "latency_s": 3.295,
+        "eval_count": 52,
+        "eval_duration_s": 0.998164,
+        "prompt_eval_count": 1376
+      },
+      {
+        "raw": "SELECT a.type_id, at.model, COUNT(*) AS active_count FROM aircraft a JOIN aircraft_types at ON a.type_id = at.type_id WHERE a.status = 'active' GROUP BY a.type_id, at.model",
+        "sql": "SELECT a.type_id, at.model, COUNT(*) AS active_count FROM aircraft a JOIN aircraft_types at ON a.type_id = at.type_id WHERE a.status = 'active' GROUP BY a.type_id, at.model",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.115,
+        "eval_count": 44,
+        "eval_duration_s": 0.902653,
+        "prompt_eval_count": 1440
+      }
+    ],
+    "retried": true,
+    "eval_count": 96,
+    "eval_duration_s": 1.900817,
+    "prompt_eval_count": 1376
+  },
+  "M02-SCH": {
+    "raw": "SELECT t.type_id, t.model, COUNT(*) AS active_aircraft_count FROM aircraft a JOIN aircraft_types t ON a.type_id = t.type_id WHERE a.status = 'active' GROUP BY t.type_id, t.model ORDER BY t.model",
+    "error": null,
+    "latency_s": 6.785,
+    "pass1_s": 0.018,
+    "pass2_s": 6.767,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.type_id, a.model, COUNT(*) AS active_aircraft_count\nFROM aircraft a\nJOIN aircraft_types t ON a.type_id = t.type_id\nWHERE a.status = 'active'\nGROUP BY a.type_id, a.model\nORDER BY a.model;\n```",
+        "sql": "SELECT a.type_id, a.model, COUNT(*) AS active_aircraft_count FROM aircraft a JOIN aircraft_types t ON a.type_id = t.type_id WHERE a.status = 'active' GROUP BY a.type_id, a.model ORDER BY a.model",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: a.model",
+        "latency_s": 3.542,
+        "eval_count": 59,
+        "eval_duration_s": 1.145559,
+        "prompt_eval_count": 1400
+      },
+      {
+        "raw": "SELECT t.type_id, t.model, COUNT(*) AS active_aircraft_count FROM aircraft a JOIN aircraft_types t ON a.type_id = t.type_id WHERE a.status = 'active' GROUP BY t.type_id, t.model ORDER BY t.model",
+        "sql": "SELECT t.type_id, t.model, COUNT(*) AS active_aircraft_count FROM aircraft a JOIN aircraft_types t ON a.type_id = t.type_id WHERE a.status = 'active' GROUP BY t.type_id, t.model ORDER BY t.model",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.225,
+        "eval_count": 50,
+        "eval_duration_s": 0.961423,
+        "prompt_eval_count": 1470
+      }
+    ],
+    "retried": true,
+    "eval_count": 109,
+    "eval_duration_s": 2.106982,
+    "prompt_eval_count": 1400
+  },
+  "M02-BIZ": {
+    "raw": "```sql\nSELECT aircraft_types.icao_type_designator, COUNT(aircraft.aircraft_id) AS active_fleet_count\nFROM aircraft\nJOIN aircraft_types ON aircraft.type_id = aircraft_types.type_id\nWHERE aircraft.status = 'active'\nGROUP BY aircraft_types.icao_type_designator;\n```",
+    "error": null,
+    "latency_s": 3.894,
+    "pass1_s": 0.012,
+    "pass2_s": 3.882,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT aircraft_types.icao_type_designator, COUNT(aircraft.aircraft_id) AS active_fleet_count\nFROM aircraft\nJOIN aircraft_types ON aircraft.type_id = aircraft_types.type_id\nWHERE aircraft.status = 'active'\nGROUP BY aircraft_types.icao_type_designator;\n```",
+        "sql": "SELECT aircraft_types.icao_type_designator, COUNT(aircraft.aircraft_id) AS active_fleet_count FROM aircraft JOIN aircraft_types ON aircraft.type_id = aircraft_types.type_id WHERE aircraft.status = 'active' GROUP BY aircraft_types.icao_type_designator",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.882,
+        "eval_count": 61,
+        "eval_duration_s": 1.178765,
+        "prompt_eval_count": 1753
+      }
+    ],
+    "retried": false,
+    "eval_count": 61,
+    "eval_duration_s": 1.178765,
+    "prompt_eval_count": 1753
+  },
+  "M02-VAG": {
+    "raw": "SELECT at.type_id, at.model, COUNT(*) AS active_planes FROM aircraft a JOIN aircraft_types at ON a.type_id = at.type_id WHERE a.status = 'active' GROUP BY at.type_id, at.model",
+    "error": null,
+    "latency_s": 6.573,
+    "pass1_s": 0.007,
+    "pass2_s": 6.566,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.type_id, a.model, COUNT(*) AS active_planes\nFROM aircraft a\nJOIN aircraft_types at ON a.type_id = at.type_id\nWHERE a.status = 'active'\nGROUP BY a.type_id, a.model;\n```",
+        "sql": "SELECT a.type_id, a.model, COUNT(*) AS active_planes FROM aircraft a JOIN aircraft_types at ON a.type_id = at.type_id WHERE a.status = 'active' GROUP BY a.type_id, a.model",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: a.model",
+        "latency_s": 3.405,
+        "eval_count": 52,
+        "eval_duration_s": 1.046253999,
+        "prompt_eval_count": 1370
+      },
+      {
+        "raw": "SELECT at.type_id, at.model, COUNT(*) AS active_planes FROM aircraft a JOIN aircraft_types at ON a.type_id = at.type_id WHERE a.status = 'active' GROUP BY at.type_id, at.model",
+        "sql": "SELECT at.type_id, at.model, COUNT(*) AS active_planes FROM aircraft a JOIN aircraft_types at ON a.type_id = at.type_id WHERE a.status = 'active' GROUP BY at.type_id, at.model",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.161,
+        "eval_count": 44,
+        "eval_duration_s": 0.959295,
+        "prompt_eval_count": 1434
+      }
+    ],
+    "retried": true,
+    "eval_count": 96,
+    "eval_duration_s": 2.005548999,
+    "prompt_eval_count": 1370
+  },
+  "M03-CAS": {
+    "raw": "```sql\nSELECT COUNT(*) FROM flights WHERE origin_airport_id IN (SELECT airport_id FROM airports WHERE iata_code = 'IST') AND status = 'completed';\n```",
+    "error": null,
+    "latency_s": 3.879,
+    "pass1_s": 0.014,
+    "pass2_s": 3.865,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM flights WHERE origin_airport_id IN (SELECT airport_id FROM airports WHERE iata_code = 'IST') AND status = 'completed';\n```",
+        "sql": "SELECT COUNT(*) FROM flights WHERE origin_airport_id IN (SELECT airport_id FROM airports WHERE iata_code = 'IST') AND status = 'completed'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.865,
+        "eval_count": 36,
+        "eval_duration_s": 0.701027,
+        "prompt_eval_count": 3214
+      }
+    ],
+    "retried": false,
+    "eval_count": 36,
+    "eval_duration_s": 0.701027,
+    "prompt_eval_count": 3214
+  },
+  "M03-SCH": {
+    "raw": "```sql\nSELECT COUNT(*) FROM flights WHERE status = 'completed' AND origin_airport_id = (SELECT airport_id FROM airports WHERE iata_code = 'IST');\n```",
+    "error": null,
+    "latency_s": 3.87,
+    "pass1_s": 0.024,
+    "pass2_s": 3.846,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) FROM flights WHERE status = 'completed' AND origin_airport_id = (SELECT airport_id FROM airports WHERE iata_code = 'IST');\n```",
+        "sql": "SELECT COUNT(*) FROM flights WHERE status = 'completed' AND origin_airport_id = (SELECT airport_id FROM airports WHERE iata_code = 'IST')",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.846,
+        "eval_count": 36,
+        "eval_duration_s": 0.694779,
+        "prompt_eval_count": 2516
+      }
+    ],
+    "retried": false,
+    "eval_count": 36,
+    "eval_duration_s": 0.694779,
+    "prompt_eval_count": 2516
+  },
+  "M03-BIZ": {
+    "raw": "```sql\nSELECT SUM(s.total_volume_m3) AS completed_departure_volume FROM flights f JOIN shipments s ON f.flight_id = s.flight_id JOIN airports a ON f.origin_airport_id = a.airport_id WHERE a.iata_code = 'IST' AND f.status = 'completed'\n```",
+    "error": null,
+    "latency_s": 8.197,
+    "pass1_s": 0.011,
+    "pass2_s": 8.186,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT SUM(f.total_volume_m3) AS completed_departure_volume\nFROM flights f\nJOIN fuel_uplifts fu ON f.flight_id = fu.flight_id\nJOIN airports a ON f.origin_airport_id = a.airport_id\nWHERE a.iata_code = 'IST' AND f.status = 'completed';\n```",
+        "sql": "SELECT SUM(f.total_volume_m3) AS completed_departure_volume FROM flights f JOIN fuel_uplifts fu ON f.flight_id = fu.flight_id JOIN airports a ON f.origin_airport_id = a.airport_id WHERE a.iata_code = 'IST' AND f.status = 'completed'",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.total_volume_m3",
+        "latency_s": 4.591,
+        "eval_count": 71,
+        "eval_duration_s": 1.39873,
+        "prompt_eval_count": 2939
+      },
+      {
+        "raw": "```sql\nSELECT SUM(s.total_volume_m3) AS completed_departure_volume FROM flights f JOIN shipments s ON f.flight_id = s.flight_id JOIN airports a ON f.origin_airport_id = a.airport_id WHERE a.iata_code = 'IST' AND f.status = 'completed'\n```",
+        "sql": "SELECT SUM(s.total_volume_m3) AS completed_departure_volume FROM flights f JOIN shipments s ON f.flight_id = s.flight_id JOIN airports a ON f.origin_airport_id = a.airport_id WHERE a.iata_code = 'IST' AND f.status = 'completed'",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: s.flight_id",
+        "latency_s": 3.595,
+        "eval_count": 64,
+        "eval_duration_s": 1.319135,
+        "prompt_eval_count": 3024
+      }
+    ],
+    "retried": true,
+    "eval_count": 135,
+    "eval_duration_s": 2.7178649999999998,
+    "prompt_eval_count": 2939
+  },
+  "M03-VAG": {
+    "raw": "```sql\nSELECT COUNT(*) AS busy_level FROM airports WHERE iata_code = 'IST';\n```",
+    "error": null,
+    "latency_s": 2.758,
+    "pass1_s": 0.006,
+    "pass2_s": 2.752,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT COUNT(*) AS busy_level FROM airports WHERE iata_code = 'IST';\n```",
+        "sql": "SELECT COUNT(*) AS busy_level FROM airports WHERE iata_code = 'IST'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.752,
+        "eval_count": 21,
+        "eval_duration_s": 0.453948,
+        "prompt_eval_count": 432
+      }
+    ],
+    "retried": false,
+    "eval_count": 21,
+    "eval_duration_s": 0.453948,
+    "prompt_eval_count": 432
+  },
+  "M04-CAS": {
+    "raw": "```sql\nSELECT origin_airport_id, destination_airport_id, COUNT(*) AS flight_count FROM flights WHERE status = 'completed' GROUP BY origin_airport_id, destination_airport_id ORDER BY flight_count DESC LIMIT 5;\n```",
+    "error": null,
+    "latency_s": 4.403,
+    "pass1_s": 0.017,
+    "pass2_s": 4.386,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT origin_airport_id, destination_airport_id, COUNT(*) AS flight_count FROM flights WHERE status = 'completed' GROUP BY origin_airport_id, destination_airport_id ORDER BY flight_count DESC LIMIT 5;\n```",
+        "sql": "SELECT origin_airport_id, destination_airport_id, COUNT(*) AS flight_count FROM flights WHERE status = 'completed' GROUP BY origin_airport_id, destination_airport_id ORDER BY flight_count DESC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.386,
+        "eval_count": 49,
+        "eval_duration_s": 0.965398,
+        "prompt_eval_count": 3283
+      }
+    ],
+    "retried": false,
+    "eval_count": 49,
+    "eval_duration_s": 0.965398,
+    "prompt_eval_count": 3283
+  },
+  "M04-SCH": {
+    "raw": "```sql\nSELECT a1.iata_code AS origin_iata, a2.iata_code AS destination_iata, COUNT(f.flight_id) AS completed_flights\nFROM flights f\nJOIN airports a1 ON f.origin_airport_id = a1.airport_id\nJOIN airports a2 ON f.destination_airport_id = a2.airport_id\nWHERE f.status = 'completed'\nGROUP BY a1.iata_code, a2.iata_code\nORDER BY completed_flights DESC\nLIMIT 5\n```",
+    "error": null,
+    "latency_s": 5.454,
+    "pass1_s": 0.026,
+    "pass2_s": 5.428,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a1.iata_code AS origin_iata, a2.iata_code AS destination_iata, COUNT(f.flight_id) AS completed_flights\nFROM flights f\nJOIN airports a1 ON f.origin_airport_id = a1.airport_id\nJOIN airports a2 ON f.destination_airport_id = a2.airport_id\nWHERE f.status = 'completed'\nGROUP BY a1.iata_code, a2.iata_code\nORDER BY completed_flights DESC\nLIMIT 5\n```",
+        "sql": "SELECT a1.iata_code AS origin_iata, a2.iata_code AS destination_iata, COUNT(f.flight_id) AS completed_flights FROM flights f JOIN airports a1 ON f.origin_airport_id = a1.airport_id JOIN airports a2 ON f.destination_airport_id = a2.airport_id WHERE f.status = 'completed' GROUP BY a1.iata_code, a2.iata_code ORDER BY completed_flights DESC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.428,
+        "eval_count": 107,
+        "eval_duration_s": 2.111907,
+        "prompt_eval_count": 2727
+      }
+    ],
+    "retried": false,
+    "eval_count": 107,
+    "eval_duration_s": 2.111907,
+    "prompt_eval_count": 2727
+  },
+  "M04-BIZ": {
+    "raw": "```sql\nSELECT T1.lane_number, COUNT(T2.flight_id) AS completed_flights FROM lanes AS T1 JOIN flights AS T2 ON T1.lane_number = T2.departure_lane WHERE T2.status = 'completed' GROUP BY T1.lane_number ORDER BY completed_flights DESC LIMIT 5\n```",
+    "error": null,
+    "latency_s": 8.101,
+    "pass1_s": 0.014,
+    "pass2_s": 8.087,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT T1.lane_number, COUNT(T2.flight_id) AS completed_flights\nFROM lanes AS T1\nJOIN flights AS T2 ON T1.lane_number = T2.departure_lane\nWHERE T2.status = 'completed'\nGROUP BY T1.lane_number\nORDER BY completed_flights DESC\nLIMIT 5;\n```",
+        "sql": "SELECT T1.lane_number, COUNT(T2.flight_id) AS completed_flights FROM lanes AS T1 JOIN flights AS T2 ON T1.lane_number = T2.departure_lane WHERE T2.status = 'completed' GROUP BY T1.lane_number ORDER BY completed_flights DESC LIMIT 5",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such table: lanes",
+        "latency_s": 4.409,
+        "eval_count": 75,
+        "eval_duration_s": 1.463225,
+        "prompt_eval_count": 2124
+      },
+      {
+        "raw": "```sql\nSELECT T1.lane_number, COUNT(T2.flight_id) AS completed_flights FROM lanes AS T1 JOIN flights AS T2 ON T1.lane_number = T2.departure_lane WHERE T2.status = 'completed' GROUP BY T1.lane_number ORDER BY completed_flights DESC LIMIT 5\n```",
+        "sql": "SELECT T1.lane_number, COUNT(T2.flight_id) AS completed_flights FROM lanes AS T1 JOIN flights AS T2 ON T1.lane_number = T2.departure_lane WHERE T2.status = 'completed' GROUP BY T1.lane_number ORDER BY completed_flights DESC LIMIT 5",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such table: lanes",
+        "latency_s": 3.678,
+        "eval_count": 70,
+        "eval_duration_s": 1.425858,
+        "prompt_eval_count": 2208
+      }
+    ],
+    "retried": true,
+    "eval_count": 145,
+    "eval_duration_s": 2.8890830000000003,
+    "prompt_eval_count": 2124
+  },
+  "M04-VAG": {
+    "raw": "```sql\nSELECT origin_airport_id, destination_airport_id, COUNT(*) AS route_count FROM flights GROUP BY origin_airport_id, destination_airport_id ORDER BY route_count DESC LIMIT 10;\n```",
+    "error": null,
+    "latency_s": 3.627,
+    "pass1_s": 0.004,
+    "pass2_s": 3.623,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT origin_airport_id, destination_airport_id, COUNT(*) AS route_count FROM flights GROUP BY origin_airport_id, destination_airport_id ORDER BY route_count DESC LIMIT 10;\n```",
+        "sql": "SELECT origin_airport_id, destination_airport_id, COUNT(*) AS route_count FROM flights GROUP BY origin_airport_id, destination_airport_id ORDER BY route_count DESC LIMIT 10",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.623,
+        "eval_count": 44,
+        "eval_duration_s": 0.849694,
+        "prompt_eval_count": 1935
+      }
+    ],
+    "retried": false,
+    "eval_count": 44,
+    "eval_duration_s": 0.849694,
+    "prompt_eval_count": 1935
+  },
+  "M05-CAS": {
+    "raw": "SELECT AVG(T1.delay_minutes) AS average_delay_minutes FROM incidents AS T1 INNER JOIN flights AS T2 ON T1.flight_cargo_id = T2.flight_id WHERE T2.status = 'completed' AND T1.incident_type = 'delay'",
+    "error": null,
+    "latency_s": 4.285,
+    "pass1_s": 0.017,
+    "pass2_s": 4.268,
+    "attempts": [
+      {
+        "raw": "SELECT AVG(T1.delay_minutes) AS average_delay_minutes FROM incidents AS T1 INNER JOIN flights AS T2 ON T1.flight_cargo_id = T2.flight_id WHERE T2.status = 'completed' AND T1.incident_type = 'delay'",
+        "sql": "SELECT AVG(T1.delay_minutes) AS average_delay_minutes FROM incidents AS T1 INNER JOIN flights AS T2 ON T1.flight_cargo_id = T2.flight_id WHERE T2.status = 'completed' AND T1.incident_type = 'delay'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.268,
+        "eval_count": 55,
+        "eval_duration_s": 1.080483,
+        "prompt_eval_count": 3142
+      }
+    ],
+    "retried": false,
+    "eval_count": 55,
+    "eval_duration_s": 1.080483,
+    "prompt_eval_count": 3142
+  },
+  "M05-SCH": {
+    "raw": "```sql\nSELECT aircraft.tail_number, ROUND(AVG((julianday(flights.actual_arrival) - julianday(flights.scheduled_arrival)) * 1440), 1) AS avg_delay_minutes\nFROM flights\nJOIN aircraft ON flights.aircraft_id = aircraft.aircraft_id\nWHERE flights.status = 'completed'\nGROUP BY aircraft.tail_number\nORDER BY avg_delay_minutes DESC;\n```",
+    "error": null,
+    "latency_s": 4.386,
+    "pass1_s": 0.027,
+    "pass2_s": 4.359,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT aircraft.tail_number, ROUND(AVG((julianday(flights.actual_arrival) - julianday(flights.scheduled_arrival)) * 1440), 1) AS avg_delay_minutes\nFROM flights\nJOIN aircraft ON flights.aircraft_id = aircraft.aircraft_id\nWHERE flights.status = 'completed'\nGROUP BY aircraft.tail_number\nORDER BY avg_delay_minutes DESC;\n```",
+        "sql": "SELECT aircraft.tail_number, ROUND(AVG((julianday(flights.actual_arrival) - julianday(flights.scheduled_arrival)) * 1440), 1) AS avg_delay_minutes FROM flights JOIN aircraft ON flights.aircraft_id = aircraft.aircraft_id WHERE flights.status = 'completed' GROUP BY aircraft.tail_number ORDER BY avg_delay_minutes DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.359,
+        "eval_count": 87,
+        "eval_duration_s": 1.724612,
+        "prompt_eval_count": 2220
+      }
+    ],
+    "retried": false,
+    "eval_count": 87,
+    "eval_duration_s": 1.724612,
+    "prompt_eval_count": 2220
+  },
+  "M05-BIZ": {
+    "raw": "SELECT AVG(incidents.delay_minutes) AS average_delay, airlines.name AS carrier_name FROM incidents JOIN flights ON incidents.flight_cargo_id = flights.flight_id JOIN airlines ON flights.airline_id = airlines.airline_id WHERE incidents.incident_type = 'delay' GROUP BY airlines.name",
+    "error": null,
+    "latency_s": 7.613,
+    "pass1_s": 0.019,
+    "pass2_s": 7.594,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT AVG(incidents.delay_minutes) AS average_delay, airlines.name AS carrier_name\nFROM incidents\nJOIN flights ON incidents.flight_cargo_id = flights.flight_id\nJOIN airlines ON flights.airline_id = airlines.airline_id\nWHERE incidents.incident_type = 'delay'\nGROUP BY airlines.name;\n```",
+        "sql": "SELECT AVG(incidents.delay_minutes) AS average_delay, airlines.name AS carrier_name FROM incidents JOIN flights ON incidents.flight_cargo_id = flights.flight_id JOIN airlines ON flights.airline_id = airlines.airline_id WHERE incidents.incident_type = 'delay' GROUP BY airlines.name",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flights.airline_id",
+        "latency_s": 4.185,
+        "eval_count": 68,
+        "eval_duration_s": 1.323497,
+        "prompt_eval_count": 2088
+      },
+      {
+        "raw": "SELECT AVG(incidents.delay_minutes) AS average_delay, airlines.name AS carrier_name FROM incidents JOIN flights ON incidents.flight_cargo_id = flights.flight_id JOIN airlines ON flights.airline_id = airlines.airline_id WHERE incidents.incident_type = 'delay' GROUP BY airlines.name",
+        "sql": "SELECT AVG(incidents.delay_minutes) AS average_delay, airlines.name AS carrier_name FROM incidents JOIN flights ON incidents.flight_cargo_id = flights.flight_id JOIN airlines ON flights.airline_id = airlines.airline_id WHERE incidents.incident_type = 'delay' GROUP BY airlines.name",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: flights.airline_id",
+        "latency_s": 3.409,
+        "eval_count": 59,
+        "eval_duration_s": 1.150063,
+        "prompt_eval_count": 2169
+      }
+    ],
+    "retried": true,
+    "eval_count": 127,
+    "eval_duration_s": 2.47356,
+    "prompt_eval_count": 2088
+  },
+  "M05-VAG": {
+    "raw": "```sql\nSELECT name FROM airlines ORDER BY founded_year DESC LIMIT 1;\n```",
+    "error": null,
+    "latency_s": 3.111,
+    "pass1_s": 0.006,
+    "pass2_s": 3.105,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT name FROM airlines ORDER BY founded_year DESC LIMIT 1;\n```",
+        "sql": "SELECT name FROM airlines ORDER BY founded_year DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.105,
+        "eval_count": 18,
+        "eval_duration_s": 0.333139,
+        "prompt_eval_count": 1359
+      }
+    ],
+    "retried": false,
+    "eval_count": 18,
+    "eval_duration_s": 0.333139,
+    "prompt_eval_count": 1359
+  },
+  "M06-CAS": {
+    "raw": "SELECT a.name, COUNT(f.flight_id) AS cancelled_flights FROM airlines a JOIN flights f ON a.airline_id = f.airline_id WHERE f.status = 'cancelled' GROUP BY a.name",
+    "error": null,
+    "latency_s": 6.814,
+    "pass1_s": 0.011,
+    "pass2_s": 6.803,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name, COUNT(f.flight_id) AS cancelled_flights\nFROM airlines a\nJOIN flights f ON a.airline_id = f.airline_id\nWHERE f.status = 'cancelled'\nGROUP BY a.name;\n```",
+        "sql": "SELECT a.name, COUNT(f.flight_id) AS cancelled_flights FROM airlines a JOIN flights f ON a.airline_id = f.airline_id WHERE f.status = 'cancelled' GROUP BY a.name",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.airline_id",
+        "latency_s": 3.701,
+        "eval_count": 50,
+        "eval_duration_s": 0.974965,
+        "prompt_eval_count": 2319
+      },
+      {
+        "raw": "SELECT a.name, COUNT(f.flight_id) AS cancelled_flights FROM airlines a JOIN flights f ON a.airline_id = f.airline_id WHERE f.status = 'cancelled' GROUP BY a.name",
+        "sql": "SELECT a.name, COUNT(f.flight_id) AS cancelled_flights FROM airlines a JOIN flights f ON a.airline_id = f.airline_id WHERE f.status = 'cancelled' GROUP BY a.name",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.airline_id",
+        "latency_s": 3.102,
+        "eval_count": 42,
+        "eval_duration_s": 0.875056,
+        "prompt_eval_count": 2383
+      }
+    ],
+    "retried": true,
+    "eval_count": 92,
+    "eval_duration_s": 1.850021,
+    "prompt_eval_count": 2319
+  },
+  "M06-SCH": {
+    "raw": "SELECT T1.name, COUNT(*) AS cancelled_flights FROM aircraft AS T1 JOIN flights AS T2 ON T1.aircraft_id = T2.aircraft_id WHERE T2.status = 'cancelled' GROUP BY T1.name ORDER BY cancelled_flights DESC",
+    "error": null,
+    "latency_s": 7.748,
+    "pass1_s": 0.022,
+    "pass2_s": 7.726,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT T1.name, COUNT(*) AS cancelled_flights\nFROM aircraft AS T1\nJOIN flights AS T2 ON T1.aircraft_id = T2.aircraft_id\nWHERE T2.status = 'cancelled'\nGROUP BY T1.name\nORDER BY cancelled_flights DESC;\n```",
+        "sql": "SELECT T1.name, COUNT(*) AS cancelled_flights FROM aircraft AS T1 JOIN flights AS T2 ON T1.aircraft_id = T2.aircraft_id WHERE T2.status = 'cancelled' GROUP BY T1.name ORDER BY cancelled_flights DESC",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: T1.name",
+        "latency_s": 4.417,
+        "eval_count": 62,
+        "eval_duration_s": 1.218675,
+        "prompt_eval_count": 2941
+      },
+      {
+        "raw": "SELECT T1.name, COUNT(*) AS cancelled_flights FROM aircraft AS T1 JOIN flights AS T2 ON T1.aircraft_id = T2.aircraft_id WHERE T2.status = 'cancelled' GROUP BY T1.name ORDER BY cancelled_flights DESC",
+        "sql": "SELECT T1.name, COUNT(*) AS cancelled_flights FROM aircraft AS T1 JOIN flights AS T2 ON T1.aircraft_id = T2.aircraft_id WHERE T2.status = 'cancelled' GROUP BY T1.name ORDER BY cancelled_flights DESC",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: T1.name",
+        "latency_s": 3.309,
+        "eval_count": 53,
+        "eval_duration_s": 1.04743,
+        "prompt_eval_count": 3015
+      }
+    ],
+    "retried": true,
+    "eval_count": 115,
+    "eval_duration_s": 2.266105,
+    "prompt_eval_count": 2941
+  },
+  "M06-BIZ": {
+    "raw": "```sql\nSELECT a.name AS carrier_name, SUM(s.total_volume_m3) AS cancellation_volume FROM airlines a JOIN flights f ON a.airline_id = f.airline_id JOIN shipments s ON f.shipment_id = s.shipment_id WHERE f.status = 'cancelled' GROUP BY a.name\n```",
+    "error": null,
+    "latency_s": 7.598,
+    "pass1_s": 0.007,
+    "pass2_s": 7.591,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name AS carrier_name, SUM(s.total_volume_m3) AS cancellation_volume\nFROM airlines a\nJOIN flights f ON a.airline_id = f.airline_id\nJOIN shipments s ON f.shipment_id = s.shipment_id\nWHERE f.status = 'cancelled'\nGROUP BY a.name;\n```",
+        "sql": "SELECT a.name AS carrier_name, SUM(s.total_volume_m3) AS cancellation_volume FROM airlines a JOIN flights f ON a.airline_id = f.airline_id JOIN shipments s ON f.shipment_id = s.shipment_id WHERE f.status = 'cancelled' GROUP BY a.name",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.airline_id",
+        "latency_s": 4.027,
+        "eval_count": 67,
+        "eval_duration_s": 1.30215,
+        "prompt_eval_count": 2136
+      },
+      {
+        "raw": "```sql\nSELECT a.name AS carrier_name, SUM(s.total_volume_m3) AS cancellation_volume FROM airlines a JOIN flights f ON a.airline_id = f.airline_id JOIN shipments s ON f.shipment_id = s.shipment_id WHERE f.status = 'cancelled' GROUP BY a.name\n```",
+        "sql": "SELECT a.name AS carrier_name, SUM(s.total_volume_m3) AS cancellation_volume FROM airlines a JOIN flights f ON a.airline_id = f.airline_id JOIN shipments s ON f.shipment_id = s.shipment_id WHERE f.status = 'cancelled' GROUP BY a.name",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.airline_id",
+        "latency_s": 3.564,
+        "eval_count": 63,
+        "eval_duration_s": 1.301614,
+        "prompt_eval_count": 2216
+      }
+    ],
+    "retried": true,
+    "eval_count": 130,
+    "eval_duration_s": 2.603764,
+    "prompt_eval_count": 2136
+  },
+  "M06-VAG": {
+    "raw": "```sql\nSELECT a.name, COUNT(f.flight_id) AS cancellation_count FROM airlines a JOIN flights f ON a.airline_id = f.airline_id WHERE f.status = 'cancelled' GROUP BY a.name\n```",
+    "error": null,
+    "latency_s": 6.823,
+    "pass1_s": 0.004,
+    "pass2_s": 6.819,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name, COUNT(f.flight_id) AS cancellation_count\nFROM airlines a\nJOIN flights f ON a.airline_id = f.airline_id\nWHERE f.status = 'cancelled'\nGROUP BY a.name;\n```",
+        "sql": "SELECT a.name, COUNT(f.flight_id) AS cancellation_count FROM airlines a JOIN flights f ON a.airline_id = f.airline_id WHERE f.status = 'cancelled' GROUP BY a.name",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.airline_id",
+        "latency_s": 3.66,
+        "eval_count": 49,
+        "eval_duration_s": 0.938714,
+        "prompt_eval_count": 1364
+      },
+      {
+        "raw": "```sql\nSELECT a.name, COUNT(f.flight_id) AS cancellation_count FROM airlines a JOIN flights f ON a.airline_id = f.airline_id WHERE f.status = 'cancelled' GROUP BY a.name\n```",
+        "sql": "SELECT a.name, COUNT(f.flight_id) AS cancellation_count FROM airlines a JOIN flights f ON a.airline_id = f.airline_id WHERE f.status = 'cancelled' GROUP BY a.name",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.airline_id",
+        "latency_s": 3.159,
+        "eval_count": 46,
+        "eval_duration_s": 0.90719,
+        "prompt_eval_count": 1427
+      }
+    ],
+    "retried": true,
+    "eval_count": 95,
+    "eval_duration_s": 1.845904,
+    "prompt_eval_count": 1364
+  },
+  "M07-CAS": {
+    "raw": "SELECT a.iata_code, SUM(f.co2_emissions_kg) AS total_co2_emissions_tonnes FROM airlines a JOIN flights f ON a.airline_id = f.airline_id GROUP BY a.iata_code",
+    "error": null,
+    "latency_s": 7.32,
+    "pass1_s": 0.014,
+    "pass2_s": 7.306,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.iata_code, SUM(f.co2_emissions_kg) AS total_co2_emissions_tonnes\nFROM airlines a\nJOIN flights f ON a.airline_id = f.airline_id\nGROUP BY a.iata_code;\n```",
+        "sql": "SELECT a.iata_code, SUM(f.co2_emissions_kg) AS total_co2_emissions_tonnes FROM airlines a JOIN flights f ON a.airline_id = f.airline_id GROUP BY a.iata_code",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.co2_emissions_kg",
+        "latency_s": 4.067,
+        "eval_count": 55,
+        "eval_duration_s": 1.070117,
+        "prompt_eval_count": 2366
+      },
+      {
+        "raw": "SELECT a.iata_code, SUM(f.co2_emissions_kg) AS total_co2_emissions_tonnes FROM airlines a JOIN flights f ON a.airline_id = f.airline_id GROUP BY a.iata_code",
+        "sql": "SELECT a.iata_code, SUM(f.co2_emissions_kg) AS total_co2_emissions_tonnes FROM airlines a JOIN flights f ON a.airline_id = f.airline_id GROUP BY a.iata_code",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.co2_emissions_kg",
+        "latency_s": 3.239,
+        "eval_count": 47,
+        "eval_duration_s": 0.999855,
+        "prompt_eval_count": 2438
+      }
+    ],
+    "retried": true,
+    "eval_count": 102,
+    "eval_duration_s": 2.069972,
+    "prompt_eval_count": 2366
+  },
+  "M07-SCH": {
+    "raw": "```sql\nSELECT SUM(fuel_uplifts.co2_emissions_kg / 1000) AS avg_co2_emissions_per_1000, airlines.name \nFROM fuel_uplifts \nJOIN flights ON fuel_uplifts.flight_id = flights.flight_id \nJOIN aircraft ON flights.aircraft_id = aircraft.aircraft_id \nJOIN airlines ON aircraft.airline_id = airlines.airline_id \nGROUP BY airlines.name \nROUND(SUM(fuel_uplifts.co2_emissions_kg / 1000), 1)\n```",
+    "error": null,
+    "latency_s": 10.003,
+    "pass1_s": 0.024,
+    "pass2_s": 9.979,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT SUM(fuel_uplifts.co2_emissions_kg / 1000) AS avg_co2_emissions_per_1000, airlines.name \nFROM fuel_uplifts \nJOIN flights ON fuel_uplifts.flight_id = flights.flight_id \nJOIN aircraft ON flights.aircraft_id = aircraft.aircraft_id \nJOIN airlines ON aircraft.airline_id = airlines.airline_id \nGROUP BY airlines.name \nROUND(SUM(fuel_uplifts.co2_emissions_kg / 1000), 1)\n```",
+        "sql": "SELECT SUM(fuel_uplifts.co2_emissions_kg / 1000) AS avg_co2_emissions_per_1000, airlines.name FROM fuel_uplifts JOIN flights ON fuel_uplifts.flight_id = flights.flight_id JOIN aircraft ON flights.aircraft_id = aircraft.aircraft_id JOIN airlines ON aircraft.airline_id = airlines.airline_id GROUP BY airlines.name ROUND(SUM(fuel_uplifts.co2_emissions_kg / 1000), 1)",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "near \"ROUND\": syntax error",
+        "latency_s": 5.368,
+        "eval_count": 118,
+        "eval_duration_s": 2.337941,
+        "prompt_eval_count": 2817
+      },
+      {
+        "raw": "```sql\nSELECT SUM(fuel_uplifts.co2_emissions_kg / 1000) AS avg_co2_emissions_per_1000, airlines.name \nFROM fuel_uplifts \nJOIN flights ON fuel_uplifts.flight_id = flights.flight_id \nJOIN aircraft ON flights.aircraft_id = aircraft.aircraft_id \nJOIN airlines ON aircraft.airline_id = airlines.airline_id \nGROUP BY airlines.name \nROUND(SUM(fuel_uplifts.co2_emissions_kg / 1000), 1)\n```",
+        "sql": "SELECT SUM(fuel_uplifts.co2_emissions_kg / 1000) AS avg_co2_emissions_per_1000, airlines.name FROM fuel_uplifts JOIN flights ON fuel_uplifts.flight_id = flights.flight_id JOIN aircraft ON flights.aircraft_id = aircraft.aircraft_id JOIN airlines ON aircraft.airline_id = airlines.airline_id GROUP BY airlines.name ROUND(SUM(fuel_uplifts.co2_emissions_kg / 1000), 1)",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "near \"ROUND\": syntax error",
+        "latency_s": 4.611,
+        "eval_count": 118,
+        "eval_duration_s": 2.33548,
+        "prompt_eval_count": 2944
+      }
+    ],
+    "retried": true,
+    "eval_count": 236,
+    "eval_duration_s": 4.673420999999999,
+    "prompt_eval_count": 2817
+  },
+  "M07-BIZ": {
+    "raw": "```sql\nSELECT a.name AS carrier_name, SUM(f.co2_emissions_kg) AS total_co2_emissions_tonnes\nFROM airlines a\nJOIN fuel_uplifts f ON a.home_hub_airport_id = f.airport_id\nGROUP BY a.name;\n```",
+    "error": null,
+    "latency_s": 4.026,
+    "pass1_s": 0.018,
+    "pass2_s": 4.008,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name AS carrier_name, SUM(f.co2_emissions_kg) AS total_co2_emissions_tonnes\nFROM airlines a\nJOIN fuel_uplifts f ON a.home_hub_airport_id = f.airport_id\nGROUP BY a.name;\n```",
+        "sql": "SELECT a.name AS carrier_name, SUM(f.co2_emissions_kg) AS total_co2_emissions_tonnes FROM airlines a JOIN fuel_uplifts f ON a.home_hub_airport_id = f.airport_id GROUP BY a.name",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.008,
+        "eval_count": 59,
+        "eval_duration_s": 1.148197,
+        "prompt_eval_count": 2359
+      }
+    ],
+    "retried": false,
+    "eval_count": 59,
+    "eval_duration_s": 1.148197,
+    "prompt_eval_count": 2359
+  },
+  "M07-VAG": {
+    "raw": "```sql\nSELECT a.name AS airline_name, SUM(fu.co2_emissions_kg) AS total_emissions_kg FROM airlines a JOIN flights f ON a.airline_id = f.airline_id JOIN fuel_uplifts fu ON f.flight_id = fu.flight_id GROUP BY a.name ORDER BY total_emissions_kg DESC\n```",
+    "error": null,
+    "latency_s": 7.408,
+    "pass1_s": 0.004,
+    "pass2_s": 7.404,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name AS airline_name, SUM(f.co2_emissions_kg) AS total_emissions_kg\nFROM airlines a\nJOIN flights f ON a.airline_id = f.airline_id\nGROUP BY a.name\nORDER BY total_emissions_kg DESC;\n```",
+        "sql": "SELECT a.name AS airline_name, SUM(f.co2_emissions_kg) AS total_emissions_kg FROM airlines a JOIN flights f ON a.airline_id = f.airline_id GROUP BY a.name ORDER BY total_emissions_kg DESC",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.co2_emissions_kg",
+        "latency_s": 3.724,
+        "eval_count": 60,
+        "eval_duration_s": 1.18528,
+        "prompt_eval_count": 1673
+      },
+      {
+        "raw": "```sql\nSELECT a.name AS airline_name, SUM(fu.co2_emissions_kg) AS total_emissions_kg FROM airlines a JOIN flights f ON a.airline_id = f.airline_id JOIN fuel_uplifts fu ON f.flight_id = fu.flight_id GROUP BY a.name ORDER BY total_emissions_kg DESC\n```",
+        "sql": "SELECT a.name AS airline_name, SUM(fu.co2_emissions_kg) AS total_emissions_kg FROM airlines a JOIN flights f ON a.airline_id = f.airline_id JOIN fuel_uplifts fu ON f.flight_id = fu.flight_id GROUP BY a.name ORDER BY total_emissions_kg DESC",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.airline_id",
+        "latency_s": 3.68,
+        "eval_count": 73,
+        "eval_duration_s": 1.426539,
+        "prompt_eval_count": 1749
+      }
+    ],
+    "retried": true,
+    "eval_count": 133,
+    "eval_duration_s": 2.6118189999999997,
+    "prompt_eval_count": 1673
+  },
+  "M08-CAS": {
+    "raw": "```sql\nSELECT AVG(fuel_uplifts.price_usd_per_litre) AS avg_fuel_price_per_litre, airports.region\nFROM fuel_uplifts\nJOIN airports ON fuel_uplifts.airport_id = airports.airport_id\nGROUP BY airports.region;\n```",
+    "error": null,
+    "latency_s": 4.028,
+    "pass1_s": 0.015,
+    "pass2_s": 4.013,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT AVG(fuel_uplifts.price_usd_per_litre) AS avg_fuel_price_per_litre, airports.region\nFROM fuel_uplifts\nJOIN airports ON fuel_uplifts.airport_id = airports.airport_id\nGROUP BY airports.region;\n```",
+        "sql": "SELECT AVG(fuel_uplifts.price_usd_per_litre) AS avg_fuel_price_per_litre, airports.region FROM fuel_uplifts JOIN airports ON fuel_uplifts.airport_id = airports.airport_id GROUP BY airports.region",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.013,
+        "eval_count": 58,
+        "eval_duration_s": 1.11726,
+        "prompt_eval_count": 1546
+      }
+    ],
+    "retried": false,
+    "eval_count": 58,
+    "eval_duration_s": 1.11726,
+    "prompt_eval_count": 1546
+  },
+  "M08-SCH": {
+    "raw": "```sql\nSELECT AVG(fuel_uplifts.price_usd_per_litre) AS avg_price_per_litre, airports.region \nFROM fuel_uplifts \nJOIN airports ON fuel_uplifts.airport_id = airports.airport_id \nGROUP BY airports.region \nROUND(avg_price_per_litre, 4)\n```",
+    "error": null,
+    "latency_s": 7.853,
+    "pass1_s": 0.02,
+    "pass2_s": 7.833,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT AVG(fuel_uplifts.price_usd_per_litre) AS avg_price_per_litre, airports.region \nFROM fuel_uplifts \nJOIN airports ON fuel_uplifts.airport_id = airports.airport_id \nGROUP BY airports.region \nROUND(avg_price_per_litre, 4)\n```",
+        "sql": "SELECT AVG(fuel_uplifts.price_usd_per_litre) AS avg_price_per_litre, airports.region FROM fuel_uplifts JOIN airports ON fuel_uplifts.airport_id = airports.airport_id GROUP BY airports.region ROUND(avg_price_per_litre, 4)",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "near \"ROUND\": syntax error",
+        "latency_s": 4.279,
+        "eval_count": 66,
+        "eval_duration_s": 1.282174,
+        "prompt_eval_count": 2161
+      },
+      {
+        "raw": "```sql\nSELECT AVG(fuel_uplifts.price_usd_per_litre) AS avg_price_per_litre, airports.region \nFROM fuel_uplifts \nJOIN airports ON fuel_uplifts.airport_id = airports.airport_id \nGROUP BY airports.region \nROUND(avg_price_per_litre, 4)\n```",
+        "sql": "SELECT AVG(fuel_uplifts.price_usd_per_litre) AS avg_price_per_litre, airports.region FROM fuel_uplifts JOIN airports ON fuel_uplifts.airport_id = airports.airport_id GROUP BY airports.region ROUND(avg_price_per_litre, 4)",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "near \"ROUND\": syntax error",
+        "latency_s": 3.554,
+        "eval_count": 66,
+        "eval_duration_s": 1.286487,
+        "prompt_eval_count": 2238
+      }
+    ],
+    "retried": true,
+    "eval_count": 132,
+    "eval_duration_s": 2.5686609999999996,
+    "prompt_eval_count": 2161
+  },
+  "M08-BIZ": {
+    "raw": "```sql\nSELECT a.region, AVG(f.price_usd_per_litre) AS avg_fuel_price_per_litre\nFROM fuel_uplifts f\nJOIN airports a ON f.airport_id = a.airport_id\nGROUP BY a.region;\n```",
+    "error": null,
+    "latency_s": 3.38,
+    "pass1_s": 0.015,
+    "pass2_s": 3.365,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.region, AVG(f.price_usd_per_litre) AS avg_fuel_price_per_litre\nFROM fuel_uplifts f\nJOIN airports a ON f.airport_id = a.airport_id\nGROUP BY a.region;\n```",
+        "sql": "SELECT a.region, AVG(f.price_usd_per_litre) AS avg_fuel_price_per_litre FROM fuel_uplifts f JOIN airports a ON f.airport_id = a.airport_id GROUP BY a.region",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.365,
+        "eval_count": 53,
+        "eval_duration_s": 1.022163,
+        "prompt_eval_count": 1561
+      }
+    ],
+    "retried": false,
+    "eval_count": 53,
+    "eval_duration_s": 1.022163,
+    "prompt_eval_count": 1561
+  },
+  "M08-VAG": {
+    "raw": "```sql\nSELECT airport_id, AVG(price_usd_per_litre) AS avg_price_per_litre\nFROM fuel_uplifts\nGROUP BY airport_id\nORDER BY avg_price_per_litre DESC\nLIMIT 1;\n```",
+    "error": null,
+    "latency_s": 3.385,
+    "pass1_s": 0.005,
+    "pass2_s": 3.38,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT airport_id, AVG(price_usd_per_litre) AS avg_price_per_litre\nFROM fuel_uplifts\nGROUP BY airport_id\nORDER BY avg_price_per_litre DESC\nLIMIT 1;\n```",
+        "sql": "SELECT airport_id, AVG(price_usd_per_litre) AS avg_price_per_litre FROM fuel_uplifts GROUP BY airport_id ORDER BY avg_price_per_litre DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.38,
+        "eval_count": 48,
+        "eval_duration_s": 0.946076,
+        "prompt_eval_count": 454
+      }
+    ],
+    "retried": false,
+    "eval_count": 48,
+    "eval_duration_s": 0.946076,
+    "prompt_eval_count": 454
+  },
+  "M09-CAS": {
+    "raw": "```sql\nSELECT a.name, COUNT(w.warehouse_id) AS warehouse_count\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nGROUP BY a.airport_id\nHAVING COUNT(w.warehouse_id) >= 4;\n```",
+    "error": null,
+    "latency_s": 3.626,
+    "pass1_s": 0.01,
+    "pass2_s": 3.616,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name, COUNT(w.warehouse_id) AS warehouse_count\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nGROUP BY a.airport_id\nHAVING COUNT(w.warehouse_id) >= 4;\n```",
+        "sql": "SELECT a.name, COUNT(w.warehouse_id) AS warehouse_count FROM airports a JOIN warehouses w ON a.airport_id = w.airport_id GROUP BY a.airport_id HAVING COUNT(w.warehouse_id) >= 4",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.616,
+        "eval_count": 56,
+        "eval_duration_s": 1.072869999,
+        "prompt_eval_count": 758
+      }
+    ],
+    "retried": false,
+    "eval_count": 56,
+    "eval_duration_s": 1.072869999,
+    "prompt_eval_count": 758
+  },
+  "M09-SCH": {
+    "raw": "```sql\nSELECT a.iata_code, COUNT(w.warehouse_id) AS warehouse_count\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nGROUP BY a.iata_code\nHAVING COUNT(w.warehouse_id) >= 4;\n```",
+    "error": null,
+    "latency_s": 3.471,
+    "pass1_s": 0.017,
+    "pass2_s": 3.454,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.iata_code, COUNT(w.warehouse_id) AS warehouse_count\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nGROUP BY a.iata_code\nHAVING COUNT(w.warehouse_id) >= 4;\n```",
+        "sql": "SELECT a.iata_code, COUNT(w.warehouse_id) AS warehouse_count FROM airports a JOIN warehouses w ON a.airport_id = w.airport_id GROUP BY a.iata_code HAVING COUNT(w.warehouse_id) >= 4",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.454,
+        "eval_count": 58,
+        "eval_duration_s": 1.169056,
+        "prompt_eval_count": 767
+      }
+    ],
+    "retried": false,
+    "eval_count": 58,
+    "eval_duration_s": 1.169056,
+    "prompt_eval_count": 767
+  },
+  "M09-BIZ": {
+    "raw": "```sql\nSELECT a.name, COUNT(w.warehouse_id) AS warehouse_count\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nGROUP BY a.name\nHAVING warehouse_count >= 4;\n```",
+    "error": null,
+    "latency_s": 3.794,
+    "pass1_s": 0.015,
+    "pass2_s": 3.779,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name, COUNT(w.warehouse_id) AS warehouse_count\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nGROUP BY a.name\nHAVING warehouse_count >= 4;\n```",
+        "sql": "SELECT a.name, COUNT(w.warehouse_id) AS warehouse_count FROM airports a JOIN warehouses w ON a.airport_id = w.airport_id GROUP BY a.name HAVING warehouse_count >= 4",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.779,
+        "eval_count": 50,
+        "eval_duration_s": 0.96329,
+        "prompt_eval_count": 1554
+      }
+    ],
+    "retried": false,
+    "eval_count": 50,
+    "eval_duration_s": 0.96329,
+    "prompt_eval_count": 1554
+  },
+  "M09-VAG": {
+    "raw": "```sql\nSELECT a.name, a.airport_id, COUNT(w.warehouse_id) AS warehouse_count\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nGROUP BY a.airport_id\nORDER BY warehouse_count DESC\nLIMIT 10;\n```",
+    "error": null,
+    "latency_s": 3.485,
+    "pass1_s": 0.008,
+    "pass2_s": 3.477,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name, a.airport_id, COUNT(w.warehouse_id) AS warehouse_count\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nGROUP BY a.airport_id\nORDER BY warehouse_count DESC\nLIMIT 10;\n```",
+        "sql": "SELECT a.name, a.airport_id, COUNT(w.warehouse_id) AS warehouse_count FROM airports a JOIN warehouses w ON a.airport_id = w.airport_id GROUP BY a.airport_id ORDER BY warehouse_count DESC LIMIT 10",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.477,
+        "eval_count": 60,
+        "eval_duration_s": 1.200274,
+        "prompt_eval_count": 752
+      }
+    ],
+    "retried": false,
+    "eval_count": 60,
+    "eval_duration_s": 1.200274,
+    "prompt_eval_count": 752
+  },
+  "M10-CAS": {
+    "raw": "```sql\nSELECT a.name, a.airport_id, a.is_cargo_hub, a.night_curfew, a.region, a.runway_count\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nWHERE w.is_bonded = 1\nGROUP BY a.airport_id\nHAVING COUNT(w.warehouse_id) > 1;\n```",
+    "error": null,
+    "latency_s": 4.021,
+    "pass1_s": 0.009,
+    "pass2_s": 4.012,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name, a.airport_id, a.is_cargo_hub, a.night_curfew, a.region, a.runway_count\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nWHERE w.is_bonded = 1\nGROUP BY a.airport_id\nHAVING COUNT(w.warehouse_id) > 1;\n```",
+        "sql": "SELECT a.name, a.airport_id, a.is_cargo_hub, a.night_curfew, a.region, a.runway_count FROM airports a JOIN warehouses w ON a.airport_id = w.airport_id WHERE w.is_bonded = 1 GROUP BY a.airport_id HAVING COUNT(w.warehouse_id) > 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.012,
+        "eval_count": 81,
+        "eval_duration_s": 1.555624,
+        "prompt_eval_count": 1043
+      }
+    ],
+    "retried": false,
+    "eval_count": 81,
+    "eval_duration_s": 1.555624,
+    "prompt_eval_count": 1043
+  },
+  "M10-SCH": {
+    "raw": "```sql\nSELECT a.iata_code, COUNT(w.warehouse_id) AS bonded_warehouse_count\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nWHERE w.is_bonded = 1\nGROUP BY a.iata_code\nHAVING bonded_warehouse_count > 1;\n```",
+    "error": null,
+    "latency_s": 3.775,
+    "pass1_s": 0.018,
+    "pass2_s": 3.757,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.iata_code, COUNT(w.warehouse_id) AS bonded_warehouse_count\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nWHERE w.is_bonded = 1\nGROUP BY a.iata_code\nHAVING bonded_warehouse_count > 1;\n```",
+        "sql": "SELECT a.iata_code, COUNT(w.warehouse_id) AS bonded_warehouse_count FROM airports a JOIN warehouses w ON a.airport_id = w.airport_id WHERE w.is_bonded = 1 GROUP BY a.iata_code HAVING bonded_warehouse_count > 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.757,
+        "eval_count": 68,
+        "eval_duration_s": 1.310691,
+        "prompt_eval_count": 1291
+      }
+    ],
+    "retried": false,
+    "eval_count": 68,
+    "eval_duration_s": 1.310691,
+    "prompt_eval_count": 1291
+  },
+  "M10-BIZ": {
+    "raw": "```sql\nSELECT a.name, a.airport_id\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nWHERE w.is_bonded = 1\nGROUP BY a.name, a.airport_id\nHAVING COUNT(w.warehouse_id) > 1;\n```",
+    "error": null,
+    "latency_s": 3.764,
+    "pass1_s": 0.013,
+    "pass2_s": 3.751,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name, a.airport_id\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nWHERE w.is_bonded = 1\nGROUP BY a.name, a.airport_id\nHAVING COUNT(w.warehouse_id) > 1;\n```",
+        "sql": "SELECT a.name, a.airport_id FROM airports a JOIN warehouses w ON a.airport_id = w.airport_id WHERE w.is_bonded = 1 GROUP BY a.name, a.airport_id HAVING COUNT(w.warehouse_id) > 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.751,
+        "eval_count": 64,
+        "eval_duration_s": 1.247736,
+        "prompt_eval_count": 1894
+      }
+    ],
+    "retried": false,
+    "eval_count": 64,
+    "eval_duration_s": 1.247736,
+    "prompt_eval_count": 1894
+  },
+  "M10-VAG": {
+    "raw": "```sql\nSELECT a.name, a.airport_id, a.is_cargo_hub, a.night_curfew, a.region, a.runway_count, COUNT(w.warehouse_id) AS bonded_warehouse_count\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nWHERE w.is_bonded = 1\nGROUP BY a.airport_id\nHAVING COUNT(w.warehouse_id) > 1;\n```",
+    "error": null,
+    "latency_s": 4.14,
+    "pass1_s": 0.007,
+    "pass2_s": 4.133,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name, a.airport_id, a.is_cargo_hub, a.night_curfew, a.region, a.runway_count, COUNT(w.warehouse_id) AS bonded_warehouse_count\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nWHERE w.is_bonded = 1\nGROUP BY a.airport_id\nHAVING COUNT(w.warehouse_id) > 1;\n```",
+        "sql": "SELECT a.name, a.airport_id, a.is_cargo_hub, a.night_curfew, a.region, a.runway_count, COUNT(w.warehouse_id) AS bonded_warehouse_count FROM airports a JOIN warehouses w ON a.airport_id = w.airport_id WHERE w.is_bonded = 1 GROUP BY a.airport_id HAVING COUNT(w.warehouse_id) > 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.133,
+        "eval_count": 93,
+        "eval_duration_s": 1.875399,
+        "prompt_eval_count": 1041
+      }
+    ],
+    "retried": false,
+    "eval_count": 93,
+    "eval_duration_s": 1.875399,
+    "prompt_eval_count": 1041
+  },
+  "H01-CAS": {
+    "raw": "```sql\nSELECT a.name, a.iata_code, COUNT(f.flight_id) AS completed_flights\nFROM airlines a\nJOIN aircraft ac ON a.airline_id = ac.airline_id\nJOIN flights f ON ac.aircraft_id = f.aircraft_id\nWHERE f.status = 'completed'\nGROUP BY a.airline_id\nORDER BY completed_flights DESC\nLIMIT 1;\n```",
+    "error": null,
+    "latency_s": 4.63,
+    "pass1_s": 0.016,
+    "pass2_s": 4.614,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name, a.iata_code, COUNT(f.flight_id) AS completed_flights\nFROM airlines a\nJOIN aircraft ac ON a.airline_id = ac.airline_id\nJOIN flights f ON ac.aircraft_id = f.aircraft_id\nWHERE f.status = 'completed'\nGROUP BY a.airline_id\nORDER BY completed_flights DESC\nLIMIT 1;\n```",
+        "sql": "SELECT a.name, a.iata_code, COUNT(f.flight_id) AS completed_flights FROM airlines a JOIN aircraft ac ON a.airline_id = ac.airline_id JOIN flights f ON ac.aircraft_id = f.aircraft_id WHERE f.status = 'completed' GROUP BY a.airline_id ORDER BY completed_flights DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.614,
+        "eval_count": 82,
+        "eval_duration_s": 1.611139,
+        "prompt_eval_count": 2127
+      }
+    ],
+    "retried": false,
+    "eval_count": 82,
+    "eval_duration_s": 1.611139,
+    "prompt_eval_count": 2127
+  },
+  "H01-SCH": {
+    "raw": "```sql\nSELECT a.tail_number, COUNT(f.flight_id) AS flight_count\nFROM aircraft a\nJOIN flights f ON a.aircraft_id = f.aircraft_id\nWHERE f.status = 'completed'\nGROUP BY a.tail_number\nORDER BY flight_count DESC, a.tail_number ASC\nLIMIT 1;\n```",
+    "error": null,
+    "latency_s": 4.084,
+    "pass1_s": 0.021,
+    "pass2_s": 4.063,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.tail_number, COUNT(f.flight_id) AS flight_count\nFROM aircraft a\nJOIN flights f ON a.aircraft_id = f.aircraft_id\nWHERE f.status = 'completed'\nGROUP BY a.tail_number\nORDER BY flight_count DESC, a.tail_number ASC\nLIMIT 1;\n```",
+        "sql": "SELECT a.tail_number, COUNT(f.flight_id) AS flight_count FROM aircraft a JOIN flights f ON a.aircraft_id = f.aircraft_id WHERE f.status = 'completed' GROUP BY a.tail_number ORDER BY flight_count DESC, a.tail_number ASC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.063,
+        "eval_count": 66,
+        "eval_duration_s": 1.300892,
+        "prompt_eval_count": 2467
+      }
+    ],
+    "retried": false,
+    "eval_count": 66,
+    "eval_duration_s": 1.300892,
+    "prompt_eval_count": 2467
+  },
+  "H01-BIZ": {
+    "raw": "```sql\nSELECT a.name AS airline_name, a.iata_code AS airline_code, ac.serial_number AS aircraft_serial_number, COUNT(f.flight_id) AS completed_flights\nFROM airlines a\nJOIN aircraft ac ON a.airline_id = ac.airline_id\nJOIN flights f ON ac.aircraft_id = f.aircraft_id\nWHERE f.status = 'completed'\nGROUP BY a.airline_id, ac.serial_number\nORDER BY completed_flights DESC\nLIMIT 1;\n```",
+    "error": null,
+    "latency_s": 12.647,
+    "pass1_s": 0.014,
+    "pass2_s": 12.633,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name AS airline_name, a.iata_code AS airline_iata, a.icao_code AS airline_icao, a.country AS airline_country, a.headquarters_city AS airline_headquarters, a.founded_year AS airline_founded, a.callsign AS airline_callsign, a.home_hub_airport_id AS airline_home_hub, a.alliance AS airline_alliance, a.is_cargo_only AS airline_is_cargo_only, a.aoc_number AS airline_aoc_number, a.website AS airline_website, a.contact_email AS airline_contact_email, ac.type_id AS aircraft_type_id, ac.serial_number AS aircraft_serial_number, ac.registration_country AS aircraft_registration_country, ac.year_manufactured AS aircraft_year_manufactured, ac.delivery_date AS aircraft_delivery_date, ac.ownership AS aircraft_ownership, ac.lessor_name AS aircraft_lessor_name, ac.lease_end_date AS aircraft_lease_end_date, ac.total_flight_hours AS aircraft_total_flight_hours, ac.total_cycles AS aircraft_total_cycles, ac.last_heavy_check_date AS aircraft_last_heavy_check_date, ac.status AS aircraft_status\nFROM airlines a\nJOIN aircraft ac ON a.airline_id = ac.airline_id\nJOIN flights f ON ac.aircraft_id = f.aircraft_id\nWHERE f.status = 'completed'\nGROUP BY a.airline_id, ac.type_id\nORDER BY COUNT(f.flight_id) DESC\nLIMIT 1;\n```",
+        "sql": "",
+        "model_error": "timeout",
+        "exec": "error",
+        "exec_error": "timeout",
+        "latency_s": 8.36,
+        "eval_count": 293,
+        "eval_duration_s": 5.799663,
+        "prompt_eval_count": 2405
+      },
+      {
+        "raw": "```sql\nSELECT a.name AS airline_name, a.iata_code AS airline_code, ac.serial_number AS aircraft_serial_number, COUNT(f.flight_id) AS completed_flights\nFROM airlines a\nJOIN aircraft ac ON a.airline_id = ac.airline_id\nJOIN flights f ON ac.aircraft_id = f.aircraft_id\nWHERE f.status = 'completed'\nGROUP BY a.airline_id, ac.serial_number\nORDER BY completed_flights DESC\nLIMIT 1;\n```",
+        "sql": "SELECT a.name AS airline_name, a.iata_code AS airline_code, ac.serial_number AS aircraft_serial_number, COUNT(f.flight_id) AS completed_flights FROM airlines a JOIN aircraft ac ON a.airline_id = ac.airline_id JOIN flights f ON ac.aircraft_id = f.aircraft_id WHERE f.status = 'completed' GROUP BY a.airline_id, ac.serial_number ORDER BY completed_flights DESC LIMIT 1",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.273,
+        "eval_count": 100,
+        "eval_duration_s": 2.102083,
+        "prompt_eval_count": 2429
+      }
+    ],
+    "retried": true,
+    "eval_count": 393,
+    "eval_duration_s": 7.901745999999999,
+    "prompt_eval_count": 2405
+  },
+  "H01-VAG": {
+    "raw": "```sql\nSELECT a.name AS airline_name, at.model AS plane_model, SUM(f.quantity_kg) AS total_cargo \nFROM airlines a \nJOIN aircraft ac ON a.airline_id = ac.airline_id \nJOIN aircraft_types at ON ac.type_id = at.type_id \nJOIN fuel_uplifts f ON ac.aircraft_id = f.aircraft_id \nGROUP BY a.name, at.model \nORDER BY total_cargo DESC \nLIMIT 1\n```",
+    "error": null,
+    "latency_s": 8.784,
+    "pass1_s": 0.007,
+    "pass2_s": 8.777,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name AS airline_name, at.model AS plane_model, SUM(f.quantity_kg) AS total_cargo\nFROM airlines a\nJOIN aircraft ac ON a.airline_id = ac.airline_id\nJOIN aircraft_types at ON ac.type_id = at.type_id\nJOIN fuel_uplifts f ON ac.aircraft_id = f.aircraft_id\nGROUP BY a.name, at.model\nORDER BY total_cargo DESC\nLIMIT 1;\n```",
+        "sql": "SELECT a.name AS airline_name, at.model AS plane_model, SUM(f.quantity_kg) AS total_cargo FROM airlines a JOIN aircraft ac ON a.airline_id = ac.airline_id JOIN aircraft_types at ON ac.type_id = at.type_id JOIN fuel_uplifts f ON ac.aircraft_id = f.aircraft_id GROUP BY a.name, at.model ORDER BY total_cargo DESC LIMIT 1",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.aircraft_id",
+        "latency_s": 4.619,
+        "eval_count": 96,
+        "eval_duration_s": 1.875059,
+        "prompt_eval_count": 2301
+      },
+      {
+        "raw": "```sql\nSELECT a.name AS airline_name, at.model AS plane_model, SUM(f.quantity_kg) AS total_cargo \nFROM airlines a \nJOIN aircraft ac ON a.airline_id = ac.airline_id \nJOIN aircraft_types at ON ac.type_id = at.type_id \nJOIN fuel_uplifts f ON ac.aircraft_id = f.aircraft_id \nGROUP BY a.name, at.model \nORDER BY total_cargo DESC \nLIMIT 1\n```",
+        "sql": "SELECT a.name AS airline_name, at.model AS plane_model, SUM(f.quantity_kg) AS total_cargo FROM airlines a JOIN aircraft ac ON a.airline_id = ac.airline_id JOIN aircraft_types at ON ac.type_id = at.type_id JOIN fuel_uplifts f ON ac.aircraft_id = f.aircraft_id GROUP BY a.name, at.model ORDER BY total_cargo DESC LIMIT 1",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.aircraft_id",
+        "latency_s": 4.158,
+        "eval_count": 96,
+        "eval_duration_s": 1.872857,
+        "prompt_eval_count": 2407
+      }
+    ],
+    "retried": true,
+    "eval_count": 192,
+    "eval_duration_s": 3.747916,
+    "prompt_eval_count": 2301
+  },
+  "H02-CAS": {
+    "raw": "```sql\nSELECT a.name AS airport_name, al.name AS airline_name, COUNT(f.flight_id) AS landing_count\nFROM airports a\nJOIN flights f ON a.airport_id = f.destination_airport_id\nJOIN crew_assignments ca ON f.flight_id = ca.flight_id\nJOIN crew_members cm ON ca.crew_member_id = cm.crew_member_id\nJOIN airlines al ON cm.airline_id = al.airline_id\nWHERE f.status = 'completed' AND ca.assignment_status = 'completed'\nGROUP BY a.name, al.name\nORDER BY landing_count DESC;\n```",
+    "error": null,
+    "latency_s": 5.443,
+    "pass1_s": 0.016,
+    "pass2_s": 5.427,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name AS airport_name, al.name AS airline_name, COUNT(f.flight_id) AS landing_count\nFROM airports a\nJOIN flights f ON a.airport_id = f.destination_airport_id\nJOIN crew_assignments ca ON f.flight_id = ca.flight_id\nJOIN crew_members cm ON ca.crew_member_id = cm.crew_member_id\nJOIN airlines al ON cm.airline_id = al.airline_id\nWHERE f.status = 'completed' AND ca.assignment_status = 'completed'\nGROUP BY a.name, al.name\nORDER BY landing_count DESC;\n```",
+        "sql": "SELECT a.name AS airport_name, al.name AS airline_name, COUNT(f.flight_id) AS landing_count FROM airports a JOIN flights f ON a.airport_id = f.destination_airport_id JOIN crew_assignments ca ON f.flight_id = ca.flight_id JOIN crew_members cm ON ca.crew_member_id = cm.crew_member_id JOIN airlines al ON cm.airline_id = al.airline_id WHERE f.status = 'completed' AND ca.assignment_status = 'completed' GROUP BY a.name, al.name ORDER BY landing_count DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.427,
+        "eval_count": 123,
+        "eval_duration_s": 2.41153,
+        "prompt_eval_count": 2468
+      }
+    ],
+    "retried": false,
+    "eval_count": 123,
+    "eval_duration_s": 2.41153,
+    "prompt_eval_count": 2468
+  },
+  "H02-SCH": {
+    "raw": "```sql\nSELECT d.iata_code, d.name, COUNT(f.flight_id) AS flight_count \nFROM ( \n    SELECT f.destination_airport_id, a.iata_code, a.name \n    FROM flights f \n    JOIN airlines a ON f.destination_airport_id = a.home_hub_airport_id \n    WHERE f.status = 'completed' \n    GROUP BY f.destination_airport_id, a.iata_code, a.name \n    ORDER BY COUNT(f.flight_id) DESC, a.name \n    LIMIT 1 \n) d \nGROUP BY d.iata_code, d.name\n```",
+    "error": null,
+    "latency_s": 10.085,
+    "pass1_s": 0.024,
+    "pass2_s": 10.061,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT d.iata_code, d.name, COUNT(f.flight_id) AS flight_count\nFROM (\n    SELECT f.destination_airport_id, a.iata_code, a.name\n    FROM flights f\n    JOIN airlines a ON f.destination_airport_id = a.home_hub_airport_id\n    WHERE f.status = 'completed'\n    GROUP BY f.destination_airport_id, a.iata_code, a.name\n    ORDER BY COUNT(f.flight_id) DESC, a.name\n    LIMIT 1\n) d\nGROUP BY d.iata_code, d.name;\n```",
+        "sql": "SELECT d.iata_code, d.name, COUNT(f.flight_id) AS flight_count FROM ( SELECT f.destination_airport_id, a.iata_code, a.name FROM flights f JOIN airlines a ON f.destination_airport_id = a.home_hub_airport_id WHERE f.status = 'completed' GROUP BY f.destination_airport_id, a.iata_code, a.name ORDER BY COUNT(f.flight_id) DESC, a.name LIMIT 1 ) d GROUP BY d.iata_code, d.name",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.flight_id",
+        "latency_s": 5.295,
+        "eval_count": 122,
+        "eval_duration_s": 2.403787,
+        "prompt_eval_count": 2745
+      },
+      {
+        "raw": "```sql\nSELECT d.iata_code, d.name, COUNT(f.flight_id) AS flight_count \nFROM ( \n    SELECT f.destination_airport_id, a.iata_code, a.name \n    FROM flights f \n    JOIN airlines a ON f.destination_airport_id = a.home_hub_airport_id \n    WHERE f.status = 'completed' \n    GROUP BY f.destination_airport_id, a.iata_code, a.name \n    ORDER BY COUNT(f.flight_id) DESC, a.name \n    LIMIT 1 \n) d \nGROUP BY d.iata_code, d.name\n```",
+        "sql": "SELECT d.iata_code, d.name, COUNT(f.flight_id) AS flight_count FROM ( SELECT f.destination_airport_id, a.iata_code, a.name FROM flights f JOIN airlines a ON f.destination_airport_id = a.home_hub_airport_id WHERE f.status = 'completed' GROUP BY f.destination_airport_id, a.iata_code, a.name ORDER BY COUNT(f.flight_id) DESC, a.name LIMIT 1 ) d GROUP BY d.iata_code, d.name",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.flight_id",
+        "latency_s": 4.766,
+        "eval_count": 124,
+        "eval_duration_s": 2.480106,
+        "prompt_eval_count": 2869
+      }
+    ],
+    "retried": true,
+    "eval_count": 246,
+    "eval_duration_s": 4.8838930000000005,
+    "prompt_eval_count": 2745
+  },
+  "H02-BIZ": {
+    "raw": "```sql\nSELECT a.name AS airline_name, a.iata_code AS airline_code, COUNT(f.flight_id) AS completed_arrivals\nFROM airlines a\nJOIN flights f ON a.home_hub_airport_id = f.destination_airport_id AND f.status = 'completed'\nGROUP BY a.name, a.iata_code\nORDER BY completed_arrivals DESC;\n```",
+    "error": null,
+    "latency_s": 4.778,
+    "pass1_s": 0.017,
+    "pass2_s": 4.761,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name AS airline_name, a.iata_code AS airline_code, COUNT(f.flight_id) AS completed_arrivals\nFROM airlines a\nJOIN flights f ON a.home_hub_airport_id = f.destination_airport_id AND f.status = 'completed'\nGROUP BY a.name, a.iata_code\nORDER BY completed_arrivals DESC;\n```",
+        "sql": "SELECT a.name AS airline_name, a.iata_code AS airline_code, COUNT(f.flight_id) AS completed_arrivals FROM airlines a JOIN flights f ON a.home_hub_airport_id = f.destination_airport_id AND f.status = 'completed' GROUP BY a.name, a.iata_code ORDER BY completed_arrivals DESC",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.761,
+        "eval_count": 75,
+        "eval_duration_s": 1.47526,
+        "prompt_eval_count": 3226
+      }
+    ],
+    "retried": false,
+    "eval_count": 75,
+    "eval_duration_s": 1.47526,
+    "prompt_eval_count": 3226
+  },
+  "H02-VAG": {
+    "raw": "```sql\nSELECT a.name AS airline_name, a.country AS country, a.alliance AS alliance, a.icao_code AS icao_code, ap.name AS airport_name, ap.country AS airport_country, ap.region AS region, ap.runway_count AS runway_count, ap.is_cargo_hub AS is_cargo_hub, ap.night_curfew AS night_curfew, w.warehouse_id AS warehouse_id, w.capacity_tonnes AS capacity_tonnes, w.cold_room_count AS cold_room_count, w.dock_door_count AS dock_door_count, w.opened_year AS opened_year FROM airlines a JOIN airports ap ON a.home_hub_airport_id = ap.airport_id JOIN warehouses w ON ap.airport_id = w.airport_id WHERE a.is_cargo_only = 1 ORDER BY a.founded_year DESC, a.total_flight_hours DESC LIMIT 1\n```",
+    "error": null,
+    "latency_s": 12.296,
+    "pass1_s": 0.006,
+    "pass2_s": 12.29,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name AS airline_name, a.country AS country, a.alliance AS alliance, a.icao_code AS icao_code, ap.name AS airport_name, ap.country AS airport_country, ap.region AS region, ap.runway_count AS runway_count, ap.is_cargo_hub AS is_cargo_hub, ap.night_curfew AS night_curfew, w.warehouse_id AS warehouse_id, w.capacity_tonnes AS capacity_tonnes, w.cold_room_count AS cold_room_count, w.dock_door_count AS dock_door_count, w.opened_year AS opened_year\nFROM airlines a\nJOIN airports ap ON a.home_hub_airport_id = ap.airport_id\nJOIN warehouses w ON ap.airport_id = w.airport_id\nWHERE a.is_cargo_only = 1\nORDER BY a.founded_year DESC, a.seniority_number DESC, a.total_flight_hours DESC\nLIMIT 1;\n```",
+        "sql": "SELECT a.name AS airline_name, a.country AS country, a.alliance AS alliance, a.icao_code AS icao_code, ap.name AS airport_name, ap.country AS airport_country, ap.region AS region, ap.runway_count AS runway_count, ap.is_cargo_hub AS is_cargo_hub, ap.night_curfew AS night_curfew, w.warehouse_id AS warehouse_id, w.capacity_tonnes AS capacity_tonnes, w.cold_room_count AS cold_room_count, w.dock_door_count AS dock_door_count, w.opened_year AS opened_year FROM airlines a JOIN airports ap ON a.home_hub_airport_id = ap.airport_id JOIN warehouses w ON ap.airport_id = w.airport_id WHERE a.is_cargo_only = 1 ORDER BY a.founded_year DESC, a.seniority_number DESC, a.total_flight_hours DESC LIMIT 1",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: a.seniority_number",
+        "latency_s": 6.368,
+        "eval_count": 195,
+        "eval_duration_s": 3.810537,
+        "prompt_eval_count": 1317
+      },
+      {
+        "raw": "```sql\nSELECT a.name AS airline_name, a.country AS country, a.alliance AS alliance, a.icao_code AS icao_code, ap.name AS airport_name, ap.country AS airport_country, ap.region AS region, ap.runway_count AS runway_count, ap.is_cargo_hub AS is_cargo_hub, ap.night_curfew AS night_curfew, w.warehouse_id AS warehouse_id, w.capacity_tonnes AS capacity_tonnes, w.cold_room_count AS cold_room_count, w.dock_door_count AS dock_door_count, w.opened_year AS opened_year FROM airlines a JOIN airports ap ON a.home_hub_airport_id = ap.airport_id JOIN warehouses w ON ap.airport_id = w.airport_id WHERE a.is_cargo_only = 1 ORDER BY a.founded_year DESC, a.total_flight_hours DESC LIMIT 1\n```",
+        "sql": "SELECT a.name AS airline_name, a.country AS country, a.alliance AS alliance, a.icao_code AS icao_code, ap.name AS airport_name, ap.country AS airport_country, ap.region AS region, ap.runway_count AS runway_count, ap.is_cargo_hub AS is_cargo_hub, ap.night_curfew AS night_curfew, w.warehouse_id AS warehouse_id, w.capacity_tonnes AS capacity_tonnes, w.cold_room_count AS cold_room_count, w.dock_door_count AS dock_door_count, w.opened_year AS opened_year FROM airlines a JOIN airports ap ON a.home_hub_airport_id = ap.airport_id JOIN warehouses w ON ap.airport_id = w.airport_id WHERE a.is_cargo_only = 1 ORDER BY a.founded_year DESC, a.total_flight_hours DESC LIMIT 1",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: a.total_flight_hours",
+        "latency_s": 5.922,
+        "eval_count": 181,
+        "eval_duration_s": 3.53192,
+        "prompt_eval_count": 1525
+      }
+    ],
+    "retried": true,
+    "eval_count": 376,
+    "eval_duration_s": 7.342457,
+    "prompt_eval_count": 1317
+  },
+  "H03-CAS": {
+    "raw": "```sql\nSELECT \n  strftime('%Y-%m', invoices.issued_date) AS month, \n  SUM(invoices.amount_usd) AS total_invoiced, \n  SUM(SUM(invoices.amount_usd)) OVER (ORDER BY strftime('%Y-%m', invoices.issued_date)) AS running_total\nFROM \n  invoices\nWHERE \n  strftime('%Y', invoices.issued_date) = '2025'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+    "error": null,
+    "latency_s": 4.99,
+    "pass1_s": 0.025,
+    "pass2_s": 4.965,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT \n  strftime('%Y-%m', invoices.issued_date) AS month, \n  SUM(invoices.amount_usd) AS total_invoiced, \n  SUM(SUM(invoices.amount_usd)) OVER (ORDER BY strftime('%Y-%m', invoices.issued_date)) AS running_total\nFROM \n  invoices\nWHERE \n  strftime('%Y', invoices.issued_date) = '2025'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+        "sql": "SELECT strftime('%Y-%m', invoices.issued_date) AS month, SUM(invoices.amount_usd) AS total_invoiced, SUM(SUM(invoices.amount_usd)) OVER (ORDER BY strftime('%Y-%m', invoices.issued_date)) AS running_total FROM invoices WHERE strftime('%Y', invoices.issued_date) = '2025' GROUP BY month ORDER BY month",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.965,
+        "eval_count": 103,
+        "eval_duration_s": 2.0153,
+        "prompt_eval_count": 2247
+      }
+    ],
+    "retried": false,
+    "eval_count": 103,
+    "eval_duration_s": 2.0153,
+    "prompt_eval_count": 2247
+  },
+  "H03-SCH": {
+    "raw": "```sql\nSELECT \n  strftime('%Y-%m', invoices.issued_date) AS month,\n  SUM(invoices.amount_usd) AS total_amount,\n  SUM(SUM(invoices.amount_usd)) OVER (ORDER BY strftime('%Y-%m', invoices.issued_date)) AS running_total\nFROM \n  invoices\nWHERE \n  strftime('%Y', invoices.issued_date) = '2025'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+    "error": null,
+    "latency_s": 4.43,
+    "pass1_s": 0.025,
+    "pass2_s": 4.405,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT \n  strftime('%Y-%m', invoices.issued_date) AS month,\n  SUM(invoices.amount_usd) AS total_amount,\n  SUM(SUM(invoices.amount_usd)) OVER (ORDER BY strftime('%Y-%m', invoices.issued_date)) AS running_total\nFROM \n  invoices\nWHERE \n  strftime('%Y', invoices.issued_date) = '2025'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+        "sql": "SELECT strftime('%Y-%m', invoices.issued_date) AS month, SUM(invoices.amount_usd) AS total_amount, SUM(SUM(invoices.amount_usd)) OVER (ORDER BY strftime('%Y-%m', invoices.issued_date)) AS running_total FROM invoices WHERE strftime('%Y', invoices.issued_date) = '2025' GROUP BY month ORDER BY month",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.405,
+        "eval_count": 99,
+        "eval_duration_s": 1.889761,
+        "prompt_eval_count": 681
+      }
+    ],
+    "retried": false,
+    "eval_count": 99,
+    "eval_duration_s": 1.889761,
+    "prompt_eval_count": 681
+  },
+  "H03-BIZ": {
+    "raw": "```sql\nSELECT strftime('%Y-%m', invoices.issued_date) AS month, SUM(invoices.amount_usd) AS billed_revenue, SUM(COALESCE(insurance_claims.approved_amount_usd, 0)) AS insurance_claims, SUM(COALESCE(maintenance_records.parts_cost_usd, 0) + COALESCE(maintenance_records.labor_cost_usd, 0)) AS maintenance_costs, SUM(COALESCE(payments.amount_usd, 0)) AS payments_received FROM invoices LEFT JOIN insurance_claims ON invoices.shipment_id = insurance_claims.shipment_id LEFT JOIN maintenance_records ON invoices.shipment_id = maintenance_records.shipment_id LEFT JOIN payments ON invoices.invoice_id = payments.invoice_id WHERE strftime('%Y', invoices.issued_date) = '2025' GROUP BY month ORDER BY month\n```",
+    "error": null,
+    "latency_s": 13.014,
+    "pass1_s": 0.02,
+    "pass2_s": 12.994,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT \n  strftime('%Y-%m', invoices.issued_date) AS month,\n  SUM(invoices.amount_usd) AS billed_revenue,\n  SUM(COALESCE(insurance_claims.approved_amount_usd, 0)) AS insurance_claims,\n  SUM(COALESCE(maintenance_records.parts_cost_usd, 0) + COALESCE(maintenance_records.labor_cost_usd, 0)) AS maintenance_costs,\n  SUM(COALESCE(payments.amount_usd, 0)) AS payments_received\nFROM \n  invoices\nLEFT JOIN \n  insurance_claims ON invoices.invoice_id = insurance_claims.invoice_id\nLEFT JOIN \n  maintenance_records ON invoices.shipment_id = maintenance_records.shipment_id\nLEFT JOIN \n  payments ON invoices.invoice_id = payments.invoice_id\nWHERE \n  strftime('%Y', invoices.issued_date) = '2025'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+        "sql": "SELECT strftime('%Y-%m', invoices.issued_date) AS month, SUM(invoices.amount_usd) AS billed_revenue, SUM(COALESCE(insurance_claims.approved_amount_usd, 0)) AS insurance_claims, SUM(COALESCE(maintenance_records.parts_cost_usd, 0) + COALESCE(maintenance_records.labor_cost_usd, 0)) AS maintenance_costs, SUM(COALESCE(payments.amount_usd, 0)) AS payments_received FROM invoices LEFT JOIN insurance_claims ON invoices.invoice_id = insurance_claims.invoice_id LEFT JOIN maintenance_records ON invoices.shipment_id = maintenance_records.shipment_id LEFT JOIN payments ON invoices.invoice_id = payments.invoice_id WHERE strftime('%Y', invoices.issued_date) = '2025' GROUP BY month ORDER BY month",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: insurance_claims.invoice_id",
+        "latency_s": 7.09,
+        "eval_count": 203,
+        "eval_duration_s": 3.992237,
+        "prompt_eval_count": 2429
+      },
+      {
+        "raw": "```sql\nSELECT strftime('%Y-%m', invoices.issued_date) AS month, SUM(invoices.amount_usd) AS billed_revenue, SUM(COALESCE(insurance_claims.approved_amount_usd, 0)) AS insurance_claims, SUM(COALESCE(maintenance_records.parts_cost_usd, 0) + COALESCE(maintenance_records.labor_cost_usd, 0)) AS maintenance_costs, SUM(COALESCE(payments.amount_usd, 0)) AS payments_received FROM invoices LEFT JOIN insurance_claims ON invoices.shipment_id = insurance_claims.shipment_id LEFT JOIN maintenance_records ON invoices.shipment_id = maintenance_records.shipment_id LEFT JOIN payments ON invoices.invoice_id = payments.invoice_id WHERE strftime('%Y', invoices.issued_date) = '2025' GROUP BY month ORDER BY month\n```",
+        "sql": "SELECT strftime('%Y-%m', invoices.issued_date) AS month, SUM(invoices.amount_usd) AS billed_revenue, SUM(COALESCE(insurance_claims.approved_amount_usd, 0)) AS insurance_claims, SUM(COALESCE(maintenance_records.parts_cost_usd, 0) + COALESCE(maintenance_records.labor_cost_usd, 0)) AS maintenance_costs, SUM(COALESCE(payments.amount_usd, 0)) AS payments_received FROM invoices LEFT JOIN insurance_claims ON invoices.shipment_id = insurance_claims.shipment_id LEFT JOIN maintenance_records ON invoices.shipment_id = maintenance_records.shipment_id LEFT JOIN payments ON invoices.invoice_id = payments.invoice_id WHERE strftime('%Y', invoices.issued_date) = '2025' GROUP BY month ORDER BY month",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: insurance_claims.shipment_id",
+        "latency_s": 5.904,
+        "eval_count": 179,
+        "eval_duration_s": 3.541906,
+        "prompt_eval_count": 2624
+      }
+    ],
+    "retried": true,
+    "eval_count": 382,
+    "eval_duration_s": 7.534143,
+    "prompt_eval_count": 2429
+  },
+  "H03-VAG": {
+    "raw": "```sql\nSELECT SUM(invoices.amount_usd) AS total_revenue FROM invoices WHERE strftime('%Y', invoices.issued_date) = '2023';\n```",
+    "error": null,
+    "latency_s": 3.345,
+    "pass1_s": 0.005,
+    "pass2_s": 3.34,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT SUM(invoices.amount_usd) AS total_revenue FROM invoices WHERE strftime('%Y', invoices.issued_date) = '2023';\n```",
+        "sql": "SELECT SUM(invoices.amount_usd) AS total_revenue FROM invoices WHERE strftime('%Y', invoices.issued_date) = '2023'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.34,
+        "eval_count": 36,
+        "eval_duration_s": 0.694245,
+        "prompt_eval_count": 2888
+      }
+    ],
+    "retried": false,
+    "eval_count": 36,
+    "eval_duration_s": 0.694245,
+    "prompt_eval_count": 2888
+  },
+  "H04-CAS": {
+    "raw": "```sql\nSELECT strftime('%Y-%m', f.actual_departure) AS month, COUNT(f.flight_id) AS completed_flights, SUM(f.total_cost_usd) AS total_cost_usd, LAG(COUNT(f.flight_id)) OVER (ORDER BY strftime('%Y-%m', f.actual_departure)) - COUNT(f.flight_id) AS change_in_flights, LAG(SUM(f.total_cost_usd)) OVER (ORDER BY strftime('%Y-%m', f.actual_departure)) - SUM(f.total_cost_usd) AS change_in_cost FROM flights f WHERE f.status = 'completed' GROUP BY strftime('%Y-%m', f.actual_departure) ORDER BY month\n```",
+    "error": null,
+    "latency_s": 10.839,
+    "pass1_s": 0.024,
+    "pass2_s": 10.815,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT \n  strftime('%Y-%m', f.actual_departure) AS month,\n  COUNT(f.flight_id) AS completed_flights,\n  SUM(f.total_cost_usd) AS total_cost_usd,\n  LAG(COUNT(f.flight_id)) OVER (ORDER BY strftime('%Y-%m', f.actual_departure)) - \n  COUNT(f.flight_id) AS change_in_flights,\n  LAG(SUM(f.total_cost_usd)) OVER (ORDER BY strftime('%Y-%m', f.actual_departure)) - \n  SUM(f.total_cost_usd) AS change_in_cost\nFROM \n  flights f\nWHERE \n  f.status = 'completed'\nGROUP BY \n  strftime('%Y-%m', f.actual_departure)\nORDER BY \n  month;\n```",
+        "sql": "SELECT strftime('%Y-%m', f.actual_departure) AS month, COUNT(f.flight_id) AS completed_flights, SUM(f.total_cost_usd) AS total_cost_usd, LAG(COUNT(f.flight_id)) OVER (ORDER BY strftime('%Y-%m', f.actual_departure)) - COUNT(f.flight_id) AS change_in_flights, LAG(SUM(f.total_cost_usd)) OVER (ORDER BY strftime('%Y-%m', f.actual_departure)) - SUM(f.total_cost_usd) AS change_in_cost FROM flights f WHERE f.status = 'completed' GROUP BY strftime('%Y-%m', f.actual_departure) ORDER BY month",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.total_cost_usd",
+        "latency_s": 5.659,
+        "eval_count": 165,
+        "eval_duration_s": 3.208187,
+        "prompt_eval_count": 1849
+      },
+      {
+        "raw": "```sql\nSELECT strftime('%Y-%m', f.actual_departure) AS month, COUNT(f.flight_id) AS completed_flights, SUM(f.total_cost_usd) AS total_cost_usd, LAG(COUNT(f.flight_id)) OVER (ORDER BY strftime('%Y-%m', f.actual_departure)) - COUNT(f.flight_id) AS change_in_flights, LAG(SUM(f.total_cost_usd)) OVER (ORDER BY strftime('%Y-%m', f.actual_departure)) - SUM(f.total_cost_usd) AS change_in_cost FROM flights f WHERE f.status = 'completed' GROUP BY strftime('%Y-%m', f.actual_departure) ORDER BY month\n```",
+        "sql": "SELECT strftime('%Y-%m', f.actual_departure) AS month, COUNT(f.flight_id) AS completed_flights, SUM(f.total_cost_usd) AS total_cost_usd, LAG(COUNT(f.flight_id)) OVER (ORDER BY strftime('%Y-%m', f.actual_departure)) - COUNT(f.flight_id) AS change_in_flights, LAG(SUM(f.total_cost_usd)) OVER (ORDER BY strftime('%Y-%m', f.actual_departure)) - SUM(f.total_cost_usd) AS change_in_cost FROM flights f WHERE f.status = 'completed' GROUP BY strftime('%Y-%m', f.actual_departure) ORDER BY month",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.total_cost_usd",
+        "latency_s": 5.156,
+        "eval_count": 145,
+        "eval_duration_s": 2.830723,
+        "prompt_eval_count": 2012
+      }
+    ],
+    "retried": true,
+    "eval_count": 310,
+    "eval_duration_s": 6.03891,
+    "prompt_eval_count": 1849
+  },
+  "H04-SCH": {
+    "raw": "```sql\nSELECT \n  strftime('%Y-%m', flights.actual_departure) AS month,\n  COUNT(flights.flight_id) AS completed_flights,\n  LAG(COUNT(flights.flight_id)) OVER (ORDER BY strftime('%Y-%m', flights.actual_departure)) - COUNT(flights.flight_id) AS difference\nFROM \n  flights\nWHERE \n  flights.status = 'completed'\nGROUP BY \n  strftime('%Y-%m', flights.actual_departure)\nORDER BY \n  month;\n```",
+    "error": null,
+    "latency_s": 4.615,
+    "pass1_s": 0.022,
+    "pass2_s": 4.593,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT \n  strftime('%Y-%m', flights.actual_departure) AS month,\n  COUNT(flights.flight_id) AS completed_flights,\n  LAG(COUNT(flights.flight_id)) OVER (ORDER BY strftime('%Y-%m', flights.actual_departure)) - COUNT(flights.flight_id) AS difference\nFROM \n  flights\nWHERE \n  flights.status = 'completed'\nGROUP BY \n  strftime('%Y-%m', flights.actual_departure)\nORDER BY \n  month;\n```",
+        "sql": "SELECT strftime('%Y-%m', flights.actual_departure) AS month, COUNT(flights.flight_id) AS completed_flights, LAG(COUNT(flights.flight_id)) OVER (ORDER BY strftime('%Y-%m', flights.actual_departure)) - COUNT(flights.flight_id) AS difference FROM flights WHERE flights.status = 'completed' GROUP BY strftime('%Y-%m', flights.actual_departure) ORDER BY month",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.593,
+        "eval_count": 107,
+        "eval_duration_s": 2.083888,
+        "prompt_eval_count": 2148
+      }
+    ],
+    "retried": false,
+    "eval_count": 107,
+    "eval_duration_s": 2.083888,
+    "prompt_eval_count": 2148
+  },
+  "H04-BIZ": {
+    "raw": "```sql\nSELECT DATE(actual_departure, 'localtime') AS month, SUM(total_volume_m3) AS total_volume_m3, LAG(SUM(total_volume_m3)) OVER (ORDER BY DATE(actual_departure, 'localtime')) AS previous_month_volume FROM flights JOIN flight_cargo ON flights.flight_id = flight_cargo.flight_id JOIN shipments ON flight_cargo.shipment_id = shipments.shipment_id WHERE flights.status = 'completed' GROUP BY month ORDER BY month\n```",
+    "error": null,
+    "latency_s": 8.966,
+    "pass1_s": 0.015,
+    "pass2_s": 8.951,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT \n  DATE(actual_departure, 'localtime') AS month,\n  SUM(total_volume_m3) AS total_volume_m3,\n  LAG(SUM(total_volume_m3)) OVER (ORDER BY DATE(actual_departure, 'localtime')) AS previous_month_volume\nFROM \n  flights\nJOIN \n  flight_cargo ON flights.flight_id = flight_cargo.flight_id\nWHERE \n  flights.status = 'completed'\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+        "sql": "SELECT DATE(actual_departure, 'localtime') AS month, SUM(total_volume_m3) AS total_volume_m3, LAG(SUM(total_volume_m3)) OVER (ORDER BY DATE(actual_departure, 'localtime')) AS previous_month_volume FROM flights JOIN flight_cargo ON flights.flight_id = flight_cargo.flight_id WHERE flights.status = 'completed' GROUP BY month ORDER BY month",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: total_volume_m3",
+        "latency_s": 4.654,
+        "eval_count": 106,
+        "eval_duration_s": 2.094134,
+        "prompt_eval_count": 3238
+      },
+      {
+        "raw": "```sql\nSELECT DATE(actual_departure, 'localtime') AS month, SUM(total_volume_m3) AS total_volume_m3, LAG(SUM(total_volume_m3)) OVER (ORDER BY DATE(actual_departure, 'localtime')) AS previous_month_volume FROM flights JOIN flight_cargo ON flights.flight_id = flight_cargo.flight_id JOIN shipments ON flight_cargo.shipment_id = shipments.shipment_id WHERE flights.status = 'completed' GROUP BY month ORDER BY month\n```",
+        "sql": "SELECT DATE(actual_departure, 'localtime') AS month, SUM(total_volume_m3) AS total_volume_m3, LAG(SUM(total_volume_m3)) OVER (ORDER BY DATE(actual_departure, 'localtime')) AS previous_month_volume FROM flights JOIN flight_cargo ON flights.flight_id = flight_cargo.flight_id JOIN shipments ON flight_cargo.shipment_id = shipments.shipment_id WHERE flights.status = 'completed' GROUP BY month ORDER BY month",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.297,
+        "eval_count": 102,
+        "eval_duration_s": 2.019005,
+        "prompt_eval_count": 3343
+      }
+    ],
+    "retried": true,
+    "eval_count": 208,
+    "eval_duration_s": 4.113139,
+    "prompt_eval_count": 3238
+  },
+  "H04-VAG": {
+    "raw": "```sql\nSELECT \n  strftime('%Y-%m', flights.actual_departure) AS month, \n  COUNT(flights.flight_id) AS flight_count, \n  AVG(flights.distance_km) AS avg_distance_km, \n  AVG(fuel_uplifts.fuel_burned_kg) AS avg_fuel_burned_kg, \n  AVG(fuel_uplifts.co2_emissions_kg) AS avg_co2_emissions_kg\nFROM \n  flights\nLEFT JOIN \n  fuel_uplifts ON flights.flight_id = fuel_uplifts.flight_id\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+    "error": null,
+    "latency_s": 5.389,
+    "pass1_s": 0.011,
+    "pass2_s": 5.378,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT \n  strftime('%Y-%m', flights.actual_departure) AS month, \n  COUNT(flights.flight_id) AS flight_count, \n  AVG(flights.distance_km) AS avg_distance_km, \n  AVG(fuel_uplifts.fuel_burned_kg) AS avg_fuel_burned_kg, \n  AVG(fuel_uplifts.co2_emissions_kg) AS avg_co2_emissions_kg\nFROM \n  flights\nLEFT JOIN \n  fuel_uplifts ON flights.flight_id = fuel_uplifts.flight_id\nGROUP BY \n  month\nORDER BY \n  month;\n```",
+        "sql": "SELECT strftime('%Y-%m', flights.actual_departure) AS month, COUNT(flights.flight_id) AS flight_count, AVG(flights.distance_km) AS avg_distance_km, AVG(fuel_uplifts.fuel_burned_kg) AS avg_fuel_burned_kg, AVG(fuel_uplifts.co2_emissions_kg) AS avg_co2_emissions_kg FROM flights LEFT JOIN fuel_uplifts ON flights.flight_id = fuel_uplifts.flight_id GROUP BY month ORDER BY month",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.378,
+        "eval_count": 137,
+        "eval_duration_s": 2.67347,
+        "prompt_eval_count": 2038
+      }
+    ],
+    "retried": false,
+    "eval_count": 137,
+    "eval_duration_s": 2.67347,
+    "prompt_eval_count": 2038
+  },
+  "H05-CAS": {
+    "raw": "```sql\nSELECT a.tail_number, AVG(julianday(f.actual_arrival) - julianday(f.actual_departure)) AS avg_ground_time\nFROM aircraft a\nJOIN flights f ON a.aircraft_id = f.aircraft_id\nWHERE f.status = 'completed'\nGROUP BY a.tail_number\nORDER BY avg_ground_time ASC\nLIMIT 5;\n```",
+    "error": null,
+    "latency_s": 4.254,
+    "pass1_s": 0.019,
+    "pass2_s": 4.235,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.tail_number, AVG(julianday(f.actual_arrival) - julianday(f.actual_departure)) AS avg_ground_time\nFROM aircraft a\nJOIN flights f ON a.aircraft_id = f.aircraft_id\nWHERE f.status = 'completed'\nGROUP BY a.tail_number\nORDER BY avg_ground_time ASC\nLIMIT 5;\n```",
+        "sql": "SELECT a.tail_number, AVG(julianday(f.actual_arrival) - julianday(f.actual_departure)) AS avg_ground_time FROM aircraft a JOIN flights f ON a.aircraft_id = f.aircraft_id WHERE f.status = 'completed' GROUP BY a.tail_number ORDER BY avg_ground_time ASC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.235,
+        "eval_count": 77,
+        "eval_duration_s": 1.494281,
+        "prompt_eval_count": 2173
+      }
+    ],
+    "retried": false,
+    "eval_count": 77,
+    "eval_duration_s": 1.494281,
+    "prompt_eval_count": 2173
+  },
+  "H05-SCH": {
+    "raw": "```sql\nSELECT a.tail_number, AVG(julianday(f2.actual_departure) - julianday(f1.actual_arrival)) AS avg_time_diff\nFROM aircraft a\nJOIN flights f1 ON a.aircraft_id = f1.aircraft_id AND f1.status = 'completed'\nJOIN flights f2 ON a.aircraft_id = f2.aircraft_id AND f2.status = 'completed' AND f2.actual_departure > f1.actual_arrival\nGROUP BY a.tail_number\nORDER BY avg_time_diff ASC\nLIMIT 5;\n```",
+    "error": null,
+    "latency_s": 5.447,
+    "pass1_s": 0.035,
+    "pass2_s": 5.412,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.tail_number, AVG(julianday(f2.actual_departure) - julianday(f1.actual_arrival)) AS avg_time_diff\nFROM aircraft a\nJOIN flights f1 ON a.aircraft_id = f1.aircraft_id AND f1.status = 'completed'\nJOIN flights f2 ON a.aircraft_id = f2.aircraft_id AND f2.status = 'completed' AND f2.actual_departure > f1.actual_arrival\nGROUP BY a.tail_number\nORDER BY avg_time_diff ASC\nLIMIT 5;\n```",
+        "sql": "SELECT a.tail_number, AVG(julianday(f2.actual_departure) - julianday(f1.actual_arrival)) AS avg_time_diff FROM aircraft a JOIN flights f1 ON a.aircraft_id = f1.aircraft_id AND f1.status = 'completed' JOIN flights f2 ON a.aircraft_id = f2.aircraft_id AND f2.status = 'completed' AND f2.actual_departure > f1.actual_arrival GROUP BY a.tail_number ORDER BY avg_time_diff ASC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.412,
+        "eval_count": 117,
+        "eval_duration_s": 2.286563,
+        "prompt_eval_count": 2229
+      }
+    ],
+    "retried": false,
+    "eval_count": 117,
+    "eval_duration_s": 2.286563,
+    "prompt_eval_count": 2229
+  },
+  "H05-BIZ": {
+    "raw": "```sql\nSELECT a.serial_number, AVG(julianday(f2.actual_arrival) - julianday(f1.actual_departure)) AS avg_turnaround\nFROM aircraft a\nJOIN flights f1 ON a.aircraft_id = f1.aircraft_id AND f1.status = 'completed'\nJOIN flights f2 ON a.aircraft_id = f2.aircraft_id AND f2.status = 'completed' AND f2.flight_id > f1.flight_id\nGROUP BY a.serial_number\nORDER BY avg_turnaround ASC\nLIMIT 5;\n```",
+    "error": null,
+    "latency_s": 4.828,
+    "pass1_s": 0.013,
+    "pass2_s": 4.815,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.serial_number, AVG(julianday(f2.actual_arrival) - julianday(f1.actual_departure)) AS avg_turnaround\nFROM aircraft a\nJOIN flights f1 ON a.aircraft_id = f1.aircraft_id AND f1.status = 'completed'\nJOIN flights f2 ON a.aircraft_id = f2.aircraft_id AND f2.status = 'completed' AND f2.flight_id > f1.flight_id\nGROUP BY a.serial_number\nORDER BY avg_turnaround ASC\nLIMIT 5;\n```",
+        "sql": "SELECT a.serial_number, AVG(julianday(f2.actual_arrival) - julianday(f1.actual_departure)) AS avg_turnaround FROM aircraft a JOIN flights f1 ON a.aircraft_id = f1.aircraft_id AND f1.status = 'completed' JOIN flights f2 ON a.aircraft_id = f2.aircraft_id AND f2.status = 'completed' AND f2.flight_id > f1.flight_id GROUP BY a.serial_number ORDER BY avg_turnaround ASC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.815,
+        "eval_count": 117,
+        "eval_duration_s": 2.280122,
+        "prompt_eval_count": 2149
+      }
+    ],
+    "retried": false,
+    "eval_count": 117,
+    "eval_duration_s": 2.280122,
+    "prompt_eval_count": 2149
+  },
+  "H05-VAG": {
+    "raw": "```sql\nSELECT meta_value FROM benchmark_meta WHERE meta_key = 'as_of_timestamp';\n```",
+    "error": null,
+    "latency_s": 2.775,
+    "pass1_s": 0.004,
+    "pass2_s": 2.771,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT meta_value FROM benchmark_meta WHERE meta_key = 'as_of_timestamp';\n```",
+        "sql": "SELECT meta_value FROM benchmark_meta WHERE meta_key = 'as_of_timestamp'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 2.771,
+        "eval_count": 20,
+        "eval_duration_s": 0.409718,
+        "prompt_eval_count": 203
+      }
+    ],
+    "retried": false,
+    "eval_count": 20,
+    "eval_duration_s": 0.409718,
+    "prompt_eval_count": 203
+  },
+  "H06-CAS": {
+    "raw": "```sql\nSELECT c.customer_id, c.name, SUM(i.amount_usd) AS total_invoiced, (SUM(i.amount_usd) / (SELECT SUM(amount_usd) FROM invoices)) * 100 AS share FROM customers c JOIN invoices i ON c.customer_id = i.customer_id GROUP BY c.customer_id, c.name HAVING total_invoiced > (SELECT SUM(amount_usd) * 0.04 FROM invoices)\n```",
+    "error": null,
+    "latency_s": 9.308,
+    "pass1_s": 0.019,
+    "pass2_s": 9.289,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT c.customer_id, c.name, SUM(i.amount_usd) AS total_invoiced, (SUM(i.amount_usd) / (SELECT SUM(amount_usd) FROM invoices)) * 100 AS share\nFROM customers c\nJOIN invoices i ON c.customer_id = i.customer_id\nGROUP BY c.customer_id, c.name\nHAVING total_invoiced > (SELECT SUM(amount_usd) * 0.04 FROM invoices);\n```",
+        "sql": "SELECT c.customer_id, c.name, SUM(i.amount_usd) AS total_invoiced, (SUM(i.amount_usd) / (SELECT SUM(amount_usd) FROM invoices)) * 100 AS share FROM customers c JOIN invoices i ON c.customer_id = i.customer_id GROUP BY c.customer_id, c.name HAVING total_invoiced > (SELECT SUM(amount_usd) * 0.04 FROM invoices)",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: i.customer_id",
+        "latency_s": 5.055,
+        "eval_count": 99,
+        "eval_duration_s": 1.943216,
+        "prompt_eval_count": 2725
+      },
+      {
+        "raw": "```sql\nSELECT c.customer_id, c.name, SUM(i.amount_usd) AS total_invoiced, (SUM(i.amount_usd) / (SELECT SUM(amount_usd) FROM invoices)) * 100 AS share FROM customers c JOIN invoices i ON c.customer_id = i.customer_id GROUP BY c.customer_id, c.name HAVING total_invoiced > (SELECT SUM(amount_usd) * 0.04 FROM invoices)\n```",
+        "sql": "SELECT c.customer_id, c.name, SUM(i.amount_usd) AS total_invoiced, (SUM(i.amount_usd) / (SELECT SUM(amount_usd) FROM invoices)) * 100 AS share FROM customers c JOIN invoices i ON c.customer_id = i.customer_id GROUP BY c.customer_id, c.name HAVING total_invoiced > (SELECT SUM(amount_usd) * 0.04 FROM invoices)",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: i.customer_id",
+        "latency_s": 4.234,
+        "eval_count": 95,
+        "eval_duration_s": 1.933165,
+        "prompt_eval_count": 2836
+      }
+    ],
+    "retried": true,
+    "eval_count": 194,
+    "eval_duration_s": 3.8763810000000003,
+    "prompt_eval_count": 2725
+  },
+  "H06-SCH": {
+    "raw": "```sql\nSELECT c.name, SUM(p.amount_usd) / SUM(i.amount_usd) AS ratio FROM customers c JOIN shipments s ON c.customer_id = s.customer_id JOIN invoices i ON s.shipment_id = i.shipment_id JOIN payments p ON i.invoice_id = p.invoice_id WHERE p.original_currency = 'USD' GROUP BY c.name HAVING ratio > 0.04\n```",
+    "error": null,
+    "latency_s": 9.003,
+    "pass1_s": 0.025,
+    "pass2_s": 8.978,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT c.name, SUM(p.amount_usd) / SUM(i.amount_usd) AS ratio\nFROM customers c\nJOIN shipments s ON c.customer_id = s.customer_id\nJOIN invoices i ON s.shipment_id = i.shipment_id\nJOIN payments p ON i.invoice_id = p.invoice_id\nWHERE p.original_currency = 'USD' AND incidents.reported_by = 'customer'\nGROUP BY c.name\nHAVING ratio > 0.04;\n```",
+        "sql": "SELECT c.name, SUM(p.amount_usd) / SUM(i.amount_usd) AS ratio FROM customers c JOIN shipments s ON c.customer_id = s.customer_id JOIN invoices i ON s.shipment_id = i.shipment_id JOIN payments p ON i.invoice_id = p.invoice_id WHERE p.original_currency = 'USD' AND incidents.reported_by = 'customer' GROUP BY c.name HAVING ratio > 0.04",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: incidents.reported_by",
+        "latency_s": 4.992,
+        "eval_count": 99,
+        "eval_duration_s": 1.938379,
+        "prompt_eval_count": 2506
+      },
+      {
+        "raw": "```sql\nSELECT c.name, SUM(p.amount_usd) / SUM(i.amount_usd) AS ratio FROM customers c JOIN shipments s ON c.customer_id = s.customer_id JOIN invoices i ON s.shipment_id = i.shipment_id JOIN payments p ON i.invoice_id = p.invoice_id WHERE p.original_currency = 'USD' GROUP BY c.name HAVING ratio > 0.04\n```",
+        "sql": "SELECT c.name, SUM(p.amount_usd) / SUM(i.amount_usd) AS ratio FROM customers c JOIN shipments s ON c.customer_id = s.customer_id JOIN invoices i ON s.shipment_id = i.shipment_id JOIN payments p ON i.invoice_id = p.invoice_id WHERE p.original_currency = 'USD' GROUP BY c.name HAVING ratio > 0.04",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.986,
+        "eval_count": 84,
+        "eval_duration_s": 1.690922,
+        "prompt_eval_count": 2616
+      }
+    ],
+    "retried": true,
+    "eval_count": 183,
+    "eval_duration_s": 3.629301,
+    "prompt_eval_count": 2506
+  },
+  "H06-BIZ": {
+    "raw": "```sql\nSELECT c.account_code, SUM(i.amount_usd) AS revenue, (SUM(i.amount_usd) / (SELECT SUM(amount_usd) FROM invoices)) * 100 AS share FROM customers c JOIN invoices i ON c.customer_id = i.customer_id GROUP BY c.account_code HAVING revenue > (SELECT SUM(amount_usd) * 0.04 FROM invoices)\n```",
+    "error": null,
+    "latency_s": 8.515,
+    "pass1_s": 0.018,
+    "pass2_s": 8.497,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT c.account_code, SUM(i.amount_usd) AS revenue, (SUM(i.amount_usd) / (SELECT SUM(amount_usd) FROM invoices)) * 100 AS share\nFROM customers c\nJOIN invoices i ON c.customer_id = i.customer_id\nGROUP BY c.account_code\nHAVING revenue > (SELECT SUM(amount_usd) * 0.04 FROM invoices);\n```",
+        "sql": "SELECT c.account_code, SUM(i.amount_usd) AS revenue, (SUM(i.amount_usd) / (SELECT SUM(amount_usd) FROM invoices)) * 100 AS share FROM customers c JOIN invoices i ON c.customer_id = i.customer_id GROUP BY c.account_code HAVING revenue > (SELECT SUM(amount_usd) * 0.04 FROM invoices)",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: i.customer_id",
+        "latency_s": 4.515,
+        "eval_count": 87,
+        "eval_duration_s": 1.679652,
+        "prompt_eval_count": 1640
+      },
+      {
+        "raw": "```sql\nSELECT c.account_code, SUM(i.amount_usd) AS revenue, (SUM(i.amount_usd) / (SELECT SUM(amount_usd) FROM invoices)) * 100 AS share FROM customers c JOIN invoices i ON c.customer_id = i.customer_id GROUP BY c.account_code HAVING revenue > (SELECT SUM(amount_usd) * 0.04 FROM invoices)\n```",
+        "sql": "SELECT c.account_code, SUM(i.amount_usd) AS revenue, (SUM(i.amount_usd) / (SELECT SUM(amount_usd) FROM invoices)) * 100 AS share FROM customers c JOIN invoices i ON c.customer_id = i.customer_id GROUP BY c.account_code HAVING revenue > (SELECT SUM(amount_usd) * 0.04 FROM invoices)",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: i.customer_id",
+        "latency_s": 3.982,
+        "eval_count": 83,
+        "eval_duration_s": 1.683589,
+        "prompt_eval_count": 1739
+      }
+    ],
+    "retried": true,
+    "eval_count": 170,
+    "eval_duration_s": 3.363241,
+    "prompt_eval_count": 1640
+  },
+  "H06-VAG": {
+    "raw": "SELECT c.account_code, c.name, SUM(i.amount_usd) AS total_revenue FROM customers c JOIN invoices i ON c.customer_id = i.customer_id GROUP BY c.customer_id ORDER BY total_revenue DESC",
+    "error": null,
+    "latency_s": 7.079,
+    "pass1_s": 0.01,
+    "pass2_s": 7.069,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT c.account_code, c.name, SUM(i.amount_usd) AS total_revenue\nFROM customers c\nJOIN invoices i ON c.customer_id = i.customer_id\nGROUP BY c.customer_id\nORDER BY total_revenue DESC;\n```",
+        "sql": "SELECT c.account_code, c.name, SUM(i.amount_usd) AS total_revenue FROM customers c JOIN invoices i ON c.customer_id = i.customer_id GROUP BY c.customer_id ORDER BY total_revenue DESC",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: i.customer_id",
+        "latency_s": 3.904,
+        "eval_count": 53,
+        "eval_duration_s": 1.015076,
+        "prompt_eval_count": 1721
+      },
+      {
+        "raw": "SELECT c.account_code, c.name, SUM(i.amount_usd) AS total_revenue FROM customers c JOIN invoices i ON c.customer_id = i.customer_id GROUP BY c.customer_id ORDER BY total_revenue DESC",
+        "sql": "SELECT c.account_code, c.name, SUM(i.amount_usd) AS total_revenue FROM customers c JOIN invoices i ON c.customer_id = i.customer_id GROUP BY c.customer_id ORDER BY total_revenue DESC",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: i.customer_id",
+        "latency_s": 3.165,
+        "eval_count": 44,
+        "eval_duration_s": 0.922317,
+        "prompt_eval_count": 1786
+      }
+    ],
+    "retried": true,
+    "eval_count": 97,
+    "eval_duration_s": 1.9373930000000001,
+    "prompt_eval_count": 1721
+  },
+  "H07-CAS": {
+    "raw": "```sql\nSELECT a.name, SUM(s.chargeable_weight_kg) AS total_cargo_tonnes\nFROM airports a\nJOIN shipments s ON a.airport_id = s.origin_airport_id\nGROUP BY a.name\nORDER BY total_cargo_tonnes DESC\nLIMIT 5;\n```",
+    "error": null,
+    "latency_s": 4.008,
+    "pass1_s": 0.024,
+    "pass2_s": 3.984,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name, SUM(s.chargeable_weight_kg) AS total_cargo_tonnes\nFROM airports a\nJOIN shipments s ON a.airport_id = s.origin_airport_id\nGROUP BY a.name\nORDER BY total_cargo_tonnes DESC\nLIMIT 5;\n```",
+        "sql": "SELECT a.name, SUM(s.chargeable_weight_kg) AS total_cargo_tonnes FROM airports a JOIN shipments s ON a.airport_id = s.origin_airport_id GROUP BY a.name ORDER BY total_cargo_tonnes DESC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.984,
+        "eval_count": 64,
+        "eval_duration_s": 1.237736,
+        "prompt_eval_count": 2105
+      }
+    ],
+    "retried": false,
+    "eval_count": 64,
+    "eval_duration_s": 1.237736,
+    "prompt_eval_count": 2105
+  },
+  "H07-SCH": {
+    "raw": "```sql\nSELECT a.name AS origin_airport, SUM(s.total_weight_kg / 1000) AS total_tonnes, DENSE_RANK() OVER (ORDER BY SUM(s.total_weight_kg / 1000) DESC) AS rank\nFROM airports a\nJOIN flights f ON a.airport_id = f.origin_airport_id\nJOIN flight_cargo fc ON f.flight_id = fc.flight_id\nJOIN shipments s ON fc.shipment_id = s.shipment_id\nWHERE fc.leg_status = 'flown'\nGROUP BY a.name\nORDER BY rank\nLIMIT 5;\n```",
+    "error": null,
+    "latency_s": 5.64,
+    "pass1_s": 0.034,
+    "pass2_s": 5.606,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name AS origin_airport, SUM(s.total_weight_kg / 1000) AS total_tonnes, DENSE_RANK() OVER (ORDER BY SUM(s.total_weight_kg / 1000) DESC) AS rank\nFROM airports a\nJOIN flights f ON a.airport_id = f.origin_airport_id\nJOIN flight_cargo fc ON f.flight_id = fc.flight_id\nJOIN shipments s ON fc.shipment_id = s.shipment_id\nWHERE fc.leg_status = 'flown'\nGROUP BY a.name\nORDER BY rank\nLIMIT 5;\n```",
+        "sql": "SELECT a.name AS origin_airport, SUM(s.total_weight_kg / 1000) AS total_tonnes, DENSE_RANK() OVER (ORDER BY SUM(s.total_weight_kg / 1000) DESC) AS rank FROM airports a JOIN flights f ON a.airport_id = f.origin_airport_id JOIN flight_cargo fc ON f.flight_id = fc.flight_id JOIN shipments s ON fc.shipment_id = s.shipment_id WHERE fc.leg_status = 'flown' GROUP BY a.name ORDER BY rank LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.606,
+        "eval_count": 130,
+        "eval_duration_s": 2.55813,
+        "prompt_eval_count": 2705
+      }
+    ],
+    "retried": false,
+    "eval_count": 130,
+    "eval_duration_s": 2.55813,
+    "prompt_eval_count": 2705
+  },
+  "H07-BIZ": {
+    "raw": "```sql\nSELECT a.name AS airport_name, SUM(t.weight_kg) AS outbound_tonnage\nFROM airports a\nJOIN flights f ON a.airport_id = f.origin_airport_id\nJOIN tracking_events t ON f.flight_id = t.flight_id AND t.event_code = 'DEP'\nGROUP BY a.name\nORDER BY outbound_tonnage DESC\nLIMIT 5;\n```",
+    "error": null,
+    "latency_s": 4.668,
+    "pass1_s": 0.014,
+    "pass2_s": 4.654,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name AS airport_name, SUM(t.weight_kg) AS outbound_tonnage\nFROM airports a\nJOIN flights f ON a.airport_id = f.origin_airport_id\nJOIN tracking_events t ON f.flight_id = t.flight_id AND t.event_code = 'DEP'\nGROUP BY a.name\nORDER BY outbound_tonnage DESC\nLIMIT 5;\n```",
+        "sql": "SELECT a.name AS airport_name, SUM(t.weight_kg) AS outbound_tonnage FROM airports a JOIN flights f ON a.airport_id = f.origin_airport_id JOIN tracking_events t ON f.flight_id = t.flight_id AND t.event_code = 'DEP' GROUP BY a.name ORDER BY outbound_tonnage DESC LIMIT 5",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.654,
+        "eval_count": 83,
+        "eval_duration_s": 1.608854,
+        "prompt_eval_count": 1854
+      }
+    ],
+    "retried": false,
+    "eval_count": 83,
+    "eval_duration_s": 1.608854,
+    "prompt_eval_count": 1854
+  },
+  "H07-VAG": {
+    "raw": "```sql\nSELECT a.name, a.airport_id, a.is_cargo_hub, a.night_curfew, a.region, a.runway_count, w.cold_room_count, w.capacity_tonnes, w.dock_door_count, w.opened_year\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nJOIN customs_declarations cd ON w.warehouse_id = cd.warehouse_id\nWHERE cd.declaration_type = 'export'\nORDER BY w.capacity_tonnes DESC\nLIMIT 10;\n```",
+    "error": null,
+    "latency_s": 4.878,
+    "pass1_s": 0.005,
+    "pass2_s": 4.873,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.name, a.airport_id, a.is_cargo_hub, a.night_curfew, a.region, a.runway_count, w.cold_room_count, w.capacity_tonnes, w.dock_door_count, w.opened_year\nFROM airports a\nJOIN warehouses w ON a.airport_id = w.airport_id\nJOIN customs_declarations cd ON w.warehouse_id = cd.warehouse_id\nWHERE cd.declaration_type = 'export'\nORDER BY w.capacity_tonnes DESC\nLIMIT 10;\n```",
+        "sql": "SELECT a.name, a.airport_id, a.is_cargo_hub, a.night_curfew, a.region, a.runway_count, w.cold_room_count, w.capacity_tonnes, w.dock_door_count, w.opened_year FROM airports a JOIN warehouses w ON a.airport_id = w.airport_id JOIN customs_declarations cd ON w.warehouse_id = cd.warehouse_id WHERE cd.declaration_type = 'export' ORDER BY w.capacity_tonnes DESC LIMIT 10",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.873,
+        "eval_count": 114,
+        "eval_duration_s": 2.195126,
+        "prompt_eval_count": 1090
+      }
+    ],
+    "retried": false,
+    "eval_count": 114,
+    "eval_duration_s": 2.195126,
+    "prompt_eval_count": 1090
+  },
+  "H08-CAS": {
+    "raw": "```sql\nSELECT at.model, COUNT(f.flight_id) AS completed_flights_more_than_half_full \nFROM aircraft_types at \nJOIN aircraft a ON at.type_id = a.type_id \nJOIN flights f ON a.aircraft_id = f.aircraft_id \nWHERE f.status = 'completed' \nAND f.actual_departure IS NOT NULL \nAND f.actual_arrival IS NOT NULL \nAND f.takeoff_weight_kg > 0 \nAND f.distance_km > 0 \nAND f.quantity_kg > 0 \nAND f.quantity_kg * at.max_volume_m3 / 2 < f.quantity_kg \nGROUP BY at.model\n```",
+    "error": null,
+    "latency_s": 10.477,
+    "pass1_s": 0.019,
+    "pass2_s": 10.458,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT at.model, COUNT(f.flight_id) AS completed_flights_more_than_half_full\nFROM aircraft_types at\nJOIN aircraft a ON at.type_id = a.type_id\nJOIN flights f ON a.aircraft_id = f.aircraft_id\nWHERE f.status = 'completed' AND f.actual_departure IS NOT NULL AND f.actual_arrival IS NOT NULL AND f.takeoff_weight_kg > 0 AND f.distance_km > 0 AND f.fuel_burned_kg > 0 AND f.co2_emissions_kg > 0 AND f.quantity_kg > 0 AND f.quantity_kg * at.max_volume_m3 / 2 < f.quantity_kg\nGROUP BY at.model;\n```",
+        "sql": "SELECT at.model, COUNT(f.flight_id) AS completed_flights_more_than_half_full FROM aircraft_types at JOIN aircraft a ON at.type_id = a.type_id JOIN flights f ON a.aircraft_id = f.aircraft_id WHERE f.status = 'completed' AND f.actual_departure IS NOT NULL AND f.actual_arrival IS NOT NULL AND f.takeoff_weight_kg > 0 AND f.distance_km > 0 AND f.fuel_burned_kg > 0 AND f.co2_emissions_kg > 0 AND f.quantity_kg > 0 AND f.quantity_kg * at.max_volume_m3 / 2 < f.quantity_kg GROUP BY at.model",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.fuel_burned_kg",
+        "latency_s": 5.453,
+        "eval_count": 151,
+        "eval_duration_s": 2.951202,
+        "prompt_eval_count": 2184
+      },
+      {
+        "raw": "```sql\nSELECT at.model, COUNT(f.flight_id) AS completed_flights_more_than_half_full \nFROM aircraft_types at \nJOIN aircraft a ON at.type_id = a.type_id \nJOIN flights f ON a.aircraft_id = f.aircraft_id \nWHERE f.status = 'completed' \nAND f.actual_departure IS NOT NULL \nAND f.actual_arrival IS NOT NULL \nAND f.takeoff_weight_kg > 0 \nAND f.distance_km > 0 \nAND f.quantity_kg > 0 \nAND f.quantity_kg * at.max_volume_m3 / 2 < f.quantity_kg \nGROUP BY at.model\n```",
+        "sql": "SELECT at.model, COUNT(f.flight_id) AS completed_flights_more_than_half_full FROM aircraft_types at JOIN aircraft a ON at.type_id = a.type_id JOIN flights f ON a.aircraft_id = f.aircraft_id WHERE f.status = 'completed' AND f.actual_departure IS NOT NULL AND f.actual_arrival IS NOT NULL AND f.takeoff_weight_kg > 0 AND f.distance_km > 0 AND f.quantity_kg > 0 AND f.quantity_kg * at.max_volume_m3 / 2 < f.quantity_kg GROUP BY at.model",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: f.quantity_kg",
+        "latency_s": 5.005,
+        "eval_count": 134,
+        "eval_duration_s": 2.622071,
+        "prompt_eval_count": 2351
+      }
+    ],
+    "retried": true,
+    "eval_count": 285,
+    "eval_duration_s": 5.573273,
+    "prompt_eval_count": 2184
+  },
+  "H08-SCH": {
+    "raw": "```sql\nSELECT a.model, COUNT(f.flight_id) AS completed_flights \nFROM aircraft_types a \nJOIN aircraft ac ON a.type_id = ac.type_id \nJOIN flights f ON ac.aircraft_id = f.aircraft_id \nJOIN flight_cargo fc ON f.flight_id = fc.flight_id \nWHERE f.status = 'completed' AND fc.leg_status = 'flown' \nGROUP BY a.model \nHAVING SUM(fc.total_volume_m3) > 0.5 * a.max_volume_m3\n```",
+    "error": null,
+    "latency_s": 9.339,
+    "pass1_s": 0.029,
+    "pass2_s": 9.31,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a.model, COUNT(f.flight_id) AS completed_flights\nFROM aircraft_types a\nJOIN aircraft ac ON a.type_id = ac.type_id\nJOIN flights f ON ac.aircraft_id = f.aircraft_id\nJOIN flight_cargo fc ON f.flight_id = fc.flight_id\nWHERE f.status = 'completed' AND fc.leg_status = 'flown'\nGROUP BY a.model\nHAVING SUM(fc.total_volume_m3) > 0.5 * a.max_volume_m3;\n```",
+        "sql": "SELECT a.model, COUNT(f.flight_id) AS completed_flights FROM aircraft_types a JOIN aircraft ac ON a.type_id = ac.type_id JOIN flights f ON ac.aircraft_id = f.aircraft_id JOIN flight_cargo fc ON f.flight_id = fc.flight_id WHERE f.status = 'completed' AND fc.leg_status = 'flown' GROUP BY a.model HAVING SUM(fc.total_volume_m3) > 0.5 * a.max_volume_m3",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: fc.total_volume_m3",
+        "latency_s": 4.757,
+        "eval_count": 110,
+        "eval_duration_s": 2.224042,
+        "prompt_eval_count": 3287
+      },
+      {
+        "raw": "```sql\nSELECT a.model, COUNT(f.flight_id) AS completed_flights \nFROM aircraft_types a \nJOIN aircraft ac ON a.type_id = ac.type_id \nJOIN flights f ON ac.aircraft_id = f.aircraft_id \nJOIN flight_cargo fc ON f.flight_id = fc.flight_id \nWHERE f.status = 'completed' AND fc.leg_status = 'flown' \nGROUP BY a.model \nHAVING SUM(fc.total_volume_m3) > 0.5 * a.max_volume_m3\n```",
+        "sql": "SELECT a.model, COUNT(f.flight_id) AS completed_flights FROM aircraft_types a JOIN aircraft ac ON a.type_id = ac.type_id JOIN flights f ON ac.aircraft_id = f.aircraft_id JOIN flight_cargo fc ON f.flight_id = fc.flight_id WHERE f.status = 'completed' AND fc.leg_status = 'flown' GROUP BY a.model HAVING SUM(fc.total_volume_m3) > 0.5 * a.max_volume_m3",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: fc.total_volume_m3",
+        "latency_s": 4.553,
+        "eval_count": 111,
+        "eval_duration_s": 2.234734,
+        "prompt_eval_count": 3409
+      }
+    ],
+    "retried": true,
+    "eval_count": 221,
+    "eval_duration_s": 4.458776,
+    "prompt_eval_count": 3287
+  },
+  "H08-BIZ": {
+    "raw": "```sql\nSELECT at.icao_type_designator, COUNT(fc.flight_id) AS completed_flights_exceeding_50_vlf \nFROM aircraft_types at \nJOIN aircraft a ON at.type_id = a.type_id \nJOIN flights f ON a.aircraft_id = f.aircraft_id \nJOIN flight_cargo fc ON f.flight_id = fc.flight_id \nWHERE f.status = 'completed' AND fc.leg_status = 'flown' \nAND (fc.uld_type = 'PAG' OR fc.uld_type = 'RKN') \nAND (fc.position_code LIKE 'A%' OR fc.position_code LIKE 'B%') \nGROUP BY at.icao_type_designator \nHAVING SUM(fc.max_volume_m3 * fc.quantity_kg / (at.max_volume_m3 * at.max_payload_kg)) > 0.5 * COUNT(fc.flight_id)\n```",
+    "error": null,
+    "latency_s": 12.307,
+    "pass1_s": 0.017,
+    "pass2_s": 12.29,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT at.icao_type_designator, COUNT(fc.flight_id) AS completed_flights_exceeding_50_vlf\nFROM aircraft_types at\nJOIN aircraft a ON at.type_id = a.type_id\nJOIN flights f ON a.aircraft_id = f.aircraft_id\nJOIN flight_cargo fc ON f.flight_id = fc.flight_id\nWHERE f.status = 'completed' AND fc.leg_status = 'flown' AND (fc.uld_type = 'PAG' OR fc.uld_type = 'RKN') AND (fc.position_code LIKE 'A%' OR fc.position_code LIKE 'B%')\nGROUP BY at.icao_type_designator\nHAVING SUM(fc.max_volume_m3 * fc.quantity_kg / (at.max_volume_m3 * at.max_payload_kg)) > 0.5 * COUNT(fc.flight_id);\n```",
+        "sql": "SELECT at.icao_type_designator, COUNT(fc.flight_id) AS completed_flights_exceeding_50_vlf FROM aircraft_types at JOIN aircraft a ON at.type_id = a.type_id JOIN flights f ON a.aircraft_id = f.aircraft_id JOIN flight_cargo fc ON f.flight_id = fc.flight_id WHERE f.status = 'completed' AND fc.leg_status = 'flown' AND (fc.uld_type = 'PAG' OR fc.uld_type = 'RKN') AND (fc.position_code LIKE 'A%' OR fc.position_code LIKE 'B%') GROUP BY at.icao_type_designator HAVING SUM(fc.max_volume_m3 * fc.quantity_kg / (at.max_volume_m3 * at.max_payload_kg)) > 0.5 * COUNT(fc.flight_id)",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: fc.max_volume_m3",
+        "latency_s": 6.217,
+        "eval_count": 183,
+        "eval_duration_s": 3.595654,
+        "prompt_eval_count": 2461
+      },
+      {
+        "raw": "```sql\nSELECT at.icao_type_designator, COUNT(fc.flight_id) AS completed_flights_exceeding_50_vlf \nFROM aircraft_types at \nJOIN aircraft a ON at.type_id = a.type_id \nJOIN flights f ON a.aircraft_id = f.aircraft_id \nJOIN flight_cargo fc ON f.flight_id = fc.flight_id \nWHERE f.status = 'completed' AND fc.leg_status = 'flown' \nAND (fc.uld_type = 'PAG' OR fc.uld_type = 'RKN') \nAND (fc.position_code LIKE 'A%' OR fc.position_code LIKE 'B%') \nGROUP BY at.icao_type_designator \nHAVING SUM(fc.max_volume_m3 * fc.quantity_kg / (at.max_volume_m3 * at.max_payload_kg)) > 0.5 * COUNT(fc.flight_id)\n```",
+        "sql": "SELECT at.icao_type_designator, COUNT(fc.flight_id) AS completed_flights_exceeding_50_vlf FROM aircraft_types at JOIN aircraft a ON at.type_id = a.type_id JOIN flights f ON a.aircraft_id = f.aircraft_id JOIN flight_cargo fc ON f.flight_id = fc.flight_id WHERE f.status = 'completed' AND fc.leg_status = 'flown' AND (fc.uld_type = 'PAG' OR fc.uld_type = 'RKN') AND (fc.position_code LIKE 'A%' OR fc.position_code LIKE 'B%') GROUP BY at.icao_type_designator HAVING SUM(fc.max_volume_m3 * fc.quantity_kg / (at.max_volume_m3 * at.max_payload_kg)) > 0.5 * COUNT(fc.flight_id)",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: fc.max_volume_m3",
+        "latency_s": 6.073,
+        "eval_count": 186,
+        "eval_duration_s": 3.683482,
+        "prompt_eval_count": 2656
+      }
+    ],
+    "retried": true,
+    "eval_count": 369,
+    "eval_duration_s": 7.279136,
+    "prompt_eval_count": 2461
+  },
+  "H08-VAG": {
+    "raw": "```sql\nSELECT DISTINCT a.model \nFROM aircraft_types a \nJOIN aircraft ac ON a.type_id = ac.type_id \nWHERE ac.total_flight_hours BETWEEN (SELECT MIN(total_flight_hours) FROM aircraft) AND (SELECT AVG(total_flight_hours) FROM aircraft)\n```",
+    "error": null,
+    "latency_s": 3.408,
+    "pass1_s": 0.007,
+    "pass2_s": 3.401,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT DISTINCT a.model \nFROM aircraft_types a \nJOIN aircraft ac ON a.type_id = ac.type_id \nWHERE ac.total_flight_hours BETWEEN (SELECT MIN(total_flight_hours) FROM aircraft) AND (SELECT AVG(total_flight_hours) FROM aircraft)\n```",
+        "sql": "SELECT DISTINCT a.model FROM aircraft_types a JOIN aircraft ac ON a.type_id = ac.type_id WHERE ac.total_flight_hours BETWEEN (SELECT MIN(total_flight_hours) FROM aircraft) AND (SELECT AVG(total_flight_hours) FROM aircraft)",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.401,
+        "eval_count": 54,
+        "eval_duration_s": 1.03839,
+        "prompt_eval_count": 1923
+      }
+    ],
+    "retried": false,
+    "eval_count": 54,
+    "eval_duration_s": 1.03839,
+    "prompt_eval_count": 1923
+  },
+  "H09-CAS": {
+    "raw": "```sql\nSELECT a1.name AS airline_name, a1.founded_year, a1.callsign\nFROM airlines a1\nWHERE NOT EXISTS (\n  SELECT 1\n  FROM airports ah\n  WHERE ah.is_cargo_hub = 1\n  AND NOT EXISTS (\n    SELECT 1\n    FROM aircraft ac\n    JOIN shipments s ON ac.home_airport_id = s.destination_airport_id\n    WHERE ac.airline_id = a1.airline_id\n    AND s.status = 'delivered'\n  )\n);\n```",
+    "error": null,
+    "latency_s": 4.518,
+    "pass1_s": 0.013,
+    "pass2_s": 4.505,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT a1.name AS airline_name, a1.founded_year, a1.callsign\nFROM airlines a1\nWHERE NOT EXISTS (\n  SELECT 1\n  FROM airports ah\n  WHERE ah.is_cargo_hub = 1\n  AND NOT EXISTS (\n    SELECT 1\n    FROM aircraft ac\n    JOIN shipments s ON ac.home_airport_id = s.destination_airport_id\n    WHERE ac.airline_id = a1.airline_id\n    AND s.status = 'delivered'\n  )\n);\n```",
+        "sql": "SELECT a1.name AS airline_name, a1.founded_year, a1.callsign FROM airlines a1 WHERE NOT EXISTS ( SELECT 1 FROM airports ah WHERE ah.is_cargo_hub = 1 AND NOT EXISTS ( SELECT 1 FROM aircraft ac JOIN shipments s ON ac.home_airport_id = s.destination_airport_id WHERE ac.airline_id = a1.airline_id AND s.status = 'delivered' ) )",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.505,
+        "eval_count": 111,
+        "eval_duration_s": 2.153785,
+        "prompt_eval_count": 1799
+      }
+    ],
+    "retried": false,
+    "eval_count": 111,
+    "eval_duration_s": 2.153785,
+    "prompt_eval_count": 1799
+  },
+  "H09-SCH": {
+    "raw": "```sql\nSELECT T1.tail_number FROM aircraft AS T1 JOIN flights AS T2 ON T1.aircraft_id = T2.aircraft_id WHERE T2.status = 'completed' GROUP BY T1.tail_number HAVING COUNT(DISTINCT T2.destination_airport_id) = (SELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1)\n```",
+    "error": null,
+    "latency_s": 4.676,
+    "pass1_s": 0.021,
+    "pass2_s": 4.655,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT T1.tail_number FROM aircraft AS T1 JOIN flights AS T2 ON T1.aircraft_id = T2.aircraft_id WHERE T2.status = 'completed' GROUP BY T1.tail_number HAVING COUNT(DISTINCT T2.destination_airport_id) = (SELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1)\n```",
+        "sql": "SELECT T1.tail_number FROM aircraft AS T1 JOIN flights AS T2 ON T1.aircraft_id = T2.aircraft_id WHERE T2.status = 'completed' GROUP BY T1.tail_number HAVING COUNT(DISTINCT T2.destination_airport_id) = (SELECT COUNT(*) FROM airports WHERE is_cargo_hub = 1)",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.655,
+        "eval_count": 75,
+        "eval_duration_s": 1.474047,
+        "prompt_eval_count": 2950
+      }
+    ],
+    "retried": false,
+    "eval_count": 75,
+    "eval_duration_s": 1.474047,
+    "prompt_eval_count": 2950
+  },
+  "H09-BIZ": {
+    "raw": "```sql\nSELECT DISTINCT a.serial_number\nFROM aircraft a\nJOIN flights f ON a.aircraft_id = f.aircraft_id\nJOIN crew_assignments ca ON f.flight_id = ca.flight_id\nJOIN maintenance_records mr ON a.aircraft_id = mr.aircraft_id\nWHERE f.status = 'completed' AND ca.assignment_status = 'completed' AND mr.status = 'completed';\n```",
+    "error": null,
+    "latency_s": 4.544,
+    "pass1_s": 0.015,
+    "pass2_s": 4.529,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT DISTINCT a.serial_number\nFROM aircraft a\nJOIN flights f ON a.aircraft_id = f.aircraft_id\nJOIN crew_assignments ca ON f.flight_id = ca.flight_id\nJOIN maintenance_records mr ON a.aircraft_id = mr.aircraft_id\nWHERE f.status = 'completed' AND ca.assignment_status = 'completed' AND mr.status = 'completed';\n```",
+        "sql": "SELECT DISTINCT a.serial_number FROM aircraft a JOIN flights f ON a.aircraft_id = f.aircraft_id JOIN crew_assignments ca ON f.flight_id = ca.flight_id JOIN maintenance_records mr ON a.aircraft_id = mr.aircraft_id WHERE f.status = 'completed' AND ca.assignment_status = 'completed' AND mr.status = 'completed'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.529,
+        "eval_count": 82,
+        "eval_duration_s": 1.596721,
+        "prompt_eval_count": 2445
+      }
+    ],
+    "retried": false,
+    "eval_count": 82,
+    "eval_duration_s": 1.596721,
+    "prompt_eval_count": 2445
+  },
+  "H09-VAG": {
+    "raw": "```sql\nSELECT DISTINCT a.tail_number, a.year_manufactured, a.status, a.delivery_date, at.model, at.engine_count, at.wingspan_m, at.max_range_km, at.cruise_speed_kmh, at.fuel_capacity_kg\nFROM aircraft a\nJOIN aircraft_types at ON a.type_id = at.type_id\nWHERE a.status = 'active'\nAND a.aircraft_id IN (\n    SELECT DISTINCT aircraft_id\n    FROM flights\n    WHERE status = 'completed'\n)\nAND a.aircraft_id IN (\n    SELECT DISTINCT aircraft_id\n    FROM maintenance_records\n    WHERE is_aog = 1\n)\nAND a.aircraft_id IN (\n    SELECT DISTINCT aircraft_id\n    FROM fuel_uplifts\n    WHERE total_cost_usd > 0\n);\n```",
+    "error": null,
+    "latency_s": 5.486,
+    "pass1_s": 0.008,
+    "pass2_s": 5.478,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT DISTINCT a.tail_number, a.year_manufactured, a.status, a.delivery_date, at.model, at.engine_count, at.wingspan_m, at.max_range_km, at.cruise_speed_kmh, at.fuel_capacity_kg\nFROM aircraft a\nJOIN aircraft_types at ON a.type_id = at.type_id\nWHERE a.status = 'active'\nAND a.aircraft_id IN (\n    SELECT DISTINCT aircraft_id\n    FROM flights\n    WHERE status = 'completed'\n)\nAND a.aircraft_id IN (\n    SELECT DISTINCT aircraft_id\n    FROM maintenance_records\n    WHERE is_aog = 1\n)\nAND a.aircraft_id IN (\n    SELECT DISTINCT aircraft_id\n    FROM fuel_uplifts\n    WHERE total_cost_usd > 0\n);\n```",
+        "sql": "SELECT DISTINCT a.tail_number, a.year_manufactured, a.status, a.delivery_date, at.model, at.engine_count, at.wingspan_m, at.max_range_km, at.cruise_speed_kmh, at.fuel_capacity_kg FROM aircraft a JOIN aircraft_types at ON a.type_id = at.type_id WHERE a.status = 'active' AND a.aircraft_id IN ( SELECT DISTINCT aircraft_id FROM flights WHERE status = 'completed' ) AND a.aircraft_id IN ( SELECT DISTINCT aircraft_id FROM maintenance_records WHERE is_aog = 1 ) AND a.aircraft_id IN ( SELECT DISTINCT aircraft_id FROM fuel_uplifts WHERE total_cost_usd > 0 )",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 5.478,
+        "eval_count": 164,
+        "eval_duration_s": 3.235869,
+        "prompt_eval_count": 1802
+      }
+    ],
+    "retried": false,
+    "eval_count": 164,
+    "eval_duration_s": 3.235869,
+    "prompt_eval_count": 1802
+  },
+  "H10-CAS": {
+    "raw": "```sql\nSELECT customs_country, COUNT(*) AS tax_count\nFROM customs_declarations\nWHERE declaration_type = 'import' AND (duty_rate_pct + vat_amount_usd / customs_value_usd) * 100 > 20\nGROUP BY customs_country;\n```",
+    "error": null,
+    "latency_s": 4.165,
+    "pass1_s": 0.024,
+    "pass2_s": 4.141,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT customs_country, COUNT(*) AS tax_count\nFROM customs_declarations\nWHERE declaration_type = 'import' AND (duty_rate_pct + vat_amount_usd / customs_value_usd) * 100 > 20\nGROUP BY customs_country;\n```",
+        "sql": "SELECT customs_country, COUNT(*) AS tax_count FROM customs_declarations WHERE declaration_type = 'import' AND (duty_rate_pct + vat_amount_usd / customs_value_usd) * 100 > 20 GROUP BY customs_country",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.141,
+        "eval_count": 59,
+        "eval_duration_s": 1.143742,
+        "prompt_eval_count": 2441
+      }
+    ],
+    "retried": false,
+    "eval_count": 59,
+    "eval_duration_s": 1.143742,
+    "prompt_eval_count": 2441
+  },
+  "H10-SCH": {
+    "raw": "```sql\nSELECT customs_country, COUNT(*) \nFROM customs_declarations \nWHERE declaration_type = 'import' \n  AND (duty_amount_usd + vat_amount_usd) > 0.2 * customs_value_usd \nGROUP BY customs_country;\n```",
+    "error": null,
+    "latency_s": 4.066,
+    "pass1_s": 0.03,
+    "pass2_s": 4.036,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT customs_country, COUNT(*) \nFROM customs_declarations \nWHERE declaration_type = 'import' \n  AND (duty_amount_usd + vat_amount_usd) > 0.2 * customs_value_usd \nGROUP BY customs_country;\n```",
+        "sql": "SELECT customs_country, COUNT(*) FROM customs_declarations WHERE declaration_type = 'import' AND (duty_amount_usd + vat_amount_usd) > 0.2 * customs_value_usd GROUP BY customs_country",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.036,
+        "eval_count": 55,
+        "eval_duration_s": 1.06554,
+        "prompt_eval_count": 2178
+      }
+    ],
+    "retried": false,
+    "eval_count": 55,
+    "eval_duration_s": 1.06554,
+    "prompt_eval_count": 2178
+  },
+  "H10-BIZ": {
+    "raw": "```sql\nSELECT customs_country, COUNT(*) FROM customs_declarations WHERE declaration_type = 'import' AND (duty_rate_pct + vat_amount_usd / customs_value_usd) / customs_value_usd > 0.2 GROUP BY customs_country\n```",
+    "error": null,
+    "latency_s": 6.885,
+    "pass1_s": 0.023,
+    "pass2_s": 6.862,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT customs_country, COUNT(*) \nFROM customs_declarations \nWHERE declaration_type = 'import' AND (duty_rate_pct + vat_rate_pct) / customs_value_usd > 0.2 \nGROUP BY customs_country;\n```",
+        "sql": "SELECT customs_country, COUNT(*) FROM customs_declarations WHERE declaration_type = 'import' AND (duty_rate_pct + vat_rate_pct) / customs_value_usd > 0.2 GROUP BY customs_country",
+        "model_error": null,
+        "exec": "error",
+        "exec_error": "no such column: vat_rate_pct",
+        "latency_s": 3.507,
+        "eval_count": 51,
+        "eval_duration_s": 0.97069,
+        "prompt_eval_count": 1137
+      },
+      {
+        "raw": "```sql\nSELECT customs_country, COUNT(*) FROM customs_declarations WHERE declaration_type = 'import' AND (duty_rate_pct + vat_amount_usd / customs_value_usd) / customs_value_usd > 0.2 GROUP BY customs_country\n```",
+        "sql": "SELECT customs_country, COUNT(*) FROM customs_declarations WHERE declaration_type = 'import' AND (duty_rate_pct + vat_amount_usd / customs_value_usd) / customs_value_usd > 0.2 GROUP BY customs_country",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 3.355,
+        "eval_count": 54,
+        "eval_duration_s": 1.105326,
+        "prompt_eval_count": 1201
+      }
+    ],
+    "retried": true,
+    "eval_count": 105,
+    "eval_duration_s": 2.076016,
+    "prompt_eval_count": 1137
+  },
+  "H10-VAG": {
+    "raw": "```sql\nSELECT DISTINCT c.declaration_number, c.vat_amount_usd, w.security_level, a.name AS airport_name\nFROM customs_declarations c\nJOIN warehouses w ON c.warehouse_id = w.warehouse_id\nJOIN airports a ON w.airport_id = a.airport_id\nWHERE c.declaration_type = 'import' AND w.security_level = 'high';\n```",
+    "error": null,
+    "latency_s": 4.59,
+    "pass1_s": 0.007,
+    "pass2_s": 4.583,
+    "attempts": [
+      {
+        "raw": "```sql\nSELECT DISTINCT c.declaration_number, c.vat_amount_usd, w.security_level, a.name AS airport_name\nFROM customs_declarations c\nJOIN warehouses w ON c.warehouse_id = w.warehouse_id\nJOIN airports a ON w.airport_id = a.airport_id\nWHERE c.declaration_type = 'import' AND w.security_level = 'high';\n```",
+        "sql": "SELECT DISTINCT c.declaration_number, c.vat_amount_usd, w.security_level, a.name AS airport_name FROM customs_declarations c JOIN warehouses w ON c.warehouse_id = w.warehouse_id JOIN airports a ON w.airport_id = a.airport_id WHERE c.declaration_type = 'import' AND w.security_level = 'high'",
+        "model_error": null,
+        "exec": "ok",
+        "exec_error": null,
+        "latency_s": 4.583,
+        "eval_count": 80,
+        "eval_duration_s": 1.562514,
+        "prompt_eval_count": 2493
+      }
+    ],
+    "retried": false,
+    "eval_count": 80,
+    "eval_duration_s": 1.562514,
+    "prompt_eval_count": 2493
+  }
+}

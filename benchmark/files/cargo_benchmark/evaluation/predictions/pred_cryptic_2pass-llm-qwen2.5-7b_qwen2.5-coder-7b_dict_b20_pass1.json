@@ -1,0 +1,124 @@
+{
+ "E01-CAS": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c14",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Check for airports marked as cargo hubs in the ts53 table.",
+  "raw": "#tables ts53\n#columns ts53.c14\n#hint Check for airports marked as cargo hubs in the ts53 table.",
+  "eval_count": 32,
+  "error": null,
+  "seconds": 5.238,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-SCH": {
+  "tables": [
+   "ts53"
+  ],
+  "columns": [
+   "ts53.c14",
+   "ts53.c01"
+  ],
+  "matches": [],
+  "hint": "Filter where c14 = 1",
+  "raw": "#tables ts53\n#columns ts53.c14\n#hint Filter where c14 = 1",
+  "eval_count": 26,
+  "error": null,
+  "seconds": 2.731,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 1
+  }
+ },
+ "E01-BIZ": {
+  "tables": [
+   "ts53",
+   "twxv"
+  ],
+  "columns": [
+   "ts53.c14",
+   "twxv.c09",
+   "ts53.c01",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": "Join ts53 with twxv on ts53.c01 = twxv.c09, filter for cargo hubs, group by ts53.c14 and count.",
+  "raw": "#tables ts53, twxv\n#columns ts53.c14, twxv.c09\n#hint Join ts53 with twxv on ts53.c01 = twxv.c09, filter for cargo hubs, group by ts53.c14 and count.",
+  "eval_count": 68,
+  "error": null,
+  "seconds": 3.757,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 1.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E01-VAG": {
+  "tables": [
+   "ts53",
+   "twxv"
+  ],
+  "columns": [
+   "ts53.c07",
+   "twxv.c09",
+   "ts53.c01",
+   "twxv.c01"
+  ],
+  "matches": [],
+  "hint": "Identify hub airports by checking for non-null values in the 'home hub airport' column of airlines, then count distinct airports.",
+  "raw": "#tables ts53, twxv\n#columns ts53.c07, twxv.c09\n#hint Identify hub airports by checking for non-null values in the 'home hub airport' column of airlines, then count distinct airports.",
+  "eval_count": 54,
+  "error": null,
+  "seconds": 3.451,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.0,
+   "columns_in_schema": 1.0,
+   "tables_kept": 2
+  }
+ },
+ "E02-CAS": {
+  "tables": [
+   "ts53",
+   "tumf",
+   "t6sc"
+  ],
+  "columns": [
+   "ts53.c02",
+   "tumf.c01",
+   "ts53.c01",
+   "t6sc.c01",
+   "t6sc.c09",
+   "t6sc.c07"
+  ],
+  "matches": [],
+  "hint": "Join on airport ID, filter for night curfew, and select airport codes.",
+  "raw": "#tables ts53, tumf\n#columns ts53.c02, tumf.c17\n#hint Join on airport ID, filter for night curfew, and select airport codes.",
+  "eval_count": 43,
+  "error": null,
+  "seconds": 3.251,
+  "recall": {
+   "tables_found": 1.0,
+   "all_tables_found": true,
+   "columns_listed": 0.5,
+   "columns_in_schema": 1.0,
+   "tables_kept": 3
+  }
+ }
+}
