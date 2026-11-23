@@ -3,8 +3,8 @@
 
 Two conditions (see the fine-tuning plan):
   A  "SQL only"      user = the benchmark prompt            assistant = the Gold SQL (one line)
-  B  "hint + SQL"    user = the benchmark prompt in hint mode assistant = the hint without its #question line:
-                                                                         #schema / #think / #trace / #sql <Gold SQL>
+  B  "hint + SQL"    user = the benchmark prompt in hint mode assistant = the hint without its <question> line:
+                                                                         <schema> / <think> / <trace> / <sql>Gold SQL</sql>
 The user prompt is built by evaluation/run_ollama.py (build_prompt, compact schema), the same function that is used
 at test time, so the model is trained on exactly the prompt it will see later.
 
@@ -46,9 +46,9 @@ def schema_for(variant):
 
 
 def hint_target(hint_text):
-    """The hint without its first line (#question repeats the prompt and is not something to learn)."""
+    """The hint without its first line (<question> repeats the prompt and is not something to learn)."""
     lines = hint_text.split("\n")
-    assert lines[0].startswith("#question ") and lines[1].startswith("#schema ") and lines[-1].startswith("#sql "), \
+    assert lines[0].startswith("<question>") and lines[1].startswith("<schema>") and lines[-1].startswith("<sql>"), \
         "unexpected hint format"
     return "\n".join(lines[1:])
 
@@ -78,7 +78,7 @@ def build(conditions, variants, split_path):
                 else:
                     answer = q["gold_sql"] if c == "A" else hint_target(hints[q["id"]])
                     if c == "B":
-                        assert answer.endswith("#sql " + q["gold_sql"]), q["id"]
+                        assert answer.endswith("<sql>" + q["gold_sql"] + "</sql>"), q["id"]
                     row["messages"].append({"role": "assistant", "content": answer})
                 rows[(c, part)].append(row)
     return rows

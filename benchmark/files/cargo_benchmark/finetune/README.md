@@ -9,7 +9,7 @@ cluster, and to test the result on the same questions as the base model.
 |---|---|---|
 | **Base** | nothing (no training) | the normal benchmark prompt |
 | **A: SQL only** | the Gold SQL | the normal benchmark prompt |
-| **B: hint + SQL** | the hint (`#schema`, `#think`, `#trace`), then `#sql <Gold SQL>` | the benchmark prompt, asking for the hint format first |
+| **B: hint + SQL** | the hint (`<schema>`, `<think>`, `<trace>`), then `<sql>Gold SQL</sql>` | the benchmark prompt, asking for the hint format first |
 
 * Data: 960 questions × 3 schema variants. The split is in `splits/split_80_20.json` and is made by **base
   question**: the 4 phrasings and 3 variants of one base question are always on the same side.
@@ -122,7 +122,7 @@ These are estimates; check the first job's log and adjust `--time`.
   checks the split.
 * **Same prompt everywhere**: training, `predict_hf.py` and `run_ollama.py` all use `build_prompt()`. If you change
   the prompt, rebuild the data (`build_dataset.py`) and retrain.
-* **Condition B at test time**: the model must write `#sql` before the query. If it never does (or runs out of
+* **Condition B at test time**: the model must put the query inside `<sql></sql>`. If it never writes `<sql>` (or runs out of
   tokens), the answer counts as missing. The full text is kept in `pred_*_raw.json`.
 * **Not included yet**: B3 (the model writes its own hints with no hint training data) and extra training data from
   Spider/BIRD. Both are optional steps in the plan.

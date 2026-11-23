@@ -2,12 +2,13 @@
 build_hints.py: turns the hand-written reasoning steps in hint_bank_*.py into one hint per question
 for every schema variant (normal, mixed, cryptic) and writes hints/hints_<variant>.jsonl.
 
-Each hint follows the fixed skeleton:
-  #question  the question text of that variant and phrasing
-  #schema    tables and columns used, with the variant's own names (meaning shown once for mixed/cryptic)
-  #think     Goal, Output columns, Interpretation (vague questions: the reading from the answer_spec)
-  #trace     6 steps, shared by the four phrasings of a base question
-  #sql       the Gold SQL of that variant, unchanged
+Each hint follows the fixed skeleton, with every part inside its own tag:
+  <question>...</question>  the question text of that variant and phrasing (one line)
+  <schema>...</schema>      tables and columns used, with the variant's own names (meaning shown once for mixed/cryptic)
+  <think> ... </think>      Goal, Output columns, Interpretation (vague questions: the reading from the answer_spec)
+  <trace> ... </trace>      6 steps, shared by the four phrasings of a base question
+  <sql>...</sql>            the Gold SQL of that variant, unchanged (one line)
+<think> and <trace> open and close on their own lines, with one item per line in between.
 
 Name placeholders in the hint bank (always written with NORMAL names):
   [[table]]          table name
@@ -168,7 +169,7 @@ def build_variant(variant, hints, names, cols):
             missing.add(q["base_id"])
             continue
         normal_sql = h["_normal_sql"]
-        # #schema = what the Gold SQL uses, plus names the reasoning relies on. The Traps step is left out,
+        # <schema> = what the Gold SQL uses, plus names the reasoning relies on. The Traps step is left out,
         # because it often names columns that must NOT be used.
         extra = []
         for field, value in h.items():
@@ -185,11 +186,11 @@ def build_variant(variant, hints, names, cols):
         trace = [f"{i + 1}. {label}: {render(step, variant, names)}"
                  for i, (label, step) in enumerate(zip(STEP_LABELS, h["trace"]))]
         text = "\n".join([
-            f"#question {q['question']}",
-            f"#schema {schema_line(used, extra, variant, names)}",
-            "#think", *think,
-            "#trace", *trace,
-            f"#sql {q['gold_sql']}",
+            f"<question>{q['question']}</question>",
+            f"<schema>{schema_line(used, extra, variant, names)}</schema>",
+            "<think>", *think, "</think>",
+            "<trace>", *trace, "</trace>",
+            f"<sql>{q['gold_sql']}</sql>",
         ])
         out.append({"id": q["id"], "base_id": q["base_id"], "variant": variant, "style": q["style"],
                     "difficulty": q["difficulty"], "hint": text})

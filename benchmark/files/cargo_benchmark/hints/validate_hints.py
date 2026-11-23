@@ -2,12 +2,12 @@
 validate_hints.py: checks every hint in hints/hints_<variant>.jsonl.
 
 For each hint it checks that:
-  1. the skeleton is complete (#question, #schema, #think with 3 lines, #trace with 6 lines, #sql) and
-     every step is a single line
-  2. #question is the exact question text of that variant and phrasing
-  3. #sql is exactly the Gold SQL of that variant
-  4. running #sql on databases/cargo_<variant>.db gives the same result as the Gold SQL
-  5. every table and column named in #schema exists in that variant (no invented names)
+  1. the skeleton is complete and in order: <question>, <schema>, <think> with 3 lines, <trace> with 6 lines,
+     <sql>, every tag is closed, and every step is a single line
+  2. <question> is the exact question text of that variant and phrasing
+  3. <sql> is exactly the Gold SQL of that variant
+  4. running <sql> on databases/cargo_<variant>.db gives the same result as the Gold SQL
+  5. every table and column named in <schema> exists in that variant (no invented names)
   6. no placeholder is left, and in mixed/cryptic no normal name is used where the variant name differs
      (the normal name may only appear once, in brackets, as the meaning)
 It also checks that there are 960 hints per variant and 2880 in total.
@@ -33,30 +33,41 @@ def run(con, sql):
     return [tuple(round(v, 6) if isinstance(v, float) else v for v in r) for r in rows]
 
 
-def check_structure(text):
-    lines = text.split("\n")
+HINT_RE = re.compile(
+    r"<question>(?P<question>[^\n]*)</question>\n"
+    r"<schema>(?P<schema>[^\n]*)</schema>\n"
+    r"<think>\n(?P<think>(?:[^\n]*\n)*?)</think>\n"
+    r"<trace>\n(?P<trace>(?:[^\n]*\n)*?)</trace>\n"
+    r"<sql>(?P<sql>[^\n]*)</sql>"
+)
+
+
+def parse_hint(text):
+    """{'question', 'schema', 'think': [lines], 'trace': [lines], 'sql'} or None if the skeleton is broken"""
+    m = HINT_RE.fullmatch(text)
+    if not m:
+        return None
+    d = m.groupdict()
+    d["think"] = d["think"].splitlines()
+    d["trace"] = d["trace"].splitlines()
+    return d
+
+
+def check_structure(parts):
+    if parts is None:
+        return ["skeleton broken: expected <question>, <schema>, <think>, <trace>, <sql> in this order, "
+                "all tags closed, <sql> last"]
     errs = []
-    if not lines[0].startswith("#question "):
-        errs.append("first line is not #question")
-    if len(lines) < 2 or not lines[1].startswith("#schema "):
-        errs.append("second line is not #schema")
-    try:
-        t, r, s = lines.index("#think"), lines.index("#trace"), next(i for i, l in enumerate(lines) if l.startswith("#sql "))
-    except (ValueError, StopIteration):
-        return ["missing #think, #trace or #sql"]
-    think, trace = lines[t + 1:r], lines[r + 1:s]
-    if [l.split(":")[0] for l in think] != ["- Goal", "- Output columns", "- Interpretation"]:
-        errs.append("#think must have Goal, Output columns, Interpretation")
+    if [l.split(":")[0] for l in parts["think"]] != ["- Goal", "- Output columns", "- Interpretation"]:
+        errs.append("<think> must have Goal, Output columns, Interpretation")
+    trace = parts["trace"]
     if len(trace) != 6 or any(not l.startswith(f"{i + 1}. {lab}: ") for i, (l, lab) in enumerate(zip(trace, STEP_LABELS))):
-        errs.append("#trace must have the 6 numbered steps, one line each")
-    if s != len(lines) - 1:
-        errs.append("#sql must be the last line")
+        errs.append("<trace> must have the 6 numbered steps, one line each")
     return errs
 
 
-def schema_names(line):
-    """'#schema a(x, y); b(z)' or '#schema a (meaning): x (m), y' -> {table: [columns]}"""
-    body = line[len("#schema "):]
+def schema_names(body):
+    """'a(x, y); b(z)' or 'a (meaning): x (m), y' (the text inside <schema>) -> {table: [columns]}"""
     out = {}
     for part in body.split("; "):
         m = re.fullmatch(r"([a-z0-9_]+)\((.*)\)", part)
@@ -73,8 +84,8 @@ def leaked_normal_names(text, variant, names):
     """normal names (table or column) used in the hint text where the variant uses another name"""
     if variant == "normal":
         return []
-    body = text.split("\n#sql ")[0]
-    body = body.split("\n", 1)[1]                      # drop #question (it is the benchmark's own text)
+    body = text.split("\n<sql>")[0]
+    body = body.split("\n", 1)[1]                      # drop <question> (it is the benchmark's own text)
     body = re.sub(r" \([a-z0-9_]+\)", "", body)          # the meaning shown once in brackets is allowed
     body = re.sub(r"'[^']*'", "''", body)               # values in quotes are data, not names
     variant_words = set()
@@ -116,18 +127,22 @@ def main():
             if q is None:
                 problems.append(f"{variant} {h['id']}: not a question id")
                 continue
-            errs += check_structure(text)
-            lines = text.split("\n")
-            if lines[0] != f"#question {q['question']}":
-                errs.append("#question differs from the question text")
-            sql = lines[-1][len("#sql "):]
+            parts = parse_hint(text)
+            errs += check_structure(parts)
+            if parts is None:
+                bad_here += 1
+                problems += [f"{variant} {h['id']}: {e}" for e in errs]
+                continue
+            if parts["question"] != q["question"]:
+                errs.append("<question> differs from the question text")
+            sql = parts["sql"]
             if sql != q["gold_sql"]:
-                errs.append("#sql is not exactly the Gold SQL")
-            for t, cs in schema_names(lines[1]).items():
+                errs.append("<sql> is not exactly the Gold SQL")
+            for t, cs in schema_names(parts["schema"]).items():
                 if t not in tables:
-                    errs.append(f"#schema names unknown table {t}")
+                    errs.append(f"<schema> names unknown table {t}")
                     continue
-                errs += [f"#schema names unknown column {t}.{c}" for c in cs if c not in tables[t]]
+                errs += [f"<schema> names unknown column {t}.{c}" for c in cs if c not in tables[t]]
             if "[[" in text or "{{" in text:
                 errs.append("placeholder left in text")
             leaks = leaked_normal_names(text, variant, names)
@@ -137,9 +152,9 @@ def main():
                 if q["gold_sql"] not in gold_cache:
                     gold_cache[q["gold_sql"]] = run(con, q["gold_sql"])
                 if run(con, sql) != gold_cache[q["gold_sql"]]:
-                    errs.append("#sql result differs from the Gold result")
+                    errs.append("<sql> result differs from the Gold result")
             except sqlite3.Error as e:
-                errs.append(f"#sql fails: {e}")
+                errs.append(f"<sql> fails: {e}")
             if errs:
                 bad_here += 1
                 problems += [f"{variant} {h['id']}: {e}" for e in errs]
