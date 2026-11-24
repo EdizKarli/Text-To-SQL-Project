@@ -1,8 +1,7 @@
 1. Doubled the questions: 480 → 960.
 2. Split the questions 80/20 for fine-tuning.
-3. Wrote the fine-tuning code for the school's GPU cluster.
-4. Built a data dictionary for the cryptic schema and tested it.
-5. Built and tested a two-pass pipeline: first find the tables, then write the SQL.
+3. Built a data dictionary for the cryptic schema and tested it.
+4. Built and tested a two-pass pipeline: first find the tables, then write the SQL.
 
 
 ## Twice as many questions: 480 → 960
