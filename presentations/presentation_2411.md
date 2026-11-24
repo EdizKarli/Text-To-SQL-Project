@@ -17,10 +17,8 @@ We wrote 120 new base questions (E41–E80, M41–M80, H41–H80). As before, ea
 | **Total** | **240** | **960** |
 
 * **New kinds of questions:** moving averages, medians, streaks of consecutive days, a list of months that includes months with zero, invoice ageing buckets, second-highest per group, `NOT EXISTS` and `DISTINCT`.
-* **Checks on every new question:** the correct SQL returns a result, `LIMIT` cut-offs have no ties, the row order is fixed, and no new question has the same answer as an old one.
 * **All three schemas:** the correct SQL was translated to mixed and cryptic and gives the same result in all three.
 * **Hints:** every question has a hint in all three schemas, 2,880 hints in total, all checked.
-* The original 480 questions did not change, so old results stay comparable. `--bases-per-difficulty 40` runs only them.
 
 ## 3. The 80/20 split
 
@@ -33,11 +31,8 @@ For fine-tuning, the model must be tested on questions it never saw in training.
 | Test | 48 (20%) | 192 | the final score only |
 
 * Each part has the same number of easy, moderate and hard questions.
-* The test set has 8 old and 8 new base questions per level.
-* `splits/check_split.py` checks that no question is on two sides.
-* `run_ollama.py --split test` runs only the test questions, so base models and fine-tuned models are scored on the same questions.
 
-## 4. Fine-tuning code (ready, not run yet)
+## 4. Fine-tuning Ideas
 
 We will compare two versions of Qwen2.5 Coder (1.5B and 7B):
 
@@ -48,17 +43,8 @@ We will compare two versions of Qwen2.5 Coder (1.5B and 7B):
 | **B: hint + SQL** | the hint (schema, reasoning, steps), then the correct SQL |
 
 * **Method:** LoRA (r 16, alpha 32), learning rate 2e-4, 3 epochs, the loss only on the answer.
-* **Same prompt:** training uses exactly the prompt used at test time.
 
-| File | What it does |
-|---|---|
-| `finetune/build_dataset.py` | turns the questions into training examples |
-| `finetune/train_lora.py` | trains the model (on the GPU) |
-| `finetune/predict_hf.py` | the trained model answers the test questions |
-| `finetune/slurm/` | job files for the cluster's queue |
-| `finetune/cargo_cluster_bundle.tar.gz` | everything packed into one file to upload |
-
-**Status:** the code is ready, but it has not run yet. It needs the school's GPU cluster.
+**Question:** Should it learn the prompts as well?
 
 ## 5. Data dictionary
 
